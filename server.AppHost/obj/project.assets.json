@@ -167,6 +167,54 @@
           }
         }
       },
+      "CommunityToolkit.Aspire.Hosting.Bun/13.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Aspire.Hosting": "13.1.0"
+        },
+        "compile": {
+          "lib/net10.0/CommunityToolkit.Aspire.Hosting.Bun.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/CommunityToolkit.Aspire.Hosting.Bun.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Aspire.Hosting.Golang/13.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Aspire.Hosting": "13.1.0"
+        },
+        "compile": {
+          "lib/net10.0/CommunityToolkit.Aspire.Hosting.Golang.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/CommunityToolkit.Aspire.Hosting.Golang.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.Aspire.Hosting.Rust/13.1.1": {
+        "type": "package",
+        "dependencies": {
+          "Aspire.Hosting": "13.1.0"
+        },
+        "compile": {
+          "lib/net10.0/CommunityToolkit.Aspire.Hosting.Rust.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/CommunityToolkit.Aspire.Hosting.Rust.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Fractions/7.3.0": {
         "type": "package",
         "compile": {
@@ -1609,6 +1657,63 @@
         "lib/net8.0/HealthChecks.Uris.xml",
         "lib/netstandard2.0/HealthChecks.Uris.dll",
         "lib/netstandard2.0/HealthChecks.Uris.xml"
+      ]
+    },
+    "CommunityToolkit.Aspire.Hosting.Bun/13.1.1": {
+      "sha512": "5Jv4TNAClOCCfCxxWpaHY9n8p8hyboNiNNUO/ZtPwrUvMhO4avkZNNtmqonK7Z6dfCGh83SqlkZ4XEJl9Sjt6Q==",
+      "type": "package",
+      "path": "communitytoolkit.aspire.hosting.bun/13.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "communitytoolkit.aspire.hosting.bun.13.1.1.nupkg.sha512",
+        "communitytoolkit.aspire.hosting.bun.nuspec",
+        "lib/net10.0/CommunityToolkit.Aspire.Hosting.Bun.dll",
+        "lib/net10.0/CommunityToolkit.Aspire.Hosting.Bun.xml",
+        "lib/net8.0/CommunityToolkit.Aspire.Hosting.Bun.dll",
+        "lib/net8.0/CommunityToolkit.Aspire.Hosting.Bun.xml",
+        "lib/net9.0/CommunityToolkit.Aspire.Hosting.Bun.dll",
+        "lib/net9.0/CommunityToolkit.Aspire.Hosting.Bun.xml",
+        "nuget.png"
+      ]
+    },
+    "CommunityToolkit.Aspire.Hosting.Golang/13.1.1": {
+      "sha512": "s7lRd/92NobYPJFCjqUB3JAe/1zaMJ299jvqBKmzz6QT/s3JzWcTuITZxi/XWVHMU7Lp8fKyKIVFPVOUljDSHQ==",
+      "type": "package",
+      "path": "communitytoolkit.aspire.hosting.golang/13.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "communitytoolkit.aspire.hosting.golang.13.1.1.nupkg.sha512",
+        "communitytoolkit.aspire.hosting.golang.nuspec",
+        "lib/net10.0/CommunityToolkit.Aspire.Hosting.Golang.dll",
+        "lib/net10.0/CommunityToolkit.Aspire.Hosting.Golang.xml",
+        "lib/net8.0/CommunityToolkit.Aspire.Hosting.Golang.dll",
+        "lib/net8.0/CommunityToolkit.Aspire.Hosting.Golang.xml",
+        "lib/net9.0/CommunityToolkit.Aspire.Hosting.Golang.dll",
+        "lib/net9.0/CommunityToolkit.Aspire.Hosting.Golang.xml",
+        "nuget.png"
+      ]
+    },
+    "CommunityToolkit.Aspire.Hosting.Rust/13.1.1": {
+      "sha512": "uif9fV/U6WVPYKJ2uf5gymiiq3EZnpKVXIZ9C+cvXm4P/6wg3cLERmZpWfFSIVko5WymIRbWH9CqThUKIfBuqg==",
+      "type": "package",
+      "path": "communitytoolkit.aspire.hosting.rust/13.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "communitytoolkit.aspire.hosting.rust.13.1.1.nupkg.sha512",
+        "communitytoolkit.aspire.hosting.rust.nuspec",
+        "lib/net10.0/CommunityToolkit.Aspire.Hosting.Rust.dll",
+        "lib/net10.0/CommunityToolkit.Aspire.Hosting.Rust.xml",
+        "lib/net8.0/CommunityToolkit.Aspire.Hosting.Rust.dll",
+        "lib/net8.0/CommunityToolkit.Aspire.Hosting.Rust.xml",
+        "lib/net9.0/CommunityToolkit.Aspire.Hosting.Rust.dll",
+        "lib/net9.0/CommunityToolkit.Aspire.Hosting.Rust.xml",
+        "nuget.png"
       ]
     },
     "Fractions/7.3.0": {
@@ -3334,23 +3439,26 @@
     "net10.0": [
       "Aspire.Dashboard.Sdk.osx-arm64 >= 13.1.1",
       "Aspire.Hosting.AppHost >= 13.1.1",
-      "Aspire.Hosting.Orchestration.osx-arm64 >= 13.1.1"
+      "Aspire.Hosting.Orchestration.osx-arm64 >= 13.1.1",
+      "CommunityToolkit.Aspire.Hosting.Bun >= 13.1.1",
+      "CommunityToolkit.Aspire.Hosting.Golang >= 13.1.1",
+      "CommunityToolkit.Aspire.Hosting.Rust >= 13.1.1"
     ]
   },
   "packageFolders": {
-    "/Users/ademceper/.nuget/packages/": {}
+    "/Users/adem/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ademceper/Desktop/merge-com/server/server.AppHost/server.AppHost.csproj",
+      "projectUniqueName": "/Users/adem/Desktop/merge-com/server/server.AppHost/server.AppHost.csproj",
       "projectName": "server.AppHost",
-      "projectPath": "/Users/ademceper/Desktop/merge-com/server/server.AppHost/server.AppHost.csproj",
-      "packagesPath": "/Users/ademceper/.nuget/packages/",
-      "outputPath": "/Users/ademceper/Desktop/merge-com/server/server.AppHost/obj/",
+      "projectPath": "/Users/adem/Desktop/merge-com/server/server.AppHost/server.AppHost.csproj",
+      "packagesPath": "/Users/adem/.nuget/packages/",
+      "outputPath": "/Users/adem/Desktop/merge-com/server/server.AppHost/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/ademceper/.nuget/NuGet/NuGet.Config"
+        "/Users/adem/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
@@ -3394,6 +3502,18 @@
             "target": "Package",
             "version": "[13.1.1, )",
             "autoReferenced": true
+          },
+          "CommunityToolkit.Aspire.Hosting.Bun": {
+            "target": "Package",
+            "version": "[13.1.1, )"
+          },
+          "CommunityToolkit.Aspire.Hosting.Golang": {
+            "target": "Package",
+            "version": "[13.1.1, )"
+          },
+          "CommunityToolkit.Aspire.Hosting.Rust": {
+            "target": "Package",
+            "version": "[13.1.1, )"
           }
         },
         "imports": [
@@ -3412,7 +3532,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.103/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/10.0.102/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

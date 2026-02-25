@@ -1,0 +1,14 @@
+/Users/adem/Desktop/merge-com/server/services/actix-web/target/debug/deps/serde-447629020af7c223.d: /Users/adem/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/adem/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/adem/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/adem/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/adem/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/adem/Desktop/merge-com/server/services/actix-web/target/debug/build/serde-401fc6cea3a12a1a/out/private.rs
+
+/Users/adem/Desktop/merge-com/server/services/actix-web/target/debug/deps/libserde-447629020af7c223.rlib: /Users/adem/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/adem/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/adem/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/adem/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/adem/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/adem/Desktop/merge-com/server/services/actix-web/target/debug/build/serde-401fc6cea3a12a1a/out/private.rs
+
+/Users/adem/Desktop/merge-com/server/services/actix-web/target/debug/deps/libserde-447629020af7c223.rmeta: /Users/adem/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/adem/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/adem/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/adem/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/adem/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/adem/Desktop/merge-com/server/services/actix-web/target/debug/build/serde-401fc6cea3a12a1a/out/private.rs
+
+/Users/adem/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs:
+/Users/adem/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs:
+/Users/adem/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs:
+/Users/adem/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs:
+/Users/adem/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs:
+/Users/adem/Desktop/merge-com/server/services/actix-web/target/debug/build/serde-401fc6cea3a12a1a/out/private.rs:
+
+# env-dep:OUT_DIR=/Users/adem/Desktop/merge-com/server/services/actix-web/target/debug/build/serde-401fc6cea3a12a1a/out

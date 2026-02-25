@@ -1,0 +1,13 @@
+/Users/adem/Desktop/merge-com/server/server.ServiceDefaults/bin/Debug/net10.0/server.ServiceDefaults.deps.json
+/Users/adem/Desktop/merge-com/server/server.ServiceDefaults/bin/Debug/net10.0/server.ServiceDefaults.dll
+/Users/adem/Desktop/merge-com/server/server.ServiceDefaults/bin/Debug/net10.0/server.ServiceDefaults.pdb
+/Users/adem/Desktop/merge-com/server/server.ServiceDefaults/obj/Debug/net10.0/server.ServiceDefaults.csproj.AssemblyReference.cache
+/Users/adem/Desktop/merge-com/server/server.ServiceDefaults/obj/Debug/net10.0/server.ServiceDefaults.GeneratedMSBuildEditorConfig.editorconfig
+/Users/adem/Desktop/merge-com/server/server.ServiceDefaults/obj/Debug/net10.0/server.ServiceDefaults.AssemblyInfoInputs.cache
+/Users/adem/Desktop/merge-com/server/server.ServiceDefaults/obj/Debug/net10.0/server.ServiceDefaults.AssemblyInfo.cs
+/Users/adem/Desktop/merge-com/server/server.ServiceDefaults/obj/Debug/net10.0/server.ServiceDefaults.csproj.CoreCompileInputs.cache
+/Users/adem/Desktop/merge-com/server/server.ServiceDefaults/obj/Debug/net10.0/server.ServiceDefaults.sourcelink.json
+/Users/adem/Desktop/merge-com/server/server.ServiceDefaults/obj/Debug/net10.0/server.ServiceDefaults.dll
+/Users/adem/Desktop/merge-com/server/server.ServiceDefaults/obj/Debug/net10.0/refint/server.ServiceDefaults.dll
+/Users/adem/Desktop/merge-com/server/server.ServiceDefaults/obj/Debug/net10.0/server.ServiceDefaults.pdb
+/Users/adem/Desktop/merge-com/server/server.ServiceDefaults/obj/Debug/net10.0/ref/server.ServiceDefaults.dll

@@ -8,4 +8,14 @@
     <UserSecretsId>feabac1f-b47b-41c4-9432-4aa2b665e27f</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Aspire.Hosting.Bun" Version="13.1.1" />
+    <PackageReference Include="CommunityToolkit.Aspire.Hosting.Golang" Version="13.1.1" />
+    <PackageReference Include="CommunityToolkit.Aspire.Hosting.Rust" Version="13.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\services\dotnet-api\Server.Api.csproj" />
+  </ItemGroup>
+
 </Project>

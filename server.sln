@@ -1,10 +1,12 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
+Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.0.0
 MinimumVisualStudioVersion = 17.8.0.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "server.AppHost", "server.AppHost\server.AppHost.csproj", "{BFB32B27-FFDD-41A9-A2E4-AFA79B18A6AE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "server.ServiceDefaults", "server.ServiceDefaults\server.ServiceDefaults.csproj", "{E43B2AC7-5436-43FD-9423-8D70BD36FCE1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnet-api", "services\dotnet-api\Server.Api.csproj", "{A8C2F9B1-3E4D-4F6A-9B2A-1D2E3F4A5B6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +22,10 @@ Global
 		{E43B2AC7-5436-43FD-9423-8D70BD36FCE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E43B2AC7-5436-43FD-9423-8D70BD36FCE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E43B2AC7-5436-43FD-9423-8D70BD36FCE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8C2F9B1-3E4D-4F6A-9B2A-1D2E3F4A5B6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8C2F9B1-3E4D-4F6A-9B2A-1D2E3F4A5B6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8C2F9B1-3E4D-4F6A-9B2A-1D2E3F4A5B6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8C2F9B1-3E4D-4F6A-9B2A-1D2E3F4A5B6C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
