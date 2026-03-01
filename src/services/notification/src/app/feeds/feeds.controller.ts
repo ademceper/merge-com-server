@@ -10,7 +10,7 @@ import {
 } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { ApiExcludeController } from '@nestjs/swagger/dist/decorators/api-exclude-controller.decorator';
-import { UserSessionData } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';

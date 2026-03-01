@@ -1,8 +1,9 @@
 import { EmailProviderIdEnum } from 'libs/shared';
-import { IEmailEventBody, IEmailOptions, IEmailProvider, ISendMessageSuccessResponse } from 'libs/stateless';
+import type { IEmailEventBody, IEmailProvider, ISendMessageSuccessResponse } from 'libs/stateless';
+import type { IEmailOptions } from 'libs/stateless';
 import { PlatformException } from '../../../utils/exceptions';
 import { BaseHandler } from '../../shared/interfaces';
-import { IMailHandler } from '../interfaces';
+import type { IMailHandler } from '../interfaces';
 
 export abstract class BaseEmailHandler extends BaseHandler<IEmailProvider> implements IMailHandler {
   protected provider!: IEmailProvider;

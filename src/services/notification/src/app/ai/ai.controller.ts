@@ -20,14 +20,10 @@ import {
   UserSession,
 } from 'libs/application-generic';
 import { AiChatEntity } from 'libs/dal';
-import {
-  AiResourceTypeEnum,
-  ApiRateLimitCategoryEnum,
-  FeatureFlagsKeysEnum,
-  PermissionsEnum,
-  UserSessionData,
-} from 'libs/shared';
-import { generateId, pipeUIMessageStreamToResponse, UIMessage } from 'ai';
+import { AiResourceTypeEnum, ApiRateLimitCategoryEnum, FeatureFlagsKeysEnum, PermissionsEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
+import { generateId, pipeUIMessageStreamToResponse } from 'ai';
+import type { UIMessage } from 'ai';
 import type { Request, Response } from 'express';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ThrottlerCategory } from '../rate-limiting/guards';

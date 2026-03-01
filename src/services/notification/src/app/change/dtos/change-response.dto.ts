@@ -39,7 +39,7 @@ export class ChangesResponseDto {
   @ApiProperty()
   totalCount: number;
 
-  @ApiProperty()
+  @ApiProperty({ type: () => [ChangeResponseDto] })
   data: ChangeResponseDto[];
 
   @ApiProperty()

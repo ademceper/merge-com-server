@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { buildDefaultSubscriptionIdentifier } from 'libs/application-generic';
-import { CreateTopicSubscribersEntity, TopicEntity, TopicRepository, TopicSubscribersRepository } from 'libs/dal';
+import { TopicEntity, TopicRepository, TopicSubscribersRepository } from 'libs/dal';
+import type { CreateTopicSubscribersEntity } from 'libs/dal';
 import { SubscriberDto } from 'libs/shared';
 import { SearchByExternalSubscriberIds, SearchByExternalSubscriberIdsCommand } from '../../../subscribers/usecases';
-import { ExternalSubscriberId } from '../../types';
+import type { ExternalSubscriberId } from '../../types';
 import { CreateTopicCommand, CreateTopicUseCase } from '../create-topic';
 import { AddSubscribersCommand } from './add-subscribers.command';
 

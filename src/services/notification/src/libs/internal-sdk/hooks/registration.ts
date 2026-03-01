@@ -1,4 +1,4 @@
-import { Hooks } from "./types.js";
+import type { Hooks } from "./types.js";
 import {NovuCustomHook} from "./novu-custom-hook.js";
 
 /*

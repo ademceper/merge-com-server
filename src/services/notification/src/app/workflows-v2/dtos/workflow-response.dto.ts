@@ -1,13 +1,7 @@
 import { ApiExtraModels, ApiProperty, ApiPropertyOptional, getSchemaPath } from '@nestjs/swagger';
-import {
-  CreateWorkflowDto,
-  ResourceOriginEnum,
-  SeverityLevelEnum,
-  Slug,
-  StepTypeEnum,
-  UpdateWorkflowDto,
-  WorkflowStatusEnum,
-} from 'libs/shared';
+import { ResourceOriginEnum, SeverityLevelEnum, StepTypeEnum, WorkflowStatusEnum } from 'libs/shared';
+import type { Slug } from 'libs/shared';
+import { CreateWorkflowDto, UpdateWorkflowDto } from 'libs/shared';
 import { Type } from 'class-transformer';
 import { IsEnum, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { WorkflowPreferencesResponseDto } from './preferences.response.dto';

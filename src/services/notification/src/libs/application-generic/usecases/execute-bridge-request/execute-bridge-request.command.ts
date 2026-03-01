@@ -1,13 +1,6 @@
-import {
-  CodeResult,
-  DiscoverOutput,
-  Event,
-  ExecuteOutput,
-  GetActionEnum,
-  HealthCheck,
-  HttpQueryKeysEnum,
-  PostActionEnum,
-} from 'libs/framework/internal';
+import { GetActionEnum, HttpQueryKeysEnum, PostActionEnum } from 'libs/framework/internal';
+import type { CodeResult, DiscoverOutput, Event, ExecuteOutput } from 'libs/framework/internal';
+import { HealthCheck } from 'libs/framework/internal';
 import { ResourceOriginEnum } from 'libs/shared';
 import { IsDefined, IsOptional, IsString } from 'class-validator';
 import { EnvironmentLevelCommand } from '../../commands';

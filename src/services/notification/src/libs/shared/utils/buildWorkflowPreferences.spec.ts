@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { ChannelPreference, WorkflowPreference, WorkflowPreferences, WorkflowPreferencesPartial } from '../types';
+import type { WorkflowPreference, WorkflowPreferences, WorkflowPreferencesPartial } from '../types';
+import { ChannelPreference } from '../types';
 import { buildWorkflowPreferences } from './buildWorkflowPreferences';
 
 const WORKFLOW_CHANNEL_PREFERENCE_DEFAULT_VALUE = true;

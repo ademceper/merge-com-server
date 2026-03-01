@@ -1,4 +1,4 @@
-import { ICredentialsDto } from 'libs/shared';
+import type { ICredentialsDto } from 'libs/shared';
 import { decryptCredentials, decryptSecret, encryptCredentials, encryptSecret } from './encrypt-provider';
 
 describe('Encrypt provider secrets', () => {

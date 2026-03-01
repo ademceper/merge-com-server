@@ -1,18 +1,11 @@
 import { NotificationTemplateEntity, SubscriberEntity } from 'libs/dal';
-import {
-  ChannelTypeEnum,
-  ISubscribersDefine,
-  ITenantDefine,
-  ProvidersIdEnum,
-  SeverityLevelEnum,
-  StatelessControls,
-  TriggerOverrides,
-  WorkflowPreferences,
-} from 'libs/shared';
+import { ChannelTypeEnum, SeverityLevelEnum, StatelessControls } from 'libs/shared';
+import type { ISubscribersDefine, ITenantDefine, ProvidersIdEnum, WorkflowPreferences } from 'libs/shared';
+import type { TriggerOverrides } from 'libs/shared';
 import { IsArray, IsDefined, IsOptional, IsString } from 'class-validator';
 
 import { EnvironmentWithUserCommand } from '../../commands';
-import { SubscriberTopicPreference } from '../../dtos';
+import type { SubscriberTopicPreference } from '../../dtos';
 
 export class CreateNotificationJobsCommand extends EnvironmentWithUserCommand {
   @IsDefined()

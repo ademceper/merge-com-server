@@ -4,13 +4,8 @@ import { ControlValuesRepository, LayoutRepository, NotificationTemplateReposito
 import { ControlValuesLevelEnum, StepTypeEnum } from 'libs/shared';
 import { WorkflowDataContainer } from '../../shared/containers/workflow-data.container';
 import { WorkflowResponseDto } from '../../workflows-v2/dtos/workflow-response.dto';
-import {
-  DependencyReasonEnum,
-  IDiffResult,
-  IResourceDependency,
-  IResourceDiff,
-  ResourceTypeEnum,
-} from '../types/sync.types';
+import { DependencyReasonEnum, ResourceTypeEnum } from '../types/sync.types';
+import type { IDiffResult, IResourceDependency, IResourceDiff } from '../types/sync.types';
 
 @Injectable()
 export class DependencyAnalyzerService {

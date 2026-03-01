@@ -1,5 +1,5 @@
 import { CredentialsKeyEnum } from '../../../types';
-import { IConfigCredential } from '../provider.interface';
+import type { IConfigCredential } from '../provider.interface';
 
 const mailConfigBase: IConfigCredential[] = [
   {

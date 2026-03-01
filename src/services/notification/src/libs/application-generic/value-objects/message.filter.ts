@@ -1,4 +1,4 @@
-import { BuilderFieldType, BuilderGroupValues, FilterParts } from 'libs/shared';
+import type { BuilderFieldType, BuilderGroupValues, FilterParts } from 'libs/shared';
 import { IsArray, IsString } from 'class-validator';
 
 export class MessageFilter {

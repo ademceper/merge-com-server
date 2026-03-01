@@ -1,16 +1,10 @@
 import { ChatProviderIdEnum } from 'libs/shared';
-import {
-  ChannelTypeEnum,
-  ENDPOINT_TYPES,
-  IChatOptions,
-  IChatProvider,
-  ISendMessageSuccessResponse,
-  isChannelDataOfType,
-} from 'libs/stateless';
+import { ChannelTypeEnum, ENDPOINT_TYPES, isChannelDataOfType } from 'libs/stateless';
+import type { IChatOptions, IChatProvider, ISendMessageSuccessResponse } from 'libs/stateless';
 import axios from 'axios';
 import { v4 as uuid } from 'uuid';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
+import type { WithPassthrough } from '../../../utils/types';
 
 export class GrafanaOnCallChatProvider extends BaseProvider implements IChatProvider {
   id = ChatProviderIdEnum.GrafanaOnCall;

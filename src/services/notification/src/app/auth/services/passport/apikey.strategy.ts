@@ -6,7 +6,8 @@ import {
   InMemoryLRUCacheService,
   InMemoryLRUCacheStore,
 } from 'libs/application-generic';
-import { ApiAuthSchemeEnum, FeatureFlagsKeysEnum, UserSessionData } from 'libs/shared';
+import { ApiAuthSchemeEnum, FeatureFlagsKeysEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { createHash } from 'crypto';
 import { HeaderAPIKeyStrategy } from 'passport-headerapikey';
 import { AuthService } from '../auth.service';

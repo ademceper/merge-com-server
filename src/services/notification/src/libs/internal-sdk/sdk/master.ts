@@ -5,7 +5,8 @@
 import { translationsMasterImport } from "../funcs/translationsMasterImport.js";
 import { translationsMasterRetrieve } from "../funcs/translationsMasterRetrieve.js";
 import { translationsMasterUpload } from "../funcs/translationsMasterUpload.js";
-import { ClientSDK, RequestOptions } from "../lib/sdks.js";
+import { ClientSDK } from "../lib/sdks.js";
+import type { RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";

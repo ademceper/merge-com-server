@@ -1,16 +1,11 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { setTimeout } from 'timers/promises';
 
-import { getClientAndConfig, getClientAndConfigForCluster, InMemoryProviderConfig } from './providers';
-import {
-  Cluster,
-  ClusterOptions,
-  InMemoryProviderClient,
-  InMemoryProviderEnum,
-  Redis,
-  RedisOptions,
-  ScanStream,
-} from './types';
+import { getClientAndConfig, getClientAndConfigForCluster } from './providers';
+import type { InMemoryProviderConfig } from './providers';
+import { Cluster, InMemoryProviderEnum, Redis, ScanStream } from './types';
+import type { ClusterOptions, RedisOptions } from './types';
+import type { InMemoryProviderClient } from './types';
 
 const LOG_CONTEXT = 'InMemoryProviderService';
 

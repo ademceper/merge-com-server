@@ -1,7 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { CommunityOrganizationRepository } from 'libs/dal';
 import { CloudflareSchedulerMode, FeatureFlagsKeysEnum, JobTopicNameEnum } from 'libs/shared';
-import { IStandardBulkJobDto, IStandardJobDto } from '../../dtos';
+import type { IStandardBulkJobDto, IStandardJobDto } from '../../dtos';
 import { PinoLogger } from '../../logging';
 import { BullMqService } from '../bull-mq';
 import { CloudflareSchedulerService } from '../cloudflare-scheduler';

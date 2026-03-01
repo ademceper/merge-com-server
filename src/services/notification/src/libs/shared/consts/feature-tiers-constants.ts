@@ -1,4 +1,5 @@
-import { ApiServiceLevelEnum, FeatureFlags, FeatureFlagsKeysEnum } from '../types';
+import { ApiServiceLevelEnum, FeatureFlagsKeysEnum } from '../types';
+import type { FeatureFlags } from '../types';
 
 // This is a large value on purpose that should surpass any realistic system limits
 export const UNLIMITED_VALUE = 9999;

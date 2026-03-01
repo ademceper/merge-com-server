@@ -1,27 +1,8 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import {
-  AnalyticsService,
-  EmailControlType,
-  GetWorkflowByIdsCommand,
-  GetWorkflowByIdsUseCase,
-  Instrument,
-  InstrumentUsecase,
-  NotificationStep,
-  PinoLogger,
-  SendWebhookMessage,
-  shortId,
-  UpsertControlValuesCommand,
-  UpsertControlValuesUseCase,
-} from 'libs/application-generic';
-import {
-  ClientSession,
-  ControlSchemas,
-  ControlValuesEntity,
-  ControlValuesRepository,
-  NotificationGroupRepository,
-  NotificationStepEntity,
-  NotificationTemplateEntity,
-} from 'libs/dal';
+import { AnalyticsService, GetWorkflowByIdsCommand, GetWorkflowByIdsUseCase, Instrument, InstrumentUsecase, NotificationStep, PinoLogger, SendWebhookMessage, shortId, UpsertControlValuesCommand, UpsertControlValuesUseCase } from 'libs/application-generic';
+import type { EmailControlType } from 'libs/application-generic';
+import { ControlSchemas, ControlValuesEntity, ControlValuesRepository, NotificationGroupRepository, NotificationStepEntity, NotificationTemplateEntity } from 'libs/dal';
+import type { ClientSession } from 'libs/dal';
 import {
   ControlValuesLevelEnum,
   DEFAULT_WORKFLOW_PREFERENCES,

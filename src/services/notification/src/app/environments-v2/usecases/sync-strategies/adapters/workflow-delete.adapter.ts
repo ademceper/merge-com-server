@@ -2,8 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { NotificationTemplateEntity } from 'libs/dal';
 import { DeleteWorkflowCommand } from '../../../../workflows-v1/usecases/delete-workflow/delete-workflow.command';
 import { DeleteWorkflowUseCase } from '../../../../workflows-v1/usecases/delete-workflow/delete-workflow.usecase';
-import { ISyncContext } from '../../../types/sync.types';
-import { IBaseDeleteService } from '../base/interfaces/base-delete.interface';
+import type { ISyncContext } from '../../../types/sync.types';
+import type { IBaseDeleteService } from '../base/interfaces/base-delete.interface';
 
 @Injectable()
 export class WorkflowDeleteAdapter implements IBaseDeleteService<NotificationTemplateEntity> {

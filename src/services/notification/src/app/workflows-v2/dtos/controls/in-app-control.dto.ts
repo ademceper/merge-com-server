@@ -38,7 +38,7 @@ class ActionDto {
   @IsOptional()
   label?: string;
 
-  @ApiPropertyOptional({ description: 'Redirect configuration for the action.', type: RedirectDto })
+  @ApiPropertyOptional({ description: 'Redirect configuration for the action.', type: () => RedirectDto })
   @ValidateNested()
   @Type(() => RedirectDto)
   @IsOptional()
@@ -71,13 +71,13 @@ export class InAppControlDto extends SkipControlDto {
   @IsOptional()
   avatar?: string;
 
-  @ApiPropertyOptional({ description: 'Primary action button details.', type: ActionDto })
+  @ApiPropertyOptional({ description: 'Primary action button details.', type: () => ActionDto })
   @ValidateNested()
   @Type(() => ActionDto)
   @IsOptional()
   primaryAction?: ActionDto;
 
-  @ApiPropertyOptional({ description: 'Secondary action button details.', type: ActionDto })
+  @ApiPropertyOptional({ description: 'Secondary action button details.', type: () => ActionDto })
   @ValidateNested()
   @Type(() => ActionDto)
   @IsOptional()
@@ -85,7 +85,7 @@ export class InAppControlDto extends SkipControlDto {
 
   @ApiPropertyOptional({
     description: 'Redirection URL configuration for the main content click (if no actions defined/clicked)..',
-    type: RedirectDto,
+    type: () => RedirectDto,
   })
   @ValidateNested()
   @Type(() => RedirectDto)

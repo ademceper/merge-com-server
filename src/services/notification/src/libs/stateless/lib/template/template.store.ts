@@ -1,4 +1,5 @@
-import { IMessage, ITemplate, ITriggerPayload } from './template.interface';
+import type { ITemplate } from './template.interface';
+import type { IMessage, ITriggerPayload } from './template.interface';
 
 export class TemplateStore {
   private readonly templates: ITemplate[] = [];

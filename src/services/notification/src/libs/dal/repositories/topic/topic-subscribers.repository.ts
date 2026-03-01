@@ -1,16 +1,15 @@
-import { DirectionEnum, ExternalSubscriberId } from 'libs/shared';
+import { DirectionEnum } from 'libs/shared';
+import type { ExternalSubscriberId } from 'libs/shared';
 
-import { FilterQuery, mongo } from 'mongoose';
+import { mongo } from 'mongoose';
+import type { FilterQuery } from 'mongoose';
 import { DalException, TopicEntity } from '../..';
 import type { EnforceEnvOrOrgIds } from '../../types/enforce';
 import { BaseRepository } from '../base-repository';
-import {
-  CreateTopicSubscribersEntity,
-  TopicSubscribersDBModel,
-  TopicSubscribersEntity,
-} from './topic-subscribers.entity';
+import { TopicSubscribersEntity } from './topic-subscribers.entity';
+import type { CreateTopicSubscribersEntity, TopicSubscribersDBModel } from './topic-subscribers.entity';
 import { TopicSubscribers } from './topic-subscribers.schema';
-import { EnvironmentId, OrganizationId, TopicId, TopicKey } from './types';
+import type { EnvironmentId, OrganizationId, TopicId, TopicKey } from './types';
 
 export interface BulkAddTopicSubscribersResult {
   created: TopicSubscribersEntity[];

@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InstrumentUsecase } from 'libs/application-generic';
 import type { EnforceEnvOrOrgIds } from 'libs/dal';
-import { ChannelEndpointDBModel, ChannelEndpointEntity, ChannelEndpointRepository } from 'libs/dal';
+import { ChannelEndpointEntity, ChannelEndpointRepository } from 'libs/dal';
+import type { ChannelEndpointDBModel } from 'libs/dal';
 import { DirectionEnum } from 'libs/shared';
-import { FilterQuery } from 'mongoose';
+import type { FilterQuery } from 'mongoose';
 import { ListChannelEndpointsCommand } from './list-channel-endpoints.command';
 
 @Injectable()

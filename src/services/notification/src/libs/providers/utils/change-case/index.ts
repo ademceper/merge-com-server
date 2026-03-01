@@ -1,20 +1,7 @@
 // from https://github.com/blakeembrey/change-case/tree/main
 
-import {
-  camelCaseTransformer,
-  capitalCaseTransformer,
-  constantCaseTransformer,
-  dotCaseTransformer,
-  IOptions,
-  IPascalCaseOptions,
-  kebabCaseTransformer,
-  noCaseTransformer,
-  pascalCaseTransformer,
-  pathCaseTransformer,
-  sentenceCaseTransformer,
-  snakeCaseTransformer,
-  trainCaseTransformer,
-} from './functions';
+import { camelCaseTransformer, capitalCaseTransformer, constantCaseTransformer, dotCaseTransformer, kebabCaseTransformer, noCaseTransformer, pascalCaseTransformer, pathCaseTransformer, sentenceCaseTransformer, snakeCaseTransformer, trainCaseTransformer } from './functions';
+import type { IOptions, IPascalCaseOptions } from './functions';
 
 const isObject = (object: unknown) => object !== null && typeof object === 'object';
 

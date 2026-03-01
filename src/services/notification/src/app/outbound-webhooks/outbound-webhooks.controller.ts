@@ -1,7 +1,8 @@
 import { ClassSerializerInterceptor, Controller, Get, Post, UseInterceptors } from '@nestjs/common';
 import { ApiExcludeController, ApiOperation } from '@nestjs/swagger';
 import { ProductFeature, RequirePermissions, UserSession } from 'libs/application-generic';
-import { PermissionsEnum, ProductFeatureKeyEnum, UserSessionData } from 'libs/shared';
+import { PermissionsEnum, ProductFeatureKeyEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { CreateWebhookPortalResponseDto } from './dtos/create-webhook-portal-response.dto';
 import { GetWebhookPortalTokenResponseDto } from './dtos/get-webhook-portal-token-response.dto';

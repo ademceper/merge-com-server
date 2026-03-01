@@ -1,6 +1,7 @@
 import './instrument';
 
-import { INestApplication, ValidationPipe, VersioningType } from '@nestjs/common';
+import { ValidationPipe, VersioningType } from '@nestjs/common';
+import type { INestApplication } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import {
   BullMqService,
@@ -30,9 +31,8 @@ import {
   prepareAppInfra as prepareWsInfra,
   startAppInfra as startWsInfra,
 } from './app/socket/services';
-
-const passport = require('passport');
-const compression = require('compression');
+import passport from 'passport';
+import compression from 'compression';
 
 const extendedBodySizeRoutes = [
   '/v1/events',
@@ -74,10 +74,18 @@ export async function bootstrap(
 
   const app = await NestFactory.create(AppModule, { bufferLogs: true, ...nestOptions });
 
+  // Add a raw test route before any middleware to verify Express works
+  const httpAdapter = app.getHttpAdapter();
+  httpAdapter.get('/ping', (_req, res) => res.json({ pong: true }));
+
   // WebSocket adapter setup
-  const inMemoryAdapter = new InMemoryIoAdapter(app);
-  await inMemoryAdapter.connectToInMemoryCluster();
-  app.useWebSocketAdapter(inMemoryAdapter);
+  try {
+    const inMemoryAdapter = new InMemoryIoAdapter(app);
+    await inMemoryAdapter.connectToInMemoryCluster();
+    app.useWebSocketAdapter(inMemoryAdapter);
+  } catch (e) {
+    console.error('WebSocket adapter setup failed (non-fatal):', e?.message);
+  }
 
   app.enableVersioning({
     type: VersioningType.URI,
@@ -98,7 +106,11 @@ export async function bootstrap(
   server.headersTimeout = 65 * 1000;
   logger.trace(`Server headersTimeout: ${server.headersTimeout / 1000}s `);
 
-  app.use(helmet());
+  app.use(
+    helmet({
+      contentSecurityPolicy: process.env.NODE_ENV === 'production',
+    })
+  );
   app.enableCors(corsOptionsDelegate);
 
   app.use(passport.initialize());
@@ -160,41 +172,46 @@ export async function bootstrap(
   app.useGlobalFilters(new AllExceptionsFilter(app.get(Logger), app.get(RequestLogRepository)));
 
   /*
-   * Handle unhandled promise rejections
-   * We explicitly crash the process on unhandled rejections as they indicate the application
-   * is in an undefined state. NestJS can't handle these as they occur outside the event lifecycle.
-   * According to Node.js docs, it's unsafe to resume normal operation after unhandled rejections.
-   * We log these rejections with fatal level to ensure they are properly monitored and tracked.
-   * See: https://nodejs.org/api/process.html#process_warning_using_uncaughtexception_correctly
+   * Handle unhandled promise rejections.
+   * In production we crash because the app may be in an undefined state.
+   * In development we only log to avoid crashes from transient Redis/Mongo reconnections.
    */
   process.on('unhandledRejection', (reason, promise) => {
-    logger.fatal({
-      err: reason,
-      message: 'Unhandled promise rejection',
-      promise,
-    });
-    process.exit(1);
+    if (process.env.NODE_ENV === 'production') {
+      logger.fatal({
+        err: reason,
+        message: 'Unhandled promise rejection',
+        promise,
+      });
+      process.exit(1);
+    } else {
+      logger.error({
+        err: reason,
+        message: 'Unhandled promise rejection (non-fatal in dev)',
+      });
+    }
   });
 
-  // Pause workers before app starts listening
-  await prepareWorkerInfra(app);
-  await prepareWsInfra(app);
+  // Start listening first so the app is reachable (health checks, Swagger, etc.)
+  await app.listen(process.env.PORT || 3000, '0.0.0.0');
 
-  await app.listen(process.env.PORT || 3000);
+  logger.info(`HTTP server listening on port ${process.env.PORT || 3000}`);
 
-  // Enable workers after app is listening
+  // Pause and then enable workers after app is already listening
   try {
+    await prepareWorkerInfra(app);
     await startWorkerInfra(app);
   } catch (e) {
     logger.error({ err: e, message: 'Failed to start worker infra' });
-    process.exit(1);
+    if (process.env.NODE_ENV === 'production') process.exit(1);
   }
 
   try {
+    await prepareWsInfra(app);
     await startWsInfra(app);
   } catch (e) {
     logger.error({ err: e, message: 'Failed to start WS infra' });
-    process.exit(1);
+    if (process.env.NODE_ENV === 'production') process.exit(1);
   }
 
   app.enableShutdownHooks();

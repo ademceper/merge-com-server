@@ -14,8 +14,8 @@ import {
   Section,
 } from '@react-email/components';
 import millify from 'millify';
-import { type CSSProperties, type ReactNode } from 'react';
-import { ControlValueSchema, PayloadSchemaType } from './schemas';
+import type { CSSProperties, ReactNode } from 'react';
+import type { ControlValueSchema, PayloadSchemaType } from './schemas';
 
 /**
  * Inline span helper that avoids JSX intrinsic element typing issues.

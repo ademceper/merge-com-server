@@ -1,14 +1,8 @@
-import { CallHandler, ExecutionContext, Injectable, NestInterceptor } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
+import type { CallHandler, ExecutionContext, NestInterceptor } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import {
-  InjectThrottlerOptions,
-  InjectThrottlerStorage,
-  ThrottlerException,
-  ThrottlerGuard,
-  ThrottlerModuleOptions,
-  ThrottlerRequest,
-  ThrottlerStorage,
-} from '@nestjs/throttler';
+import { InjectThrottlerOptions, InjectThrottlerStorage, ThrottlerException, ThrottlerGuard, ThrottlerStorage } from '@nestjs/throttler';
+import type { ThrottlerModuleOptions, ThrottlerRequest } from '@nestjs/throttler';
 import {
   FeatureFlagsService,
   HttpRequestHeaderKeysEnum,
@@ -17,13 +11,8 @@ import {
   PinoLogger,
 } from 'libs/application-generic';
 import { EnvironmentEntity, OrganizationEntity, UserEntity } from 'libs/dal';
-import {
-  ApiAuthSchemeEnum,
-  ApiRateLimitCategoryEnum,
-  ApiRateLimitCostEnum,
-  FeatureFlagsKeysEnum,
-  UserSessionData,
-} from 'libs/shared';
+import { ApiAuthSchemeEnum, ApiRateLimitCategoryEnum, ApiRateLimitCostEnum, FeatureFlagsKeysEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { getClientIp } from 'request-ip';
 import { checkIsKeylessHeader } from '../../shared/utils/auth.utils';
 import { EvaluateApiRateLimit, EvaluateApiRateLimitCommand } from '../usecases/evaluate-api-rate-limit';

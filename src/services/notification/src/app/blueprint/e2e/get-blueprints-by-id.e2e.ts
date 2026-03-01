@@ -1,12 +1,6 @@
 import { EnvironmentRepository, NotificationTemplateRepository } from 'libs/dal';
-import {
-  EmailBlockTypeEnum,
-  FieldLogicalOperatorEnum,
-  FieldOperatorEnum,
-  FilterPartTypeEnum,
-  INotificationTemplateStep,
-  StepTypeEnum,
-} from 'libs/shared';
+import { EmailBlockTypeEnum, FieldLogicalOperatorEnum, FieldOperatorEnum, FilterPartTypeEnum, StepTypeEnum } from 'libs/shared';
+import type { INotificationTemplateStep } from 'libs/shared';
 import { UserSession } from '@novu/testing';
 import { expect } from 'chai';
 import { CreateWorkflowRequestDto } from '../../workflows-v1/dtos';

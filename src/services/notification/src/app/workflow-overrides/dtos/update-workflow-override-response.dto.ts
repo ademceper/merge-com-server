@@ -1,4 +1,4 @@
-import { IUpdateWorkflowOverrideResponseDto } from 'libs/shared';
+import type { IUpdateWorkflowOverrideResponseDto } from 'libs/shared';
 import { OverrideResponseDto } from './shared';
 
 export class UpdateWorkflowOverrideResponseDto

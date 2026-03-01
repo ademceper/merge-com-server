@@ -1,7 +1,9 @@
-import { HandlebarsContentEngine, IContentEngine } from '../content/content.engine';
-import { ChannelData, ENDPOINT_TYPES } from '../provider/channel-data.type';
-import { IChatProvider } from '../provider/provider.interface';
-import { IMessage, ITriggerPayload } from '../template/template.interface';
+import { HandlebarsContentEngine } from '../content/content.engine';
+import type { IContentEngine } from '../content/content.engine';
+import { ENDPOINT_TYPES } from '../provider/channel-data.type';
+import type { ChannelData } from '../provider/channel-data.type';
+import type { IChatProvider } from '../provider/provider.interface';
+import type { IMessage, ITriggerPayload } from '../template/template.interface';
 
 export class ChatHandler {
   private readonly contentEngine: IContentEngine;

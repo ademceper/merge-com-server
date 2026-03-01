@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { AiAgentTypeEnum } from 'libs/shared';
-import { BaseStreamGenerationAgent } from '../types';
+import type { BaseStreamGenerationAgent } from '../types';
 import { StreamWorkflowGenerationUseCase } from '../usecases/stream-workflow-generation';
 
 @Injectable()

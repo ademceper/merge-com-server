@@ -1,6 +1,7 @@
 import { SeverityLevelEnum } from '../../consts';
-import { ChannelTypeEnum, PreferenceOverrideSourceEnum, PreferencesTypeEnum, Schedule } from '../../types';
-import { INotificationTrigger } from '../notification-trigger';
+import { ChannelTypeEnum, PreferenceOverrideSourceEnum, PreferencesTypeEnum } from '../../types';
+import type { Schedule } from '../../types';
+import type { INotificationTrigger } from '../notification-trigger';
 
 export interface IPreferenceChannels {
   email?: boolean;

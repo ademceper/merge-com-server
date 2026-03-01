@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { NotificationTemplateEntity } from 'libs/dal';
-import { UserSessionData } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { WorkflowDataContainer } from '../../../../shared/containers/workflow-data.container';
-import { IResourceDiff } from '../../../types/sync.types';
-import { IBaseComparator } from '../base/interfaces/base-comparator.interface';
+import type { IResourceDiff } from '../../../types/sync.types';
+import type { IBaseComparator } from '../base/interfaces/base-comparator.interface';
 import { WorkflowComparator } from '../comparators/workflow.comparator';
 
 @Injectable()

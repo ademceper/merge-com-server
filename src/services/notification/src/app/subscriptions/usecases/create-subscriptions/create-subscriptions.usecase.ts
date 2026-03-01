@@ -5,28 +5,11 @@ import {
   InstrumentUsecase,
   PinoLogger,
 } from 'libs/application-generic';
-import {
-  BaseRepository,
-  ContextRepository,
-  CreateTopicSubscribersEntity,
-  NotificationTemplateEntity,
-  NotificationTemplateRepository,
-  PreferencesRepository,
-  SubscriberEntity,
-  SubscriberRepository,
-  TopicEntity,
-  TopicRepository,
-  TopicSubscribersEntity,
-  TopicSubscribersRepository,
-} from 'libs/dal';
-import {
-  ContextPayload,
-  FeatureFlagsKeysEnum,
-  PreferencesTypeEnum,
-  SeverityLevelEnum,
-  VALID_ID_REGEX,
-} from 'libs/shared';
-import { RulesLogic } from 'json-logic-js';
+import { BaseRepository, ContextRepository, NotificationTemplateEntity, NotificationTemplateRepository, PreferencesRepository, SubscriberEntity, SubscriberRepository, TopicEntity, TopicRepository, TopicSubscribersEntity, TopicSubscribersRepository } from 'libs/dal';
+import type { CreateTopicSubscribersEntity } from 'libs/dal';
+import { FeatureFlagsKeysEnum, PreferencesTypeEnum, SeverityLevelEnum, VALID_ID_REGEX } from 'libs/shared';
+import type { ContextPayload } from 'libs/shared';
+import type { RulesLogic } from 'json-logic-js';
 import _ from 'lodash';
 import { GroupPreferenceFilterDto } from '../../../shared/dtos/subscriptions/create-subscriptions.dto';
 import {

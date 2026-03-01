@@ -1,6 +1,7 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { LayoutRepository, MessageTemplateEntity, MessageTemplateRepository } from 'libs/dal';
-import { ChangeEntityTypeEnum, IMessageAction, isBridgeWorkflow, StepTypeEnum } from 'libs/shared';
+import { ChangeEntityTypeEnum, isBridgeWorkflow, StepTypeEnum } from 'libs/shared';
+import type { IMessageAction } from 'libs/shared';
 import { sanitizeMessageContentV0 } from '../../../services';
 import { normalizeVariantDefault } from '../../../utils/variants';
 import { CreateChange, CreateChangeCommand } from '../../create-change';

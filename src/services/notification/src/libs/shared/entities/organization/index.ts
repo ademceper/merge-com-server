@@ -1,3 +1,3 @@
 export * from './member.enum';
 export * from './member.interface';
-export * from './organization.interface';
+export type * from './organization.interface';

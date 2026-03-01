@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { PreferencesRepository } from 'libs/dal';
-import { FeatureFlagsKeysEnum, PreferencesTypeEnum, Schedule } from 'libs/shared';
+import { FeatureFlagsKeysEnum, PreferencesTypeEnum } from 'libs/shared';
+import type { Schedule } from 'libs/shared';
 import { Instrument, InstrumentUsecase } from '../../instrumentation';
 import { FeatureFlagsService } from '../../services/feature-flags';
 import { GetSubscriberScheduleCommand } from './get-subscriber-schedule.command';

@@ -11,17 +11,9 @@ import {
   UseSuspenseQueryResult,
 } from "@tanstack/react-query";
 import { useNovuContext } from "./_context.js";
-import {
-  QueryHookOptions,
-  SuspenseQueryHookOptions,
-  TupleToPrefixes,
-} from "./_types.js";
-import {
-  ActivityWorkflowRunsRetrieveQueryData,
-  buildActivityWorkflowRunsRetrieveQuery,
-  prefetchActivityWorkflowRunsRetrieve,
-  queryKeyActivityWorkflowRunsRetrieve,
-} from "./activityWorkflowRunsRetrieve.core.js";
+import type { QueryHookOptions, SuspenseQueryHookOptions, TupleToPrefixes } from "./_types.js";
+import { buildActivityWorkflowRunsRetrieveQuery, prefetchActivityWorkflowRunsRetrieve, queryKeyActivityWorkflowRunsRetrieve } from "./activityWorkflowRunsRetrieve.core.js";
+import type { ActivityWorkflowRunsRetrieveQueryData } from "./activityWorkflowRunsRetrieve.core.js";
 export {
   type ActivityWorkflowRunsRetrieveQueryData,
   buildActivityWorkflowRunsRetrieveQuery,

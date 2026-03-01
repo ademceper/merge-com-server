@@ -1,4 +1,4 @@
 export * from './cron.module';
-export * from './interfaces';
+export type * from './interfaces';
 export { MetricsModule } from './metrics.module';
 export { QueuesModule } from './queues.module';

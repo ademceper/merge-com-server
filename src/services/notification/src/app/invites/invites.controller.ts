@@ -9,13 +9,8 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { ApiExcludeController, ApiTags } from '@nestjs/swagger';
-import {
-  ApiRateLimitCostEnum,
-  IBulkInviteResponse,
-  IGetInviteResponseDto,
-  MemberRoleEnum,
-  UserSessionData,
-} from 'libs/shared';
+import { ApiRateLimitCostEnum, MemberRoleEnum } from 'libs/shared';
+import type { IBulkInviteResponse, IGetInviteResponseDto, UserSessionData } from 'libs/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ThrottlerCost } from '../rate-limiting/guards';
 import { ApiCommonResponses } from '../shared/framework/response.decorator';

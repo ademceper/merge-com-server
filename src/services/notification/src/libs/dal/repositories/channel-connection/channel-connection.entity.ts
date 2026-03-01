@@ -1,4 +1,5 @@
-import type { ChannelConnection, ChannelTypeEnum, ProvidersIdEnum } from 'libs/shared';
+import type { ChannelTypeEnum, ProvidersIdEnum } from 'libs/shared';
+import { ChannelConnection } from 'libs/shared';
 import type { ChangePropsValueType } from '../../types/helpers';
 import type { EnvironmentId } from '../environment';
 import type { OrganizationId } from '../organization';

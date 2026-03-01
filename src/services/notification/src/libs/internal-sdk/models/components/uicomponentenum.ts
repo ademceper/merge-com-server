@@ -4,7 +4,7 @@
 
 import * as z from 'zod/v3';
 import * as openEnums from '../../types/enums.js';
-import { OpenEnum } from '../../types/enums.js';
+import type { OpenEnum } from '../../types/enums.js';
 
 /**
  * Component type for the UI Schema Property

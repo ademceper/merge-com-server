@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
 import { IsBoolean, IsObject, IsOptional, ValidateNested } from 'class-validator';
-import { RulesLogic } from 'json-logic-js';
+import type { RulesLogic } from 'json-logic-js';
 import { ScheduleDto } from '../../shared/dtos/schedule';
 
 export class UpdatePreferencesRequestDto {

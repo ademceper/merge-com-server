@@ -1,12 +1,5 @@
-import {
-  ActorTypeEnum,
-  IActor,
-  IEmailBlock,
-  IMessageCTA,
-  ITemplateVariable,
-  MessageTemplateContentType,
-  StepTypeEnum,
-} from 'libs/shared';
+import { ActorTypeEnum, StepTypeEnum } from 'libs/shared';
+import type { IActor, IEmailBlock, IMessageCTA, ITemplateVariable, MessageTemplateContentType } from 'libs/shared';
 import { IsDefined, IsEnum, IsOptional, IsString, ValidateNested } from 'class-validator';
 
 export class MessageTemplate {

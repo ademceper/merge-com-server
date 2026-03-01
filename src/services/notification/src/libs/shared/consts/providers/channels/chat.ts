@@ -9,7 +9,7 @@ import {
   slackConfigLegacy,
   whatsAppBusinessConfig,
 } from '../credentials';
-import { IConfigCredential, IProviderConfig } from '../provider.interface';
+import type { IConfigCredential, IProviderConfig } from '../provider.interface';
 
 export const chatProviders: IProviderConfig[] = [
   {

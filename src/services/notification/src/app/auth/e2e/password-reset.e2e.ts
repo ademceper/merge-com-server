@@ -3,7 +3,8 @@ import { PasswordResetFlowEnum } from 'libs/shared';
 import { UserSession } from '@novu/testing';
 import { expect } from 'chai';
 import { subDays, subMinutes } from 'date-fns';
-import { SinonStubbedMember, stub } from 'sinon';
+import { stub } from 'sinon';
+import type { SinonStubbedMember } from 'sinon';
 import { v4 as uuidv4 } from 'uuid';
 
 describe('Password reset - /auth/reset (POST) #novu-v0-os', async () => {

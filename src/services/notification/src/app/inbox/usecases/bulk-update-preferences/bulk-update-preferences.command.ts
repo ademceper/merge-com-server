@@ -1,7 +1,7 @@
 // apps/api/src/app/inbox/usecases/bulk-update-preferences/bulk-update-preferences.command.ts
 
 import { IsValidContextPayload } from 'libs/application-generic';
-import { ContextPayload } from 'libs/shared';
+import type { ContextPayload } from 'libs/shared';
 import { Type } from 'class-transformer';
 import { IsArray, IsDefined, IsOptional } from 'class-validator';
 

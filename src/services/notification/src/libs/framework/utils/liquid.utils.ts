@@ -1,4 +1,5 @@
-import { Liquid, LiquidOptions } from 'liquidjs';
+import { Liquid } from 'liquidjs';
+import type { LiquidOptions } from 'liquidjs';
 import { digest } from '../filters/digest';
 import { pluralize } from '../filters/pluralize';
 import { toSentence } from '../filters/to-sentence';

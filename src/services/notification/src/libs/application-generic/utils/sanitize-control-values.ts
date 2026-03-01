@@ -1,23 +1,8 @@
 import { StepTypeEnum } from 'libs/shared';
 import { isEmpty } from 'lodash';
 import { PinoLogger } from '../logging';
-import {
-  ChatControlType,
-  DelayControlType,
-  DelayDynamicControlType,
-  DelayRegularControlType,
-  DelayTimedControlType,
-  DigestControlSchemaType,
-  DigestRegularControlType,
-  DigestTimedControlType,
-  EmailControlType,
-  InAppRedirectType,
-  LayoutControlType,
-  LookBackWindowType,
-  PushControlType,
-  SmsControlType,
-} from '../schemas/control';
-import { InAppActionType, InAppControlType } from '../schemas/control/in-app-control.schema';
+import type { ChatControlType, DelayControlType, DelayDynamicControlType, DelayRegularControlType, DelayTimedControlType, DigestControlSchemaType, DigestRegularControlType, DigestTimedControlType, EmailControlType, InAppRedirectType, LayoutControlType, LookBackWindowType, PushControlType, SmsControlType } from '../schemas/control';
+import type { InAppActionType, InAppControlType } from '../schemas/control/in-app-control.schema';
 
 // Cast input T_Type to trigger Ajv validation errors - possible undefined
 function sanitizeEmptyInput<T_Type>(input: T_Type, defaultValue: T_Type = undefined as unknown as T_Type): T_Type {

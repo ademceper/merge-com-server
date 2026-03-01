@@ -1,2 +1,2 @@
-export * from './sms.factory.interface';
-export * from './sms.handler.interface';
+export type * from './sms.factory.interface';
+export type * from './sms.handler.interface';

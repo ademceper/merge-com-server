@@ -1,14 +1,7 @@
 import { BaseCommand } from 'libs/application-generic';
 import { ChatProviderIdEnum } from 'libs/shared';
-import {
-  IsEnum,
-  IsMongoId,
-  IsOptional,
-  IsString,
-  registerDecorator,
-  ValidationArguments,
-  ValidationOptions,
-} from 'class-validator';
+import { IsEnum, IsMongoId, IsOptional, IsString, registerDecorator } from 'class-validator';
+import type { ValidationArguments, ValidationOptions } from 'class-validator';
 
 export function IsNotEmpty(validationOptions?: ValidationOptions) {
   return (object: object, propertyName: string) => {

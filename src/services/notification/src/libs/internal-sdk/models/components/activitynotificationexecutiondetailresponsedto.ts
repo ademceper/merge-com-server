@@ -15,10 +15,8 @@ import {
   ExecutionDetailsStatusEnum,
   ExecutionDetailsStatusEnum$inboundSchema,
 } from "./executiondetailsstatusenum.js";
-import {
-  ProvidersIdEnum,
-  ProvidersIdEnum$inboundSchema,
-} from "./providersidenum.js";
+import { ProvidersIdEnum$inboundSchema } from "./providersidenum.js";
+import type { ProvidersIdEnum } from "./providersidenum.js";
 
 export type ActivityNotificationExecutionDetailResponseDto = {
   /**

@@ -11,17 +11,9 @@ import {
   UseSuspenseQueryResult,
 } from "@tanstack/react-query";
 import { useNovuContext } from "./_context.js";
-import {
-  QueryHookOptions,
-  SuspenseQueryHookOptions,
-  TupleToPrefixes,
-} from "./_types.js";
-import {
-  buildIntegrationsListQuery,
-  IntegrationsListQueryData,
-  prefetchIntegrationsList,
-  queryKeyIntegrationsList,
-} from "./integrationsList.core.js";
+import type { QueryHookOptions, SuspenseQueryHookOptions, TupleToPrefixes } from "./_types.js";
+import { buildIntegrationsListQuery, prefetchIntegrationsList, queryKeyIntegrationsList } from "./integrationsList.core.js";
+import type { IntegrationsListQueryData } from "./integrationsList.core.js";
 export {
   buildIntegrationsListQuery,
   type IntegrationsListQueryData,

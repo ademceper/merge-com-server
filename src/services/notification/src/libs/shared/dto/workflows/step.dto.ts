@@ -1,6 +1,7 @@
-import { ResourceOriginEnum, Slug, StepTypeEnum } from '../../types';
+import { ResourceOriginEnum, StepTypeEnum } from '../../types';
+import type { Slug } from '../../types';
 import { RuntimeIssue } from '../../utils/issues';
-import type { JSONSchemaDto } from './json-schema-dto';
+import { JSONSchemaDto } from './json-schema-dto';
 
 export type StepResponseDto = {
   controls: Controls;

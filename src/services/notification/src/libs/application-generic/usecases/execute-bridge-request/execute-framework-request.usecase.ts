@@ -1,5 +1,5 @@
 import { createHmac } from 'node:crypto';
-import { BadRequestException, HttpException, HttpStatus, Injectable, Logger, NotFoundException } from '@nestjs/common';
+import { BadRequestException, HttpException, HttpStatus, Injectable, NotFoundException, Logger } from '@nestjs/common';
 import { EnvironmentRepository } from 'libs/dal';
 import {
   GetActionEnum,
@@ -26,7 +26,8 @@ import { Instrument, InstrumentUsecase } from '../../instrumentation';
 import { PinoLogger } from '../../logging';
 import { BRIDGE_EXECUTION_ERROR } from '../../utils';
 import { GetDecryptedSecretKey, GetDecryptedSecretKeyCommand } from '../get-decrypted-secret-key';
-import { BridgeError, ExecuteBridgeRequestCommand, ExecuteBridgeRequestDto } from './execute-bridge-request.command';
+import { BridgeError, ExecuteBridgeRequestCommand } from './execute-bridge-request.command';
+import type { ExecuteBridgeRequestDto } from './execute-bridge-request.command';
 
 const inTestEnv = process.env.NODE_ENV === 'test';
 

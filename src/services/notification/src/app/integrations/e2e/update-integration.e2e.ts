@@ -1,13 +1,6 @@
 import { CommunityOrganizationRepository, EnvironmentRepository, IntegrationRepository } from 'libs/dal';
-import {
-  ChannelTypeEnum,
-  ChatProviderIdEnum,
-  EmailProviderIdEnum,
-  FieldOperatorEnum,
-  InAppProviderIdEnum,
-  ITenantFilterPart,
-  PushProviderIdEnum,
-} from 'libs/shared';
+import { ChannelTypeEnum, ChatProviderIdEnum, EmailProviderIdEnum, FieldOperatorEnum, InAppProviderIdEnum, PushProviderIdEnum } from 'libs/shared';
+import type { ITenantFilterPart } from 'libs/shared';
 import { UserSession } from '@novu/testing';
 import { expect } from 'chai';
 

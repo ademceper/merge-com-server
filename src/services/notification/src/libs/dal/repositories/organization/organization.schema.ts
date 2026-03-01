@@ -2,7 +2,8 @@ import { ApiServiceLevelEnum } from 'libs/shared';
 import mongoose, { Schema } from 'mongoose';
 
 import { schemaOptions } from '../schema-default.options';
-import { OrganizationDBModel, PartnerTypeEnum } from './organization.entity';
+import { PartnerTypeEnum } from './organization.entity';
+import type { OrganizationDBModel } from './organization.entity';
 
 const organizationSchema = new Schema<OrganizationDBModel>(
   {

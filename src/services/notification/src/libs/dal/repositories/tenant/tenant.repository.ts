@@ -1,7 +1,8 @@
-import { SoftDeleteModel } from 'mongoose-delete';
-import { EnforceEnvId, EnforceEnvOrOrgIds } from '../../types';
+import type { SoftDeleteModel } from 'mongoose-delete';
+import type { EnforceEnvId, EnforceEnvOrOrgIds } from '../../types';
 import { BaseRepository } from '../base-repository';
-import { TenantDBModel, TenantEntity } from './tenant.entity';
+import { TenantEntity } from './tenant.entity';
+import type { TenantDBModel } from './tenant.entity';
 import { Tenant } from './tenant.schema';
 
 export class TenantRepository extends BaseRepository<TenantDBModel, TenantEntity, EnforceEnvId> {

@@ -1,6 +1,6 @@
 import { applyDecorators } from '@nestjs/common';
 import * as nestSwagger from '@nestjs/swagger';
-import { ApiResponseOptions } from '@nestjs/swagger';
+import type { ApiResponseOptions } from '@nestjs/swagger';
 import type { ApiResponseDecoratorName } from 'libs/application-generic';
 import { COMMON_RESPONSE_HEADERS, COMMON_RESPONSES } from '../constants';
 import { createReusableHeaders } from './headers.decorator';

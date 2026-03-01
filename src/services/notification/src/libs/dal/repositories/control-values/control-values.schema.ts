@@ -1,9 +1,9 @@
 import mongoose, { Schema } from 'mongoose';
-import { ChangePropsValueType } from '../../types';
+import type { ChangePropsValueType } from '../../types';
 import { schemaOptions } from '../schema-default.options';
 import { ControlValuesEntity } from './control-values.entity';
 
-const mongooseDelete = require('mongoose-delete');
+import mongooseDelete from 'mongoose-delete';
 
 export type ControlValuesModel = ChangePropsValueType<
   ControlValuesEntity,

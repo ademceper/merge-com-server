@@ -11,13 +11,9 @@ import {
   useSuspenseQuery,
 } from '@tanstack/react-query';
 import { useNovuContext } from './_context.js';
-import { QueryHookOptions, SuspenseQueryHookOptions, TupleToPrefixes } from './_types.js';
-import {
-  buildEnvironmentsGetTagsQuery,
-  EnvironmentsGetTagsQueryData,
-  prefetchEnvironmentsGetTags,
-  queryKeyEnvironmentsGetTags,
-} from './environmentsGetTags.core.js';
+import type { QueryHookOptions, SuspenseQueryHookOptions, TupleToPrefixes } from './_types.js';
+import { buildEnvironmentsGetTagsQuery, prefetchEnvironmentsGetTags, queryKeyEnvironmentsGetTags } from './environmentsGetTags.core.js';
+import type { EnvironmentsGetTagsQueryData } from './environmentsGetTags.core.js';
 export {
   buildEnvironmentsGetTagsQuery,
   type EnvironmentsGetTagsQueryData,

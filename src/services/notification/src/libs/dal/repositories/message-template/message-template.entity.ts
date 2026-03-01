@@ -1,15 +1,7 @@
-import {
-  EnvironmentId,
-  IActor,
-  IMessageCTA,
-  MessageTemplateContentType,
-  OrganizationId,
-  StepTypeEnum,
-  UiSchemaGroupEnum,
-  UiSchemaProperty,
-} from 'libs/shared';
+import { StepTypeEnum, UiSchemaGroupEnum, UiSchemaProperty } from 'libs/shared';
+import type { EnvironmentId, IActor, IMessageCTA, MessageTemplateContentType, OrganizationId } from 'libs/shared';
 import type { ChangePropsValueType } from '../../types';
-import { IEmailBlock, ITemplateVariable } from './types';
+import type { IEmailBlock, ITemplateVariable } from './types';
 
 export class MessageTemplateEntity {
   _id?: string;

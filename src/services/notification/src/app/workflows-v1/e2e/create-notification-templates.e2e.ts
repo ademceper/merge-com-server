@@ -8,23 +8,8 @@ import {
   OrganizationRepository,
   SubscriberEntity,
 } from 'libs/dal';
-import {
-  ChangeEntityTypeEnum,
-  ChannelCTATypeEnum,
-  ChannelTypeEnum,
-  EmailBlockTypeEnum,
-  EmailProviderIdEnum,
-  FieldLogicalOperatorEnum,
-  FieldOperatorEnum,
-  FilterPartTypeEnum,
-  IFieldFilterPart,
-  INotificationTemplate,
-  INotificationTemplateStep,
-  isClerkEnabled,
-  ResourceTypeEnum,
-  StepTypeEnum,
-  TriggerTypeEnum,
-} from 'libs/shared';
+import { ChangeEntityTypeEnum, ChannelCTATypeEnum, ChannelTypeEnum, EmailBlockTypeEnum, EmailProviderIdEnum, FieldLogicalOperatorEnum, FieldOperatorEnum, FilterPartTypeEnum, isClerkEnabled, ResourceTypeEnum, StepTypeEnum, TriggerTypeEnum } from 'libs/shared';
+import type { IFieldFilterPart, INotificationTemplate, INotificationTemplateStep } from 'libs/shared';
 import { SubscribersService, testServer, UserSession } from '@novu/testing';
 import axios from 'axios';
 import { expect } from 'chai';

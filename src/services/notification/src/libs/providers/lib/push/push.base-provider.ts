@@ -1,4 +1,5 @@
-import { ChannelTypeEnum, IPushEventBody } from 'libs/stateless';
+import { ChannelTypeEnum } from 'libs/stateless';
+import type { IPushEventBody } from 'libs/stateless';
 import { BaseProvider } from '../../base.provider';
 
 export abstract class PushBaseProvider extends BaseProvider {

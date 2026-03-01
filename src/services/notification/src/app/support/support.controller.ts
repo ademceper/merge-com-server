@@ -2,7 +2,7 @@ import { Body, Controller, Post, UseGuards } from '@nestjs/common';
 import { ApiExcludeController } from '@nestjs/swagger';
 import { Novu } from 'libs/internal-sdk';
 import { UserSession } from 'libs/application-generic';
-import { UserSessionData } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { CreateSupportThreadDto } from './dtos/create-thread.dto';
 import { PlainCardRequestDto } from './dtos/plain-card.dto';

@@ -3,7 +3,7 @@ import { IoAdapter } from '@nestjs/platform-socket.io';
 import { WebSocketsInMemoryProviderService } from 'libs/application-generic';
 import { getRedisPrefix } from 'libs/shared';
 import { createAdapter } from '@socket.io/redis-adapter';
-import { ServerOptions } from 'socket.io';
+import type { ServerOptions } from 'socket.io';
 
 export class InMemoryIoAdapter extends IoAdapter {
   private webSocketsInMemoryProviderService: WebSocketsInMemoryProviderService;

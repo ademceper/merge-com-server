@@ -6,10 +6,7 @@ import * as z from "zod/v3";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
-import {
-  LayoutControlValuesDto,
-  LayoutControlValuesDto$inboundSchema,
-} from "./layoutcontrolvaluesdto.js";
+import { LayoutControlValuesDto$inboundSchema, LayoutControlValuesDto } from "./layoutcontrolvaluesdto.js";
 import { UiSchema, UiSchema$inboundSchema } from "./uischema.js";
 
 export type LayoutControlsDto = {

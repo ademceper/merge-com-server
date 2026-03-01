@@ -1,4 +1,5 @@
-import { LiquidError, RenderError, Template } from 'liquidjs';
+import { LiquidError, RenderError } from 'liquidjs';
+import type { Template } from 'liquidjs';
 import { JSONSchemaDto } from '../../dtos/json-schema.dto';
 
 export type Variable = {

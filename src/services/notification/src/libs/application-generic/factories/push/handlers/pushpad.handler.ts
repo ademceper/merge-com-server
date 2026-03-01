@@ -1,5 +1,6 @@
 import { PushpadPushProvider } from 'libs/providers';
-import { ChannelTypeEnum, ICredentials, PushProviderIdEnum } from 'libs/shared';
+import { ChannelTypeEnum, PushProviderIdEnum } from 'libs/shared';
+import type { ICredentials } from 'libs/shared';
 import { BasePushHandler } from './base.handler';
 
 export class PushpadHandler extends BasePushHandler {

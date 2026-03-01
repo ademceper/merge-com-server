@@ -39,6 +39,7 @@ import {
   UpdateSubscriberChannel,
   UpdateTenant,
   WebSocketsInMemoryProviderService,
+  WorkflowInMemoryProviderService,
   WorkflowRunRepository,
   WorkflowRunService,
 } from 'libs/application-generic';
@@ -178,6 +179,7 @@ const PROVIDERS = [
   UpdateSubscriberChannel,
   UpdateTenant,
   WebSocketsInMemoryProviderService,
+  WorkflowInMemoryProviderService,
   ActiveJobsMetricService,
   ...DAL_MODELS,
   ExecuteBridgeRequest,

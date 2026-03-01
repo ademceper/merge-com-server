@@ -1,5 +1,5 @@
 import { MessageFilter } from 'libs/application-generic';
-import { IConfigurations, ICredentialsDto } from 'libs/shared';
+import type { IConfigurations, ICredentialsDto } from 'libs/shared';
 import { IsArray, IsDefined, IsMongoId, IsObject, IsOptional, IsString, ValidateNested } from 'class-validator';
 
 import { OrganizationCommand } from '../../../shared/commands/organization.command';

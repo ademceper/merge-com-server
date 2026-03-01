@@ -1,6 +1,6 @@
 import { BadRequestException } from '@nestjs/common';
 import { SeverityLevelEnum } from 'libs/shared';
-import { plainToClass, Transform, Type } from 'class-transformer';
+import { plainToClass, Type, Transform } from 'class-transformer';
 import {
   ArrayMaxSize,
   IsArray,
@@ -12,7 +12,7 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { IsEnumOrArray } from '../../shared/validators/is-enum-or-array';
-import { NotificationFilter } from '../utils/types';
+import type { NotificationFilter } from '../utils/types';
 
 export class NotificationsFilter implements NotificationFilter {
   @IsOptional()

@@ -1,7 +1,8 @@
 import { IntegrationEntity } from 'libs/dal';
-import { ChannelTypeEnum, IConfigurations, ICredentials, IEmailOptions } from 'libs/shared';
-import { ICheckIntegrationResponse, IEmailProvider, ISendMessageSuccessResponse } from 'libs/stateless';
-import { IHandler } from '../../shared/interfaces';
+import { ChannelTypeEnum } from 'libs/shared';
+import type { IConfigurations, ICredentials, IEmailOptions } from 'libs/shared';
+import type { ICheckIntegrationResponse, IEmailProvider, ISendMessageSuccessResponse } from 'libs/stateless';
+import type { IHandler } from '../../shared/interfaces';
 
 export interface IMailHandler extends IHandler {
   canHandle(providerId: string, channelType: ChannelTypeEnum);

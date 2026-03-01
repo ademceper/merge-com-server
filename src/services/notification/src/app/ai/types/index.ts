@@ -1,1 +1,1 @@
-export * from './ai-resource.types';
+export type * from './ai-resource.types';

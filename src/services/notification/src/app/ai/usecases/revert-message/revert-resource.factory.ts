@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { AiResourceTypeEnum } from 'libs/shared';
-import { RevertResourceStrategy } from './revert-resource.interface';
+import type { RevertResourceStrategy } from './revert-resource.interface';
 import { WorkflowRevertStrategy } from './workflow-revert.strategy';
 
 @Injectable()

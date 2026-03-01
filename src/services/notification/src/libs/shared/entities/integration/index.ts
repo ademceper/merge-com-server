@@ -1,3 +1,3 @@
 export * from './configuration.interface';
-export * from './credential.interface';
-export * from './integration.interface';
+export type * from './credential.interface';
+export type * from './integration.interface';

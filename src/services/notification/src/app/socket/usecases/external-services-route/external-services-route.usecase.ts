@@ -3,7 +3,7 @@ import { MessageRepository } from 'libs/dal';
 import { ChannelTypeEnum, WebSocketEventEnum } from 'libs/shared';
 import { WSGateway } from '../../ws.gateway';
 import { ExternalServicesRouteCommand } from './external-services-route.command';
-import { IUnreadCountPaginationIndication, IUnseenCountPaginationIndication } from './types';
+import type { IUnreadCountPaginationIndication, IUnseenCountPaginationIndication } from './types';
 
 const LOG_CONTEXT = 'ExternalServicesRoute';
 

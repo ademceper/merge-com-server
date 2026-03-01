@@ -1,12 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { EnforceEnvOrOrgIds, PreferencesDBModel, PreferencesEntity, PreferencesRepository } from 'libs/dal';
-import {
-  FeatureFlagsKeysEnum,
-  PreferencesTypeEnum,
-  WorkflowPreferences,
-  WorkflowPreferencesPartial,
-} from 'libs/shared';
-import { FilterQuery } from 'mongoose';
+import { PreferencesEntity, PreferencesRepository } from 'libs/dal';
+import type { EnforceEnvOrOrgIds, PreferencesDBModel } from 'libs/dal';
+import { FeatureFlagsKeysEnum, PreferencesTypeEnum } from 'libs/shared';
+import type { WorkflowPreferences, WorkflowPreferencesPartial } from 'libs/shared';
+import type { FilterQuery } from 'mongoose';
 import { Instrument } from '../../instrumentation';
 import { FeatureFlagsService } from '../../services/feature-flags/feature-flags.service';
 import { deepMerge } from '../../utils';

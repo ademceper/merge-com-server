@@ -1,12 +1,6 @@
 import { JobEntity } from 'libs/dal';
-import {
-  DelayTypeEnum,
-  DigestTypeEnum,
-  IDigestBaseMetadata,
-  IDigestRegularMetadata,
-  JobStatusEnum,
-  StepTypeEnum,
-} from 'libs/shared';
+import { DelayTypeEnum, DigestTypeEnum, JobStatusEnum, StepTypeEnum } from 'libs/shared';
+import type { IDigestBaseMetadata, IDigestRegularMetadata } from 'libs/shared';
 import { getNestedValue } from './object';
 
 export const isRegularDigest = (type: DigestTypeEnum | DelayTypeEnum) => {

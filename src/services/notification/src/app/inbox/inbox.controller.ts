@@ -16,13 +16,8 @@ import {
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiExcludeController } from '@nestjs/swagger';
-import {
-  AddressingTypeEnum,
-  MessageActionStatusEnum,
-  PreferenceLevelEnum,
-  TriggerRequestCategoryEnum,
-  UserSessionData,
-} from 'libs/shared';
+import { AddressingTypeEnum, MessageActionStatusEnum, PreferenceLevelEnum, TriggerRequestCategoryEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { TriggerEventRequestDto } from '../events/dtos';
 import { TriggerEventResponseDto } from '../events/dtos/trigger-event-response.dto';
 import { ParseEventRequestMulticastCommand } from '../events/usecases/parse-event-request';
@@ -31,7 +26,7 @@ import { ExcludeFromIdempotency } from '../shared/framework/exclude-from-idempot
 import { ApiCommonResponses } from '../shared/framework/response.decorator';
 import { KeylessAccessible } from '../shared/framework/swagger/keyless.security';
 import { SubscriberSession, UserSession } from '../shared/framework/user.decorator';
-import { RequestWithReqId } from '../shared/middleware/request-id.middleware';
+import type { RequestWithReqId } from '../shared/middleware/request-id.middleware';
 import {
   GetSubscriberGlobalPreference,
   GetSubscriberGlobalPreferenceCommand,

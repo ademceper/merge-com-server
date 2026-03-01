@@ -1,5 +1,7 @@
-import { ContextPayload, ContextValue, isValidContextPayload } from 'libs/shared';
-import { registerDecorator, ValidationOptions } from 'class-validator';
+import { isValidContextPayload } from 'libs/shared';
+import type { ContextPayload, ContextValue } from 'libs/shared';
+import { registerDecorator } from 'class-validator';
+import type { ValidationOptions } from 'class-validator';
 
 const MAX_SIZE_KB = 64;
 

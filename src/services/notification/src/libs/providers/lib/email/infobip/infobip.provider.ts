@@ -1,15 +1,10 @@
 import { AuthType, Infobip } from '@infobip-api/sdk';
 import { EmailProviderIdEnum } from 'libs/shared';
-import {
-  ChannelTypeEnum,
-  CheckIntegrationResponseEnum,
-  ICheckIntegrationResponse,
-  IEmailOptions,
-  IEmailProvider,
-  ISendMessageSuccessResponse,
-} from 'libs/stateless';
+import { ChannelTypeEnum, CheckIntegrationResponseEnum } from 'libs/stateless';
+import type { ICheckIntegrationResponse, IEmailProvider, ISendMessageSuccessResponse } from 'libs/stateless';
+import type { IEmailOptions } from 'libs/stateless';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
+import type { WithPassthrough } from '../../../utils/types';
 
 export class InfobipEmailProvider extends BaseProvider implements IEmailProvider {
   protected casing: CasingEnum = CasingEnum.CAMEL_CASE;

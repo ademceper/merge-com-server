@@ -4,7 +4,8 @@
 
 import { notificationsList } from "../funcs/notificationsList.js";
 import { notificationsRetrieve } from "../funcs/notificationsRetrieve.js";
-import { ClientSDK, RequestOptions } from "../lib/sdks.js";
+import { ClientSDK } from "../lib/sdks.js";
+import type { RequestOptions } from "../lib/sdks.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 

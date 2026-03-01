@@ -1,7 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { PinoLogger } from 'libs/application-generic';
 import { LayoutEntity } from 'libs/dal';
-import { IUserInfo, ResourceTypeEnum } from '../../../types/sync.types';
+import { ResourceTypeEnum } from '../../../types/sync.types';
+import type { IUserInfo } from '../../../types/sync.types';
 import { LayoutComparatorAdapter } from '../adapters/layout-comparator.adapter';
 import { LayoutRepositoryAdapter } from '../adapters/layout-repository.adapter';
 import { BaseDiffOperation } from '../base/operations/base-diff.operation';

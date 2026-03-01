@@ -1,44 +1,11 @@
 import { BadRequestException, Injectable, Logger } from '@nestjs/common';
 import type { EventType, RequestTraceInput, Trace } from 'libs/application-generic';
-import {
-  AnalyticsService,
-  CreateNotificationJobs,
-  CreateNotificationJobsCommand,
-  CreateOrUpdateSubscriberCommand,
-  CreateOrUpdateSubscriberUseCase,
-  FeatureFlagsService,
-  GetPreferences,
-  GetPreferencesCommand,
-  InMemoryLRUCacheService,
-  InMemoryLRUCacheStore,
-  Instrument,
-  InstrumentUsecase,
-  LogRepository,
-  mapEventTypeToTitle,
-  PinoLogger,
-  SubscriberTopicPreference,
-  TraceLogRepository,
-} from 'libs/application-generic';
-import {
-  IntegrationRepository,
-  NotificationTemplateEntity,
-  NotificationTemplateRepository,
-  PreferencesRepository,
-  TopicPreferenceEvaluation,
-} from 'libs/dal';
-import {
-  buildWorkflowPreferences,
-  ChannelTypeEnum,
-  FeatureFlagsKeysEnum,
-  InAppProviderIdEnum,
-  ISubscribersDefine,
-  PreferencesTypeEnum,
-  ProvidersIdEnum,
-  ResourceTypeEnum,
-  SeverityLevelEnum,
-  STEP_TYPE_TO_CHANNEL_TYPE,
-  WorkflowPreferencesPartial,
-} from 'libs/shared';
+import { AnalyticsService, CreateNotificationJobs, CreateNotificationJobsCommand, CreateOrUpdateSubscriberCommand, CreateOrUpdateSubscriberUseCase, FeatureFlagsService, GetPreferences, GetPreferencesCommand, InMemoryLRUCacheService, InMemoryLRUCacheStore, Instrument, InstrumentUsecase, LogRepository, mapEventTypeToTitle, PinoLogger, TraceLogRepository } from 'libs/application-generic';
+import type { SubscriberTopicPreference } from 'libs/application-generic';
+import { IntegrationRepository, NotificationTemplateEntity, NotificationTemplateRepository, PreferencesRepository } from 'libs/dal';
+import type { TopicPreferenceEvaluation } from 'libs/dal';
+import { buildWorkflowPreferences, ChannelTypeEnum, FeatureFlagsKeysEnum, InAppProviderIdEnum, PreferencesTypeEnum, ResourceTypeEnum, SeverityLevelEnum, STEP_TYPE_TO_CHANNEL_TYPE } from 'libs/shared';
+import type { ISubscribersDefine, ProvidersIdEnum, WorkflowPreferencesPartial } from 'libs/shared';
 import type { RulesLogic } from 'json-logic-js';
 import jsonLogic from 'json-logic-js';
 import { StoreSubscriberJobs, StoreSubscriberJobsCommand } from '../store-subscriber-jobs';

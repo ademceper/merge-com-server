@@ -1,10 +1,10 @@
-import { IPreferenceChannels } from 'libs/shared';
+import type { IPreferenceChannels } from 'libs/shared';
 import type { ChangePropsValueType } from '../../types';
 import type { EnvironmentId } from '../environment';
 import { NotificationTemplateEntity } from '../notification-template';
 import type { OrganizationId } from '../organization';
 import { TenantEntity } from '../tenant';
-import { WorkflowOverrideId } from './types';
+import type { WorkflowOverrideId } from './types';
 
 export class WorkflowOverrideEntity {
   _id: WorkflowOverrideId;

@@ -1,5 +1,5 @@
-import { OpenAPIObject } from '@nestjs/swagger';
-import { OperationObject, PathItemObject, PathsObject } from '@nestjs/swagger/dist/interfaces/open-api-spec.interface';
+import type { OpenAPIObject } from '@nestjs/swagger';
+import type { OperationObject, PathItemObject, PathsObject } from '@nestjs/swagger/dist/interfaces/open-api-spec.interface';
 import { API_KEY_SWAGGER_SECURITY_NAME } from 'libs/application-generic';
 import Nimma from 'nimma';
 

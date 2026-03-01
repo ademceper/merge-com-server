@@ -1,7 +1,8 @@
-import { ISmsOptions } from 'libs/stateless';
+import type { ISmsOptions } from 'libs/stateless';
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 import { axiosSpy } from '../../../utils/test/spy-axios';
-import { ISmsmodeApiResponse, SmsmodeSmsProvider } from './smsmode.provider';
+import { SmsmodeSmsProvider } from './smsmode.provider';
+import type { ISmsmodeApiResponse } from './smsmode.provider';
 
 test('should trigger smsmode library correctly', async () => {});
 

@@ -1,4 +1,5 @@
-import { JobTitleEnum, ProductUseCases, passwordConstraints, SignUpOriginEnum } from 'libs/shared';
+import { JobTitleEnum, passwordConstraints, SignUpOriginEnum } from 'libs/shared';
+import type { ProductUseCases } from 'libs/shared';
 import { IsDefined, IsEmail, IsEnum, IsOptional, IsString, Matches, MaxLength, MinLength } from 'class-validator';
 
 export class UserRegistrationBodyDto {

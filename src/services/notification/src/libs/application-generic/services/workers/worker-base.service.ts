@@ -1,4 +1,5 @@
-import { Logger, OnModuleDestroy } from '@nestjs/common';
+import { Logger } from '@nestjs/common';
+import type { OnModuleDestroy } from '@nestjs/common';
 import { JobTopicNameEnum } from 'libs/shared';
 import {
   getSqsDefaultBatchSize,
@@ -7,19 +8,11 @@ import {
   getSqsDefaultWaitTimeSeconds,
 } from '../../config/workers';
 import { PinoLogger } from '../../logging';
-import { BullMqService, Job, Processor, WorkerOptions } from '../bull-mq';
-import { INovuWorker } from '../readiness';
-import {
-  createSqsJobAdapter,
-  ISqsConsumerOptions,
-  ISqsMessageMeta,
-  SQS_DEFAULT_BATCH_SIZE,
-  SQS_DEFAULT_MAX_CONCURRENCY,
-  SQS_DEFAULT_VISIBILITY_TIMEOUT,
-  SQS_DEFAULT_WAIT_TIME_SECONDS,
-  SqsConsumerService,
-  SqsService,
-} from '../sqs';
+import { BullMqService, Job } from '../bull-mq';
+import type { Processor, WorkerOptions } from '../bull-mq';
+import type { INovuWorker } from '../readiness';
+import { createSqsJobAdapter, SQS_DEFAULT_BATCH_SIZE, SQS_DEFAULT_MAX_CONCURRENCY, SQS_DEFAULT_VISIBILITY_TIMEOUT, SQS_DEFAULT_WAIT_TIME_SECONDS, SqsConsumerService, SqsService } from '../sqs';
+import type { ISqsConsumerOptions, ISqsMessageMeta } from '../sqs';
 
 const LOG_CONTEXT = 'WorkerService';
 
@@ -28,7 +21,7 @@ export type WorkerProcessor = string | Processor<any, unknown, string> | undefin
 export type SqsCompletedHandler = (job: Job<any, unknown, string>) => Promise<void>;
 export type SqsFailedHandler = (job: Job<any, unknown, string>, error: Error) => Promise<boolean>;
 
-export { WorkerOptions };
+export type { WorkerOptions };
 
 export class WorkerBaseService implements INovuWorker, OnModuleDestroy {
   public bullMqService: BullMqService;

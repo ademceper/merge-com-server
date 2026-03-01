@@ -2,7 +2,8 @@ import { UserSession } from '@novu/testing';
 import { expect } from 'chai';
 
 import { LayoutDto } from '../../dtos';
-import { LayoutIdentifier, LayoutName, TemplateVariableTypeEnum } from '../../types';
+import { TemplateVariableTypeEnum } from '../../types';
+import type { LayoutIdentifier, LayoutName } from '../../types';
 
 const BASE_PATH = '/v1/layouts';
 

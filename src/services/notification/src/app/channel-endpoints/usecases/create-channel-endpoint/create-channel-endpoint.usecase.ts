@@ -10,7 +10,7 @@ import {
   IntegrationRepository,
   SubscriberRepository,
 } from 'libs/dal';
-import { ChannelEndpointType } from 'libs/shared';
+import type { ChannelEndpointType } from 'libs/shared';
 import { CreateChannelEndpointCommand } from './create-channel-endpoint.command';
 
 @Injectable()

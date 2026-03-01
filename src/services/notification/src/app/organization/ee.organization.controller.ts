@@ -1,11 +1,12 @@
 import { Body, ClassSerializerInterceptor, Controller, Get, Patch, Put, UseInterceptors } from '@nestjs/common';
 import { ApiExcludeController, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { ExternalApiAccessible, RequirePermissions } from 'libs/application-generic';
-import { PermissionsEnum, UserSessionData } from 'libs/shared';
+import { PermissionsEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';
 import { UserSession } from '../shared/framework/user.decorator';
-import { IGetMyOrganizationDto } from './dtos/get-my-organization.dto';
+import type { IGetMyOrganizationDto } from './dtos/get-my-organization.dto';
 import { GetOrganizationSettingsDto } from './dtos/get-organization-settings.dto';
 import { OrganizationBrandingResponseDto, OrganizationResponseDto } from './dtos/organization-response.dto';
 import { RenameOrganizationDto } from './dtos/rename-organization.dto';

@@ -1,13 +1,6 @@
-import {
-  CHDateTime64,
-  CHLowCardinality,
-  CHString,
-  CHUInt16,
-  CHUInt32,
-  ClickhouseSchema,
-  InferClickhouseSchemaType,
-} from 'clickhouse-schema';
-import { Prettify } from '../../../utils/prettify.type';
+import { CHDateTime64, CHLowCardinality, CHString, CHUInt16, CHUInt32, ClickhouseSchema } from 'clickhouse-schema';
+import type { InferClickhouseSchemaType } from 'clickhouse-schema';
+import type { Prettify } from '../../../utils/prettify.type';
 
 export const TABLE_NAME = 'requests';
 

@@ -1,4 +1,6 @@
-import { Logger, Module, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
+import { Module } from '@nestjs/common';
+import type { OnModuleDestroy, OnModuleInit } from '@nestjs/common';
+import { Logger } from '@nestjs/common';
 import { SharedModule } from '../shared/shared.module';
 import mailin from './mailin';
 

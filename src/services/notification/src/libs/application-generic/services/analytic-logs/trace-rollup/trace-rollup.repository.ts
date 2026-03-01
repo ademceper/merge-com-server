@@ -3,7 +3,8 @@ import { PinoLogger } from 'nestjs-pino';
 import { FeatureFlagsService } from '../../feature-flags/feature-flags.service';
 import { ClickHouseService } from '../clickhouse.service';
 import { LogRepository } from '../log.repository';
-import { TRACE_ROLLUP_ORDER_BY, TRACE_ROLLUP_TABLE_NAME, TraceRollup, traceRollupSchema } from './trace-rollup.schema';
+import { TRACE_ROLLUP_ORDER_BY, TRACE_ROLLUP_TABLE_NAME, traceRollupSchema } from './trace-rollup.schema';
+import type { TraceRollup } from './trace-rollup.schema';
 
 function getDateOnlyPreviousEndDate(startDate: Date): string {
   const adjustedDate = new Date(startDate);

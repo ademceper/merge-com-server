@@ -6,7 +6,8 @@ import {
   SubscriberEntity,
   SubscriberRepository,
 } from 'libs/dal';
-import { ISubscriberPreferenceResponse, ShortIsPrefixEnum, WorkflowCriticalityEnum } from 'libs/shared';
+import { ShortIsPrefixEnum, WorkflowCriticalityEnum } from 'libs/shared';
+import type { ISubscriberPreferenceResponse } from 'libs/shared';
 import { plainToInstance } from 'class-transformer';
 import { buildSlug } from '../../../shared/helpers/build-slug';
 import {

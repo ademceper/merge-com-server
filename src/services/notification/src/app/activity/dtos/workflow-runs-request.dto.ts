@@ -1,5 +1,5 @@
 import { SeverityLevelEnum } from 'libs/shared';
-import { Transform, Type } from 'class-transformer';
+import { Type, Transform } from 'class-transformer';
 import { IsArray, IsIn, IsInt, IsISO8601, IsOptional, IsString, Max, Min } from 'class-validator';
 import { WorkflowRunStatusDtoEnum } from './shared.dto';
 

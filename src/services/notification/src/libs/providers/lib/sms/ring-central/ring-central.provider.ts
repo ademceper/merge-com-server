@@ -1,16 +1,10 @@
 import { SmsProviderIdEnum } from 'libs/shared';
-import {
-  ChannelTypeEnum,
-  ISendMessageSuccessResponse,
-  ISMSEventBody,
-  ISmsOptions,
-  ISmsProvider,
-  SmsEventStatusEnum,
-} from 'libs/stateless';
+import { ChannelTypeEnum, SmsEventStatusEnum } from 'libs/stateless';
+import type { ISendMessageSuccessResponse, ISMSEventBody, ISmsOptions, ISmsProvider } from 'libs/stateless';
 import { SDK } from '@ringcentral/sdk';
 import Platform from '@ringcentral/sdk/lib/platform/Platform';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
+import type { WithPassthrough } from '../../../utils/types';
 
 export class RingCentralSmsProvider extends BaseProvider implements ISmsProvider {
   id = SmsProviderIdEnum.RingCentral;

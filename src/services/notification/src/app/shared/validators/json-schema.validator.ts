@@ -1,6 +1,7 @@
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
-import { registerDecorator, ValidationArguments, ValidationOptions } from 'class-validator';
+import { registerDecorator } from 'class-validator';
+import type { ValidationArguments, ValidationOptions } from 'class-validator';
 
 export function IsValidJsonSchema(validationOptions?: ValidationOptions & { nullable?: boolean }) {
   return (object: object, propertyName: string) => {

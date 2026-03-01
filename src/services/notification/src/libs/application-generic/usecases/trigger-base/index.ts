@@ -1,1 +1,2 @@
-export { BaseTriggerCommand, TriggerBase } from './trigger-base.usecase';
+export { TriggerBase } from './trigger-base.usecase';
+export type { BaseTriggerCommand } from './trigger-base.usecase';

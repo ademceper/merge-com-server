@@ -1,4 +1,4 @@
-import { ITenantDefine } from 'libs/shared';
+import type { ITenantDefine } from 'libs/shared';
 import { IsDefined } from 'class-validator';
 
 import { EnvironmentWithUserCommand } from '../../commands';

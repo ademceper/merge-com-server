@@ -1,5 +1,5 @@
 import { IsValidContextPayload } from 'libs/application-generic';
-import { ContextPayload } from 'libs/shared';
+import type { ContextPayload } from 'libs/shared';
 import { Type } from 'class-transformer';
 import { IsDefined, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { ScheduleDto } from '../../shared/dtos/schedule';

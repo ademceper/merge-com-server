@@ -14,7 +14,8 @@ import {
 import { ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
 import { ApiExcludeController } from '@nestjs/swagger/dist/decorators/api-exclude-controller.decorator';
 import { GetLayoutCommand, GetLayoutUseCase, OtelSpan, PinoLogger } from 'libs/application-generic';
-import { OrderByEnum, OrderDirectionEnum, UserSessionData } from 'libs/shared';
+import { OrderByEnum, OrderDirectionEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import {
@@ -37,7 +38,7 @@ import {
   UpdateLayoutRequestDto,
   UpdateLayoutResponseDto,
 } from './dtos';
-import { LayoutId } from './types';
+import type { LayoutId } from './types';
 import {
   CreateLayoutCommand,
   CreateLayoutUseCase,

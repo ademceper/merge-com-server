@@ -5,7 +5,7 @@ import { MessageEntity, MessageRepository } from 'libs/dal';
 import { GetSubscriber } from '../../../subscribers/usecases/get-subscriber';
 import { AnalyticsEventsEnum } from '../../utils';
 import { mapToDto } from '../../utils/notification-mapper';
-import { InboxNotification } from '../../utils/types';
+import type { InboxNotification } from '../../utils/types';
 import { MarkManyNotificationsAsCommand } from '../mark-many-notifications-as/mark-many-notifications-as.command';
 import { MarkManyNotificationsAs } from '../mark-many-notifications-as/mark-many-notifications-as.usecase';
 import { MarkNotificationAsCommand } from './mark-notification-as.command';

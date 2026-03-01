@@ -3,7 +3,7 @@ import { ModuleRef } from '@nestjs/core';
 import { InstrumentUsecase, PinoLogger } from 'libs/application-generic';
 import { LocalizationResourceEnum, PreferencesEntity, PreferencesRepository } from 'libs/dal';
 import { PreferencesTypeEnum, ResourceOriginEnum, WorkflowCreationSourceEnum } from 'libs/shared';
-import { DuplicateWorkflowDto, StepResponseDto, WorkflowPreferencesDto, WorkflowResponseDto } from '../../dtos';
+import { WorkflowPreferencesDto, DuplicateWorkflowDto, StepResponseDto, WorkflowResponseDto } from '../../dtos';
 import { WorkflowNotDuplicableException } from '../../exceptions/workflow-not-duplicable-exception';
 import { GetWorkflowCommand, GetWorkflowUseCase } from '../get-workflow';
 import {

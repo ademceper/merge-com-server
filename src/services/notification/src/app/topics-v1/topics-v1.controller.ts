@@ -1,6 +1,7 @@
 import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Patch, Post, Query } from '@nestjs/common';
 import { ApiExcludeEndpoint, ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
-import { ApiRateLimitCategoryEnum, ExternalSubscriberId, TopicKey, UserSessionData } from 'libs/shared';
+import { ApiRateLimitCategoryEnum } from 'libs/shared';
+import type { ExternalSubscriberId, TopicKey, UserSessionData } from 'libs/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import { ThrottlerCategory } from '../rate-limiting/guards';

@@ -1,5 +1,5 @@
 import { SubscriberEntity } from 'libs/dal';
-import { IChannelCredentials, IChannelSettings } from 'libs/shared';
+import type { IChannelCredentials, IChannelSettings } from 'libs/shared';
 import { ChannelCredentials } from '../../shared/dtos/subscriber-channel';
 import { ChannelSettingsDto, SubscriberResponseDto } from '../../subscribers/dtos';
 

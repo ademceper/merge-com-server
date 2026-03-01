@@ -1,5 +1,5 @@
 import { InboxCountTypeEnum } from '../../../entities/integration/configuration.interface';
-import { ConfigConfiguration, ConfigConfigurationGroup } from '../provider.interface';
+import type { ConfigConfiguration, ConfigConfigurationGroup } from '../provider.interface';
 
 const emailActivityTrackingTooltip =
   'When enabled, Novu will auto-configure delivery webhooks using your existing API key. If they lack permissions, follow the manual set-up guide.';

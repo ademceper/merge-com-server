@@ -1,4 +1,5 @@
-import { EmailBlockTypeEnum, IEmailBlock } from 'libs/shared';
+import { EmailBlockTypeEnum } from 'libs/shared';
+import type { IEmailBlock } from 'libs/shared';
 import { expect } from 'chai';
 
 /* cspell:disable next-line */

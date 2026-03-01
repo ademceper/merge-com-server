@@ -1,17 +1,13 @@
 import { EmailProviderIdEnum } from 'libs/shared';
-import {
-  ChannelTypeEnum,
-  CheckIntegrationResponseEnum,
-  ICheckIntegrationResponse,
-  IEmailOptions,
-  IEmailProvider,
-  ISendMessageSuccessResponse,
-} from 'libs/stateless';
+import { ChannelTypeEnum, CheckIntegrationResponseEnum } from 'libs/stateless';
+import type { ICheckIntegrationResponse, IEmailProvider, ISendMessageSuccessResponse } from 'libs/stateless';
+import type { IEmailOptions } from 'libs/stateless';
 import axios, { AxiosError } from 'axios';
 import { randomUUID } from 'crypto';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
-import { ISparkPostErrorResponse, SparkPostError } from './sparkpost.error';
+import type { WithPassthrough } from '../../../utils/types';
+import { SparkPostError } from './sparkpost.error';
+import type { ISparkPostErrorResponse } from './sparkpost.error';
 
 interface ISparkPostResponse {
   results: {

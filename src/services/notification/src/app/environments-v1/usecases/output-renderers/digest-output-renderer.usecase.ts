@@ -1,6 +1,6 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { InstrumentUsecase } from 'libs/application-generic';
-import { DigestRenderOutput } from 'libs/shared';
+import type { DigestRenderOutput } from 'libs/shared';
 import { RenderCommand } from './render-command';
 
 @Injectable()

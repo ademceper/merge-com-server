@@ -16,8 +16,9 @@ import {
 } from '@nestjs/common';
 import { ApiOperation, ApiParam, ApiQuery, ApiTags } from '@nestjs/swagger';
 import { ExternalApiAccessible, RequirePermissions } from 'libs/application-generic';
-import { ApiRateLimitCategoryEnum, PermissionsEnum, UserSessionData } from 'libs/shared';
-import { Response } from 'express';
+import { ApiRateLimitCategoryEnum, PermissionsEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
+import type { Response } from 'express';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ThrottlerCategory } from '../rate-limiting/guards/throttler.decorator';
 import { DirectionEnum } from '../shared/dtos/base-responses';

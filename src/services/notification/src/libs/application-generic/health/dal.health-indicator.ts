@@ -1,7 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { HealthCheckError, HealthIndicator, HealthIndicatorResult } from '@nestjs/terminus';
+import { HealthCheckError, HealthIndicator } from '@nestjs/terminus';
+import type { HealthIndicatorResult } from '@nestjs/terminus';
 import { DalService } from 'libs/dal';
-import { IHealthIndicator } from './health-indicator.interface';
+import type { IHealthIndicator } from './health-indicator.interface';
 
 @Injectable()
 export class DalServiceHealthIndicator extends HealthIndicator implements IHealthIndicator {

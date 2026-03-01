@@ -1,14 +1,12 @@
 import { createHmac } from 'node:crypto';
 import { HttpException, HttpStatus, Injectable, NotFoundException } from '@nestjs/common';
-import { ExecuteOutput, HttpQueryKeysEnum } from 'libs/framework/internal';
+import { HttpQueryKeysEnum } from 'libs/framework/internal';
+import type { ExecuteOutput } from 'libs/framework/internal';
 import got, { HTTPError } from 'got';
 import { InstrumentUsecase } from '../../instrumentation';
 import { PinoLogger } from '../../logging';
-import {
-  BridgeError,
-  ExecuteBridgeRequestCommand,
-  ProcessError,
-} from '../execute-bridge-request/execute-bridge-request.command';
+import { BridgeError, ExecuteBridgeRequestCommand } from '../execute-bridge-request/execute-bridge-request.command';
+import type { ProcessError } from '../execute-bridge-request/execute-bridge-request.command';
 import { RETRYABLE_ERROR_CODES } from '../execute-bridge-request/execute-framework-request.usecase';
 
 export const DEFAULT_TIMEOUT = 30_000; // 30 seconds

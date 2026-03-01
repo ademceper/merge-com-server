@@ -1,5 +1,6 @@
 import { encodeBase62 } from 'libs/application-generic';
-import { ShortIsPrefixEnum, Slug, slugify } from 'libs/shared';
+import { ShortIsPrefixEnum, slugify } from 'libs/shared';
+import type { Slug } from 'libs/shared';
 
 const SLUG_DELIMITER = '_';
 

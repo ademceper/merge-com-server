@@ -3,7 +3,7 @@ import { NumberToken, QuotedToken } from 'liquidjs/dist/tokens';
 import pluralize from 'pluralize';
 import { z } from 'zod';
 import { getNestedValue } from '../utils/object.utils';
-import { LiquidFilterIssue } from './types';
+import type { LiquidFilterIssue } from './types';
 
 const DEFAULT_KEY_PATH = '';
 const DEFAULT_LIMIT = 2;

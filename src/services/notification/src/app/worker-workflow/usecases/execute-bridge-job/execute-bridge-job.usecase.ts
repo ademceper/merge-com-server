@@ -1,18 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import {
-  CreateExecutionDetails,
-  CreateExecutionDetailsCommand,
-  DetailEnum,
-  dashboardSanitizeControlValues,
-  EnvironmentCacheData,
-  ExecuteBridgeRequest,
-  ExecuteBridgeRequestCommand,
-  InMemoryLRUCacheService,
-  InMemoryLRUCacheStore,
-  Instrument,
-  InstrumentUsecase,
-  PinoLogger,
-} from 'libs/application-generic';
+import { CreateExecutionDetails, CreateExecutionDetailsCommand, DetailEnum, dashboardSanitizeControlValues, ExecuteBridgeRequest, ExecuteBridgeRequestCommand, InMemoryLRUCacheService, InMemoryLRUCacheStore, Instrument, InstrumentUsecase, PinoLogger } from 'libs/application-generic';
+import type { EnvironmentCacheData } from 'libs/application-generic';
 import {
   ControlValuesRepository,
   EnvironmentRepository,
@@ -22,25 +10,10 @@ import {
   NotificationTemplateEntity,
   NotificationTemplateRepository,
 } from 'libs/dal';
-import {
-  DelayResult,
-  DigestResult,
-  Event,
-  ExecuteOutput,
-  InAppResult,
-  PostActionEnum,
-  State,
-  ThrottleResult,
-} from 'libs/framework/internal';
-import {
-  ControlValuesLevelEnum,
-  ExecutionDetailsSourceEnum,
-  ExecutionDetailsStatusEnum,
-  ITriggerPayload,
-  JobStatusEnum,
-  ResourceOriginEnum,
-  ResourceTypeEnum,
-} from 'libs/shared';
+import { PostActionEnum } from 'libs/framework/internal';
+import type { DelayResult, DigestResult, Event, ExecuteOutput, InAppResult, State, ThrottleResult } from 'libs/framework/internal';
+import { ControlValuesLevelEnum, ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum, JobStatusEnum, ResourceOriginEnum, ResourceTypeEnum } from 'libs/shared';
+import type { ITriggerPayload } from 'libs/shared';
 import { ExecuteBridgeJobCommand } from './execute-bridge-job.command';
 
 @Injectable()

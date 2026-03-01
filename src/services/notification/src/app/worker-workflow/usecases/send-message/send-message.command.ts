@@ -1,6 +1,7 @@
 import { EnvironmentWithUserCommand } from 'libs/application-generic';
 import type { JobEntity, NotificationStepEntity, NotificationTemplateEntity } from 'libs/dal';
-import type { SeverityLevelEnum, TriggerOverrides, WorkflowPreferences } from 'libs/shared';
+import type { SeverityLevelEnum, WorkflowPreferences } from 'libs/shared';
+import type { TriggerOverrides } from 'libs/shared';
 import { IsArray, IsDefined, IsOptional, IsString } from 'class-validator';
 
 export class SendMessageCommand extends EnvironmentWithUserCommand {

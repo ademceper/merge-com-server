@@ -5,7 +5,8 @@
 import { subscribersPreferencesBulkUpdate } from '../funcs/subscribersPreferencesBulkUpdate.js';
 import { subscribersPreferencesList } from '../funcs/subscribersPreferencesList.js';
 import { subscribersPreferencesUpdate } from '../funcs/subscribersPreferencesUpdate.js';
-import { ClientSDK, RequestOptions } from '../lib/sdks.js';
+import { ClientSDK } from '../lib/sdks.js';
+import type { RequestOptions } from '../lib/sdks.js';
 import * as components from '../models/components/index.js';
 import * as operations from '../models/operations/index.js';
 import { unwrapAsync } from '../types/fp.js';

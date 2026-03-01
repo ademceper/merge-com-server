@@ -8,7 +8,8 @@ import {
 } from 'libs/application-generic';
 import { CronExpressionEnum } from 'libs/shared';
 
-const nr = require('newrelic');
+let nr: any = null;
+try { nr = require('newrelic'); } catch {}
 
 const LOG_CONTEXT = 'ActiveJobMetricService';
 const METRIC_JOB_ID = 'metrics-job';

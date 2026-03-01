@@ -1,5 +1,6 @@
 import { Novu } from 'libs/internal-sdk';
-import { LogRepository, RequestLog, RequestLogRepository } from 'libs/application-generic';
+import { LogRepository, RequestLogRepository } from 'libs/application-generic';
+import type { RequestLog } from 'libs/application-generic';
 import { UserSession } from '@novu/testing';
 import { expect } from 'chai';
 import { format, isAfter, subHours } from 'date-fns';

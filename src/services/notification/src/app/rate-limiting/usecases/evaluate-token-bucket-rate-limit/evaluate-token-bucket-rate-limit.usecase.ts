@@ -2,11 +2,7 @@ import { Injectable, ServiceUnavailableException } from '@nestjs/common';
 import { CacheService, InstrumentUsecase, PinoLogger } from 'libs/application-generic';
 import { Ratelimit } from '@upstash/ratelimit';
 import { EvaluateTokenBucketRateLimitCommand } from './evaluate-token-bucket-rate-limit.command';
-import {
-  EvaluateTokenBucketRateLimitResponseDto,
-  RegionLimiter,
-  UpstashRedisClient,
-} from './evaluate-token-bucket-rate-limit.types';
+import type { EvaluateTokenBucketRateLimitResponseDto, RegionLimiter, UpstashRedisClient } from './evaluate-token-bucket-rate-limit.types';
 
 const LOG_CONTEXT = 'EvaluateTokenBucketRateLimit';
 

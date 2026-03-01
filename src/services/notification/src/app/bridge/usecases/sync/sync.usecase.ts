@@ -7,17 +7,10 @@ import {
   NotificationTemplateEntity,
   NotificationTemplateRepository,
 } from 'libs/dal';
-import { DiscoverOutput, DiscoverStepOutput, DiscoverWorkflowOutput, GetActionEnum } from 'libs/framework/internal';
-import {
-  buildWorkflowPreferences,
-  ResourceOriginEnum,
-  ResourceTypeEnum,
-  SeverityLevelEnum,
-  StepTypeEnum,
-  UserSessionData,
-  WorkflowCreationSourceEnum,
-  WorkflowPreferences,
-} from 'libs/shared';
+import { GetActionEnum } from 'libs/framework/internal';
+import type { DiscoverOutput, DiscoverStepOutput, DiscoverWorkflowOutput } from 'libs/framework/internal';
+import { buildWorkflowPreferences, ResourceOriginEnum, ResourceTypeEnum, SeverityLevelEnum, StepTypeEnum, WorkflowCreationSourceEnum } from 'libs/shared';
+import type { UserSessionData, WorkflowPreferences } from 'libs/shared';
 import { JSONSchemaDto } from '../../../shared/dtos/json-schema.dto';
 import { CreateWorkflowCommand } from '../../../workflows-v1/usecases/create-workflow/create-workflow.command';
 import { CreateWorkflow } from '../../../workflows-v1/usecases/create-workflow/create-workflow.usecase';

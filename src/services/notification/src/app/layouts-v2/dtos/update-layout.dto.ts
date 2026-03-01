@@ -17,7 +17,7 @@ export class UpdateLayoutDto {
   @IsBoolean()
   isTranslationEnabled?: boolean;
 
-  @ApiProperty({ type: LayoutControlValuesDto, description: 'Control values for the layout' })
+  @ApiProperty({ type: () => LayoutControlValuesDto, description: 'Control values for the layout' })
   @IsOptional()
   @ValidateNested()
   @Type(() => LayoutControlValuesDto)

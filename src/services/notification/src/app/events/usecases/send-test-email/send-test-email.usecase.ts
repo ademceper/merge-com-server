@@ -10,7 +10,8 @@ import {
   SelectIntegrationCommand,
 } from 'libs/application-generic';
 import { IntegrationEntity, OrganizationRepository } from 'libs/dal';
-import { ChannelTypeEnum, EmailProviderIdEnum, IEmailOptions, ResourceOriginEnum } from 'libs/shared';
+import { ChannelTypeEnum, EmailProviderIdEnum, ResourceOriginEnum } from 'libs/shared';
+import type { IEmailOptions } from 'libs/shared';
 import { addBreadcrumb } from '@sentry/node';
 import { PreviewStep, PreviewStepCommand } from '../../../bridge/usecases/preview-step';
 import { SendTestEmailCommand } from './send-test-email.command';

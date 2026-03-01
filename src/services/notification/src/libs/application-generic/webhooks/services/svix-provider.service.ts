@@ -1,4 +1,4 @@
-import { Provider } from '@nestjs/common';
+import type { Provider } from '@nestjs/common';
 // biome-ignore lint/style/noRestrictedImports: <explanation>
 import { Svix } from 'svix';
 

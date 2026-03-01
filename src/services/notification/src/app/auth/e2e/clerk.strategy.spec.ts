@@ -2,7 +2,8 @@ import { UnauthorizedException } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
 import { HttpRequestHeaderKeysEnum } from 'libs/application-generic';
 import { EnvironmentRepository } from 'libs/dal';
-import { ALL_PERMISSIONS, ApiAuthSchemeEnum, MemberRoleEnum, UserSessionData } from 'libs/shared';
+import { ALL_PERMISSIONS, ApiAuthSchemeEnum, MemberRoleEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 

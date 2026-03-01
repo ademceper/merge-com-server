@@ -1,11 +1,12 @@
 import { MemberRoleEnum, MemberStatusEnum } from 'libs/shared';
-import { FilterQuery } from 'mongoose';
+import type { FilterQuery } from 'mongoose';
 import type { EnforceOrgId } from '../../types/enforce';
 import { BaseRepository } from '../base-repository';
-import { MemberDBModel, MemberEntity } from './member.entity';
-import { IAddMemberData } from './member.repository';
+import { MemberEntity } from './member.entity';
+import type { MemberDBModel } from './member.entity';
+import type { IAddMemberData } from './member.repository';
 import { Member } from './member.schema';
-import { IMemberRepository } from './member-repository.interface';
+import type { IMemberRepository } from './member-repository.interface';
 
 type MemberQuery = FilterQuery<MemberDBModel> & EnforceOrgId;
 

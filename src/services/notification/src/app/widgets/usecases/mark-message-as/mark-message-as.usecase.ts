@@ -1,21 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import {
-  AnalyticsService,
-  buildMessageCountKey,
-  buildSubscriberKey,
-  CachedResponse,
-  EventType,
-  InvalidateCacheService,
-  LogRepository,
-  MessageInteractionService,
-  MessageInteractionTrace,
-  mapEventTypeToTitle,
-  messageWebhookMapper,
-  PinoLogger,
-  SendWebhookMessage,
-  StepType,
-  WebSocketsQueueService,
-} from 'libs/application-generic';
+import { AnalyticsService, buildMessageCountKey, buildSubscriberKey, CachedResponse, InvalidateCacheService, LogRepository, MessageInteractionService, mapEventTypeToTitle, messageWebhookMapper, PinoLogger, SendWebhookMessage, WebSocketsQueueService } from 'libs/application-generic';
+import type { EventType, MessageInteractionTrace } from 'libs/application-generic';
+import type { StepType } from 'libs/application-generic';
 import { MessageEntity, MessageRepository, SubscriberEntity, SubscriberRepository } from 'libs/dal';
 import { DeliveryLifecycleStatusEnum, WebhookEventEnum, WebhookObjectTypeEnum, WebSocketEventEnum } from 'libs/shared';
 

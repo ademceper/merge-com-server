@@ -1,16 +1,7 @@
 import { AnalyticsService } from 'libs/application-generic';
 import { SubscriberRepository } from 'libs/dal';
-import {
-  ChannelTypeEnum,
-  ISubscriberPreferenceResponse,
-  ITemplateConfiguration,
-  PreferenceLevelEnum,
-  PreferenceOverrideSourceEnum,
-  PreferencesTypeEnum,
-  SeverityLevelEnum,
-  TriggerTypeEnum,
-  WorkflowCriticalityEnum,
-} from 'libs/shared';
+import { ChannelTypeEnum, PreferenceLevelEnum, PreferenceOverrideSourceEnum, PreferencesTypeEnum, SeverityLevelEnum, TriggerTypeEnum, WorkflowCriticalityEnum } from 'libs/shared';
+import type { ISubscriberPreferenceResponse, ITemplateConfiguration } from 'libs/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { GetSubscriberGlobalPreference } from '../../../subscribers/usecases/get-subscriber-global-preference';

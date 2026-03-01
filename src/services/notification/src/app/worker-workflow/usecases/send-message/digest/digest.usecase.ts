@@ -14,17 +14,12 @@ import {
   OrganizationEntity,
   UserEntity,
 } from 'libs/dal';
-import {
-  DigestTypeEnum,
-  ExecutionDetailsSourceEnum,
-  ExecutionDetailsStatusEnum,
-  FeatureFlagsKeysEnum,
-  IDigestRegularMetadata,
-  StepTypeEnum,
-} from 'libs/shared';
+import { DigestTypeEnum, ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum, FeatureFlagsKeysEnum, StepTypeEnum } from 'libs/shared';
+import type { IDigestRegularMetadata } from 'libs/shared';
 import { PlatformException } from '../../../../shared/utils';
 import { SendMessageCommand } from '../send-message.command';
-import { SendMessageResult, SendMessageStatus, SendMessageType } from '../send-message-type.usecase';
+import { SendMessageStatus, SendMessageType } from '../send-message-type.usecase';
+import type { SendMessageResult } from '../send-message-type.usecase';
 import { DigestEventsCommand } from './digest-events.command';
 import { GetDigestEventsBackoff } from './get-digest-events-backoff.usecase';
 import { GetDigestEventsRegular } from './get-digest-events-regular.usecase';

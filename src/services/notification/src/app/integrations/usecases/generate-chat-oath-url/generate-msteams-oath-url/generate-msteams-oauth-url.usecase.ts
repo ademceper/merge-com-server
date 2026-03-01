@@ -1,7 +1,9 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import { createHash } from 'libs/application-generic';
-import { EnvironmentRepository, ICredentialsEntity, IntegrationEntity, SubscriberRepository } from 'libs/dal';
-import { ChatProviderIdEnum, ContextPayload } from 'libs/shared';
+import { EnvironmentRepository, IntegrationEntity, SubscriberRepository } from 'libs/dal';
+import type { ICredentialsEntity } from 'libs/dal';
+import { ChatProviderIdEnum } from 'libs/shared';
+import type { ContextPayload } from 'libs/shared';
 import { CHAT_OAUTH_CALLBACK_PATH } from '../chat-oauth.constants';
 import { GenerateMsTeamsOauthUrlCommand } from './generate-msteams-oauth-url.command';
 

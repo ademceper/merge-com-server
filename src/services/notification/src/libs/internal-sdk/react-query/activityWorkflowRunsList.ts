@@ -12,13 +12,9 @@ import {
 } from '@tanstack/react-query';
 import * as operations from '../models/operations/index.js';
 import { useNovuContext } from './_context.js';
-import { QueryHookOptions, SuspenseQueryHookOptions, TupleToPrefixes } from './_types.js';
-import {
-  ActivityWorkflowRunsListQueryData,
-  buildActivityWorkflowRunsListQuery,
-  prefetchActivityWorkflowRunsList,
-  queryKeyActivityWorkflowRunsList,
-} from './activityWorkflowRunsList.core.js';
+import type { QueryHookOptions, SuspenseQueryHookOptions, TupleToPrefixes } from './_types.js';
+import { buildActivityWorkflowRunsListQuery, prefetchActivityWorkflowRunsList, queryKeyActivityWorkflowRunsList } from './activityWorkflowRunsList.core.js';
+import type { ActivityWorkflowRunsListQueryData } from './activityWorkflowRunsList.core.js';
 export {
   type ActivityWorkflowRunsListQueryData,
   buildActivityWorkflowRunsListQuery,

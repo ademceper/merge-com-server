@@ -1,4 +1,5 @@
-import { ChannelTypeEnum, ICredentials, PushProviderIdEnum } from 'libs/shared';
+import { ChannelTypeEnum, PushProviderIdEnum } from 'libs/shared';
+import type { ICredentials } from 'libs/shared';
 import { AppioPushProvider } from 'libs/providers';
 import { BasePushHandler } from './base.handler';
 

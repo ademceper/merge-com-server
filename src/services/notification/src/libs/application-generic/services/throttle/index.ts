@@ -1,2 +1,2 @@
 export * from './redis-throttle.service';
-export * from './throttle.types';
+export type * from './throttle.types';

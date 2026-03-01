@@ -1,17 +1,11 @@
 import { EmailProviderIdEnum } from 'libs/shared';
-import {
-  ChannelTypeEnum,
-  CheckIntegrationResponseEnum,
-  ICheckIntegrationResponse,
-  IEmailEventBody,
-  IEmailOptions,
-  IEmailProvider,
-  ISendMessageSuccessResponse,
-} from 'libs/stateless';
+import { ChannelTypeEnum, CheckIntegrationResponseEnum } from 'libs/stateless';
+import type { ICheckIntegrationResponse, IEmailEventBody, IEmailProvider, ISendMessageSuccessResponse } from 'libs/stateless';
+import type { IEmailOptions } from 'libs/stateless';
 // @ts-ignore CJS importing an ESM module, this fails only during the CJS build
 import type { Message, MessageAttachment, SMTPClient } from 'emailjs';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { IEmailJsConfig } from './emailjs.config';
+import type { IEmailJsConfig } from './emailjs.config';
 
 export class EmailJsProvider extends BaseProvider implements IEmailProvider {
   protected casing: CasingEnum = CasingEnum.KEBAB_CASE;

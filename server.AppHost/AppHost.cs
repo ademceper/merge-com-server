@@ -15,7 +15,16 @@ builder.AddBunApp("nestjs-api", "../src/services/nestjs-api", "src/main.ts")
     .WithHttpEndpoint(port: 3000, env: "PORT")
     .WithUrl("/swagger", "Swagger" );
 
+var redis = builder.AddRedis("redis")
+    .WithEndpoint("tcp", e => e.Port = 6379);
+
+var mongo = builder.AddMongoDB("mongodb")
+    .WithEndpoint("tcp", e => e.Port = 27017);
+
 builder.AddBunApp("notification", "../src/services/notification", "src/main.ts")
-    .WithHttpEndpoint(port: 3001, env: "PORT");
+    .WithHttpEndpoint(port: 3001, env: "PORT")
+    .WithUrl("/openapi", "Swagger")
+    .WaitFor(redis)
+    .WaitFor(mongo);
 
 builder.Build().Run();

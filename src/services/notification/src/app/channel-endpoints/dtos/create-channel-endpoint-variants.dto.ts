@@ -1,6 +1,7 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { IsValidContextPayload } from 'libs/application-generic';
-import { ContextPayload, ENDPOINT_TYPES } from 'libs/shared';
+import { ENDPOINT_TYPES } from 'libs/shared';
+import type { ContextPayload } from 'libs/shared';
 import { Type } from 'class-transformer';
 import { IsDefined, IsEnum, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { ApiContextPayload } from '../../shared/framework/swagger/context-payload.decorator';

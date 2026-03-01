@@ -1,4 +1,4 @@
-import { IBulkInviteRequestDto } from 'libs/shared';
+import type { IBulkInviteRequestDto } from 'libs/shared';
 import { Type } from 'class-transformer';
 import { ArrayNotEmpty, IsArray, IsDefined, IsEmail, IsNotEmpty, ValidateNested } from 'class-validator';
 

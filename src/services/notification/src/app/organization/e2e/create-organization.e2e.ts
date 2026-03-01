@@ -5,17 +5,8 @@ import {
   EnvironmentRepository,
   IntegrationRepository,
 } from 'libs/dal';
-import {
-  ApiServiceLevelEnum,
-  ChannelTypeEnum,
-  ChatProviderIdEnum,
-  EmailProviderIdEnum,
-  ICreateOrganizationDto,
-  InAppProviderIdEnum,
-  JobTitleEnum,
-  MemberRoleEnum,
-  SmsProviderIdEnum,
-} from 'libs/shared';
+import { ApiServiceLevelEnum, ChannelTypeEnum, ChatProviderIdEnum, EmailProviderIdEnum, InAppProviderIdEnum, JobTitleEnum, MemberRoleEnum, SmsProviderIdEnum } from 'libs/shared';
+import type { ICreateOrganizationDto } from 'libs/shared';
 import { UserSession } from '@novu/testing';
 import { expect } from 'chai';
 

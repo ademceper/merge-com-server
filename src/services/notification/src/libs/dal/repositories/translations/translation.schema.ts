@@ -3,7 +3,7 @@ import type { ChangePropsValueType } from '../../types/helpers';
 import { schemaOptions } from '../schema-default.options';
 import { TranslationEntity } from './translation.entity';
 
-const mongooseDelete = require('mongoose-delete');
+import mongooseDelete from 'mongoose-delete';
 
 export type TranslationModel = ChangePropsValueType<
   TranslationEntity,

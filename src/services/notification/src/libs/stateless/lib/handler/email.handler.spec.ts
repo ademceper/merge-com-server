@@ -1,8 +1,9 @@
 // @ts-nocheck
 import { CheckIntegrationResponseEnum } from '../provider/provider.enum';
-import { IEmailProvider } from '../provider/provider.interface';
-import { ChannelTypeEnum, ITriggerPayload } from '../template/template.interface';
-import { IEmailTemplate, ITheme } from '../theme/theme.interface';
+import type { IEmailProvider } from '../provider/provider.interface';
+import { ChannelTypeEnum } from '../template/template.interface';
+import type { ITriggerPayload } from '../template/template.interface';
+import type { IEmailTemplate, ITheme } from '../theme/theme.interface';
 import { EmailHandler } from './email.handler';
 
 test('it should be able to accept subject as a function and read message configuration', async () => {

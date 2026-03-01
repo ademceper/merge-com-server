@@ -1,6 +1,7 @@
 import { validateEndpointForTypeFromSchema } from 'libs/application-generic';
-import { ChannelEndpointType } from 'libs/shared';
-import { registerDecorator, ValidationArguments, ValidationOptions } from 'class-validator';
+import type { ChannelEndpointType } from 'libs/shared';
+import { registerDecorator } from 'class-validator';
+import type { ValidationArguments, ValidationOptions } from 'class-validator';
 
 export function IsValidChannelEndpoint(validationOptions?: ValidationOptions) {
   return (object: object, propertyName: string) => {

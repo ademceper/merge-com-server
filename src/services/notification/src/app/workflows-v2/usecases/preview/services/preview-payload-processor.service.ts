@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { JobStatusEnum, StepTypeEnum } from 'libs/shared';
 import _ from 'lodash';
-import { FrameworkPreviousStepsOutputState } from '../../../../bridge/usecases/preview-step/preview-step.command';
+import type { FrameworkPreviousStepsOutputState } from '../../../../bridge/usecases/preview-step/preview-step.command';
 import { PreviewPayloadDto, StepResponseDto } from '../../../dtos';
 
 @Injectable()

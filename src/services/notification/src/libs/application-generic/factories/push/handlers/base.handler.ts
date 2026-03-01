@@ -1,7 +1,8 @@
-import { ICredentials, PushProviderIdEnum } from 'libs/shared';
-import { IPushOptions, IPushProvider, ISendMessageSuccessResponse } from 'libs/stateless';
+import { PushProviderIdEnum } from 'libs/shared';
+import type { ICredentials } from 'libs/shared';
+import type { IPushOptions, IPushProvider, ISendMessageSuccessResponse } from 'libs/stateless';
 import { BaseHandler } from '../../shared/interfaces';
-import { IPushHandler } from '../interfaces';
+import type { IPushHandler } from '../interfaces';
 
 export abstract class BasePushHandler extends BaseHandler<IPushProvider> implements IPushHandler {
   protected provider!: IPushProvider;

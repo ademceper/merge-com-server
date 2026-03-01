@@ -10,11 +10,11 @@ import {
 import { NovuCore } from "../core.js";
 import { translationsCreate } from "../funcs/translationsCreate.js";
 import { combineSignals } from "../lib/primitives.js";
-import { RequestOptions } from "../lib/sdks.js";
+import type { RequestOptions } from "../lib/sdks.js";
 import * as components from "../models/components/index.js";
 import { unwrapAsync } from "../types/fp.js";
 import { useNovuContext } from "./_context.js";
-import { MutationHookOptions } from "./_types.js";
+import type { MutationHookOptions } from "./_types.js";
 
 export type TranslationsCreateMutationVariables = {
   createTranslationRequestDto: components.CreateTranslationRequestDto;

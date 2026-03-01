@@ -1,13 +1,15 @@
 import { EventEmitter } from 'events';
 import _get from 'lodash.get';
 
-import { IContentEngine } from '../content/content.engine';
+import type { IContentEngine } from '../content/content.engine';
 import { ChatHandler } from '../handler/chat.handler';
 import { EmailHandler } from '../handler/email.handler';
 import { SmsHandler } from '../handler/sms.handler';
-import { INovuConfig } from '../novu.interface';
+import type { INovuConfig } from '../novu.interface';
 import { ProviderStore } from '../provider/provider.store';
-import { ChannelTypeEnum, IMessage, ITemplate, ITriggerPayload } from '../template/template.interface';
+import { ChannelTypeEnum } from '../template/template.interface';
+import type { ITemplate } from '../template/template.interface';
+import type { IMessage, ITriggerPayload } from '../template/template.interface';
 import { TemplateStore } from '../template/template.store';
 import { ThemeStore } from '../theme/theme.store';
 

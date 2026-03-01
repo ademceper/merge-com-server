@@ -1,9 +1,11 @@
-import { PublishCommand, PublishCommandInput, SNSClient } from '@aws-sdk/client-sns';
+import { PublishCommand, SNSClient } from '@aws-sdk/client-sns';
+import type { PublishCommandInput } from '@aws-sdk/client-sns';
 import { SmsProviderIdEnum } from 'libs/shared';
-import { ChannelTypeEnum, ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from 'libs/stateless';
+import { ChannelTypeEnum } from 'libs/stateless';
+import type { ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from 'libs/stateless';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
-import { SNSConfig } from './sns.config';
+import type { WithPassthrough } from '../../../utils/types';
+import type { SNSConfig } from './sns.config';
 
 export class SNSSmsProvider extends BaseProvider implements ISmsProvider {
   id = SmsProviderIdEnum.SNS;

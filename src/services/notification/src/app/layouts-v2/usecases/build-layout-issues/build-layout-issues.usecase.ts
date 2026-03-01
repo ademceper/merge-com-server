@@ -3,11 +3,8 @@ import { dashboardSanitizeControlValues, Instrument, InstrumentUsecase, PinoLogg
 import { ContentIssueEnum, LAYOUT_CONTENT_VARIABLE, LayoutIssuesDto, ResourceOriginEnum } from 'libs/shared';
 import { merge } from 'es-toolkit/compat';
 import { hasMailyVariable, isStringifiedMailyJSONContent } from '../../../shared/helpers/maily-utils';
-import {
-  ControlIssues,
-  processControlValuesByLiquid,
-  processControlValuesBySchema,
-} from '../../../shared/utils/issues';
+import { processControlValuesByLiquid, processControlValuesBySchema } from '../../../shared/utils/issues';
+import type { ControlIssues } from '../../../shared/utils/issues';
 import { LayoutVariablesSchemaCommand, LayoutVariablesSchemaUseCase } from '../layout-variables-schema';
 import { BuildLayoutIssuesCommand } from './build-layout-issues.command';
 

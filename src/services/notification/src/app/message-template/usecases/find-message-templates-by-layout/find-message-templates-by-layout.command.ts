@@ -1,4 +1,4 @@
-import { LayoutId } from 'libs/shared';
+import type { LayoutId } from 'libs/shared';
 import { IsDefined, IsString } from 'class-validator';
 
 import { EnvironmentCommand } from '../../../shared/commands/project.command';

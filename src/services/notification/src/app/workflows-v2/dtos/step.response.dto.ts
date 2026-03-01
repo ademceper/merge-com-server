@@ -1,5 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { ResourceOriginEnum, Slug, StepTypeEnum } from 'libs/shared';
+import { ResourceOriginEnum, StepTypeEnum } from 'libs/shared';
+import type { Slug } from 'libs/shared';
 import { Type } from 'class-transformer';
 import { IsEnum, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { JSONSchemaDto } from '../../shared/dtos/json-schema.dto';

@@ -1,5 +1,5 @@
 export * from './content.issue';
-export * from './i-step.control';
+export type * from './i-step.control';
 export * from './json-schema';
 export * from './message.filter';
 export * from './notification.step';

@@ -3,7 +3,8 @@ import { UserEntity } from 'libs/dal';
 import { ResourceOriginEnum, ResourceTypeEnum } from 'libs/shared';
 import { Type } from 'class-transformer';
 import { ControlsMetadataDto } from '../../workflows-v2/dtos/controls-metadata.dto';
-import { ChannelTypeEnum, ITemplateVariable } from '../types';
+import { ChannelTypeEnum } from '../types';
+import type { ITemplateVariable } from '../types';
 
 export class LayoutDto {
   @ApiPropertyOptional()

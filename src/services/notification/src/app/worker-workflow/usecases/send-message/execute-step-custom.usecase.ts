@@ -3,7 +3,8 @@ import { CreateExecutionDetails, InstrumentUsecase } from 'libs/application-gene
 import { JobRepository, MessageRepository } from 'libs/dal';
 
 import { SendMessageChannelCommand } from './send-message-channel.command';
-import { SendMessageResult, SendMessageStatus, SendMessageType } from './send-message-type.usecase';
+import { SendMessageStatus, SendMessageType } from './send-message-type.usecase';
+import type { SendMessageResult } from './send-message-type.usecase';
 
 @Injectable()
 export class ExecuteStepCustom extends SendMessageType {

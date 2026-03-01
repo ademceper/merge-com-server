@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 import { schemaOptions } from '../schema-default.options';
-import { TopicSubscribersDBModel } from './topic-subscribers.entity';
+import type { TopicSubscribersDBModel } from './topic-subscribers.entity';
 
 const topicSubscribersSchema = new Schema<TopicSubscribersDBModel>(
   {

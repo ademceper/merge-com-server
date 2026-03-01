@@ -1,22 +1,12 @@
 import { Injectable, Logger } from '@nestjs/common';
-import {
-  BullMqService,
-  FeatureFlagsService,
-  getSubscriberProcessWorkerOptions,
-  IProcessSubscriberDataDto,
-  PinoLogger,
-  SqsService,
-  Store,
-  SubscriberProcessWorkerService,
-  storage,
-  WorkerOptions,
-  WorkflowInMemoryProviderService,
-} from 'libs/application-generic';
+import { BullMqService, FeatureFlagsService, getSubscriberProcessWorkerOptions, PinoLogger, SqsService, Store, SubscriberProcessWorkerService, storage, WorkerOptions, WorkflowInMemoryProviderService } from 'libs/application-generic';
+import type { IProcessSubscriberDataDto } from 'libs/application-generic';
 import { CommunityOrganizationRepository } from 'libs/dal';
 import { FeatureFlagsKeysEnum, ObservabilityBackgroundTransactionEnum } from 'libs/shared';
 import { SubscriberJobBound } from '../usecases/subscriber-job-bound/subscriber-job-bound.usecase';
 
-const nr = require('newrelic');
+let nr: any = null;
+try { nr = require('newrelic'); } catch {}
 
 const LOG_CONTEXT = 'SubscriberProcessWorker';
 

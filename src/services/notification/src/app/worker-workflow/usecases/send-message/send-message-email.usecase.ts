@@ -1,4 +1,4 @@
-import { Injectable, Logger, Optional } from '@nestjs/common';
+import { Injectable, Optional, Logger } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
 import {
   CompileEmailTemplate,
@@ -29,26 +29,16 @@ import {
   SubscriberRepository,
   UserEntity,
 } from 'libs/dal';
-import { EmailOutput } from 'libs/framework/internal';
-import {
-  ChannelTypeEnum,
-  DeliveryLifecycleDetail,
-  DeliveryLifecycleStatusEnum,
-  EmailProviderIdEnum,
-  ExecutionDetailsSourceEnum,
-  ExecutionDetailsStatusEnum,
-  FeatureFlagsKeysEnum,
-  IAttachmentOptions,
-  IEmailOptions,
-  WebhookEventEnum,
-  WebhookObjectTypeEnum,
-} from 'libs/shared';
+import type { EmailOutput } from 'libs/framework/internal';
+import { ChannelTypeEnum, DeliveryLifecycleDetail, DeliveryLifecycleStatusEnum, EmailProviderIdEnum, ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum, FeatureFlagsKeysEnum, WebhookEventEnum, WebhookObjectTypeEnum } from 'libs/shared';
+import type { IAttachmentOptions, IEmailOptions } from 'libs/shared';
 import inlineCss from 'inline-css';
 
 import { PlatformException } from '../../../shared/utils';
 import { SendMessageBase } from './send-message.base';
 import { SendMessageChannelCommand } from './send-message-channel.command';
-import { SendMessageResult, SendMessageStatus } from './send-message-type.usecase';
+import { SendMessageStatus } from './send-message-type.usecase';
+import type { SendMessageResult } from './send-message-type.usecase';
 
 const LOG_CONTEXT = 'SendMessageEmail';
 

@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { MessageWebhookResponseDto } from 'libs/application-generic';
+import type { MessageWebhookResponseDto } from 'libs/application-generic';
 import { WebhookEventEnum, WebhookObjectTypeEnum } from 'libs/shared';
-import { InboxPreference } from '../inbox/utils/types';
+import type { InboxPreference } from '../inbox/utils/types';
 import { WorkflowResponseDto } from '../workflows-v2/dtos/workflow-response.dto';
 
 interface WebhookEventConfig {

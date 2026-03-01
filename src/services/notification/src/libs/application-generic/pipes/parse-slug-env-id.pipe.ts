@@ -1,5 +1,6 @@
-import { ArgumentMetadata, Injectable, PipeTransform } from '@nestjs/common';
-import { UserSessionData } from 'libs/shared';
+import { Injectable } from '@nestjs/common';
+import type { ArgumentMetadata, PipeTransform } from '@nestjs/common';
+import type { UserSessionData } from 'libs/shared';
 import { parseSlugId } from './parse-slug-id';
 
 @Injectable()

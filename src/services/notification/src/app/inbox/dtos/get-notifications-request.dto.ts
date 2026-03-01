@@ -5,7 +5,7 @@ import { IsArray, IsBoolean, IsInt, IsOptional, IsString } from 'class-validator
 
 import { CursorPaginationRequestDto } from '../../shared/dtos/cursor-pagination-request';
 import { IsEnumOrArray } from '../../shared/validators/is-enum-or-array';
-import { NotificationFilter } from '../utils/types';
+import type { NotificationFilter } from '../utils/types';
 
 const LIMIT = {
   DEFAULT: 10,

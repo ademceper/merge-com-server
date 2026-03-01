@@ -1,4 +1,5 @@
-import { init, LDClient, LDMultiKindContext } from '@launchdarkly/node-server-sdk';
+import { init } from '@launchdarkly/node-server-sdk';
+import type { LDClient, LDMultiKindContext } from '@launchdarkly/node-server-sdk';
 import { Injectable } from '@nestjs/common';
 import type { FeatureFlagContext, FeatureFlagContextBase, IFeatureFlagsService } from './types';
 

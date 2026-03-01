@@ -4,7 +4,7 @@
 
 import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
-import { ClosedEnum } from "../../types/enums.js";
+import type { ClosedEnum } from "../../types/enums.js";
 import {
   CredentialsDto,
   CredentialsDto$Outbound,

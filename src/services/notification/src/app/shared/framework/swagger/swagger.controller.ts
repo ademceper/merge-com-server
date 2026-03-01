@@ -1,6 +1,7 @@
-import { INestApplication } from '@nestjs/common';
-import { DocumentBuilder, OpenAPIObject, SwaggerModule } from '@nestjs/swagger';
-import { SecuritySchemeObject } from '@nestjs/swagger/dist/interfaces/open-api-spec.interface';
+import type { INestApplication } from '@nestjs/common';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import type { OpenAPIObject } from '@nestjs/swagger';
+import type { SecuritySchemeObject } from '@nestjs/swagger/dist/interfaces/open-api-spec.interface';
 import { API_KEY_SWAGGER_SECURITY_NAME, BEARER_SWAGGER_SECURITY_NAME } from 'libs/application-generic';
 import packageJson from '../../../../../package.json';
 import metadata from '../../../../metadata';
@@ -34,8 +35,9 @@ function buildBaseOptions() {
     .setExternalDoc('Novu Documentation', 'https://docs.novu.co')
     .setTermsOfService('https://novu.co/terms')
     .setLicense('MIT', 'https://opensource.org/license/mit')
-    .addServer('https://api.novu.co')
-    .addServer('https://eu.api.novu.co')
+    .addServer(`http://localhost:${process.env.PORT || 3000}`, 'Local development')
+    .addServer('https://api.novu.co', 'US production')
+    .addServer('https://eu.api.novu.co', 'EU production')
     .addSecurity(API_KEY_SWAGGER_SECURITY_NAME, API_KEY_SECURITY_DEFINITIONS)
     .addSecurityRequirements(API_KEY_SWAGGER_SECURITY_NAME)
     .addTag(
@@ -93,21 +95,65 @@ function buildOpenApiBaseDocument(internalSdkGeneration: boolean | undefined) {
   return options.build();
 }
 
-function buildFullDocumentWithPath(app: INestApplication<any>, baseDocument: Omit<OpenAPIObject, 'paths'>) {
-  // Define extraModels to ensure webhook payload DTOs are included in the schema definitions
-  // Add other relevant payload DTOs here if more webhooks are defined
-  const allWebhookPayloadDtos = [...new Set(webhookEvents.map((event) => event.payloadDto))];
+function createSwaggerDocumentOptions(allWebhookPayloadDtos: any[]) {
+  return {
+    operationIdFactory: (controllerKey: string, methodKey: string) => `${controllerKey}_${methodKey}`,
+    deepScanRoutes: true,
+    ignoreGlobalPrefix: false,
+    include: [],
+    extraModels: [...allWebhookPayloadDtos],
+  };
+}
 
-  const document = injectDocumentComponents(
-    SwaggerModule.createDocument(app, baseDocument, {
-      operationIdFactory: (controllerKey: string, methodKey: string) => `${controllerKey}_${methodKey}`,
-      deepScanRoutes: true,
-      ignoreGlobalPrefix: false,
-      include: [],
-      extraModels: [...allWebhookPayloadDtos], // Make sure payload DTOs are processed
-    })
-  );
-  return document;
+function clearApiExcludeMetadata(app: INestApplication<any>): Map<any, any> | null {
+  const originalMetadata = new Map<any, any>();
+  const modulesContainer = (app as any).container?.modules;
+  if (!modulesContainer) return null;
+
+  for (const [, module] of modulesContainer) {
+    for (const [, wrapper] of module.controllers) {
+      if (wrapper?.metatype) {
+        const existing = Reflect.getMetadata('swagger/apiExcludeController', wrapper.metatype);
+        if (existing?.disable !== false) {
+          originalMetadata.set(wrapper.metatype, existing);
+          Reflect.defineMetadata('swagger/apiExcludeController', { disable: false }, wrapper.metatype);
+        }
+      }
+    }
+  }
+
+  return originalMetadata;
+}
+
+function restoreApiExcludeMetadata(originalMetadata: Map<any, any>) {
+  for (const [metatype, metadata] of originalMetadata) {
+    if (metadata) {
+      Reflect.defineMetadata('swagger/apiExcludeController', metadata, metatype);
+    } else {
+      Reflect.deleteMetadata('swagger/apiExcludeController', metatype);
+    }
+  }
+}
+
+function buildFullDocumentWithPath(app: INestApplication<any>, baseDocument: Omit<OpenAPIObject, 'paths'>) {
+  const allWebhookPayloadDtos = [...new Set(webhookEvents.map((event) => event.payloadDto))];
+  const docOptions = createSwaggerDocumentOptions(allWebhookPayloadDtos);
+
+  // In non-production, try to include all controllers (remove @ApiExcludeController)
+  if (process.env.NODE_ENV !== 'production') {
+    const originalMetadata = clearApiExcludeMetadata(app);
+    try {
+      return injectDocumentComponents(SwaggerModule.createDocument(app, baseDocument, docOptions));
+    } catch (e) {
+      // Some controllers have DTOs with circular deps - restore excludes and retry
+      if (originalMetadata) {
+        restoreApiExcludeMetadata(originalMetadata);
+      }
+      console.warn('Swagger: failed to include all controllers, falling back to default excludes:', e?.message);
+    }
+  }
+
+  return injectDocumentComponents(SwaggerModule.createDocument(app, baseDocument, docOptions));
 }
 
 function publishDeprecatedDocument(app: INestApplication<any>, document: OpenAPIObject) {
@@ -121,7 +167,8 @@ function publishDeprecatedDocument(app: INestApplication<any>, document: OpenAPI
 }
 
 function publishLegacyOpenApiDoc(app: INestApplication<any>, document: OpenAPIObject) {
-  SwaggerModule.setup('openapi', app, removeEndpointsWithoutApiKey(document), {
+  const doc = process.env.NODE_ENV === 'production' ? removeEndpointsWithoutApiKey(document) : document;
+  SwaggerModule.setup('openapi', app, doc, {
     jsonDocumentUrl: 'openapi.json',
     yamlDocumentUrl: 'openapi.yaml',
     explorer: process.env.NODE_ENV !== 'production',

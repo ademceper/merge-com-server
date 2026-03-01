@@ -2,7 +2,8 @@ import { AiResourceTypeEnum } from 'libs/shared';
 import type { ClientSession } from 'mongoose';
 import type { EnforceEnvOrOrgIds } from '../../types';
 import { BaseRepository } from '../base-repository';
-import { AiChatDBModel, AiChatEntity, AiChatSnapshotRef } from './ai-chat.entity';
+import { AiChatEntity } from './ai-chat.entity';
+import type { AiChatDBModel, AiChatSnapshotRef } from './ai-chat.entity';
 import { AiChat } from './ai-chat.schema';
 
 export class AiChatRepository extends BaseRepository<AiChatDBModel, AiChatEntity, EnforceEnvOrOrgIds> {

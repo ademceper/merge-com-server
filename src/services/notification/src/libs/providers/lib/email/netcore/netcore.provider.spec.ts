@@ -1,8 +1,8 @@
-import { IEmailOptions } from 'libs/stateless';
+import type { IEmailOptions } from 'libs/stateless';
 import axios from 'axios';
 import { beforeEach, describe, expect, Mocked, test, vi } from 'vitest';
 import { NetCoreProvider } from './netcore.provider';
-import { IEmailBody } from './netcore-types';
+import type { IEmailBody } from './netcore-types';
 
 vi.mock('axios');
 

@@ -1,5 +1,5 @@
 import { Logger } from '@nestjs/common';
-import { ContextPayload } from 'libs/shared';
+import type { ContextPayload } from 'libs/shared';
 import { canonicalize } from '@tufjs/canonical-json';
 import { createHmac } from 'crypto';
 

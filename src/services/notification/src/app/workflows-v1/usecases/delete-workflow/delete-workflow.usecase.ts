@@ -9,14 +9,8 @@ import {
   PinoLogger,
   SendWebhookMessage,
 } from 'libs/application-generic';
-import {
-  ClientSession,
-  ControlValuesRepository,
-  LocalizationResourceEnum,
-  MessageTemplateRepository,
-  NotificationTemplateEntity,
-  NotificationTemplateRepository,
-} from 'libs/dal';
+import { ControlValuesRepository, LocalizationResourceEnum, MessageTemplateRepository, NotificationTemplateEntity, NotificationTemplateRepository } from 'libs/dal';
+import type { ClientSession } from 'libs/dal';
 import { PreferencesTypeEnum, WebhookEventEnum, WebhookObjectTypeEnum } from 'libs/shared';
 import { GetWorkflowWithPreferencesCommand } from '../get-workflow-with-preferences/get-workflow-with-preferences.command';
 import { DeleteWorkflowCommand } from './delete-workflow.command';

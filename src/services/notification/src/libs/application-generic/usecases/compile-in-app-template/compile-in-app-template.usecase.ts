@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
 import { CommunityOrganizationRepository, OrganizationEntity } from 'libs/dal';
-import { IMessageButton } from 'libs/shared';
+import type { IMessageButton } from 'libs/shared';
 import { CompileTemplate, CompileTemplateBase } from '../compile-template';
 import { CompileInAppTemplateCommand } from './compile-in-app-template.command';
 

@@ -1,4 +1,4 @@
-import { Schedule, TimeRange } from 'libs/shared';
+import type { Schedule, TimeRange } from 'libs/shared';
 import { addDays, isAfter, isBefore, isEqual, set } from 'date-fns';
 import { utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
 

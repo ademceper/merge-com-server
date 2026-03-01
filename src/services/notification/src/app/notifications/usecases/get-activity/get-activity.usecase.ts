@@ -1,32 +1,10 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import {
-  AnalyticsService,
-  FeatureFlagsService,
-  PinoLogger,
-  QueryBuilder,
-  StepRun,
-  StepRunRepository,
-  Trace,
-  TraceLogRepository,
-  WorkflowRun,
-  WorkflowRunRepository,
-} from 'libs/application-generic';
-import {
-  ExecutionDetailFeedItem,
-  JobFeedItem,
-  JobStatusEnum,
-  NotificationFeedItemEntity,
-  NotificationRepository,
-  NotificationStepEntity,
-} from 'libs/dal';
-import {
-  ExecutionDetailsSourceEnum,
-  ExecutionDetailsStatusEnum,
-  FeatureFlagsKeysEnum,
-  ProvidersIdEnum,
-  StepTypeEnum,
-  TriggerTypeEnum,
-} from 'libs/shared';
+import { AnalyticsService, FeatureFlagsService, PinoLogger, QueryBuilder, StepRunRepository, TraceLogRepository, WorkflowRunRepository } from 'libs/application-generic';
+import type { StepRun, Trace, WorkflowRun } from 'libs/application-generic';
+import { JobStatusEnum, NotificationRepository, NotificationStepEntity } from 'libs/dal';
+import type { ExecutionDetailFeedItem, JobFeedItem, NotificationFeedItemEntity } from 'libs/dal';
+import { ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum, FeatureFlagsKeysEnum, StepTypeEnum, TriggerTypeEnum } from 'libs/shared';
+import type { ProvidersIdEnum } from 'libs/shared';
 
 import { ActivityNotificationResponseDto } from '../../dtos/activities-response.dto';
 import { mapFeedItemToDto } from '../get-activity-feed/map-feed-item-to.dto';

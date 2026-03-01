@@ -5,19 +5,9 @@ import {
   NotificationStep,
   PreferencesRequired,
 } from 'libs/application-generic';
-import { ClientSession } from 'libs/dal';
-import {
-  CustomDataType,
-  INotificationGroup,
-  MAX_DESCRIPTION_LENGTH,
-  MAX_NAME_LENGTH,
-  MAX_TAG_LENGTH,
-  ResourceOriginEnum,
-  ResourceTypeEnum,
-  RuntimeIssue,
-  SeverityLevelEnum,
-  WorkflowStatusEnum,
-} from 'libs/shared';
+import type { ClientSession } from 'libs/dal';
+import { MAX_DESCRIPTION_LENGTH, MAX_NAME_LENGTH, MAX_TAG_LENGTH, ResourceOriginEnum, ResourceTypeEnum, RuntimeIssue, SeverityLevelEnum, WorkflowStatusEnum } from 'libs/shared';
+import type { CustomDataType, INotificationGroup } from 'libs/shared';
 import { Exclude, Type } from 'class-transformer';
 import {
   ArrayUnique,

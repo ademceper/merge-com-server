@@ -1,5 +1,6 @@
 import { MessageFilter } from 'libs/application-generic';
-import { ChannelTypeEnum, ICredentialsDto } from 'libs/shared';
+import { ChannelTypeEnum } from 'libs/shared';
+import type { ICredentialsDto } from 'libs/shared';
 import { IsArray, IsDefined, IsEnum, IsObject, IsOptional, IsString, ValidateNested } from 'class-validator';
 
 import { EnvironmentCommand } from '../../../shared/commands/project.command';

@@ -1,6 +1,7 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
-import { CommunityOrganizationRepository, IEmailBlock } from 'libs/dal';
+import { CommunityOrganizationRepository } from 'libs/dal';
+import type { IEmailBlock } from 'libs/dal';
 import { merge } from 'es-toolkit/compat';
 import { readFile } from 'fs/promises';
 import { VerifyPayloadService } from '../../services';

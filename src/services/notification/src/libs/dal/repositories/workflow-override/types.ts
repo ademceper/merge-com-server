@@ -1,1 +1,1 @@
-export { WorkflowOverrideId } from 'libs/shared';
+export type { WorkflowOverrideId } from 'libs/shared';

@@ -1,15 +1,6 @@
 import { BadRequestException, Logger } from '@nestjs/common';
-import {
-  DelayTypeEnum,
-  DigestTypeEnum,
-  DigestUnitEnum,
-  IDelayDynamicMetadata,
-  IDelayRegularMetadata,
-  IDelayScheduledMetadata,
-  IDigestRegularMetadata,
-  IDigestTimedMetadata,
-  IWorkflowStepMetadata,
-} from 'libs/shared';
+import { DelayTypeEnum, DigestTypeEnum, DigestUnitEnum } from 'libs/shared';
+import type { IDelayDynamicMetadata, IDelayRegularMetadata, IDelayScheduledMetadata, IDigestRegularMetadata, IDigestTimedMetadata, IWorkflowStepMetadata } from 'libs/shared';
 import { differenceInMilliseconds } from 'date-fns';
 import { getNestedValue } from '../../utils';
 import { isRegularDigest } from '../../utils/digest';

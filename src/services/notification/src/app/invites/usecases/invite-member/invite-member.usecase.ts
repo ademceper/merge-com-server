@@ -1,7 +1,8 @@
 import { BadRequestException, Injectable, NotFoundException, Scope } from '@nestjs/common';
 import { Novu } from 'libs/internal-sdk';
 import { AnalyticsService } from 'libs/application-generic';
-import { IAddMemberData, MemberRepository, OrganizationRepository, UserRepository } from 'libs/dal';
+import { MemberRepository, OrganizationRepository, UserRepository } from 'libs/dal';
+import type { IAddMemberData } from 'libs/dal';
 import { MemberRoleEnum, MemberStatusEnum } from 'libs/shared';
 import { capitalize, createGuid } from '../../../shared/services/helper/helper.service';
 import { InviteMemberCommand } from './invite-member.command';

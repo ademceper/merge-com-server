@@ -7,14 +7,8 @@ import {
   UnauthorizedException,
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import {
-  AnalyticsService,
-  buildSubscriberKey,
-  buildUserKey,
-  CachedResponse,
-  IAuthService,
-  Instrument,
-} from 'libs/application-generic';
+import { AnalyticsService, buildSubscriberKey, buildUserKey, CachedResponse, Instrument } from 'libs/application-generic';
+import type { IAuthService } from 'libs/application-generic';
 
 import {
   EnvironmentEntity,
@@ -27,16 +21,8 @@ import {
   UserEntity,
   UserRepository,
 } from 'libs/dal';
-import {
-  ALL_PERMISSIONS,
-  ApiAuthSchemeEnum,
-  AuthenticateContext,
-  AuthProviderEnum,
-  ISubscriberJwt,
-  MemberRoleEnum,
-  normalizeEmail,
-  UserSessionData,
-} from 'libs/shared';
+import { ALL_PERMISSIONS, ApiAuthSchemeEnum, AuthProviderEnum, MemberRoleEnum, normalizeEmail } from 'libs/shared';
+import type { AuthenticateContext, ISubscriberJwt, UserSessionData } from 'libs/shared';
 import { createHash } from 'crypto';
 import { CreateUserCommand } from '../../user/usecases/create-user/create-user.command';
 import { CreateUser } from '../../user/usecases/create-user/create-user.usecase';

@@ -1,14 +1,18 @@
-import { Logger, OnModuleDestroy } from '@nestjs/common';
+import { Logger } from '@nestjs/common';
+import type { OnModuleDestroy } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import { OnGatewayConnection, OnGatewayDisconnect, WebSocketGateway, WebSocketServer } from '@nestjs/websockets';
-import { IDestroy } from 'libs/application-generic';
-import { ISubscriberJwt, ObservabilityBackgroundTransactionEnum } from 'libs/shared';
+import { WebSocketGateway, WebSocketServer } from '@nestjs/websockets';
+import type { OnGatewayConnection, OnGatewayDisconnect } from '@nestjs/websockets';
+import type { IDestroy } from 'libs/application-generic';
+import { ObservabilityBackgroundTransactionEnum } from 'libs/shared';
+import type { ISubscriberJwt } from 'libs/shared';
 import { instrument } from '@socket.io/admin-ui';
 import { Server, Socket } from 'socket.io';
 
 import { SubscriberOnlineService } from './subscriber-online';
 
-const nr = require('newrelic');
+let nr: any = null;
+try { nr = require('newrelic'); } catch {}
 
 const LOG_CONTEXT = 'WSGateway';
 

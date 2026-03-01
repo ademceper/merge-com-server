@@ -1,10 +1,5 @@
-import {
-  ApiRateLimitAlgorithmEnum,
-  ApiRateLimitCategoryEnum,
-  ApiRateLimitCostEnum,
-  IApiRateLimitAlgorithm,
-  IApiRateLimitCost,
-} from '../../types';
+import { ApiRateLimitAlgorithmEnum, ApiRateLimitCategoryEnum, ApiRateLimitCostEnum, IApiRateLimitAlgorithm } from '../../types';
+import type { IApiRateLimitCost } from '../../types';
 import { FeatureNameEnum } from '../feature-tiers-constants';
 
 export const ApiRateLimitCategoryToFeatureName: Record<ApiRateLimitCategoryEnum, FeatureNameEnum> = {

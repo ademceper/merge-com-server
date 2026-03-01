@@ -11,17 +11,9 @@ import {
   UseSuspenseQueryResult,
 } from "@tanstack/react-query";
 import { useNovuContext } from "./_context.js";
-import {
-  QueryHookOptions,
-  SuspenseQueryHookOptions,
-  TupleToPrefixes,
-} from "./_types.js";
-import {
-  buildTopicsSubscribersRetrieveQuery,
-  prefetchTopicsSubscribersRetrieve,
-  queryKeyTopicsSubscribersRetrieve,
-  TopicsSubscribersRetrieveQueryData,
-} from "./topicsSubscribersRetrieve.core.js";
+import type { QueryHookOptions, SuspenseQueryHookOptions, TupleToPrefixes } from "./_types.js";
+import { buildTopicsSubscribersRetrieveQuery, prefetchTopicsSubscribersRetrieve, queryKeyTopicsSubscribersRetrieve } from "./topicsSubscribersRetrieve.core.js";
+import type { TopicsSubscribersRetrieveQueryData } from "./topicsSubscribersRetrieve.core.js";
 export {
   buildTopicsSubscribersRetrieveQuery,
   prefetchTopicsSubscribersRetrieve,

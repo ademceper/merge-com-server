@@ -1,51 +1,20 @@
 import { Logger } from '@nestjs/common';
 import { PlatformException } from '../../../utils/exceptions';
 import { InMemoryProviderEnum, Redis } from '../types';
-import {
-  getAzureCacheForRedisCluster,
-  getAzureCacheForRedisClusterProviderConfig,
-  IAzureCacheForRedisClusterProviderConfig,
-  isClientReady as isAzureCacheForRedisClientReady,
-  validateAzureCacheForRedisClusterProviderConfig,
-} from './azure-cache-for-redis-cluster-provider';
-import {
-  getElasticacheCluster,
-  getElasticacheClusterProviderConfig,
-  IElasticacheClusterProviderConfig,
-  isClientReady as isElasticacheClientReady,
-  validateElasticacheClusterProviderConfig,
-} from './elasticache-cluster-provider';
-import {
-  getMemoryDbCluster,
-  getMemoryDbClusterProviderConfig,
-  IMemoryDbClusterProviderConfig,
-  isClientReady as isMemoryDbClientReady,
-  validateMemoryDbClusterProviderConfig,
-} from './memory-db-cluster-provider';
-import {
-  Cluster,
-  getRedisCluster,
-  getRedisClusterProviderConfig,
-  IRedisClusterProviderConfig,
-  isClientReady as isRedisClusterClientReady,
-  validateRedisClusterProviderConfig
-} from './redis-cluster-provider';
-import {
-  getRedisMasterSlaveCluster,
-  getRedisMasterSlaveProviderConfig,
-  IRedisMasterSlaveProviderConfig,
-  isClientReady as isRedisMasterSlaveClientReady,
-  validateRedisMasterSlaveProviderConfig,
-} from './redis-master-slave-provider';
+import { getAzureCacheForRedisCluster, getAzureCacheForRedisClusterProviderConfig, isClientReady as isAzureCacheForRedisClientReady, validateAzureCacheForRedisClusterProviderConfig } from './azure-cache-for-redis-cluster-provider';
+import type { IAzureCacheForRedisClusterProviderConfig } from './azure-cache-for-redis-cluster-provider';
+import { getElasticacheCluster, getElasticacheClusterProviderConfig, isClientReady as isElasticacheClientReady, validateElasticacheClusterProviderConfig } from './elasticache-cluster-provider';
+import type { IElasticacheClusterProviderConfig } from './elasticache-cluster-provider';
+import { getMemoryDbCluster, getMemoryDbClusterProviderConfig, isClientReady as isMemoryDbClientReady, validateMemoryDbClusterProviderConfig } from './memory-db-cluster-provider';
+import type { IMemoryDbClusterProviderConfig } from './memory-db-cluster-provider';
+import { Cluster, getRedisCluster, getRedisClusterProviderConfig, isClientReady as isRedisClusterClientReady, validateRedisClusterProviderConfig } from './redis-cluster-provider';
+import type { IRedisClusterProviderConfig } from './redis-cluster-provider';
+import { getRedisMasterSlaveCluster, getRedisMasterSlaveProviderConfig, isClientReady as isRedisMasterSlaveClientReady, validateRedisMasterSlaveProviderConfig } from './redis-master-slave-provider';
+import type { IRedisMasterSlaveProviderConfig } from './redis-master-slave-provider';
 
 
-import {
-  getRedisInstance,
-  getRedisProviderConfig,
-  IRedisProviderConfig,
-  isClientReady as isRedisClientReady,
-  validateRedisProviderConfig,
-} from './redis-provider';
+import { getRedisInstance, getRedisProviderConfig, isClientReady as isRedisClientReady, validateRedisProviderConfig } from './redis-provider';
+import type { IRedisProviderConfig } from './redis-provider';
 
 export type InMemoryProviderConfig =
   | IAzureCacheForRedisClusterProviderConfig

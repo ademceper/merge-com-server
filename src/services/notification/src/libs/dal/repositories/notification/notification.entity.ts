@@ -1,10 +1,5 @@
-import {
-  DeliveryLifecycleEventType,
-  ISubscribersDefine,
-  SeverityLevelEnum,
-  StatelessControls,
-  StepTypeEnum,
-} from 'libs/shared';
+import { SeverityLevelEnum, StatelessControls, StepTypeEnum } from 'libs/shared';
+import type { DeliveryLifecycleEventType, ISubscribersDefine } from 'libs/shared';
 
 import type { ChangePropsValueType } from '../../types/helpers';
 import type { EnvironmentId } from '../environment';

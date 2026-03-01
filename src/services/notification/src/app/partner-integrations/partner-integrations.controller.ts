@@ -12,7 +12,8 @@ import {
 } from '@nestjs/common';
 import { ApiExcludeController, ApiTags } from '@nestjs/swagger';
 import { RequirePermissions } from 'libs/application-generic';
-import { PermissionsEnum, UserSessionData } from 'libs/shared';
+import { PermissionsEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { UserSession } from '../shared/framework/user.decorator';
 import { CreateVercelIntegrationRequestDto } from './dtos/create-vercel-integration-request.dto';

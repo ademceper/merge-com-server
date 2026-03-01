@@ -1,5 +1,6 @@
 import { GrafanaOnCallChatProvider } from 'libs/providers';
-import { ChatProviderIdEnum, ICredentials } from 'libs/shared';
+import { ChatProviderIdEnum } from 'libs/shared';
+import type { ICredentials } from 'libs/shared';
 import { ChannelTypeEnum } from 'libs/stateless';
 
 import { BaseChatHandler } from './base.handler';

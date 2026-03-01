@@ -26,18 +26,8 @@ import {
   UpsertUserWorkflowPreferencesCommand,
   UpsertWorkflowPreferencesCommand,
 } from 'libs/application-generic';
-import {
-  ChangeRepository,
-  ClientSession,
-  ControlValuesRepository,
-  LocalizationResourceEnum,
-  MessageTemplateRepository,
-  NotificationGroupRepository,
-  NotificationStepData,
-  NotificationStepEntity,
-  NotificationTemplateEntity,
-  NotificationTemplateRepository,
-} from 'libs/dal';
+import { ChangeRepository, ControlValuesRepository, LocalizationResourceEnum, MessageTemplateRepository, NotificationGroupRepository, NotificationStepData, NotificationStepEntity, NotificationTemplateEntity, NotificationTemplateRepository } from 'libs/dal';
+import type { ClientSession } from 'libs/dal';
 import {
   buildWorkflowPreferences,
   ChangeEntityTypeEnum,

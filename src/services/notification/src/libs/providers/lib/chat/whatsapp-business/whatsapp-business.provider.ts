@@ -1,16 +1,11 @@
 import { ChatProviderIdEnum, ENDPOINT_TYPES } from 'libs/shared';
-import {
-  ChannelTypeEnum,
-  IChatOptions,
-  IChatProvider,
-  ISendMessageSuccessResponse,
-  isChannelDataOfType,
-} from 'libs/stateless';
+import { ChannelTypeEnum, isChannelDataOfType } from 'libs/stateless';
+import type { IChatOptions, IChatProvider, ISendMessageSuccessResponse } from 'libs/stateless';
 import Axios, { AxiosInstance } from 'axios';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
+import type { WithPassthrough } from '../../../utils/types';
 import { WhatsAppMessageTypeEnum } from './consts/whatsapp-business.enum';
-import { ISendMessageRes } from './types/whatsapp-business.types';
+import type { ISendMessageRes } from './types/whatsapp-business.types';
 
 export class WhatsappBusinessChatProvider extends BaseProvider implements IChatProvider {
   id = ChatProviderIdEnum.WhatsAppBusiness;

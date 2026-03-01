@@ -5,29 +5,15 @@
  * biome-ignore-all lint/security/noDangerouslySetInnerHtml: safe to use
  */
 import { deepMerge } from '@antfu/utils';
-import {
-  Body,
-  Button,
-  Column,
-  Container,
-  Head,
-  Heading,
-  Hr,
-  Html,
-  HtmlProps,
-  Img,
-  Link,
-  Preview,
-  Row,
-  Section,
-  Text,
-} from '@react-email/components';
+import { Body, Button, Column, Container, Head, Heading, Hr, Html, Img, Link, Preview, Row, Section, Text } from '@react-email/components';
+import type { HtmlProps } from '@react-email/components';
 import { renderAsync as reactEmailRenderAsync } from '@react-email/render';
 import type { JSONContent } from '@tiptap/core';
 import juice from 'juice';
 import { parse } from 'node-html-parser';
 import type { JSX } from 'react';
-import { type CSSProperties, Fragment } from 'react';
+import { Fragment } from 'react';
+import type { CSSProperties } from 'react';
 import type { MetaDescriptors } from './meta';
 import { meta } from './meta';
 import { generateKey } from './utils';

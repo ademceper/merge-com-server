@@ -1,4 +1,4 @@
-import { IUpdateNotificationTemplateDto } from 'libs/shared';
+import type { IUpdateNotificationTemplateDto } from 'libs/shared';
 import { UserSession } from '@novu/testing';
 import axios from 'axios';
 

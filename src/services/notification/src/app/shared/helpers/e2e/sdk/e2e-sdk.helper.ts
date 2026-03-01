@@ -1,7 +1,8 @@
 import { Novu } from 'libs/internal-sdk';
 import { NovuCore } from 'libs/internal-sdk/core';
-import { SDKOptions } from 'libs/internal-sdk/lib/config';
-import { HTTPClient, HTTPClientOptions } from 'libs/internal-sdk/lib/http';
+import type { SDKOptions } from 'libs/internal-sdk/lib/config';
+import { HTTPClient } from 'libs/internal-sdk/lib/http';
+import type { HTTPClientOptions } from 'libs/internal-sdk/lib/http';
 import { ErrorDto, SDKValidationError, ValidationErrorDto } from 'libs/internal-sdk/models/errors';
 import { HttpRequestHeaderKeysEnum } from 'libs/application-generic';
 import { UserSession } from '@novu/testing';

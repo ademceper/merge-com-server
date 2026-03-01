@@ -5,13 +5,7 @@
   "compilerOptions": {
     "typeCheck": true,
     "deleteOutDir": true,
-    "builder": {
-      "type": "swc",
-      "options": {
-        "extensions": [".js", ".ts", ".jsx", ".tsx"],
-        "stripLeadingPaths": true
-      }
-    },
+    "builder": "tsc",
     "assets": [
       {
         "include": ".env",

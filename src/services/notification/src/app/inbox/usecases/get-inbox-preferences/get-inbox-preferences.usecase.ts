@@ -11,7 +11,7 @@ import {
   GetSubscriberPreferenceCommand,
 } from '../../../subscribers/usecases/get-subscriber-preference';
 import { AnalyticsEventsEnum } from '../../utils';
-import { InboxPreference } from '../../utils/types';
+import type { InboxPreference } from '../../utils/types';
 import { GetInboxPreferencesCommand } from './get-inbox-preferences.command';
 
 @Injectable()

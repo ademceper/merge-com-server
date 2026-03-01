@@ -67,11 +67,11 @@ export class TraceResponseDto {
 }
 
 export class GetRequestResponseDto {
-  @ApiProperty({ description: 'Request details', type: RequestLogResponseDto })
+  @ApiProperty({ description: 'Request details', type: () => RequestLogResponseDto })
   @Type(() => RequestLogResponseDto)
   request: RequestLogResponseDto;
 
-  @ApiProperty({ description: 'Associated traces', type: [TraceResponseDto] })
+  @ApiProperty({ description: 'Associated traces', type: () => [TraceResponseDto] })
   @Type(() => TraceResponseDto)
   traces: TraceResponseDto[];
 }

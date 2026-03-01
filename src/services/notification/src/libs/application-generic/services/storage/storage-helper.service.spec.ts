@@ -1,7 +1,7 @@
 import { S3Client } from '@aws-sdk/client-s3';
 import { BlockBlobClient } from '@azure/storage-blob';
 import { File } from '@google-cloud/storage';
-import { IAttachmentOptionsExtended } from 'libs/stateless';
+import type { IAttachmentOptionsExtended } from 'libs/stateless';
 import { AzureBlobStorageService, GCSStorageService, S3StorageService } from './storage.service';
 import { StorageHelperService } from './storage-helper.service';
 

@@ -1,4 +1,4 @@
-import { EnvironmentId } from 'libs/shared';
+import type { EnvironmentId } from 'libs/shared';
 import { IsDefined, IsEmail, IsMongoId, IsNotEmpty } from 'class-validator';
 import { AuthenticatedCommand } from '../../../shared/commands/authenticated.command';
 

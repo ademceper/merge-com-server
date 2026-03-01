@@ -1,14 +1,5 @@
-import {
-  ActorTypeEnum,
-  ButtonTypeEnum,
-  ChannelCTATypeEnum,
-  IEmailBlock,
-  ITemplateVariable,
-  MessageActionStatusEnum,
-  MessageTemplateContentType,
-  StepTypeEnum,
-  UrlTarget,
-} from '../../types';
+import { ActorTypeEnum, ButtonTypeEnum, ChannelCTATypeEnum, MessageActionStatusEnum, StepTypeEnum } from '../../types';
+import type { IEmailBlock, ITemplateVariable, MessageTemplateContentType, UrlTarget } from '../../types';
 
 export class ChannelCTADto {
   type: ChannelCTATypeEnum;

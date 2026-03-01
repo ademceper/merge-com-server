@@ -8,10 +8,11 @@ import {
   NotificationTemplateRepository,
   SubscriberRepository,
 } from 'libs/dal';
-import { ContextPayload, FeatureFlagsKeysEnum, PreferenceLevelEnum } from 'libs/shared';
+import { FeatureFlagsKeysEnum, PreferenceLevelEnum } from 'libs/shared';
+import type { ContextPayload } from 'libs/shared';
 import { BulkUpdatePreferenceItemDto } from '../../dtos/bulk-update-preferences-request.dto';
 import { AnalyticsEventsEnum } from '../../utils';
-import { InboxPreference } from '../../utils/types';
+import type { InboxPreference } from '../../utils/types';
 import { UpdatePreferencesCommand } from '../update-preferences/update-preferences.command';
 import { UpdatePreferences } from '../update-preferences/update-preferences.usecase';
 import { BulkUpdatePreferencesCommand } from './bulk-update-preferences.command';

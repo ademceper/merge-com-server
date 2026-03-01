@@ -1,6 +1,6 @@
 import Handlebars from 'handlebars';
-import { ChannelData } from '../provider/channel-data.type';
-import { IAttachmentOptions } from '../template/template.interface';
+import type { ChannelData } from '../provider/channel-data.type';
+import type { IAttachmentOptions } from '../template/template.interface';
 
 Handlebars.registerHelper('equals', function helper(this: typeof Handlebars, arg1, arg2, options) {
   return arg1 == arg2 ? options.fn(this) : options.inverse(this);

@@ -1,4 +1,4 @@
-import { RequestWithReqId } from '../middleware/request-id.middleware';
+import type { RequestWithReqId } from '../middleware/request-id.middleware';
 
 /**
  * Extracts the request ID from the request object without fallback.

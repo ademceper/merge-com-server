@@ -1,16 +1,6 @@
 import { describe, it } from 'vitest';
-import {
-  Awaitable,
-  ConditionalPartial,
-  DeepPartial,
-  DeepRequired,
-  Either,
-  PickOptional,
-  PickOptionalKeys,
-  PickRequired,
-  PickRequiredKeys,
-  Prettify,
-} from './util.types';
+import type { Awaitable, ConditionalPartial, DeepRequired, Either, PickOptional, PickOptionalKeys, PickRequired, PickRequiredKeys, Prettify } from './util.types';
+import type { DeepPartial } from './util.types';
 
 describe('Either', () => {
   it('should compile when the first type is the correct type', () => {

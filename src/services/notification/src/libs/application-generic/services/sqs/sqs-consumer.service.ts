@@ -1,17 +1,12 @@
-import { DeleteMessageCommand, type Message } from '@aws-sdk/client-sqs';
+import { DeleteMessageCommand } from '@aws-sdk/client-sqs';
+import type { Message } from '@aws-sdk/client-sqs';
 import { Logger } from '@nestjs/common';
 import { JobTopicNameEnum } from 'libs/shared';
 import { Consumer } from 'sqs-consumer';
 import { PinoLogger } from '../../logging';
 import { SqsService } from './sqs.service';
-import {
-  ISqsConsumerOptions,
-  ISqsMessageMeta,
-  SQS_DEFAULT_BATCH_SIZE,
-  SQS_DEFAULT_MAX_CONCURRENCY,
-  SQS_DEFAULT_VISIBILITY_TIMEOUT,
-  SQS_DEFAULT_WAIT_TIME_SECONDS,
-} from './types';
+import { SQS_DEFAULT_BATCH_SIZE, SQS_DEFAULT_MAX_CONCURRENCY, SQS_DEFAULT_VISIBILITY_TIMEOUT, SQS_DEFAULT_WAIT_TIME_SECONDS } from './types';
+import type { ISqsConsumerOptions, ISqsMessageMeta } from './types';
 
 const LOG_CONTEXT = 'SqsConsumerService';
 

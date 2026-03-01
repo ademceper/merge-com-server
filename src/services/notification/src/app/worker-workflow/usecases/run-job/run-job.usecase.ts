@@ -26,19 +26,14 @@ import {
   NotificationTemplateRepository,
   SubscriberRepository,
 } from 'libs/dal';
-import {
-  ExecutionDetailsSourceEnum,
-  ExecutionDetailsStatusEnum,
-  FeatureFlagsKeysEnum,
-  Schedule,
-  StepTypeEnum,
-} from 'libs/shared';
+import { ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum, FeatureFlagsKeysEnum, StepTypeEnum } from 'libs/shared';
+import type { Schedule } from 'libs/shared';
 import { setUser } from '@sentry/node';
 import { differenceInMilliseconds } from 'date-fns';
 import { formatInTimeZone } from 'date-fns-tz';
 import { EXCEPTION_MESSAGE_ON_WEBHOOK_FILTER, PlatformException, shouldHaltOnStepFailure } from '../../../shared/utils';
 import { AddJob } from '../add-job';
-import { PartialNotificationEntity } from '../add-job/add-job.command';
+import type { PartialNotificationEntity } from '../add-job/add-job.command';
 import { ExecuteBridgeJob, ExecuteBridgeJobCommand } from '../execute-bridge-job';
 import { ProcessUnsnoozeJob, ProcessUnsnoozeJobCommand } from '../process-unsnooze-job';
 import { SendMessage, SendMessageCommand } from '../send-message';
@@ -48,7 +43,8 @@ import { SetJobAsFailed } from '../update-job-status/set-job-as-failed.usecase';
 import { RunJobCommand } from './run-job.command';
 import { calculateNextAvailableTime, isWithinSchedule } from './schedule-validator';
 
-const nr = require('newrelic');
+let nr: any = null;
+try { nr = require('newrelic'); } catch {}
 
 export type SelectedWorkflowFields = Pick<NotificationTemplateEntity, 'steps'>;
 

@@ -11,17 +11,9 @@ import {
   UseSuspenseQueryResult,
 } from "@tanstack/react-query";
 import { useNovuContext } from "./_context.js";
-import {
-  QueryHookOptions,
-  SuspenseQueryHookOptions,
-  TupleToPrefixes,
-} from "./_types.js";
-import {
-  buildChannelConnectionsRetrieveQuery,
-  ChannelConnectionsRetrieveQueryData,
-  prefetchChannelConnectionsRetrieve,
-  queryKeyChannelConnectionsRetrieve,
-} from "./channelConnectionsRetrieve.core.js";
+import type { QueryHookOptions, SuspenseQueryHookOptions, TupleToPrefixes } from "./_types.js";
+import { buildChannelConnectionsRetrieveQuery, prefetchChannelConnectionsRetrieve, queryKeyChannelConnectionsRetrieve } from "./channelConnectionsRetrieve.core.js";
+import type { ChannelConnectionsRetrieveQueryData } from "./channelConnectionsRetrieve.core.js";
 export {
   buildChannelConnectionsRetrieveQuery,
   type ChannelConnectionsRetrieveQueryData,

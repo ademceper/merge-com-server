@@ -1,18 +1,9 @@
 import { ChatProviderIdEnum } from 'libs/shared';
-import {
-  ChannelData,
-  ChannelTypeEnum,
-  ENDPOINT_TYPES,
-  IChatOptions,
-  IChatProvider,
-  ISendMessageSuccessResponse,
-  SlackChannelData,
-  SlackUserData,
-  WebhookData,
-} from 'libs/stateless';
+import { ChannelTypeEnum, ENDPOINT_TYPES } from 'libs/stateless';
+import type { ChannelData, IChatOptions, IChatProvider, ISendMessageSuccessResponse, SlackChannelData, SlackUserData, WebhookData } from 'libs/stateless';
 import axios from 'axios';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
+import type { WithPassthrough } from '../../../utils/types';
 
 export class SlackProvider extends BaseProvider implements IChatProvider {
   channelType = ChannelTypeEnum.CHAT as ChannelTypeEnum.CHAT;

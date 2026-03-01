@@ -1,18 +1,8 @@
-import {
-  buildSubscriberDefine,
-  IProcessSubscriberBulkJobDto,
-  mapSubscribersToJobs,
-  splitByRecipientType,
-  validateSubscriberDefine,
-} from 'libs/application-generic';
+import { buildSubscriberDefine, mapSubscribersToJobs, splitByRecipientType, validateSubscriberDefine } from 'libs/application-generic';
+import type { IProcessSubscriberBulkJobDto } from 'libs/application-generic';
 
-import {
-  ISubscribersDefine,
-  ITopic,
-  SubscriberSourceEnum,
-  TriggerRecipientSubscriber,
-  TriggerRecipientsTypeEnum,
-} from 'libs/shared';
+import { SubscriberSourceEnum, TriggerRecipientsTypeEnum } from 'libs/shared';
+import type { ISubscribersDefine, ITopic, TriggerRecipientSubscriber } from 'libs/shared';
 import { expect } from 'chai';
 
 describe('TriggerMulticast Spec', () => {

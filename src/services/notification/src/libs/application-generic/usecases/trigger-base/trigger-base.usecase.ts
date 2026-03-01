@@ -1,17 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { NotificationTemplateEntity, SubscriberEntity } from 'libs/dal';
-import {
-  ISubscribersDefine,
-  ITenantDefine,
-  ResourceEnum,
-  StatelessControls,
-  SubscriberSourceEnum,
-  TriggerOverrides,
-  TriggerRequestCategoryEnum,
-} from 'libs/shared';
+import { ResourceEnum, StatelessControls, SubscriberSourceEnum, TriggerRequestCategoryEnum } from 'libs/shared';
+import type { ISubscribersDefine, ITenantDefine } from 'libs/shared';
+import type { TriggerOverrides } from 'libs/shared';
 import _ from 'lodash';
 
-import { IProcessSubscriberBulkJobDto, SubscriberTopicPreference } from '../../dtos';
+import type { IProcessSubscriberBulkJobDto, SubscriberTopicPreference } from '../../dtos';
 import { PinoLogger } from '../../logging';
 import { CacheService } from '../../services';
 import { buildUsageKey } from '../../services/cache/key-builders';

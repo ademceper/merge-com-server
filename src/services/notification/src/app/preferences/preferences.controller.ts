@@ -18,7 +18,8 @@ import {
   UpsertUserWorkflowPreferencesCommand,
   UserSession,
 } from 'libs/application-generic';
-import { PreferencesTypeEnum, UserSessionData } from 'libs/shared';
+import { PreferencesTypeEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { UpsertPreferencesDto } from './dtos/upsert-preferences.dto';
 

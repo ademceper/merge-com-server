@@ -18,7 +18,7 @@ import {
   TopicSubscribersRepository,
 } from 'libs/dal';
 import { FeatureFlagsKeysEnum, PreferencesTypeEnum, SeverityLevelEnum } from 'libs/shared';
-import { RulesLogic } from 'json-logic-js';
+import type { RulesLogic } from 'json-logic-js';
 import _ from 'lodash';
 import { GroupPreferenceFilterDto } from '../../../shared/dtos/subscriptions/create-subscriptions.dto';
 import {

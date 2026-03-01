@@ -1,5 +1,7 @@
-import { ClickHouseClient, ClickHouseSettings, createClient, PingResult } from '@clickhouse/client';
-import { BeforeApplicationShutdown, Injectable } from '@nestjs/common';
+import { ClickHouseClient, createClient } from '@clickhouse/client';
+import type { ClickHouseSettings, PingResult } from '@clickhouse/client';
+import { Injectable } from '@nestjs/common';
+import type { BeforeApplicationShutdown } from '@nestjs/common';
 
 export { ClickHouseClient };
 

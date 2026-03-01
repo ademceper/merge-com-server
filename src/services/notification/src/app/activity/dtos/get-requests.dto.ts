@@ -1,5 +1,5 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { Transform, Type } from 'class-transformer';
+import { Type, Transform } from 'class-transformer';
 import { IsArray, IsNumber, IsOptional, IsString, Matches, Max, MaxLength, Min } from 'class-validator';
 
 // Custom transformer to convert statusCodes to array of numbers

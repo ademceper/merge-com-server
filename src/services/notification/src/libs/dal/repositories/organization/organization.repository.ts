@@ -1,6 +1,7 @@
 import { Inject } from '@nestjs/common';
-import { IPartnerConfiguration, OrganizationEntity } from './organization.entity';
-import { IOrganizationRepository } from './organization-repository.interface';
+import { OrganizationEntity } from './organization.entity';
+import type { IPartnerConfiguration } from './organization.entity';
+import type { IOrganizationRepository } from './organization-repository.interface';
 
 export class OrganizationRepository implements IOrganizationRepository {
   constructor(@Inject('ORGANIZATION_REPOSITORY') private organizationRepository: IOrganizationRepository) {}

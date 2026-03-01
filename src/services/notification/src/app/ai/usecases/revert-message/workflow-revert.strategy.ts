@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { SnapshotEntity } from 'libs/dal';
-import { UserSessionData } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { StepResponseDto, WorkflowResponseDto } from '../../../workflows-v2/dtos';
 import { UpsertWorkflowCommand, UpsertWorkflowUseCase } from '../../../workflows-v2/usecases/upsert-workflow';
-import { RevertResourceStrategy } from './revert-resource.interface';
+import type { RevertResourceStrategy } from './revert-resource.interface';
 
 @Injectable()
 export class WorkflowRevertStrategy implements RevertResourceStrategy {

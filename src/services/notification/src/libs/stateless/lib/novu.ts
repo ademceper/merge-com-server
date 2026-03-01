@@ -1,12 +1,14 @@
 import { EventEmitter } from 'events';
 import merge from 'lodash.merge';
-import { HandlebarsContentEngine, IContentEngine } from './content/content.engine';
-import { INovuConfig } from './novu.interface';
-import { IChatProvider, IEmailProvider, IPushProvider, ISmsProvider } from './provider/provider.interface';
+import { HandlebarsContentEngine } from './content/content.engine';
+import type { IContentEngine } from './content/content.engine';
+import type { INovuConfig } from './novu.interface';
+import type { IChatProvider, IEmailProvider, IPushProvider, ISmsProvider } from './provider/provider.interface';
 import { ProviderStore } from './provider/provider.store';
-import { ITemplate, ITriggerPayload } from './template/template.interface';
+import type { ITemplate } from './template/template.interface';
+import type { ITriggerPayload } from './template/template.interface';
 import { TemplateStore } from './template/template.store';
-import { ITheme } from './theme/theme.interface';
+import type { ITheme } from './theme/theme.interface';
 import { ThemeStore } from './theme/theme.store';
 import { TriggerEngine } from './trigger/trigger.engine';
 

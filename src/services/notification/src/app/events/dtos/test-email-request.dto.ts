@@ -1,4 +1,4 @@
-import { IEmailBlock, MessageTemplateContentType } from 'libs/shared';
+import type { IEmailBlock, MessageTemplateContentType } from 'libs/shared';
 import { IsBoolean, IsDefined, IsOptional, IsString } from 'class-validator';
 
 export class TestSendEmailRequestDto {

@@ -6,7 +6,8 @@ import {
   NotificationTemplateEntity,
   SubscriberEntity,
 } from 'libs/dal';
-import { DigestTypeEnum, DigestUnitEnum, IDigestRegularMetadata, StepTypeEnum } from 'libs/shared';
+import { DigestTypeEnum, DigestUnitEnum, StepTypeEnum } from 'libs/shared';
+import type { IDigestRegularMetadata } from 'libs/shared';
 import { SubscribersService, UserSession } from '@novu/testing';
 import { expect } from 'chai';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';

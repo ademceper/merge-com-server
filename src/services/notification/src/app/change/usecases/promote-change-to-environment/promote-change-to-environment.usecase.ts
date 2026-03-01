@@ -10,7 +10,7 @@ import { PromoteNotificationGroupChange } from '../promote-notification-group-ch
 import { PromoteTranslationChange } from '../promote-translation-change';
 import { PromoteTranslationGroupChange } from '../promote-translation-group-change';
 import { PromoteTypeChangeCommand } from '../promote-type-change.command';
-import { INotificationTemplateChangeService } from '../shared';
+import type { INotificationTemplateChangeService } from '../shared';
 import { PromoteChangeToEnvironmentCommand } from './promote-change-to-environment.command';
 
 @Injectable()

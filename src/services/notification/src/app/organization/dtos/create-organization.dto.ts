@@ -1,4 +1,5 @@
-import { ICreateOrganizationDto, JobTitleEnum, ProductUseCases } from 'libs/shared';
+import { JobTitleEnum } from 'libs/shared';
+import type { ICreateOrganizationDto, ProductUseCases } from 'libs/shared';
 import { IsDefined, IsEnum, IsOptional, IsString } from 'class-validator';
 
 export class CreateOrganizationDto implements ICreateOrganizationDto {

@@ -1,5 +1,7 @@
-import { EmailJsProvider, IEmailJsConfig } from 'libs/providers';
-import { ChannelTypeEnum, EmailProviderIdEnum, ICredentials } from 'libs/shared';
+import { EmailJsProvider } from 'libs/providers';
+import type { IEmailJsConfig } from 'libs/providers';
+import { ChannelTypeEnum, EmailProviderIdEnum } from 'libs/shared';
+import type { ICredentials } from 'libs/shared';
 import { BaseEmailHandler } from './base.handler';
 
 /**

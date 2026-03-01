@@ -1,6 +1,8 @@
 // @ts-nocheck
 
-import { ChannelTypeEnum, IMessage, ITemplate } from './template.interface';
+import { ChannelTypeEnum } from './template.interface';
+import type { ITemplate } from './template.interface';
+import type { IMessage } from './template.interface';
 import { TemplateStore } from './template.store';
 
 test('should register a template', async () => {

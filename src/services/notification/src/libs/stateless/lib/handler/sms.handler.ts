@@ -1,6 +1,8 @@
-import { HandlebarsContentEngine, IContentEngine } from '../content/content.engine';
-import { ISmsProvider } from '../provider/provider.interface';
-import { ChannelTypeEnum, IMessage, ITriggerPayload } from '../template/template.interface';
+import { HandlebarsContentEngine } from '../content/content.engine';
+import type { IContentEngine } from '../content/content.engine';
+import type { ISmsProvider } from '../provider/provider.interface';
+import { ChannelTypeEnum } from '../template/template.interface';
+import type { IMessage, ITriggerPayload } from '../template/template.interface';
 
 export class SmsHandler {
   private readonly contentEngine: IContentEngine;

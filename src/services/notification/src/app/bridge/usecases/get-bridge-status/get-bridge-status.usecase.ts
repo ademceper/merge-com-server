@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { ExecuteBridgeRequest, ExecuteBridgeRequestCommand, ExecuteBridgeRequestDto } from 'libs/application-generic';
+import { ExecuteBridgeRequest, ExecuteBridgeRequestCommand } from 'libs/application-generic';
+import type { ExecuteBridgeRequestDto } from 'libs/application-generic';
 import { GetActionEnum, HealthCheck } from 'libs/framework/internal';
 import { ResourceOriginEnum } from 'libs/shared';
 import { GetBridgeStatusCommand } from './get-bridge-status.command';

@@ -1,4 +1,5 @@
-import { MessageTemplateContentType, StepTypeEnum } from 'libs/shared';
+import { StepTypeEnum } from 'libs/shared';
+import type { MessageTemplateContentType } from 'libs/shared';
 
 export function shouldSanitize(channelType: StepTypeEnum, contentType?: MessageTemplateContentType) {
   const channelsToSanitize = [StepTypeEnum.EMAIL, StepTypeEnum.IN_APP];

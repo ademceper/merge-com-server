@@ -1,18 +1,11 @@
 import { EmailProviderIdEnum } from 'libs/shared';
 
-import {
-  ChannelTypeEnum,
-  CheckIntegrationResponseEnum,
-  EmailEventStatusEnum,
-  ICheckIntegrationResponse,
-  IEmailEventBody,
-  IEmailOptions,
-  IEmailProvider,
-  ISendMessageSuccessResponse,
-} from 'libs/stateless';
+import { ChannelTypeEnum, CheckIntegrationResponseEnum, EmailEventStatusEnum } from 'libs/stateless';
+import type { ICheckIntegrationResponse, IEmailEventBody, IEmailProvider, ISendMessageSuccessResponse } from 'libs/stateless';
+import type { IEmailOptions } from 'libs/stateless';
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
+import type { WithPassthrough } from '../../../utils/types';
 
 export class BrevoEmailProvider extends BaseProvider implements IEmailProvider {
   id = EmailProviderIdEnum.Sendinblue; // brevo changed name from sendinblue.

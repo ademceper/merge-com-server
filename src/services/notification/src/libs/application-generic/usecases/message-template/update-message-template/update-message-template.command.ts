@@ -1,12 +1,5 @@
-import {
-  IActor,
-  IEmailBlock,
-  IMessageCTA,
-  ITemplateVariable,
-  MessageTemplateContentType,
-  ResourceTypeEnum,
-  StepTypeEnum,
-} from 'libs/shared';
+import { ResourceTypeEnum, StepTypeEnum } from 'libs/shared';
+import type { IActor, IEmailBlock, IMessageCTA, ITemplateVariable, MessageTemplateContentType } from 'libs/shared';
 import { IsDefined, IsEnum, IsMongoId, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { EnvironmentWithUserCommand } from '../../../commands';
 import { JSONSchema } from '../../../value-objects';

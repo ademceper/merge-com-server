@@ -1,4 +1,5 @@
-import { ChannelTypeEnum, ProvidersIdEnum } from 'libs/shared';
+import { ChannelTypeEnum } from 'libs/shared';
+import type { ProvidersIdEnum } from 'libs/shared';
 import { IsBoolean, IsEnum, IsOptional } from 'class-validator';
 
 import { EnvironmentWithUserCommand } from '../../commands';

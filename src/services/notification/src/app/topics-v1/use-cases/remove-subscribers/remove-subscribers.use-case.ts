@@ -1,6 +1,6 @@
 import { ConflictException, Injectable } from '@nestjs/common';
 import { TopicSubscribersEntity, TopicSubscribersRepository } from 'libs/dal';
-import { EnvironmentId, OrganizationId, TopicId } from '../../types';
+import type { EnvironmentId, OrganizationId, TopicId } from '../../types';
 import { RemoveSubscribersCommand } from './remove-subscribers.command';
 
 @Injectable()

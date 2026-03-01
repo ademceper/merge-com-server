@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 import { schemaOptions } from '../schema-default.options';
-import { AiChatDBModel } from './ai-chat.entity';
+import type { AiChatDBModel } from './ai-chat.entity';
 
 const aiChatSchema = new Schema<AiChatDBModel>(
   {

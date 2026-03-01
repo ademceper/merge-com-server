@@ -3,11 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import {
-  EmailControlsDto,
-  EmailControlsDto$Outbound,
-  EmailControlsDto$outboundSchema,
-} from "./emailcontrolsdto.js";
+import { EmailControlsDto$Outbound, EmailControlsDto$outboundSchema } from "./emailcontrolsdto.js";
+import type { EmailControlsDto } from "./emailcontrolsdto.js";
 
 /**
  * Control values for the layout

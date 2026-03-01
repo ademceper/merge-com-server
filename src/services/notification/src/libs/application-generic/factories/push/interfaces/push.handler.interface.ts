@@ -1,6 +1,7 @@
-import { ChannelTypeEnum, ICredentials } from 'libs/shared';
-import { IPushOptions, ISendMessageSuccessResponse } from 'libs/stateless';
-import { IHandler } from '../../shared/interfaces';
+import { ChannelTypeEnum } from 'libs/shared';
+import type { ICredentials } from 'libs/shared';
+import type { IPushOptions, ISendMessageSuccessResponse } from 'libs/stateless';
+import type { IHandler } from '../../shared/interfaces';
 
 export interface IPushHandler extends IHandler {
   isTokenInvalid?(error: string): boolean;

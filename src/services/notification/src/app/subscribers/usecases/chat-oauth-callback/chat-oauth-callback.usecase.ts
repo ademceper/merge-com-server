@@ -16,7 +16,8 @@ import {
   IntegrationEntity,
   IntegrationRepository,
 } from 'libs/dal';
-import { ENDPOINT_TYPES, FeatureFlagsKeysEnum, ICredentialsDto } from 'libs/shared';
+import { ENDPOINT_TYPES, FeatureFlagsKeysEnum } from 'libs/shared';
+import type { ICredentialsDto } from 'libs/shared';
 import axios from 'axios';
 import { CreateChannelEndpointCommand } from '../../../channel-endpoints/usecases/create-channel-endpoint/create-channel-endpoint.command';
 import { CreateChannelEndpoint } from '../../../channel-endpoints/usecases/create-channel-endpoint/create-channel-endpoint.usecase';

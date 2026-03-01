@@ -3,7 +3,7 @@ import { LayoutDto } from '../../layouts-v1/dtos/layout.dto';
 import { JSONSchemaDto } from '../../shared/dtos/json-schema.dto';
 import { buildSlug } from '../../shared/helpers/build-slug';
 import { LayoutResponseDto } from '../dtos';
-import { EmailControlsDto } from '../dtos/layout-controls.dto';
+import type { EmailControlsDto } from '../dtos/layout-controls.dto';
 
 export const mapToResponseDto = ({
   layout,

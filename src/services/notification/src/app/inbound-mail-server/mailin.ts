@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import { BullMqService } from 'libs/application-generic';
-import Promise from 'bluebird';
+import * as Bluebird from 'bluebird';
 import dns from 'dns';
 import events from 'events';
 import extend from 'extend';
@@ -11,15 +11,16 @@ import path from 'path';
 import shell from 'shelljs';
 import { SMTPServer } from 'smtp-server';
 import util from 'util';
-import uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 import { InboundMailService } from './inbound-mail.service';
 import logger from './logger';
 
 const LOG_CONTEXT = 'Mailin';
 
-const LanguageDetect = require('languagedetect');
-const mailUtilities = Promise.promisifyAll(require('./mailUtilities'));
+import LanguageDetect from 'languagedetect';
+import rawMailUtilities from './mailUtilities';
+const mailUtilities = (Bluebird as any).promisifyAll(rawMailUtilities);
 
 const inboundMailService = new InboundMailService();
 BullMqService.haveProInstalled();
@@ -96,7 +97,7 @@ class Mailin extends events.EventEmitter {
     }
 
     function validateAddress(addressType, email, envelope) {
-      return new Promise((resolve, reject) => {
+      return new Promise<void>((resolve, reject) => {
         if (configuration.disableDnsLookup) {
           return resolve();
         }
@@ -257,7 +258,7 @@ class Mailin extends events.EventEmitter {
       });
     }
 
-    function parseEmail(connection) {
+    function parseEmail(connection): Promise<any> {
       return new Promise((resolve) => {
         logger.verbose(`${connection.id} Parsing email.`, LOG_CONTEXT);
 
@@ -346,7 +347,7 @@ class Mailin extends events.EventEmitter {
     }
 
     function postQueue(connection, finalizedMessage) {
-      return new Promise((resolve) => {
+      return new Promise<void>((resolve) => {
         logger.debug(`${connection.id} finalized message is: ${finalizedMessage}`, LOG_CONTEXT);
 
         logger.info(`${connection.id} Adding mail to queue `, LOG_CONTEXT);
@@ -378,7 +379,7 @@ class Mailin extends events.EventEmitter {
       try {
         _session = session;
         const connection = _.cloneDeep(session);
-        connection.id = uuid.v4();
+        connection.id = uuidv4();
         const mailPath = path.join(configuration.tmp, connection.id);
         connection.mailPath = mailPath;
 

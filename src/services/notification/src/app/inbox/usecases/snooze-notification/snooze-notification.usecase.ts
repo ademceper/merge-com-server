@@ -26,7 +26,7 @@ import {
 } from 'libs/shared';
 import { v4 as uuidv4 } from 'uuid';
 import { AnalyticsEventsEnum } from '../../utils';
-import { InboxNotification } from '../../utils/types';
+import type { InboxNotification } from '../../utils/types';
 import { MarkNotificationAsCommand } from '../mark-notification-as/mark-notification-as.command';
 import { MarkNotificationAs } from '../mark-notification-as/mark-notification-as.usecase';
 import { SnoozeNotificationCommand } from './snooze-notification.command';

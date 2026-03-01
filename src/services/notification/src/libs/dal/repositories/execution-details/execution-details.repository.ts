@@ -1,7 +1,8 @@
 import { ExecutionDetailsStatusEnum } from 'libs/shared';
-import { EnforceEnvId } from '../../types/enforce';
+import type { EnforceEnvId } from '../../types/enforce';
 import { BaseRepository } from '../base-repository';
-import { ExecutionDetailsDBModel, ExecutionDetailsEntity } from './execution-details.entity';
+import { ExecutionDetailsEntity } from './execution-details.entity';
+import type { ExecutionDetailsDBModel } from './execution-details.entity';
 import { ExecutionDetails } from './execution-details.schema';
 
 /**

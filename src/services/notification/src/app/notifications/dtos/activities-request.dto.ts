@@ -1,6 +1,6 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
 import { ChannelTypeEnum, SeverityLevelEnum } from 'libs/shared';
-import { Transform, Type } from 'class-transformer';
+import { Type, Transform } from 'class-transformer';
 import { IsArray, IsInt, IsOptional, IsString, Max, Min } from 'class-validator';
 import { IsEnumOrArray } from '../../shared/validators/is-enum-or-array';
 

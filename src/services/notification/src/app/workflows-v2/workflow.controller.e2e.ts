@@ -1,20 +1,5 @@
 import { Novu } from 'libs/internal-sdk';
-import {
-  ContentIssueEnum,
-  CreateWorkflowDto,
-  DigestStepUpsertDto,
-  EmailStepResponseDto,
-  EmailStepUpsertDto,
-  InAppStepResponseDto,
-  InAppStepUpsertDto,
-  ListWorkflowResponse,
-  ResourceOriginEnum,
-  UpdateWorkflowDto,
-  UpdateWorkflowDtoSteps,
-  WorkflowCreationSourceEnum,
-  WorkflowListResponseDto,
-  WorkflowStatusEnum,
-} from 'libs/internal-sdk/models/components';
+import { ContentIssueEnum, DigestStepUpsertDto, EmailStepResponseDto, EmailStepUpsertDto, InAppStepResponseDto, InAppStepUpsertDto, ResourceOriginEnum, UpdateWorkflowDtoSteps, WorkflowCreationSourceEnum, WorkflowStatusEnum, CreateWorkflowDto, ListWorkflowResponse, UpdateWorkflowDto, WorkflowListResponseDto } from 'libs/internal-sdk/models/components';
 import { ErrorDto } from 'libs/internal-sdk/models/errors';
 import { WorkflowResponseDto } from 'libs/internal-sdk/models/components';
 import { PreferencesRepository } from 'libs/dal';

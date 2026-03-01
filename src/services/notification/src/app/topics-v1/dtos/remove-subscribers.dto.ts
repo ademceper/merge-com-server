@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsArray, IsDefined } from 'class-validator';
 
-import { ExternalSubscriberId } from '../types';
+import type { ExternalSubscriberId } from '../types';
 
 export class RemoveSubscribersRequestDto {
   @ApiProperty({

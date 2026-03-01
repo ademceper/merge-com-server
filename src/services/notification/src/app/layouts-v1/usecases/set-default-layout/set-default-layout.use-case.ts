@@ -3,7 +3,7 @@ import { AnalyticsService, GetLayoutUseCase, PinoLogger } from 'libs/application
 import { ChangeRepository, LayoutRepository } from 'libs/dal';
 import { ChangeEntityTypeEnum, ResourceOriginEnum, ResourceTypeEnum } from 'libs/shared';
 
-import { EnvironmentId, LayoutId, OrganizationId } from '../../types';
+import type { EnvironmentId, LayoutId, OrganizationId } from '../../types';
 import { CreateDefaultLayoutChangeCommand } from '../create-default-layout-change/create-default-layout-change.command';
 import { CreateDefaultLayoutChangeUseCase } from '../create-default-layout-change/create-default-layout-change.usecase';
 import { SetDefaultLayoutCommand } from './set-default-layout.command';

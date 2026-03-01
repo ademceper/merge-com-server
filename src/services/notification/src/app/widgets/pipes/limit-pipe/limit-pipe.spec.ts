@@ -1,4 +1,4 @@
-import { Paramtype } from '@nestjs/common/interfaces/features/paramtype.interface';
+import type { Paramtype } from '@nestjs/common/interfaces/features/paramtype.interface';
 import { expect } from 'chai';
 import { LimitPipe } from './limit-pipe';
 

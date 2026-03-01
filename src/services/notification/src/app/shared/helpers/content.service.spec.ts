@@ -1,15 +1,6 @@
 import { ContentService } from 'libs/application-generic';
-import {
-  DelayTypeEnum,
-  DigestTypeEnum,
-  DigestUnitEnum,
-  FieldLogicalOperatorEnum,
-  FieldOperatorEnum,
-  FilterPartTypeEnum,
-  INotificationTemplateStep,
-  StepTypeEnum,
-  TriggerContextTypeEnum,
-} from 'libs/shared';
+import { DelayTypeEnum, DigestTypeEnum, DigestUnitEnum, FieldLogicalOperatorEnum, FieldOperatorEnum, FilterPartTypeEnum, StepTypeEnum, TriggerContextTypeEnum } from 'libs/shared';
+import type { INotificationTemplateStep } from 'libs/shared';
 import { expect } from 'chai';
 
 describe('ContentService', () => {

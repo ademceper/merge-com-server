@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InstrumentUsecase } from 'libs/application-generic';
 import { LayoutEntity, LayoutRepository } from 'libs/dal';
 import { LayoutDto } from '../../../layouts-v1/dtos/layout.dto';
-import { LayoutResponseDto, ListLayoutResponseDto } from '../../dtos';
+import { ListLayoutResponseDto, LayoutResponseDto } from '../../dtos';
 import { mapToResponseDto } from '../mapper';
 import { ListLayoutsCommand } from './list-layouts.command';
 

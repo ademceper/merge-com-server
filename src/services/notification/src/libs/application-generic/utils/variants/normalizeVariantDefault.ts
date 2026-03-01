@@ -1,4 +1,4 @@
-import { ITemplateVariable } from 'libs/shared';
+import type { ITemplateVariable } from 'libs/shared';
 
 export const normalizeVariantDefault = (items: ITemplateVariable[]) => {
   return items.map((item) => {

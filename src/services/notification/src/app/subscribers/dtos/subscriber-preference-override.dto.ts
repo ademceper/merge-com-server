@@ -1,5 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { ChannelTypeEnum, IPreferenceOverride, PreferenceOverrideSourceEnum } from 'libs/shared';
+import { ChannelTypeEnum, PreferenceOverrideSourceEnum } from 'libs/shared';
+import type { IPreferenceOverride } from 'libs/shared';
 
 export class SubscriberPreferenceOverrideDto implements IPreferenceOverride {
   @ApiProperty({

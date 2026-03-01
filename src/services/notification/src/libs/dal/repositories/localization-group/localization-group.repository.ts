@@ -1,11 +1,8 @@
-import { ClientSession } from 'mongoose';
+import type { ClientSession } from 'mongoose';
 import type { EnforceEnvOrOrgIds } from '../../types/enforce';
 import { BaseRepository } from '../base-repository';
-import {
-  LocalizationGroupDBModel,
-  LocalizationGroupEntity,
-  LocalizationResourceEnum,
-} from './localization-group.entity';
+import { LocalizationGroupEntity, LocalizationResourceEnum } from './localization-group.entity';
+import type { LocalizationGroupDBModel } from './localization-group.entity';
 import { LocalizationGroup } from './localization-group.schema';
 
 export class LocalizationGroupRepository extends BaseRepository<

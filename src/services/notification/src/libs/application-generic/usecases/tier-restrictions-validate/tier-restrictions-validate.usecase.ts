@@ -15,11 +15,8 @@ import { InstrumentUsecase } from '../../instrumentation';
 import { FeatureFlagsService } from '../../services';
 import { MIN_VALIDATION_LIMITS, SYSTEM_LIMITS } from '../../services/resource-validator.service';
 import { TierRestrictionsValidateCommand } from './tier-restrictions-validate.command';
-import {
-  ErrorEnum,
-  TierRestrictionsValidateResponse,
-  TierValidationError,
-} from './tier-restrictions-validate.response';
+import { ErrorEnum } from './tier-restrictions-validate.response';
+import type { TierRestrictionsValidateResponse, TierValidationError } from './tier-restrictions-validate.response';
 
 @Injectable()
 export class TierRestrictionsValidateUsecase {

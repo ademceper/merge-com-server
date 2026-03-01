@@ -1,4 +1,5 @@
-import { EncryptedSecret, ICredentialsDto, NOVU_ENCRYPTION_SUB_MASK, secureCredentials } from 'libs/shared';
+import { NOVU_ENCRYPTION_SUB_MASK, secureCredentials } from 'libs/shared';
+import type { EncryptedSecret, ICredentialsDto } from 'libs/shared';
 
 import { decrypt, encrypt } from './cipher';
 

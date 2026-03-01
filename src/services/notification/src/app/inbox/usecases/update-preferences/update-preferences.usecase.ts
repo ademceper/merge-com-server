@@ -13,36 +13,17 @@ import {
   UpsertSubscriberGlobalPreferencesCommand,
   UpsertSubscriberWorkflowPreferencesCommand,
 } from 'libs/application-generic';
-import {
-  BaseRepository,
-  EnforceEnvOrOrgIds,
-  NotificationTemplateEntity,
-  PreferencesDBModel,
-  PreferencesRepository,
-  SubscriberEntity,
-  SubscriberRepository,
-  TopicSubscribersRepository,
-} from 'libs/dal';
-import {
-  buildWorkflowPreferences,
-  FeatureFlagsKeysEnum,
-  IPreferenceChannels,
-  PreferenceLevelEnum,
-  PreferencesTypeEnum,
-  Schedule,
-  SeverityLevelEnum,
-  WebhookEventEnum,
-  WebhookObjectTypeEnum,
-  WorkflowPreferences,
-  WorkflowPreferencesPartial,
-} from 'libs/shared';
-import { FilterQuery } from 'mongoose';
+import { BaseRepository, NotificationTemplateEntity, PreferencesRepository, SubscriberEntity, SubscriberRepository, TopicSubscribersRepository } from 'libs/dal';
+import type { EnforceEnvOrOrgIds, PreferencesDBModel } from 'libs/dal';
+import { buildWorkflowPreferences, FeatureFlagsKeysEnum, PreferenceLevelEnum, PreferencesTypeEnum, SeverityLevelEnum, WebhookEventEnum, WebhookObjectTypeEnum } from 'libs/shared';
+import type { IPreferenceChannels, Schedule, WorkflowPreferences, WorkflowPreferencesPartial } from 'libs/shared';
+import type { FilterQuery } from 'mongoose';
 import {
   GetSubscriberGlobalPreference,
   GetSubscriberGlobalPreferenceCommand,
 } from '../../../subscribers/usecases/get-subscriber-global-preference';
 import { stripContextFromIdentifier } from '../../../subscriptions/utils/subscriptions';
-import { InboxPreference } from '../../utils/types';
+import type { InboxPreference } from '../../utils/types';
 import { UpdatePreferencesCommand } from './update-preferences.command';
 
 @Injectable()

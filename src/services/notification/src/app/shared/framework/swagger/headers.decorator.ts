@@ -1,5 +1,6 @@
-import { OpenAPIObject } from '@nestjs/swagger';
-import { HeaderObjects, HttpResponseHeaderKeysEnum } from 'libs/application-generic';
+import type { OpenAPIObject } from '@nestjs/swagger';
+import { HttpResponseHeaderKeysEnum } from 'libs/application-generic';
+import type { HeaderObjects } from 'libs/application-generic';
 import { RESPONSE_HEADER_CONFIG } from '../constants/headers.schema';
 
 export const injectReusableHeaders = (document: OpenAPIObject): OpenAPIObject => {

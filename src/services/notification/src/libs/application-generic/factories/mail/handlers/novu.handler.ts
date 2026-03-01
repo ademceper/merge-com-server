@@ -1,5 +1,6 @@
 import { SendgridEmailProvider } from 'libs/providers';
-import { ChannelTypeEnum, EmailProviderIdEnum, ICredentials } from 'libs/shared';
+import { ChannelTypeEnum, EmailProviderIdEnum } from 'libs/shared';
+import type { ICredentials } from 'libs/shared';
 
 import { BaseEmailHandler } from './base.handler';
 

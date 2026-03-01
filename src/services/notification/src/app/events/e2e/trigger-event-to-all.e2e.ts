@@ -1,23 +1,9 @@
 import { Test } from '@nestjs/testing';
-import {
-  IProcessSubscriberBulkJobDto,
-  mapSubscribersToJobs,
-  SubscriberProcessQueueService,
-  TriggerMulticast,
-  TriggerMulticastCommand,
-} from 'libs/application-generic';
+import { mapSubscribersToJobs, SubscriberProcessQueueService, TriggerMulticast, TriggerMulticastCommand } from 'libs/application-generic';
+import type { IProcessSubscriberBulkJobDto } from 'libs/application-generic';
 import { NotificationTemplateEntity, SubscriberEntity } from 'libs/dal';
-import {
-  ExternalSubscriberId,
-  ISubscribersDefine,
-  ITopic,
-  SubscriberSourceEnum,
-  TopicId,
-  TopicKey,
-  TopicName,
-  TriggerRecipients,
-  TriggerRecipientsTypeEnum,
-} from 'libs/shared';
+import { SubscriberSourceEnum, TriggerRecipientsTypeEnum } from 'libs/shared';
+import type { ExternalSubscriberId, ISubscribersDefine, ITopic, TopicId, TopicKey, TopicName, TriggerRecipients } from 'libs/shared';
 import { SubscribersService, UserSession } from '@novu/testing';
 import axios from 'axios';
 import { expect } from 'chai';

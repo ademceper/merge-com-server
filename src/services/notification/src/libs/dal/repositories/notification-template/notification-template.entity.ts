@@ -1,23 +1,5 @@
-import {
-  BuilderFieldType,
-  BuilderGroupValues,
-  ControlSchemas,
-  CustomDataType,
-  FilterParts,
-  IMessageFilter,
-  INotificationTrigger,
-  INotificationTriggerVariable,
-  IPreferenceChannels,
-  ITriggerReservedVariable,
-  IWorkflowStepMetadata,
-  ResourceOriginEnum,
-  ResourceTypeEnum,
-  RuntimeIssue,
-  SeverityLevelEnum,
-  StepIssues,
-  TriggerTypeEnum,
-  WorkflowStatusEnum,
-} from 'libs/shared';
+import { ControlSchemas, ResourceOriginEnum, ResourceTypeEnum, RuntimeIssue, SeverityLevelEnum, StepIssues, TriggerTypeEnum, WorkflowStatusEnum } from 'libs/shared';
+import type { BuilderFieldType, BuilderGroupValues, CustomDataType, FilterParts, IMessageFilter, INotificationTrigger, INotificationTriggerVariable, IPreferenceChannels, ITriggerReservedVariable, IWorkflowStepMetadata } from 'libs/shared';
 import { Types } from 'mongoose';
 import type { ChangePropsValueType } from '../../types';
 import type { EnvironmentId } from '../environment';

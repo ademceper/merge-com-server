@@ -5,7 +5,7 @@
 import * as z from 'zod/v3';
 import { remap as remap$ } from '../../lib/primitives.js';
 import { safeParse } from '../../lib/schemas.js';
-import { ClosedEnum } from '../../types/enums.js';
+import type { ClosedEnum } from '../../types/enums.js';
 import { Result as SafeParseResult } from '../../types/fp.js';
 import { SDKValidationError } from '../errors/sdkvalidationerror.js';
 import {
@@ -17,7 +17,8 @@ import {
   ActivityNotificationStepResponseDto$inboundSchema,
 } from './activitynotificationstepresponsedto.js';
 import { DigestMetadataDto, DigestMetadataDto$inboundSchema } from './digestmetadatadto.js';
-import { ProvidersIdEnum, ProvidersIdEnum$inboundSchema } from './providersidenum.js';
+import { ProvidersIdEnum$inboundSchema } from './providersidenum.js';
+import type { ProvidersIdEnum } from './providersidenum.js';
 
 /**
  * Type of the job

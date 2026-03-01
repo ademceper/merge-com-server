@@ -1,5 +1,5 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { ICredentials } from 'libs/shared';
+import type { ICredentials } from 'libs/shared';
 import { IsBoolean, IsObject, IsOptional, IsString } from 'class-validator';
 import { TransformToBoolean } from '../../shared/transformers/to-boolean';
 

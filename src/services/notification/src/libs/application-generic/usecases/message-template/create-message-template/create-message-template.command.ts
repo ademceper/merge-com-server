@@ -1,14 +1,7 @@
-import { ClientSession } from 'libs/dal';
+import type { ClientSession } from 'libs/dal';
 
-import {
-  IActor,
-  IEmailBlock,
-  IMessageCTA,
-  ITemplateVariable,
-  MessageTemplateContentType,
-  ResourceTypeEnum,
-  StepTypeEnum,
-} from 'libs/shared';
+import { ResourceTypeEnum, StepTypeEnum } from 'libs/shared';
+import type { IActor, IEmailBlock, IMessageCTA, ITemplateVariable, MessageTemplateContentType } from 'libs/shared';
 import { Exclude } from 'class-transformer';
 import { IsDefined, IsEnum, IsMongoId, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { EnvironmentWithUserCommand } from '../../../commands';

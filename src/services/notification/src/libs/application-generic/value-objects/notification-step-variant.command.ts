@@ -1,7 +1,7 @@
-import { IStepVariant, IWorkflowStepMetadata } from 'libs/shared';
+import type { IStepVariant, IWorkflowStepMetadata } from 'libs/shared';
 import { Type } from 'class-transformer';
 import { IsArray, IsBoolean, IsMongoId, IsObject, IsOptional, IsString, ValidateNested } from 'class-validator';
-import { IStepControl } from './i-step.control';
+import type { IStepControl } from './i-step.control';
 import { MessageFilter } from './message.filter';
 import { StepIssues } from './step.issues';
 

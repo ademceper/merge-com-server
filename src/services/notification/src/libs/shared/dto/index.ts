@@ -1,6 +1,6 @@
-export * from './bridge';
-export * from './environments';
-export * from './events';
+export type * from './bridge';
+export type * from './environments';
+export type * from './events';
 export * from './integration';
 export * from './layout';
 export * from './message-template';

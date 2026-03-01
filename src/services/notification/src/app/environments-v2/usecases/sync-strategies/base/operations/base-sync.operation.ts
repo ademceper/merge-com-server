@@ -1,10 +1,11 @@
 import { Instrument, PinoLogger } from 'libs/application-generic';
 import { LayoutEntity } from 'libs/dal';
 import { capitalize } from '../../../../../shared/services/helper/helper.service';
-import { IResourceToPublish, ISyncContext, ISyncResult, ResourceTypeEnum } from '../../../../types/sync.types';
+import { ResourceTypeEnum } from '../../../../types/sync.types';
+import type { IResourceToPublish, ISyncContext, ISyncResult } from '../../../../types/sync.types';
 import { SyncResultBuilder } from '../../builders/sync-result.builder';
 import { SKIP_REASONS, SYNC_ACTIONS } from '../../constants/sync.constants';
-import { IBaseComparator, IBaseDeleteService, IBaseRepositoryService, IBaseSyncService } from '../interfaces';
+import type { IBaseComparator, IBaseDeleteService, IBaseRepositoryService, IBaseSyncService } from '../interfaces';
 
 interface IResourceSyncDecision<T> {
   resource: T;

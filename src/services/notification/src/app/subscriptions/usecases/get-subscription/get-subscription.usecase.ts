@@ -15,12 +15,8 @@ import {
 } from 'libs/dal';
 import { FeatureFlagsKeysEnum, PreferencesTypeEnum } from 'libs/shared';
 import { SubscriptionDetailsResponseDto } from '../../../shared/dtos/subscription-details-response.dto';
-import {
-  mapTopicSubscriptionToDto,
-  SELECTED_WORKFLOW_FIELDS_PROJECTION,
-  SelectedWorkflowFields,
-  stripContextFromIdentifier,
-} from '../../utils/subscriptions';
+import { mapTopicSubscriptionToDto, SELECTED_WORKFLOW_FIELDS_PROJECTION, stripContextFromIdentifier } from '../../utils/subscriptions';
+import type { SelectedWorkflowFields } from '../../utils/subscriptions';
 import { GetSubscriptionCommand } from './get-subscription.command';
 
 type PartialPreferenceEntity = Pick<PreferencesEntity, '_templateId' | 'preferences'>;

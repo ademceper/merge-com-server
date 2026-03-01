@@ -1,15 +1,7 @@
 import { DeliveryLifecycleStatusEnum, SeverityLevelEnum } from 'libs/shared';
-import {
-  CHArray,
-  CHBoolean,
-  CHDateTime64,
-  CHLowCardinality,
-  CHNullable,
-  CHString,
-  ClickhouseSchema,
-  InferClickhouseSchemaType,
-} from 'clickhouse-schema';
-import { Prettify } from '../../../utils/prettify.type';
+import { CHArray, CHBoolean, CHDateTime64, CHLowCardinality, CHNullable, CHString, ClickhouseSchema } from 'clickhouse-schema';
+import type { InferClickhouseSchemaType } from 'clickhouse-schema';
+import type { Prettify } from '../../../utils/prettify.type';
 
 export const TABLE_NAME = 'workflow_runs';
 

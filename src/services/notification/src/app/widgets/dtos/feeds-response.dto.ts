@@ -1,5 +1,6 @@
 import { ApiExtraModels, ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { ActorTypeEnum, ChannelTypeEnum, IActor, INotificationDto } from 'libs/shared';
+import { ActorTypeEnum, ChannelTypeEnum } from 'libs/shared';
+import type { IActor, INotificationDto } from 'libs/shared';
 
 import { SubscriberFeedResponseDto } from '../../subscribers/dtos';
 import { EmailBlock, MessageCTA } from './message-response.dto';

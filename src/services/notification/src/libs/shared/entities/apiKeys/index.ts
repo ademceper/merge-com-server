@@ -1,1 +1,1 @@
-export * from './apiKeys.interface';
+export type * from './apiKeys.interface';

@@ -1,3 +1,3 @@
-export * from './create-tenant.dto';
-export * from './tenant.dto';
-export * from './update-tenant.dto';
+export type * from './create-tenant.dto';
+export type * from './tenant.dto';
+export type * from './update-tenant.dto';

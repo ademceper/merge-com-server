@@ -1,13 +1,5 @@
-import {
-  BaseCommand,
-  IConnection,
-  IEnvelopeFrom,
-  IEnvelopeTo,
-  IFrom,
-  IHeaders,
-  IInboundParseDataDto,
-  ITo,
-} from 'libs/application-generic';
+import { BaseCommand } from 'libs/application-generic';
+import type { IConnection, IEnvelopeFrom, IEnvelopeTo, IFrom, IHeaders, IInboundParseDataDto, ITo } from 'libs/application-generic';
 import { IsDefined, IsNumber, IsOptional, IsString } from 'class-validator';
 
 export class InboundEmailParseCommand extends BaseCommand implements IInboundParseDataDto {

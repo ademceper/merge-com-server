@@ -17,9 +17,10 @@ import {
   OrganizationEntity,
 } from 'libs/dal';
 import { workflow } from 'libs/framework/servers/express';
-import { ActionStep, ChannelStep, PostActionEnum, Schema, Step, StepOutput, Workflow } from 'libs/framework/internal';
+import { PostActionEnum } from 'libs/framework/internal';
+import type { ActionStep, ChannelStep, Schema, Step, StepOutput, Workflow } from 'libs/framework/internal';
 import { EnvironmentTypeEnum, LAYOUT_PREVIEW_EMAIL_STEP, LAYOUT_PREVIEW_WORKFLOW_ID, StepTypeEnum } from 'libs/shared';
-import { AdditionalOperation, RulesLogic } from 'json-logic-js';
+import type { AdditionalOperation, RulesLogic } from 'json-logic-js';
 import _ from 'lodash';
 import { evaluateRules } from '../../../shared/services/query-parser/query-parser.service';
 import { isMatchingJsonSchema } from '../../../workflows-v2/util/jsonToSchema';

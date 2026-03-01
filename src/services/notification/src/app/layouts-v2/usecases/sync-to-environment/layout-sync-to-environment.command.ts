@@ -1,5 +1,5 @@
 import { EnvironmentWithUserObjectCommand } from 'libs/application-generic';
-import { ClientSession } from 'libs/dal';
+import type { ClientSession } from 'libs/dal';
 import { Exclude } from 'class-transformer';
 import { IsDefined, IsOptional, IsString } from 'class-validator';
 

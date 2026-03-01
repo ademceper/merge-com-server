@@ -1,4 +1,5 @@
-import { Global, MiddlewareConsumer, Module, ModuleMetadata } from '@nestjs/common';
+import { Global, Module } from '@nestjs/common';
+import type { MiddlewareConsumer, ModuleMetadata } from '@nestjs/common';
 import { isBetterAuthEnabled, isClerkEnabled } from 'libs/shared';
 import { configure as configureCommunity, getCommunityAuthModuleConfig } from './community.auth.module.config';
 import { configure as configureEE, getEEModuleConfig } from './ee.auth.module.config';

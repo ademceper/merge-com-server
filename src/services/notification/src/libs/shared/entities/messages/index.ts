@@ -1,1 +1,1 @@
-export * from './messages.interface';
+export type * from './messages.interface';

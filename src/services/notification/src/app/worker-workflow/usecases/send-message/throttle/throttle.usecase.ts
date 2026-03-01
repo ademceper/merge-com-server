@@ -2,7 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { CreateExecutionDetails, InstrumentUsecase } from 'libs/application-generic';
 import { MessageRepository } from 'libs/dal';
 import { SendMessageCommand } from '../send-message.command';
-import { SendMessageResult, SendMessageStatus, SendMessageType } from '../send-message-type.usecase';
+import { SendMessageStatus, SendMessageType } from '../send-message-type.usecase';
+import type { SendMessageResult } from '../send-message-type.usecase';
 
 @Injectable()
 export class Throttle extends SendMessageType {

@@ -1,7 +1,8 @@
 import { Novu } from 'libs/internal-sdk';
 import { CacheInMemoryProviderService, CacheService } from 'libs/application-generic';
 import { MessageRepository, NotificationTemplateEntity, SubscriberEntity, SubscriberRepository } from 'libs/dal';
-import { ChannelTypeEnum, ISubscribersDefine, StepTypeEnum } from 'libs/shared';
+import { ChannelTypeEnum, StepTypeEnum } from 'libs/shared';
+import type { ISubscribersDefine } from 'libs/shared';
 import { SubscribersService, UserSession } from '@novu/testing';
 import axios from 'axios';
 import { expect } from 'chai';

@@ -1,19 +1,13 @@
 import { EmailProviderIdEnum } from 'libs/shared';
-import {
-  ChannelTypeEnum,
-  CheckIntegrationResponseEnum,
-  ICheckIntegrationResponse,
-  IEmailEventBody,
-  IEmailOptions,
-  IEmailProvider,
-  ISendMessageSuccessResponse,
-} from 'libs/stateless';
+import { ChannelTypeEnum, CheckIntegrationResponseEnum } from 'libs/stateless';
+import type { ICheckIntegrationResponse, IEmailEventBody, IEmailProvider, ISendMessageSuccessResponse } from 'libs/stateless';
+import type { IEmailOptions } from 'libs/stateless';
 
 import Plunk from '@plunk/node';
-import { SendParams } from '@plunk/node/dist/types/emails';
+import type { SendParams } from '@plunk/node/dist/types/emails';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
-import { IPlunkResponse } from './plunk.interface';
+import type { WithPassthrough } from '../../../utils/types';
+import type { IPlunkResponse } from './plunk.interface';
 
 export class PlunkEmailProvider extends BaseProvider implements IEmailProvider {
   id = EmailProviderIdEnum.Plunk;

@@ -1,5 +1,5 @@
 import { BaseCommand } from 'libs/application-generic';
-import { ChannelEndpointByType, ChannelEndpointType } from 'libs/shared';
+import type { ChannelEndpointByType, ChannelEndpointType } from 'libs/shared';
 import { IsDefined, IsString } from 'class-validator';
 import { EnvironmentCommand } from '../../../shared/commands/project.command';
 import { IsValidChannelEndpoint } from '../../validators/channel-endpoint.validator';

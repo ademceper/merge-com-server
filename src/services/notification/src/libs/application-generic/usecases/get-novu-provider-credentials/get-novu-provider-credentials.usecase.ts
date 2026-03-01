@@ -1,12 +1,7 @@
 import { ConflictException, ForbiddenException, Injectable, NotFoundException } from '@nestjs/common';
 import { CommunityUserRepository, EnvironmentEntity, OrganizationEntity, UserEntity } from 'libs/dal';
-import {
-  ChatProviderIdEnum,
-  EmailProviderIdEnum,
-  FeatureFlagsKeysEnum,
-  ICredentials,
-  SmsProviderIdEnum,
-} from 'libs/shared';
+import { ChatProviderIdEnum, EmailProviderIdEnum, FeatureFlagsKeysEnum, SmsProviderIdEnum } from 'libs/shared';
+import type { ICredentials } from 'libs/shared';
 import { FeatureFlagsService } from '../../services';
 import { AnalyticsService } from '../../services/analytics.service';
 import { CalculateLimitNovuIntegration } from '../calculate-limit-novu-integration';

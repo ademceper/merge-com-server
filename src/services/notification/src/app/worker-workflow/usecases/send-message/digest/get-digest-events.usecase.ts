@@ -7,12 +7,8 @@ import {
   Instrument,
 } from 'libs/application-generic';
 import { JobEntity, JobRepository } from 'libs/dal';
-import {
-  ExecutionDetailsSourceEnum,
-  ExecutionDetailsStatusEnum,
-  IDigestBaseMetadata,
-  StepTypeEnum,
-} from 'libs/shared';
+import { ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum, StepTypeEnum } from 'libs/shared';
+import type { IDigestBaseMetadata } from 'libs/shared';
 
 import { PlatformException } from '../../../../shared/utils';
 

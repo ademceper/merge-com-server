@@ -8,7 +8,7 @@ import { encodeJSON, encodeSimple } from "../lib/encodings.js";
 import * as M from "../lib/matchers.js";
 import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
-import { RequestOptions } from "../lib/sdks.js";
+import type { RequestOptions } from "../lib/sdks.js";
 import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
 import * as components from "../models/components/index.js";
@@ -23,7 +23,8 @@ import { NovuError } from "../models/errors/novuerror.js";
 import { ResponseValidationError } from "../models/errors/responsevalidationerror.js";
 import { SDKValidationError } from "../models/errors/sdkvalidationerror.js";
 import * as operations from "../models/operations/index.js";
-import { APICall, APIPromise } from "../types/async.js";
+import { APIPromise } from "../types/async.js";
+import type { APICall } from "../types/async.js";
 import { Result } from "../types/fp.js";
 
 /**

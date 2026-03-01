@@ -1,14 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import {
-  PinoLogger,
-  QueryBuilder,
-  StepRun,
-  StepRunRepository,
-  Trace,
-  TraceLogRepository,
-  WorkflowRun,
-  WorkflowRunRepository,
-} from 'libs/application-generic';
+import { PinoLogger, QueryBuilder, StepRunRepository, TraceLogRepository, WorkflowRunRepository } from 'libs/application-generic';
+import type { StepRun, Trace, WorkflowRun } from 'libs/application-generic';
 import { JobEntity, JobRepository } from 'libs/dal';
 import { SeverityLevelEnum, StepTypeEnum } from 'libs/shared';
 import { GetWorkflowRunResponseDto, StepRunDto } from '../../dtos/workflow-run-response.dto';

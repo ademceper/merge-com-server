@@ -1,4 +1,5 @@
-import { ChannelTypeEnum, ConfigurationKey, CredentialsKeyEnum, ProvidersIdEnum } from '../../types';
+import { ChannelTypeEnum, CredentialsKeyEnum } from '../../types';
+import type { ConfigurationKey, ProvidersIdEnum } from '../../types';
 
 export type ConfigConfiguration = {
   key: ConfigurationKey;

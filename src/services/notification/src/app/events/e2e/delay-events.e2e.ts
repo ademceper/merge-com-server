@@ -1,5 +1,5 @@
 import { Novu } from 'libs/internal-sdk';
-import { CreateWorkflowDto, WorkflowCreationSourceEnum } from 'libs/internal-sdk/models/components';
+import { WorkflowCreationSourceEnum, CreateWorkflowDto } from 'libs/internal-sdk/models/components';
 import { JobRepository, JobStatusEnum, MessageRepository, SubscriberEntity } from 'libs/dal';
 import { DelayTypeEnum, DigestTypeEnum, DigestUnitEnum, JobTopicNameEnum, StepTypeEnum } from 'libs/shared';
 import { SubscribersService, UserSession } from '@novu/testing';

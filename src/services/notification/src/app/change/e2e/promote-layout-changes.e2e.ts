@@ -1,13 +1,6 @@
 import { ChangeRepository, EnvironmentRepository, LayoutRepository } from 'libs/dal';
-import {
-  ChangeEntityTypeEnum,
-  ITemplateVariable,
-  LayoutDescription,
-  LayoutId,
-  LayoutIdentifier,
-  LayoutName,
-  TemplateVariableTypeEnum,
-} from 'libs/shared';
+import { ChangeEntityTypeEnum, TemplateVariableTypeEnum } from 'libs/shared';
+import type { ITemplateVariable, LayoutDescription, LayoutId, LayoutIdentifier, LayoutName } from 'libs/shared';
 import { UserSession } from '@novu/testing';
 import { expect } from 'chai';
 

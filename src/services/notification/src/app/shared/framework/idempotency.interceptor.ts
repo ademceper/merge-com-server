@@ -1,15 +1,5 @@
-import {
-  BadRequestException,
-  CallHandler,
-  ConflictException,
-  ExecutionContext,
-  HttpException,
-  Injectable,
-  InternalServerErrorException,
-  NestInterceptor,
-  ServiceUnavailableException,
-  UnprocessableEntityException,
-} from '@nestjs/common';
+import { BadRequestException, ConflictException, HttpException, Injectable, InternalServerErrorException, ServiceUnavailableException, UnprocessableEntityException } from '@nestjs/common';
+import type { CallHandler, ExecutionContext, NestInterceptor } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import {
   CacheService,
@@ -18,7 +8,8 @@ import {
   Instrument,
   PinoLogger,
 } from 'libs/application-generic';
-import { ApiAuthSchemeEnum, FeatureFlagsKeysEnum, UserSessionData } from 'libs/shared';
+import { ApiAuthSchemeEnum, FeatureFlagsKeysEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { createHash } from 'crypto';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';

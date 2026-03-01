@@ -1,9 +1,11 @@
 import { SeverityLevelEnum } from '../../consts';
-import { ResourceOriginEnum, StepTypeEnum, WorkflowCreationSourceEnum, WorkflowPreferences } from '../../types';
-import { Slug } from '../../types/utils';
+import { ResourceOriginEnum, StepTypeEnum, WorkflowCreationSourceEnum } from '../../types';
+import type { WorkflowPreferences } from '../../types';
+import type { Slug } from '../../types/utils';
 import { RuntimeIssue } from '../../utils/issues';
-import type { JSONSchemaDto } from './json-schema-dto';
-import { StepCreateDto, StepListResponseDto, StepResponseDto, StepUpdateDto } from './step.dto';
+import { JSONSchemaDto } from './json-schema-dto';
+import type { StepCreateDto, StepUpdateDto } from './step.dto';
+import { StepListResponseDto, StepResponseDto } from './step.dto';
 import { WorkflowStatusEnum } from './workflow-status-enum';
 
 export class ControlsSchema {

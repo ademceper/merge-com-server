@@ -1,4 +1,5 @@
-import { Injectable, Logger, OnApplicationBootstrap, OnApplicationShutdown } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
+import type { OnApplicationBootstrap, OnApplicationShutdown } from '@nestjs/common';
 import {
   CronExpressionEnum,
   JobCronNameEnum,
@@ -7,9 +8,11 @@ import {
 } from 'libs/shared';
 import { captureException } from '@sentry/node';
 import { MetricsService } from '../metrics';
-import { CronJobData, CronJobProcessor, CronMetrics, CronMetricsEventEnum, CronOptions } from './cron.types';
+import { CronMetricsEventEnum } from './cron.types';
+import type { CronJobData, CronJobProcessor, CronMetrics, CronOptions } from './cron.types';
 
-const nr = require('newrelic');
+let nr: any = null;
+try { nr = require('newrelic'); } catch {}
 
 const LOG_CONTEXT = 'CronService';
 const DEFAULT_CRON_OPTIONS: CronOptions = {

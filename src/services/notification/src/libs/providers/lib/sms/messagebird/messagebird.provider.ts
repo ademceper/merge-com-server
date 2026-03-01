@@ -1,9 +1,10 @@
 import { SmsProviderIdEnum } from 'libs/shared';
-import { ChannelTypeEnum, ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from 'libs/stateless';
+import { ChannelTypeEnum } from 'libs/stateless';
+import type { ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from 'libs/stateless';
 import { initClient } from 'messagebird';
 import { Message, MessageParameters } from 'messagebird/types/messages';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
+import type { WithPassthrough } from '../../../utils/types';
 
 export class MessageBirdSmsProvider extends BaseProvider implements ISmsProvider {
   id = SmsProviderIdEnum.MessageBird;

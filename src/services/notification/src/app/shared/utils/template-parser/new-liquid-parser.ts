@@ -1,22 +1,9 @@
-import { FILTER_VALIDATORS, LiquidFilterIssue } from 'libs/framework/internal';
+import { FILTER_VALIDATORS } from 'libs/framework/internal';
+import type { LiquidFilterIssue } from 'libs/framework/internal';
 import { LAYOUT_CONTENT_VARIABLE, TRANSLATION_NAMESPACE_SEPARATOR } from 'libs/shared';
 
-import {
-  AssignTag,
-  CaptureTag,
-  CaseTag,
-  Filter,
-  ForTag,
-  IfTag,
-  LiquidError,
-  Output,
-  RenderError,
-  TablerowTag,
-  Tag,
-  Template,
-  TokenKind,
-  UnlessTag,
-} from 'liquidjs';
+import { AssignTag, CaptureTag, CaseTag, Filter, ForTag, IfTag, LiquidError, Output, RenderError, TablerowTag, Tag, TokenKind, UnlessTag } from 'liquidjs';
+import type { Template } from 'liquidjs';
 import { JSONSchemaDto } from '../../dtos/json-schema.dto';
 import { buildLiquidParser } from './liquid-engine';
 import { DIGEST_EVENTS_VARIABLE_PATTERN, isLiquidErrors, isValidDynamicPath, isValidTemplate } from './parser-utils';

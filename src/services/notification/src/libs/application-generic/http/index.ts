@@ -1,2 +1,2 @@
 export * from './headers.types';
-export * from './responses.types';
+export type * from './responses.types';

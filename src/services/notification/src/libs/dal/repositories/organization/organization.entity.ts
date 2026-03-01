@@ -1,4 +1,5 @@
-import { ApiServiceLevelEnum, IOrganizationEntity, ProductUseCases } from 'libs/shared';
+import { ApiServiceLevelEnum } from 'libs/shared';
+import type { IOrganizationEntity, ProductUseCases } from 'libs/shared';
 
 export class OrganizationEntity implements IOrganizationEntity {
   _id: string;

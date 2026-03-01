@@ -1,4 +1,4 @@
-import { IUpdateWorkflowOverrideRequestDto } from 'libs/shared';
+import type { IUpdateWorkflowOverrideRequestDto } from 'libs/shared';
 
 import { UserSession, WorkflowOverrideService } from '@novu/testing';
 import { expect } from 'chai';

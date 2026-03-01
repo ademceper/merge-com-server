@@ -1,5 +1,6 @@
 import { SubscriberEntity } from 'libs/dal';
-import { ChatProviderIdEnum, IChannelCredentials, ISubscriberChannel, PushProviderIdEnum } from 'libs/shared';
+import { ChatProviderIdEnum, PushProviderIdEnum } from 'libs/shared';
+import type { IChannelCredentials, ISubscriberChannel } from 'libs/shared';
 import { IsBoolean, IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { EnvironmentCommand } from '../../../commands';
 import { OAuthHandlerEnum } from '../types';

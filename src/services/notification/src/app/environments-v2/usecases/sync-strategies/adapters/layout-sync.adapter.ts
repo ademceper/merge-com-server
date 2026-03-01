@@ -4,8 +4,8 @@ import {
   LayoutSyncToEnvironmentCommand,
   LayoutSyncToEnvironmentUseCase,
 } from '../../../../layouts-v2/usecases/sync-to-environment';
-import { ISyncContext } from '../../../types/sync.types';
-import { IBaseSyncService } from '../base/interfaces/base-sync.interface';
+import type { ISyncContext } from '../../../types/sync.types';
+import type { IBaseSyncService } from '../base/interfaces/base-sync.interface';
 
 @Injectable()
 export class LayoutSyncAdapter implements IBaseSyncService<LayoutEntity> {

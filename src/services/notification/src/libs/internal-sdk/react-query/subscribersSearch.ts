@@ -12,17 +12,9 @@ import {
 } from "@tanstack/react-query";
 import * as operations from "../models/operations/index.js";
 import { useNovuContext } from "./_context.js";
-import {
-  QueryHookOptions,
-  SuspenseQueryHookOptions,
-  TupleToPrefixes,
-} from "./_types.js";
-import {
-  buildSubscribersSearchQuery,
-  prefetchSubscribersSearch,
-  queryKeySubscribersSearch,
-  SubscribersSearchQueryData,
-} from "./subscribersSearch.core.js";
+import type { QueryHookOptions, SuspenseQueryHookOptions, TupleToPrefixes } from "./_types.js";
+import { buildSubscribersSearchQuery, prefetchSubscribersSearch, queryKeySubscribersSearch } from "./subscribersSearch.core.js";
+import type { SubscribersSearchQueryData } from "./subscribersSearch.core.js";
 export {
   buildSubscribersSearchQuery,
   prefetchSubscribersSearch,

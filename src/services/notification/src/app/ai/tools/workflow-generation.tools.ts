@@ -9,8 +9,9 @@ import {
   StepTypeEnum,
   WorkflowCreationSourceEnum,
 } from 'libs/shared';
-import { ToolRuntime, tool } from 'langchain';
-import { ClientSession } from 'mongoose';
+import { tool } from 'langchain';
+import type { ToolRuntime } from 'langchain';
+import type { ClientSession } from 'mongoose';
 import { z } from 'zod';
 import { zodToJsonSchema } from 'zod-to-json-schema';
 import { GetEnvironmentTags, GetEnvironmentTagsCommand } from '../../environments-v2/usecases/get-environment-tags';
@@ -58,7 +59,7 @@ import {
   workflowMetadataOutputSchema,
 } from '../schemas/workflow-generation.schema';
 import { LlmService } from '../services/llm.service';
-import { StreamGenerationCommand } from '../types';
+import type { StreamGenerationCommand } from '../types';
 import { UpsertChatCommand, UpsertChatUseCase } from '../usecases';
 import {
   buildFullVariableSchema,

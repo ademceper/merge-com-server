@@ -1,1 +1,1 @@
-export * from './layout.interface';
+export type * from './layout.interface';

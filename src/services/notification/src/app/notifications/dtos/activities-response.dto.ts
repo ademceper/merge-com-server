@@ -1,21 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import {
-  DaysEnum,
-  DigestTypeEnum,
-  DigestUnitEnum,
-  ExecutionDetailsSourceEnum,
-  ExecutionDetailsStatusEnum,
-  MessageTemplateDto,
-  MonthlyTypeEnum,
-  OrdinalEnum,
-  OrdinalValueEnum,
-  ProvidersIdEnum,
-  ProvidersIdEnumConst,
-  ResourceOriginEnum,
-  SeverityLevelEnum,
-  StepTypeEnum,
-  TriggerTypeEnum,
-} from 'libs/shared';
+import { DaysEnum, DigestTypeEnum, DigestUnitEnum, ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum, MessageTemplateDto, MonthlyTypeEnum, OrdinalEnum, OrdinalValueEnum, ProvidersIdEnumConst, ResourceOriginEnum, SeverityLevelEnum, StepTypeEnum, TriggerTypeEnum } from 'libs/shared';
+import type { ProvidersIdEnum } from 'libs/shared';
 import { IsArray, IsEnum, IsNumber, IsOptional, IsString } from 'class-validator';
 import { StepFilterDto } from '../../shared/dtos/step-filter-dto';
 
@@ -158,13 +143,13 @@ export class ActivityNotificationStepResponseDto {
   @ApiPropertyOptional({ description: 'Step issues', type: Object })
   issues?: any; // Adjust the type based on your actual issues structure
 
-  @ApiProperty({ description: 'Filter criteria for the step', isArray: true, type: StepFilterDto })
+  @ApiProperty({ description: 'Filter criteria for the step', isArray: true, type: () => StepFilterDto })
   filters: StepFilterDto[];
 
-  @ApiPropertyOptional({ description: 'Optional template for the step', type: MessageTemplateDto })
+  @ApiPropertyOptional({ description: 'Optional template for the step', type: () => MessageTemplateDto })
   template?: MessageTemplateDto;
 
-  @ApiPropertyOptional({ description: 'Variants of the step', type: [ActivityNotificationStepResponseDto] })
+  @ApiPropertyOptional({ description: 'Variants of the step', type: () => [ActivityNotificationStepResponseDto] })
   variants?: ActivityNotificationStepResponseDto[]; // Assuming variants are the same type
 
   @ApiProperty({ description: 'The identifier for the template associated with this step', type: String })
@@ -236,19 +221,19 @@ export class ActivityNotificationJobResponseDto {
 
   @ApiPropertyOptional({
     description: 'Optional digest for the job, including metadata and events',
-    type: DigestMetadataDto,
+    type: () => DigestMetadataDto,
   })
   digest?: DigestMetadataDto;
 
   @ApiProperty({
     description: 'Execution details of the job',
-    type: [ActivityNotificationExecutionDetailResponseDto],
+    type: () => [ActivityNotificationExecutionDetailResponseDto],
   })
   executionDetails: ActivityNotificationExecutionDetailResponseDto[];
 
   @ApiProperty({
     description: 'Step details of the job',
-    type: ActivityNotificationStepResponseDto,
+    type: () => ActivityNotificationStepResponseDto,
   })
   step: ActivityNotificationStepResponseDto;
 
@@ -328,13 +313,13 @@ export class NotificationTriggerDto {
 
   @ApiProperty({
     description: 'Variables of the trigger',
-    type: [NotificationTriggerVariable],
+    type: () => [NotificationTriggerVariable],
   })
   variables: NotificationTriggerVariable[];
 
   @ApiPropertyOptional({
     description: 'Subscriber variables of the trigger',
-    type: [NotificationTriggerVariable],
+    type: () => [NotificationTriggerVariable],
   })
   subscriberVariables?: NotificationTriggerVariable[];
 }
@@ -359,7 +344,7 @@ export class ActivityNotificationTemplateResponseDto {
 
   @ApiProperty({
     description: 'Triggers of the template',
-    type: [NotificationTriggerDto],
+    type: () => [NotificationTriggerDto],
   })
   triggers: NotificationTriggerDto[];
 }
@@ -412,19 +397,19 @@ export class ActivityNotificationResponseDto {
 
   @ApiPropertyOptional({
     description: 'Subscriber of the notification',
-    type: ActivityNotificationSubscriberResponseDto,
+    type: () => ActivityNotificationSubscriberResponseDto,
   })
   subscriber?: ActivityNotificationSubscriberResponseDto;
 
   @ApiPropertyOptional({
     description: 'Template of the notification',
-    type: ActivityNotificationTemplateResponseDto,
+    type: () => ActivityNotificationTemplateResponseDto,
   })
   template?: ActivityNotificationTemplateResponseDto;
 
   @ApiPropertyOptional({
     description: 'Jobs of the notification',
-    type: [ActivityNotificationJobResponseDto],
+    type: () => [ActivityNotificationJobResponseDto],
   })
   jobs?: ActivityNotificationJobResponseDto[];
 
@@ -458,7 +443,7 @@ export class ActivityNotificationResponseDto {
   })
   to?: Record<string, unknown>; // Added to align with NotificationEntity
 
-  @ApiPropertyOptional({ description: 'Topics of the notification', type: [ActivityTopicDto] })
+  @ApiPropertyOptional({ description: 'Topics of the notification', type: () => [ActivityTopicDto] })
   topics?: ActivityTopicDto[];
 
   @ApiPropertyOptional({
@@ -482,7 +467,7 @@ export class ActivitiesResponseDto {
 
   @ApiProperty({
     description: 'Array of activity notifications',
-    type: [ActivityNotificationResponseDto],
+    type: () => [ActivityNotificationResponseDto],
   })
   data: ActivityNotificationResponseDto[];
 

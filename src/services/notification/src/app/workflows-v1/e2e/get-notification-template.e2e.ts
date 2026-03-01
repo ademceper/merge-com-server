@@ -1,5 +1,6 @@
 import { PreferencesRepository } from 'libs/dal';
-import { ChannelCTATypeEnum, INotificationTemplate, INotificationTemplateStep, StepTypeEnum } from 'libs/shared';
+import { ChannelCTATypeEnum, StepTypeEnum } from 'libs/shared';
+import type { INotificationTemplate, INotificationTemplateStep } from 'libs/shared';
 import { NotificationTemplateService, UserSession } from '@novu/testing';
 import { expect } from 'chai';
 import { CreateWorkflowRequestDto } from '../dtos';

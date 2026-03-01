@@ -1,4 +1,5 @@
-import { Logger, OnModuleDestroy } from '@nestjs/common';
+import { Logger } from '@nestjs/common';
+import type { OnModuleDestroy } from '@nestjs/common';
 import { FeatureFlagsKeysEnum, JobTopicNameEnum, QueueBackendMode } from 'libs/shared';
 import { PinoLogger } from '../../logging';
 

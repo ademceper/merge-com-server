@@ -1,18 +1,11 @@
 import { CompileTemplate, ConditionsFilter, ConditionsFilterCommand } from 'libs/application-generic';
 import { JobEntity, MessageTemplateEntity, NotificationStepEntity } from 'libs/dal';
-import {
-  BuilderGroupValues,
-  FILTER_TO_LABEL,
-  FieldLogicalOperatorEnum,
-  FieldOperatorEnum,
-  FilterParts,
-  FilterPartTypeEnum,
-  StepTypeEnum,
-  TimeOperatorEnum,
-} from 'libs/shared';
+import { FILTER_TO_LABEL, FieldLogicalOperatorEnum, FieldOperatorEnum, FilterPartTypeEnum, StepTypeEnum, TimeOperatorEnum } from 'libs/shared';
+import type { BuilderGroupValues, FilterParts } from 'libs/shared';
 import axios from 'axios';
 import { expect } from 'chai';
-import { Duration, sub } from 'date-fns';
+import { sub } from 'date-fns';
+import type { Duration } from 'date-fns';
 import sinon from 'sinon';
 
 describe('Message filter matcher', () => {

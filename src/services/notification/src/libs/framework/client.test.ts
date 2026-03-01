@@ -11,7 +11,7 @@ import {
   WorkflowNotFoundError,
 } from './errors';
 import { workflow } from './resources';
-import { Event, Step } from './types';
+import type { Event, Step } from './types';
 
 describe('Novu Client', () => {
   let client: Client;

@@ -1,5 +1,5 @@
 import { EnvironmentWithUserCommand } from 'libs/application-generic';
-import { ContextResolved } from 'libs/framework/internal';
+import type { ContextResolved } from 'libs/framework/internal';
 import { JobStatusEnum, ResourceOriginEnum } from 'libs/shared';
 import { SubscriberResponseDtoOptional } from '../../../subscribers/dtos';
 

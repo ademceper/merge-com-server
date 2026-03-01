@@ -1,4 +1,4 @@
-import { ChannelData } from '../provider/channel-data.type';
+import type { ChannelData } from '../provider/channel-data.type';
 
 export interface ITemplate {
   id: string;

@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { JobTopicNameEnum } from 'libs/shared';
-import { IWebSocketBulkJobDto, IWebSocketJobDto } from '../../dtos/web-sockets-job.dto';
+import type { IWebSocketBulkJobDto, IWebSocketJobDto } from '../../dtos/web-sockets-job.dto';
 import { PinoLogger } from '../../logging';
 import { BullMqService } from '../bull-mq';
 import { FeatureFlagsService } from '../feature-flags';

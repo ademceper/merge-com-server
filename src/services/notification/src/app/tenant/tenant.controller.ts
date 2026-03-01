@@ -25,7 +25,8 @@ import {
   UpdateTenantCommand,
 } from 'libs/application-generic';
 import { EnvironmentEntity, OrganizationEntity, UserEntity } from 'libs/dal';
-import { ApiRateLimitCategoryEnum, FeatureFlagsKeysEnum, UserSessionData } from 'libs/shared';
+import { ApiRateLimitCategoryEnum, FeatureFlagsKeysEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import { ThrottlerCategory } from '../rate-limiting/guards';

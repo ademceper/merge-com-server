@@ -1,16 +1,8 @@
-import type { JSONSchemaDto, UiSchema } from '../../dto';
-import {
-  ChannelCTATypeEnum,
-  EnvironmentId,
-  IEmailBlock,
-  ITemplateVariable,
-  MessageTemplateContentType,
-  OrganizationId,
-  StepTypeEnum,
-  TemplateVariableTypeEnum,
-  TriggerContextTypeEnum,
-} from '../../types';
-import { IActor } from '../actor';
+import type { UiSchema } from '../../dto';
+import { JSONSchemaDto } from '../../dto';
+import { ChannelCTATypeEnum, StepTypeEnum, TemplateVariableTypeEnum, TriggerContextTypeEnum } from '../../types';
+import type { EnvironmentId, IEmailBlock, ITemplateVariable, MessageTemplateContentType, OrganizationId } from '../../types';
+import type { IActor } from '../actor';
 
 export interface IMessageTemplate {
   id?: string;

@@ -11,14 +11,17 @@ import {
   FeatureFlagsKeysEnum,
   SeverityLevelEnum,
 } from 'libs/shared';
-import { InferClickhouseSchemaType } from 'clickhouse-schema';
+import type { InferClickhouseSchemaType } from 'clickhouse-schema';
 import { PinoLogger } from 'nestjs-pino';
 import { FeatureFlagsService } from '../../feature-flags/feature-flags.service';
-import { ClickHouseService, InsertOptions } from '../clickhouse.service';
+import { ClickHouseService } from '../clickhouse.service';
+import type { InsertOptions } from '../clickhouse.service';
 import { ClickHouseBatchService } from '../clickhouse-batch.service';
-import { LogRepository, SchemaKeys, Where } from '../log.repository';
+import { LogRepository } from '../log.repository';
+import type { SchemaKeys, Where } from '../log.repository';
 import { getInsertOptions } from '../shared';
-import { ORDER_BY, TABLE_NAME, WorkflowRun, WorkflowRunStatusEnum, workflowRunSchema } from './workflow-run.schema';
+import { ORDER_BY, TABLE_NAME, WorkflowRunStatusEnum, workflowRunSchema } from './workflow-run.schema';
+import type { WorkflowRun } from './workflow-run.schema';
 
 type WorkflowRunInsertData = Omit<WorkflowRun, 'id' | 'expires_at'>;
 type QueryNotificationEntity = Pick<

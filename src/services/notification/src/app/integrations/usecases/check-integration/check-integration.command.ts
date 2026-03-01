@@ -1,4 +1,5 @@
-import { ChannelTypeEnum, ICredentials } from 'libs/shared';
+import { ChannelTypeEnum } from 'libs/shared';
+import type { ICredentials } from 'libs/shared';
 import { IsDefined, IsString } from 'class-validator';
 import { EnvironmentCommand } from '../../../shared/commands/project.command';
 

@@ -1,2 +1,2 @@
-export * from './notification.dto';
-export * from './subscriber-preference/update-subscriber-preference.dto';
+export type * from './notification.dto';
+export type * from './subscriber-preference/update-subscriber-preference.dto';

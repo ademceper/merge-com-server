@@ -1,6 +1,6 @@
 import { MessageEntity } from 'libs/dal';
-import { ChannelData } from 'libs/stateless';
-import { MessageWebhookResponseDto } from '../dtos';
+import type { ChannelData } from 'libs/stateless';
+import type { MessageWebhookResponseDto } from '../dtos';
 
 export const messageWebhookMapper = (
   message: Pick<

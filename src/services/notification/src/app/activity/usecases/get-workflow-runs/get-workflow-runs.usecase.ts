@@ -1,16 +1,6 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import {
-  ClickhouseOperator,
-  FieldCondition,
-  PinoLogger,
-  QueryBuilder,
-  StepRun,
-  StepRunRepository,
-  Where,
-  WorkflowRun,
-  WorkflowRunRepository,
-  WorkflowRunStatusEnum,
-} from 'libs/application-generic';
+import { PinoLogger, QueryBuilder, StepRunRepository, WorkflowRunRepository, WorkflowRunStatusEnum } from 'libs/application-generic';
+import type { ClickhouseOperator, FieldCondition, StepRun, Where, WorkflowRun } from 'libs/application-generic';
 import { TopicSubscribersRepository } from 'libs/dal';
 import { SeverityLevelEnum } from 'libs/shared';
 import { WorkflowRunStatusDtoEnum } from '../../dtos/shared.dto';

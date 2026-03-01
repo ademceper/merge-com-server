@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { PinoLogger } from 'libs/application-generic';
-import { UserSessionData } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { WorkflowDataContainer } from '../../../shared/containers/workflow-data.container';
-import { IDiffResult, ISyncContext, ISyncResult, ResourceTypeEnum } from '../../types/sync.types';
+import { ResourceTypeEnum } from '../../types/sync.types';
+import type { IDiffResult, ISyncContext, ISyncResult } from '../../types/sync.types';
 import { BaseSyncStrategy } from './base/base-sync.strategy';
 import { WorkflowDiffOperation } from './operations/workflow-diff.operation';
 import { WorkflowSyncOperation } from './operations/workflow-sync.operation';

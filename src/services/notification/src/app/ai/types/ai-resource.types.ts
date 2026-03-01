@@ -1,5 +1,5 @@
-import { UserSessionData } from 'libs/shared';
-import { InferUIMessageChunk, UIDataTypes, UIMessage, UITools } from 'ai';
+import type { UserSessionData } from 'libs/shared';
+import type { InferUIMessageChunk, UIDataTypes, UIMessage, UITools } from 'ai';
 import { BaseMessage } from 'langchain';
 
 export interface UIMessagePartInput {

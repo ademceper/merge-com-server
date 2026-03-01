@@ -1,1 +1,1 @@
-export * from './index.type';
+export type * from './index.type';

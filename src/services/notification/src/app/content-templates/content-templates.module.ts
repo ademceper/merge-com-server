@@ -1,6 +1,7 @@
-import { DynamicModule, Module } from '@nestjs/common';
-import { ForwardReference } from '@nestjs/common/interfaces/modules/forward-reference.interface';
-import { Type } from '@nestjs/common/interfaces/type.interface';
+import { Module } from '@nestjs/common';
+import type { DynamicModule } from '@nestjs/common';
+import type { ForwardReference } from '@nestjs/common/interfaces/modules/forward-reference.interface';
+import type { Type } from '@nestjs/common/interfaces/type.interface';
 import { CommunityOrganizationRepository } from 'libs/dal';
 import { LayoutsV1Module } from '../layouts-v1/layouts-v1.module';
 import { SharedModule } from '../shared/shared.module';

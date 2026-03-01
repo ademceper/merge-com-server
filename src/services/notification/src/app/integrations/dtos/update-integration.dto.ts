@@ -1,5 +1,5 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { IUpdateIntegrationBodyDto } from 'libs/shared';
+import type { IUpdateIntegrationBodyDto } from 'libs/shared';
 import { Type } from 'class-transformer';
 import { IsArray, IsBoolean, IsMongoId, IsObject, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { StepFilterDto } from '../../shared/dtos/step-filter-dto';

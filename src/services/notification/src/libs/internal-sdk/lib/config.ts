@@ -5,8 +5,9 @@
 import * as components from '../models/components/index.js';
 import { HTTPClient } from './http.js';
 import { Logger } from './logger.js';
-import { RetryConfig } from './retries.js';
-import { Params, pathToFunc } from './url.js';
+import type { RetryConfig } from './retries.js';
+import { pathToFunc } from './url.js';
+import type { Params } from './url.js';
 
 /**
  * Contains the list of servers available to the SDK

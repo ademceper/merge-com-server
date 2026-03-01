@@ -1,7 +1,7 @@
 export * from './active-jobs-metric-queue.health-indicator';
 export * from './cache.health-indicator';
 export * from './dal.health-indicator';
-export * from './health-indicator.interface';
+export type * from './health-indicator.interface';
 export * from './inbound-parse-queue.health-indicator';
 export * from './queue-health-indicator.service';
 export * from './standard-queue.health-indicator';

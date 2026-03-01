@@ -2,9 +2,9 @@ import { ChannelTypeEnum, PreferencesTypeEnum } from 'libs/shared';
 import { createHash } from 'crypto';
 import mongoose, { Schema } from 'mongoose';
 import { schemaOptions } from '../schema-default.options';
-import { PreferencesDBModel } from './preferences.entity';
+import type { PreferencesDBModel } from './preferences.entity';
 
-const mongooseDelete = require('mongoose-delete');
+import mongooseDelete from 'mongoose-delete';
 
 const preferencesSchema = new Schema<PreferencesDBModel>(
   {

@@ -1,5 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { Slug, StepTypeEnum } from 'libs/shared';
+import { StepTypeEnum } from 'libs/shared';
+import type { Slug } from 'libs/shared';
 import { Type } from 'class-transformer';
 import { IsEnum, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { StepIssuesDto } from './step-issues.dto';

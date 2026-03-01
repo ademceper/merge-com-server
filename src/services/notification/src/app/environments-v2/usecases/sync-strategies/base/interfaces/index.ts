@@ -1,4 +1,4 @@
-export { IBaseComparator } from './base-comparator.interface';
-export { IBaseDeleteService } from './base-delete.interface';
-export { IBaseRepositoryService } from './base-repository.interface';
-export { IBaseSyncService } from './base-sync.interface';
+export type { IBaseComparator } from './base-comparator.interface';
+export type { IBaseDeleteService } from './base-delete.interface';
+export type { IBaseRepositoryService } from './base-repository.interface';
+export type { IBaseSyncService } from './base-sync.interface';

@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { NotificationTemplateEntity } from 'libs/dal';
-import { IBaseRepositoryService } from '../base/interfaces/base-repository.interface';
+import type { IBaseRepositoryService } from '../base/interfaces/base-repository.interface';
 import { WorkflowRepositoryService } from '../operations/workflow-repository.service';
 
 @Injectable()

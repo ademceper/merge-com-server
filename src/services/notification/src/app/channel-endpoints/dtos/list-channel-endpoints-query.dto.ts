@@ -1,5 +1,6 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { ChannelTypeEnum, ProvidersIdEnum, ProvidersIdEnumConst } from 'libs/shared';
+import { ChannelTypeEnum, ProvidersIdEnumConst } from 'libs/shared';
+import type { ProvidersIdEnum } from 'libs/shared';
 import { Transform } from 'class-transformer';
 import { IsArray, IsEnum, IsOptional, IsString } from 'class-validator';
 import { CursorPaginationQueryDto } from './cursor-pagination-query.dto';

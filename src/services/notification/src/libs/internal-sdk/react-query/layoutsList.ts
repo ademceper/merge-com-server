@@ -13,17 +13,9 @@ import {
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { useNovuContext } from "./_context.js";
-import {
-  QueryHookOptions,
-  SuspenseQueryHookOptions,
-  TupleToPrefixes,
-} from "./_types.js";
-import {
-  buildLayoutsListQuery,
-  LayoutsListQueryData,
-  prefetchLayoutsList,
-  queryKeyLayoutsList,
-} from "./layoutsList.core.js";
+import type { QueryHookOptions, SuspenseQueryHookOptions, TupleToPrefixes } from "./_types.js";
+import { buildLayoutsListQuery, prefetchLayoutsList, queryKeyLayoutsList } from "./layoutsList.core.js";
+import type { LayoutsListQueryData } from "./layoutsList.core.js";
 export {
   buildLayoutsListQuery,
   type LayoutsListQueryData,

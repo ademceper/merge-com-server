@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { parseSlugId } from 'libs/application-generic';
-import { Transform, Type } from 'class-transformer';
+import { Type, Transform } from 'class-transformer';
 import { ArrayMinSize, IsArray, IsNotEmpty, IsString, ValidateNested } from 'class-validator';
 
 export class DeployStepResolverManifestStepDto {

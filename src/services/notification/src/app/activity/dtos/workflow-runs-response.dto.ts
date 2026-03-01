@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { StepRunStatus } from 'libs/application-generic';
+import type { StepRunStatus } from 'libs/application-generic';
 import { Type } from 'class-transformer';
 import { IsIn, IsObject, IsOptional, IsString } from 'class-validator';
 import { GetWorkflowRunResponseBaseDto } from './shared.dto';
@@ -36,13 +36,13 @@ export class WorkflowRunStepsDetailsDto {
 }
 
 export class GetWorkflowRunsDto extends GetWorkflowRunResponseBaseDto {
-  @ApiProperty({ description: 'Workflow run steps', type: [WorkflowRunStepsDetailsDto] })
+  @ApiProperty({ description: 'Workflow run steps', type: () => [WorkflowRunStepsDetailsDto] })
   @Type(() => WorkflowRunStepsDetailsDto)
   steps: WorkflowRunStepsDetailsDto[];
 }
 
 export class GetWorkflowRunsResponseDto {
-  @ApiProperty({ description: 'Workflow runs data', type: [GetWorkflowRunsDto] })
+  @ApiProperty({ description: 'Workflow runs data', type: () => [GetWorkflowRunsDto] })
   @Type(() => GetWorkflowRunsDto)
   data: GetWorkflowRunsDto[];
 

@@ -1,4 +1,4 @@
-import { IEventBody } from 'libs/stateless';
+import type { IEventBody } from 'libs/stateless';
 
 export interface IWebhookResult {
   id: string;

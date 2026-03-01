@@ -1,13 +1,6 @@
-import {
-  DynamicModule,
-  ForwardReference,
-  forwardRef,
-  MiddlewareConsumer,
-  Module,
-  NestModule,
-  RequestMethod,
-} from '@nestjs/common';
-import { Type } from '@nestjs/common/interfaces/type.interface';
+import { forwardRef, Module, RequestMethod } from '@nestjs/common';
+import type { DynamicModule, ForwardReference, MiddlewareConsumer, NestModule } from '@nestjs/common';
+import type { Type } from '@nestjs/common/interfaces/type.interface';
 import { AuthGuard } from '@nestjs/passport';
 import { isBetterAuthEnabled, isClerkEnabled } from 'libs/shared';
 import { AuthModule } from '../auth/auth.module';

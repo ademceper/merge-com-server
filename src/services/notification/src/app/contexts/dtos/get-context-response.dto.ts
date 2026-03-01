@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { ContextData, ContextType } from 'libs/shared';
+import type { ContextData, ContextType } from 'libs/shared';
 
 export class GetContextResponseDto {
   @ApiProperty({

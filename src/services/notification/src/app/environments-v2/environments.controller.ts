@@ -10,7 +10,8 @@ import {
 } from '@nestjs/common';
 import { ApiExcludeEndpoint, ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
 import { RequirePermissions, SkipPermissionsCheck } from 'libs/application-generic';
-import { PermissionsEnum, UserSessionData } from 'libs/shared';
+import { PermissionsEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';

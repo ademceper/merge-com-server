@@ -1,19 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import {
-  FeatureFlagsService,
-  filteredPreference,
-  GetPreferences,
-  GetPreferencesResponseDto,
-  InMemoryLRUCacheService,
-  InMemoryLRUCacheStore,
-  Instrument,
-  InstrumentUsecase,
-  MergePreferences,
-  MergePreferencesCommand,
-  mapTemplateConfiguration,
-  overridePreferences,
-  PreferenceSet,
-} from 'libs/application-generic';
+import { FeatureFlagsService, filteredPreference, GetPreferences, GetPreferencesResponseDto, InMemoryLRUCacheService, InMemoryLRUCacheStore, Instrument, InstrumentUsecase, MergePreferences, MergePreferencesCommand, mapTemplateConfiguration, overridePreferences } from 'libs/application-generic';
+import type { PreferenceSet } from 'libs/application-generic';
 import {
   NotificationTemplateEntity,
   NotificationTemplateRepository,
@@ -22,15 +9,8 @@ import {
   SubscriberEntity,
   SubscriberRepository,
 } from 'libs/dal';
-import {
-  ChannelTypeEnum,
-  FeatureFlagsKeysEnum,
-  IPreferenceChannels,
-  ISubscriberPreferenceResponse,
-  PreferencesTypeEnum,
-  SeverityLevelEnum,
-  WorkflowCriticalityEnum,
-} from 'libs/shared';
+import { ChannelTypeEnum, FeatureFlagsKeysEnum, PreferencesTypeEnum, SeverityLevelEnum, WorkflowCriticalityEnum } from 'libs/shared';
+import type { IPreferenceChannels, ISubscriberPreferenceResponse } from 'libs/shared';
 import { chunk } from 'es-toolkit';
 import { GetSubscriberPreferenceCommand } from './get-subscriber-preference.command';
 

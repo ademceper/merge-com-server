@@ -2,7 +2,7 @@ import { JobEntity, NotificationStepEntity, StepFilter } from 'libs/dal';
 import { IsDefined } from 'class-validator';
 
 import { EnvironmentWithUserCommand } from '../../commands';
-import { IFilterVariables } from '../../utils';
+import type { IFilterVariables } from '../../utils';
 
 export class NormalizeVariablesCommand extends EnvironmentWithUserCommand {
   @IsDefined()

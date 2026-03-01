@@ -1,11 +1,5 @@
-import {
-  ActorTypeEnum,
-  IEmailBlock,
-  IMessageCTADto,
-  ITemplateVariable,
-  MessageTemplateContentType,
-  StepTypeEnum,
-} from 'libs/shared';
+import { ActorTypeEnum, StepTypeEnum } from 'libs/shared';
+import type { IEmailBlock, IMessageCTADto, ITemplateVariable, MessageTemplateContentType } from 'libs/shared';
 
 export class MessageTemplateDto {
   type: StepTypeEnum;

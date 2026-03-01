@@ -1,4 +1,5 @@
-import { ChannelTypeEnum, ITenantDefine, ProvidersIdEnum } from 'libs/shared';
+import { ChannelTypeEnum } from 'libs/shared';
+import type { ITenantDefine, ProvidersIdEnum } from 'libs/shared';
 import { IsDefined, IsMongoId, IsOptional } from 'class-validator';
 
 import { EnvironmentCommand } from '../../commands/project.command';

@@ -10,11 +10,11 @@ import {
 import { NovuCore } from "../core.js";
 import { integrationsIntegrationsControllerAutoConfigureIntegration } from "../funcs/integrationsIntegrationsControllerAutoConfigureIntegration.js";
 import { combineSignals } from "../lib/primitives.js";
-import { RequestOptions } from "../lib/sdks.js";
+import type { RequestOptions } from "../lib/sdks.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 import { useNovuContext } from "./_context.js";
-import { MutationHookOptions } from "./_types.js";
+import type { MutationHookOptions } from "./_types.js";
 
 export type IntegrationsIntegrationsControllerAutoConfigureIntegrationMutationVariables =
   {

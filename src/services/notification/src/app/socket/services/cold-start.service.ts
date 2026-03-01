@@ -1,5 +1,6 @@
-import { INestApplication } from '@nestjs/common';
-import { INovuWorker, ReadinessService } from 'libs/application-generic';
+import type { INestApplication } from '@nestjs/common';
+import { ReadinessService } from 'libs/application-generic';
+import type { INovuWorker } from 'libs/application-generic';
 import { WebSocketWorker } from './web-socket.worker';
 
 const getWorkers = (app: INestApplication): INovuWorker[] => {

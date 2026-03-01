@@ -12,17 +12,9 @@ import {
 } from "@tanstack/react-query";
 import * as operations from "../models/operations/index.js";
 import { useNovuContext } from "./_context.js";
-import {
-  QueryHookOptions,
-  SuspenseQueryHookOptions,
-  TupleToPrefixes,
-} from "./_types.js";
-import {
-  ActivityChartsRetrieveQueryData,
-  buildActivityChartsRetrieveQuery,
-  prefetchActivityChartsRetrieve,
-  queryKeyActivityChartsRetrieve,
-} from "./activityChartsRetrieve.core.js";
+import type { QueryHookOptions, SuspenseQueryHookOptions, TupleToPrefixes } from "./_types.js";
+import { buildActivityChartsRetrieveQuery, prefetchActivityChartsRetrieve, queryKeyActivityChartsRetrieve } from "./activityChartsRetrieve.core.js";
+import type { ActivityChartsRetrieveQueryData } from "./activityChartsRetrieve.core.js";
 export {
   type ActivityChartsRetrieveQueryData,
   buildActivityChartsRetrieveQuery,

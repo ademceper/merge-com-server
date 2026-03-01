@@ -34,11 +34,7 @@ import {
   InAppStepUpsertDto$Outbound,
   InAppStepUpsertDto$outboundSchema,
 } from "./inappstepupsertdto.js";
-import {
-  PreferencesRequestDto,
-  PreferencesRequestDto$Outbound,
-  PreferencesRequestDto$outboundSchema,
-} from "./preferencesrequestdto.js";
+import { PreferencesRequestDto$Outbound, PreferencesRequestDto$outboundSchema, PreferencesRequestDto } from "./preferencesrequestdto.js";
 import {
   PushStepUpsertDto,
   PushStepUpsertDto$Outbound,

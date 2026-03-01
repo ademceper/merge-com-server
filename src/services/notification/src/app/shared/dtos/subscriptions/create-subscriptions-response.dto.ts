@@ -1,7 +1,7 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
 import { IsArray, IsDefined, IsOptional, IsString, ValidateIf, ValidateNested } from 'class-validator';
-import { RulesLogic } from 'json-logic-js';
+import type { RulesLogic } from 'json-logic-js';
 import { WorkflowDto } from '../../../inbox/dtos/workflow.dto';
 
 export class TopicDto {

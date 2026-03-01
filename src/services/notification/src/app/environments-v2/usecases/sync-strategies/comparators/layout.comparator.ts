@@ -4,7 +4,7 @@ import { LayoutEntity } from 'libs/dal';
 import { diff } from 'deep-object-diff';
 import { GetLayoutCommand, GetLayoutUseCase } from '../../../../layouts-v2/usecases/get-layout';
 import { LayoutNormalizer } from '../normalizers/layout.normalizer';
-import { ILayoutComparison, INormalizedLayout } from '../types/layout-sync.types';
+import type { ILayoutComparison, INormalizedLayout } from '../types/layout-sync.types';
 
 @Injectable()
 export class LayoutComparator {

@@ -1,5 +1,6 @@
-import { ChannelTypeEnum, IAttachmentOptions } from '../template/template.interface';
-import { ChannelData } from './channel-data.type';
+import { ChannelTypeEnum } from '../template/template.interface';
+import type { IAttachmentOptions } from '../template/template.interface';
+import type { ChannelData } from './channel-data.type';
 import { CheckIntegrationResponseEnum } from './provider.enum';
 
 export interface IProvider {

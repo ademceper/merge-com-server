@@ -15,7 +15,7 @@ import {
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { ApiExcludeController } from '@nestjs/swagger';
-import { Response } from 'express';
+import type { Response } from 'express';
 import { SubscriptionDetailsResponseDto } from '../shared/dtos/subscription-details-response.dto';
 import {
   GroupPreferenceFilterDto,

@@ -1,6 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { AiAgentTypeEnum, AiResourceTypeEnum } from 'libs/shared';
-import { UIMessage } from 'ai';
+import type { UIMessage } from 'ai';
 import { IsDefined, IsEnum, IsMongoId, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export enum WorkflowSuggestionType {

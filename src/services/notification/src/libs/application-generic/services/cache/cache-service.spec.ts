@@ -1,6 +1,7 @@
 import sinon from 'sinon';
 import { CacheInMemoryProviderService } from '../in-memory-provider';
-import { CacheService, CachingConfig, ICacheService, splitKey } from './cache.service';
+import { CacheService, splitKey } from './cache.service';
+import type { CachingConfig, ICacheService } from './cache.service';
 import { MockCacheService } from './cache-service.mock';
 
 /**

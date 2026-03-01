@@ -1,5 +1,6 @@
 import { validateLocale } from 'libs/shared';
-import { registerDecorator, ValidationArguments, ValidationOptions } from 'class-validator';
+import { registerDecorator } from 'class-validator';
+import type { ValidationArguments, ValidationOptions } from 'class-validator';
 
 export function IsValidLocale(validationOptions?: ValidationOptions) {
   return (object: any, propertyName: string) => {

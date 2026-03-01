@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { decryptApiKey } from 'libs/application-generic';
-import { EnvironmentRepository, IApiKey } from 'libs/dal';
+import { EnvironmentRepository } from 'libs/dal';
+import type { IApiKey } from 'libs/dal';
 import { ApiKey } from '../../../shared/dtos/api-key';
 import { GetApiKeysCommand } from './get-api-keys.command';
 

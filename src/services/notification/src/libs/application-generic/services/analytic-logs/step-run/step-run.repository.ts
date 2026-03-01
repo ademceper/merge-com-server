@@ -3,12 +3,15 @@ import { JobEntity, JobStatusEnum, MessageEntity } from 'libs/dal';
 import { FeatureFlagsKeysEnum, StepTypeEnum } from 'libs/shared';
 import { PinoLogger } from 'nestjs-pino';
 import { FeatureFlagsService } from '../../feature-flags/feature-flags.service';
-import { StepType } from '..';
-import { ClickHouseService, InsertOptions } from '../clickhouse.service';
+import type { StepType } from '..';
+import { ClickHouseService } from '../clickhouse.service';
+import type { InsertOptions } from '../clickhouse.service';
 import { ClickHouseBatchService } from '../clickhouse-batch.service';
-import { LogRepository, SchemaKeys } from '../log.repository';
+import { LogRepository } from '../log.repository';
+import type { SchemaKeys } from '../log.repository';
 import { getInsertOptions } from '../shared';
-import { ORDER_BY, StepRun, stepRunSchema, TABLE_NAME } from './step-run.schema';
+import { ORDER_BY, stepRunSchema, TABLE_NAME } from './step-run.schema';
+import type { StepRun } from './step-run.schema';
 
 type StepRunInsertData = Omit<StepRun, 'id' | 'expires_at'>;
 

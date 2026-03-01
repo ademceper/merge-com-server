@@ -1,19 +1,12 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import { PinoLogger } from 'libs/application-generic';
-import {
-  ChannelTypeEnum,
-  EnvironmentRepository,
-  ICredentialsEntity,
-  IntegrationEntity,
-  IntegrationRepository,
-} from 'libs/dal';
+import { ChannelTypeEnum, EnvironmentRepository, IntegrationEntity, IntegrationRepository } from 'libs/dal';
+import type { ICredentialsEntity } from 'libs/dal';
 import { ChatProviderIdEnum } from 'libs/shared';
 import { CreateChannelConnectionCommand } from '../../../../channel-connections/usecases/create-channel-connection/create-channel-connection.command';
 import { CreateChannelConnection } from '../../../../channel-connections/usecases/create-channel-connection/create-channel-connection.usecase';
-import {
-  GenerateMsTeamsOauthUrl,
-  StateData,
-} from '../../generate-chat-oath-url/generate-msteams-oath-url/generate-msteams-oauth-url.usecase';
+import { GenerateMsTeamsOauthUrl } from '../../generate-chat-oath-url/generate-msteams-oath-url/generate-msteams-oauth-url.usecase';
+import type { StateData } from '../../generate-chat-oath-url/generate-msteams-oath-url/generate-msteams-oauth-url.usecase';
 import { ChatOauthCallbackResult, ResponseTypeEnum } from '../chat-oauth-callback.response';
 import { MsTeamsOauthCallbackCommand } from './msteams-oauth-callback.command';
 

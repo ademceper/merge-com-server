@@ -1,5 +1,6 @@
 import { Type } from 'class-transformer';
-import { IsDate, IsDefined, registerDecorator, ValidationArguments, ValidationOptions } from 'class-validator';
+import { IsDate, IsDefined, registerDecorator } from 'class-validator';
+import type { ValidationArguments, ValidationOptions } from 'class-validator';
 
 function IsFutureDate(
   options?: {

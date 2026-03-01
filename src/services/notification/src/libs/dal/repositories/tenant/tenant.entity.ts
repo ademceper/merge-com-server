@@ -1,8 +1,8 @@
-import { CustomDataType } from 'libs/shared';
-import { ChangePropsValueType } from '../../types/helpers';
-import { EnvironmentId } from '../environment';
-import { OrganizationId } from '../organization';
-import { TenantId } from './types';
+import type { CustomDataType } from 'libs/shared';
+import type { ChangePropsValueType } from '../../types/helpers';
+import type { EnvironmentId } from '../environment';
+import type { OrganizationId } from '../organization';
+import type { TenantId } from './types';
 
 export class TenantEntity {
   _id: TenantId;

@@ -5,12 +5,8 @@ import {
   PreferencesEntity,
   PreferencesRepository,
 } from 'libs/dal';
-import {
-  buildWorkflowPreferences,
-  ControlValuesLevelEnum,
-  PreferencesTypeEnum,
-  WorkflowPreferences,
-} from 'libs/shared';
+import { buildWorkflowPreferences, ControlValuesLevelEnum, PreferencesTypeEnum } from 'libs/shared';
+import type { WorkflowPreferences } from 'libs/shared';
 import { StepResponseDto } from '../../workflows-v2/dtos';
 import { WorkflowResponseDto } from '../../workflows-v2/dtos/workflow-response.dto';
 import { toResponseWorkflowDto } from '../../workflows-v2/mappers/notification-template-mapper';

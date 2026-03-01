@@ -2,7 +2,7 @@ import { BadRequestException, Injectable } from '@nestjs/common';
 import { InstrumentUsecase, PinoLogger } from 'libs/application-generic';
 import { BaseRepository } from 'libs/dal';
 import { EnvironmentValidationService } from '../../services';
-import { IPublishResult, ISyncContext, ISyncOptions, ISyncResult, ISyncStrategy } from '../../types/sync.types';
+import type { IPublishResult, ISyncContext, ISyncOptions, ISyncResult, ISyncStrategy } from '../../types/sync.types';
 import { LayoutSyncStrategy } from '../sync-strategies/layout-sync.strategy';
 import { WorkflowSyncStrategy } from '../sync-strategies/workflow-sync.strategy';
 import { PublishEnvironmentCommand } from './publish-environment.command';

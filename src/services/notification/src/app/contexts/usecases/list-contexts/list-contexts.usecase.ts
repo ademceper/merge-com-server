@@ -1,7 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { ContextEntity, ContextRepository, EnforceEnvOrOrgIds } from 'libs/dal';
+import { ContextEntity, ContextRepository } from 'libs/dal';
+import type { EnforceEnvOrOrgIds } from 'libs/dal';
 import { DirectionEnum } from 'libs/shared';
-import { FilterQuery } from 'mongoose';
+import type { FilterQuery } from 'mongoose';
 import { ListContextsCommand } from './list-contexts.command';
 
 @Injectable()

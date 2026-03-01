@@ -12,17 +12,9 @@ import {
 } from "@tanstack/react-query";
 import * as operations from "../models/operations/index.js";
 import { useNovuContext } from "./_context.js";
-import {
-  QueryHookOptions,
-  SuspenseQueryHookOptions,
-  TupleToPrefixes,
-} from "./_types.js";
-import {
-  buildTranslationsRetrieveQuery,
-  prefetchTranslationsRetrieve,
-  queryKeyTranslationsRetrieve,
-  TranslationsRetrieveQueryData,
-} from "./translationsRetrieve.core.js";
+import type { QueryHookOptions, SuspenseQueryHookOptions, TupleToPrefixes } from "./_types.js";
+import { buildTranslationsRetrieveQuery, prefetchTranslationsRetrieve, queryKeyTranslationsRetrieve } from "./translationsRetrieve.core.js";
+import type { TranslationsRetrieveQueryData } from "./translationsRetrieve.core.js";
 export {
   buildTranslationsRetrieveQuery,
   prefetchTranslationsRetrieve,

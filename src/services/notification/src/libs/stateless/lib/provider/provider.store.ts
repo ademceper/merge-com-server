@@ -1,6 +1,6 @@
 import { ChannelTypeEnum } from '../template/template.interface';
 
-import { IChatProvider, IEmailProvider, IPushProvider, ISmsProvider } from './provider.interface';
+import type { IChatProvider, IEmailProvider, IPushProvider, ISmsProvider } from './provider.interface';
 
 export class ProviderStore {
   private providers: {

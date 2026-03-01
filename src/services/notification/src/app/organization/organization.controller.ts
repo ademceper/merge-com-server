@@ -13,14 +13,15 @@ import {
 import { ApiExcludeEndpoint, ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
 import { ApiExcludeController } from '@nestjs/swagger/dist/decorators/api-exclude-controller.decorator';
 import { OrganizationEntity } from 'libs/dal';
-import { MemberRoleEnum, UserSessionData } from 'libs/shared';
+import { MemberRoleEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';
 import { UserSession } from '../shared/framework/user.decorator';
 import { CreateOrganizationDto } from './dtos/create-organization.dto';
-import { IGetMyOrganizationDto } from './dtos/get-my-organization.dto';
-import { IGetOrganizationsDto } from './dtos/get-organizations.dto';
+import type { IGetMyOrganizationDto } from './dtos/get-my-organization.dto';
+import type { IGetOrganizationsDto } from './dtos/get-organizations.dto';
 import { MemberResponseDto } from './dtos/member-response.dto';
 import { OrganizationBrandingResponseDto, OrganizationResponseDto } from './dtos/organization-response.dto';
 import { RenameOrganizationDto } from './dtos/rename-organization.dto';

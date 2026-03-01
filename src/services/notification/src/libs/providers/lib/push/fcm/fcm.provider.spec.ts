@@ -1,4 +1,4 @@
-import { IPushOptions } from 'libs/stateless';
+import type { IPushOptions } from 'libs/stateless';
 import app from 'firebase-admin/app';
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 

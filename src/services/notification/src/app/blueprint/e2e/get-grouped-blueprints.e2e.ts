@@ -6,15 +6,8 @@ import {
   PinoLogger,
 } from 'libs/application-generic';
 import { EnvironmentEntity, EnvironmentRepository, NotificationTemplateRepository } from 'libs/dal';
-import {
-  EmailBlockTypeEnum,
-  FieldLogicalOperatorEnum,
-  FieldOperatorEnum,
-  FilterPartTypeEnum,
-  INotificationTemplate,
-  INotificationTemplateStep,
-  StepTypeEnum,
-} from 'libs/shared';
+import { EmailBlockTypeEnum, FieldLogicalOperatorEnum, FieldOperatorEnum, FilterPartTypeEnum, StepTypeEnum } from 'libs/shared';
+import type { INotificationTemplate, INotificationTemplateStep } from 'libs/shared';
 import { UserSession } from '@novu/testing';
 import { expect } from 'chai';
 import sinon from 'sinon';

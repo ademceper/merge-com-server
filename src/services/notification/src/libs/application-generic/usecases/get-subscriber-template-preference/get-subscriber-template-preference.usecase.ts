@@ -7,18 +7,8 @@ import {
   TenantRepository,
   WorkflowOverrideRepository,
 } from 'libs/dal';
-import {
-  ChannelTypeEnum,
-  IOverridePreferencesSources,
-  IPreferenceChannels,
-  IPreferenceOverride,
-  ISubscriberPreferenceResponse,
-  ITemplateConfiguration,
-  PreferenceOverrideSourceEnum,
-  PreferencesTypeEnum,
-  SeverityLevelEnum,
-  StepTypeEnum,
-} from 'libs/shared';
+import { ChannelTypeEnum, PreferenceOverrideSourceEnum, PreferencesTypeEnum, SeverityLevelEnum, StepTypeEnum } from 'libs/shared';
+import type { IOverridePreferencesSources, IPreferenceChannels, IPreferenceOverride, ISubscriberPreferenceResponse, ITemplateConfiguration } from 'libs/shared';
 import { Instrument, InstrumentUsecase } from '../../instrumentation';
 import { buildSubscriberKey, CachedResponse } from '../../services';
 import { GetPreferences } from '../get-preferences';

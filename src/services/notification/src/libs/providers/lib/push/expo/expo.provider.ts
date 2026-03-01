@@ -1,8 +1,9 @@
 import { PushProviderIdEnum } from 'libs/shared';
-import { IPushOptions, IPushProvider, ISendMessageSuccessResponse } from 'libs/stateless';
-import { Expo, ExpoPushMessage, ExpoPushTicket } from 'expo-server-sdk';
+import type { IPushOptions, IPushProvider, ISendMessageSuccessResponse } from 'libs/stateless';
+import { Expo } from 'expo-server-sdk';
+import type { ExpoPushMessage, ExpoPushTicket } from 'expo-server-sdk';
 import { CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
+import type { WithPassthrough } from '../../../utils/types';
 import { PushBaseProvider } from '../push.base-provider';
 
 export class ExpoPushProvider extends PushBaseProvider implements IPushProvider {

@@ -2,7 +2,7 @@ import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { PreferenceLevelEnum } from 'libs/shared';
 import { Type } from 'class-transformer';
 import { IsDefined, IsEnum, IsOptional, ValidateNested } from 'class-validator';
-import { RulesLogic } from 'json-logic-js';
+import type { RulesLogic } from 'json-logic-js';
 import { SubscriberPreferenceChannels } from '../../shared/dtos/preference-channels';
 import { WorkflowDto } from './workflow.dto';
 

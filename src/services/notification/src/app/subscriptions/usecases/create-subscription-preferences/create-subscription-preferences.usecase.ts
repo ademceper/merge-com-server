@@ -7,14 +7,9 @@ import {
   PinoLogger,
 } from 'libs/application-generic';
 import { NotificationTemplateEntity, PreferencesRepository, TopicSubscribersEntity } from 'libs/dal';
-import {
-  buildWorkflowPreferences,
-  PreferencesTypeEnum,
-  SeverityLevelEnum,
-  WorkflowPreferences,
-  WorkflowPreferencesPartial,
-} from 'libs/shared';
-import { RulesLogic } from 'json-logic-js';
+import { buildWorkflowPreferences, PreferencesTypeEnum, SeverityLevelEnum } from 'libs/shared';
+import type { WorkflowPreferences, WorkflowPreferencesPartial } from 'libs/shared';
+import type { RulesLogic } from 'json-logic-js';
 import { SubscriptionPreferenceDto } from '../../../shared/dtos/subscriptions/create-subscriptions-response.dto';
 import { CreateSubscriptionPreferencesCommand } from './create-subscription-preferences.command';
 

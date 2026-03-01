@@ -9,21 +9,11 @@ import {
   NotificationTemplateEntity,
   NotificationTemplateRepository,
 } from 'libs/dal';
-import {
-  DeliveryLifecycleDetail,
-  DeliveryLifecycleEventType,
-  DeliveryLifecycleStatusEnum,
-  FeatureFlagsKeysEnum,
-  SeverityLevelEnum,
-} from 'libs/shared';
+import { DeliveryLifecycleDetail, DeliveryLifecycleStatusEnum, FeatureFlagsKeysEnum, SeverityLevelEnum } from 'libs/shared';
+import type { DeliveryLifecycleEventType } from 'libs/shared';
 import { PinoLogger } from '../logging';
-import {
-  EventType,
-  TraceLogRepository,
-  WorkflowRunRepository,
-  WorkflowRunStatusEnum,
-  WorkflowRunTraceInput,
-} from './analytic-logs';
+import { TraceLogRepository, WorkflowRunRepository, WorkflowRunStatusEnum } from './analytic-logs';
+import type { EventType, WorkflowRunTraceInput } from './analytic-logs';
 import { LogRepository } from './analytic-logs/log.repository';
 import { FeatureFlagsService } from './feature-flags';
 

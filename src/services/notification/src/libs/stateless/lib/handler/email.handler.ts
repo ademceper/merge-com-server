@@ -1,7 +1,9 @@
-import { HandlebarsContentEngine, IContentEngine } from '../content/content.engine';
-import { IEmailProvider } from '../provider/provider.interface';
-import { ChannelTypeEnum, IMessage, ITriggerPayload } from '../template/template.interface';
-import { ITheme } from '../theme/theme.interface';
+import { HandlebarsContentEngine } from '../content/content.engine';
+import type { IContentEngine } from '../content/content.engine';
+import type { IEmailProvider } from '../provider/provider.interface';
+import { ChannelTypeEnum } from '../template/template.interface';
+import type { IMessage, ITriggerPayload } from '../template/template.interface';
+import type { ITheme } from '../theme/theme.interface';
 
 export class EmailHandler {
   private readonly contentEngine: IContentEngine;

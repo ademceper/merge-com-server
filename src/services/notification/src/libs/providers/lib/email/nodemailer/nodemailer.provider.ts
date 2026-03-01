@@ -1,18 +1,13 @@
 import { EmailProviderIdEnum } from 'libs/shared';
-import {
-  ChannelTypeEnum,
-  CheckIntegrationResponseEnum,
-  ICheckIntegrationResponse,
-  IEmailOptions,
-  IEmailProvider,
-  ISendMessageSuccessResponse,
-} from 'libs/stateless';
+import { ChannelTypeEnum, CheckIntegrationResponseEnum } from 'libs/stateless';
+import type { ICheckIntegrationResponse, IEmailProvider, ISendMessageSuccessResponse } from 'libs/stateless';
+import type { IEmailOptions } from 'libs/stateless';
 import nodemailer, { SendMailOptions, Transporter } from 'nodemailer';
 import DKIM from 'nodemailer/lib/dkim';
 import SMTPTransport from 'nodemailer/lib/smtp-transport';
-import { ConnectionOptions } from 'tls';
+import type { ConnectionOptions } from 'tls';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
+import type { WithPassthrough } from '../../../utils/types';
 
 interface INodemailerConfig {
   from: string;

@@ -1,22 +1,7 @@
-import { applyDecorators, Type } from '@nestjs/common';
-import {
-  ApiExpectationFailedResponse,
-  ApiExtraModels,
-  ApiHttpVersionNotSupportedResponse,
-  ApiLengthRequiredResponse,
-  ApiNonAuthoritativeInformationResponse,
-  ApiNotModifiedResponse,
-  ApiPartialContentResponse,
-  ApiPaymentRequiredResponse,
-  ApiPermanentRedirectResponse,
-  ApiProxyAuthenticationRequiredResponse,
-  ApiRequestedRangeNotSatisfiableResponse,
-  ApiResetContentResponse,
-  ApiResponseOptions,
-  ApiSeeOtherResponse,
-  ApiUriTooLongResponse,
-  getSchemaPath,
-} from '@nestjs/swagger';
+import { applyDecorators } from '@nestjs/common';
+import type { Type } from '@nestjs/common';
+import { ApiExpectationFailedResponse, ApiExtraModels, ApiHttpVersionNotSupportedResponse, ApiLengthRequiredResponse, ApiNonAuthoritativeInformationResponse, ApiNotModifiedResponse, ApiPartialContentResponse, ApiPaymentRequiredResponse, ApiPermanentRedirectResponse, ApiProxyAuthenticationRequiredResponse, ApiRequestedRangeNotSatisfiableResponse, ApiResetContentResponse, ApiSeeOtherResponse, ApiUriTooLongResponse, getSchemaPath } from '@nestjs/swagger';
+import type { ApiResponseOptions } from '@nestjs/swagger';
 import { ErrorDto, ValidationErrorDto } from '../../../error-dto';
 import { DataWrapperDto } from '../dtos/data-wrapper-dto';
 import { COMMON_RESPONSES } from './constants/responses.schema';

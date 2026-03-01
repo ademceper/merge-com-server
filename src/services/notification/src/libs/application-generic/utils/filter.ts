@@ -1,7 +1,9 @@
-import { FILTER_TO_LABEL, FieldOperatorEnum, IBaseFieldFilterPart, ICondition } from 'libs/shared';
+import { FILTER_TO_LABEL, FieldOperatorEnum } from 'libs/shared';
+import type { IBaseFieldFilterPart, ICondition } from 'libs/shared';
 import _ from 'lodash';
 
-import { FilterProcessingDetails, IFilterVariables } from './filter-processing-details';
+import { FilterProcessingDetails } from './filter-processing-details';
+import type { IFilterVariables } from './filter-processing-details';
 
 export abstract class Filter {
   protected processFilterEquality(

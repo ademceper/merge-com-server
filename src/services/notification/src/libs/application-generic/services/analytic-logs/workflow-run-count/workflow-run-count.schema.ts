@@ -1,14 +1,8 @@
-import { DeliveryLifecycleEventType } from 'libs/shared';
-import {
-  CHDate,
-  CHLowCardinality,
-  CHString,
-  CHUInt64,
-  ClickhouseSchema,
-  InferClickhouseSchemaType,
-} from 'clickhouse-schema';
-import { Prettify } from '../../../utils/prettify.type';
-import { WorkflowRunStatusType } from '../trace-log/trace-log.schema';
+import type { DeliveryLifecycleEventType } from 'libs/shared';
+import { CHDate, CHLowCardinality, CHString, CHUInt64, ClickhouseSchema } from 'clickhouse-schema';
+import type { InferClickhouseSchemaType } from 'clickhouse-schema';
+import type { Prettify } from '../../../utils/prettify.type';
+import type { WorkflowRunStatusType } from '../trace-log/trace-log.schema';
 
 export const WORKFLOW_RUN_COUNT_TABLE_NAME = 'workflow_run_count';
 

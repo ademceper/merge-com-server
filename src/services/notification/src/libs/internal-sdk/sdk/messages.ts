@@ -5,7 +5,8 @@
 import { messagesDelete } from "../funcs/messagesDelete.js";
 import { messagesDeleteByTransactionId } from "../funcs/messagesDeleteByTransactionId.js";
 import { messagesRetrieve } from "../funcs/messagesRetrieve.js";
-import { ClientSDK, RequestOptions } from "../lib/sdks.js";
+import { ClientSDK } from "../lib/sdks.js";
+import type { RequestOptions } from "../lib/sdks.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 

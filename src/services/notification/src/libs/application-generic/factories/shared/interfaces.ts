@@ -1,5 +1,6 @@
-import { ChannelTypeEnum, IConfigurations } from 'libs/shared';
-import { ChannelProvider, IEmailEventBody, ISMSEventBody } from 'libs/stateless';
+import { ChannelTypeEnum } from 'libs/shared';
+import type { IConfigurations } from 'libs/shared';
+import type { ChannelProvider, IEmailEventBody, ISMSEventBody } from 'libs/stateless';
 
 export interface IHandler {
   inboundWebhookEnabled(): boolean;

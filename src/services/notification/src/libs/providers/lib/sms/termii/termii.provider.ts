@@ -1,15 +1,10 @@
 import { SmsProviderIdEnum } from 'libs/shared';
-import {
-  ChannelTypeEnum,
-  ISendMessageSuccessResponse,
-  ISMSEventBody,
-  ISmsOptions,
-  ISmsProvider,
-  SmsEventStatusEnum,
-} from 'libs/stateless';
+import { ChannelTypeEnum, SmsEventStatusEnum } from 'libs/stateless';
+import type { ISendMessageSuccessResponse, ISMSEventBody, ISmsOptions, ISmsProvider } from 'libs/stateless';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
-import { MessageChannel, SmsJsonResponse, SmsParams } from './sms';
+import type { WithPassthrough } from '../../../utils/types';
+import { MessageChannel } from './sms';
+import type { SmsJsonResponse, SmsParams } from './sms';
 
 export class TermiiSmsProvider extends BaseProvider implements ISmsProvider {
   public static readonly BASE_URL = 'https://api.ng.termii.com/api/sms/send';

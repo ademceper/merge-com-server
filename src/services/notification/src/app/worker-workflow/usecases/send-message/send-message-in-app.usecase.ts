@@ -19,7 +19,7 @@ import {
 } from 'libs/application-generic';
 
 import { MessageEntity, MessageRepository, SubscriberRepository } from 'libs/dal';
-import { InAppOutput } from 'libs/framework/internal';
+import type { InAppOutput } from 'libs/framework/internal';
 import {
   ActorTypeEnum,
   ChannelTypeEnum,
@@ -34,7 +34,8 @@ import { addBreadcrumb } from '@sentry/node';
 import { PlatformException } from '../../../shared/utils';
 import { SendMessageBase } from './send-message.base';
 import { SendMessageChannelCommand } from './send-message-channel.command';
-import { SendMessageResult, SendMessageStatus } from './send-message-type.usecase';
+import { SendMessageStatus } from './send-message-type.usecase';
+import type { SendMessageResult } from './send-message-type.usecase';
 
 @Injectable()
 export class SendMessageInApp extends SendMessageBase {

@@ -1,13 +1,5 @@
 import type { ChangePropsValueType } from '../../types/helpers';
-import {
-  EnvironmentId,
-  ExternalSubscriberId,
-  OrganizationId,
-  SubscriberId,
-  TopicId,
-  TopicKey,
-  TopicSubscriberId,
-} from './types';
+import type { EnvironmentId, ExternalSubscriberId, OrganizationId, SubscriberId, TopicId, TopicKey, TopicSubscriberId } from './types';
 
 export class TopicSubscribersEntity {
   _id: TopicSubscriberId;

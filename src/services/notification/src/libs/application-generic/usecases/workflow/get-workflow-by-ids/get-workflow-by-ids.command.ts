@@ -1,4 +1,4 @@
-import { ClientSession } from 'libs/dal';
+import type { ClientSession } from 'libs/dal';
 import { Exclude } from 'class-transformer';
 import { IsDefined, IsOptional, IsString } from 'class-validator';
 import { EnvironmentCommand } from '../../../commands';

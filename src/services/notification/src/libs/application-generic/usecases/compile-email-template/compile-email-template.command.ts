@@ -1,5 +1,5 @@
-import { IEmailBlock } from 'libs/dal';
-import { LayoutId, MessageTemplateContentType } from 'libs/shared';
+import type { IEmailBlock } from 'libs/dal';
+import type { LayoutId, MessageTemplateContentType } from 'libs/shared';
 import { IsDefined, IsOptional, IsString } from 'class-validator';
 
 import { EnvironmentWithUserCommand } from '../../commands/project.command';

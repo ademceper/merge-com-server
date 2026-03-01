@@ -1,5 +1,5 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { CustomDataType, IUpdateTenantDto } from 'libs/shared';
+import type { CustomDataType, IUpdateTenantDto } from 'libs/shared';
 import { IsOptional, IsString } from 'class-validator';
 
 export class UpdateTenantRequestDto implements IUpdateTenantDto {

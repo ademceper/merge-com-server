@@ -1,14 +1,7 @@
 import { EmailProviderIdEnum } from 'libs/shared';
-import {
-  ChannelTypeEnum,
-  CheckIntegrationResponseEnum,
-  EmailEventStatusEnum,
-  ICheckIntegrationResponse,
-  IEmailEventBody,
-  IEmailOptions,
-  IEmailProvider,
-  ISendMessageSuccessResponse,
-} from 'libs/stateless';
+import { ChannelTypeEnum, CheckIntegrationResponseEnum, EmailEventStatusEnum } from 'libs/stateless';
+import type { ICheckIntegrationResponse, IEmailEventBody, IEmailProvider, ISendMessageSuccessResponse } from 'libs/stateless';
+import type { IEmailOptions } from 'libs/stateless';
 import axios from 'axios';
 import { createHmac } from 'crypto';
 import formData from 'form-data';
@@ -16,7 +9,7 @@ import Mailgun from 'mailgun.js';
 import { IMailgunClient } from 'mailgun.js/interfaces/IMailgunClient';
 import { MailgunMessageData } from 'mailgun.js/interfaces/Messages';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
+import type { WithPassthrough } from '../../../utils/types';
 
 enum WebhooksIds {
   DELIVERED = 'delivered',

@@ -2,15 +2,17 @@ export * from './analytic-logs';
 export { AnalyticsService } from './analytics.service';
 export * from './auth';
 export {
-  BullMqConnectionOptions,
   BullMqService,
   Job,
+  Queue,
+  Worker,
+} from './bull-mq';
+export type {
+  BullMqConnectionOptions,
   JobsOptions,
   Processor,
-  Queue,
   QueueBaseOptions,
   QueueOptions,
-  Worker,
   WorkerOptions,
 } from './bull-mq';
 export * from './cache';
@@ -21,14 +23,12 @@ export * from './cron';
 export * from './feature-flags';
 export * from './in-memory-lru-cache';
 export * from './in-memory-provider';
-export {
-  MessageInteractionResult,
-  MessageInteractionService,
-  MessageInteractionTrace,
-} from './message-interaction.service';
+export { MessageInteractionService } from './message-interaction.service';
+export type { MessageInteractionResult, MessageInteractionTrace } from './message-interaction.service';
 export * from './metrics';
 export * from './queues';
-export { INovuWorker, ReadinessService } from './readiness';
+export { ReadinessService } from './readiness';
+export type { INovuWorker } from './readiness';
 export * from './sanitize/sanitizer.service';
 export * from './sanitize/sanitizer-v0.service';
 export * from './socket-worker';

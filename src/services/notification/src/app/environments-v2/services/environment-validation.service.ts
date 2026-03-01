@@ -1,6 +1,7 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { BaseRepository, EnvironmentRepository } from 'libs/dal';
-import { EnvironmentEnum, UserSessionData } from 'libs/shared';
+import { EnvironmentEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 
 export interface IEnvironmentValidationParams {
   sourceEnvironmentId: string;

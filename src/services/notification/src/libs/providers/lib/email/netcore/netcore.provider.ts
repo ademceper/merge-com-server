@@ -1,18 +1,11 @@
 import { EmailProviderIdEnum } from 'libs/shared';
-import {
-  ChannelTypeEnum,
-  CheckIntegrationResponseEnum,
-  EmailEventStatusEnum,
-  ICheckIntegrationResponse,
-  IEmailEventBody,
-  IEmailOptions,
-  IEmailProvider,
-  ISendMessageSuccessResponse,
-} from 'libs/stateless';
+import { ChannelTypeEnum, CheckIntegrationResponseEnum, EmailEventStatusEnum } from 'libs/stateless';
+import type { ICheckIntegrationResponse, IEmailEventBody, IEmailProvider, ISendMessageSuccessResponse } from 'libs/stateless';
+import type { IEmailOptions } from 'libs/stateless';
 import axios, { AxiosInstance } from 'axios';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
-import { IEmailBody, IEmailResponse } from './netcore-types';
+import type { WithPassthrough } from '../../../utils/types';
+import type { IEmailBody, IEmailResponse } from './netcore-types';
 
 export enum NetCoreStatusEnum {
   OPENED = 'open',

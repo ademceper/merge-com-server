@@ -1,12 +1,12 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IWorkflowOverridesResponseDto } from 'libs/shared';
+import type { IWorkflowOverridesResponseDto } from 'libs/shared';
 import { OverrideResponseDto } from './shared';
 
 export class GetWorkflowOverridesResponseDto implements IWorkflowOverridesResponseDto {
   @ApiProperty()
   hasMore: boolean;
 
-  @ApiProperty()
+  @ApiProperty({ type: () => [OverrideResponseDto] })
   data: OverrideResponseDto[];
 
   @ApiProperty()

@@ -1,4 +1,4 @@
-import { UserSessionData } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 
 let nr: any;
 

@@ -1,6 +1,7 @@
-import { ChannelTypeEnum, ICredentials } from 'libs/shared';
-import { ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from 'libs/stateless';
-import { IHandler } from '../../shared/interfaces';
+import { ChannelTypeEnum } from 'libs/shared';
+import type { ICredentials } from 'libs/shared';
+import type { ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from 'libs/stateless';
+import type { IHandler } from '../../shared/interfaces';
 
 export interface ISmsHandler extends IHandler {
   canHandle(providerId: string, channelType: ChannelTypeEnum);

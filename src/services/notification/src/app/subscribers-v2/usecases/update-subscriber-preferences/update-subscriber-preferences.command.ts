@@ -1,5 +1,5 @@
 import { IsValidContextPayload } from 'libs/application-generic';
-import { ContextPayload } from 'libs/shared';
+import type { ContextPayload } from 'libs/shared';
 import { Type } from 'class-transformer';
 import { IsOptional, IsString } from 'class-validator';
 import { EnvironmentWithSubscriber } from '../../../shared/commands/project.command';

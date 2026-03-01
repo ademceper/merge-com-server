@@ -1,5 +1,6 @@
 import { BaseCommand, IsValidContextPayload } from 'libs/application-generic';
-import { ChannelEndpointByType, ChannelEndpointType, ContextPayload, ENDPOINT_TYPES } from 'libs/shared';
+import { ENDPOINT_TYPES } from 'libs/shared';
+import type { ChannelEndpointByType, ChannelEndpointType, ContextPayload } from 'libs/shared';
 import { IsDefined, IsEnum, IsOptional, IsString } from 'class-validator';
 import { EnvironmentCommand } from '../../../shared/commands/project.command';
 import { IsValidChannelEndpoint } from '../../validators/channel-endpoint.validator';

@@ -2,8 +2,8 @@ import { EnvironmentCommand } from 'libs/application-generic';
 import { MessageEntity } from 'libs/dal';
 import { ChannelTypeEnum } from 'libs/shared';
 import { IsDefined } from 'class-validator';
-import { IWebhookResult } from '../../dtos/webhooks-response.dto';
-import { WebhookTypes } from '../../interfaces/webhook.interface';
+import type { IWebhookResult } from '../../dtos/webhooks-response.dto';
+import type { WebhookTypes } from '../../interfaces/webhook.interface';
 
 export class CreateExecutionDetailsCommand {
   @IsDefined()

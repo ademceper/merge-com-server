@@ -1,7 +1,8 @@
 import { Controller, Delete, Get, HttpCode, HttpStatus, Param, Query } from '@nestjs/common';
 import { ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
 import { RequirePermissions } from 'libs/application-generic';
-import { PermissionsEnum, UserSessionData } from 'libs/shared';
+import { PermissionsEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import {

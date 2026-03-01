@@ -11,17 +11,9 @@ import {
   UseSuspenseQueryResult,
 } from "@tanstack/react-query";
 import { useNovuContext } from "./_context.js";
-import {
-  QueryHookOptions,
-  SuspenseQueryHookOptions,
-  TupleToPrefixes,
-} from "./_types.js";
-import {
-  buildEnvironmentsListQuery,
-  EnvironmentsListQueryData,
-  prefetchEnvironmentsList,
-  queryKeyEnvironmentsList,
-} from "./environmentsList.core.js";
+import type { QueryHookOptions, SuspenseQueryHookOptions, TupleToPrefixes } from "./_types.js";
+import { buildEnvironmentsListQuery, prefetchEnvironmentsList, queryKeyEnvironmentsList } from "./environmentsList.core.js";
+import type { EnvironmentsListQueryData } from "./environmentsList.core.js";
 export {
   buildEnvironmentsListQuery,
   type EnvironmentsListQueryData,

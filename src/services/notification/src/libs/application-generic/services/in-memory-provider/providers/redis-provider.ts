@@ -1,11 +1,13 @@
-import Redis, { RedisOptions, ScanStream } from 'ioredis';
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const newrelic = require('newrelic');
-import { ConnectionOptions } from 'tls';
+import Redis, { ScanStream } from 'ioredis';
+import type { RedisOptions } from 'ioredis';
+let newrelic: any = null;
+try { newrelic = require('newrelic'); } catch {}
+import type { ConnectionOptions } from 'tls';
 
 import { convertStringValues } from './variable-mappers';
 
-export { Redis, RedisOptions, ScanStream };
+export { Redis, ScanStream };
+export type { RedisOptions };
 
 export const CLIENT_READY = 'ready';
 const DEFAULT_TTL_SECONDS = 60 * 60 * 2;

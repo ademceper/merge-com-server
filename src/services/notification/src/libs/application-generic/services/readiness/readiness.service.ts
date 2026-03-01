@@ -1,8 +1,8 @@
 import { Inject, Injectable, Logger } from '@nestjs/common';
-import { HealthIndicatorResult, HealthIndicatorStatus } from '@nestjs/terminus';
+import type { HealthIndicatorResult, HealthIndicatorStatus } from '@nestjs/terminus';
 import { setTimeout } from 'timers/promises';
-import { IHealthIndicator } from '../../health';
-import { IDestroy } from '../../modules';
+import type { IHealthIndicator } from '../../health';
+import type { IDestroy } from '../../modules';
 
 export interface INovuWorker extends IDestroy {
   readonly DEFAULT_ATTEMPTS: number;
@@ -25,8 +25,8 @@ export class ReadinessService {
   async areQueuesEnabled(): Promise<boolean> {
     Logger.log('Enabling queues as workers are meant to be ready', LOG_CONTEXT);
 
-    const retries = 10;
-    const delay = 5000;
+    const retries = process.env.NODE_ENV === 'production' ? 10 : 3;
+    const delay = process.env.NODE_ENV === 'production' ? 5000 : 1000;
 
     for (let i = 1; i < retries + 1; i += 1) {
       const result = await this.checkServicesHealth();
@@ -77,26 +77,35 @@ export class ReadinessService {
   async enableWorkers(workers: INovuWorker[]): Promise<void> {
     const areQueuesEnabled = await this.areQueuesEnabled();
 
-    if (areQueuesEnabled) {
-      Logger.log(`Resuming ${workers.length} workers...`, LOG_CONTEXT);
-      for (const worker of workers) {
-        try {
-          Logger.log(`Resuming worker ${worker.topic}...`, LOG_CONTEXT);
+    if (!areQueuesEnabled) {
+      if (process.env.NODE_ENV === 'production') {
+        const error = new Error('Queues are not enabled');
+        Logger.error(error, 'Queues are not enabled', LOG_CONTEXT);
+        throw error;
+      }
 
-          await worker.resume();
+      Logger.warn(
+        'Queue health checks did not pass, resuming workers anyway in non-production mode',
+        LOG_CONTEXT
+      );
+    }
 
-          Logger.log(`Worker ${worker.topic} resumed successfully`, LOG_CONTEXT);
-        } catch (error) {
-          Logger.error(error, `Failed to resume worker ${worker.topic}.`, LOG_CONTEXT);
+    Logger.log(`Resuming ${workers.length} workers...`, LOG_CONTEXT);
+    for (const worker of workers) {
+      try {
+        Logger.log(`Resuming worker ${worker.topic}...`, LOG_CONTEXT);
 
+        await worker.resume();
+
+        Logger.log(`Worker ${worker.topic} resumed successfully`, LOG_CONTEXT);
+      } catch (error) {
+        Logger.error(error, `Failed to resume worker ${worker.topic}.`, LOG_CONTEXT);
+
+        if (process.env.NODE_ENV === 'production') {
           throw error;
         }
       }
-      Logger.log(`All ${workers.length} workers resumed successfully`, LOG_CONTEXT);
-    } else {
-      const error = new Error('Queues are not enabled');
-      Logger.error(error, 'Queues are not enabled', LOG_CONTEXT);
-      throw error;
     }
+    Logger.log(`All ${workers.length} workers resumed successfully`, LOG_CONTEXT);
   }
 }

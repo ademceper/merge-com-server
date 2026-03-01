@@ -1,10 +1,11 @@
-import { FilterQuery } from 'mongoose';
-import { SoftDeleteModel } from 'mongoose-delete';
+import type { FilterQuery } from 'mongoose';
+import type { SoftDeleteModel } from 'mongoose-delete';
 import { DalException } from '../../shared';
 import type { EnforceEnvOrOrgIds } from '../../types/enforce';
 import { BaseRepository } from '../base-repository';
 import { MessageTemplateRepository } from '../message-template';
-import { FeedDBModel, FeedEntity } from './feed.entity';
+import { FeedEntity } from './feed.entity';
+import type { FeedDBModel } from './feed.entity';
 import { Feed } from './feed.schema';
 
 export class FeedRepository extends BaseRepository<FeedDBModel, FeedEntity, EnforceEnvOrOrgIds> {

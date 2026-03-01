@@ -4,7 +4,8 @@
 
 import { subscribersNotificationsFeed } from "../funcs/subscribersNotificationsFeed.js";
 import { subscribersNotificationsUnseenCount } from "../funcs/subscribersNotificationsUnseenCount.js";
-import { ClientSDK, RequestOptions } from "../lib/sdks.js";
+import { ClientSDK } from "../lib/sdks.js";
+import type { RequestOptions } from "../lib/sdks.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 

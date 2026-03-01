@@ -1,5 +1,5 @@
 import { NotificationTemplateRepository, TenantRepository } from 'libs/dal';
-import { ICreateWorkflowOverrideRequestDto } from 'libs/shared';
+import type { ICreateWorkflowOverrideRequestDto } from 'libs/shared';
 import { UserSession } from '@novu/testing';
 import { expect } from 'chai';
 

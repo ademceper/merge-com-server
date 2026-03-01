@@ -1,6 +1,6 @@
 import { UiComponentEnum, UiSchema, UiSchemaGroupEnum } from 'libs/shared';
 import { z } from 'zod';
-import { Options, Targets } from 'zod-to-json-schema';
+import type { Options, Targets } from 'zod-to-json-schema';
 
 export const defaultOptions: Partial<Options<Targets>> = {
   $refStrategy: 'none',

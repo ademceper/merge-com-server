@@ -1,4 +1,5 @@
-import { ChannelTypeEnum, IEmailBlock, ITemplateVariable, ResourceOriginEnum, ResourceTypeEnum } from '../../types';
+import { ChannelTypeEnum, ResourceOriginEnum, ResourceTypeEnum } from '../../types';
+import type { IEmailBlock, ITemplateVariable } from '../../types';
 import { RuntimeIssue } from '../../utils/issues';
 import { Controls, JSONSchemaDto } from '../workflows';
 

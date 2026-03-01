@@ -1,4 +1,5 @@
-import { IServicesHashes, JobTitleEnum } from '../../types';
+import { JobTitleEnum } from '../../types';
+import type { IServicesHashes } from '../../types';
 
 export interface IUserEntity {
   _id: string;

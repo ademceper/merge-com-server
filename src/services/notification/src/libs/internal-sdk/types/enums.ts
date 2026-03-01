@@ -3,7 +3,8 @@
  */
 
 import * as z from "zod/v3";
-import { Unrecognized, unrecognized } from "./unrecognized.js";
+import { unrecognized } from "./unrecognized.js";
+import type { Unrecognized } from "./unrecognized.js";
 
 export type ClosedEnum<T extends Readonly<Record<string, string | number>>> =
   T[keyof T];

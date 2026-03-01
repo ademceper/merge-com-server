@@ -1,6 +1,7 @@
 import { ClassSerializerInterceptor, Controller, Get, Query, UseInterceptors } from '@nestjs/common';
 import { ApiExcludeController, ApiOperation, ApiTags } from '@nestjs/swagger';
-import { UploadTypesEnum, UserSessionData } from 'libs/shared';
+import { UploadTypesEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';

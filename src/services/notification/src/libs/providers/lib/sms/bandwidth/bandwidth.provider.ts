@@ -1,8 +1,10 @@
-import { ApiController, Client, MessageRequest } from '@bandwidth/messaging';
+import { ApiController, Client } from '@bandwidth/messaging';
+import type { MessageRequest } from '@bandwidth/messaging';
 import { SmsProviderIdEnum } from 'libs/shared';
-import { ChannelTypeEnum, ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from 'libs/stateless';
+import { ChannelTypeEnum } from 'libs/stateless';
+import type { ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from 'libs/stateless';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
+import type { WithPassthrough } from '../../../utils/types';
 
 export class BandwidthSmsProvider extends BaseProvider implements ISmsProvider {
   id = SmsProviderIdEnum.Bandwidth;

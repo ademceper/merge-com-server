@@ -4,19 +4,13 @@ export * from './clickhouse-batch.service';
 export * from './delivery-trend-counts';
 export * from './log.repository';
 export * from './request-log';
-export { StepRun, StepRunFinalStatus, StepRunNonFinalStatus, StepRunRepository, StepRunStatus } from './step-run';
-export {
-  EventType,
-  mapEventTypeToTitle,
-  RequestTraceInput,
-  StepRunTraceInput,
-  Trace,
-  TraceLogRepository,
-  TraceStatus,
-  traceLogSchema,
-  WorkflowRunTraceInput,
-} from './trace-log';
+export { StepRunRepository } from './step-run';
+export type { StepRun, StepRunFinalStatus, StepRunNonFinalStatus, StepRunStatus } from './step-run';
+export { mapEventTypeToTitle, TraceLogRepository, traceLogSchema } from './trace-log';
+export type { EventType, RequestTraceInput, StepRunTraceInput, Trace, TraceStatus, WorkflowRunTraceInput } from './trace-log';
 export * from './trace-rollup';
-export { StepType } from './types';
-export { WorkflowRun, WorkflowRunRepository, WorkflowRunStatusEnum } from './workflow-run';
-export { WorkflowRunCount, WorkflowRunCountRepository } from './workflow-run-count';
+export type { StepType } from './types';
+export { WorkflowRunRepository, WorkflowRunStatusEnum } from './workflow-run';
+export type { WorkflowRun } from './workflow-run';
+export { WorkflowRunCountRepository } from './workflow-run-count';
+export type { WorkflowRunCount } from './workflow-run-count';

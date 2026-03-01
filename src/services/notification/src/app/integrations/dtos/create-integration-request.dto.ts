@@ -1,5 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { ChannelTypeEnum, ICreateIntegrationBodyDto } from 'libs/shared';
+import { ChannelTypeEnum } from 'libs/shared';
+import type { ICreateIntegrationBodyDto } from 'libs/shared';
 import { Type } from 'class-transformer';
 import {
   IsArray,

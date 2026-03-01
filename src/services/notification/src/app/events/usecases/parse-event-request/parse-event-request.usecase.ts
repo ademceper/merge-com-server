@@ -2,23 +2,8 @@ import { createHash, randomBytes } from 'node:crypto';
 import { Injectable, UnprocessableEntityException } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
 import type { EventType, RequestTraceInput } from 'libs/application-generic';
-import {
-  ExecuteBridgeRequest,
-  ExecuteBridgeRequestCommand,
-  ExecuteBridgeRequestDto,
-  FeatureFlagsService,
-  InMemoryLRUCacheService,
-  InMemoryLRUCacheStore,
-  Instrument,
-  InstrumentUsecase,
-  IWorkflowDataDto,
-  LogRepository,
-  mapEventTypeToTitle,
-  PinoLogger,
-  StorageHelperService,
-  TraceLogRepository,
-  WorkflowQueueService,
-} from 'libs/application-generic';
+import { ExecuteBridgeRequest, ExecuteBridgeRequestCommand, FeatureFlagsService, InMemoryLRUCacheService, InMemoryLRUCacheStore, Instrument, InstrumentUsecase, LogRepository, mapEventTypeToTitle, PinoLogger, StorageHelperService, TraceLogRepository, WorkflowQueueService } from 'libs/application-generic';
+import type { ExecuteBridgeRequestDto, IWorkflowDataDto } from 'libs/application-generic';
 import {
   NotificationTemplateEntity,
   NotificationTemplateRepository,
@@ -28,23 +13,17 @@ import {
   WorkflowOverrideEntity,
   WorkflowOverrideRepository,
 } from 'libs/dal';
-import { DiscoverWorkflowOutput, GetActionEnum } from 'libs/framework/internal';
-import {
-  FeatureFlagsKeysEnum,
-  ResourceOriginEnum,
-  TriggerEventStatusEnum,
-  TriggerRecipientsPayload,
-} from 'libs/shared';
+import { GetActionEnum } from 'libs/framework/internal';
+import type { DiscoverWorkflowOutput } from 'libs/framework/internal';
+import { FeatureFlagsKeysEnum, ResourceOriginEnum, TriggerEventStatusEnum } from 'libs/shared';
+import type { TriggerRecipientsPayload } from 'libs/shared';
 import Ajv, { ValidateFunction } from 'ajv';
 import addFormats from 'ajv-formats';
 import { generateTransactionId } from '../../../shared/helpers/generate-transaction-id';
 import { PayloadValidationException } from '../../exceptions/payload-validation-exception';
 import { RecipientSchema, RecipientsSchema } from '../../utils/trigger-recipient-validation';
-import {
-  ParseEventRequestBroadcastCommand,
-  ParseEventRequestCommand,
-  ParseEventRequestMulticastCommand,
-} from './parse-event-request.command';
+import { ParseEventRequestBroadcastCommand, ParseEventRequestMulticastCommand } from './parse-event-request.command';
+import type { ParseEventRequestCommand } from './parse-event-request.command';
 
 const ajv = new Ajv({
   allErrors: true,

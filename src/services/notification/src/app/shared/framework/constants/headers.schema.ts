@@ -1,4 +1,5 @@
-import { HeaderObject, HttpResponseHeaderKeysEnum } from 'libs/application-generic';
+import { HttpResponseHeaderKeysEnum } from 'libs/application-generic';
+import type { HeaderObject } from 'libs/application-generic';
 
 export const COMMON_RESPONSE_HEADERS: Array<HttpResponseHeaderKeysEnum> = [
   HttpResponseHeaderKeysEnum.CONTENT_TYPE,

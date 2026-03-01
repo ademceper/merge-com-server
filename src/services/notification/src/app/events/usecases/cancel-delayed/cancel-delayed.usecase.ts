@@ -1,14 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import {
-  isActionStepType,
-  isMainDigest,
-  LogRepository,
-  MessageInteractionService,
-  MessageInteractionTrace,
-  PinoLogger,
-  StepRunRepository,
-  StepType,
-} from 'libs/application-generic';
+import { isActionStepType, isMainDigest, LogRepository, MessageInteractionService, PinoLogger, StepRunRepository } from 'libs/application-generic';
+import type { MessageInteractionTrace } from 'libs/application-generic';
+import type { StepType } from 'libs/application-generic';
 import { JobEntity, JobRepository, JobStatusEnum } from 'libs/dal';
 import { DeliveryLifecycleDetail, DeliveryLifecycleStatusEnum, StepTypeEnum } from 'libs/shared';
 

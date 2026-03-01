@@ -1,4 +1,4 @@
-import type { JSONSchemaDto } from './json-schema-dto';
+import { JSONSchemaDto } from './json-schema-dto';
 
 export type WorkflowTestDataResponseDto = {
   to: JSONSchemaDto;

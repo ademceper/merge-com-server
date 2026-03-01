@@ -1,5 +1,6 @@
-import { Injectable, PipeTransform, Type } from '@nestjs/common';
-import { MetricOptions, SpanOptions, Tracer } from '@opentelemetry/api';
+import { Injectable } from '@nestjs/common';
+import type { PipeTransform, Type } from '@nestjs/common';
+import type { MetricOptions, SpanOptions, Tracer } from '@opentelemetry/api';
 import {
   Span,
   MetricService as setMetricService,

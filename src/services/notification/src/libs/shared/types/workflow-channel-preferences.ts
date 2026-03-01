@@ -1,5 +1,5 @@
 import { ChannelTypeEnum } from './channel';
-import { DeepPartial } from './utils';
+import type { DeepPartial } from './utils';
 /**
  * The preference type for a set of preferences.
  *

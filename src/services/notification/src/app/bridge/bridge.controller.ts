@@ -23,13 +23,8 @@ import {
 } from 'libs/application-generic';
 import { ControlValuesRepository, EnvironmentRepository, NotificationTemplateRepository } from 'libs/dal';
 import { HttpHeaderKeysEnum } from 'libs/framework/internal';
-import {
-  ControlValuesLevelEnum,
-  PermissionsEnum,
-  ResourceOriginEnum,
-  ResourceTypeEnum,
-  UserSessionData,
-} from 'libs/shared';
+import { ControlValuesLevelEnum, PermissionsEnum, ResourceOriginEnum, ResourceTypeEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { CreateBridgeRequestDto } from './dtos/create-bridge-request.dto';
 import { CreateBridgeResponseDto } from './dtos/create-bridge-response.dto';

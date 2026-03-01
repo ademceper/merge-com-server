@@ -1,5 +1,6 @@
 import { BrevoSmsProvider } from 'libs/providers';
-import { ChannelTypeEnum, ICredentials, SmsProviderIdEnum } from 'libs/shared';
+import { ChannelTypeEnum, SmsProviderIdEnum } from 'libs/shared';
+import type { ICredentials } from 'libs/shared';
 import { BaseSmsHandler } from './base.handler';
 
 export class BrevoSmsHandler extends BaseSmsHandler {

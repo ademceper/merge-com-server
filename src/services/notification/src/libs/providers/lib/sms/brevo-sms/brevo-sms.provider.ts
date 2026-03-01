@@ -1,9 +1,10 @@
-import { ChannelTypeEnum, ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from 'libs/stateless';
+import { ChannelTypeEnum } from 'libs/stateless';
+import type { ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from 'libs/stateless';
 import { ProxyAgent } from 'proxy-agent';
 import 'cross-fetch';
 import { SmsProviderIdEnum } from 'libs/shared';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
+import type { WithPassthrough } from '../../../utils/types';
 
 declare global {
   interface RequestInit {

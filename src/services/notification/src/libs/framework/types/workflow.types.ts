@@ -1,5 +1,5 @@
 import { WorkflowChannelEnum } from '../constants';
-import { ContextResolved } from './context.types';
+import type { ContextResolved } from './context.types';
 import type { Schema } from './schema.types';
 import type { Step } from './step.types';
 import type { Subscriber } from './subscriber.types';

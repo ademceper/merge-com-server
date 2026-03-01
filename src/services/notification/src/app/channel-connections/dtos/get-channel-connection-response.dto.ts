@@ -1,5 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { ChannelTypeEnum, ProvidersIdEnum, ProvidersIdEnumConst } from 'libs/shared';
+import { ChannelTypeEnum, ProvidersIdEnumConst } from 'libs/shared';
+import type { ProvidersIdEnum } from 'libs/shared';
 import { AuthDto, WorkspaceDto } from './shared.dto';
 
 export class GetChannelConnectionResponseDto {
@@ -45,10 +46,10 @@ export class GetChannelConnectionResponseDto {
   })
   contextKeys: string[];
 
-  @ApiProperty({ type: WorkspaceDto })
+  @ApiProperty({ type: () => WorkspaceDto })
   workspace: WorkspaceDto;
 
-  @ApiProperty({ type: AuthDto })
+  @ApiProperty({ type: () => AuthDto })
   auth: AuthDto;
 
   @ApiProperty({

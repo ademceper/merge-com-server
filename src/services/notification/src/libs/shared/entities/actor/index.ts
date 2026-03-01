@@ -1,1 +1,1 @@
-export * from './actor.interface';
+export type * from './actor.interface';

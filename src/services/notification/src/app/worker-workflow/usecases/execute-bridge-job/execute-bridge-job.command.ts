@@ -1,4 +1,5 @@
-import { EnvironmentWithUserCommand, IFilterVariables } from 'libs/application-generic';
+import { EnvironmentWithUserCommand } from 'libs/application-generic';
+import type { IFilterVariables } from 'libs/application-generic';
 
 import { JobEntity, NotificationTemplateEntity } from 'libs/dal';
 import { IsDefined, IsOptional, IsString } from 'class-validator';

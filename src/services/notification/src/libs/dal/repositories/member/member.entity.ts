@@ -1,4 +1,5 @@
-import { IMemberInvite, MemberRoleEnum, MemberStatusEnum } from 'libs/shared';
+import { MemberRoleEnum, MemberStatusEnum } from 'libs/shared';
+import type { IMemberInvite } from 'libs/shared';
 import { Types } from 'mongoose';
 import type { ChangePropsValueType } from '../../types/helpers';
 import type { OrganizationId } from '../organization';

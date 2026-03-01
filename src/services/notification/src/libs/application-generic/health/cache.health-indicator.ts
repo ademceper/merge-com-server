@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { HealthCheckError, HealthIndicator, HealthIndicatorResult } from '@nestjs/terminus';
+import { HealthCheckError, HealthIndicator } from '@nestjs/terminus';
+import type { HealthIndicatorResult } from '@nestjs/terminus';
 import { CacheService } from '../services/cache';
 
 @Injectable()

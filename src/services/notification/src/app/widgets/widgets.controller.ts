@@ -18,15 +18,8 @@ import { AuthGuard } from '@nestjs/passport';
 import { ApiExcludeController, ApiOperation, ApiQuery } from '@nestjs/swagger';
 import { AnalyticsService } from 'libs/application-generic';
 import { MessageEntity } from 'libs/dal';
-import {
-  ButtonTypeEnum,
-  IPreferenceChannels,
-  MessageActionStatusEnum,
-  MessagesStatusEnum,
-  PreferenceLevelEnum,
-  TriggerTypeEnum,
-  WorkflowCriticalityEnum,
-} from 'libs/shared';
+import { ButtonTypeEnum, MessageActionStatusEnum, MessagesStatusEnum, PreferenceLevelEnum, TriggerTypeEnum, WorkflowCriticalityEnum } from 'libs/shared';
+import type { IPreferenceChannels } from 'libs/shared';
 import { UpdatePreferencesCommand } from '../inbox/usecases/update-preferences/update-preferences.command';
 import { UpdatePreferences } from '../inbox/usecases/update-preferences/update-preferences.usecase';
 import { ExcludeFromIdempotency } from '../shared/framework/exclude-from-idempotency';

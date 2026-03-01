@@ -1,4 +1,5 @@
-import { EncryptedSecret, EnvironmentTypeEnum, IApiRateLimitMaximum } from 'libs/shared';
+import { EnvironmentTypeEnum } from 'libs/shared';
+import type { EncryptedSecret, IApiRateLimitMaximum } from 'libs/shared';
 import { Types } from 'mongoose';
 
 import type { ChangePropsValueType } from '../../types/helpers';

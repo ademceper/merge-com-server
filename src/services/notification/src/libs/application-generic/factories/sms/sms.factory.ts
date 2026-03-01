@@ -38,7 +38,7 @@ import {
   UnifonicHandler,
 } from './handlers';
 import { SmsmodeHandler } from './handlers/smsmode.handler';
-import { ISmsFactory, ISmsHandler } from './interfaces';
+import type { ISmsFactory, ISmsHandler } from './interfaces';
 
 export class SmsFactory implements ISmsFactory {
   handlers: ISmsHandler[] = [

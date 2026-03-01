@@ -1,4 +1,4 @@
-use actix_web::{get, App, HttpServer, Responder, HttpResponse, web};
+use actix_web::{get, App, HttpServer, Responder, HttpResponse};
 use std::env;
 use utoipa::OpenApi;
 use utoipa_swagger_ui::SwaggerUi;

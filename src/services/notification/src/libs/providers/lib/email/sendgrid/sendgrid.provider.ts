@@ -1,20 +1,15 @@
-import { EmailProviderIdEnum, IEmailOptions } from 'libs/shared';
-import {
-  ChannelTypeEnum,
-  CheckIntegrationResponseEnum,
-  EmailEventStatusEnum,
-  IAttachmentOptions,
-  ICheckIntegrationResponse,
-  IEmailEventBody,
-  IEmailProvider,
-  ISendMessageSuccessResponse,
-} from 'libs/stateless';
+import { EmailProviderIdEnum } from 'libs/shared';
+import type { IEmailOptions } from 'libs/shared';
+import { ChannelTypeEnum, CheckIntegrationResponseEnum, EmailEventStatusEnum } from 'libs/stateless';
+import type { ICheckIntegrationResponse, IEmailEventBody, IEmailProvider, ISendMessageSuccessResponse } from 'libs/stateless';
+import type { IAttachmentOptions } from 'libs/stateless';
 import { Client } from '@sendgrid/client';
 // cspell:disable-next-line
 import { EventWebhook } from '@sendgrid/eventwebhook';
-import { MailDataRequired, MailService } from '@sendgrid/mail';
+import { MailService } from '@sendgrid/mail';
+import type { MailDataRequired } from '@sendgrid/mail';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
+import type { WithPassthrough } from '../../../utils/types';
 
 type AttachmentJSON = NonNullable<MailDataRequired['attachments']>[0];
 

@@ -18,13 +18,8 @@ import {
   RequirePermissions,
   UserSession,
 } from 'libs/application-generic';
-import {
-  ApiRateLimitCategoryEnum,
-  DirectionEnum,
-  PermissionsEnum,
-  SubscriberCustomData,
-  UserSessionData,
-} from 'libs/shared';
+import { ApiRateLimitCategoryEnum, DirectionEnum, PermissionsEnum } from 'libs/shared';
+import type { SubscriberCustomData, UserSessionData } from 'libs/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { GetPreferencesResponseDto } from '../inbox/dtos/get-preferences-response.dto';
 import { BulkUpdatePreferencesCommand } from '../inbox/usecases/bulk-update-preferences/bulk-update-preferences.command';

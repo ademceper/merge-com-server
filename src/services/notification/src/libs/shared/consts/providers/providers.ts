@@ -1,13 +1,7 @@
-import {
-  ChannelTypeEnum,
-  ChatProviderIdEnum,
-  EmailProviderIdEnum,
-  InAppProviderIdEnum,
-  ProvidersIdEnum,
-  SmsProviderIdEnum,
-} from '../../types';
+import { ChannelTypeEnum, ChatProviderIdEnum, EmailProviderIdEnum, InAppProviderIdEnum, SmsProviderIdEnum } from '../../types';
+import type { ProvidersIdEnum } from '../../types';
 import { chatProviders, emailProviders, inAppProviders, pushProviders, smsProviders } from './channels';
-import { IProviderConfig } from './provider.interface';
+import type { IProviderConfig } from './provider.interface';
 
 export { chatProviders, emailProviders, inAppProviders, pushProviders, smsProviders } from './channels';
 

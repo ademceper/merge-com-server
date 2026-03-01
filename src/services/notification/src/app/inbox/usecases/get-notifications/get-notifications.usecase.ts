@@ -6,7 +6,7 @@ import { GetSubscriber } from '../../../subscribers/usecases/get-subscriber';
 import type { GetNotificationsResponseDto } from '../../dtos/get-notifications-response.dto';
 import { AnalyticsEventsEnum } from '../../utils';
 import { mapToDto } from '../../utils/notification-mapper';
-import { NotificationFilter } from '../../utils/types';
+import type { NotificationFilter } from '../../utils/types';
 import { validateDataStructure } from '../../utils/validate-data';
 import type { GetNotificationsCommand } from './get-notifications.command';
 

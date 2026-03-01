@@ -1,7 +1,7 @@
 import { Novu } from 'libs/internal-sdk';
 import { ChannelTypeEnum } from 'libs/internal-sdk/models/components';
 import { NotificationTemplateEntity, SubscriberEntity } from 'libs/dal';
-import { CreateWorkflowDto, StepTypeEnum, WorkflowCreationSourceEnum, WorkflowResponseDto } from 'libs/shared';
+import { StepTypeEnum, WorkflowCreationSourceEnum, CreateWorkflowDto, WorkflowResponseDto } from 'libs/shared';
 import { SubscribersService, UserSession } from '@novu/testing';
 import { expect } from 'chai';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';

@@ -1,7 +1,8 @@
 /** biome-ignore-all lint/complexity/noStaticOnlyClass: needed */
 
 import { PreferencesEntity } from 'libs/dal';
-import { PreferencesTypeEnum, WorkflowPreferences } from 'libs/shared';
+import { PreferencesTypeEnum } from 'libs/shared';
+import type { WorkflowPreferences } from 'libs/shared';
 import { toMerged } from 'es-toolkit';
 import { GetPreferencesResponseDto } from '../get-preferences';
 import { MergePreferencesCommand } from './merge-preferences.command';

@@ -1,23 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import {
-  BullMqService,
-  FeatureFlagsService,
-  getWorkflowWorkerOptions,
-  IWorkflowDataDto,
-  PinoLogger,
-  SqsService,
-  Store,
-  storage,
-  TriggerEvent,
-  WorkerOptions,
-  WorkerProcessor,
-  WorkflowInMemoryProviderService,
-  WorkflowWorkerService,
-} from 'libs/application-generic';
+import { BullMqService, FeatureFlagsService, getWorkflowWorkerOptions, PinoLogger, SqsService, Store, storage, TriggerEvent, WorkerOptions, WorkflowInMemoryProviderService, WorkflowWorkerService } from 'libs/application-generic';
+import type { IWorkflowDataDto, WorkerProcessor } from 'libs/application-generic';
 import { CommunityOrganizationRepository } from 'libs/dal';
 import { FeatureFlagsKeysEnum, ObservabilityBackgroundTransactionEnum } from 'libs/shared';
 
-const nr = require('newrelic');
+let nr: any = null;
+try { nr = require('newrelic'); } catch {}
 
 @Injectable()
 export class WorkflowWorker extends WorkflowWorkerService {

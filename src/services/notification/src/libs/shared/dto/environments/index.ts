@@ -1,1 +1,1 @@
-export * from './tags.interface';
+export type * from './tags.interface';

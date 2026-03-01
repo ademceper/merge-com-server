@@ -1,7 +1,8 @@
 import { ClassSerializerInterceptor, Controller, Get, Param, Query, UseInterceptors } from '@nestjs/common';
 import { ApiOperation } from '@nestjs/swagger';
 import { RequirePermissions, UserSession } from 'libs/application-generic';
-import { PermissionsEnum, UserSessionData } from 'libs/shared';
+import { PermissionsEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { SdkGroupName, SdkMethodName } from '../shared/framework/swagger/sdk.decorators';
 import { GetChartsRequestDto } from './dtos/get-charts.request.dto';

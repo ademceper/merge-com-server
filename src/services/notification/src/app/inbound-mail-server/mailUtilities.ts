@@ -23,7 +23,7 @@ if (!shell.which('spamassassin') || !shell.which('spamc')) {
  * Provides high level mail utilities such as checking dkim, spf and computing
  * a spam score.
  */
-module.exports = {
+export default {
   /* @param rawEmail is the full raw mime email as a string. */
   validateDkim(rawEmail, callback) {
     if (!isPythonAvailable) {

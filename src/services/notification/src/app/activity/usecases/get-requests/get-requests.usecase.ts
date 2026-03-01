@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { LogRepository, QueryBuilder, RequestLog, RequestLogRepository } from 'libs/application-generic';
+import { LogRepository, QueryBuilder, RequestLogRepository } from 'libs/application-generic';
+import type { RequestLog } from 'libs/application-generic';
 import { GetRequestsResponseDto, RequestLogResponseDto } from '../../dtos/get-requests.response.dto';
 import { requestLogSelectColumns } from '../../shared/select.const';
 import { GetRequestsCommand } from './get-requests.command';

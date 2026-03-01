@@ -1,15 +1,8 @@
 import { IsValidContextPayload } from 'libs/application-generic';
 import { NotificationTemplateEntity } from 'libs/dal';
-import {
-  AddressingTypeEnum,
-  ContextPayload,
-  StatelessControls,
-  TriggerOverrides,
-  TriggerRecipientSubscriber,
-  TriggerRecipientsPayload,
-  TriggerRequestCategoryEnum,
-  TriggerTenantContext,
-} from 'libs/shared';
+import { AddressingTypeEnum, StatelessControls, TriggerRequestCategoryEnum } from 'libs/shared';
+import type { ContextPayload, TriggerRecipientSubscriber, TriggerRecipientsPayload, TriggerTenantContext } from 'libs/shared';
+import type { TriggerOverrides } from 'libs/shared';
 import { IsDefined, IsEnum, IsOptional, IsString, ValidateIf, ValidateNested } from 'class-validator';
 import { EnvironmentWithUserCommand } from '../../../shared/commands/project.command';
 

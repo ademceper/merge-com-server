@@ -13,14 +13,8 @@ import {
 } from '@nestjs/common';
 import { ApiExcludeController, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { RequirePermissions } from 'libs/application-generic';
-import {
-  buildWorkflowPreferencesFromPreferenceChannels,
-  DEFAULT_WORKFLOW_PREFERENCES,
-  PermissionsEnum,
-  ResourceOriginEnum,
-  ResourceTypeEnum,
-  UserSessionData,
-} from 'libs/shared';
+import { buildWorkflowPreferencesFromPreferenceChannels, DEFAULT_WORKFLOW_PREFERENCES, PermissionsEnum, ResourceOriginEnum, ResourceTypeEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import { RootEnvironmentGuard } from '../auth/framework/root-environment-guard.service';

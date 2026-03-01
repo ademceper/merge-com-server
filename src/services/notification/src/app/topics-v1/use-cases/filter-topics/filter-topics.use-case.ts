@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { TopicEntity, TopicRepository } from 'libs/dal';
 import { TopicDto } from '../../dtos/topic.dto';
-import { ExternalSubscriberId } from '../../types';
+import type { ExternalSubscriberId } from '../../types';
 import { FilterTopicsCommand } from './filter-topics.command';
 
 const DEFAULT_TOPIC_LIMIT = 10;

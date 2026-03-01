@@ -1,5 +1,6 @@
-import { DynamicModule, Logger, Module, OnApplicationShutdown, Provider, Type } from '@nestjs/common';
-import { ForwardReference } from '@nestjs/common/interfaces/modules/forward-reference.interface';
+import { Module, Logger } from '@nestjs/common';
+import type { DynamicModule, OnApplicationShutdown, Provider, Type } from '@nestjs/common';
+import type { ForwardReference } from '@nestjs/common/interfaces/modules/forward-reference.interface';
 import {
   BulkCreateExecutionDetails,
   CalculateLimitNovuIntegration,

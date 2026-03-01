@@ -14,17 +14,8 @@ import {
   SubscriberEntity,
   TopicSubscribersRepository,
 } from 'libs/dal';
-import {
-  ChannelTypeEnum,
-  DigestTypeEnum,
-  DigestUnitEnum,
-  ExternalSubscriberId,
-  IEmailBlock,
-  PreferencesTypeEnum,
-  StepTypeEnum,
-  TopicKey,
-  TopicName,
-} from 'libs/shared';
+import { ChannelTypeEnum, DigestTypeEnum, DigestUnitEnum, PreferencesTypeEnum, StepTypeEnum } from 'libs/shared';
+import type { ExternalSubscriberId, IEmailBlock, TopicKey, TopicName } from 'libs/shared';
 import { SubscribersService, UserSession } from '@novu/testing';
 import { expect } from 'chai';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';

@@ -1,6 +1,8 @@
-import { EncryptedSecret, IApiRateLimitMaximum } from 'libs/shared';
+import type { EncryptedSecret, IApiRateLimitMaximum } from 'libs/shared';
 import { BaseRepository } from '../base-repository';
-import { EnvironmentDBModel, EnvironmentEntity, IApiKey } from './environment.entity';
+import { EnvironmentEntity } from './environment.entity';
+import type { EnvironmentDBModel } from './environment.entity';
+import type { IApiKey } from './environment.entity';
 import { Environment } from './environment.schema';
 
 export class EnvironmentRepository extends BaseRepository<EnvironmentDBModel, EnvironmentEntity, object> {

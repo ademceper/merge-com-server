@@ -7,7 +7,7 @@ import {
 } from 'libs/application-generic';
 import { ChannelTypeEnum, JobEntity, JobRepository, JobStatusEnum, MessageRepository } from 'libs/dal';
 import { ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum } from 'libs/shared';
-import { InboxNotification } from '../../utils/types';
+import type { InboxNotification } from '../../utils/types';
 import { MarkNotificationAsCommand } from '../mark-notification-as/mark-notification-as.command';
 import { MarkNotificationAs } from '../mark-notification-as/mark-notification-as.usecase';
 import { UnsnoozeNotificationCommand } from './unsnooze-notification.command';

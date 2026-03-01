@@ -94,7 +94,7 @@
     "@opentelemetry/sdk-node": "^0.46.0",
     "@opentelemetry/sdk-trace-base": "~1.19.0",
     "@opentelemetry/sdk-trace-node": "~1.19.0",
-    "@opentelemetry/semantic-conventions": "~1.19.0",
+    "@opentelemetry/semantic-conventions": "1.40.0",
     "@parse/node-apn": "^5.2.3",
     "@plunk/node": "2.0.0",
     "@pulsecron/pulse": "1.6.8",
@@ -250,6 +250,7 @@
     "@nestjs/testing": "10.4.18",
     "@stoplight/spectral-cli": "^6.15.0",
     "@swc-node/register": "1.10.10",
+    "@swc/cli": "^0.8.0",
     "@types/async": "^3.2.1",
     "@types/bcrypt": "^3.0.0",
     "@types/bull": "^3.15.8",
@@ -274,6 +275,17 @@
     "ts-node": "~10.9.1",
     "tsconfig-paths": "~4.1.0",
     "typescript": "5.6.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "bcrypt",
+      "@swc/core",
+      "protobufjs",
+      "msgpackr-extract",
+      "@sentry/profiling-node",
+      "@newrelic/native-metrics",
+      "@newrelic/fn-inspect"
+    ]
   },
   "nx": {
     "tags": [

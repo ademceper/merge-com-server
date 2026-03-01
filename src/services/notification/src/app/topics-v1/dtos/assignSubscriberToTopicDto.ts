@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { ExternalSubscriberId } from 'libs/shared';
+import type { ExternalSubscriberId } from 'libs/shared';
 
 export class FailedAssignmentsDto {
   @ApiProperty({

@@ -1,5 +1,5 @@
 import { createContextHash, createHash, decryptApiKey } from 'libs/application-generic';
-import { ContextPayload } from 'libs/shared';
+import type { ContextPayload } from 'libs/shared';
 
 export function isHmacValid(secretKey: string, subscriberId: string, hmacHash: string | undefined) {
   if (!hmacHash) {

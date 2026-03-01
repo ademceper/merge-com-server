@@ -1,5 +1,5 @@
 import { Test } from '@nestjs/testing';
-import { IWorkflowDataDto } from '../../dtos';
+import type { IWorkflowDataDto } from '../../dtos';
 import { PinoLogger } from '../../logging';
 import { BullMqService } from '../bull-mq';
 import { FeatureFlagsService } from '../feature-flags';

@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { TopicEntity, TopicRepository } from 'libs/dal';
 import { TopicDto } from '../../dtos';
-import { ExternalSubscriberId } from '../../types';
+import type { ExternalSubscriberId } from '../../types';
 import { GetTopicCommand } from './get-topic.command';
 
 @Injectable()

@@ -8,11 +8,12 @@ import type {
   ResourceTypeEnum,
 } from '../../types';
 import { RuntimeIssue } from '../../utils/issues';
-import { ControlSchemas, IMessageTemplate } from '../message-template';
-import { INotificationGroup } from '../notification-group';
-import { INotificationBridgeTrigger, INotificationTrigger } from '../notification-trigger';
-import { IWorkflowStepMetadata } from '../step';
-import { IPreferenceChannels } from '../subscriber-preference';
+import { ControlSchemas } from '../message-template';
+import type { IMessageTemplate } from '../message-template';
+import type { INotificationGroup } from '../notification-group';
+import type { INotificationBridgeTrigger, INotificationTrigger } from '../notification-trigger';
+import type { IWorkflowStepMetadata } from '../step';
+import type { IPreferenceChannels } from '../subscriber-preference';
 
 export interface INotificationTemplate {
   _id?: string;

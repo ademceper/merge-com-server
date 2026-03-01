@@ -1,7 +1,7 @@
 import { ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum } from 'libs/shared';
 import mongoose, { Schema } from 'mongoose';
 import { schemaOptions } from '../schema-default.options';
-import { ExecutionDetailsDBModel } from './execution-details.entity';
+import type { ExecutionDetailsDBModel } from './execution-details.entity';
 
 const executionDetailsSchema = new Schema<ExecutionDetailsDBModel>(
   {

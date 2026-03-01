@@ -9,7 +9,7 @@ export class WorkflowsResponseDto {
   @ApiProperty()
   totalCount: number;
 
-  @ApiProperty()
+  @ApiProperty({ type: () => [WorkflowResponse] })
   data: WorkflowResponse[];
 
   @ApiProperty()

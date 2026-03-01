@@ -1,4 +1,4 @@
-import { ExternalSubscriberId } from 'libs/shared';
+import type { ExternalSubscriberId } from 'libs/shared';
 import { IsArray, IsDefined } from 'class-validator';
 
 import { EnvironmentCommand } from '../../../shared/commands/project.command';

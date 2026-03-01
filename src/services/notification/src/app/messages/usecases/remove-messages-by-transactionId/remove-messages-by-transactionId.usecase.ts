@@ -1,7 +1,8 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 
 import { buildFeedKey, buildMessageCountKey, InvalidateCacheService } from 'libs/application-generic';
-import { EnforceEnvId, MessageEntity, MessageRepository } from 'libs/dal';
+import { MessageEntity, MessageRepository } from 'libs/dal';
+import type { EnforceEnvId } from 'libs/dal';
 
 import { RemoveMessagesByTransactionIdCommand } from './remove-messages-by-transactionId.command';
 

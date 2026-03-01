@@ -1,4 +1,4 @@
-import { MiddlewareConsumer, ModuleMetadata } from '@nestjs/common';
+import type { MiddlewareConsumer, ModuleMetadata } from '@nestjs/common';
 import {
   cacheService,
   featureFlagsService,

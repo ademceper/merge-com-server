@@ -1,4 +1,4 @@
-import { UserSessionData } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { IsDefined } from 'class-validator';
 import { OrganizationCommand } from '../../../../shared/commands/organization.command';
 

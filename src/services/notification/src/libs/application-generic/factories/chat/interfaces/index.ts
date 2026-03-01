@@ -1,7 +1,8 @@
 import { IntegrationEntity } from 'libs/dal';
-import { ChannelTypeEnum, ICredentials } from 'libs/shared';
-import { IChatOptions, ISendMessageSuccessResponse } from 'libs/stateless';
-import { IHandler } from '../../shared/interfaces';
+import { ChannelTypeEnum } from 'libs/shared';
+import type { ICredentials } from 'libs/shared';
+import type { IChatOptions, ISendMessageSuccessResponse } from 'libs/stateless';
+import type { IHandler } from '../../shared/interfaces';
 
 export interface IChatHandler extends IHandler {
   canHandle(providerId: string, channelType: ChannelTypeEnum);

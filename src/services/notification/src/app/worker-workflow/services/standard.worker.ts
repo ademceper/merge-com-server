@@ -25,7 +25,8 @@ import {
   WebhookFilterBackoffStrategy,
 } from '../usecases';
 
-const nr = require('newrelic');
+let nr: any = null;
+try { nr = require('newrelic'); } catch {}
 
 const LOG_CONTEXT = 'StandardWorker';
 

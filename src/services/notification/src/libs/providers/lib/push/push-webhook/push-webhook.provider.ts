@@ -1,9 +1,10 @@
 import { PushProviderIdEnum } from 'libs/shared';
-import { ChannelTypeEnum, IPushOptions, IPushProvider, ISendMessageSuccessResponse } from 'libs/stateless';
+import { ChannelTypeEnum } from 'libs/stateless';
+import type { IPushOptions, IPushProvider, ISendMessageSuccessResponse } from 'libs/stateless';
 import axios from 'axios';
 import crypto from 'crypto';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
+import type { WithPassthrough } from '../../../utils/types';
 
 export class PushWebhookPushProvider extends BaseProvider implements IPushProvider {
   protected casing: CasingEnum = CasingEnum.CAMEL_CASE;

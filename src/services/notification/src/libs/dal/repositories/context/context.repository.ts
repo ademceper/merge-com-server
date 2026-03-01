@@ -1,8 +1,10 @@
-import { ContextData, ContextId, ContextPayload, ContextType, createContextKey } from 'libs/shared';
-import { FilterQuery } from 'mongoose';
+import { createContextKey } from 'libs/shared';
+import type { ContextData, ContextId, ContextPayload, ContextType } from 'libs/shared';
+import type { FilterQuery } from 'mongoose';
 import type { EnforceEnvOrOrgIds } from '../../types';
 import { BaseRepository } from '../base-repository';
-import { ContextDBModel, ContextEntity } from './context.entity';
+import { ContextEntity } from './context.entity';
+import type { ContextDBModel } from './context.entity';
 import { Context } from './context.schema';
 
 export class ContextRepository extends BaseRepository<ContextDBModel, ContextEntity, EnforceEnvOrOrgIds> {

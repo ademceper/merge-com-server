@@ -9,11 +9,8 @@ import {
 } from 'libs/dal';
 import { FeatureFlagsKeysEnum, PreferencesTypeEnum } from 'libs/shared';
 import { SubscriptionDetailsResponseDto } from '../../../shared/dtos/subscription-details-response.dto';
-import {
-  mapTopicSubscriptionToDto,
-  SELECTED_WORKFLOW_FIELDS_PROJECTION,
-  SelectedWorkflowFields,
-} from '../../../subscriptions/utils/subscriptions';
+import { mapTopicSubscriptionToDto, SELECTED_WORKFLOW_FIELDS_PROJECTION } from '../../../subscriptions/utils/subscriptions';
+import type { SelectedWorkflowFields } from '../../../subscriptions/utils/subscriptions';
 import { GetTopicSubscriptionsCommand } from './get-topic-subscriptions.command';
 
 @Injectable()

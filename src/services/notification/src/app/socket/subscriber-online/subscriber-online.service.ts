@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { SubscriberRepository } from 'libs/dal';
-import { ISubscriberJwt } from 'libs/shared';
+import type { ISubscriberJwt } from 'libs/shared';
 
 interface IUpdateSubscriberPayload {
   isOnline: boolean;

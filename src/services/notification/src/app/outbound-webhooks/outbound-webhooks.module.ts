@@ -1,4 +1,5 @@
-import { DynamicModule, Module } from '@nestjs/common';
+import { Module } from '@nestjs/common';
+import type { DynamicModule } from '@nestjs/common';
 import { SendWebhookMessage, SvixProviderService } from 'libs/application-generic';
 import { NoopSendWebhookMessage } from '../inbox/usecases/noop-send-webhook-message.usecase';
 import { SharedModule } from '../shared/shared.module';

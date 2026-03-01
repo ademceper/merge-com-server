@@ -3,12 +3,8 @@ import { PinoLogger } from 'nestjs-pino';
 import { FeatureFlagsService } from '../../feature-flags/feature-flags.service';
 import { ClickHouseService } from '../clickhouse.service';
 import { LogRepository } from '../log.repository';
-import {
-  DELIVERY_TREND_COUNTS_ORDER_BY,
-  DELIVERY_TREND_COUNTS_TABLE_NAME,
-  DeliveryTrendCount,
-  deliveryTrendCountsSchema,
-} from './delivery-trend-counts.schema';
+import { DELIVERY_TREND_COUNTS_ORDER_BY, DELIVERY_TREND_COUNTS_TABLE_NAME, deliveryTrendCountsSchema } from './delivery-trend-counts.schema';
+import type { DeliveryTrendCount } from './delivery-trend-counts.schema';
 
 @Injectable()
 export class DeliveryTrendCountsRepository extends LogRepository<

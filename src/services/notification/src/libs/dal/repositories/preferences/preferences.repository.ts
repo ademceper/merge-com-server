@@ -1,9 +1,10 @@
-import { FilterQuery } from 'mongoose';
-import { SoftDeleteModel } from 'mongoose-delete';
+import type { FilterQuery } from 'mongoose';
+import type { SoftDeleteModel } from 'mongoose-delete';
 import { DalException } from '../../shared';
 import type { EnforceEnvOrOrgIds } from '../../types/enforce';
 import { BaseRepository } from '../base-repository';
-import { PreferencesDBModel, PreferencesEntity } from './preferences.entity';
+import { PreferencesEntity } from './preferences.entity';
+import type { PreferencesDBModel } from './preferences.entity';
 import { Preferences } from './preferences.schema';
 
 type PreferencesQuery = FilterQuery<PreferencesDBModel> & EnforceEnvOrOrgIds;

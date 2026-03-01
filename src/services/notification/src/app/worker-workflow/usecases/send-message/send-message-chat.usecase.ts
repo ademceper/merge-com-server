@@ -22,31 +22,19 @@ import {
   NotificationStepEntity,
   SubscriberRepository,
 } from 'libs/dal';
-import { ChatOutput } from 'libs/framework/internal';
-import {
-  ChannelTypeEnum,
-  ChatProviderIdEnum,
-  DeliveryLifecycleDetail,
-  DeliveryLifecycleStatusEnum,
-  ENDPOINT_TYPES,
-  ExecutionDetailsSourceEnum,
-  ExecutionDetailsStatusEnum,
-  IChannelSettings,
-  ProvidersIdEnum,
-  WebhookEventEnum,
-  WebhookObjectTypeEnum,
-} from 'libs/shared';
-import { ChannelData, ISendMessageSuccessResponse } from 'libs/stateless';
+import type { ChatOutput } from 'libs/framework/internal';
+import { ChannelTypeEnum, ChatProviderIdEnum, DeliveryLifecycleDetail, DeliveryLifecycleStatusEnum, ENDPOINT_TYPES, ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum, WebhookEventEnum, WebhookObjectTypeEnum } from 'libs/shared';
+import type { IChannelSettings, ProvidersIdEnum } from 'libs/shared';
+import type { ChannelData, ISendMessageSuccessResponse } from 'libs/stateless';
 import { addBreadcrumb } from '@sentry/node';
 import { PlatformException } from '../../../shared/utils';
 import { ResolveChannelEndpointsCommand } from './channel-endpoint-resolution/resolve-channel-endpoints.command';
-import {
-  IntegrationEndpoints,
-  ResolveChannelEndpoints,
-} from './channel-endpoint-resolution/resolve-channel-endpoints.usecase';
+import { ResolveChannelEndpoints } from './channel-endpoint-resolution/resolve-channel-endpoints.usecase';
+import type { IntegrationEndpoints } from './channel-endpoint-resolution/resolve-channel-endpoints.usecase';
 import { SendMessageBase } from './send-message.base';
 import { SendMessageChannelCommand } from './send-message-channel.command';
-import { SendMessageResult, SendMessageStatus } from './send-message-type.usecase';
+import { SendMessageStatus } from './send-message-type.usecase';
+import type { SendMessageResult } from './send-message-type.usecase';
 
 const LOG_CONTEXT = 'SendMessageChat';
 

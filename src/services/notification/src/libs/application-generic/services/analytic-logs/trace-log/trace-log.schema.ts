@@ -1,15 +1,8 @@
-import { DeliveryLifecycleEventType } from 'libs/shared';
-import {
-  CHArray,
-  CHBoolean,
-  CHDateTime64,
-  CHLowCardinality,
-  CHString,
-  ClickhouseSchema,
-  InferClickhouseSchemaType,
-} from 'clickhouse-schema';
-import { Prettify } from '../../../utils/prettify.type';
-import { StepType } from '..';
+import type { DeliveryLifecycleEventType } from 'libs/shared';
+import { CHArray, CHBoolean, CHDateTime64, CHLowCardinality, CHString, ClickhouseSchema } from 'clickhouse-schema';
+import type { InferClickhouseSchemaType } from 'clickhouse-schema';
+import type { Prettify } from '../../../utils/prettify.type';
+import type { StepType } from '..';
 
 export const TABLE_NAME = 'traces';
 

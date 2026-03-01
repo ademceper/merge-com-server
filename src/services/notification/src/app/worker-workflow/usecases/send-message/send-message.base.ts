@@ -19,24 +19,16 @@ import {
   MessageTemplateEntity,
   SubscriberRepository,
 } from 'libs/dal';
-import {
-  ChannelTypeEnum,
-  ChatProviderIdEnum,
-  EmailProviderIdEnum,
-  ExecutionDetailsSourceEnum,
-  ExecutionDetailsStatusEnum,
-  ITenantDefine,
-  ProvidersIdEnum,
-  providers,
-  SmsProviderIdEnum,
-  TriggerOverrides,
-} from 'libs/shared';
+import { ChannelTypeEnum, ChatProviderIdEnum, EmailProviderIdEnum, ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum, providers, SmsProviderIdEnum } from 'libs/shared';
+import type { ITenantDefine, ProvidersIdEnum } from 'libs/shared';
+import type { TriggerOverrides } from 'libs/shared';
 import { format } from 'date-fns';
 import i18next from 'i18next';
 import { merge } from 'lodash';
 import { PlatformException } from '../../../shared/utils';
 import { SendMessageChannelCommand } from './send-message-channel.command';
-import { SendMessageResult, SendMessageStatus, SendMessageType } from './send-message-type.usecase';
+import { SendMessageStatus, SendMessageType } from './send-message-type.usecase';
+import type { SendMessageResult } from './send-message-type.usecase';
 
 export abstract class SendMessageBase extends SendMessageType {
   abstract readonly channelType: ChannelTypeEnum;

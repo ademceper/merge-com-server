@@ -1,15 +1,5 @@
 import { Novu } from 'libs/internal-sdk';
-import {
-  CreateLayoutDto,
-  CreateWorkflowDto,
-  EmailStepResponseDto,
-  InAppControlDto,
-  LayoutCreationSourceEnum,
-  LayoutResponseDto,
-  UpdateWorkflowDto,
-  WorkflowCreationSourceEnum,
-  WorkflowResponseDto,
-} from 'libs/internal-sdk/models/components';
+import { EmailStepResponseDto, InAppControlDto, LayoutCreationSourceEnum, WorkflowCreationSourceEnum, CreateLayoutDto, CreateWorkflowDto, LayoutResponseDto, UpdateWorkflowDto, WorkflowResponseDto } from 'libs/internal-sdk/models/components';
 import { StepTypeEnum } from 'libs/shared';
 import { UserSession } from '@novu/testing';
 import { expect } from 'chai';

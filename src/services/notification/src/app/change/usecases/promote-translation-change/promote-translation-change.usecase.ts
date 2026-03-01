@@ -3,14 +3,18 @@ import { ModuleRef } from '@nestjs/core';
 import { PinoLogger } from 'libs/application-generic';
 import { ChangeRepository } from 'libs/dal';
 import { ChangeEntityTypeEnum } from 'libs/shared';
-import { ApplyChange, ApplyChangeCommand } from '../apply-change';
 import { PromoteTypeChangeCommand } from '../promote-type-change.command';
+
+// Lazy import to break circular dependency:
+// promote-translation-change -> apply-change -> promote-change-to-environment -> promote-translation-change
+const getApplyChangeRef = () => require('../apply-change/apply-change.usecase').ApplyChange;
+const getApplyChangeCommandRef = () => require('../apply-change/apply-change.command').ApplyChangeCommand;
 
 @Injectable()
 export class PromoteTranslationChange {
   constructor(
     private moduleRef: ModuleRef,
-    @Inject(forwardRef(() => ApplyChange)) private applyChange: ApplyChange,
+    @Inject(forwardRef(getApplyChangeRef)) private applyChange: any,
     private changeRepository: ChangeRepository,
     private logger: PinoLogger
   ) {
@@ -43,6 +47,8 @@ export class PromoteTranslationChange {
       ChangeEntityTypeEnum.TRANSLATION_GROUP,
       newItem._groupId
     );
+
+    const ApplyChangeCommand = getApplyChangeCommandRef();
 
     for (const change of changes) {
       await this.applyChange.execute(

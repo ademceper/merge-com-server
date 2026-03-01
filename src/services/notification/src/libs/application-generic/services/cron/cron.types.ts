@@ -1,4 +1,5 @@
-import { JobCronNameEnum, Timezone } from 'libs/shared';
+import { JobCronNameEnum } from 'libs/shared';
+import type { Timezone } from 'libs/shared';
 
 export type CronOptions = {
   /** Max number of locked jobs of this kind */

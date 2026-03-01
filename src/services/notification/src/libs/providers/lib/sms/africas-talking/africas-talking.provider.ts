@@ -1,8 +1,9 @@
 import { SmsProviderIdEnum } from 'libs/shared';
-import { ChannelTypeEnum, ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from 'libs/stateless';
+import { ChannelTypeEnum } from 'libs/stateless';
+import type { ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from 'libs/stateless';
 import AfricasTalking from 'africastalking';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
+import type { WithPassthrough } from '../../../utils/types';
 
 export class AfricasTalkingSmsProvider extends BaseProvider implements ISmsProvider {
   protected casing = CasingEnum.CAMEL_CASE;

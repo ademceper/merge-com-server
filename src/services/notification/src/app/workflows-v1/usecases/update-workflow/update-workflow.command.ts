@@ -1,21 +1,8 @@
-import {
-  ContentIssue,
-  EnvironmentWithUserCommand,
-  IStepControl,
-  JSONSchema,
-  NotificationStep,
-  PreferencesRequired,
-} from 'libs/application-generic';
-import { ClientSession } from 'libs/dal';
-import {
-  CustomDataType,
-  MAX_DESCRIPTION_LENGTH,
-  MAX_NAME_LENGTH,
-  MAX_TAG_LENGTH,
-  ResourceTypeEnum,
-  RuntimeIssue,
-  SeverityLevelEnum,
-} from 'libs/shared';
+import { ContentIssue, EnvironmentWithUserCommand, JSONSchema, NotificationStep, PreferencesRequired } from 'libs/application-generic';
+import type { IStepControl } from 'libs/application-generic';
+import type { ClientSession } from 'libs/dal';
+import { MAX_DESCRIPTION_LENGTH, MAX_NAME_LENGTH, MAX_TAG_LENGTH, ResourceTypeEnum, RuntimeIssue, SeverityLevelEnum } from 'libs/shared';
+import type { CustomDataType } from 'libs/shared';
 import { Exclude, Type } from 'class-transformer';
 import {
   ArrayUnique,

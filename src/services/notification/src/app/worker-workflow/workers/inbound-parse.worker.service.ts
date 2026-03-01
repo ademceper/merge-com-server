@@ -1,12 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
-import {
-  BullMqService,
-  getInboundParseMailWorkerOptions,
-  IInboundParseDataDto,
-  WorkerBaseService,
-  WorkerOptions,
-  WorkflowInMemoryProviderService,
-} from 'libs/application-generic';
+import { BullMqService, getInboundParseMailWorkerOptions, WorkerBaseService, WorkerOptions, WorkflowInMemoryProviderService } from 'libs/application-generic';
+import type { IInboundParseDataDto } from 'libs/application-generic';
 import { JobTopicNameEnum } from 'libs/shared';
 import { InboundEmailParseCommand } from '../usecases/inbound-email-parse/inbound-email-parse.command';
 import { InboundEmailParse } from '../usecases/inbound-email-parse/inbound-email-parse.usecase';

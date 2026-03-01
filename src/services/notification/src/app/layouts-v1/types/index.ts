@@ -1,31 +1,7 @@
-import {
-  ChannelTypeEnum,
-  EnvironmentId,
-  IEmailBlock,
-  ITemplateVariable,
-  LayoutDescription,
-  LayoutId,
-  LayoutIdentifier,
-  LayoutName,
-  OrderDirectionEnum,
-  OrganizationId,
-  TemplateVariableTypeEnum,
-  UserId,
-} from 'libs/shared';
+import { ChannelTypeEnum, OrderDirectionEnum, TemplateVariableTypeEnum } from 'libs/shared';
+import type { EnvironmentId, IEmailBlock, ITemplateVariable, LayoutDescription, LayoutId, LayoutIdentifier, LayoutName, OrganizationId, UserId } from 'libs/shared';
 
 export type LayoutVariables = ITemplateVariable[];
 
-export {
-  ChannelTypeEnum,
-  EnvironmentId,
-  IEmailBlock,
-  ITemplateVariable,
-  OrderDirectionEnum,
-  OrganizationId,
-  LayoutDescription,
-  LayoutId,
-  LayoutName,
-  LayoutIdentifier,
-  TemplateVariableTypeEnum,
-  UserId,
-};
+export { ChannelTypeEnum, OrderDirectionEnum, TemplateVariableTypeEnum };
+export type { EnvironmentId, IEmailBlock, ITemplateVariable, OrganizationId, LayoutDescription, LayoutId, LayoutName, LayoutIdentifier, UserId };

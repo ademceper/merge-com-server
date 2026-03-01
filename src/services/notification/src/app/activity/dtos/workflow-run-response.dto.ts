@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { StepRunStatus } from 'libs/application-generic';
+import type { StepRunStatus } from 'libs/application-generic';
 import { ExecutionDetailsStatusEnum } from 'libs/shared';
 import { Type } from 'class-transformer';
 import { IsDate, IsEnum, IsIn, IsObject, IsOptional, IsString } from 'class-validator';
@@ -83,13 +83,13 @@ export class StepRunDto {
   @IsDate()
   updatedAt: Date;
 
-  @ApiProperty({ description: 'Execution details', type: [StepExecutionDetailDto] })
+  @ApiProperty({ description: 'Execution details', type: () => [StepExecutionDetailDto] })
   @Type(() => StepExecutionDetailDto)
   executionDetails: StepExecutionDetailDto[];
 
   @ApiPropertyOptional({
     description: 'Optional digest for the job, including metadata and events',
-    type: DigestMetadataDto,
+    type: () => DigestMetadataDto,
   })
   digest?: DigestMetadataDto;
 
@@ -101,7 +101,7 @@ export class StepRunDto {
 }
 
 export class GetWorkflowRunResponseDto extends GetWorkflowRunResponseBaseDto {
-  @ApiProperty({ description: 'Step runs', type: [StepRunDto] })
+  @ApiProperty({ description: 'Step runs', type: () => [StepRunDto] })
   @Type(() => StepRunDto)
   steps: StepRunDto[];
 

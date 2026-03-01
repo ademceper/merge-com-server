@@ -5,7 +5,8 @@
 import { ResponseValidationError } from "../models/errors/responsevalidationerror.js";
 import { SDKError } from "../models/errors/sdkerror.js";
 import { ERR, OK, Result } from "../types/fp.js";
-import { matchResponse, matchStatusCode, StatusCodePredicate } from "./http.js";
+import { matchResponse, matchStatusCode } from "./http.js";
+import type { StatusCodePredicate } from "./http.js";
 import { isPlainObject } from "./is-plain-object.js";
 
 export type Encoding =

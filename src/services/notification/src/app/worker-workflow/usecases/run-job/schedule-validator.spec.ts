@@ -1,4 +1,4 @@
-import { Schedule } from 'libs/shared';
+import type { Schedule } from 'libs/shared';
 import { expect } from 'chai';
 import { calculateNextAvailableTime, getDayOfWeek, isWithinSchedule } from './schedule-validator';
 

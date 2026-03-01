@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { JobTopicNameEnum } from 'libs/shared';
-import { IInboundParseBulkJobDto, IInboundParseJobDto } from '../../dtos/inbound-parse-job.dto';
+import type { IInboundParseBulkJobDto, IInboundParseJobDto } from '../../dtos/inbound-parse-job.dto';
 import { BullMqService, QueueOptions } from '../bull-mq';
 import { WorkflowInMemoryProviderService } from '../in-memory-provider';
 import { QueueBaseService } from './queue-base.service';

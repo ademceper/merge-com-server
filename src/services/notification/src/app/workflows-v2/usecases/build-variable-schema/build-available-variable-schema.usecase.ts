@@ -21,7 +21,8 @@ import { PreviewPayloadDto } from '../../dtos';
 import { computeResultSchema } from '../../shared';
 import { parsePayloadSchema } from '../../shared/parse-payload-schema';
 import { emptyJsonSchema } from '../../util/jsonToSchema';
-import { BuildVariableSchemaCommand, IOptimisticStepInfo } from './build-available-variable-schema.command';
+import { BuildVariableSchemaCommand } from './build-available-variable-schema.command';
+import type { IOptimisticStepInfo } from './build-available-variable-schema.command';
 
 @Injectable()
 export class BuildVariableSchemaUsecase {

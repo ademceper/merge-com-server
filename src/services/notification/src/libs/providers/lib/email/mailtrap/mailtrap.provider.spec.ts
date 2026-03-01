@@ -1,5 +1,6 @@
 import { CheckIntegrationResponseEnum } from 'libs/stateless';
-import { MailtrapClient, SendResponse } from 'mailtrap';
+import { MailtrapClient } from 'mailtrap';
+import type { SendResponse } from 'mailtrap';
 import { expect, test, vi } from 'vitest';
 import { MailtrapEmailProvider } from './mailtrap.provider';
 

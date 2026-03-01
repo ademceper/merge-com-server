@@ -25,16 +25,8 @@ import {
   UpdateSubscriberCommand,
 } from 'libs/application-generic';
 import { MessageEntity } from 'libs/dal';
-import {
-  ApiRateLimitCategoryEnum,
-  ApiRateLimitCostEnum,
-  ButtonTypeEnum,
-  ChatProviderIdEnum,
-  IPreferenceChannels,
-  PreferenceLevelEnum,
-  TriggerTypeEnum,
-  UserSessionData,
-} from 'libs/shared';
+import { ApiRateLimitCategoryEnum, ApiRateLimitCostEnum, ButtonTypeEnum, ChatProviderIdEnum, PreferenceLevelEnum, TriggerTypeEnum } from 'libs/shared';
+import type { IPreferenceChannels, UserSessionData } from 'libs/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import { UpdatePreferencesCommand } from '../inbox/usecases/update-preferences/update-preferences.command';

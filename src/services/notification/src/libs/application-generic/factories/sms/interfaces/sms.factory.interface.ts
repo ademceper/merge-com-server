@@ -1,5 +1,5 @@
 import { IntegrationEntity } from 'libs/dal';
-import { ISmsHandler } from './sms.handler.interface';
+import type { ISmsHandler } from './sms.handler.interface';
 
 export interface ISmsFactory {
   getHandler(

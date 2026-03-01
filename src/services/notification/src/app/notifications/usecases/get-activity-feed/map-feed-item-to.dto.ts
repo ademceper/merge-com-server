@@ -1,34 +1,10 @@
-import {
-  ExecutionDetailFeedItem,
-  JobFeedItem,
-  NotificationFeedItemEntity,
-  NotificationStepEntity,
-  StepFilter,
-  SubscriberFeedItem,
-  TemplateFeedItem,
-} from 'libs/dal';
-import {
-  DigestTypeEnum,
-  FilterParts,
-  FilterPartTypeEnum,
-  IDigestRegularMetadata,
-  IDigestTimedMetadata,
-  IWorkflowStepMetadata,
-  ProvidersIdEnum,
-  SeverityLevelEnum,
-  StepTypeEnum,
-} from 'libs/shared';
+import { NotificationStepEntity, StepFilter } from 'libs/dal';
+import type { ExecutionDetailFeedItem, JobFeedItem, NotificationFeedItemEntity, SubscriberFeedItem, TemplateFeedItem } from 'libs/dal';
+import { DigestTypeEnum, FilterPartTypeEnum, SeverityLevelEnum, StepTypeEnum } from 'libs/shared';
+import type { FilterParts, IDigestRegularMetadata, IDigestTimedMetadata, IWorkflowStepMetadata, ProvidersIdEnum } from 'libs/shared';
 import { MessageTemplateDto } from '../../../shared/dtos/message.template.dto';
-import {
-  FieldFilterPartDto,
-  FilterPartsDto,
-  OnlineInLastFilterPartDto,
-  PreviousStepFilterPartDto,
-  RealtimeOnlineFilterPartDto,
-  StepFilterDto,
-  TenantFilterPartDto,
-  WebhookFilterPartDto,
-} from '../../../shared/dtos/step-filter-dto';
+import { FieldFilterPartDto, OnlineInLastFilterPartDto, PreviousStepFilterPartDto, RealtimeOnlineFilterPartDto, StepFilterDto, TenantFilterPartDto, WebhookFilterPartDto } from '../../../shared/dtos/step-filter-dto';
+import type { FilterPartsDto } from '../../../shared/dtos/step-filter-dto';
 import {
   ActivityNotificationExecutionDetailResponseDto,
   ActivityNotificationJobResponseDto,

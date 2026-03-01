@@ -1,14 +1,9 @@
-import {
-  applyDecorators,
-  CallHandler,
-  ExecutionContext,
-  Injectable,
-  NestInterceptor,
-  SetMetadata,
-} from '@nestjs/common';
+import { applyDecorators, Injectable, SetMetadata } from '@nestjs/common';
+import type { CallHandler, ExecutionContext, NestInterceptor } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import { PinoLogger, RequestLog, RequestLogRepository } from 'libs/application-generic';
-import { UserSessionData } from 'libs/shared';
+import { PinoLogger, RequestLogRepository } from 'libs/application-generic';
+import type { RequestLog } from 'libs/application-generic';
+import type { UserSessionData } from 'libs/shared';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { TriggerEventResponseDto } from '../../events/dtos/trigger-event-response.dto';

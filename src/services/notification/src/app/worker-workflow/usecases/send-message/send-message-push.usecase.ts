@@ -1,23 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
-import {
-  buildSubscriberKey,
-  CompileTemplate,
-  CompileTemplateCommand,
-  CreateExecutionDetails,
-  CreateExecutionDetailsCommand,
-  DetailEnum,
-  FeatureFlagsService,
-  GetNovuProviderCredentials,
-  InstrumentUsecase,
-  InvalidateCacheService,
-  IPushHandler,
-  messageWebhookMapper,
-  PushFactory,
-  SelectIntegration,
-  SelectVariant,
-  SendWebhookMessage,
-} from 'libs/application-generic';
+import { buildSubscriberKey, CompileTemplate, CompileTemplateCommand, CreateExecutionDetails, CreateExecutionDetailsCommand, DetailEnum, FeatureFlagsService, GetNovuProviderCredentials, InstrumentUsecase, InvalidateCacheService, messageWebhookMapper, PushFactory, SelectIntegration, SelectVariant, SendWebhookMessage } from 'libs/application-generic';
+import type { IPushHandler } from 'libs/application-generic';
 import {
   IntegrationEntity,
   JobEntity,
@@ -26,29 +10,18 @@ import {
   SubscriberEntity,
   SubscriberRepository,
 } from 'libs/dal';
-import { PushOutput } from 'libs/framework/internal';
-import {
-  ChannelTypeEnum,
-  DeliveryLifecycleDetail,
-  DeliveryLifecycleStatusEnum,
-  ExecutionDetailsSourceEnum,
-  ExecutionDetailsStatusEnum,
-  FeatureFlagsKeysEnum,
-  IChannelSettings,
-  InboxCountTypeEnum,
-  ProvidersIdEnum,
-  PushProviderIdEnum,
-  TriggerOverrides,
-  WebhookEventEnum,
-  WebhookObjectTypeEnum,
-} from 'libs/shared';
-import { IPushOptions } from 'libs/stateless';
+import type { PushOutput } from 'libs/framework/internal';
+import { ChannelTypeEnum, DeliveryLifecycleDetail, DeliveryLifecycleStatusEnum, ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum, FeatureFlagsKeysEnum, InboxCountTypeEnum, PushProviderIdEnum, WebhookEventEnum, WebhookObjectTypeEnum } from 'libs/shared';
+import type { IChannelSettings, ProvidersIdEnum } from 'libs/shared';
+import type { TriggerOverrides } from 'libs/shared';
+import type { IPushOptions } from 'libs/stateless';
 import { addBreadcrumb } from '@sentry/node';
 import { merge } from 'lodash';
 import { PlatformException } from '../../../shared/utils';
 import { SendMessageBase } from './send-message.base';
 import { SendMessageChannelCommand } from './send-message-channel.command';
-import { SendMessageResult, SendMessageStatus } from './send-message-type.usecase';
+import { SendMessageStatus } from './send-message-type.usecase';
+import type { SendMessageResult } from './send-message-type.usecase';
 
 const LOG_CONTEXT = 'SendMessagePush';
 

@@ -1,12 +1,14 @@
 import { DirectionEnum, ResourceOriginEnum, ResourceTypeEnum } from 'libs/shared';
-import { ClientSession, FilterQuery, ProjectionType, QueryOptions } from 'mongoose';
-import { SoftDeleteModel } from 'mongoose-delete';
+import type { ClientSession, FilterQuery, ProjectionType, QueryOptions } from 'mongoose';
+import type { SoftDeleteModel } from 'mongoose-delete';
 import { DalException } from '../../shared';
-import { EnforceEnvOrOrgIds } from '../../types/enforce';
+import type { EnforceEnvOrOrgIds } from '../../types/enforce';
 import { BaseRepository } from '../base-repository';
-import { LayoutDBModel, LayoutEntity } from './layout.entity';
+import { LayoutEntity } from './layout.entity';
+import type { LayoutDBModel } from './layout.entity';
 import { Layout } from './layout.schema';
-import { EnvironmentId, LayoutId, OrderDirectionEnum, OrganizationId } from './types';
+import { OrderDirectionEnum } from './types';
+import type { EnvironmentId, LayoutId, OrganizationId } from './types';
 
 type LayoutQuery = FilterQuery<LayoutDBModel> & EnforceEnvOrOrgIds;
 

@@ -2,14 +2,15 @@ import { Injectable } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
 import { Instrument, PinoLogger } from 'libs/application-generic';
 import { LocalizationResourceEnum, NotificationTemplateEntity } from 'libs/dal';
-import { UserSessionData } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { diff } from 'deep-object-diff';
 import { WorkflowDataContainer } from '../../../../shared/containers/workflow-data.container';
 import { GetWorkflowCommand, GetWorkflowUseCase } from '../../../../workflows-v2/usecases/get-workflow';
-import { DiffActionEnum, IResourceDiff, ResourceTypeEnum } from '../../../types/sync.types';
+import { DiffActionEnum, ResourceTypeEnum } from '../../../types/sync.types';
+import type { IResourceDiff } from '../../../types/sync.types';
 import { WorkflowNormalizer } from '../normalizers/workflow.normalizer';
 import { WorkflowRepositoryService } from '../operations/workflow-repository.service';
-import { INormalizedStep, INormalizedWorkflow, IWorkflowComparison } from '../types/workflow-sync.types';
+import type { INormalizedStep, INormalizedWorkflow, IWorkflowComparison } from '../types/workflow-sync.types';
 
 @Injectable()
 export class WorkflowComparator {

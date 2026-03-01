@@ -1,5 +1,6 @@
 import { MemberEntity, SubscriberEntity, UserEntity } from 'libs/dal';
-import { AuthenticateContext, AuthProviderEnum, ISubscriberJwt, UserSessionData } from 'libs/shared';
+import { AuthProviderEnum } from 'libs/shared';
+import type { AuthenticateContext, ISubscriberJwt, UserSessionData } from 'libs/shared';
 
 export interface IAuthService {
   authenticate(

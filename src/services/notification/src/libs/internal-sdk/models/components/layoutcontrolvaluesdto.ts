@@ -6,10 +6,8 @@ import * as z from "zod/v3";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
-import {
-  EmailControlsDto,
-  EmailControlsDto$inboundSchema,
-} from "./emailcontrolsdto.js";
+import { EmailControlsDto$inboundSchema } from "./emailcontrolsdto.js";
+import type { EmailControlsDto } from "./emailcontrolsdto.js";
 
 export type LayoutControlValuesDto = {
   /**

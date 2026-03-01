@@ -1,6 +1,8 @@
-import { ExecutionContext, Injectable, UnauthorizedException } from '@nestjs/common';
+import { Injectable, UnauthorizedException } from '@nestjs/common';
+import type { ExecutionContext } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
-import { AuthGuard, IAuthModuleOptions } from '@nestjs/passport';
+import { AuthGuard } from '@nestjs/passport';
+import type { IAuthModuleOptions } from '@nestjs/passport';
 import { PinoLogger } from 'libs/application-generic';
 import { ApiAuthSchemeEnum, NONE_AUTH_SCHEME, PassportStrategyEnum } from 'libs/shared';
 

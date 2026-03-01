@@ -1,16 +1,11 @@
 import { SubscriberEntity } from 'libs/dal';
-import { DiscoverWorkflowOutput } from 'libs/framework/internal';
-import {
-  ISubscribersDefine,
-  ITenantDefine,
-  StatelessControls,
-  SubscriberSourceEnum,
-  TriggerOverrides,
-  TriggerRequestCategoryEnum,
-} from 'libs/shared';
+import type { DiscoverWorkflowOutput } from 'libs/framework/internal';
+import { StatelessControls, SubscriberSourceEnum, TriggerRequestCategoryEnum } from 'libs/shared';
+import type { ISubscribersDefine, ITenantDefine } from 'libs/shared';
+import type { TriggerOverrides } from 'libs/shared';
 
-import { IBulkJobParams, IJobParams } from '../services/queues/queue-base.service';
-import { SubscriberTopicPreference } from './subscriber-topic-preference.dto';
+import type { IBulkJobParams, IJobParams } from '../services/queues/queue-base.service';
+import type { SubscriberTopicPreference } from './subscriber-topic-preference.dto';
 
 export interface IProcessSubscriberDataDto {
   environmentId: string;

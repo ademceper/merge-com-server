@@ -1,20 +1,13 @@
 import { SESClient, SendRawEmailCommand } from '@aws-sdk/client-ses';
 import { EmailProviderIdEnum } from 'libs/shared';
-import {
-  ChannelTypeEnum,
-  CheckIntegrationResponseEnum,
-  EmailEventStatusEnum,
-  ICheckIntegrationResponse,
-  IEmailEventBody,
-  IEmailOptions,
-  IEmailProvider,
-  ISendMessageSuccessResponse,
-} from 'libs/stateless';
+import { ChannelTypeEnum, CheckIntegrationResponseEnum, EmailEventStatusEnum } from 'libs/stateless';
+import type { ICheckIntegrationResponse, IEmailEventBody, IEmailProvider, ISendMessageSuccessResponse } from 'libs/stateless';
+import type { IEmailOptions } from 'libs/stateless';
 import { createVerify } from 'crypto';
 import nodemailer from 'nodemailer';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
-import { SESConfig } from './ses.config';
+import type { WithPassthrough } from '../../../utils/types';
+import type { SESConfig } from './ses.config';
 
 export class SESEmailProvider extends BaseProvider implements IEmailProvider {
   id = EmailProviderIdEnum.SES;

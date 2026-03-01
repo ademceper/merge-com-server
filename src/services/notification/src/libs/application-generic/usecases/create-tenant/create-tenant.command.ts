@@ -1,4 +1,4 @@
-import { CustomDataType } from 'libs/shared';
+import type { CustomDataType } from 'libs/shared';
 import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import { EnvironmentWithUserCommand } from '../../commands';
 

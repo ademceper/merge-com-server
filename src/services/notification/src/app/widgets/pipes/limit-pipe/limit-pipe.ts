@@ -1,4 +1,5 @@
-import { ArgumentMetadata, BadRequestException, PipeTransform } from '@nestjs/common';
+import { BadRequestException } from '@nestjs/common';
+import type { ArgumentMetadata, PipeTransform } from '@nestjs/common';
 
 export class LimitPipe implements PipeTransform {
   private readonly minInt: number;

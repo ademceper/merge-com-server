@@ -2,20 +2,13 @@ import { Injectable, Optional } from '@nestjs/common';
 import { FeatureFlagsKeysEnum } from 'libs/shared';
 import { PinoLogger } from 'nestjs-pino';
 import { FeatureFlagsService } from '../../feature-flags/feature-flags.service';
-import { ClickHouseService, InsertOptions } from '../clickhouse.service';
+import { ClickHouseService } from '../clickhouse.service';
+import type { InsertOptions } from '../clickhouse.service';
 import { ClickHouseBatchService } from '../clickhouse-batch.service';
 import { LogRepository } from '../log.repository';
 import { getInsertOptions } from '../shared';
-import {
-  EventType,
-  ORDER_BY,
-  RequestTraceInput,
-  StepRunTraceInput,
-  TABLE_NAME,
-  Trace,
-  traceLogSchema,
-  WorkflowRunTraceInput,
-} from './trace-log.schema';
+import { ORDER_BY, TABLE_NAME, traceLogSchema } from './trace-log.schema';
+import type { EventType, RequestTraceInput, StepRunTraceInput, Trace, WorkflowRunTraceInput } from './trace-log.schema';
 
 const TRACE_INSERT_OPTIONS: InsertOptions = getInsertOptions(
   process.env.TRACES_ASYNC_INSERT || '',

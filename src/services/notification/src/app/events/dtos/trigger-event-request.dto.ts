@@ -1,14 +1,7 @@
 import { ApiExtraModels, ApiHideProperty, ApiProperty, ApiPropertyOptional, getSchemaPath } from '@nestjs/swagger';
 import { IsValidContextPayload } from 'libs/application-generic';
-import {
-  ContextPayload,
-  ProvidersIdEnum,
-  SeverityLevelEnum,
-  TriggerRecipientSubscriber,
-  TriggerRecipientsPayload,
-  TriggerRecipientsTypeEnum,
-  TriggerTenantContext,
-} from 'libs/shared';
+import { SeverityLevelEnum, TriggerRecipientsTypeEnum } from 'libs/shared';
+import type { ContextPayload, ProvidersIdEnum, TriggerRecipientSubscriber, TriggerRecipientsPayload, TriggerTenantContext } from 'libs/shared';
 import { Type } from 'class-transformer';
 import {
   ArrayMaxSize,

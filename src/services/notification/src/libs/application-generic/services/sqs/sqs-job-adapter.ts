@@ -1,5 +1,5 @@
 import { Job } from '../bull-mq';
-import { ISqsMessageMeta } from './types';
+import type { ISqsMessageMeta } from './types';
 
 const noOp = async () => {};
 

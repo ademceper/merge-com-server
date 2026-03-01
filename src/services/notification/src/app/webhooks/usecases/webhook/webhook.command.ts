@@ -1,7 +1,7 @@
 import { EnvironmentCommand } from 'libs/application-generic';
 import { IsDefined } from 'class-validator';
 
-import { WebhookTypes } from '../../interfaces/webhook.interface';
+import type { WebhookTypes } from '../../interfaces/webhook.interface';
 
 export class WebhookCommand extends EnvironmentCommand {
   @IsDefined()

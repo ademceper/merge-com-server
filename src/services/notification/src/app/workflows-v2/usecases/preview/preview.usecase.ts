@@ -6,7 +6,7 @@ import {
   InstrumentUsecase,
   PinoLogger,
 } from 'libs/application-generic';
-import { ContextResolved } from 'libs/framework/internal';
+import type { ContextResolved } from 'libs/framework/internal';
 import { ChannelTypeEnum, ResourceOriginEnum, StepTypeEnum } from 'libs/shared';
 import { PreviewStep, PreviewStepCommand } from '../../../bridge/usecases/preview-step';
 // Import new services

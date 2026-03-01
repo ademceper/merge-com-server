@@ -1,7 +1,7 @@
 import { ENDPOINT_TYPES } from 'libs/shared';
 import mongoose, { Schema } from 'mongoose';
 import { schemaOptions } from '../schema-default.options';
-import { ChannelEndpointDBModel } from './channel-endpoint.entity';
+import type { ChannelEndpointDBModel } from './channel-endpoint.entity';
 
 const channelEndpointSchema = new Schema<ChannelEndpointDBModel>(
   {

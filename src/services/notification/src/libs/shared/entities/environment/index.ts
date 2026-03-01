@@ -1,1 +1,1 @@
-export * from './environment.interface';
+export type * from './environment.interface';

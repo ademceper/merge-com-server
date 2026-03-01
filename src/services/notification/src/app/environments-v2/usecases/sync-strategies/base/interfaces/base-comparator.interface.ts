@@ -1,6 +1,6 @@
-import { UserSessionData } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { WorkflowDataContainer } from '../../../../../shared/containers/workflow-data.container';
-import { IResourceDiff } from '../../../../types/sync.types';
+import type { IResourceDiff } from '../../../../types/sync.types';
 
 export interface IBaseComparator<T> {
   compareResources(

@@ -6,15 +6,8 @@ import {
   InvalidateCacheService,
   WebSocketsQueueService,
 } from 'libs/application-generic';
-import {
-  DalException,
-  EnforceEnvId,
-  FeedRepository,
-  MessageEntity,
-  MessageRepository,
-  SubscriberEntity,
-  SubscriberRepository,
-} from 'libs/dal';
+import { DalException, FeedRepository, MessageEntity, MessageRepository, SubscriberEntity, SubscriberRepository } from 'libs/dal';
+import type { EnforceEnvId } from 'libs/dal';
 import { ChannelTypeEnum, WebSocketEventEnum } from 'libs/shared';
 import { MarkEnum } from '../mark-message-as/mark-message-as.command';
 import { RemoveAllMessagesCommand } from './remove-all-messages.command';

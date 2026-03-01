@@ -1,4 +1,4 @@
-import { RequestLog, Trace } from 'libs/application-generic';
+import type { RequestLog, Trace } from 'libs/application-generic';
 
 export const traceSelectColumns = [
   'id',

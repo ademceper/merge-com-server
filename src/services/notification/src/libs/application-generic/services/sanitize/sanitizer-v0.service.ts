@@ -1,4 +1,4 @@
-import { IEmailBlock } from 'libs/shared';
+import type { IEmailBlock } from 'libs/shared';
 import sanitizeTypes, { IOptions } from 'sanitize-html';
 
 /**

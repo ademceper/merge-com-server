@@ -1,7 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { NotificationTemplateEntity } from 'libs/dal';
-import { ContextResolved } from 'libs/framework/internal';
-import { ContextPayload, createMockObjectFromSchema, ResourceOriginEnum, UserSessionData } from 'libs/shared';
+import type { ContextResolved } from 'libs/framework/internal';
+import { createMockObjectFromSchema, ResourceOriginEnum } from 'libs/shared';
+import type { ContextPayload, UserSessionData } from 'libs/shared';
 import { isPlainObject, pick } from 'es-toolkit';
 import { keys, merge, mergeWith } from 'es-toolkit/compat';
 import { PreviewPayloadDto, StepResponseDto } from '../../../dtos';

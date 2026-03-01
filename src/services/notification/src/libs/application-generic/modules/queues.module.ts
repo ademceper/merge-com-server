@@ -1,4 +1,5 @@
-import { DynamicModule, InjectionToken, Module, OnApplicationShutdown, Provider, Type } from '@nestjs/common';
+import { Module } from '@nestjs/common';
+import type { DynamicModule, InjectionToken, OnApplicationShutdown, Provider, Type } from '@nestjs/common';
 import { CommunityOrganizationRepository, MessageRepository } from 'libs/dal';
 import { JobTopicNameEnum } from 'libs/shared';
 import { featureFlagsService } from '../custom-providers';

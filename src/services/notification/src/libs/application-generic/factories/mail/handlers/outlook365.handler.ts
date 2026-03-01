@@ -1,5 +1,6 @@
 import { Outlook365Provider } from 'libs/providers';
-import { ChannelTypeEnum, EmailProviderIdEnum, ICredentials } from 'libs/shared';
+import { ChannelTypeEnum, EmailProviderIdEnum } from 'libs/shared';
+import type { ICredentials } from 'libs/shared';
 import { BaseEmailHandler } from './base.handler';
 
 export class Outlook365Handler extends BaseEmailHandler {

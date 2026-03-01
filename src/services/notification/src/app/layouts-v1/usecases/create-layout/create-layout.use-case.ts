@@ -9,7 +9,8 @@ import {
 import { ControlSchemas, LayoutEntity, LayoutRepository } from 'libs/dal';
 import { isReservedVariableName, ResourceOriginEnum, ResourceTypeEnum } from 'libs/shared';
 import { LayoutDto } from '../../dtos';
-import { ChannelTypeEnum, ITemplateVariable, LayoutId } from '../../types';
+import { ChannelTypeEnum } from '../../types';
+import type { ITemplateVariable, LayoutId } from '../../types';
 import { CreateLayoutChangeCommand, CreateLayoutChangeUseCase } from '../create-layout-change';
 import { SetDefaultLayoutCommand, SetDefaultLayoutUseCase } from '../set-default-layout';
 import { CreateLayoutCommand } from './create-layout.command';

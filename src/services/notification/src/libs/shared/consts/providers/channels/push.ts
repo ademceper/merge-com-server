@@ -17,7 +17,7 @@ import {
   pushpadConfig,
   pushWebhookConfig,
 } from '../credentials';
-import { IProviderConfig } from '../provider.interface';
+import type { IProviderConfig } from '../provider.interface';
 
 export const pushProviders: IProviderConfig[] = [
   {

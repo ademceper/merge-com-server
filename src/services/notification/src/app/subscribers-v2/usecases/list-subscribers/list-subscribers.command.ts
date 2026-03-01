@@ -1,5 +1,5 @@
 import { CursorBasedPaginatedCommand } from 'libs/application-generic';
-import { ISubscriber } from 'libs/shared';
+import type { ISubscriber } from 'libs/shared';
 import { IsOptional, IsString } from 'class-validator';
 
 export class ListSubscribersCommand extends CursorBasedPaginatedCommand<ISubscriber, 'updatedAt' | '_id'> {

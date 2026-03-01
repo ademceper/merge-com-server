@@ -16,7 +16,7 @@ import {
 } from 'libs/application-generic';
 
 import { IntegrationEntity, MessageEntity, MessageRepository, SubscriberRepository } from 'libs/dal';
-import { SmsOutput } from 'libs/framework/internal';
+import type { SmsOutput } from 'libs/framework/internal';
 import {
   ChannelTypeEnum,
   DeliveryLifecycleDetail,
@@ -30,7 +30,8 @@ import { addBreadcrumb } from '@sentry/node';
 import { PlatformException } from '../../../shared/utils';
 import { SendMessageBase } from './send-message.base';
 import { SendMessageChannelCommand } from './send-message-channel.command';
-import { SendMessageResult, SendMessageStatus } from './send-message-type.usecase';
+import { SendMessageStatus } from './send-message-type.usecase';
+import type { SendMessageResult } from './send-message-type.usecase';
 
 @Injectable()
 export class SendMessageSms extends SendMessageBase {

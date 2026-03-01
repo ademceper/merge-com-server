@@ -1,4 +1,4 @@
-import { ArgumentMetadata } from '@nestjs/common';
+import type { ArgumentMetadata } from '@nestjs/common';
 import { expect } from 'chai';
 import { encodeBase62 } from '../utils/base62';
 import { ParseSlugIdPipe } from './parse-slug-id.pipe';

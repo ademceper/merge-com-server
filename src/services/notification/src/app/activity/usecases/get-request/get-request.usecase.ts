@@ -1,5 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { QueryBuilder, RequestLog, RequestLogRepository, Trace, TraceLogRepository } from 'libs/application-generic';
+import { QueryBuilder, RequestLogRepository, TraceLogRepository } from 'libs/application-generic';
+import type { RequestLog, Trace } from 'libs/application-generic';
 import { GetRequestResponseDto, TraceResponseDto } from '../../dtos/get-request.response.dto';
 import { mapTraceToResponseDto } from '../../shared/mappers';
 import { requestLogSelectColumns, traceSelectColumns } from '../../shared/select.const';

@@ -1,7 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { Redis } from 'ioredis';
 import { WorkflowInMemoryProviderService } from '../in-memory-provider';
-import { IThrottleReservationParams, IThrottleReservationResult } from './throttle.types';
+import type { IThrottleReservationParams, IThrottleReservationResult } from './throttle.types';
 
 const LOG_CONTEXT = 'RedisThrottleService';
 

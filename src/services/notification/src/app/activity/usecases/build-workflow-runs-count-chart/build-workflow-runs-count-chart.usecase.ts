@@ -1,12 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import {
-  InstrumentUsecase,
-  PinoLogger,
-  QueryBuilder,
-  WorkflowRun,
-  WorkflowRunRepository,
-  WorkflowRunStatusEnum,
-} from 'libs/application-generic';
+import { InstrumentUsecase, PinoLogger, QueryBuilder, WorkflowRunRepository, WorkflowRunStatusEnum } from 'libs/application-generic';
+import type { WorkflowRun } from 'libs/application-generic';
 import { WorkflowRunsCountDataPointDto } from '../../dtos/get-charts.response.dto';
 import { BuildWorkflowRunsCountChartCommand } from './build-workflow-runs-count-chart.command';
 import { WorkflowRunStatusDtoEnum } from '../../dtos/shared.dto';

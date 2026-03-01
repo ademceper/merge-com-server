@@ -1,16 +1,8 @@
 import { Body, Controller, Delete, Param, Post, Req, Scope, ServiceUnavailableException } from '@nestjs/common';
 import { ApiExcludeEndpoint, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { FeatureFlagsService, RequirePermissions, ResourceCategory } from 'libs/application-generic';
-import {
-  AddressingTypeEnum,
-  ApiRateLimitCategoryEnum,
-  ApiRateLimitCostEnum,
-  FeatureFlagsKeysEnum,
-  PermissionsEnum,
-  ResourceEnum,
-  TriggerRequestCategoryEnum,
-  UserSessionData,
-} from 'libs/shared';
+import { AddressingTypeEnum, ApiRateLimitCategoryEnum, ApiRateLimitCostEnum, FeatureFlagsKeysEnum, PermissionsEnum, ResourceEnum, TriggerRequestCategoryEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { v4 as uuidv4 } from 'uuid';
 import { PayloadValidationExceptionDto } from '../../error-dto';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
@@ -26,7 +18,7 @@ import {
 import { KeylessAccessible } from '../shared/framework/swagger/keyless.security';
 import { SdkGroupName, SdkMethodName, SdkUsageExample } from '../shared/framework/swagger/sdk.decorators';
 import { UserSession } from '../shared/framework/user.decorator';
-import { RequestWithReqId } from '../shared/middleware/request-id.middleware';
+import type { RequestWithReqId } from '../shared/middleware/request-id.middleware';
 import {
   BulkTriggerEventDto,
   TestSendEmailRequestDto,

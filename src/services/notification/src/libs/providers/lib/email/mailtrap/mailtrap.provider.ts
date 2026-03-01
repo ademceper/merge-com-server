@@ -1,15 +1,11 @@
 import { EmailProviderIdEnum } from 'libs/shared';
-import {
-  ChannelTypeEnum,
-  CheckIntegrationResponseEnum,
-  ICheckIntegrationResponse,
-  IEmailOptions,
-  IEmailProvider,
-  ISendMessageSuccessResponse,
-} from 'libs/stateless';
-import { Address, Attachment, Mail, MailtrapClient } from 'mailtrap';
+import { ChannelTypeEnum, CheckIntegrationResponseEnum } from 'libs/stateless';
+import type { ICheckIntegrationResponse, IEmailProvider, ISendMessageSuccessResponse } from 'libs/stateless';
+import type { IEmailOptions } from 'libs/stateless';
+import { MailtrapClient } from 'mailtrap';
+import type { Address, Attachment, Mail } from 'mailtrap';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
+import type { WithPassthrough } from '../../../utils/types';
 
 export class MailtrapEmailProvider extends BaseProvider implements IEmailProvider {
   id = EmailProviderIdEnum.Mailtrap;

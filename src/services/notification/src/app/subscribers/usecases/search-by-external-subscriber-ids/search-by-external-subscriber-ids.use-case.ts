@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { IExternalSubscribersEntity, SubscriberEntity, SubscriberRepository } from 'libs/dal';
+import { SubscriberEntity, SubscriberRepository } from 'libs/dal';
+import type { IExternalSubscribersEntity } from 'libs/dal';
 import { SubscriberDto } from 'libs/shared';
 
 import { SearchByExternalSubscriberIdsCommand } from './search-by-external-subscriber-ids.command';

@@ -1,14 +1,7 @@
-import { DiscoverWorkflowOutput } from 'libs/framework/internal';
-import {
-  AddressingTypeEnum,
-  ContextPayload,
-  StatelessControls,
-  TriggerOverrides,
-  TriggerRecipientSubscriber,
-  TriggerRecipientsPayload,
-  TriggerRequestCategoryEnum,
-  TriggerTenantContext,
-} from 'libs/shared';
+import type { DiscoverWorkflowOutput } from 'libs/framework/internal';
+import { AddressingTypeEnum, StatelessControls, TriggerRequestCategoryEnum } from 'libs/shared';
+import type { ContextPayload, TriggerRecipientSubscriber, TriggerRecipientsPayload, TriggerTenantContext } from 'libs/shared';
+import type { TriggerOverrides } from 'libs/shared';
 import { IsDefined, IsEnum, IsOptional, IsString, ValidateIf, ValidateNested } from 'class-validator';
 import { EnvironmentWithUserCommand } from '../../commands';
 import { IsValidContextPayload } from '../../decorators';

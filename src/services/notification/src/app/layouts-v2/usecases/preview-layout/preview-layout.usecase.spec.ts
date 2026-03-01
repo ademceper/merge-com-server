@@ -1,4 +1,4 @@
-import { LayoutControlType } from 'libs/application-generic';
+import type { LayoutControlType } from 'libs/application-generic';
 import {
   ChannelTypeEnum,
   LAYOUT_PREVIEW_EMAIL_STEP,

@@ -1,4 +1,5 @@
-import { EnvironmentTypeEnum, IApiRateLimitMaximum } from '../../types';
+import { EnvironmentTypeEnum } from '../../types';
+import type { IApiRateLimitMaximum } from '../../types';
 
 export interface IEnvironment {
   _id: string;

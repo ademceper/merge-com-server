@@ -1,5 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { ResourceOriginEnum, ResourceTypeEnum, Slug } from 'libs/shared';
+import { ResourceOriginEnum, ResourceTypeEnum } from 'libs/shared';
+import type { Slug } from 'libs/shared';
 import { Type } from 'class-transformer';
 import { IsBoolean, IsEnum, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { ControlsMetadataDto } from '../../workflows-v2/dtos/controls-metadata.dto';

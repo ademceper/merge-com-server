@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { IWorkflowBulkJobDto, WorkflowQueueService } from 'libs/application-generic';
+import { WorkflowQueueService } from 'libs/application-generic';
+import type { IWorkflowBulkJobDto } from 'libs/application-generic';
 import { NotificationTemplateRepository } from 'libs/dal';
 import { AddressingTypeEnum, TriggerEventStatusEnum, TriggerRequestCategoryEnum } from 'libs/shared';
 import { TriggerEventResponseDto } from '../../dtos';

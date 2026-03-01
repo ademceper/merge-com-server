@@ -1,13 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InstrumentUsecase } from 'libs/application-generic';
-import {
-  ChannelConnectionDBModel,
-  ChannelConnectionEntity,
-  ChannelConnectionRepository,
-  EnforceEnvOrOrgIds,
-} from 'libs/dal';
+import { ChannelConnectionEntity, ChannelConnectionRepository } from 'libs/dal';
+import type { ChannelConnectionDBModel, EnforceEnvOrOrgIds } from 'libs/dal';
 import { DirectionEnum } from 'libs/shared';
-import { FilterQuery } from 'mongoose';
+import type { FilterQuery } from 'mongoose';
 import { ListChannelConnectionsCommand } from './list-channel-connections.command';
 
 @Injectable()

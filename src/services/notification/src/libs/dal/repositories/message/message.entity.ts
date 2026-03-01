@@ -1,14 +1,8 @@
-import {
-  ChannelEndpointByType,
-  ChannelEndpointType,
-  ChannelTypeEnum,
-  IActor,
-  IMessageCTA,
-  SeverityLevelEnum,
-} from 'libs/shared';
+import { ChannelTypeEnum, SeverityLevelEnum } from 'libs/shared';
+import type { ChannelEndpointByType, ChannelEndpointType, IActor, IMessageCTA } from 'libs/shared';
 import type { ChangePropsValueType } from '../../types/helpers';
 import type { EnvironmentId } from '../environment';
-import { IEmailBlock } from '../message-template';
+import type { IEmailBlock } from '../message-template';
 import { NotificationTemplateEntity } from '../notification-template';
 import type { OrganizationId } from '../organization';
 import { SubscriberEntity } from '../subscriber';

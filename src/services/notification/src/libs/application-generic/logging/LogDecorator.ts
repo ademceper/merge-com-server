@@ -1,4 +1,5 @@
-import { Logger, LoggerService } from '@nestjs/common';
+import { Logger } from '@nestjs/common';
+import type { LoggerService } from '@nestjs/common';
 
 export type Transform = (data: any) => any;
 

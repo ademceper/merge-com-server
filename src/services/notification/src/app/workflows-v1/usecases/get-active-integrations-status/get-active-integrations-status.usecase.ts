@@ -4,14 +4,8 @@ import {
   CalculateLimitNovuIntegrationCommand,
   NotificationStep,
 } from 'libs/application-generic';
-import {
-  ChannelTypeEnum,
-  ChatProviderIdEnum,
-  EmailProviderIdEnum,
-  SmsProviderIdEnum,
-  StepTypeEnum,
-  WorkflowChannelsIntegrationStatus,
-} from 'libs/shared';
+import { ChannelTypeEnum, ChatProviderIdEnum, EmailProviderIdEnum, SmsProviderIdEnum, StepTypeEnum } from 'libs/shared';
+import type { WorkflowChannelsIntegrationStatus } from 'libs/shared';
 import { IntegrationResponseDto } from '../../../integrations/dtos/integration-response.dto';
 import { GetActiveIntegrationsCommand } from '../../../integrations/usecases/get-active-integration/get-active-integration.command';
 import { GetActiveIntegrations } from '../../../integrations/usecases/get-active-integration/get-active-integration.usecase';

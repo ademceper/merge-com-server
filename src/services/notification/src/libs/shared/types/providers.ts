@@ -1,4 +1,4 @@
-import { IConfigurations } from '../entities/integration/configuration.interface';
+import type { IConfigurations } from '../entities/integration/configuration.interface';
 
 export enum CredentialsKeyEnum {
   ApiKey = 'apiKey',

@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { JobTopicNameEnum } from 'libs/shared';
-import { IWorkflowBulkJobDto, IWorkflowJobDto } from '../../dtos';
+import type { IWorkflowBulkJobDto, IWorkflowJobDto } from '../../dtos';
 import { PinoLogger } from '../../logging';
 import { BullMqService } from '../bull-mq';
 import { FeatureFlagsService } from '../feature-flags';

@@ -1,5 +1,6 @@
 import { BadRequestException } from '@nestjs/common';
-import { ChannelEndpointType, ENDPOINT_TYPES } from 'libs/shared';
+import { ENDPOINT_TYPES } from 'libs/shared';
+import type { ChannelEndpointType } from 'libs/shared';
 
 // Centralized schema definition
 export const CHANNEL_ENDPOINT_SCHEMAS = {

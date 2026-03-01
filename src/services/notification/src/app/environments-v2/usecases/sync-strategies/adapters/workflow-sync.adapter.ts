@@ -2,8 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { NotificationTemplateEntity } from 'libs/dal';
 import { SyncToEnvironmentCommand } from '../../../../workflows-v2/usecases/sync-to-environment/sync-to-environment.command';
 import { SyncToEnvironmentUseCase } from '../../../../workflows-v2/usecases/sync-to-environment/sync-to-environment.usecase';
-import { ISyncContext } from '../../../types/sync.types';
-import { IBaseSyncService } from '../base/interfaces/base-sync.interface';
+import type { ISyncContext } from '../../../types/sync.types';
+import type { IBaseSyncService } from '../base/interfaces/base-sync.interface';
 
 @Injectable()
 export class WorkflowSyncAdapter implements IBaseSyncService<NotificationTemplateEntity> {

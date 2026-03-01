@@ -1,8 +1,8 @@
-import { IChannelSettings, ISubscriber, SubscriberCustomData } from 'libs/shared';
+import type { IChannelSettings, ISubscriber, SubscriberCustomData } from 'libs/shared';
 import type { ChangePropsValueType } from '../../types/helpers';
 import type { EnvironmentId } from '../environment';
 import type { OrganizationId } from '../organization';
-import { ExternalSubscriberId } from './types';
+import type { ExternalSubscriberId } from './types';
 
 export class SubscriberEntity implements ISubscriber {
   // TODO: Use SubscriberId. Means lot of changes across whole codebase. Cool down.

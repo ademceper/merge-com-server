@@ -10,7 +10,7 @@ import {
 import { NovuCore } from "../core.js";
 import { contextsList } from "../funcs/contextsList.js";
 import { combineSignals } from "../lib/primitives.js";
-import { RequestOptions } from "../lib/sdks.js";
+import type { RequestOptions } from "../lib/sdks.js";
 import * as operations from "../models/operations/index.js";
 import { unwrapAsync } from "../types/fp.js";
 export type ContextsListQueryData =

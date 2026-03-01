@@ -1,4 +1,4 @@
-import { IContentEngine } from './content/content.engine';
+import type { IContentEngine } from './content/content.engine';
 import { ProviderStore } from './provider/provider.store';
 import { TemplateStore } from './template/template.store';
 import { ThemeStore } from './theme/theme.store';

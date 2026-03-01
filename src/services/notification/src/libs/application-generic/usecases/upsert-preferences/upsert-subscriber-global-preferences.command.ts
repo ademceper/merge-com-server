@@ -1,4 +1,4 @@
-import { Schedule } from 'libs/shared';
+import type { Schedule } from 'libs/shared';
 import { IsArray, IsBoolean, IsMongoId, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import { UpsertPreferencesPartialBaseCommand } from './upsert-preferences.command';
 

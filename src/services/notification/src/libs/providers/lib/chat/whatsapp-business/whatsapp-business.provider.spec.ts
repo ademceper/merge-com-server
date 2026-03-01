@@ -1,4 +1,6 @@
-import { ChannelEndpointByType, ENDPOINT_TYPES, IChatOptions } from 'libs/stateless';
+import { ENDPOINT_TYPES } from 'libs/stateless';
+import type { IChatOptions } from 'libs/stateless';
+import type { ChannelEndpointByType } from 'libs/stateless';
 import { nanoid } from 'nanoid';
 import { expect, test } from 'vitest';
 import { axiosSpy } from '../../../utils/test/spy-axios';

@@ -13,7 +13,7 @@ import { GetApiRateLimitCostConfig } from '../get-api-rate-limit-cost-config';
 import { GetApiRateLimitMaximum, GetApiRateLimitMaximumCommand } from '../get-api-rate-limit-maximum';
 import type { ApiServiceLevel } from '../get-api-rate-limit-maximum/get-api-rate-limit-maximum.dto';
 import { EvaluateApiRateLimitCommand } from './evaluate-api-rate-limit.command';
-import { EvaluateApiRateLimitResponseDto } from './evaluate-api-rate-limit.types';
+import type { EvaluateApiRateLimitResponseDto } from './evaluate-api-rate-limit.types';
 
 @Injectable()
 export class EvaluateApiRateLimit {

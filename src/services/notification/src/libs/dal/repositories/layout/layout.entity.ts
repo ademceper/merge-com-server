@@ -2,17 +2,8 @@ import { ResourceOriginEnum, ResourceTypeEnum } from 'libs/shared';
 import type { ChangePropsValueType } from '../../types/helpers';
 import { ControlSchemas } from '../message-template';
 import { UserEntity } from '../user';
-import {
-  ChannelTypeEnum,
-  EnvironmentId,
-  ITemplateVariable,
-  LayoutDescription,
-  LayoutId,
-  LayoutIdentifier,
-  LayoutName,
-  OrganizationId,
-  UserId,
-} from './types';
+import { ChannelTypeEnum } from './types';
+import type { EnvironmentId, ITemplateVariable, LayoutDescription, LayoutId, LayoutIdentifier, LayoutName, OrganizationId, UserId } from './types';
 
 export class LayoutEntity {
   _id: LayoutId;

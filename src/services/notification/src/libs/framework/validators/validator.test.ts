@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { z } from 'zod';
-import { JsonSchema, Schema, ZodSchema } from '../types/schema.types';
+import { Schema } from '../types/schema.types';
+import type { JsonSchema, ZodSchema } from '../types/schema.types';
 import { transformSchema, validateData } from './base.validator';
 
 const schemas = ['zod', 'json'] as const;

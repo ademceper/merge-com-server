@@ -1,6 +1,8 @@
-import { Injectable, NestMiddleware } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
+import type { NestMiddleware } from '@nestjs/common';
 import { generateObjectId } from 'libs/application-generic';
-import { NextFunction, Request, Response } from 'express';
+import type { NextFunction, Request } from 'express';
+import type { Response } from 'express';
 
 export interface RequestWithReqId extends Request {
   _nvRequestId: string;

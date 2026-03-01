@@ -6,16 +6,10 @@ import {
   NotificationRepository,
   SubscriberEntity,
 } from 'libs/dal';
-import {
-  ContextPayload,
-  CreateWorkflowDto,
-  StepTypeEnum,
-  TriggerOverrides,
-  TriggerRecipientSubscriber,
-  TriggerTenantContext,
-  WorkflowCreationSourceEnum,
-  WorkflowResponseDto,
-} from 'libs/shared';
+import { StepTypeEnum, WorkflowCreationSourceEnum } from 'libs/shared';
+import type { ContextPayload, TriggerRecipientSubscriber, TriggerTenantContext } from 'libs/shared';
+import { CreateWorkflowDto, WorkflowResponseDto } from 'libs/shared';
+import type { TriggerOverrides } from 'libs/shared';
 import { SubscribersService, UserSession } from '@novu/testing';
 import { expect } from 'chai';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';

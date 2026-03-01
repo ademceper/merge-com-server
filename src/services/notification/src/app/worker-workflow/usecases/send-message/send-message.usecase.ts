@@ -1,24 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
-import {
-  AnalyticsService,
-  buildSubscriberKey,
-  CachedResponse,
-  ConditionsFilter,
-  ConditionsFilterCommand,
-  CreateExecutionDetails,
-  CreateExecutionDetailsCommand,
-  DetailEnum,
-  GetPreferences,
-  GetSubscriberTemplatePreference,
-  GetSubscriberTemplatePreferenceCommand,
-  IConditionsFilterResponse,
-  IFilterVariables,
-  Instrument,
-  InstrumentUsecase,
-  NormalizeVariables,
-  NormalizeVariablesCommand,
-  PlatformException,
-} from 'libs/application-generic';
+import { AnalyticsService, buildSubscriberKey, CachedResponse, ConditionsFilter, ConditionsFilterCommand, CreateExecutionDetails, CreateExecutionDetailsCommand, DetailEnum, GetPreferences, GetSubscriberTemplatePreference, GetSubscriberTemplatePreferenceCommand, Instrument, InstrumentUsecase, NormalizeVariables, NormalizeVariablesCommand, PlatformException } from 'libs/application-generic';
+import type { IConditionsFilterResponse, IFilterVariables } from 'libs/application-generic';
 import {
   ContextRepository,
   JobEntity,
@@ -28,20 +10,9 @@ import {
   TenantEntity,
   TenantRepository,
 } from 'libs/dal';
-import { ContextResolved, ExecuteOutput } from 'libs/framework/internal';
-import {
-  DeliveryLifecycleDetail,
-  DeliveryLifecycleStatusEnum,
-  DigestTypeEnum,
-  ExecutionDetailsSourceEnum,
-  ExecutionDetailsStatusEnum,
-  IDigestRegularMetadata,
-  IDigestTimedMetadata,
-  IPreferenceChannels,
-  PreferencesTypeEnum,
-  ResourceTypeEnum,
-  StepTypeEnum,
-} from 'libs/shared';
+import type { ContextResolved, ExecuteOutput } from 'libs/framework/internal';
+import { DeliveryLifecycleDetail, DeliveryLifecycleStatusEnum, DigestTypeEnum, ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum, PreferencesTypeEnum, ResourceTypeEnum, StepTypeEnum } from 'libs/shared';
+import type { IDigestRegularMetadata, IDigestTimedMetadata, IPreferenceChannels } from 'libs/shared';
 import { ExecuteBridgeJob } from '../execute-bridge-job';
 import { Digest } from './digest';
 import { ExecuteStepCustom } from './execute-step-custom.usecase';
@@ -53,7 +24,8 @@ import { SendMessageEmail } from './send-message-email.usecase';
 import { SendMessageInApp } from './send-message-in-app.usecase';
 import { SendMessagePush } from './send-message-push.usecase';
 import { SendMessageSms } from './send-message-sms.usecase';
-import { SendMessageResult, SendMessageStatus } from './send-message-type.usecase';
+import { SendMessageStatus } from './send-message-type.usecase';
+import type { SendMessageResult } from './send-message-type.usecase';
 import { Throttle } from './throttle';
 
 @Injectable()

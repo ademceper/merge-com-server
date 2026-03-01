@@ -1,5 +1,6 @@
 import { WhatsappBusinessChatProvider } from 'libs/providers';
-import { ChannelTypeEnum, ChatProviderIdEnum, ICredentials } from 'libs/shared';
+import { ChannelTypeEnum, ChatProviderIdEnum } from 'libs/shared';
+import type { ICredentials } from 'libs/shared';
 import { BaseChatHandler } from './base.handler';
 
 export class WhatsAppBusinessHandler extends BaseChatHandler {

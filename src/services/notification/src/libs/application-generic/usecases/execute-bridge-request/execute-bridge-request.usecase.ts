@@ -4,7 +4,8 @@ import { FeatureFlagsKeysEnum } from 'libs/shared';
 import { InstrumentUsecase } from '../../instrumentation';
 import { FeatureFlagsService } from '../../services/feature-flags/feature-flags.service';
 import { ExecuteStepResolverRequest } from '../execute-step-resolver/execute-step-resolver-request.usecase';
-import { ExecuteBridgeRequestCommand, ExecuteBridgeRequestDto } from './execute-bridge-request.command';
+import { ExecuteBridgeRequestCommand } from './execute-bridge-request.command';
+import type { ExecuteBridgeRequestDto } from './execute-bridge-request.command';
 import { ExecuteFrameworkRequest } from './execute-framework-request.usecase';
 
 @Injectable()

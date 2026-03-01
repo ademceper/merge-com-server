@@ -1,4 +1,5 @@
-import { Module, OnApplicationShutdown, Provider } from '@nestjs/common';
+import { Module } from '@nestjs/common';
+import type { OnApplicationShutdown, Provider } from '@nestjs/common';
 import { WorkflowInMemoryProviderService } from 'libs/application-generic';
 import { SharedModule } from '../shared/shared.module';
 import { WebSocketWorker } from './services';

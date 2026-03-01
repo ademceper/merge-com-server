@@ -1,5 +1,6 @@
 import { BadRequestException, Inject, Injectable, NotFoundException, Scope } from '@nestjs/common';
-import { generateWebhookAppId, LogDecorator, SvixClient } from 'libs/application-generic';
+import { generateWebhookAppId, LogDecorator } from 'libs/application-generic';
+import type { SvixClient } from 'libs/application-generic';
 import { EnvironmentRepository, OrganizationRepository } from 'libs/dal';
 import { CreateWebhookPortalResponseDto } from '../../dtos/create-webhook-portal-response.dto';
 import { CreateWebhookPortalCommand } from './create-webhook-portal.command';

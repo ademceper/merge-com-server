@@ -1,6 +1,6 @@
 import { ApiProperty, ApiPropertyOptional, getSchemaPath } from '@nestjs/swagger';
 import { IsValidContextPayload } from 'libs/application-generic';
-import { ContextPayload, TriggerRecipientSubscriber, TriggerTenantContext } from 'libs/shared';
+import type { ContextPayload, TriggerRecipientSubscriber, TriggerTenantContext } from 'libs/shared';
 import { Type } from 'class-transformer';
 import { IsDefined, IsObject, IsOptional, IsString, ValidateIf, ValidateNested } from 'class-validator';
 import { ApiContextPayload } from '../../shared/framework/swagger';

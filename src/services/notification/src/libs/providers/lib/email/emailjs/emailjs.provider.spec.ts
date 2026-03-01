@@ -1,6 +1,8 @@
-import { CheckIntegrationResponseEnum, IEmailOptions, ISendMessageSuccessResponse } from 'libs/stateless';
+import { CheckIntegrationResponseEnum } from 'libs/stateless';
+import type { ISendMessageSuccessResponse } from 'libs/stateless';
+import type { IEmailOptions } from 'libs/stateless';
 import { expect, test, vi } from 'vitest';
-import { IEmailJsConfig } from './emailjs.config';
+import type { IEmailJsConfig } from './emailjs.config';
 import { EmailJsProvider } from './emailjs.provider';
 
 const mockConfig = {

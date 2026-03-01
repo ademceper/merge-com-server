@@ -1,7 +1,7 @@
 import { ChatProviderIdEnum } from 'libs/shared';
-import { IChatOptions, IChatProvider, ISendMessageSuccessResponse } from 'libs/stateless';
+import type { IChatOptions, IChatProvider, ISendMessageSuccessResponse } from 'libs/stateless';
 import { BaseHandler } from '../../shared/interfaces';
-import { IChatHandler } from '../interfaces';
+import type { IChatHandler } from '../interfaces';
 
 export abstract class BaseChatHandler extends BaseHandler<IChatProvider> implements IChatHandler {
   protected provider!: IChatProvider;

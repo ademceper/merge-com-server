@@ -1,10 +1,5 @@
-import {
-  ChannelPreference as ChannelPreferenceType,
-  ChannelTypeEnum,
-  WorkflowPreferences,
-  WorkflowPreferencesPartial,
-  WorkflowPreference as WorkflowPreferenceType,
-} from 'libs/shared';
+import { ChannelPreference as ChannelPreferenceType, ChannelTypeEnum, WorkflowPreference as WorkflowPreferenceType } from 'libs/shared';
+import type { WorkflowPreferences, WorkflowPreferencesPartial } from 'libs/shared';
 import { Type } from 'class-transformer';
 import { IsBoolean, IsObject, IsOptional, ValidateIf, ValidateNested } from 'class-validator';
 import { EnvironmentCommand } from '../../commands';

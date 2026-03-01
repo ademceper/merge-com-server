@@ -1,9 +1,10 @@
-import { FilterQuery } from 'mongoose';
-import { SoftDeleteModel } from 'mongoose-delete';
+import type { FilterQuery } from 'mongoose';
+import type { SoftDeleteModel } from 'mongoose-delete';
 import type { EnforceEnvOrOrgIds } from '../../types/enforce';
 import { BaseRepository } from '../base-repository';
 import { TranslationGroupEntity, TranslationGroupWithTranslations } from './translation-group.entity';
-import { TranslationGroup, TranslationGroupModel } from './translation-group.schema';
+import { TranslationGroup } from './translation-group.schema';
+import type { TranslationGroupModel } from './translation-group.schema';
 
 type TranslationGroupQuery = FilterQuery<TranslationGroupModel> & EnforceEnvOrOrgIds;
 

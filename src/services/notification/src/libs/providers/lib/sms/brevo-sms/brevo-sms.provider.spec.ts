@@ -1,4 +1,4 @@
-import { ISmsOptions } from 'libs/stateless';
+import type { ISmsOptions } from 'libs/stateless';
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 import { BrevoSmsProvider } from './brevo-sms.provider';
 

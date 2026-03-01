@@ -1,22 +1,15 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { TopicEntity, TopicRepository, TopicSubscribersRepository } from 'libs/dal';
-import {
-  FeatureFlagsKeysEnum,
-  ISubscribersDefine,
-  ITopic,
-  SubscriberSourceEnum,
-  TriggerRecipient,
-  TriggerRecipientSubscriber,
-  TriggerRecipientsTypeEnum,
-} from 'libs/shared';
+import { FeatureFlagsKeysEnum, SubscriberSourceEnum, TriggerRecipientsTypeEnum } from 'libs/shared';
+import type { ISubscribersDefine, ITopic, TriggerRecipient, TriggerRecipientSubscriber } from 'libs/shared';
 
 import { PinoLogger } from 'nestjs-pino';
-import { SubscriberTopicPreference } from '../../dtos';
+import type { SubscriberTopicPreference } from '../../dtos';
 import { InstrumentUsecase } from '../../instrumentation';
 import { CacheService, FeatureFlagsService } from '../../services';
 import type { EventType } from '../../services/analytic-logs';
 import { LogRepository, mapEventTypeToTitle, TraceLogRepository } from '../../services/analytic-logs';
-import { RequestTraceInput } from '../../services/analytic-logs/trace-log';
+import type { RequestTraceInput } from '../../services/analytic-logs/trace-log';
 import { SubscriberProcessQueueService } from '../../services/queues/subscriber-process-queue.service';
 import { TriggerBase } from '../trigger-base';
 import { TriggerMulticastCommand } from './trigger-multicast.command';

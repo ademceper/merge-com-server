@@ -1,19 +1,6 @@
 import { BadRequestException } from '@nestjs/common';
-import {
-  DelayTypeEnum,
-  FilterParts,
-  FilterPartTypeEnum,
-  getTemplateVariables,
-  IFieldFilterPart,
-  IMustacheVariable,
-  ITriggerReservedVariable,
-  ReservedVariablesMap,
-  StepTypeEnum,
-  TemplateSystemVariables,
-  TemplateVariableTypeEnum,
-  TriggerContextTypeEnum,
-  TriggerReservedVariables,
-} from 'libs/shared';
+import { DelayTypeEnum, FilterPartTypeEnum, getTemplateVariables, ReservedVariablesMap, StepTypeEnum, TemplateSystemVariables, TemplateVariableTypeEnum, TriggerContextTypeEnum, TriggerReservedVariables } from 'libs/shared';
+import type { FilterParts, IFieldFilterPart, IMustacheVariable, ITriggerReservedVariable } from 'libs/shared';
 import Handlebars from 'handlebars';
 import { NotificationStep } from '../value-objects';
 

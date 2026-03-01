@@ -1,4 +1,4 @@
-import { IUserEntity } from '../user';
+import type { IUserEntity } from '../user';
 import { MemberRoleEnum } from './member.enum';
 
 export enum MemberStatusEnum {

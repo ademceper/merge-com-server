@@ -1,5 +1,6 @@
 import { Inject } from '@nestjs/common';
-import { CacheService, CachingConfig } from '../cache.service';
+import { CacheService } from '../cache.service';
+import type { CachingConfig } from '../cache.service';
 
 type CachedEntityOptions<T_Output, T_Args extends any[]> = CachingConfig & {
   skipCache?: (...args: T_Args) => boolean;

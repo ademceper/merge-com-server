@@ -1,10 +1,12 @@
 import { PushProviderIdEnum } from 'libs/shared';
-import { ChannelTypeEnum, IPushOptions, IPushProvider, ISendMessageSuccessResponse } from 'libs/stateless';
+import { ChannelTypeEnum } from 'libs/stateless';
+import type { IPushOptions, IPushProvider, ISendMessageSuccessResponse } from 'libs/stateless';
 import crypto from 'crypto';
 import { cert, deleteApp, getApp, initializeApp } from 'firebase-admin/app';
-import { getMessaging, Messaging, MulticastMessage, TopicMessage } from 'firebase-admin/messaging';
+import { getMessaging, Messaging } from 'firebase-admin/messaging';
+import type { MulticastMessage, TopicMessage } from 'firebase-admin/messaging';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
+import type { WithPassthrough } from '../../../utils/types';
 
 export class FcmPushProvider extends BaseProvider implements IPushProvider {
   id = PushProviderIdEnum.FCM;

@@ -8,17 +8,10 @@ import {
   RetryOnError,
   StepRunRepository,
 } from 'libs/application-generic';
-import { IDelayOrDigestJobResult, JobEntity, JobRepository, NotificationRepository } from 'libs/dal';
-import {
-  DigestCreationResultEnum,
-  DigestTypeEnum,
-  ExecutionDetailsSourceEnum,
-  ExecutionDetailsStatusEnum,
-  IDigestBaseMetadata,
-  IDigestRegularMetadata,
-  IDigestTimedMetadata,
-  JobStatusEnum,
-} from 'libs/shared';
+import { JobEntity, JobRepository, NotificationRepository } from 'libs/dal';
+import type { IDelayOrDigestJobResult } from 'libs/dal';
+import { DigestCreationResultEnum, DigestTypeEnum, ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum, JobStatusEnum } from 'libs/shared';
+import type { IDigestBaseMetadata, IDigestRegularMetadata, IDigestTimedMetadata } from 'libs/shared';
 import { isBefore } from 'date-fns';
 import { MergeOrCreateDigestCommand } from './merge-or-create-digest.command';
 

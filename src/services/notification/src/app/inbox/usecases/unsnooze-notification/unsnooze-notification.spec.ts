@@ -4,7 +4,7 @@ import { JobEntity, JobRepository, MessageEntity, MessageRepository } from 'libs
 import { ChannelTypeEnum, JobStatusEnum, SeverityLevelEnum } from 'libs/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
-import { InboxNotification } from '../../utils/types';
+import type { InboxNotification } from '../../utils/types';
 import { MarkNotificationAsCommand } from '../mark-notification-as/mark-notification-as.command';
 import { MarkNotificationAs } from '../mark-notification-as/mark-notification-as.usecase';
 import { UnsnoozeNotificationCommand } from './unsnooze-notification.command';

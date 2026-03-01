@@ -13,13 +13,9 @@ import {
 import * as components from '../models/components/index.js';
 import * as operations from '../models/operations/index.js';
 import { useNovuContext } from './_context.js';
-import { QueryHookOptions, SuspenseQueryHookOptions, TupleToPrefixes } from './_types.js';
-import {
-  buildNotificationsListQuery,
-  NotificationsListQueryData,
-  prefetchNotificationsList,
-  queryKeyNotificationsList,
-} from './notificationsList.core.js';
+import type { QueryHookOptions, SuspenseQueryHookOptions, TupleToPrefixes } from './_types.js';
+import { buildNotificationsListQuery, prefetchNotificationsList, queryKeyNotificationsList } from './notificationsList.core.js';
+import type { NotificationsListQueryData } from './notificationsList.core.js';
 export {
   buildNotificationsListQuery,
   type NotificationsListQueryData,

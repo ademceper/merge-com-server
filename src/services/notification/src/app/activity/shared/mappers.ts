@@ -1,4 +1,5 @@
-import { Trace, TraceStatus, WorkflowRunStatusEnum } from 'libs/application-generic';
+import { WorkflowRunStatusEnum } from 'libs/application-generic';
+import type { Trace, TraceStatus } from 'libs/application-generic';
 import { ExecutionDetailsStatusEnum } from 'libs/shared';
 import { TraceResponseDto } from '../dtos/get-request.response.dto';
 import { WorkflowRunStatusDtoEnum } from '../dtos/shared.dto';

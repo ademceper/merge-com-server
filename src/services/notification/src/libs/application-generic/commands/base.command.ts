@@ -1,7 +1,8 @@
 import { BadRequestException } from '@nestjs/common';
 import { ApiProperty } from '@nestjs/swagger';
 import { plainToInstance } from 'class-transformer';
-import { ValidationError, validateSync } from 'class-validator';
+import { validateSync } from 'class-validator';
+import type { ValidationError } from 'class-validator';
 
 // biome-ignore lint/complexity/noStaticOnlyClass: Base class pattern for command validation
 export abstract class BaseCommand {

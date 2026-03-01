@@ -1,5 +1,5 @@
 import { CommunityUserRepository } from 'libs/dal';
-import { UserSessionData } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { UserSession } from '@novu/testing';
 import { expect } from 'chai';
 import { subMinutes } from 'date-fns';

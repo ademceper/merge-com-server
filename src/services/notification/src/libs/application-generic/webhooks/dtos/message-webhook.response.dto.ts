@@ -1,5 +1,5 @@
 import { MessageEntity } from 'libs/dal';
-import { ChannelData } from 'libs/stateless';
+import type { ChannelData } from 'libs/stateless';
 
 export type MessageWebhookResponseDto = Pick<
   MessageEntity,

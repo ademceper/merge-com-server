@@ -1,12 +1,12 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import { IntegrationEntity } from 'libs/dal';
 import { ChatFactory } from './chat/chat.factory';
-import { IChatHandler } from './chat/interfaces';
-import { IMailHandler } from './mail/interfaces';
+import type { IChatHandler } from './chat/interfaces';
+import type { IMailHandler } from './mail/interfaces';
 import { MailFactory } from './mail/mail.factory';
-import { IPushHandler } from './push/interfaces';
+import type { IPushHandler } from './push/interfaces';
 import { PushFactory } from './push/push.factory';
-import { ISmsHandler } from './sms/interfaces';
+import type { ISmsHandler } from './sms/interfaces';
 import { SmsFactory } from './sms/sms.factory';
 
 export type ChannelHandler = IMailHandler | ISmsHandler | IChatHandler | IPushHandler;

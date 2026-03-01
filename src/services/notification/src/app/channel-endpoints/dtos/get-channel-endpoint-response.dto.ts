@@ -1,11 +1,6 @@
 import { ApiProperty, getSchemaPath } from '@nestjs/swagger';
-import {
-  ChannelEndpointType,
-  ChannelTypeEnum,
-  ENDPOINT_TYPES,
-  ProvidersIdEnum,
-  ProvidersIdEnumConst,
-} from 'libs/shared';
+import { ChannelTypeEnum, ENDPOINT_TYPES, ProvidersIdEnumConst } from 'libs/shared';
+import type { ChannelEndpointType, ProvidersIdEnum } from 'libs/shared';
 import {
   PhoneEndpointDto,
   SlackChannelEndpointDto,

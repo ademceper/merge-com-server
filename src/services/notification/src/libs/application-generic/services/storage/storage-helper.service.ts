@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { IAttachmentOptionsExtended } from 'libs/stateless';
+import type { IAttachmentOptionsExtended } from 'libs/stateless';
 import { Instrument } from '../../instrumentation';
 import { NonExistingFileError } from './non-existing-file.error';
 import { StorageService } from './storage.service';

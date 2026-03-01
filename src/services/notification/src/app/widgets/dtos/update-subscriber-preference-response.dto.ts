@@ -1,14 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import {
-  CustomDataType,
-  INotificationTrigger,
-  INotificationTriggerVariable,
-  ITemplateConfiguration,
-  ITriggerReservedVariable,
-  TemplateVariableTypeEnum,
-  TriggerContextTypeEnum,
-  TriggerTypeEnum,
-} from 'libs/shared';
+import { TemplateVariableTypeEnum, TriggerContextTypeEnum, TriggerTypeEnum } from 'libs/shared';
+import type { CustomDataType, INotificationTrigger, INotificationTriggerVariable, ITemplateConfiguration, ITriggerReservedVariable } from 'libs/shared';
 import { SubscriberPreferenceChannels } from '../../shared/dtos/preference-channels';
 
 class Preference {

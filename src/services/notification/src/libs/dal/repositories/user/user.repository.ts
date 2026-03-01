@@ -1,7 +1,8 @@
 import { Inject } from '@nestjs/common';
 import { Types } from 'mongoose';
-import { IUserResetTokenCount, UserEntity } from './user.entity';
-import { IUserRepository } from './user-repository.interface';
+import { UserEntity } from './user.entity';
+import type { IUserResetTokenCount } from './user.entity';
+import type { IUserRepository } from './user-repository.interface';
 
 export class UserRepository implements IUserRepository {
   constructor(@Inject('USER_REPOSITORY') private userRepository: IUserRepository) {}

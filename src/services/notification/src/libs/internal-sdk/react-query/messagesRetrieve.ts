@@ -13,17 +13,9 @@ import {
 import * as components from "../models/components/index.js";
 import * as operations from "../models/operations/index.js";
 import { useNovuContext } from "./_context.js";
-import {
-  QueryHookOptions,
-  SuspenseQueryHookOptions,
-  TupleToPrefixes,
-} from "./_types.js";
-import {
-  buildMessagesRetrieveQuery,
-  MessagesRetrieveQueryData,
-  prefetchMessagesRetrieve,
-  queryKeyMessagesRetrieve,
-} from "./messagesRetrieve.core.js";
+import type { QueryHookOptions, SuspenseQueryHookOptions, TupleToPrefixes } from "./_types.js";
+import { buildMessagesRetrieveQuery, prefetchMessagesRetrieve, queryKeyMessagesRetrieve } from "./messagesRetrieve.core.js";
+import type { MessagesRetrieveQueryData } from "./messagesRetrieve.core.js";
 export {
   buildMessagesRetrieveQuery,
   type MessagesRetrieveQueryData,

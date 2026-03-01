@@ -1,9 +1,6 @@
 import { Test } from '@nestjs/testing';
-import {
-  ApiRateLimitAlgorithmEnum,
-  ApiRateLimitAlgorithmEnvVarFormat,
-  DEFAULT_API_RATE_LIMIT_ALGORITHM_CONFIG,
-} from 'libs/shared';
+import { ApiRateLimitAlgorithmEnum, DEFAULT_API_RATE_LIMIT_ALGORITHM_CONFIG } from 'libs/shared';
+import type { ApiRateLimitAlgorithmEnvVarFormat } from 'libs/shared';
 import { expect } from 'chai';
 import { GetApiRateLimitAlgorithmConfig } from './get-api-rate-limit-algorithm-config.usecase';
 

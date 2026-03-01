@@ -1,7 +1,8 @@
-import { ICredentials, SmsProviderIdEnum } from 'libs/shared';
-import { ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from 'libs/stateless';
+import { SmsProviderIdEnum } from 'libs/shared';
+import type { ICredentials } from 'libs/shared';
+import type { ISendMessageSuccessResponse, ISmsOptions, ISmsProvider } from 'libs/stateless';
 import { BaseHandler } from '../../shared/interfaces';
-import { ISmsHandler } from '../interfaces';
+import type { ISmsHandler } from '../interfaces';
 
 export abstract class BaseSmsHandler extends BaseHandler<ISmsProvider> implements ISmsHandler {
   protected provider!: ISmsProvider;

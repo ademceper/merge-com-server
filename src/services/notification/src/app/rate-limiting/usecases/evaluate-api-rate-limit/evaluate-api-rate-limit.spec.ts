@@ -1,12 +1,6 @@
 import { Test } from '@nestjs/testing';
-import {
-  ApiRateLimitAlgorithmEnum,
-  ApiRateLimitCategoryEnum,
-  ApiRateLimitCostEnum,
-  ApiServiceLevelEnum,
-  IApiRateLimitAlgorithm,
-  IApiRateLimitCost,
-} from 'libs/shared';
+import { ApiRateLimitAlgorithmEnum, ApiRateLimitCategoryEnum, ApiRateLimitCostEnum, ApiServiceLevelEnum, IApiRateLimitAlgorithm } from 'libs/shared';
+import type { IApiRateLimitCost } from 'libs/shared';
 import { UserSession } from '@novu/testing';
 import { expect } from 'chai';
 import sinon from 'sinon';

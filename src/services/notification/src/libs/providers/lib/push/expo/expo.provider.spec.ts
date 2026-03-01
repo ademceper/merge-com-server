@@ -1,4 +1,4 @@
-import { ExpoPushTicket } from 'expo-server-sdk';
+import type { ExpoPushTicket } from 'expo-server-sdk';
 import { describe, expect, test, vi } from 'vitest';
 import { ExpoPushProvider } from './expo.provider';
 

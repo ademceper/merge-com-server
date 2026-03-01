@@ -10,7 +10,7 @@ import {
   ValidateIf,
   ValidateNested,
 } from 'class-validator';
-import { RulesLogic } from 'json-logic-js';
+import type { RulesLogic } from 'json-logic-js';
 
 export class TopicSubscriberIdentifierDto {
   @ApiProperty({

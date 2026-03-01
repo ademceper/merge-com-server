@@ -21,26 +21,10 @@ import {
   UpsertUserWorkflowPreferencesCommand,
   UpsertWorkflowPreferencesCommand,
 } from 'libs/application-generic';
-import {
-  ClientSession,
-  JsonSchemaTypeEnum,
-  LocalizationResourceEnum,
-  NotificationGroupEntity,
-  NotificationGroupRepository,
-  NotificationTemplateRepository,
-} from 'libs/dal';
-import {
-  ChangeEntityTypeEnum,
-  DEFAULT_WORKFLOW_PREFERENCES,
-  INotificationTemplateStep,
-  INotificationTrigger,
-  IStepVariant,
-  isBridgeWorkflow,
-  ResourceOriginEnum,
-  ResourceTypeEnum,
-  slugify,
-  TriggerTypeEnum,
-} from 'libs/shared';
+import { JsonSchemaTypeEnum, LocalizationResourceEnum, NotificationGroupEntity, NotificationGroupRepository, NotificationTemplateRepository } from 'libs/dal';
+import type { ClientSession } from 'libs/dal';
+import { ChangeEntityTypeEnum, DEFAULT_WORKFLOW_PREFERENCES, isBridgeWorkflow, ResourceOriginEnum, ResourceTypeEnum, slugify, TriggerTypeEnum } from 'libs/shared';
+import type { INotificationTemplateStep, INotificationTrigger, IStepVariant } from 'libs/shared';
 import { WorkflowWithPreferencesResponseDto } from '../../dtos/get-workflow-with-preferences.dto';
 import { GetWorkflowWithPreferencesUseCase } from '../get-workflow-with-preferences/get-workflow-with-preferences.usecase';
 import { CreateWorkflowCommand } from './create-workflow.command';

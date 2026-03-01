@@ -1,4 +1,5 @@
-import { MiddlewareConsumer, ModuleMetadata, Provider, RequestMethod } from '@nestjs/common';
+import { RequestMethod } from '@nestjs/common';
+import type { MiddlewareConsumer, ModuleMetadata, Provider } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { CommunityMemberRepository, CommunityOrganizationRepository, CommunityUserRepository } from 'libs/dal';

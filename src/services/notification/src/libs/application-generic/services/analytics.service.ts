@@ -1,5 +1,5 @@
 import { Logger } from '@nestjs/common';
-import { IOrganizationEntity } from 'libs/shared';
+import type { IOrganizationEntity } from 'libs/shared';
 import { Analytics } from '@segment/analytics-node';
 import Mixpanel from 'mixpanel';
 

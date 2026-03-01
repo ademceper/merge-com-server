@@ -1,4 +1,5 @@
-import { MiddlewareConsumer, Module, NestModule, OnApplicationShutdown } from '@nestjs/common';
+import { Module } from '@nestjs/common';
+import type { MiddlewareConsumer, NestModule, OnApplicationShutdown } from '@nestjs/common';
 import { CompileTemplate, WorkflowInMemoryProviderService } from 'libs/application-generic';
 import { AuthModule } from '../auth/auth.module';
 import { SharedModule } from '../shared/shared.module';

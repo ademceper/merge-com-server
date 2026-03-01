@@ -1,5 +1,5 @@
 import { Novu } from 'libs/internal-sdk';
-import { CreateWorkflowDto, WorkflowCreationSourceEnum } from 'libs/internal-sdk/models/components';
+import { WorkflowCreationSourceEnum, CreateWorkflowDto } from 'libs/internal-sdk/models/components';
 import { EnvironmentRepository, LocalizationResourceEnum } from 'libs/dal';
 import { ApiServiceLevelEnum } from 'libs/shared';
 import { UserSession } from '@novu/testing';

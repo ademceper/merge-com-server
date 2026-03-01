@@ -6,7 +6,7 @@ import { QueryClient, QueryFunctionContext, QueryKey } from '@tanstack/react-que
 import { NovuCore } from '../core.js';
 import { notificationsList } from '../funcs/notificationsList.js';
 import { combineSignals } from '../lib/primitives.js';
-import { RequestOptions } from '../lib/sdks.js';
+import type { RequestOptions } from '../lib/sdks.js';
 import * as components from '../models/components/index.js';
 import * as operations from '../models/operations/index.js';
 import { unwrapAsync } from '../types/fp.js';

@@ -8,7 +8,8 @@ import {
 import { MessageRepository } from 'libs/dal';
 import { ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum } from 'libs/shared';
 import { SendMessageCommand } from './send-message.command';
-import { SendMessageResult, SendMessageStatus, SendMessageType } from './send-message-type.usecase';
+import { SendMessageStatus, SendMessageType } from './send-message-type.usecase';
+import type { SendMessageResult } from './send-message-type.usecase';
 
 @Injectable()
 export class SendMessageDelay extends SendMessageType {

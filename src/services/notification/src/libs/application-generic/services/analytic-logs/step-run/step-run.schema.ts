@@ -1,16 +1,7 @@
-import {
-  CHArray,
-  CHDateTime64,
-  CHLowCardinality,
-  CHNullable,
-  CHString,
-  CHUInt8,
-  CHUInt32,
-  ClickhouseSchema,
-  InferClickhouseSchemaType,
-} from 'clickhouse-schema';
-import { Prettify } from '../../../utils/prettify.type';
-import { StepType } from '..';
+import { CHArray, CHDateTime64, CHLowCardinality, CHNullable, CHString, CHUInt8, CHUInt32, ClickhouseSchema } from 'clickhouse-schema';
+import type { InferClickhouseSchemaType } from 'clickhouse-schema';
+import type { Prettify } from '../../../utils/prettify.type';
+import type { StepType } from '..';
 
 export const TABLE_NAME = 'step_runs';
 

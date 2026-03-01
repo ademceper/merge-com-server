@@ -1,11 +1,12 @@
 import { ChangeEntityTypeEnum } from 'libs/shared';
 
-import { EnforceEnvOrOrgIds } from '../../types/enforce';
+import type { EnforceEnvOrOrgIds } from '../../types/enforce';
 import { BaseRepository } from '../base-repository';
 import { UserEntity } from '../user';
-import { ChangeDBModel, ChangeEntity } from './change.entity';
+import { ChangeEntity } from './change.entity';
+import type { ChangeDBModel } from './change.entity';
 import { Change } from './change.schema';
-import { ChangeEntityPopulated } from './types';
+import type { ChangeEntityPopulated } from './types';
 
 export class ChangeRepository extends BaseRepository<ChangeDBModel, ChangeEntity, EnforceEnvOrOrgIds> {
   constructor() {

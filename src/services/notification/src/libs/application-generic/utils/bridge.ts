@@ -1,11 +1,5 @@
-import {
-  DelayOutput,
-  DelayRegularOutput,
-  DelayTimedOutput,
-  DigestOutput,
-  DigestRegularOutput,
-  DigestTimedOutput,
-} from 'libs/framework/internal';
+import { DigestRegularOutput, DigestTimedOutput } from 'libs/framework/internal';
+import type { DelayOutput, DelayRegularOutput, DelayTimedOutput, DigestOutput } from 'libs/framework/internal';
 import { DigestTypeEnum } from 'libs/shared';
 
 export function getDigestType(outputs: DigestOutput): DigestTypeEnum {

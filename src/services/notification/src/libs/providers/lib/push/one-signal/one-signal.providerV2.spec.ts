@@ -1,4 +1,4 @@
-import { IPushOptions } from 'libs/stateless';
+import type { IPushOptions } from 'libs/stateless';
 import axios from 'axios';
 import { beforeEach, describe, expect, Mocked, test, vi } from 'vitest';
 import { OneSignalPushProvider } from './one-signal.provider';

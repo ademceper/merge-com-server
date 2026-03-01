@@ -1,7 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { EmailControlType, InstrumentUsecase, LayoutControlType } from 'libs/application-generic';
+import { InstrumentUsecase } from 'libs/application-generic';
+import type { EmailControlType, LayoutControlType } from 'libs/application-generic';
 import { JsonSchemaTypeEnum } from 'libs/dal';
-import { ContextResolved } from 'libs/framework/internal';
+import type { ContextResolved } from 'libs/framework/internal';
 import {
   ChannelTypeEnum,
   LAYOUT_PREVIEW_EMAIL_STEP,

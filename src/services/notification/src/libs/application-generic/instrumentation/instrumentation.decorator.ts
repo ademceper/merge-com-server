@@ -49,7 +49,7 @@ function instrumentationWrapper({
       return descriptor;
     }
 
-    if (nr) {
+    if (nr && typeof nr.startSegment === 'function') {
       const isAsync = method.constructor.name === 'AsyncFunction';
 
       if (!isAsync) {

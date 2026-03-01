@@ -1,5 +1,6 @@
 import { IsValidContextPayload } from 'libs/application-generic';
-import { ContextPayload, TriggerOverrides, TriggerRecipientSubscriber, TriggerTenantContext } from 'libs/shared';
+import type { ContextPayload, TriggerRecipientSubscriber, TriggerTenantContext } from 'libs/shared';
+import type { TriggerOverrides } from 'libs/shared';
 import { IsDefined, IsNotEmpty, IsObject, IsOptional, IsString } from 'class-validator';
 
 import { EnvironmentWithUserCommand } from '../../../shared/commands/project.command';

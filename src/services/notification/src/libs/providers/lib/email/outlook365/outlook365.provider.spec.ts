@@ -1,4 +1,5 @@
-import { CheckIntegrationResponseEnum, ICheckIntegrationResponse } from 'libs/stateless';
+import { CheckIntegrationResponseEnum } from 'libs/stateless';
+import type { ICheckIntegrationResponse } from 'libs/stateless';
 import nodemailer from 'nodemailer';
 import { expect, test, vi } from 'vitest';
 import { Outlook365Provider } from './outlook365.provider';

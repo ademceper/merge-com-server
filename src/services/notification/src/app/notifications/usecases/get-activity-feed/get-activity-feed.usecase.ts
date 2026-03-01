@@ -1,20 +1,8 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import {
-  FeatureFlagsService,
-  Instrument,
-  PinoLogger,
-  QueryBuilder,
-  Trace,
-  TraceLogRepository,
-} from 'libs/application-generic';
-import {
-  CommunityOrganizationRepository,
-  ExecutionDetailFeedItem,
-  NotificationFeedItemEntity,
-  NotificationRepository,
-  OrganizationEntity,
-  SubscriberRepository,
-} from 'libs/dal';
+import { FeatureFlagsService, Instrument, PinoLogger, QueryBuilder, TraceLogRepository } from 'libs/application-generic';
+import type { Trace } from 'libs/application-generic';
+import { CommunityOrganizationRepository, NotificationRepository, OrganizationEntity, SubscriberRepository } from 'libs/dal';
+import type { ExecutionDetailFeedItem, NotificationFeedItemEntity } from 'libs/dal';
 import {
   ApiServiceLevelEnum,
   ExecutionDetailsSourceEnum,

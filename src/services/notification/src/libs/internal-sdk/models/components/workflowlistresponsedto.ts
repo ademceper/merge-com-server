@@ -11,10 +11,7 @@ import {
   ResourceOriginEnum,
   ResourceOriginEnum$inboundSchema,
 } from "./resourceoriginenum.js";
-import {
-  StepListResponseDto,
-  StepListResponseDto$inboundSchema,
-} from "./steplistresponsedto.js";
+import { StepListResponseDto$inboundSchema, StepListResponseDto } from "./steplistresponsedto.js";
 import {
   WorkflowStatusEnum,
   WorkflowStatusEnum$inboundSchema,

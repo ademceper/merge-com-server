@@ -1,6 +1,8 @@
-import { ChainableCommander, Cluster, ClusterOptions, Redis, RedisOptions, ScanStream } from 'ioredis';
+import { Cluster, Redis, ScanStream } from 'ioredis';
+import type { ChainableCommander, ClusterOptions, RedisOptions } from 'ioredis';
 
-export { Cluster, ClusterOptions, Redis, RedisOptions, ScanStream };
+export { Cluster, Redis, ScanStream };
+export type { ClusterOptions, RedisOptions };
 
 export type InMemoryProviderClient = Redis | Cluster | undefined;
 

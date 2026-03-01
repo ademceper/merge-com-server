@@ -1,5 +1,6 @@
 import { CommunityMemberRepository } from 'libs/dal';
-import { IBulkInviteResponse, MemberRoleEnum, MemberStatusEnum } from 'libs/shared';
+import { MemberRoleEnum, MemberStatusEnum } from 'libs/shared';
+import type { IBulkInviteResponse } from 'libs/shared';
 import { UserSession } from '@novu/testing';
 import { expect } from 'chai';
 

@@ -7,13 +7,8 @@ import {
   NotificationTemplateRepository,
   SubscriberEntity,
 } from 'libs/dal';
-import {
-  AddressingTypeEnum,
-  ISubscribersDefine,
-  ITenantDefine,
-  TriggerRecipientSubscriber,
-  TriggerTenantContext,
-} from 'libs/shared';
+import { AddressingTypeEnum } from 'libs/shared';
+import type { ISubscribersDefine, ITenantDefine, TriggerRecipientSubscriber, TriggerTenantContext } from 'libs/shared';
 import { addBreadcrumb } from '@sentry/node';
 import { toMerged } from 'es-toolkit';
 import { Instrument, InstrumentUsecase } from '../../instrumentation';
@@ -29,7 +24,7 @@ import { TriggerBroadcastCommand } from '../trigger-broadcast/trigger-broadcast.
 import { TriggerBroadcast } from '../trigger-broadcast/trigger-broadcast.usecase';
 import { TriggerMulticast, TriggerMulticastCommand } from '../trigger-multicast';
 import { VerifyPayload, VerifyPayloadCommand } from '../verify-payload';
-import { TriggerEventCommand } from './trigger-event.command';
+import type { TriggerEventCommand } from './trigger-event.command';
 
 function getActiveWorker() {
   return process.env.ACTIVE_WORKER;

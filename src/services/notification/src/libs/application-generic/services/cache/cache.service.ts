@@ -1,6 +1,7 @@
 import { Logger } from '@nestjs/common';
 import { addJitter } from '../../resilience';
-import { CacheInMemoryProviderService, InMemoryProviderClient, Pipeline } from '../in-memory-provider';
+import { CacheInMemoryProviderService } from '../in-memory-provider';
+import type { InMemoryProviderClient, Pipeline } from '../in-memory-provider';
 import { QUERY_PREFIX } from './key-builders';
 
 const LOG_CONTEXT = 'CacheService';

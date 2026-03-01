@@ -1,13 +1,13 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsValidContextPayload, parseSlugId } from 'libs/application-generic';
-import { ContextPayload } from 'libs/shared';
-import { Transform, Type } from 'class-transformer';
+import type { ContextPayload } from 'libs/shared';
+import { Type, Transform } from 'class-transformer';
 import { ArrayMaxSize, IsArray, IsDefined, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { ApiContextPayload } from '../../shared/framework/swagger';
 import { PatchPreferenceChannelsDto } from './patch-subscriber-preferences.dto';
 
 export class BulkUpdateSubscriberPreferenceItemDto {
-  @ApiProperty({ description: 'Channel-specific preference settings', type: PatchPreferenceChannelsDto })
+  @ApiProperty({ description: 'Channel-specific preference settings', type: () => PatchPreferenceChannelsDto })
   @Type(() => PatchPreferenceChannelsDto)
   channels: PatchPreferenceChannelsDto;
 

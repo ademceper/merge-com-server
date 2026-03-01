@@ -102,13 +102,13 @@ export class SyncResultDto {
   @ApiProperty({ description: 'Resource type that was synced' })
   resourceType: string;
 
-  @ApiProperty({ type: [SyncedWorkflowDto], description: 'Successfully synced workflows' })
+  @ApiProperty({ type: () => [SyncedWorkflowDto], description: 'Successfully synced workflows' })
   successful: SyncedWorkflowDto[];
 
-  @ApiProperty({ type: [FailedWorkflowDto], description: 'Failed workflow syncs' })
+  @ApiProperty({ type: () => [FailedWorkflowDto], description: 'Failed workflow syncs' })
   failed: FailedWorkflowDto[];
 
-  @ApiProperty({ type: [SkippedWorkflowDto], description: 'Skipped workflows' })
+  @ApiProperty({ type: () => [SkippedWorkflowDto], description: 'Skipped workflows' })
   skipped: SkippedWorkflowDto[];
 
   @ApiProperty({ description: 'Total number of workflows processed' })
@@ -130,9 +130,9 @@ export class PublishSummaryDto {
 }
 
 export class PublishEnvironmentResponseDto {
-  @ApiProperty({ type: [SyncResultDto], description: 'Sync results by resource type' })
+  @ApiProperty({ type: () => [SyncResultDto], description: 'Sync results by resource type' })
   results: SyncResultDto[];
 
-  @ApiProperty({ type: PublishSummaryDto, description: 'Summary of the sync operation' })
+  @ApiProperty({ type: () => PublishSummaryDto, description: 'Summary of the sync operation' })
   summary: PublishSummaryDto;
 }

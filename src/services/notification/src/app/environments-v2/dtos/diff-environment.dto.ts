@@ -242,19 +242,19 @@ export class ResourceDiffResultDto {
 
   @ApiProperty({
     description: 'List of specific changes for this resource',
-    type: [ResourceDiffDto],
+    type: () => [ResourceDiffDto],
   })
   changes: ResourceDiffDto[];
 
   @ApiProperty({
     description: 'Summary of changes for this resource',
-    type: DiffSummaryDto,
+    type: () => DiffSummaryDto,
   })
   summary: DiffSummaryDto;
 
   @ApiPropertyOptional({
     description: 'Dependencies that affect this resource',
-    type: [ResourceDependencyDto],
+    type: () => [ResourceDependencyDto],
   })
   @IsOptional()
   @ValidateNested({ each: true })
@@ -285,9 +285,9 @@ export class DiffEnvironmentResponseDto {
   @IsString()
   targetEnvironmentId: string;
 
-  @ApiProperty({ type: [ResourceDiffResultDto], description: 'Diff resources by resource type' })
+  @ApiProperty({ type: () => [ResourceDiffResultDto], description: 'Diff resources by resource type' })
   resources: ResourceDiffResultDto[];
 
-  @ApiProperty({ type: EnvironmentDiffSummaryDto, description: 'Overall summary' })
+  @ApiProperty({ type: () => EnvironmentDiffSummaryDto, description: 'Overall summary' })
   summary: EnvironmentDiffSummaryDto;
 }

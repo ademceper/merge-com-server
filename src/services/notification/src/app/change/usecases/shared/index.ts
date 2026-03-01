@@ -1,1 +1,1 @@
-export * from './notification-template-change.interface';
+export type * from './notification-template-change.interface';

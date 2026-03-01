@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { TenantEntity, TenantRepository } from 'libs/dal';
-import { ITenantDefine } from 'libs/shared';
+import type { ITenantDefine } from 'libs/shared';
 import { isEqual } from 'lodash';
 
 import { InstrumentUsecase } from '../../instrumentation';

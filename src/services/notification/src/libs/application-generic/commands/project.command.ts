@@ -1,4 +1,5 @@
-import { DirectionEnum, KeysOfT, UserSessionData } from 'libs/shared';
+import { DirectionEnum } from 'libs/shared';
+import type { KeysOfT, UserSessionData } from 'libs/shared';
 import { IsArray, IsDefined, IsEnum, IsNotEmpty, IsNumber, IsOptional, IsString, Max, Min } from 'class-validator';
 
 import { BaseCommand } from './base.command';

@@ -1,6 +1,7 @@
-import { DEFAULT_WORKFLOW_PREFERENCES, PreferencesTypeEnum, WorkflowPreferences } from 'libs/shared';
+import { DEFAULT_WORKFLOW_PREFERENCES, PreferencesTypeEnum } from 'libs/shared';
+import type { WorkflowPreferences } from 'libs/shared';
 import { describe, expect, it } from 'vitest';
-import { PreferenceSet } from '../get-preferences/get-preferences.usecase';
+import type { PreferenceSet } from '../get-preferences/get-preferences.usecase';
 import { MergePreferencesCommand } from './merge-preferences.command';
 import { MergePreferences } from './merge-preferences.usecase';
 

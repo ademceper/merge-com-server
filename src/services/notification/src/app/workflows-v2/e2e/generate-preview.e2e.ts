@@ -1,19 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import { Novu } from 'libs/internal-sdk';
-import {
-  ChannelTypeEnum,
-  CreateWorkflowDto,
-  EmailRenderOutput,
-  GeneratePreviewRequestDto,
-  GeneratePreviewResponseDto,
-  PreviewPayloadDto,
-  ResourceOriginEnum,
-  UpdateWorkflowDto,
-  UpdateWorkflowDtoSteps,
-  WorkflowCreationSourceEnum,
-  WorkflowResponseDto,
-} from 'libs/internal-sdk/models/components';
-import { EmailControlType } from 'libs/application-generic';
+import { ChannelTypeEnum, EmailRenderOutput, GeneratePreviewRequestDto, GeneratePreviewResponseDto, PreviewPayloadDto, ResourceOriginEnum, UpdateWorkflowDtoSteps, WorkflowCreationSourceEnum, CreateWorkflowDto, UpdateWorkflowDto, WorkflowResponseDto } from 'libs/internal-sdk/models/components';
+import type { EmailControlType } from 'libs/application-generic';
 import { EnvironmentRepository, NotificationTemplateEntity, NotificationTemplateRepository } from 'libs/dal';
 import { CronExpressionEnum, RedirectTargetEnum, StepTypeEnum, slugify } from 'libs/shared';
 import { UserSession } from '@novu/testing';

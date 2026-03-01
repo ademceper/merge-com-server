@@ -1,5 +1,5 @@
 import { TenantRepository } from 'libs/dal';
-import { IWorkflowOverride } from 'libs/shared';
+import type { IWorkflowOverride } from 'libs/shared';
 import { UserSession, WorkflowOverrideService } from '@novu/testing';
 import { expect } from 'chai';
 

@@ -1,15 +1,6 @@
 import { ApiExtraModels, ApiProperty, ApiPropertyOptional, getSchemaPath } from '@nestjs/swagger';
-import {
-  ButtonTypeEnum,
-  ChannelCTATypeEnum,
-  ChannelTypeEnum,
-  EmailBlockTypeEnum,
-  IMessage,
-  IMessageAction,
-  IMessageCTA,
-  MessageActionStatusEnum,
-  TextAlignEnum,
-} from 'libs/shared';
+import { ButtonTypeEnum, ChannelCTATypeEnum, ChannelTypeEnum, EmailBlockTypeEnum, MessageActionStatusEnum, TextAlignEnum } from 'libs/shared';
+import type { IMessage, IMessageAction, IMessageCTA } from 'libs/shared';
 import { SubscriberResponseDto } from '../../subscribers/dtos';
 import { WorkflowResponse } from '../../workflows-v1/dtos/workflow-response.dto';
 

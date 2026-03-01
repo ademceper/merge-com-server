@@ -3,7 +3,7 @@
  */
 
 import * as z from 'zod/v3';
-import { ClosedEnum } from '../../types/enums.js';
+import type { ClosedEnum } from '../../types/enums.js';
 
 /**
  * Type of step content issue

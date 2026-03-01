@@ -1,6 +1,7 @@
-import { ISubscribersDefine, SubscriberSourceEnum } from 'libs/shared';
-import { IProcessSubscriberBulkJobDto, SubscriberTopicPreference } from '../dtos';
-import { BaseTriggerCommand } from '../usecases/trigger-base/trigger-base.usecase';
+import { SubscriberSourceEnum } from 'libs/shared';
+import type { ISubscribersDefine } from 'libs/shared';
+import type { IProcessSubscriberBulkJobDto, SubscriberTopicPreference } from '../dtos';
+import type { BaseTriggerCommand } from '../usecases/trigger-base/trigger-base.usecase';
 
 export function mapSubscribersToJobs(
   subscriberSource: SubscriberSourceEnum,

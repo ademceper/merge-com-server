@@ -3,7 +3,7 @@ import { ControlValuesEntity, NotificationTemplateEntity } from 'libs/dal';
 import { ResourceOriginEnum, StepTypeEnum } from 'libs/shared';
 import { IsDefined, IsEnum, IsObject, IsOptional, IsString } from 'class-validator';
 import { JSONSchemaDto } from '../../../shared/dtos/json-schema.dto';
-import { IOptimisticStepInfo } from '../build-variable-schema/build-available-variable-schema.command';
+import type { IOptimisticStepInfo } from '../build-variable-schema/build-available-variable-schema.command';
 
 export class BuildStepIssuesCommand extends EnvironmentWithUserObjectCommand {
   /**

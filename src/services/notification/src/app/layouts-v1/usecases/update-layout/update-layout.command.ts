@@ -1,7 +1,8 @@
 import { ResourceOriginEnum, ResourceTypeEnum } from 'libs/shared';
 import { IsBoolean, IsDefined, IsEnum, IsOptional, IsString } from 'class-validator';
 import { EnvironmentWithUserCommand } from '../../../shared/commands/project.command';
-import { LayoutDescription, LayoutId, LayoutIdentifier, LayoutName, LayoutVariables } from '../../types';
+import type { LayoutVariables } from '../../types';
+import type { LayoutDescription, LayoutId, LayoutIdentifier, LayoutName } from '../../types';
 
 export class UpdateLayoutCommand extends EnvironmentWithUserCommand {
   @IsString()

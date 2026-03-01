@@ -1,8 +1,9 @@
 import { PushProviderIdEnum } from 'libs/shared';
-import { ChannelTypeEnum, IPushOptions, IPushProvider, ISendMessageSuccessResponse } from 'libs/stateless';
+import { ChannelTypeEnum } from 'libs/stateless';
+import type { IPushOptions, IPushProvider, ISendMessageSuccessResponse } from 'libs/stateless';
 import Pushpad from 'pushpad';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
+import type { WithPassthrough } from '../../../utils/types';
 
 export class PushpadPushProvider extends BaseProvider implements IPushProvider {
   id = PushProviderIdEnum.Pushpad;

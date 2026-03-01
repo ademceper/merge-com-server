@@ -17,15 +17,8 @@ import {
   SkipPermissionsCheck,
 } from 'libs/application-generic';
 import { CommunityOrganizationRepository } from 'libs/dal';
-import {
-  ApiServiceLevelEnum,
-  FeatureFlagsKeysEnum,
-  FeatureNameEnum,
-  getFeatureForTierAsBoolean,
-  PermissionsEnum,
-  ProductFeatureKeyEnum,
-  UserSessionData,
-} from 'libs/shared';
+import { ApiServiceLevelEnum, FeatureFlagsKeysEnum, FeatureNameEnum, getFeatureForTierAsBoolean, PermissionsEnum, ProductFeatureKeyEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { ErrorDto } from '../../error-dto';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';

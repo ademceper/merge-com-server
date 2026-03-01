@@ -1,5 +1,7 @@
-import { EnvironmentWithUserCommand, IStepControl } from 'libs/application-generic';
-import type { CustomDataType, IPreferenceChannels, JSONSchemaDto, StepType } from 'libs/shared';
+import { EnvironmentWithUserCommand } from 'libs/application-generic';
+import type { IStepControl } from 'libs/application-generic';
+import type { CustomDataType, IPreferenceChannels, StepType } from 'libs/shared';
+import { JSONSchemaDto } from 'libs/shared';
 import { Type } from 'class-transformer';
 import { IsDefined, IsOptional, IsString, ValidateNested } from 'class-validator';
 

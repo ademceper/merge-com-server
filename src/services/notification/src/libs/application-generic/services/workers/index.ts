@@ -2,11 +2,6 @@ export { ActiveJobsMetricWorkerService } from './active-jobs-metric-worker.servi
 export { StandardWorkerService } from './standard-worker.service';
 export { SubscriberProcessWorkerService } from './subscriber-process-worker.service';
 export { WebSocketsWorkerService } from './web-sockets-worker.service';
-export {
-  SqsCompletedHandler,
-  SqsFailedHandler,
-  WorkerBaseService,
-  WorkerOptions,
-  WorkerProcessor,
-} from './worker-base.service';
+export { WorkerBaseService } from './worker-base.service';
+export type { WorkerOptions, SqsCompletedHandler, SqsFailedHandler, WorkerProcessor } from './worker-base.service';
 export { WorkflowWorkerService } from './workflow-worker.service';

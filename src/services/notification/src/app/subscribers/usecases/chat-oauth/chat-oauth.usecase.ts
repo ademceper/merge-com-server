@@ -1,6 +1,7 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
 import { createHash } from 'libs/application-generic';
-import { EnvironmentRepository, ICredentialsEntity, IntegrationEntity, IntegrationRepository } from 'libs/dal';
+import { EnvironmentRepository, IntegrationEntity, IntegrationRepository } from 'libs/dal';
+import type { ICredentialsEntity } from 'libs/dal';
 import { ChannelTypeEnum } from 'libs/stateless';
 
 import { ChatOauthCommand } from './chat-oauth.command';

@@ -1,6 +1,6 @@
 // @ts-nocheck
 
-import { ISmsProvider } from '../provider/provider.interface';
+import type { ISmsProvider } from '../provider/provider.interface';
 import { ChannelTypeEnum } from '../template/template.interface';
 import { SmsHandler } from './sms.handler';
 

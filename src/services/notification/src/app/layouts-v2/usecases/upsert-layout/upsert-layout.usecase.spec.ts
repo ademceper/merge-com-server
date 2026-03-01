@@ -8,16 +8,7 @@ import {
   UpsertControlValuesUseCase,
 } from 'libs/application-generic';
 import { ControlValuesRepository, JsonSchemaTypeEnum, LayoutRepository } from 'libs/dal';
-import {
-  ChannelTypeEnum,
-  ContentIssueEnum,
-  ControlValuesLevelEnum,
-  LayoutControlValuesDto,
-  LayoutIssuesDto,
-  ResourceOriginEnum,
-  ResourceTypeEnum,
-  slugify,
-} from 'libs/shared';
+import { ChannelTypeEnum, ContentIssueEnum, ControlValuesLevelEnum, LayoutIssuesDto, ResourceOriginEnum, ResourceTypeEnum, slugify, LayoutControlValuesDto } from 'libs/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { LayoutDto } from '../../../layouts-v1/dtos';

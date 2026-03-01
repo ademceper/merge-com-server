@@ -1,5 +1,6 @@
 import { OrganizationEntity } from 'libs/dal';
-import { MemberRoleEnum, UserSessionData } from 'libs/shared';
+import { MemberRoleEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { UserSession } from '@novu/testing';
 import { expect } from 'chai';
 import jwt from 'jsonwebtoken';

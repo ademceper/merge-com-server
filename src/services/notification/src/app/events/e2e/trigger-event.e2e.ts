@@ -17,29 +17,9 @@ import {
   SubscriberRepository,
   TenantRepository,
 } from 'libs/dal';
-import {
-  ActorTypeEnum,
-  ChannelTypeEnum,
-  ChatProviderIdEnum,
-  CreateWorkflowDto,
-  DelayTypeEnum,
-  DigestUnitEnum,
-  EmailBlockTypeEnum,
-  EmailProviderIdEnum,
-  ExecutionDetailsStatusEnum,
-  FieldLogicalOperatorEnum,
-  FieldOperatorEnum,
-  FilterPartTypeEnum,
-  IEmailBlock,
-  InAppProviderIdEnum,
-  PreviousStepTypeEnum,
-  SmsProviderIdEnum,
-  StepTypeEnum,
-  SystemAvatarIconEnum,
-  TemplateVariableTypeEnum,
-  WorkflowCreationSourceEnum,
-  WorkflowResponseDto,
-} from 'libs/shared';
+import { ActorTypeEnum, ChannelTypeEnum, ChatProviderIdEnum, DelayTypeEnum, DigestUnitEnum, EmailBlockTypeEnum, EmailProviderIdEnum, ExecutionDetailsStatusEnum, FieldLogicalOperatorEnum, FieldOperatorEnum, FilterPartTypeEnum, InAppProviderIdEnum, PreviousStepTypeEnum, SmsProviderIdEnum, StepTypeEnum, SystemAvatarIconEnum, TemplateVariableTypeEnum, WorkflowCreationSourceEnum } from 'libs/shared';
+import type { IEmailBlock } from 'libs/shared';
+import { CreateWorkflowDto, WorkflowResponseDto } from 'libs/shared';
 import { EmailEventStatusEnum } from 'libs/stateless';
 import { SubscribersService, UserSession, WorkflowOverrideService } from '@novu/testing';
 import { expect } from 'chai';

@@ -1,7 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { PinoLogger } from 'libs/application-generic';
-import { UserSessionData } from 'libs/shared';
-import { IDiffResult, ISyncContext, ISyncResult, ResourceTypeEnum } from '../../types/sync.types';
+import type { UserSessionData } from 'libs/shared';
+import { ResourceTypeEnum } from '../../types/sync.types';
+import type { IDiffResult, ISyncContext, ISyncResult } from '../../types/sync.types';
 import { BaseSyncStrategy } from './base/base-sync.strategy';
 import { LayoutDiffOperation } from './operations/layout-diff.operation';
 import { LayoutSyncOperation } from './operations/layout-sync.operation';

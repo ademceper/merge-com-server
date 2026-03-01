@@ -1,1 +1,1 @@
-export * from './get-subscription.dto';
+export type * from './get-subscription.dto';

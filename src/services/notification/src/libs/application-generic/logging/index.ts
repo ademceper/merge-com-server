@@ -1,5 +1,8 @@
-import { NestInterceptor, RequestMethod } from '@nestjs/common';
-import { getLoggerToken, Logger, LoggerErrorInterceptor, LoggerModule, Params, PinoLogger } from 'nestjs-pino';
+import { RequestMethod } from '@nestjs/common';
+import type { NestInterceptor } from '@nestjs/common';
+import { getLoggerToken, LoggerErrorInterceptor, LoggerModule, PinoLogger } from 'nestjs-pino';
+import type { Params } from 'nestjs-pino';
+import { Logger } from 'nestjs-pino';
 import { Store, storage } from 'nestjs-pino/storage';
 import { sensitiveFields } from './masking';
 

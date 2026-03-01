@@ -1,19 +1,8 @@
 import { BadRequestException } from '@nestjs/common';
 import { isRegularDigest } from 'libs/application-generic';
 import { JobEntity } from 'libs/dal';
-import {
-  DaysEnum,
-  DigestTypeEnum,
-  DigestUnitEnum,
-  IDigestBaseMetadata,
-  IDigestRegularMetadata,
-  IDigestTimedMetadata,
-  ITimedConfig,
-  MonthlyTypeEnum,
-  OrdinalEnum,
-  OrdinalValueEnum,
-  StepTypeEnum,
-} from 'libs/shared';
+import { DaysEnum, DigestTypeEnum, DigestUnitEnum, MonthlyTypeEnum, OrdinalEnum, OrdinalValueEnum, StepTypeEnum } from 'libs/shared';
+import type { IDigestBaseMetadata, IDigestRegularMetadata, IDigestTimedMetadata, ITimedConfig } from 'libs/shared';
 
 const validateAmountAndUnit = (digest: IDigestBaseMetadata) => {
   if (!digest?.amount) {

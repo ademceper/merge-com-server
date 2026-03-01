@@ -9,13 +9,30 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "strictNullChecks": true,
-    "target": "es6",
-    "esModuleInterop": false,
+    "target": "es2021",
+    "esModuleInterop": true,
     "sourceMap": true,
     "skipLibCheck": true,
     "outDir": "./dist",
     "baseUrl": "./src"
   },
   "include": ["src/**/*", "src/**/*.d.ts"],
-  "exclude": ["node_modules", "**/*.spec.ts", "**/*.e2e.ts", "**/*.e2e-ee.ts"]
+  "exclude": [
+    "node_modules",
+    "e2e",
+    "migrations",
+    "src/**/*.spec.ts",
+    "src/**/*.e2e.ts",
+    "src/**/*.e2e-ee.ts",
+    "src/**/*.test.ts",
+    "src/**/*.test-d.ts",
+    "src/libs/framework/servers/h3.ts",
+    "src/libs/framework/servers/next.ts",
+    "src/libs/framework/servers/nuxt.ts",
+    "src/libs/framework/servers/sveltekit.ts",
+    "src/libs/internal-sdk/react-query",
+    "src/**/e2e/**",
+    "src/libs/providers/utils/test",
+    "scripts"
+  ]
 }

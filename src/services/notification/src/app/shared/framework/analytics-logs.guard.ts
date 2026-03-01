@@ -1,4 +1,5 @@
-import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
+import type { CanActivate, ExecutionContext } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 
 const LOG_ANALYTICS_KEY = 'logAnalytics';

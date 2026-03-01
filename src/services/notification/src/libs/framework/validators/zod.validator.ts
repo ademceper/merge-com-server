@@ -1,4 +1,4 @@
-import { ImportRequirement } from '../types/import.types';
+import type { ImportRequirement } from '../types/import.types';
 import type {
   FromSchema,
   FromSchemaUnvalidated,

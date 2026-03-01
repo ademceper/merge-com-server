@@ -1,6 +1,7 @@
 import { PinoLogger } from 'libs/application-generic';
-import { UserSessionData } from 'libs/shared';
-import { IDiffResult, ISyncContext, ISyncResult, ISyncStrategy, ResourceTypeEnum } from '../../../types/sync.types';
+import type { UserSessionData } from 'libs/shared';
+import { ResourceTypeEnum } from '../../../types/sync.types';
+import type { IDiffResult, ISyncContext, ISyncResult, ISyncStrategy } from '../../../types/sync.types';
 
 export abstract class BaseSyncStrategy implements ISyncStrategy {
   protected readonly BATCH_SIZE = 100;

@@ -2,7 +2,7 @@ import { SeverityLevelEnum } from 'libs/shared';
 import { IsArray, IsBoolean, IsDefined, IsInt, IsMongoId, IsOptional, IsString, Max, Min } from 'class-validator';
 
 import { EnvironmentWithSubscriber } from '../../../shared/commands/project.command';
-import { CursorPaginationParams } from '../../../shared/types';
+import type { CursorPaginationParams } from '../../../shared/types';
 import { IsEnumOrArray } from '../../../shared/validators/is-enum-or-array';
 
 export class GetNotificationsCommand extends EnvironmentWithSubscriber implements CursorPaginationParams {

@@ -1,20 +1,13 @@
 import { Injectable, Logger } from '@nestjs/common';
 
-import {
-  BullMqService,
-  getWebSocketWorkerOptions,
-  IWebSocketDataDto,
-  PinoLogger,
-  SqsService,
-  WebSocketsWorkerService,
-  WorkerOptions,
-  WorkflowInMemoryProviderService,
-} from 'libs/application-generic';
+import { BullMqService, getWebSocketWorkerOptions, PinoLogger, SqsService, WebSocketsWorkerService, WorkerOptions, WorkflowInMemoryProviderService } from 'libs/application-generic';
+import type { IWebSocketDataDto } from 'libs/application-generic';
 
 import { ObservabilityBackgroundTransactionEnum } from 'libs/shared';
 import { ExternalServicesRoute, ExternalServicesRouteCommand } from '../usecases/external-services-route';
 
-const nr = require('newrelic');
+let nr: any = null;
+try { nr = require('newrelic'); } catch {}
 
 const LOG_CONTEXT = 'WebSocketWorker';
 

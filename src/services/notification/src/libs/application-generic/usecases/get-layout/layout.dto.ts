@@ -1,5 +1,6 @@
 import { ApiExtraModels, ApiProperty, ApiPropertyOptional, getSchemaPath } from '@nestjs/swagger';
-import { ChannelTypeEnum, ITemplateVariable, JsonSchemaFormatEnum, JsonSchemaTypeEnum } from 'libs/dal';
+import { ChannelTypeEnum, JsonSchemaFormatEnum, JsonSchemaTypeEnum } from 'libs/dal';
+import type { ITemplateVariable } from 'libs/dal';
 import { ResourceOriginEnum, ResourceTypeEnum, UiSchemaGroupEnum, UiSchemaProperty } from 'libs/shared';
 import { Type } from 'class-transformer';
 import { IsArray, IsBoolean, IsEnum, IsNumber, IsOptional, IsString, ValidateNested } from 'class-validator';

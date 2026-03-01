@@ -3,7 +3,7 @@ import { ExecutionDetailsEntity, ExecutionDetailsRepository, MessageEntity } fro
 import { ChannelTypeEnum, ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum } from 'libs/shared';
 
 import { EmailEventStatusEnum, SmsEventStatusEnum } from 'libs/stateless';
-import { IWebhookResult } from '../../dtos/webhooks-response.dto';
+import type { IWebhookResult } from '../../dtos/webhooks-response.dto';
 import { CreateExecutionDetailsCommand, WebhookCommand } from './create-execution-details.command';
 
 const LOG_CONTEXT = 'CreateExecutionDetails';

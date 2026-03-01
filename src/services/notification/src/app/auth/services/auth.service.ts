@@ -1,7 +1,8 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { IAuthService } from 'libs/application-generic';
+import type { IAuthService } from 'libs/application-generic';
 import { MemberEntity, SubscriberEntity, UserEntity } from 'libs/dal';
-import { AuthenticateContext, AuthProviderEnum, ISubscriberJwt, UserSessionData } from 'libs/shared';
+import { AuthProviderEnum } from 'libs/shared';
+import type { AuthenticateContext, ISubscriberJwt, UserSessionData } from 'libs/shared';
 
 @Injectable()
 export class AuthService implements IAuthService {

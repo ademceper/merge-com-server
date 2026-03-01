@@ -1,6 +1,7 @@
 import { BaseCommand } from 'libs/application-generic';
 
-import { JobTitleEnum, ProductUseCases, SignUpOriginEnum } from 'libs/shared';
+import { JobTitleEnum, SignUpOriginEnum } from 'libs/shared';
+import type { ProductUseCases } from 'libs/shared';
 import { IsBoolean, IsDefined, IsEmail, IsEnum, IsNotEmpty, IsOptional, IsString, MinLength } from 'class-validator';
 
 export class UserRegisterCommand extends BaseCommand {

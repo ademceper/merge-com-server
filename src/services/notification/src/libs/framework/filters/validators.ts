@@ -1,5 +1,5 @@
 import { toSentenceArgsValidator } from './to-sentence';
-import { LiquidFilterIssue } from './types';
+import type { LiquidFilterIssue } from './types';
 
 type FilterValidators = {
   [key: string]: (...args: any[]) => LiquidFilterIssue[];

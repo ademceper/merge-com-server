@@ -9,7 +9,7 @@ import {
   PushWebhookHandler,
   AppIOHandler,
 } from './handlers';
-import { IPushFactory, IPushHandler } from './interfaces';
+import type { IPushFactory, IPushHandler } from './interfaces';
 
 export class PushFactory implements IPushFactory {
   handlers: IPushHandler[] = [

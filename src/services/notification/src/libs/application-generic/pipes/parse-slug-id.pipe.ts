@@ -1,5 +1,7 @@
-import { ArgumentMetadata, Injectable, PipeTransform } from '@nestjs/common';
-import { InternalId, parseSlugId } from './parse-slug-id';
+import { Injectable } from '@nestjs/common';
+import type { ArgumentMetadata, PipeTransform } from '@nestjs/common';
+import { parseSlugId } from './parse-slug-id';
+import type { InternalId } from './parse-slug-id';
 
 @Injectable()
 export class ParseSlugIdPipe implements PipeTransform<string, InternalId> {

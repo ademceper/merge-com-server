@@ -1,5 +1,7 @@
-import { DEFAULT_NOTIFICATION_RETENTION_DAYS, FeatureFlagsKeysEnum, StringifyEnv } from 'libs/shared';
-import { bool, CleanedEnv, cleanEnv, json, num, port, str, url, ValidatorSpec } from 'envalid';
+import { DEFAULT_NOTIFICATION_RETENTION_DAYS, FeatureFlagsKeysEnum } from 'libs/shared';
+import type { StringifyEnv } from 'libs/shared';
+import { bool, cleanEnv, json, num, port, str, url } from 'envalid';
+import type { CleanedEnv, ValidatorSpec } from 'envalid';
 
 export function validateEnv() {
   return cleanEnv(process.env, envValidators);
@@ -10,7 +12,7 @@ const processEnv = process.env as Record<string, string>; // Hold the initial pr
 
 export const envValidators = {
   TZ: str({ default: 'UTC' }),
-  NODE_ENV: str({ choices: ['dev', 'test', 'production', 'ci', 'local'], default: 'local' }),
+  NODE_ENV: str({ choices: ['dev', 'development', 'test', 'production', 'ci', 'local'], default: 'local' }),
   LOG_LEVEL: str({ choices: ['trace', 'debug', 'info', 'warn', 'error', 'fatal', 'none'] }),
   PORT: port(),
   FRONT_BASE_URL: str(),

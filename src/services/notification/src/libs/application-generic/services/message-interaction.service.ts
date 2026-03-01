@@ -2,7 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { DeliveryLifecycleDetail, DeliveryLifecycleStatusEnum } from 'libs/shared';
 import { PinoLogger } from 'nestjs-pino';
 import { WorkflowRunStatusEnum } from './analytic-logs';
-import { StepRunTraceInput, TraceLogRepository } from './analytic-logs/trace-log';
+import { TraceLogRepository } from './analytic-logs/trace-log';
+import type { StepRunTraceInput } from './analytic-logs/trace-log';
 import { WorkflowRunService } from './workflow-run.service';
 
 export interface MessageInteractionResult {

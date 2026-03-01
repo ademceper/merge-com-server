@@ -1,10 +1,12 @@
-import { BadRequestException, Injectable, Logger, NotFoundException, Scope } from '@nestjs/common';
-import { AnalyticsService, IMailHandler, ISmsHandler, MailFactory, SmsFactory } from 'libs/application-generic';
-import { IntegrationEntity, IntegrationQuery, IntegrationRepository, MessageRepository } from 'libs/dal';
+import { BadRequestException, Injectable, NotFoundException, Scope, Logger } from '@nestjs/common';
+import { AnalyticsService, MailFactory, SmsFactory } from 'libs/application-generic';
+import type { IMailHandler, ISmsHandler } from 'libs/application-generic';
+import { IntegrationEntity, IntegrationRepository, MessageRepository } from 'libs/dal';
+import type { IntegrationQuery } from 'libs/dal';
 import { ChannelTypeEnum, providers } from 'libs/shared';
-import { IEmailProvider, ISmsProvider } from 'libs/stateless';
-import { IWebhookResult } from '../../dtos/webhooks-response.dto';
-import { WebhookTypes } from '../../interfaces/webhook.interface';
+import type { IEmailProvider, ISmsProvider } from 'libs/stateless';
+import type { IWebhookResult } from '../../dtos/webhooks-response.dto';
+import type { WebhookTypes } from '../../interfaces/webhook.interface';
 import { CreateExecutionDetails } from '../execution-details/create-execution-details.usecase';
 import { WebhookCommand } from './webhook.command';
 

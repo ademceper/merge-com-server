@@ -1,7 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import { HealthCheckError, HealthIndicator, HealthIndicatorResult } from '@nestjs/terminus';
+import { HealthCheckError, HealthIndicator } from '@nestjs/terminus';
+import type { HealthIndicatorResult } from '@nestjs/terminus';
 
-import { IHealthIndicator } from 'libs/application-generic';
+import type { IHealthIndicator } from 'libs/application-generic';
 
 import { WSGateway } from '../ws.gateway';
 

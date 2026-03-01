@@ -1,5 +1,5 @@
 import { NotificationTemplateEntity, SubscriberEntity } from 'libs/dal';
-import { ITenantDefine } from 'libs/shared';
+import type { ITenantDefine } from 'libs/shared';
 import { IsArray, IsDefined, IsOptional, IsString, ValidateNested } from 'class-validator';
 
 import { TriggerEventMulticastCommand } from '../trigger-event';

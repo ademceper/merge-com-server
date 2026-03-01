@@ -3,7 +3,7 @@
  */
 
 import * as z from 'zod/v3';
-import { ClosedEnum } from '../../types/enums.js';
+import type { ClosedEnum } from '../../types/enums.js';
 
 /**
  * Channel type through which the message is sent

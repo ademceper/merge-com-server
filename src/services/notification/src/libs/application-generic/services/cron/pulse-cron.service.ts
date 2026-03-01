@@ -2,7 +2,7 @@ import { JobCronNameEnum } from 'libs/shared';
 import { JobPriority, Pulse } from '@pulsecron/pulse';
 import { MetricsService } from '../metrics';
 import { CronService } from './cron.service';
-import { CronJobProcessor, CronMetrics, CronOptions } from './cron.types';
+import type { CronJobProcessor, CronMetrics, CronOptions } from './cron.types';
 
 type PulsePriority = keyof typeof JobPriority;
 

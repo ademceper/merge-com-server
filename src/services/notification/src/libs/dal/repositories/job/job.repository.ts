@@ -1,13 +1,7 @@
-import {
-  DeliveryLifecycleDetail,
-  DeliveryLifecycleStatusEnum,
-  DigestCreationResultEnum,
-  IDigestBaseMetadata,
-  IDigestRegularMetadata,
-  StepTypeEnum,
-} from 'libs/shared';
+import { DeliveryLifecycleDetail, DeliveryLifecycleStatusEnum, DigestCreationResultEnum, StepTypeEnum } from 'libs/shared';
+import type { IDigestBaseMetadata, IDigestRegularMetadata } from 'libs/shared';
 import { sub } from 'date-fns';
-import { ProjectionType } from 'mongoose';
+import type { ProjectionType } from 'mongoose';
 import { DalException } from '../../shared';
 import type { EnforceEnvOrOrgIds, IUpdateResult } from '../../types';
 import { BaseRepository } from '../base-repository';
@@ -15,7 +9,8 @@ import { EnvironmentEntity } from '../environment';
 import { NotificationEntity } from '../notification';
 import { NotificationTemplateEntity } from '../notification-template';
 import { SubscriberEntity } from '../subscriber';
-import { DeliveryLifecycleState, JobDBModel, JobEntity, JobStatusEnum } from './job.entity';
+import { JobEntity, JobStatusEnum } from './job.entity';
+import type { DeliveryLifecycleState, JobDBModel } from './job.entity';
 import { Job } from './job.schema';
 
 type JobEntityPopulated = JobEntity & {

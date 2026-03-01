@@ -1,5 +1,5 @@
 import { SeverityLevelEnum } from '../../consts';
-import { ISubscribersDefine, ITenantDefine, ITopic, ProvidersIdEnum } from '../../types';
+import type { ISubscribersDefine, ITenantDefine, ITopic, ProvidersIdEnum } from '../../types';
 
 export type TriggerRecipientSubscriber = string | ISubscribersDefine;
 

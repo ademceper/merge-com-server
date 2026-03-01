@@ -1,6 +1,6 @@
 import type { ISubscriberPayload, ITriggerPayload, TriggerEventStatusEnum, TriggerRecipientsPayload } from '../shared';
-import { ContextPayload } from './context.types';
-import { ConditionalPartial, PickRequiredKeys } from './util.types';
+import type { ContextPayload } from './context.types';
+import type { ConditionalPartial, PickRequiredKeys } from './util.types';
 
 type EventPayload = ITriggerPayload;
 

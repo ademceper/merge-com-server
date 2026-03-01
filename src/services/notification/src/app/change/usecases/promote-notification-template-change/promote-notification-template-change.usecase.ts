@@ -19,17 +19,12 @@ import {
   NotificationTemplateEntity,
   NotificationTemplateRepository,
 } from 'libs/dal';
-import {
-  buildWorkflowPreferencesFromPreferenceChannels,
-  ChangeEntityTypeEnum,
-  DEFAULT_WORKFLOW_PREFERENCES,
-  IPreferenceChannels,
-  PreferencesTypeEnum,
-} from 'libs/shared';
+import { buildWorkflowPreferencesFromPreferenceChannels, ChangeEntityTypeEnum, DEFAULT_WORKFLOW_PREFERENCES, PreferencesTypeEnum } from 'libs/shared';
+import type { IPreferenceChannels } from 'libs/shared';
 import { computeWorkflowStatus } from '../../../workflows-v2/shared/compute-workflow-status';
 import { ApplyChange, ApplyChangeCommand } from '../apply-change';
 import { PromoteTypeChangeCommand } from '../promote-type-change.command';
-import { INotificationTemplateChangeService } from '../shared';
+import type { INotificationTemplateChangeService } from '../shared';
 
 /**
  * Promote a notification template change to a workflow

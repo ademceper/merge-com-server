@@ -1,4 +1,5 @@
-import { Schedule, SeverityLevelEnum } from 'libs/shared';
+import { SeverityLevelEnum } from 'libs/shared';
+import type { Schedule } from 'libs/shared';
 
 type SeverityCounts = {
   [SeverityLevelEnum.HIGH]: number;

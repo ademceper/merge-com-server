@@ -2,9 +2,9 @@ import { ActorTypeEnum } from 'libs/shared';
 import mongoose, { Schema } from 'mongoose';
 
 import { schemaOptions } from '../schema-default.options';
-import { MessageTemplateDBModel } from './message-template.entity';
+import type { MessageTemplateDBModel } from './message-template.entity';
 
-const mongooseDelete = require('mongoose-delete');
+import mongooseDelete from 'mongoose-delete';
 
 const messageTemplateSchema = new Schema<MessageTemplateDBModel>(
   {

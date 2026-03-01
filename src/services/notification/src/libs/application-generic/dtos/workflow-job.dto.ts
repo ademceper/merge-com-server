@@ -1,15 +1,8 @@
-import { DiscoverWorkflowOutput } from 'libs/framework/internal';
-import {
-  AddressingTypeEnum,
-  ContextPayload,
-  StatelessControls,
-  TriggerOverrides,
-  TriggerRecipientSubscriber,
-  TriggerRecipientsPayload,
-  TriggerRequestCategoryEnum,
-  TriggerTenantContext,
-} from 'libs/shared';
-import { IBulkJobParams, IJobParams } from '../services/queues/queue-base.service';
+import type { DiscoverWorkflowOutput } from 'libs/framework/internal';
+import { AddressingTypeEnum, StatelessControls, TriggerRequestCategoryEnum } from 'libs/shared';
+import type { ContextPayload, TriggerRecipientSubscriber, TriggerRecipientsPayload, TriggerTenantContext } from 'libs/shared';
+import type { TriggerOverrides } from 'libs/shared';
+import type { IBulkJobParams, IJobParams } from '../services/queues/queue-base.service';
 
 export type AddressingBroadcast = {
   addressingType: AddressingTypeEnum.BROADCAST;

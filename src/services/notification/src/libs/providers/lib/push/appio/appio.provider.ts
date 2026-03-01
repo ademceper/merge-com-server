@@ -1,5 +1,6 @@
 import { PushProviderIdEnum } from 'libs/shared';
-import { ChannelTypeEnum, ISendMessageSuccessResponse, IPushOptions, IPushProvider } from 'libs/stateless';
+import { ChannelTypeEnum } from 'libs/stateless';
+import type { ISendMessageSuccessResponse, IPushOptions, IPushProvider } from 'libs/stateless';
 import axios from 'axios';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
 

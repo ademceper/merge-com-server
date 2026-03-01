@@ -6,7 +6,7 @@ import { InstrumentUsecase } from '../../../instrumentation';
 import { FeatureFlagsService } from '../../../services/feature-flags';
 import { generateObjectId } from '../../../utils';
 import { WrapperDto } from '../../dtos/webhook-payload.dto';
-import { SvixClient } from '../../services';
+import type { SvixClient } from '../../services';
 import { SendWebhookMessageCommand } from './send-webhook-message.command';
 
 @Injectable()

@@ -1,7 +1,8 @@
 import { Controller, Get, Param, Query } from '@nestjs/common';
 import { ApiExcludeEndpoint, ApiOperation, ApiQuery, ApiTags } from '@nestjs/swagger';
 import { RequirePermissions } from 'libs/application-generic';
-import { ChannelTypeEnum, PermissionsEnum, SeverityLevelEnum, UserSessionData } from 'libs/shared';
+import { ChannelTypeEnum, PermissionsEnum, SeverityLevelEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import { ApiCommonResponses, ApiOkResponse, ApiResponse } from '../shared/framework/response.decorator';

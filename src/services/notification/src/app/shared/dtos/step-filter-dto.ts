@@ -1,13 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import {
-  BuilderFieldOperator,
-  BuilderFieldType,
-  BuilderFieldTypeEnum,
-  BuilderGroupValues,
-  FilterPartTypeEnum,
-  PreviousStepTypeEnum,
-  TimeOperatorEnum,
-} from 'libs/shared';
+import { BuilderFieldTypeEnum, FilterPartTypeEnum, PreviousStepTypeEnum, TimeOperatorEnum } from 'libs/shared';
+import type { BuilderFieldOperator, BuilderFieldType, BuilderGroupValues } from 'libs/shared';
 
 class BaseFilterPart {
   on: FilterPartTypeEnum;

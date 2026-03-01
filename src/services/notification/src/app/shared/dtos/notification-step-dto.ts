@@ -1,21 +1,6 @@
 import { ApiExtraModels, ApiProperty, ApiPropertyOptional, getSchemaPath } from '@nestjs/swagger';
-import {
-  DaysEnum,
-  DelayTypeEnum,
-  DigestTypeEnum,
-  DigestUnitEnum,
-  IDelayRegularMetadata,
-  IDelayScheduledMetadata,
-  IDigestBaseMetadata,
-  IDigestRegularMetadata,
-  IDigestTimedMetadata,
-  ITimedConfig,
-  IWorkflowStepMetadata,
-  MonthlyTypeEnum,
-  OrdinalEnum,
-  OrdinalValueEnum,
-  StepVariantDto,
-} from 'libs/shared';
+import { DaysEnum, DelayTypeEnum, DigestTypeEnum, DigestUnitEnum, MonthlyTypeEnum, OrdinalEnum, OrdinalValueEnum, StepVariantDto } from 'libs/shared';
+import type { IDelayRegularMetadata, IDelayScheduledMetadata, IDigestBaseMetadata, IDigestRegularMetadata, IDigestTimedMetadata, ITimedConfig, IWorkflowStepMetadata } from 'libs/shared';
 import { Type } from 'class-transformer';
 import { IsBoolean, IsString, ValidateNested } from 'class-validator';
 import { MessageTemplate } from './message-template';

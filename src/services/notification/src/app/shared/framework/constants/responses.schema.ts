@@ -1,5 +1,6 @@
-import { ApiResponseOptions } from '@nestjs/swagger';
-import { ApiResponseDecoratorName, HttpResponseHeaderKeysEnum } from 'libs/application-generic';
+import type { ApiResponseOptions } from '@nestjs/swagger';
+import { HttpResponseHeaderKeysEnum } from 'libs/application-generic';
+import type { ApiResponseDecoratorName } from 'libs/application-generic';
 import { THROTTLED_EXCEPTION_MESSAGE } from '../../../rate-limiting/guards';
 import { createReusableHeaders } from '../swagger';
 

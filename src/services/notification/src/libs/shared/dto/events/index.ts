@@ -1,1 +1,1 @@
-export * from './event.interface';
+export type * from './event.interface';

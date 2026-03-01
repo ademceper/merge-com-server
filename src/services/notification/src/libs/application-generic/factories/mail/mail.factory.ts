@@ -21,7 +21,7 @@ import {
   SendinblueHandler,
   SparkPostHandler,
 } from './handlers';
-import { IMailFactory, IMailHandler } from './interfaces';
+import type { IMailFactory, IMailHandler } from './interfaces';
 
 export class MailFactory implements IMailFactory {
   handlers: IMailHandler[] = [

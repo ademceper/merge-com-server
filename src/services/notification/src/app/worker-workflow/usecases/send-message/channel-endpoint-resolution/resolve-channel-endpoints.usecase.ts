@@ -7,8 +7,9 @@ import {
   ChannelEndpointRepository,
   IntegrationRepository,
 } from 'libs/dal';
-import { ProvidersIdEnum } from 'libs/shared';
-import { ChannelData, ENDPOINT_TYPES, ENDPOINT_TYPES_REQUIRING_TOKEN } from 'libs/stateless';
+import type { ProvidersIdEnum } from 'libs/shared';
+import { ENDPOINT_TYPES, ENDPOINT_TYPES_REQUIRING_TOKEN } from 'libs/stateless';
+import type { ChannelData } from 'libs/stateless';
 import axios from 'axios';
 import { ResolveChannelEndpointsCommand } from './resolve-channel-endpoints.command';
 

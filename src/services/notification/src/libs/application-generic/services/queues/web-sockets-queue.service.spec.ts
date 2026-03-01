@@ -1,5 +1,5 @@
 import { Test } from '@nestjs/testing';
-import { IWebSocketJobDto } from '../../dtos';
+import type { IWebSocketJobDto } from '../../dtos';
 import { PinoLogger } from '../../logging';
 import { BullMqService } from '../bull-mq';
 import { FeatureFlagsService } from '../feature-flags';

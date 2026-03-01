@@ -1,17 +1,9 @@
 import { DirectionEnum } from 'libs/shared';
-import { ClassConstructor, plainToInstance } from 'class-transformer';
-import {
-  ClientSession,
-  FilterQuery,
-  Model,
-  mongo,
-  ProjectionType,
-  QueryOptions,
-  QueryWithHelpers,
-  SortOrder,
-  Types,
-  UpdateQuery,
-} from 'mongoose';
+import { plainToInstance } from 'class-transformer';
+import type { ClassConstructor } from 'class-transformer';
+import { Model, mongo, Types } from 'mongoose';
+import type { ClientSession, FilterQuery, ProjectionType, QueryOptions, QueryWithHelpers, UpdateQuery } from 'mongoose';
+import type { SortOrder } from 'mongoose';
 import { DalException } from '../shared';
 
 export class BaseRepository<T_DBModel, T_MappedEntity, T_Enforcement> {

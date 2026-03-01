@@ -1,6 +1,7 @@
 import { CursorBasedPaginatedCommand } from 'libs/application-generic';
 import { ChannelEndpointEntity } from 'libs/dal';
-import { ChannelTypeEnum, ProvidersIdEnum, ProvidersIdEnumConst } from 'libs/shared';
+import { ChannelTypeEnum, ProvidersIdEnumConst } from 'libs/shared';
+import type { ProvidersIdEnum } from 'libs/shared';
 import { IsArray, IsEnum, IsOptional, IsString } from 'class-validator';
 
 export class ListChannelEndpointsCommand extends CursorBasedPaginatedCommand<

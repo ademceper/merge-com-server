@@ -1,4 +1,5 @@
-import { isMongoId, ValidateBy, ValidationOptions } from 'class-validator';
+import { isMongoId, ValidateBy } from 'class-validator';
+import type { ValidationOptions } from 'class-validator';
 
 export function IsMongoIdOrArrayOfMongoIds(validationOptions: ValidationOptions & { fieldName?: string }) {
   return ValidateBy(

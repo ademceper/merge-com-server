@@ -1,6 +1,6 @@
 import { SubscriberEntity, TenantEntity } from 'libs/dal';
 import type { ContextResolved } from 'libs/framework/internal';
-import { ICondition, IMessageFilter, ITriggerPayload } from 'libs/shared';
+import type { ICondition, IMessageFilter, ITriggerPayload } from 'libs/shared';
 
 export interface IFilterVariables {
   payload?: ITriggerPayload;

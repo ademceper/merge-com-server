@@ -1,4 +1,4 @@
-import { TopicKey } from 'libs/shared';
+import type { TopicKey } from 'libs/shared';
 import { IsDefined, IsString } from 'class-validator';
 import { EnvironmentCommand } from '../../commands';
 

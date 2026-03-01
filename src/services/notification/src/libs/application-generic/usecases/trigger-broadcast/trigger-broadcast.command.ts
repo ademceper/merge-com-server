@@ -1,8 +1,8 @@
 import { NotificationTemplateEntity, SubscriberEntity } from 'libs/dal';
-import { ITenantDefine } from 'libs/shared';
+import type { ITenantDefine } from 'libs/shared';
 import { IsArray, IsDefined, IsOptional, IsString, ValidateNested } from 'class-validator';
 
-import { TriggerEventBroadcastCommand } from '../trigger-event';
+import { TriggerEventBroadcastCommand } from '../trigger-event/trigger-event.command';
 
 export class TriggerBroadcastCommand extends TriggerEventBroadcastCommand {
   @IsDefined()

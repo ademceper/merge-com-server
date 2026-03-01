@@ -1,6 +1,6 @@
 import { ExecutionDetailsRepository, IntegrationRepository, MessageRepository } from 'libs/dal';
 import { ChannelTypeEnum, ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum } from 'libs/shared';
-import { IEmailEventBody } from 'libs/stateless';
+import type { IEmailEventBody } from 'libs/stateless';
 import axios from 'axios';
 import { expect } from 'chai';
 

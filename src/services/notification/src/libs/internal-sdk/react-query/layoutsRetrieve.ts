@@ -11,17 +11,9 @@ import {
   UseSuspenseQueryResult,
 } from "@tanstack/react-query";
 import { useNovuContext } from "./_context.js";
-import {
-  QueryHookOptions,
-  SuspenseQueryHookOptions,
-  TupleToPrefixes,
-} from "./_types.js";
-import {
-  buildLayoutsRetrieveQuery,
-  LayoutsRetrieveQueryData,
-  prefetchLayoutsRetrieve,
-  queryKeyLayoutsRetrieve,
-} from "./layoutsRetrieve.core.js";
+import type { QueryHookOptions, SuspenseQueryHookOptions, TupleToPrefixes } from "./_types.js";
+import { buildLayoutsRetrieveQuery, prefetchLayoutsRetrieve, queryKeyLayoutsRetrieve } from "./layoutsRetrieve.core.js";
+import type { LayoutsRetrieveQueryData } from "./layoutsRetrieve.core.js";
 export {
   buildLayoutsRetrieveQuery,
   type LayoutsRetrieveQueryData,

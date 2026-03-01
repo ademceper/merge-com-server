@@ -1,3 +1,3 @@
-export * from './subscriber-user.interface';
+export type * from './subscriber-user.interface';
 export * from './user.enums';
-export * from './user.interface';
+export type * from './user.interface';

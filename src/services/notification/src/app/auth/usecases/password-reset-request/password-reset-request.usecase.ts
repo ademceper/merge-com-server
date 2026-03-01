@@ -1,6 +1,7 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { buildUserKey, InvalidateCacheService } from 'libs/application-generic';
-import { IUserResetTokenCount, UserEntity, UserRepository } from 'libs/dal';
+import { UserEntity, UserRepository } from 'libs/dal';
+import type { IUserResetTokenCount } from 'libs/dal';
 import { normalizeEmail, PasswordResetFlowEnum } from 'libs/shared';
 import { differenceInHours, differenceInSeconds, parseISO } from 'date-fns';
 import { v4 as uuidv4 } from 'uuid';

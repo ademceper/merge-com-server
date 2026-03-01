@@ -1,6 +1,6 @@
 import { IsValidContextPayload } from 'libs/application-generic';
 import { IntegrationEntity } from 'libs/dal';
-import { ContextPayload } from 'libs/shared';
+import type { ContextPayload } from 'libs/shared';
 import { IsOptional, IsString } from 'class-validator';
 import { EnvironmentCommand } from '../../../../shared/commands/project.command';
 

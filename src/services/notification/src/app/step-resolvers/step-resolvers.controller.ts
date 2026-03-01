@@ -10,9 +10,11 @@ import {
 import { FileInterceptor } from '@nestjs/platform-express';
 import { ApiExcludeController } from '@nestjs/swagger';
 import { ExternalApiAccessible, RequirePermissions } from 'libs/application-generic';
-import { ApiRateLimitCategoryEnum, PermissionsEnum, UserSessionData } from 'libs/shared';
+import { ApiRateLimitCategoryEnum, PermissionsEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { plainToInstance } from 'class-transformer';
-import { ValidationError, validateSync } from 'class-validator';
+import { validateSync } from 'class-validator';
+import type { ValidationError } from 'class-validator';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ThrottlerCategory } from '../rate-limiting/guards/throttler.decorator';
 import { UserSession } from '../shared/framework/user.decorator';

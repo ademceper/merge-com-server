@@ -1,5 +1,6 @@
 import { BadRequestException } from '@nestjs/common';
-import { ITemplateVariable, TemplateSystemVariables } from 'libs/shared';
+import { TemplateSystemVariables } from 'libs/shared';
+import type { ITemplateVariable } from 'libs/shared';
 
 export class VerifyPayloadService {
   checkRequired(variables: ITemplateVariable[], payload: Record<string, unknown>): string[] {

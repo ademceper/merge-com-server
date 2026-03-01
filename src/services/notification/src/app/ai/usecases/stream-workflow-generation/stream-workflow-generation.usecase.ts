@@ -1,9 +1,11 @@
 import { toUIMessageStream } from '@ai-sdk/langchain';
 import { Injectable } from '@nestjs/common';
 import { PinoLogger, ResourceValidatorService } from 'libs/application-generic';
-import { AiChatRepository, AiChatSnapshotRef, SnapshotRepository } from 'libs/dal';
+import { AiChatRepository, SnapshotRepository } from 'libs/dal';
+import type { AiChatSnapshotRef } from 'libs/dal';
 import { AiResourceTypeEnum, SnapshotSourceTypeEnum } from 'libs/shared';
-import { createUIMessageStream, generateId, UIMessage } from 'ai';
+import { createUIMessageStream, generateId } from 'ai';
+import type { UIMessage } from 'ai';
 import { BaseMessage, createAgent, createMiddleware } from 'langchain';
 import { GetEnvironmentTags } from '../../../environments-v2/usecases/get-environment-tags';
 import { GetActiveIntegrations } from '../../../integrations/usecases/get-active-integration/get-active-integration.usecase';
@@ -16,7 +18,7 @@ import { LlmService } from '../../services/llm.service';
 import { createWorkflowGenerationTools, DraftWorkflowState } from '../../tools/workflow-generation.tools';
 import { createErrorTransform } from '../../transforms/error-transform';
 import { createToolOutputTransform } from '../../transforms/tool-output-transform';
-import { BaseStreamGenerationAgent, StreamGenerationCommand, StreamGenerationContext } from '../../types';
+import type { BaseStreamGenerationAgent, StreamGenerationCommand, StreamGenerationContext } from '../../types';
 import { GetChatCommand, GetChatUseCase } from '../get-chat';
 import { UpsertChatCommand, UpsertChatUseCase } from '../upsert-chat';
 

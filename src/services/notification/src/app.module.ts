@@ -1,6 +1,7 @@
-import { DynamicModule, Module, Provider } from '@nestjs/common';
-import { ForwardReference } from '@nestjs/common/interfaces/modules/forward-reference.interface';
-import { Type } from '@nestjs/common/interfaces/type.interface';
+import { Module } from '@nestjs/common';
+import type { DynamicModule, Provider } from '@nestjs/common';
+import type { ForwardReference } from '@nestjs/common/interfaces/modules/forward-reference.interface';
+import type { Type } from '@nestjs/common/interfaces/type.interface';
 import { APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core';
 import { ApiExcludeController } from '@nestjs/swagger';
 import { cacheService, TracingModule } from 'libs/application-generic';

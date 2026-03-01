@@ -1,8 +1,9 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { HealthCheckError, HealthIndicator, HealthIndicatorResult } from '@nestjs/terminus';
+import { HealthCheckError, HealthIndicator } from '@nestjs/terminus';
+import type { HealthIndicatorResult } from '@nestjs/terminus';
 
 import { QueueBaseService } from '../services/queues/queue-base.service';
-import { IHealthIndicator } from './health-indicator.interface';
+import type { IHealthIndicator } from './health-indicator.interface';
 
 @Injectable()
 export abstract class QueueHealthIndicator extends HealthIndicator implements IHealthIndicator {

@@ -3,7 +3,7 @@
  */
 
 import { SDKHooks } from '../hooks/hooks.js';
-import { HookContext } from '../hooks/types.js';
+import type { HookContext } from '../hooks/types.js';
 import {
   ConnectionError,
   InvalidRequestError,
@@ -13,7 +13,8 @@ import {
 } from '../models/errors/httpclienterrors.js';
 import { ERR, OK, Result } from '../types/fp.js';
 import { stringToBase64 } from './base64.js';
-import { SDK_METADATA, SDKOptions, serverURLFromOptions } from './config.js';
+import { SDK_METADATA, serverURLFromOptions } from './config.js';
+import type { SDKOptions } from './config.js';
 import { encodeForm } from './encodings.js';
 import {
   HTTPClient,
@@ -24,8 +25,9 @@ import {
   matchStatusCode,
 } from './http.js';
 import { Logger } from './logger.js';
-import { RetryConfig, retry } from './retries.js';
-import { SecurityState } from './security.js';
+import { retry } from './retries.js';
+import type { RetryConfig } from './retries.js';
+import type { SecurityState } from './security.js';
 
 export type RequestOptions = {
   /**

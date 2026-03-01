@@ -1,17 +1,20 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { IEventJobData, IJobData, JobTopicNameEnum } from 'libs/shared';
+import { JobTopicNameEnum } from 'libs/shared';
+import type { IEventJobData, IJobData } from 'libs/shared';
 import {
-  BulkJobOptions,
   Job,
+  MetricsTime,
+  Queue,
+  Worker,
+} from 'bullmq';
+import type {
+  BulkJobOptions,
   JobsOptions,
   Metrics,
-  MetricsTime,
   Processor,
-  Queue,
   QueueBaseOptions,
   QueueOptions,
   ConnectionOptions as RedisConnectionOptions,
-  Worker,
   WorkerOptions,
 } from 'bullmq';
 
@@ -28,13 +31,15 @@ const LOG_CONTEXT = 'BullMqService';
 
 export {
   Job,
+  Queue,
+  Worker,
+};
+export type {
   JobsOptions,
   Processor,
-  Queue,
   QueueBaseOptions,
   QueueOptions,
   RedisConnectionOptions as BullMqConnectionOptions,
-  Worker,
   WorkerOptions,
   BulkJobOptions,
 };
@@ -68,7 +73,11 @@ export class BullMqService {
       return false;
     }
 
-    require('@taskforcesh/bullmq-pro');
+    try {
+      require('@taskforcesh/bullmq-pro');
+    } catch {
+      return false;
+    }
 
     return true;
   }

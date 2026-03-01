@@ -1,8 +1,9 @@
 import { Injectable, Logger } from '@nestjs/common';
 
 import { MessageTemplateEntity, MessageTemplateRepository } from 'libs/dal';
-import { ICondition } from 'libs/shared';
-import { IFilterVariables, PlatformException } from '../../utils';
+import type { ICondition } from 'libs/shared';
+import { PlatformException } from '../../utils';
+import type { IFilterVariables } from '../../utils';
 import { ConditionsFilter, ConditionsFilterCommand } from '../conditions-filter';
 import { NormalizeVariables, NormalizeVariablesCommand } from '../normalize-variables';
 import { SelectVariantCommand } from './select-variant.command';

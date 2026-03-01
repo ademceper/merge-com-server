@@ -1,4 +1,5 @@
-import { ActionTypeEnum, ChannelTypeEnum, ContextPayload } from '../../types';
+import { ActionTypeEnum, ChannelTypeEnum } from '../../types';
+import type { ContextPayload } from '../../types';
 import { SubscriberDto } from '../subscriber';
 import { JSONSchemaDto } from './json-schema-dto';
 

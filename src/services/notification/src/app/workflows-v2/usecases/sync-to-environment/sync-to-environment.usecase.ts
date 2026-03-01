@@ -1,15 +1,8 @@
 import { BadRequestException, Injectable, NotFoundException, Optional } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
 import { Instrument, InstrumentUsecase, SendWebhookMessage } from 'libs/application-generic';
-import {
-  BaseRepository,
-  ClientSession,
-  EnvironmentRepository,
-  LocalizationResourceEnum,
-  NotificationTemplateRepository,
-  PreferencesEntity,
-  PreferencesRepository,
-} from 'libs/dal';
+import { BaseRepository, EnvironmentRepository, LocalizationResourceEnum, NotificationTemplateRepository, PreferencesEntity, PreferencesRepository } from 'libs/dal';
+import type { ClientSession } from 'libs/dal';
 import {
   PreferencesTypeEnum,
   ResourceOriginEnum,
@@ -22,7 +15,7 @@ import {
   LayoutSyncToEnvironmentCommand,
   LayoutSyncToEnvironmentUseCase,
 } from '../../../layouts-v2/usecases/sync-to-environment';
-import { StepResponseDto, WorkflowPreferencesDto, WorkflowResponseDto } from '../../dtos';
+import { WorkflowPreferencesDto, StepResponseDto, WorkflowResponseDto } from '../../dtos';
 import { WorkflowNotSyncableException } from '../../exceptions/workflow-not-syncable-exception';
 import { GetWorkflowCommand, GetWorkflowUseCase } from '../get-workflow';
 import {

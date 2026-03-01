@@ -1,5 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { ChatProviderIdEnum, IChannelCredentials, PushProviderIdEnum } from 'libs/shared';
+import { ChatProviderIdEnum, PushProviderIdEnum } from 'libs/shared';
+import type { IChannelCredentials } from 'libs/shared';
 import { Type } from 'class-transformer';
 import { ArrayNotEmpty, IsArray, IsDefined, IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { BaseSubscriberFieldsDto } from '../../shared/dtos/base-subscriber-fields.dto';

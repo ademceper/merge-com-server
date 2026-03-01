@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { IErrorCodeKey, IErrorCodeVal, testErrorCodeEnumValidity } from './error.types';
+import { testErrorCodeEnumValidity } from './error.types';
+import type { IErrorCodeKey, IErrorCodeVal } from './error.types';
 
 describe('Error Codes', () => {
   /**

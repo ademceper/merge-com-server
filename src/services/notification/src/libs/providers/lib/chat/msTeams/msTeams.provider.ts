@@ -1,17 +1,9 @@
 import { ChatProviderIdEnum } from 'libs/shared';
-import {
-  ChannelTypeEnum,
-  ENDPOINT_TYPES,
-  IChatOptions,
-  IChatProvider,
-  ISendMessageSuccessResponse,
-  isChannelDataOfType,
-  MsTeamsChannelData,
-  MsTeamsUserData,
-} from 'libs/stateless';
+import { ChannelTypeEnum, ENDPOINT_TYPES, isChannelDataOfType } from 'libs/stateless';
+import type { IChatOptions, IChatProvider, ISendMessageSuccessResponse, MsTeamsChannelData, MsTeamsUserData } from 'libs/stateless';
 import axios, { AxiosInstance } from 'axios';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
+import type { WithPassthrough } from '../../../utils/types';
 
 interface CreateConversationResponse {
   id: string;

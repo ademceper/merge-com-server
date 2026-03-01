@@ -1,13 +1,6 @@
 import { Test } from '@nestjs/testing';
-import {
-  FeatureFlagsService,
-  IWebSocketDataDto,
-  PinoLogger,
-  SocketWorkerService,
-  SqsService,
-  WebSocketsQueueService,
-  WorkflowInMemoryProviderService,
-} from 'libs/application-generic';
+import { FeatureFlagsService, PinoLogger, SocketWorkerService, SqsService, WebSocketsQueueService, WorkflowInMemoryProviderService } from 'libs/application-generic';
+import type { IWebSocketDataDto } from 'libs/application-generic';
 import { WebSocketEventEnum } from 'libs/shared';
 import { expect } from 'chai';
 import { setTimeout } from 'timers/promises';

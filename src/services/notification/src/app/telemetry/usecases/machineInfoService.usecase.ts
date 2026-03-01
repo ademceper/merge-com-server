@@ -1,5 +1,6 @@
 import { HttpService } from '@nestjs/axios';
-import { Injectable, OnApplicationBootstrap } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
+import type { OnApplicationBootstrap } from '@nestjs/common';
 import { Cron, CronExpression } from '@nestjs/schedule';
 import { getMachineInfo, loadOrCreateMachineId } from '../utils/machine.utils';
 import { sendDataToNovuTrace } from '../utils/sendDataToNovuTrace.utils';

@@ -1,10 +1,5 @@
-import {
-  PreferencesTypeEnum,
-  Schedule,
-  SubscriberGlobalPreference,
-  WorkflowPreferences,
-  WorkflowPreferencesPartial,
-} from 'libs/shared';
+import { PreferencesTypeEnum } from 'libs/shared';
+import type { Schedule, SubscriberGlobalPreference, WorkflowPreferences, WorkflowPreferencesPartial } from 'libs/shared';
 
 export class GetPreferencesResponseDto {
   preferences: WorkflowPreferences;
@@ -14,9 +9,9 @@ export class GetPreferencesResponseDto {
   type: PreferencesTypeEnum;
 
   source: {
-    [PreferencesTypeEnum.WORKFLOW_RESOURCE]: WorkflowPreferences;
-    [PreferencesTypeEnum.USER_WORKFLOW]: WorkflowPreferences | null;
-    [PreferencesTypeEnum.SUBSCRIBER_GLOBAL]: SubscriberGlobalPreference | null;
-    [PreferencesTypeEnum.SUBSCRIBER_WORKFLOW]: WorkflowPreferencesPartial | null;
+    WORKFLOW_RESOURCE: WorkflowPreferences;
+    USER_WORKFLOW: WorkflowPreferences | null;
+    SUBSCRIBER_GLOBAL: SubscriberGlobalPreference | null;
+    SUBSCRIBER_WORKFLOW: WorkflowPreferencesPartial | null;
   };
 }

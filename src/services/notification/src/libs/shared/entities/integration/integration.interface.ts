@@ -1,6 +1,7 @@
-import { ChannelTypeEnum, EnvironmentId, IPreviousStepFilterPart, OrganizationId } from '../../types';
-import { IConfigurations } from './configuration.interface';
-import { ICredentials } from './credential.interface';
+import { ChannelTypeEnum } from '../../types';
+import type { EnvironmentId, IPreviousStepFilterPart, OrganizationId } from '../../types';
+import type { IConfigurations } from './configuration.interface';
+import type { ICredentials } from './credential.interface';
 
 export interface IIntegration {
   _id: string;

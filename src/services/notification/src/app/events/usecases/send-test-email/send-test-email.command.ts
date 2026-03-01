@@ -1,5 +1,5 @@
 import { EnvironmentWithUserCommand } from 'libs/application-generic';
-import { IEmailBlock } from 'libs/shared';
+import type { IEmailBlock } from 'libs/shared';
 import { IsBoolean, IsDefined, IsOptional, IsString } from 'class-validator';
 
 export class SendTestEmailCommand extends EnvironmentWithUserCommand {

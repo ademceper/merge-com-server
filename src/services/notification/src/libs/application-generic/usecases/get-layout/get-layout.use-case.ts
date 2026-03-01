@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { LayoutEntity, LayoutRepository } from 'libs/dal';
-import { ITemplateVariable } from 'libs/shared';
+import type { ITemplateVariable } from 'libs/shared';
 
 import { GetLayoutCommand } from './get-layout.command';
 import { ControlsMetadataDto, LayoutDto } from './layout.dto';

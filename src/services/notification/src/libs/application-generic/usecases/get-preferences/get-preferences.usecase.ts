@@ -1,14 +1,7 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
 import { PreferencesEntity, PreferencesRepository } from 'libs/dal';
-import {
-  buildWorkflowPreferences,
-  FeatureFlagsKeysEnum,
-  IPreferenceChannels,
-  PreferencesTypeEnum,
-  Schedule,
-  WorkflowPreferences,
-  WorkflowPreferencesPartial,
-} from 'libs/shared';
+import { buildWorkflowPreferences, FeatureFlagsKeysEnum, PreferencesTypeEnum } from 'libs/shared';
+import type { IPreferenceChannels, Schedule, WorkflowPreferences, WorkflowPreferencesPartial } from 'libs/shared';
 import { Instrument, InstrumentUsecase } from '../../instrumentation';
 import { FeatureFlagsService } from '../../services/feature-flags';
 import { InMemoryLRUCacheService, InMemoryLRUCacheStore } from '../../services/in-memory-lru-cache';

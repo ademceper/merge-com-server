@@ -1,6 +1,7 @@
 import { createContextHash, createHash } from 'libs/application-generic';
 import { ContextRepository, IntegrationRepository, SubscriberRepository } from 'libs/dal';
-import { ChannelTypeEnum, ContextPayload, InAppProviderIdEnum, SeverityLevelEnum, StepTypeEnum } from 'libs/shared';
+import { ChannelTypeEnum, InAppProviderIdEnum, SeverityLevelEnum, StepTypeEnum } from 'libs/shared';
+import type { ContextPayload } from 'libs/shared';
 import { UserSession } from '@novu/testing';
 import { expect } from 'chai';
 import { randomBytes } from 'crypto';

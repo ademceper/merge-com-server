@@ -5,7 +5,7 @@ import { actionStepSchemas, channelStepSchemas } from 'libs/framework/internal';
 import { DEFAULT_LOCALE } from 'libs/shared';
 import { JsonSchemaMock } from '../../../util/json-schema-mock';
 import { LOG_CONTEXT } from '../preview.constants';
-import { MockStepResultOptions } from '../preview.types';
+import type { MockStepResultOptions } from '../preview.types';
 
 const DEFAULT_DIGEST_EVENTS_COUNT = 3;
 

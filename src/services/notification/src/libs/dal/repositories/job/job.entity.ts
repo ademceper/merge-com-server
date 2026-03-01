@@ -1,13 +1,6 @@
-import {
-  DeliveryLifecycleDetail,
-  DeliveryLifecycleStatusEnum,
-  ITenantDefine,
-  IWorkflowStepMetadata,
-  JobStatusEnum,
-  StepTypeEnum,
-  TriggerOverrides,
-  WorkflowPreferences,
-} from 'libs/shared';
+import { DeliveryLifecycleDetail, DeliveryLifecycleStatusEnum, JobStatusEnum, StepTypeEnum } from 'libs/shared';
+import type { ITenantDefine, IWorkflowStepMetadata, WorkflowPreferences } from 'libs/shared';
+import type { TriggerOverrides } from 'libs/shared';
 import { Types } from 'mongoose';
 import type { ChangePropsValueType } from '../../types';
 import type { EnvironmentId } from '../environment';

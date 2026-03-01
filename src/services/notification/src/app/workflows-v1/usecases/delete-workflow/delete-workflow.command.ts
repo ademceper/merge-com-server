@@ -1,7 +1,7 @@
 import { EnvironmentWithUserCommand } from 'libs/application-generic';
 import { Exclude } from 'class-transformer';
 import { IsDefined, IsOptional, IsString } from 'class-validator';
-import { ClientSession } from 'mongoose';
+import type { ClientSession } from 'mongoose';
 
 export class DeleteWorkflowCommand extends EnvironmentWithUserCommand {
   @IsString()

@@ -1,5 +1,6 @@
 import { EnvironmentEntity, NotificationTemplateEntity, SubscriberEntity } from 'libs/dal';
-import { PreferenceLevelEnum, Schedule } from 'libs/shared';
+import { PreferenceLevelEnum } from 'libs/shared';
+import type { Schedule } from 'libs/shared';
 import { Type } from 'class-transformer';
 import {
   IsBoolean,
@@ -11,7 +12,7 @@ import {
   ValidateIf,
   ValidateNested,
 } from 'class-validator';
-import { RulesLogic } from 'json-logic-js';
+import type { RulesLogic } from 'json-logic-js';
 import { EnvironmentWithSubscriber } from '../../../shared/commands/project.command';
 
 class AllPreferences {

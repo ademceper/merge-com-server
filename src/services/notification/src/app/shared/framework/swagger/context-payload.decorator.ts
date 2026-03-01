@@ -1,6 +1,6 @@
 import { applyDecorators } from '@nestjs/common';
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { ApiPropertyOptions } from '@nestjs/swagger/dist/decorators/api-property.decorator';
+import type { ApiPropertyOptions } from '@nestjs/swagger/dist/decorators/api-property.decorator';
 
 const CONTEXT_PAYLOAD_SWAGGER_OPTIONS: ApiPropertyOptions = {
   type: 'object',

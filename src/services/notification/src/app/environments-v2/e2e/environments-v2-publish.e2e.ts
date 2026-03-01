@@ -1,5 +1,5 @@
 import { Novu } from 'libs/internal-sdk';
-import { CreateWorkflowDto, WorkflowCreationSourceEnum, WorkflowResponseDto } from 'libs/internal-sdk/models/components';
+import { WorkflowCreationSourceEnum, CreateWorkflowDto, WorkflowResponseDto } from 'libs/internal-sdk/models/components';
 import { EnvironmentRepository, NotificationTemplateRepository } from 'libs/dal';
 import { EmailBlockTypeEnum, ResourceOriginEnum, StepTypeEnum } from 'libs/shared';
 import { UserSession } from '@novu/testing';

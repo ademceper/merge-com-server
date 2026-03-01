@@ -11,17 +11,9 @@ import {
   UseSuspenseQueryResult,
 } from "@tanstack/react-query";
 import { useNovuContext } from "./_context.js";
-import {
-  QueryHookOptions,
-  SuspenseQueryHookOptions,
-  TupleToPrefixes,
-} from "./_types.js";
-import {
-  buildWorkflowsGetQuery,
-  prefetchWorkflowsGet,
-  queryKeyWorkflowsGet,
-  WorkflowsGetQueryData,
-} from "./workflowsGet.core.js";
+import type { QueryHookOptions, SuspenseQueryHookOptions, TupleToPrefixes } from "./_types.js";
+import { buildWorkflowsGetQuery, prefetchWorkflowsGet, queryKeyWorkflowsGet } from "./workflowsGet.core.js";
+import type { WorkflowsGetQueryData } from "./workflowsGet.core.js";
 export {
   buildWorkflowsGetQuery,
   prefetchWorkflowsGet,

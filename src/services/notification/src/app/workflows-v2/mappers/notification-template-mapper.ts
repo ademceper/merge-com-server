@@ -9,15 +9,9 @@ import {
 } from 'libs/shared';
 import { buildSlug } from '../../shared/helpers/build-slug';
 import { WorkflowWithPreferencesResponseDto } from '../../workflows-v1/dtos/get-workflow-with-preferences.dto';
-import {
-  RuntimeIssueDto,
-  StepListResponseDto,
-  StepResponseDto,
-  WorkflowCreateAndUpdateKeys,
-  WorkflowListResponseDto,
-  WorkflowPreferencesResponseDto,
-  WorkflowResponseDto,
-} from '../dtos';
+import { RuntimeIssueDto, WorkflowPreferencesResponseDto } from '../dtos';
+import type { WorkflowCreateAndUpdateKeys } from '../dtos';
+import { StepListResponseDto, StepResponseDto, WorkflowListResponseDto, WorkflowResponseDto } from '../dtos';
 
 export function toResponseWorkflowDto(
   workflow: WorkflowWithPreferencesResponseDto,

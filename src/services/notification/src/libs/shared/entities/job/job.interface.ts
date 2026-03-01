@@ -1,6 +1,7 @@
-import { EnvironmentId, ITenantDefine, OrganizationId, StepTypeEnum } from '../../types';
-import { INotificationTemplateStep } from '../notification-template';
-import { IWorkflowStepMetadata } from '../step';
+import { StepTypeEnum } from '../../types';
+import type { EnvironmentId, ITenantDefine, OrganizationId } from '../../types';
+import type { INotificationTemplateStep } from '../notification-template';
+import type { IWorkflowStepMetadata } from '../step';
 import { JobStatusEnum } from './status.enum';
 
 export interface IJob {

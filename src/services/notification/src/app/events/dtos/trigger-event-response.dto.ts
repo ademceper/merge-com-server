@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IWorkflowDataDto } from 'libs/application-generic';
+import type { IWorkflowDataDto } from 'libs/application-generic';
 import { TriggerEventStatusEnum } from 'libs/shared';
 import { IsBoolean, IsDefined, IsEnum, IsOptional, IsString } from 'class-validator';
 

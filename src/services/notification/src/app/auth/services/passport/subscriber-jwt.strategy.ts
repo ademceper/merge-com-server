@@ -1,6 +1,7 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { PassportStrategy } from '@nestjs/passport';
-import { ApiAuthSchemeEnum, ISubscriberJwt } from 'libs/shared';
+import { ApiAuthSchemeEnum } from 'libs/shared';
+import type { ISubscriberJwt } from 'libs/shared';
 import { ExtractJwt, Strategy } from 'passport-jwt';
 import { SubscriberSession } from '../../../shared/framework/user.decorator';
 import { AuthService } from '../auth.service';

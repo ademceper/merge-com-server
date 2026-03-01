@@ -1,6 +1,7 @@
 // cSpell:ignore RRULE, BYSETPOS, BYMONTHDAY, bysetpos, byweekday, bymonthday, byhour, byminute, bysecond, dtstart
 
-import { DaysEnum, DigestUnitEnum, ITimedConfig, MonthlyTypeEnum, OrdinalEnum, OrdinalValueEnum } from 'libs/shared';
+import { DaysEnum, DigestUnitEnum, MonthlyTypeEnum, OrdinalEnum, OrdinalValueEnum } from 'libs/shared';
+import type { ITimedConfig } from 'libs/shared';
 import { addDays, addHours, addMinutes, addMonths, addWeeks, differenceInMilliseconds } from 'date-fns';
 import { zonedTimeToUtc, utcToZonedTime } from 'date-fns-tz';
 import { Frequency, RRule, Weekday } from 'rrule';

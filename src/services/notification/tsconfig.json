@@ -10,7 +10,7 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strictNullChecks": true,
-    "target": "es6",
+    "target": "es2021",
     "declaration": true,
     "resolveJsonModule": true,
     "moduleResolution": "node",
@@ -19,6 +19,7 @@
   },
   "exclude": [
     "node_modules",
+    "dist",
     "e2e",
     "migrations",
     "src/**/*.spec.ts",

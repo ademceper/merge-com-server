@@ -1,11 +1,12 @@
 import { DirectionEnum, ResourceOriginEnum, ResourceTypeEnum, SeverityLevelEnum } from 'libs/shared';
-import { ClientSession, FilterQuery } from 'mongoose';
-import { SoftDeleteModel } from 'mongoose-delete';
+import type { ClientSession, FilterQuery } from 'mongoose';
+import type { SoftDeleteModel } from 'mongoose-delete';
 import { DalException } from '../../shared';
 import type { EnforceEnvOrOrgIds } from '../../types/enforce';
 import { BaseRepository } from '../base-repository';
 import { EnvironmentRepository } from '../environment';
-import { NotificationTemplateDBModel, NotificationTemplateEntity } from './notification-template.entity';
+import { NotificationTemplateEntity } from './notification-template.entity';
+import type { NotificationTemplateDBModel } from './notification-template.entity';
 import { NotificationTemplate } from './notification-template.schema';
 
 type NotificationTemplateQuery = FilterQuery<NotificationTemplateDBModel> & EnforceEnvOrOrgIds;

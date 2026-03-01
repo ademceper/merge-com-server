@@ -1,8 +1,9 @@
 import { SeverityLevelEnum } from '../../consts';
-import { ChannelTypeEnum, ISubscriber } from '../../types';
-import { IExecutionDetail } from '../execution-details';
-import { IJob as IJobBase } from '../job';
-import { INotificationTemplate } from '../notification-template';
+import { ChannelTypeEnum } from '../../types';
+import type { ISubscriber } from '../../types';
+import type { IExecutionDetail } from '../execution-details';
+import type { IJob as IJobBase } from '../job';
+import type { INotificationTemplate } from '../notification-template';
 
 export interface IActivityJob extends IJobBase {
   executionDetails: IExecutionDetail[];

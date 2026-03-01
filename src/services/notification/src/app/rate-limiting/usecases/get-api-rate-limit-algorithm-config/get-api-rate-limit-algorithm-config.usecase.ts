@@ -1,10 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import {
-  ApiRateLimitAlgorithmEnum,
-  ApiRateLimitAlgorithmEnvVarFormat,
-  DEFAULT_API_RATE_LIMIT_ALGORITHM_CONFIG,
-  IApiRateLimitAlgorithm,
-} from 'libs/shared';
+import { ApiRateLimitAlgorithmEnum, DEFAULT_API_RATE_LIMIT_ALGORITHM_CONFIG, IApiRateLimitAlgorithm } from 'libs/shared';
+import type { ApiRateLimitAlgorithmEnvVarFormat } from 'libs/shared';
 
 @Injectable()
 export class GetApiRateLimitAlgorithmConfig {

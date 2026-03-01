@@ -11,13 +11,7 @@ import {
   UpsertControlValuesUseCase,
 } from 'libs/application-generic';
 import { ControlValuesRepository, LayoutRepository, LocalizationResourceEnum } from 'libs/dal';
-import {
-  ControlValuesLevelEnum,
-  LayoutControlValuesDto,
-  ResourceOriginEnum,
-  ResourceTypeEnum,
-  slugify,
-} from 'libs/shared';
+import { ControlValuesLevelEnum, ResourceOriginEnum, ResourceTypeEnum, slugify, LayoutControlValuesDto } from 'libs/shared';
 import { LayoutDto } from '../../../layouts-v1/dtos';
 import {
   CreateLayoutCommand,

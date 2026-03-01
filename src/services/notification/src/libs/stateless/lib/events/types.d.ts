@@ -1,8 +1,5 @@
-import {
-  ChannelTypeEnum,
-  IMessage,
-  ITriggerPayload,
-} from '../template/template.interface';
+import { ChannelTypeEnum } from '../template/template.interface';
+import type { IMessage, ITriggerPayload } from '../template/template.interface';
 
 export interface IPreSendEvent {
   id: string;

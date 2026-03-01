@@ -8,27 +8,17 @@ import {
   TierRestrictionsValidateUsecase,
 } from 'libs/application-generic';
 import { ControlValuesRepository } from 'libs/dal';
-import {
-  ContentIssueEnum,
-  ControlValuesLevelEnum,
-  ResourceOriginEnum,
-  RuntimeIssue,
-  StepIssuesDto,
-  StepTypeEnum,
-  UserSessionData,
-} from 'libs/shared';
+import { ContentIssueEnum, ControlValuesLevelEnum, ResourceOriginEnum, RuntimeIssue, StepIssuesDto, StepTypeEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { isEmpty, merge } from 'es-toolkit/compat';
-import { AdditionalOperation, RulesLogic } from 'json-logic-js';
+import type { AdditionalOperation, RulesLogic } from 'json-logic-js';
 import { JSONSchemaDto } from '../../../shared/dtos/json-schema.dto';
 import {
   QueryIssueTypeEnum,
   QueryValidatorService,
 } from '../../../shared/services/query-parser/query-validator.service';
-import {
-  ControlIssues,
-  processControlValuesByLiquid,
-  processControlValuesBySchema,
-} from '../../../shared/utils/issues';
+import { processControlValuesByLiquid, processControlValuesBySchema } from '../../../shared/utils/issues';
+import type { ControlIssues } from '../../../shared/utils/issues';
 import { parseStepVariables } from '../../util/parse-step-variables';
 import { BuildVariableSchemaCommand, BuildVariableSchemaUsecase } from '../build-variable-schema';
 import { BuildStepIssuesCommand } from './build-step-issues.command';

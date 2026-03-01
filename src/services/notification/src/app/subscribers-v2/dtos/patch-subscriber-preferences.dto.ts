@@ -1,7 +1,7 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { IsValidContextPayload, parseSlugId } from 'libs/application-generic';
-import { ContextPayload, IPreferenceChannels } from 'libs/shared';
-import { Transform, Type } from 'class-transformer';
+import type { ContextPayload, IPreferenceChannels } from 'libs/shared';
+import { Type, Transform } from 'class-transformer';
 import { IsOptional, ValidateNested } from 'class-validator';
 import { ScheduleDto } from '../../shared/dtos/schedule';
 import { ApiContextPayload } from '../../shared/framework/swagger';
@@ -24,7 +24,7 @@ export class PatchPreferenceChannelsDto implements IPreferenceChannels {
 }
 
 export class PatchSubscriberPreferencesDto {
-  @ApiPropertyOptional({ description: 'Channel-specific preference settings', type: PatchPreferenceChannelsDto })
+  @ApiPropertyOptional({ description: 'Channel-specific preference settings', type: () => PatchPreferenceChannelsDto })
   @Type(() => PatchPreferenceChannelsDto)
   channels?: PatchPreferenceChannelsDto;
 
@@ -37,7 +37,7 @@ export class PatchSubscriberPreferencesDto {
   @Transform(({ value }) => parseSlugId(value))
   workflowId?: string;
 
-  @ApiPropertyOptional({ description: 'Subscriber schedule', type: ScheduleDto })
+  @ApiPropertyOptional({ description: 'Subscriber schedule', type: () => ScheduleDto })
   @IsOptional()
   @ValidateNested()
   @Type(() => ScheduleDto)

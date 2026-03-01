@@ -9,7 +9,7 @@ import {
 import { ResourceOriginEnum, ResourceTypeEnum } from 'libs/shared';
 import { WorkflowDataContainer } from '../../../shared/containers/workflow-data.container';
 import { DependencyAnalyzerService, EnvironmentValidationService } from '../../services';
-import { IDiffResult, IEnvironmentDiffResult } from '../../types/sync.types';
+import type { IDiffResult, IEnvironmentDiffResult } from '../../types/sync.types';
 import { LayoutSyncStrategy } from '../sync-strategies/layout-sync.strategy';
 import { WorkflowSyncStrategy } from '../sync-strategies/workflow-sync.strategy';
 import { DiffEnvironmentCommand } from './diff-environment.command';

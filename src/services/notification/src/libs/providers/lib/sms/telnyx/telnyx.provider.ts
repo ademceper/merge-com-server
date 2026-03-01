@@ -1,17 +1,11 @@
 import { SmsProviderIdEnum } from 'libs/shared';
-import {
-  ChannelTypeEnum,
-  ISendMessageSuccessResponse,
-  ISMSEventBody,
-  ISmsOptions,
-  ISmsProvider,
-  SmsEventStatusEnum,
-} from 'libs/stateless';
+import { ChannelTypeEnum, SmsEventStatusEnum } from 'libs/stateless';
+import type { ISendMessageSuccessResponse, ISMSEventBody, ISmsOptions, ISmsProvider } from 'libs/stateless';
 
 import Telnyx from 'telnyx';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
-import { WithPassthrough } from '../../../utils/types';
-import { ITelnyxCLient } from './telnyx.interface';
+import type { WithPassthrough } from '../../../utils/types';
+import type { ITelnyxCLient } from './telnyx.interface';
 
 export class TelnyxSmsProvider extends BaseProvider implements ISmsProvider {
   id = SmsProviderIdEnum.Telnyx;

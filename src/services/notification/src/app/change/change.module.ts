@@ -1,12 +1,5 @@
-import {
-  DynamicModule,
-  ForwardReference,
-  forwardRef,
-  MiddlewareConsumer,
-  Module,
-  NestModule,
-  Type,
-} from '@nestjs/common';
+import { forwardRef, Module } from '@nestjs/common';
+import type { DynamicModule, ForwardReference, MiddlewareConsumer, NestModule, Type } from '@nestjs/common';
 import { AuthModule } from '../auth/auth.module';
 import { SharedModule } from '../shared/shared.module';
 import { ChangesController } from './changes.controller';

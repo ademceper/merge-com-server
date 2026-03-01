@@ -1,8 +1,9 @@
-import { IWorkflowOverride } from 'libs/shared';
-import { SoftDeleteModel } from 'mongoose-delete';
-import { EnforceEnvId } from '../../types';
+import type { IWorkflowOverride } from 'libs/shared';
+import type { SoftDeleteModel } from 'mongoose-delete';
+import type { EnforceEnvId } from '../../types';
 import { BaseRepository } from '../base-repository';
-import { WorkflowOverrideDBModel, WorkflowOverrideEntity } from './workflow-override.entity';
+import { WorkflowOverrideEntity } from './workflow-override.entity';
+import type { WorkflowOverrideDBModel } from './workflow-override.entity';
 import { WorkflowOverride } from './workflow-override.schema';
 
 export class WorkflowOverrideRepository extends BaseRepository<

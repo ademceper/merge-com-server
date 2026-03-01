@@ -1,4 +1,5 @@
-import { LayoutId, ResourceOriginEnum, ResourceTypeEnum } from 'libs/shared';
+import { ResourceOriginEnum, ResourceTypeEnum } from 'libs/shared';
+import type { LayoutId } from 'libs/shared';
 import { IsEnum, IsOptional, IsString } from 'class-validator';
 
 import { EnvironmentCommand } from '../../commands/project.command';

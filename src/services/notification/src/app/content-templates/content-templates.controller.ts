@@ -10,7 +10,8 @@ import {
   CompileStepTemplateCommand,
   PinoLogger,
 } from 'libs/application-generic';
-import { IEmailBlock, IMessageCTA, MessageTemplateContentType, UserSessionData } from 'libs/shared';
+import type { MessageTemplateContentType } from 'libs/shared';
+import type { IEmailBlock, IMessageCTA, UserSessionData } from 'libs/shared';
 import { format } from 'date-fns';
 import i18next from 'i18next';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';

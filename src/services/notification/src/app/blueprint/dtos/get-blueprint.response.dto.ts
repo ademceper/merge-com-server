@@ -1,4 +1,5 @@
-import { INotificationGroup, INotificationTrigger, IPreferenceChannels, NotificationStepDto } from 'libs/shared';
+import { NotificationStepDto } from 'libs/shared';
+import type { INotificationGroup, INotificationTrigger, IPreferenceChannels } from 'libs/shared';
 
 export class GetBlueprintResponse {
   _id: string;

@@ -1,7 +1,8 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InstrumentUsecase } from 'libs/application-generic';
 import { SubscriberRepository, TopicSubscribersEntity, TopicSubscribersRepository } from 'libs/dal';
-import { DirectionEnum, EnvironmentId } from 'libs/shared';
+import { DirectionEnum } from 'libs/shared';
+import type { EnvironmentId } from 'libs/shared';
 import { ListTopicSubscriptionsResponseDto } from '../../dtos/list-topic-subscriptions-response.dto';
 import { TopicSubscriptionResponseDto } from '../../dtos/topic-subscription-response.dto';
 import { mapTopicSubscriptionsToDto } from '../list-topics/map-topic-entity-to.dto';

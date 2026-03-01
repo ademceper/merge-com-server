@@ -1,9 +1,10 @@
-import { LogRepository, RequestLog } from 'libs/application-generic';
-import { UserSessionData } from 'libs/shared';
+import { LogRepository } from 'libs/application-generic';
+import type { RequestLog } from 'libs/application-generic';
+import type { UserSessionData } from 'libs/shared';
 import { getClientIp } from 'request-ip';
 import { sanitizePayload } from '../../../utils/payload-sanitizer';
 import { generateTransactionId } from '../helpers/generate-transaction-id';
-import { RequestWithReqId } from '../middleware/request-id.middleware';
+import type { RequestWithReqId } from '../middleware/request-id.middleware';
 import { getRequestId } from './request-transaction.util';
 
 function extractTransactionIdFromBody(body: unknown): string | undefined {

@@ -4,23 +4,16 @@ import {
   GetNovuProviderCredentials,
   GetNovuProviderCredentialsCommand,
 } from 'libs/application-generic';
-import {
-  ChannelTypeEnum,
-  EnvironmentRepository,
-  ICredentialsEntity,
-  IntegrationEntity,
-  IntegrationRepository,
-} from 'libs/dal';
+import { ChannelTypeEnum, EnvironmentRepository, IntegrationEntity, IntegrationRepository } from 'libs/dal';
+import type { ICredentialsEntity } from 'libs/dal';
 import { ChatProviderIdEnum, ENDPOINT_TYPES } from 'libs/shared';
 import axios from 'axios';
 import { CreateChannelConnectionCommand } from '../../../../channel-connections/usecases/create-channel-connection/create-channel-connection.command';
 import { CreateChannelConnection } from '../../../../channel-connections/usecases/create-channel-connection/create-channel-connection.usecase';
 import { CreateChannelEndpointCommand } from '../../../../channel-endpoints/usecases/create-channel-endpoint/create-channel-endpoint.command';
 import { CreateChannelEndpoint } from '../../../../channel-endpoints/usecases/create-channel-endpoint/create-channel-endpoint.usecase';
-import {
-  GenerateSlackOauthUrl,
-  StateData,
-} from '../../generate-chat-oath-url/generate-slack-oath-url/generate-slack-oauth-url.usecase';
+import { GenerateSlackOauthUrl } from '../../generate-chat-oath-url/generate-slack-oath-url/generate-slack-oauth-url.usecase';
+import type { StateData } from '../../generate-chat-oath-url/generate-slack-oath-url/generate-slack-oauth-url.usecase';
 import { ChatOauthCallbackResult, ResponseTypeEnum } from '../chat-oauth-callback.response';
 import { SlackOauthCallbackCommand } from './slack-oauth-callback.command';
 

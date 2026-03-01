@@ -1,5 +1,5 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { CustomDataType } from 'libs/shared';
+import type { CustomDataType } from 'libs/shared';
 import { IsString } from 'class-validator';
 
 export class UpdateTenantResponseDto {

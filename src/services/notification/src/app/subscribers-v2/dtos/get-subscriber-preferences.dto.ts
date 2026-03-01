@@ -4,11 +4,11 @@ import { SubscriberGlobalPreferenceDto } from './subscriber-global-preference.dt
 import { SubscriberWorkflowPreferenceDto } from './subscriber-workflow-preference.dto';
 
 export class GetSubscriberPreferencesDto {
-  @ApiProperty({ description: 'Global preference settings', type: SubscriberGlobalPreferenceDto })
+  @ApiProperty({ description: 'Global preference settings', type: () => SubscriberGlobalPreferenceDto })
   @Type(() => SubscriberGlobalPreferenceDto)
   global: SubscriberGlobalPreferenceDto;
 
-  @ApiProperty({ description: 'Workflow-specific preference settings', type: [SubscriberWorkflowPreferenceDto] })
+  @ApiProperty({ description: 'Workflow-specific preference settings', type: () => [SubscriberWorkflowPreferenceDto] })
   @Type(() => SubscriberWorkflowPreferenceDto)
   workflows: SubscriberWorkflowPreferenceDto[];
 }

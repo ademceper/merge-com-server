@@ -1,5 +1,6 @@
 import { CreateExecutionDetails, DetailEnum } from 'libs/application-generic';
-import { DeliveryLifecycleState, JobEntity, MessageEntity, MessageRepository } from 'libs/dal';
+import { JobEntity, MessageEntity, MessageRepository } from 'libs/dal';
+import type { DeliveryLifecycleState } from 'libs/dal';
 import { SendMessageChannelCommand } from './send-message-channel.command';
 
 export enum SendMessageStatus {

@@ -8,7 +8,7 @@ import {
   VERSION_NEUTRAL,
 } from '@nestjs/common';
 
-import { IWebhookResult } from './dtos/webhooks-response.dto';
+import type { IWebhookResult } from './dtos/webhooks-response.dto';
 import { WebhookCommand } from './usecases/webhook/webhook.command';
 import { Webhook } from './usecases/webhook/webhook.usecase';
 

@@ -1,5 +1,5 @@
 import { ChatProviderIdEnum, PushProviderIdEnum } from './providers';
-import { CustomDataType } from './utils';
+import type { CustomDataType } from './utils';
 
 export interface ISubscriber {
   _id?: string;

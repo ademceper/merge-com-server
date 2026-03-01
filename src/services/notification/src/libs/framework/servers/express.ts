@@ -1,7 +1,9 @@
-import { type Request, type Response } from 'express';
+import type { Request, Response } from 'express';
 
-import { NovuRequestHandler, ServeHandlerOptions } from '../handler';
-import { Either, type SupportedFrameworkName } from '../types';
+import { NovuRequestHandler } from '../handler';
+import type { ServeHandlerOptions } from '../handler';
+import { type SupportedFrameworkName } from '../types';
+import type { Either } from '../types';
 
 type VercelRequest = any;
 type VercelResponse = any;

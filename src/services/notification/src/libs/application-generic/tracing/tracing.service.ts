@@ -1,4 +1,5 @@
-import { Inject, Injectable, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
+import type { OnModuleDestroy, OnModuleInit } from '@nestjs/common';
 import { NodeSDK } from '@opentelemetry/sdk-node';
 import { initializeOtelSdk } from './tracing';
 

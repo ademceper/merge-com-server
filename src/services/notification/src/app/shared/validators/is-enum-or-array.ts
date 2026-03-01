@@ -1,4 +1,5 @@
-import { registerDecorator, ValidationArguments, ValidationOptions } from 'class-validator';
+import { registerDecorator } from 'class-validator';
+import type { ValidationArguments, ValidationOptions } from 'class-validator';
 
 export function IsEnumOrArray(enumObj: object, options?: ValidationOptions) {
   return (object: unknown, propertyName: string) => {

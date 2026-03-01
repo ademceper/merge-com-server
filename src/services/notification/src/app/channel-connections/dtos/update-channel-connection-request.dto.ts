@@ -4,13 +4,13 @@ import { IsDefined, ValidateNested } from 'class-validator';
 import { AuthDto, WorkspaceDto } from './shared.dto';
 
 export class UpdateChannelConnectionRequestDto {
-  @ApiProperty({ type: WorkspaceDto })
+  @ApiProperty({ type: () => WorkspaceDto })
   @IsDefined()
   @ValidateNested()
   @Type(() => WorkspaceDto)
   workspace: WorkspaceDto;
 
-  @ApiProperty({ type: AuthDto })
+  @ApiProperty({ type: () => AuthDto })
   @IsDefined()
   @ValidateNested()
   @Type(() => AuthDto)

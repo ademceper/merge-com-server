@@ -1,4 +1,4 @@
-import { InsertOptions } from './clickhouse.service';
+import type { InsertOptions } from './clickhouse.service';
 
 /*
  * Default:

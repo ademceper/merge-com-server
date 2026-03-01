@@ -12,7 +12,8 @@ import {
   NotificationStepEntity,
   NotificationTemplateEntity,
 } from 'libs/dal';
-import { ControlValuesLevelEnum, StepTypeEnum, UserSessionData } from 'libs/shared';
+import { ControlValuesLevelEnum, StepTypeEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { JSONSchemaDto } from '../../../shared/dtos/json-schema.dto';
 import { CreateVariablesObjectCommand } from '../../../shared/usecases/create-variables-object/create-variables-object.command';
 import { CreateVariablesObject } from '../../../shared/usecases/create-variables-object/create-variables-object.usecase';

@@ -1,7 +1,7 @@
 import { fail } from 'assert';
 
 import nodemailer from 'nodemailer';
-import { ConnectionOptions } from 'tls';
+import type { ConnectionOptions } from 'tls';
 import { afterEach, describe, expect, test, vi } from 'vitest';
 import { NodemailerProvider } from './nodemailer.provider';
 

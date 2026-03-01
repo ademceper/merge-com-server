@@ -1,5 +1,5 @@
 import { SubscriberEntity } from 'libs/dal';
-import { ISubscriberChannel, SubscriberCustomData } from 'libs/shared';
+import type { ISubscriberChannel, SubscriberCustomData } from 'libs/shared';
 import { Transform } from 'class-transformer';
 import {
   IsDefined,

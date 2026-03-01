@@ -12,17 +12,9 @@ import {
 } from "@tanstack/react-query";
 import * as operations from "../models/operations/index.js";
 import { useNovuContext } from "./_context.js";
-import {
-  QueryHookOptions,
-  SuspenseQueryHookOptions,
-  TupleToPrefixes,
-} from "./_types.js";
-import {
-  buildTopicsListQuery,
-  prefetchTopicsList,
-  queryKeyTopicsList,
-  TopicsListQueryData,
-} from "./topicsList.core.js";
+import type { QueryHookOptions, SuspenseQueryHookOptions, TupleToPrefixes } from "./_types.js";
+import { buildTopicsListQuery, prefetchTopicsList, queryKeyTopicsList } from "./topicsList.core.js";
+import type { TopicsListQueryData } from "./topicsList.core.js";
 export {
   buildTopicsListQuery,
   prefetchTopicsList,

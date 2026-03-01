@@ -1,14 +1,10 @@
-import { EnvironmentWithUserCommand, SubscriberTopicPreference } from 'libs/application-generic';
+import { EnvironmentWithUserCommand } from 'libs/application-generic';
+import type { SubscriberTopicPreference } from 'libs/application-generic';
 import { SubscriberEntity } from 'libs/dal';
-import { DiscoverWorkflowOutput } from 'libs/framework/internal';
-import {
-  ISubscribersDefine,
-  ITenantDefine,
-  StatelessControls,
-  SubscriberSourceEnum,
-  TriggerOverrides,
-  TriggerRequestCategoryEnum,
-} from 'libs/shared';
+import type { DiscoverWorkflowOutput } from 'libs/framework/internal';
+import { StatelessControls, SubscriberSourceEnum, TriggerRequestCategoryEnum } from 'libs/shared';
+import type { ISubscribersDefine, ITenantDefine } from 'libs/shared';
+import type { TriggerOverrides } from 'libs/shared';
 import { IsArray, IsDefined, IsEnum, IsMongoId, IsOptional, IsString, ValidateNested } from 'class-validator';
 
 export class SubscriberJobBoundCommand extends EnvironmentWithUserCommand {

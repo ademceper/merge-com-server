@@ -1,11 +1,14 @@
-import { BeforeApplicationShutdown, Injectable, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
+import type { BeforeApplicationShutdown, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
 import { ObservabilityBackgroundTransactionEnum } from 'libs/shared';
 import { PinoLogger } from 'nestjs-pino';
 import PQueue from 'p-queue';
 import { QueueBaseService } from '../queues';
-import { ClickHouseService, InsertOptions } from './clickhouse.service';
+import { ClickHouseService } from './clickhouse.service';
+import type { InsertOptions } from './clickhouse.service';
 
-const nr = require('newrelic');
+let nr: any = null;
+try { nr = require('newrelic'); } catch {}
 
 type Row = Record<string, unknown>;
 

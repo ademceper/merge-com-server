@@ -1,2 +1,2 @@
-export * from './auth.service.interface';
+export type * from './auth.service.interface';
 export * from './shared';

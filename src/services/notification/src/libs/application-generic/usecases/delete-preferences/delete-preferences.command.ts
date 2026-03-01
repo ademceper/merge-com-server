@@ -1,4 +1,4 @@
-import { ClientSession } from 'libs/dal';
+import type { ClientSession } from 'libs/dal';
 import { PreferencesTypeEnum } from 'libs/shared';
 import { Exclude } from 'class-transformer';
 import { IsEnum, IsMongoId, IsNotEmpty, IsOptional } from 'class-validator';

@@ -6,7 +6,8 @@ import {
   areNovuSmsCredentialsSet,
   encryptCredentials,
 } from 'libs/application-generic';
-import { DalException, IntegrationEntity, IntegrationQuery, IntegrationRepository } from 'libs/dal';
+import { DalException, IntegrationEntity, IntegrationRepository } from 'libs/dal';
+import type { IntegrationQuery } from 'libs/dal';
 import {
   CHANNELS_WITH_PRIMARY,
   ChannelTypeEnum,

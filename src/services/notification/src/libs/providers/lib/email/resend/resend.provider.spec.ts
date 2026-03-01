@@ -1,4 +1,4 @@
-import { IEmailOptions } from 'libs/stateless';
+import type { IEmailOptions } from 'libs/stateless';
 import { expect, test, vi } from 'vitest';
 import { ResendEmailProvider } from './resend.provider';
 

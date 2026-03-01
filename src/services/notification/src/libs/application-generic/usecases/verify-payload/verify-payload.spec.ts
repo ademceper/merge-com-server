@@ -1,6 +1,7 @@
 import { BadRequestException } from '@nestjs/common';
 import { NotificationTemplateEntity } from 'libs/dal';
-import { ITemplateVariable, TemplateVariableTypeEnum } from 'libs/shared';
+import { TemplateVariableTypeEnum } from 'libs/shared';
+import type { ITemplateVariable } from 'libs/shared';
 import { expect } from 'chai';
 import { merge } from 'lodash';
 import { VerifyPayloadCommand } from './verify-payload.command';

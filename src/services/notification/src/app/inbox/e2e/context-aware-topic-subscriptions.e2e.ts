@@ -1,6 +1,7 @@
 import { buildDefaultSubscriptionIdentifier } from 'libs/application-generic';
 import { IntegrationRepository, PreferencesRepository, TopicSubscribersRepository } from 'libs/dal';
-import { ChannelTypeEnum, ContextPayload, InAppProviderIdEnum, StepTypeEnum } from 'libs/shared';
+import { ChannelTypeEnum, InAppProviderIdEnum, StepTypeEnum } from 'libs/shared';
+import type { ContextPayload } from 'libs/shared';
 import { UserSession } from '@novu/testing';
 import { expect } from 'chai';
 import { CreateTopicSubscriptionRequestDto } from '../dtos/create-topic-subscription-request.dto';

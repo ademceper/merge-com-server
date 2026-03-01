@@ -1,12 +1,5 @@
 import { Novu } from 'libs/internal-sdk';
-import {
-  CreateWorkflowDto,
-  DirectionEnum,
-  WorkflowCreationSourceEnum,
-  WorkflowResponseDto,
-  WorkflowResponseDtoSortField,
-  WorkflowStatusEnum,
-} from 'libs/internal-sdk/models/components';
+import { DirectionEnum, WorkflowCreationSourceEnum, WorkflowResponseDtoSortField, WorkflowStatusEnum, CreateWorkflowDto, WorkflowResponseDto } from 'libs/internal-sdk/models/components';
 import { UserSession } from '@novu/testing';
 import { expect } from 'chai';
 import { initNovuClassSdkInternalAuth } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';

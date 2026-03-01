@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { LayoutEntity } from 'libs/dal';
-import { IBaseRepositoryService } from '../base/interfaces/base-repository.interface';
+import type { IBaseRepositoryService } from '../base/interfaces/base-repository.interface';
 import { LayoutRepositoryService } from '../operations/layout-repository.service';
 
 @Injectable()

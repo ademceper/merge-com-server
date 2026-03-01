@@ -1,5 +1,5 @@
-import { IWorkflowStepMetadata } from '../../entities/step';
-import { BuilderFieldType, BuilderGroupValues, FilterParts } from '../../types';
+import type { IWorkflowStepMetadata } from '../../entities/step';
+import type { BuilderFieldType, BuilderGroupValues, FilterParts } from '../../types';
 import { MessageTemplateDto } from '../message-template';
 
 /**

@@ -1,10 +1,12 @@
 import { Logger } from '@nestjs/common';
-import Redis, { Cluster, ClusterNode, ClusterOptions, NodeRole } from 'ioredis';
-import { ConnectionOptions } from 'tls';
+import Redis, { Cluster } from 'ioredis';
+import type { ClusterNode, ClusterOptions, NodeRole } from 'ioredis';
+import type { ConnectionOptions } from 'tls';
 
 import { convertStringValues } from './variable-mappers';
 
-export { Cluster, ClusterOptions };
+export { Cluster };
+export type { ClusterOptions };
 
 export const CLIENT_READY = 'ready';
 const DEFAULT_TTL_SECONDS = 60 * 60 * 2;

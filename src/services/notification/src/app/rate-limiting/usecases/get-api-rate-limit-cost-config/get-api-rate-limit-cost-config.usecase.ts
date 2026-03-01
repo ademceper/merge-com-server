@@ -1,10 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import {
-  ApiRateLimitCostEnum,
-  ApiRateLimitCostEnvVarFormat,
-  DEFAULT_API_RATE_LIMIT_COST_CONFIG,
-  IApiRateLimitCost,
-} from 'libs/shared';
+import { ApiRateLimitCostEnum, DEFAULT_API_RATE_LIMIT_COST_CONFIG } from 'libs/shared';
+import type { ApiRateLimitCostEnvVarFormat, IApiRateLimitCost } from 'libs/shared';
 
 @Injectable()
 export class GetApiRateLimitCostConfig {

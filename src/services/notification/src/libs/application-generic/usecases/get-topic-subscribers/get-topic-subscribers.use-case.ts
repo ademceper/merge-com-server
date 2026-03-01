@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { TopicRepository, TopicSubscribersEntity, TopicSubscribersRepository } from 'libs/dal';
 
-import { ITopicSubscriber } from 'libs/shared';
+import type { ITopicSubscriber } from 'libs/shared';
 import { GetTopicSubscribersCommand } from './get-topic-subscribers.command';
 
 @Injectable()

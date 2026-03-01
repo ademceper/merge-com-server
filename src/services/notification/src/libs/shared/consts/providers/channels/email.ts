@@ -26,7 +26,7 @@ import {
   sesConfig,
   sparkpostConfig,
 } from '../credentials';
-import { IProviderConfig } from '../provider.interface';
+import type { IProviderConfig } from '../provider.interface';
 
 export const emailProviders: IProviderConfig[] = [
   {

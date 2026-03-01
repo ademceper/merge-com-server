@@ -7,7 +7,8 @@ import { topicsSubscriptionsDelete } from '../funcs/topicsSubscriptionsDelete.js
 import { topicsSubscriptionsGetSubscription } from '../funcs/topicsSubscriptionsGetSubscription.js';
 import { topicsSubscriptionsList } from '../funcs/topicsSubscriptionsList.js';
 import { topicsSubscriptionsUpdate } from '../funcs/topicsSubscriptionsUpdate.js';
-import { ClientSDK, RequestOptions } from '../lib/sdks.js';
+import { ClientSDK } from '../lib/sdks.js';
+import type { RequestOptions } from '../lib/sdks.js';
 import * as components from '../models/components/index.js';
 import * as operations from '../models/operations/index.js';
 import { unwrapAsync } from '../types/fp.js';

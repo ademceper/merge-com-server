@@ -1,20 +1,10 @@
-import {
-  CallHandler,
-  ExecutionContext,
-  HttpException,
-  Injectable,
-  NestInterceptor,
-  UnauthorizedException,
-} from '@nestjs/common';
+import { HttpException, Injectable, UnauthorizedException } from '@nestjs/common';
+import type { CallHandler, ExecutionContext, NestInterceptor } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { ProductFeature } from 'libs/application-generic';
 import { CommunityOrganizationRepository } from 'libs/dal';
-import {
-  ApiServiceLevelEnum,
-  ProductFeatureKeyEnum,
-  productFeatureEnabledForServiceLevel,
-  UserSessionData,
-} from 'libs/shared';
+import { ApiServiceLevelEnum, ProductFeatureKeyEnum, productFeatureEnabledForServiceLevel } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { Observable } from 'rxjs';
 
 @Injectable()

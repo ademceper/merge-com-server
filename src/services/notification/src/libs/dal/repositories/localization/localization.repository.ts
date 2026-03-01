@@ -1,6 +1,7 @@
 import type { EnforceEnvOrOrgIds } from '../../types/enforce';
 import { BaseRepository } from '../base-repository';
-import { LocalizationDBModel, LocalizationEntity } from './localization.entity';
+import { LocalizationEntity } from './localization.entity';
+import type { LocalizationDBModel } from './localization.entity';
 import { Localization } from './localization.schema';
 
 export class LocalizationRepository extends BaseRepository<

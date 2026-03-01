@@ -3,12 +3,8 @@ import { PinoLogger } from 'nestjs-pino';
 import { FeatureFlagsService } from '../../feature-flags/feature-flags.service';
 import { ClickHouseService } from '../clickhouse.service';
 import { LogRepository } from '../log.repository';
-import {
-  WORKFLOW_RUN_COUNT_ORDER_BY,
-  WORKFLOW_RUN_COUNT_TABLE_NAME,
-  WorkflowRunCount,
-  workflowRunCountSchema,
-} from './workflow-run-count.schema';
+import { WORKFLOW_RUN_COUNT_ORDER_BY, WORKFLOW_RUN_COUNT_TABLE_NAME, workflowRunCountSchema } from './workflow-run-count.schema';
+import type { WorkflowRunCount } from './workflow-run-count.schema';
 
 @Injectable()
 export class WorkflowRunCountRepository extends LogRepository<typeof workflowRunCountSchema, WorkflowRunCount> {

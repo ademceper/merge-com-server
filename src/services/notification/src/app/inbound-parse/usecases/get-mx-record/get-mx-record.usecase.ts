@@ -1,4 +1,5 @@
-import { type MxRecord, promises } from 'node:dns';
+import { promises } from 'node:dns';
+import type { MxRecord } from 'node:dns';
 import { BadRequestException, Injectable, Scope } from '@nestjs/common';
 import { EnvironmentEntity, EnvironmentRepository } from 'libs/dal';
 import { GetMxRecordResponseDto } from '../../dtos/get-mx-record.dto';

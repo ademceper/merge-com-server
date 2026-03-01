@@ -7,13 +7,8 @@ import {
   NotificationStepEntity,
   NotificationTemplateEntity,
 } from 'libs/dal';
-import {
-  ChannelTypeEnum,
-  IntegrationIssueEnum,
-  STEP_TYPE_TO_CHANNEL_TYPE,
-  StepTypeEnum,
-  UserSessionData,
-} from 'libs/shared';
+import { ChannelTypeEnum, IntegrationIssueEnum, STEP_TYPE_TO_CHANNEL_TYPE, StepTypeEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { merge } from 'es-toolkit/compat';
 import { WorkflowDataContainer } from '../../../shared/containers/workflow-data.container';
 import { GetWorkflowWithPreferencesCommand } from '../../../workflows-v1/usecases/get-workflow-with-preferences/get-workflow-with-preferences.command';

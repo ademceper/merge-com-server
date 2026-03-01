@@ -19,34 +19,16 @@ import {
   RequirePermissions,
   UserSession,
 } from 'libs/application-generic';
-import {
-  ApiRateLimitCategoryEnum,
-  DirectionEnum,
-  PermissionsEnum,
-  ResourceOriginEnum,
-  UserSessionData,
-} from 'libs/shared';
+import { ApiRateLimitCategoryEnum, DirectionEnum, PermissionsEnum, ResourceOriginEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ThrottlerCategory } from '../rate-limiting/guards/throttler.decorator';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';
 import { SdkGroupName, SdkMethodName } from '../shared/framework/swagger/sdk.decorators';
 import { DeleteWorkflowCommand } from '../workflows-v1/usecases/delete-workflow/delete-workflow.command';
 import { DeleteWorkflowUseCase } from '../workflows-v1/usecases/delete-workflow/delete-workflow.usecase';
-import {
-  CreateWorkflowDto,
-  DuplicateWorkflowDto,
-  GeneratePreviewRequestDto,
-  GeneratePreviewResponseDto,
-  GetListQueryParamsDto,
-  ListWorkflowResponse,
-  PatchWorkflowDto,
-  StepResponseDto,
-  StepUpsertDto,
-  SyncWorkflowDto,
-  UpdateWorkflowDto,
-  WorkflowResponseDto,
-  WorkflowTestDataResponseDto,
-} from './dtos';
+import { GeneratePreviewRequestDto, GeneratePreviewResponseDto, GetListQueryParamsDto, CreateWorkflowDto, DuplicateWorkflowDto, ListWorkflowResponse, PatchWorkflowDto, StepResponseDto, SyncWorkflowDto, UpdateWorkflowDto, WorkflowResponseDto, WorkflowTestDataResponseDto } from './dtos';
+import type { StepUpsertDto } from './dtos';
 import {
   BuildStepDataCommand,
   BuildStepDataUsecase,

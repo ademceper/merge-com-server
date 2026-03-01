@@ -1,1 +1,1 @@
-export * from './tenant.interface';
+export type * from './tenant.interface';

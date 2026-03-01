@@ -1,4 +1,4 @@
-import { IMessageCTA } from 'libs/shared';
+import type { IMessageCTA } from 'libs/shared';
 import { IsDefined, IsOptional, IsString } from 'class-validator';
 
 import { EnvironmentWithUserCommand } from '../../commands/project.command';

@@ -1,9 +1,10 @@
 import { Instrument, PinoLogger } from 'libs/application-generic';
-import { UserSessionData } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
 import { capitalize } from '../../../../../shared/services/helper/helper.service';
-import { DiffActionEnum, IDiffResult, IResourceDiff, IUserInfo, ResourceTypeEnum } from '../../../../types/sync.types';
+import { DiffActionEnum, ResourceTypeEnum } from '../../../../types/sync.types';
+import type { IDiffResult, IResourceDiff, IUserInfo } from '../../../../types/sync.types';
 import { DiffResultBuilder } from '../../builders/diff-result.builder';
-import { IBaseComparator, IBaseRepositoryService } from '../interfaces';
+import type { IBaseComparator, IBaseRepositoryService } from '../interfaces';
 
 export abstract class BaseDiffOperation<T> {
   private static readonly BATCH_SIZE = 10;

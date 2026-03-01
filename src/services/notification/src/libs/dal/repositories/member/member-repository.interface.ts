@@ -1,7 +1,8 @@
-import { IMemberInvite, MemberRoleEnum, MemberStatusEnum } from 'libs/shared';
+import { MemberRoleEnum, MemberStatusEnum } from 'libs/shared';
+import type { IMemberInvite } from 'libs/shared';
 import { Types } from 'mongoose';
 import { MemberEntity } from './member.entity';
-import { IAddMemberData } from './member.repository';
+import type { IAddMemberData } from './member.repository';
 
 export interface IMemberRepository extends IMemberRepositoryMongo {
   removeMemberById(

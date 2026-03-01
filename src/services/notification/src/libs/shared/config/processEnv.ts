@@ -6,6 +6,7 @@ const envFileFromNodeEnv = {
   ci: '.env.ci',
   local: '.env',
   dev: '.env.development',
+  development: '.env.development',
 } satisfies Record<string, string>;
 
 /**

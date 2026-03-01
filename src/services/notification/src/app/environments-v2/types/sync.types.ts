@@ -1,5 +1,5 @@
-import { ClientSession } from 'libs/dal';
-import { UserSessionData } from 'libs/shared';
+import type { ClientSession } from 'libs/dal';
+import type { UserSessionData } from 'libs/shared';
 
 export enum ResourceTypeEnum {
   WORKFLOW = 'workflow',

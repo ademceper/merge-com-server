@@ -1,4 +1,4 @@
-import { ISyncContext } from '../../../../types/sync.types';
+import type { ISyncContext } from '../../../../types/sync.types';
 
 export interface IBaseDeleteService<T> {
   deleteResourceFromTarget(context: ISyncContext, resource: T): Promise<void>;

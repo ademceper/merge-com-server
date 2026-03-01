@@ -1,5 +1,5 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { SubscriberCustomData } from 'libs/shared';
+import type { SubscriberCustomData } from 'libs/shared';
 import { IsEmail, IsLocale, IsObject, IsOptional, IsString, IsTimeZone, ValidateIf } from 'class-validator';
 
 export class BaseSubscriberFieldsDto {

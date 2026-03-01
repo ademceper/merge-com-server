@@ -1,1 +1,1 @@
-export * from './workflow-override.interface';
+export type * from './workflow-override.interface';

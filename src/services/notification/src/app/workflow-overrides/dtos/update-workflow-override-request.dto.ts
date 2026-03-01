@@ -1,5 +1,5 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { IUpdateWorkflowOverrideRequestDto } from 'libs/shared';
+import type { IUpdateWorkflowOverrideRequestDto } from 'libs/shared';
 import { Type } from 'class-transformer';
 import { IsBoolean, IsOptional, ValidateNested } from 'class-validator';
 

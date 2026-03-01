@@ -9,28 +9,14 @@ import {
   SubscriberEntity,
   SubscriberRepository,
 } from 'libs/dal';
-import {
-  ChannelTypeEnum,
-  ExecutionDetailsSourceEnum,
-  ExecutionDetailsStatusEnum,
-  FILTER_TO_LABEL,
-  FieldLogicalOperatorEnum,
-  FieldOperatorEnum,
-  FilterParts,
-  FilterPartTypeEnum,
-  ICondition,
-  IOnlineInLastFilterPart,
-  IPreviousStepFilterPart,
-  IRealtimeOnlineFilterPart,
-  IWebhookFilterPart,
-  PreviousStepTypeEnum,
-  TimeOperatorEnum,
-} from 'libs/shared';
+import { ChannelTypeEnum, ExecutionDetailsSourceEnum, ExecutionDetailsStatusEnum, FILTER_TO_LABEL, FieldLogicalOperatorEnum, FieldOperatorEnum, FilterPartTypeEnum, PreviousStepTypeEnum, TimeOperatorEnum } from 'libs/shared';
+import type { FilterParts, ICondition, IOnlineInLastFilterPart, IPreviousStepFilterPart, IRealtimeOnlineFilterPart, IWebhookFilterPart } from 'libs/shared';
 import axios from 'axios';
 import { differenceInDays, differenceInHours, differenceInMinutes, parseISO } from 'date-fns';
 import { decryptApiKey } from '../../encryption';
 import { buildSubscriberKey, CachedResponse } from '../../services';
-import { createHash, Filter, FilterProcessingDetails, IFilterVariables, PlatformException } from '../../utils';
+import { createHash, Filter, FilterProcessingDetails, PlatformException } from '../../utils';
+import type { IFilterVariables } from '../../utils';
 import { CompileTemplate } from '../compile-template';
 import { CreateExecutionDetails, CreateExecutionDetailsCommand, DetailEnum } from '../create-execution-details';
 import { ConditionsFilterCommand } from './conditions-filter.command';

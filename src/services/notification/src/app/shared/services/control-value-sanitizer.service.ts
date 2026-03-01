@@ -1,17 +1,13 @@
 import { Injectable } from '@nestjs/common';
-import {
-  dashboardSanitizeControlValues,
-  layoutControlSchema,
-  PinoLogger,
-  SanitizationType,
-} from 'libs/application-generic';
+import { dashboardSanitizeControlValues, layoutControlSchema, PinoLogger } from 'libs/application-generic';
+import type { SanitizationType } from 'libs/application-generic';
 import { actionStepSchemas, channelStepSchemas } from 'libs/framework/internal';
 import { ResourceOriginEnum } from 'libs/shared';
 import Ajv, { ErrorObject } from 'ajv';
 import addFormats from 'ajv-formats';
 import { cloneDeep, get, merge, set } from 'es-toolkit/compat';
 import { previewControlValueDefault } from '../../workflows-v2/usecases/preview/preview.constants';
-import { ControlValueProcessingResult, PreviewTemplateData } from '../../workflows-v2/usecases/preview/preview.types';
+import type { ControlValueProcessingResult, PreviewTemplateData } from '../../workflows-v2/usecases/preview/preview.types';
 import { replaceAll } from '../../workflows-v2/usecases/preview/utils/variable-helpers';
 import { JSONSchemaDto } from '../dtos/json-schema.dto';
 import { isObjectMailyJSONContent, isStringifiedMailyJSONContent, replaceMailyVariables } from '../helpers/maily-utils';

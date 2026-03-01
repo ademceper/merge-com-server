@@ -1,4 +1,5 @@
-import { Injectable, InternalServerErrorException, OnModuleInit } from '@nestjs/common';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
+import type { OnModuleInit } from '@nestjs/common';
 import {
   buildMaximumApiRateLimitKey,
   CachedResponse,
@@ -7,16 +8,11 @@ import {
   PinoLogger,
 } from 'libs/application-generic';
 import { CommunityOrganizationRepository, EnvironmentRepository } from 'libs/dal';
-import {
-  ApiRateLimitCategoryEnum,
-  ApiRateLimitCategoryToFeatureName,
-  ApiRateLimitServiceMaximumEnvVarFormat,
-  ApiServiceLevelEnum,
-  getFeatureForTierAsNumber,
-  IApiRateLimitServiceMaximum,
-} from 'libs/shared';
+import { ApiRateLimitCategoryEnum, ApiRateLimitCategoryToFeatureName, ApiServiceLevelEnum, getFeatureForTierAsNumber } from 'libs/shared';
+import type { ApiRateLimitServiceMaximumEnvVarFormat, IApiRateLimitServiceMaximum } from 'libs/shared';
 import { GetApiRateLimitMaximumCommand } from './get-api-rate-limit-maximum.command';
-import { CUSTOM_API_SERVICE_LEVEL, GetApiRateLimitMaximumDto } from './get-api-rate-limit-maximum.dto';
+import { CUSTOM_API_SERVICE_LEVEL } from './get-api-rate-limit-maximum.dto';
+import type { GetApiRateLimitMaximumDto } from './get-api-rate-limit-maximum.dto';
 
 @Injectable()
 export class GetApiRateLimitMaximum implements OnModuleInit {

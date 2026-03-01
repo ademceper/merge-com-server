@@ -1,4 +1,5 @@
-import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+import { Module } from '@nestjs/common';
+import type { MiddlewareConsumer, NestModule } from '@nestjs/common';
 import { AuthModule } from '../auth/auth.module';
 import { SharedModule } from '../shared/shared.module';
 import { USE_CASES } from './usecases';

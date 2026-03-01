@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { CustomDataType } from 'libs/shared';
+import type { CustomDataType } from 'libs/shared';
 
 export class GetTenantResponseDto {
   @ApiProperty()

@@ -1,15 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
-import {
-  CreateExecutionDetails,
-  CreateExecutionDetailsCommand,
-  DetailEnum,
-  EmailControlType,
-  InstrumentUsecase,
-  LayoutControlType,
-  PinoLogger,
-  sanitizeHTML,
-} from 'libs/application-generic';
+import { CreateExecutionDetails, CreateExecutionDetailsCommand, DetailEnum, InstrumentUsecase, PinoLogger, sanitizeHTML } from 'libs/application-generic';
+import type { EmailControlType, LayoutControlType } from 'libs/application-generic';
 import {
   ControlValuesEntity,
   ControlValuesRepository,

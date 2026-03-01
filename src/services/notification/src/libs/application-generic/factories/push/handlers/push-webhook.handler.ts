@@ -1,5 +1,6 @@
 import { PushWebhookPushProvider } from 'libs/providers';
-import { ChannelTypeEnum, ICredentials, PushProviderIdEnum } from 'libs/shared';
+import { ChannelTypeEnum, PushProviderIdEnum } from 'libs/shared';
+import type { ICredentials } from 'libs/shared';
 import { BasePushHandler } from './base.handler';
 
 export class PushWebhookHandler extends BasePushHandler {

@@ -1,4 +1,5 @@
-import { Module, Provider } from '@nestjs/common';
+import { Module } from '@nestjs/common';
+import type { Provider } from '@nestjs/common';
 import { NovuClient } from './nest.client';
 import { NovuController } from './nest.controller';
 import { NovuHandler } from './nest.handler';

@@ -13,7 +13,8 @@ import {
   SubscriberEntity,
   SubscriberRepository,
 } from 'libs/dal';
-import { ChannelTypeEnum, IPreferenceChannels, Schedule } from 'libs/shared';
+import { ChannelTypeEnum } from 'libs/shared';
+import type { IPreferenceChannels, Schedule } from 'libs/shared';
 import { GetSubscriberGlobalPreferenceCommand } from './get-subscriber-global-preference.command';
 
 @Injectable()

@@ -6,10 +6,7 @@ import * as z from "zod/v3";
 import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
-import {
-  WorkflowListResponseDto,
-  WorkflowListResponseDto$inboundSchema,
-} from "./workflowlistresponsedto.js";
+import { WorkflowListResponseDto$inboundSchema, WorkflowListResponseDto } from "./workflowlistresponsedto.js";
 
 export type ListWorkflowResponse = {
   /**

@@ -1,5 +1,6 @@
-import { ChannelTypeEnum, IConfigurations, ICredentials } from 'libs/shared';
-import { ChangePropsValueType } from '../../types/helpers';
+import { ChannelTypeEnum } from 'libs/shared';
+import type { IConfigurations, ICredentials } from 'libs/shared';
+import type { ChangePropsValueType } from '../../types/helpers';
 import type { EnvironmentId } from '../environment';
 import { StepFilter } from '../notification-template';
 import type { OrganizationId } from '../organization';

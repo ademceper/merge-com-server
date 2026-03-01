@@ -23,16 +23,9 @@ import {
   RequirePermissions,
 } from 'libs/application-generic';
 import { CommunityOrganizationRepository } from 'libs/dal';
-import {
-  ApiServiceLevelEnum,
-  ChannelTypeEnum,
-  FeatureFlagsKeysEnum,
-  FeatureNameEnum,
-  getFeatureForTierAsBoolean,
-  PermissionsEnum,
-  UserSessionData,
-} from 'libs/shared';
-import { Response } from 'express';
+import { ApiServiceLevelEnum, ChannelTypeEnum, FeatureFlagsKeysEnum, FeatureNameEnum, getFeatureForTierAsBoolean, PermissionsEnum } from 'libs/shared';
+import type { UserSessionData } from 'libs/shared';
+import type { Response } from 'express';
 import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import {

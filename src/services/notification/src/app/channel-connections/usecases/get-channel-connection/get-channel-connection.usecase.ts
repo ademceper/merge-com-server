@@ -1,12 +1,8 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InstrumentUsecase } from 'libs/application-generic';
-import {
-  ChannelConnectionDBModel,
-  ChannelConnectionEntity,
-  ChannelConnectionRepository,
-  EnforceEnvOrOrgIds,
-} from 'libs/dal';
-import { FilterQuery } from 'mongoose';
+import { ChannelConnectionEntity, ChannelConnectionRepository } from 'libs/dal';
+import type { ChannelConnectionDBModel, EnforceEnvOrOrgIds } from 'libs/dal';
+import type { FilterQuery } from 'mongoose';
 import { GetChannelConnectionCommand } from './get-channel-connection.command';
 
 @Injectable()

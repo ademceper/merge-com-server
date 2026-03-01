@@ -1,7 +1,7 @@
 import { buildDefaultSubscriptionIdentifier } from 'libs/application-generic';
 import { NotificationTemplateEntity, PreferencesEntity, TopicSubscribersEntity } from 'libs/dal';
 import { SeverityLevelEnum } from 'libs/shared';
-import { RulesLogic } from 'json-logic-js';
+import type { RulesLogic } from 'json-logic-js';
 import { SubscriptionDetailsResponseDto } from '../../shared/dtos/subscription-details-response.dto';
 import { SubscriptionPreferenceDto } from '../../shared/dtos/subscriptions/create-subscriptions-response.dto';
 

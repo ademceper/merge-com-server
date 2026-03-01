@@ -6,13 +6,15 @@ import {
   MessagesStatusEnum,
   SeverityLevelEnum,
 } from 'libs/shared';
-import { FilterQuery, ProjectionType, Types } from 'mongoose';
+import { Types } from 'mongoose';
+import type { FilterQuery, ProjectionType } from 'mongoose';
 
 import { DalException } from '../../shared';
-import { EnforceEnvId } from '../../types/enforce';
+import type { EnforceEnvId } from '../../types/enforce';
 import { BaseRepository } from '../base-repository';
 import { FeedRepository } from '../feed';
-import { MessageDBModel, MessageEntity } from './message.entity';
+import { MessageEntity } from './message.entity';
+import type { MessageDBModel } from './message.entity';
 import { Message } from './message.schema';
 
 type MessageQuery = FilterQuery<MessageDBModel>;

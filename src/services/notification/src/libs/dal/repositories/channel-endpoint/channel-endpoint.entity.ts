@@ -1,10 +1,5 @@
-import type {
-  ChannelEndpoint,
-  ChannelEndpointByType,
-  ChannelEndpointType,
-  ChannelTypeEnum,
-  ProvidersIdEnum,
-} from 'libs/shared';
+import type { ChannelEndpointByType, ChannelEndpointType, ChannelTypeEnum, ProvidersIdEnum } from 'libs/shared';
+import { ChannelEndpoint } from 'libs/shared';
 import type { ChangePropsValueType } from '../../types/helpers';
 import type { EnvironmentId } from '../environment';
 import type { OrganizationId } from '../organization';

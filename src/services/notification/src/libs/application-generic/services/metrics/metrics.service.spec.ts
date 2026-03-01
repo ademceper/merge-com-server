@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { metricsServiceList } from './index';
-import { IMetricsService } from './metrics.interface';
+import type { IMetricsService } from './metrics.interface';
 import { MetricsService, NewRelicMetricsService } from './metrics.service';
 
 describe('MetricsService', () => {
