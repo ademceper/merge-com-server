@@ -1,0 +1,24 @@
+import { Logger } from '@nestjs/common';
+import { ContextPayload } from 'libs/shared';
+import { canonicalize } from '@tufjs/canonical-json';
+import { createHmac } from 'crypto';
+
+export function createHash(key: string, valueToHash: string): string | null {
+  Logger.verbose('Creating Hmac');
+
+  if (!key || !valueToHash) {
+    Logger.warn(
+      `createHash called with invalid arguments: key=${key ? '[SET]' : '[EMPTY]'}, valueToHash=${valueToHash ? '[SET]' : '[EMPTY]'}`
+    );
+
+    return null;
+  }
+
+  return createHmac('sha256', key).update(valueToHash).digest('hex');
+}
+
+export function createContextHash(apiKey: string, context: ContextPayload): string | null {
+  const canonicalContext = canonicalize(context);
+
+  return createHash(apiKey, canonicalContext);
+}

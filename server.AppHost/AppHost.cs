@@ -15,4 +15,7 @@ builder.AddBunApp("nestjs-api", "../src/services/nestjs-api", "src/main.ts")
     .WithHttpEndpoint(port: 3000, env: "PORT")
     .WithUrl("/swagger", "Swagger" );
 
+builder.AddBunApp("notification", "../src/services/notification", "src/main.ts")
+    .WithHttpEndpoint(port: 3001, env: "PORT");
+
 builder.Build().Run();
