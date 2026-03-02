@@ -41,7 +41,7 @@ export class TriggerEventToAllRequestDto {
         },
       },
     },
-    type: TriggerOverrides,
+    type: () => TriggerOverrides,
     additionalProperties: {
       type: 'object',
       additionalProperties: true,

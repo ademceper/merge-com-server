@@ -289,18 +289,20 @@ export function match<T, E>(
     }
 
     if ("err" in matcher) {
+      const errMatcher = matcher as ErrorMatcher<E>;
       const result = safeParseResponse(
         data,
-        (v: unknown) => matcher.schema.parse(v),
+        (v: unknown) => errMatcher.schema.parse(v),
         "Response validation failed",
         { request, response, body },
       );
       return [result.ok ? { ok: false, error: result.value } : result, raw];
     } else {
+      const valMatcher = matcher as ValueMatcher<T>;
       return [
         safeParseResponse(
           data,
-          (v: unknown) => matcher.schema.parse(v),
+          (v: unknown) => valMatcher.schema.parse(v),
           "Response validation failed",
           { request, response, body },
         ),

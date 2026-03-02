@@ -2,97 +2,43 @@ import type { INestApplication } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import type { OpenAPIObject } from '@nestjs/swagger';
 import type { SecuritySchemeObject } from '@nestjs/swagger/dist/interfaces/open-api-spec.interface';
-import { API_KEY_SWAGGER_SECURITY_NAME, BEARER_SWAGGER_SECURITY_NAME } from 'libs/application-generic';
+import { API_KEY_SWAGGER_SECURITY_NAME } from 'libs/application-generic';
 import packageJson from '../../../../../package.json';
 import metadata from '../../../../metadata';
 import { webhookEvents } from '../../../outbound-webhooks/webhooks.const';
 import { injectDocumentComponents } from './injection';
-import {
-  overloadDocumentForSdkGeneration,
-  removeEndpointsWithoutApiKey,
-  sortOpenAPIDocument,
-} from './open.api.manipulation.component';
 
 export const API_KEY_SECURITY_DEFINITIONS: SecuritySchemeObject = {
   type: 'apiKey',
   name: 'Authorization',
   in: 'header',
-  description: 'API key authentication. Allowed headers-- "Authorization: ApiKey <novu_secret_key>".',
-  'x-speakeasy-example': 'YOUR_SECRET_KEY_HERE',
+  description: 'API key authentication. Allowed headers-- "Authorization: ApiKey <secret_key>".',
 } as unknown as SecuritySchemeObject;
-export const BEARER_SECURITY_DEFINITIONS: SecuritySchemeObject = {
-  type: 'http',
-  scheme: 'bearer',
-  bearerFormat: 'JWT',
-};
 
 function buildBaseOptions() {
   const options = new DocumentBuilder()
-    .setTitle('Novu API')
-    .setDescription('Novu REST API. Please see https://docs.novu.co/api-reference for more details.')
+    .setTitle('Notification API')
+    .setDescription('Notification Service REST API.')
     .setVersion(packageJson.version)
-    .setContact('Novu Support', 'https://discord.gg/novu', 'support@novu.co')
-    .setExternalDoc('Novu Documentation', 'https://docs.novu.co')
-    .setTermsOfService('https://novu.co/terms')
     .setLicense('MIT', 'https://opensource.org/license/mit')
-    .addServer(`http://localhost:${process.env.PORT || 3000}`, 'Local development')
-    .addServer('https://api.novu.co', 'US production')
-    .addServer('https://eu.api.novu.co', 'EU production')
+    .addServer('http://localhost:3010', 'Local development')
     .addSecurity(API_KEY_SWAGGER_SECURITY_NAME, API_KEY_SECURITY_DEFINITIONS)
     .addSecurityRequirements(API_KEY_SWAGGER_SECURITY_NAME)
-    .addTag(
-      'Events',
-      `Events represent a change in state of a subscriber. They are used to trigger workflows, and enable you to send notifications to subscribers based on their actions.`,
-      { url: 'https://docs.novu.co/workflows' }
-    )
-    .addTag(
-      'Subscribers',
-      `A subscriber in Novu represents someone who should receive a message. A subscriber's profile information contains important attributes about the subscriber that will be used in messages (name, email). The subscriber object can contain other key-value pairs that can be used to further personalize your messages.`,
-      { url: 'https://docs.novu.co/subscribers/subscribers' }
-    )
-    .addTag(
-      'Topics',
-      `Topics are a way to group subscribers together so that they can be notified of events at once. A topic is identified by a custom key. This can be helpful for things like sending out marketing emails or notifying users of new features. Topics can also be used to send notifications to the subscribers who have been grouped together based on their interests, location, activities and much more.`,
-      { url: 'https://docs.novu.co/subscribers/topics' }
-    )
-    .addTag(
-      'Integrations',
-      `With the help of the Integration Store, you can easily integrate your favorite delivery provider. During the runtime of the API, the Integrations Store is responsible for storing the configurations of all the providers.`,
-      { url: 'https://docs.novu.co/platform/integrations/overview' }
-    )
-    .addTag(
-      'Workflows',
-      `All notifications are sent via a workflow. Each workflow acts as a container for the logic and blueprint that are associated with a type of notification in your system.`,
-      { url: 'https://docs.novu.co/workflows' }
-    )
-    .addTag(
-      'Messages',
-      `A message in Novu represents a notification delivered to a recipient on a particular channel. Messages contain information about the request that triggered its delivery, a view of the data sent to the recipient, and a timeline of its lifecycle events. Learn more about messages.`,
-      { url: 'https://docs.novu.co/workflows/messages' }
-    )
-    .addTag(
-      'Environments',
-      `Environments allow you to manage different stages of your application development lifecycle. Each environment has its own set of API keys and configurations, enabling you to separate development, staging, and production workflows.`,
-      { url: 'https://docs.novu.co/platform/environments' }
-    )
-    .addTag('Layouts', `Layouts are reusable wrappers for your email notifications.`, {
-      url: 'https://docs.novu.co/platform/workflow/layouts',
-    })
-    .addTag('Translations', `Used to localize your notifications to different languages.`, {
-      url: 'https://docs.novu.co/platform/workflow/advanced-features/translations',
-    });
+    .addTag('Events', 'Events represent a change in state of a subscriber. They are used to trigger workflows and send notifications.')
+    .addTag('Subscribers', 'A subscriber represents someone who should receive a message.')
+    .addTag('Topics', 'Topics are a way to group subscribers together so that they can be notified of events at once.')
+    .addTag('Integrations', 'The Integration Store is responsible for storing the configurations of all the providers.')
+    .addTag('Workflows', 'Each workflow acts as a container for the logic and blueprint associated with a type of notification.')
+    .addTag('Messages', 'A message represents a notification delivered to a recipient on a particular channel.')
+    .addTag('Environments', 'Environments allow you to manage different stages of your application development lifecycle.')
+    .addTag('Layouts', 'Layouts are reusable wrappers for your email notifications.')
+    .addTag('Translations', 'Used to localize your notifications to different languages.');
 
   return options;
 }
 
-function buildOpenApiBaseDocument(internalSdkGeneration: boolean | undefined) {
-  const options = buildBaseOptions();
-  if (internalSdkGeneration) {
-    options.addSecurity(BEARER_SWAGGER_SECURITY_NAME, BEARER_SECURITY_DEFINITIONS);
-    options.addSecurityRequirements(BEARER_SWAGGER_SECURITY_NAME);
-  }
-
-  return options.build();
+function buildOpenApiBaseDocument() {
+  return buildBaseOptions().build();
 }
 
 function createSwaggerDocumentOptions(allWebhookPayloadDtos: any[]) {
@@ -105,51 +51,83 @@ function createSwaggerDocumentOptions(allWebhookPayloadDtos: any[]) {
   };
 }
 
-function clearApiExcludeMetadata(app: INestApplication<any>): Map<any, any> | null {
-  const originalMetadata = new Map<any, any>();
+function includeControllers(app: INestApplication<any>, controllerNames: Set<string>): Map<any, any> {
+  const included = new Map<any, any>();
   const modulesContainer = (app as any).container?.modules;
-  if (!modulesContainer) return null;
+  if (!modulesContainer) return included;
 
   for (const [, module] of modulesContainer) {
     for (const [, wrapper] of module.controllers) {
-      if (wrapper?.metatype) {
+      if (wrapper?.metatype && controllerNames.has(wrapper.metatype.name)) {
         const existing = Reflect.getMetadata('swagger/apiExcludeController', wrapper.metatype);
-        if (existing?.disable !== false) {
-          originalMetadata.set(wrapper.metatype, existing);
-          Reflect.defineMetadata('swagger/apiExcludeController', { disable: false }, wrapper.metatype);
+        if (existing?.[0] !== false) {
+          included.set(wrapper.metatype, existing);
+          Reflect.defineMetadata('swagger/apiExcludeController', [false], wrapper.metatype);
         }
       }
     }
   }
-
-  return originalMetadata;
+  return included;
 }
 
 function restoreApiExcludeMetadata(originalMetadata: Map<any, any>) {
-  for (const [metatype, metadata] of originalMetadata) {
-    if (metadata) {
-      Reflect.defineMetadata('swagger/apiExcludeController', metadata, metatype);
+  for (const [metatype, md] of originalMetadata) {
+    if (md) {
+      Reflect.defineMetadata('swagger/apiExcludeController', md, metatype);
     } else {
       Reflect.deleteMetadata('swagger/apiExcludeController', metatype);
     }
   }
 }
 
+const DEV_INCLUDE_CONTROLLERS = new Set([
+  'ActivityController',
+  'AnalyticsController',
+  'BlueprintController',
+  'BridgeController',
+  'ChangesController',
+  'ChannelConnectionsController',
+  'ChannelEndpointsController',
+  'ContentTemplatesController',
+  'EventsController',
+  'ExecutionDetailsController',
+  'FeedsController',
+  'HealthController',
+  'InboundParseController',
+  'InboxController',
+  'InboxTopicController',
+  'IntegrationsController',
+  'LayoutsController',
+  'LayoutsControllerV1',
+  'NotificationGroupsController',
+  'NotificationTemplateController',
+  'NotificationsController',
+  'OutboundWebhooksController',
+  'PartnerIntegrationsController',
+  'PreferencesController',
+  'StepResolversController',
+  'StorageController',
+  'SubscribersV1Controller',
+  'SupportController',
+  'TopicsController',
+  'TopicsV1Controller',
+  'WebhooksController',
+  'WidgetsController',
+  'WorkflowControllerV1',
+  'WorkflowOverridesController',
+]);
+
 function buildFullDocumentWithPath(app: INestApplication<any>, baseDocument: Omit<OpenAPIObject, 'paths'>) {
   const allWebhookPayloadDtos = [...new Set(webhookEvents.map((event) => event.payloadDto))];
   const docOptions = createSwaggerDocumentOptions(allWebhookPayloadDtos);
 
-  // In non-production, try to include all controllers (remove @ApiExcludeController)
   if (process.env.NODE_ENV !== 'production') {
-    const originalMetadata = clearApiExcludeMetadata(app);
+    const included = includeControllers(app, DEV_INCLUDE_CONTROLLERS);
     try {
       return injectDocumentComponents(SwaggerModule.createDocument(app, baseDocument, docOptions));
-    } catch (e) {
-      // Some controllers have DTOs with circular deps - restore excludes and retry
-      if (originalMetadata) {
-        restoreApiExcludeMetadata(originalMetadata);
-      }
-      console.warn('Swagger: failed to include all controllers, falling back to default excludes:', e?.message);
+    } catch (e: any) {
+      console.warn('Swagger: failed to include dev controllers, falling back to default:', e?.message);
+      restoreApiExcludeMetadata(included);
     }
   }
 
@@ -166,9 +144,8 @@ function publishDeprecatedDocument(app: INestApplication<any>, document: OpenAPI
   });
 }
 
-function publishLegacyOpenApiDoc(app: INestApplication<any>, document: OpenAPIObject) {
-  const doc = process.env.NODE_ENV === 'production' ? removeEndpointsWithoutApiKey(document) : document;
-  SwaggerModule.setup('openapi', app, doc, {
+function publishOpenApiDoc(app: INestApplication<any>, document: OpenAPIObject) {
+  SwaggerModule.setup('openapi', app, document, {
     jsonDocumentUrl: 'openapi.json',
     yamlDocumentUrl: 'openapi.yaml',
     explorer: process.env.NODE_ENV !== 'production',
@@ -177,17 +154,14 @@ function publishLegacyOpenApiDoc(app: INestApplication<any>, document: OpenAPIOb
 
 /**
  * Generates the `x-webhooks` section for the OpenAPI document based on defined events and DTOs.
- * Follows the OpenAPI specification for webhooks: https://spec.openapis.org/oas/v3.1.0#fixed-fields-1:~:text=Webhooks%20Object
  */
 function generateWebhookDefinitions(document: OpenAPIObject) {
-  const webhooksDefinition: Record<string, any> = {}; // Structure matches Path Item Object
+  const webhooksDefinition: Record<string, any> = {};
 
   webhookEvents.forEach((webhook) => {
-    // Assume the schema name matches the DTO class name (generated by Swagger)
     const payloadSchemaRef = `#/components/schemas/${(webhook.payloadDto as Function).name}`;
-    const wrapperSchemaName = `${(webhook.payloadDto as Function).name}WebhookPayloadWrapper`; // Unique name for the wrapper schema
+    const wrapperSchemaName = `${(webhook.payloadDto as Function).name}WebhookPayloadWrapper`;
 
-    // Define the wrapper schema in components/schemas if it doesn't exist
     if (document.components && !document.components.schemas?.[wrapperSchemaName]) {
       if (!document.components.schemas) {
         document.components.schemas = {};
@@ -197,12 +171,12 @@ function generateWebhookDefinitions(document: OpenAPIObject) {
         properties: {
           id: {
             type: 'string',
-            description: 'Unique identifier of the webhook event (evt_✱).',
+            description: 'Unique identifier of the webhook event.',
           },
           type: { type: 'string', enum: [webhook.event], description: 'The type of the webhook event.' },
           data: {
             description: 'The actual event data payload.',
-            allOf: [{ $ref: payloadSchemaRef }], // Use allOf to correctly reference the payload schema
+            allOf: [{ $ref: payloadSchemaRef }],
           },
           timestamp: { type: 'string', format: 'date-time', description: 'ISO timestamp of when the event occurred.' },
           environmentId: { type: 'string', description: 'The ID of the environment associated with the event.' },
@@ -217,28 +191,24 @@ function generateWebhookDefinitions(document: OpenAPIObject) {
     }
 
     webhooksDefinition[webhook.event] = {
-      // This structure represents a Path Item Object, describing the webhook POST request.
       post: {
         summary: `Event: ${webhook.event}`,
-        description: `This webhook is triggered when a \`${webhook.objectType}\` event (\`${
-          webhook.event
-        }\`) occurs. The payload contains the details of the event. Configure your webhook endpoint URL in the Novu dashboard.`,
+        description: `This webhook is triggered when a \`${webhook.objectType}\` event (\`${webhook.event}\`) occurs. Configure your webhook endpoint URL in the dashboard.`,
         requestBody: {
           description: `Webhook payload for the \`${webhook.event}\` event.`,
           required: true,
           content: {
             'application/json': {
-              schema: { $ref: `#/components/schemas/${wrapperSchemaName}` }, // Reference the wrapper schema
+              schema: { $ref: `#/components/schemas/${wrapperSchemaName}` },
             },
           },
         },
         responses: {
           '200': {
-            description: 'Acknowledges successful receipt of the webhook. No response body is expected.',
+            description: 'Acknowledges successful receipt of the webhook.',
           },
-          // Consider adding other responses (e.g., 4xx for signature validation failure, 5xx for processing errors)
         },
-        tags: ['Webhooks'], // Assign to a 'Webhooks' tag
+        tags: ['Webhooks'],
       },
     };
   });
@@ -246,71 +216,33 @@ function generateWebhookDefinitions(document: OpenAPIObject) {
   document['x-webhooks'] = webhooksDefinition;
 }
 
-export const setupSwagger = async (app: INestApplication, internalSdkGeneration?: boolean) => {
+export const setupSwagger = async (app: INestApplication) => {
   await SwaggerModule.loadPluginMetadata(metadata);
-  const baseDocument = buildOpenApiBaseDocument(internalSdkGeneration);
+  const baseDocument = buildOpenApiBaseDocument();
   const document = buildFullDocumentWithPath(app, baseDocument);
 
-  // Generate and add x-webhooks section FIRST
+  const declaredTagNames = new Set((document.tags || []).map((t) => t.name));
+  for (const pathItem of Object.values(document.paths || {})) {
+    for (const operation of Object.values(pathItem as Record<string, any>)) {
+      if (operation?.tags) {
+        for (const tag of operation.tags as string[]) {
+          if (!declaredTagNames.has(tag)) {
+            if (!document.tags) document.tags = [];
+            document.tags.push({ name: tag });
+            declaredTagNames.add(tag);
+          }
+        }
+      }
+    }
+  }
+  if (document.tags) {
+    document.tags.sort((a, b) => a.name.localeCompare(b.name));
+  }
+
   generateWebhookDefinitions(document);
 
   publishDeprecatedDocument(app, document);
-  publishLegacyOpenApiDoc(app, document);
+  publishOpenApiDoc(app, document);
 
-  return publishSdkSpecificDocumentAndReturnDocument(app, document, internalSdkGeneration);
+  return document;
 };
-
-function overloadNamingGuidelines(document: OpenAPIObject) {
-  document['x-speakeasy-name-override'] = [
-    { operationId: '^.*get.*', methodNameOverride: 'retrieve' },
-    { operationId: '^.*retrieve.*', methodNameOverride: 'retrieve' },
-    { operationId: '^.*create.*', methodNameOverride: 'create' },
-    { operationId: '^.*update.*', methodNameOverride: 'update' },
-    { operationId: '^.*list.*', methodNameOverride: 'list' },
-    { operationId: '^.*delete.*', methodNameOverride: 'delete' },
-    { operationId: '^.*remove.*', methodNameOverride: 'delete' },
-  ];
-}
-
-function overloadGlobalSdkRetrySettings(document: OpenAPIObject) {
-  document['x-speakeasy-retries'] = {
-    strategy: 'backoff',
-    backoff: {
-      initialInterval: 1000,
-      maxInterval: 30000,
-      maxElapsedTime: 3600000,
-      exponent: 1.5,
-    },
-    statusCodes: [408, 409, 429, '5XX'],
-    retryConnectionErrors: true,
-  };
-}
-
-function patchOpenEnumSchemas(document: OpenAPIObject) {
-  const openEnumSchemas = ['UiComponentEnum'];
-  for (const schemaName of openEnumSchemas) {
-    const schema = document.components?.schemas?.[schemaName];
-    if (schema) {
-      (schema as Record<string, unknown>)['x-speakeasy-unknown-values'] = 'allow';
-    }
-  }
-}
-
-function publishSdkSpecificDocumentAndReturnDocument(
-  app: INestApplication,
-  document: OpenAPIObject,
-  internalSdkGeneration?: boolean
-) {
-  overloadNamingGuidelines(document);
-  overloadGlobalSdkRetrySettings(document);
-  patchOpenEnumSchemas(document);
-
-  let sdkDocument: OpenAPIObject = overloadDocumentForSdkGeneration(document, internalSdkGeneration);
-  sdkDocument = sortOpenAPIDocument(sdkDocument);
-  SwaggerModule.setup('openapi.sdk', app, sdkDocument, {
-    jsonDocumentUrl: 'openapi.sdk.json',
-    yamlDocumentUrl: 'openapi.sdk.yaml',
-    explorer: process.env.NODE_ENV !== 'production',
-  });
-  return sdkDocument;
-}

@@ -33,12 +33,12 @@ export class UpdateEnvironmentRequestDto {
   color?: string;
 
   @ApiPropertyOptional({
-    type: InBoundParseDomainDto,
+    type: () => InBoundParseDomainDto,
   })
   dns?: InBoundParseDomainDto;
 
   @ApiPropertyOptional({
-    type: BridgeConfigurationDto,
+    type: () => BridgeConfigurationDto,
   })
   bridge?: BridgeConfigurationDto;
 }

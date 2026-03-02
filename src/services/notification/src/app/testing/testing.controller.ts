@@ -1,12 +1,9 @@
 import { Controller, Get, NotFoundException } from '@nestjs/common';
 import { ApiExcludeController } from '@nestjs/swagger';
-import { ProductFeature, ResourceCategory } from 'libs/application-generic';
+import { ExternalApiAccessible, ProductFeature, ResourceCategory } from 'libs/application-generic';
 import { ProductFeatureKeyEnum, ResourceEnum } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
-import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 
 @Controller('/testing')
-@RequireAuthentication()
 @ApiExcludeController()
 export class TestingController {
   @ExternalApiAccessible()

@@ -12,7 +12,7 @@ export class UpdateWorkflowOverrideRequestDto implements IUpdateWorkflowOverride
   active?: boolean;
 
   @ApiPropertyOptional({
-    type: SubscriberPreferenceChannels,
+    type: () => SubscriberPreferenceChannels,
   })
   @IsOptional()
   @ValidateNested()

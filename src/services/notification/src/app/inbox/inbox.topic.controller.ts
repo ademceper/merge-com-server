@@ -14,7 +14,7 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
-import { ApiExcludeController } from '@nestjs/swagger';
+import { ApiExcludeController, ApiTags } from '@nestjs/swagger';
 import type { Response } from 'express';
 import { SubscriptionDetailsResponseDto } from '../shared/dtos/subscription-details-response.dto';
 import {
@@ -38,6 +38,7 @@ import { GetTopicSubscriptions } from './usecases/get-topic-subscriptions/get-to
 
 @ApiCommonResponses()
 @Controller('/inbox')
+@ApiTags('Inbox')
 @ApiExcludeController()
 @ExcludeFromIdempotency()
 @UseInterceptors(ContextCompatibilityInterceptor)

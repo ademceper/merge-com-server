@@ -19,7 +19,6 @@ import { ExternalApiAccessible, RequirePermissions } from 'libs/application-gene
 import { ApiRateLimitCategoryEnum, PermissionsEnum } from 'libs/shared';
 import type { UserSessionData } from 'libs/shared';
 import type { Response } from 'express';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ThrottlerCategory } from '../rate-limiting/guards/throttler.decorator';
 import { DirectionEnum } from '../shared/dtos/base-responses';
 import { SubscriptionDetailsResponseDto } from '../shared/dtos/subscription-details-response.dto';
@@ -32,7 +31,6 @@ import {
   SubscriptionResponseDto,
 } from '../shared/dtos/subscriptions/create-subscriptions-response.dto';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';
-import { SdkGroupName, SdkMethodName } from '../shared/framework/swagger/sdk.decorators';
 import { UserSession } from '../shared/framework/user.decorator';
 import { CreateSubscriptionsCommand, CreateSubscriptionsUsecase } from '../subscriptions/usecases/create-subscriptions';
 import { GetSubscriptionCommand } from '../subscriptions/usecases/get-subscription/get-subscription.command';
@@ -71,9 +69,7 @@ import { UpsertTopicUseCase } from './usecases/upsert-topic/upsert-topic.usecase
 @ThrottlerCategory(ApiRateLimitCategoryEnum.CONFIGURATION)
 @Controller({ path: '/topics', version: '2' })
 @UseInterceptors(ClassSerializerInterceptor)
-@RequireAuthentication()
 @ApiTags('Topics')
-@SdkGroupName('Topics')
 @ApiCommonResponses()
 export class TopicsController {
   constructor(
@@ -91,7 +87,6 @@ export class TopicsController {
 
   @Get('')
   @ExternalApiAccessible()
-  @SdkMethodName('list')
   @ApiOperation({
     summary: 'List all topics',
     description: `This api returns a paginated list of topics.
@@ -138,7 +133,6 @@ export class TopicsController {
     type: Boolean,
     description: 'If true, the request will fail if a topic with the same key already exists',
   })
-  @SdkMethodName('create')
   @RequirePermissions(PermissionsEnum.TOPIC_WRITE)
   async upsertTopic(
     @UserSession() user: UserSessionData,
@@ -165,7 +159,6 @@ export class TopicsController {
 
   @Get('/:topicKey')
   @ExternalApiAccessible()
-  @SdkMethodName('get')
   @ApiOperation({
     summary: 'Retrieve a topic',
     description: `Retrieve a topic by its unique key identifier **topicKey**`,
@@ -185,7 +178,6 @@ export class TopicsController {
 
   @Patch('/:topicKey')
   @ExternalApiAccessible()
-  @SdkMethodName('update')
   @ApiOperation({
     summary: 'Update a topic',
     description: `Update a topic name by its unique key identifier **topicKey**`,
@@ -243,7 +235,6 @@ export class TopicsController {
 
   @Get('/:topicKey/subscriptions')
   @ExternalApiAccessible()
-  @SdkGroupName('Topics.Subscriptions')
   @ApiOperation({
     summary: `List topic subscriptions`,
     description: `List all subscriptions of subscribers for a topic.
@@ -276,8 +267,6 @@ export class TopicsController {
 
   @Post('/:topicKey/subscriptions')
   @ExternalApiAccessible()
-  @SdkGroupName('Topics.Subscriptions')
-  @SdkMethodName('create')
   @ApiOperation({
     summary: 'Create topic subscriptions',
     description: `This api will create subscription for subscriberIds for a topic. 
@@ -327,8 +316,6 @@ export class TopicsController {
 
   @Delete('/:topicKey/subscriptions')
   @ExternalApiAccessible()
-  @SdkGroupName('Topics.Subscriptions')
-  @SdkMethodName('delete')
   @ApiOperation({
     summary: 'Delete topic subscriptions',
     description: 'Delete subscriptions for subscriberIds for a topic.',
@@ -375,8 +362,6 @@ export class TopicsController {
 
   @Get('/:topicKey/subscriptions/:identifier')
   @ExternalApiAccessible()
-  @SdkGroupName('Topics.Subscriptions')
-  @SdkMethodName('getSubscription')
   @ApiOperation({
     summary: 'Retrieve a topic subscription',
     description: `Retrieve a subscription by its unique identifier for a topic.`,
@@ -415,8 +400,6 @@ export class TopicsController {
 
   @Patch('/:topicKey/subscriptions/:identifier')
   @ExternalApiAccessible()
-  @SdkGroupName('Topics.Subscriptions')
-  @SdkMethodName('update')
   @ApiOperation({
     summary: 'Update a topic subscription',
     description: `Update a subscription by its unique identifier for a topic. You can update the preferences and name associated with the subscription.`,

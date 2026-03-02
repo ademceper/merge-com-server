@@ -6,7 +6,7 @@ import { LayoutResponseDto } from './layout-response.dto';
 export class ListLayoutResponseDto {
   @ApiProperty({
     description: 'List of layouts',
-    type: LayoutResponseDto,
+    type: () => LayoutResponseDto,
     isArray: true,
   })
   @IsArray()

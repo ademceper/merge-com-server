@@ -2,8 +2,7 @@ import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Patch, Post
 import { ApiExcludeEndpoint, ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
 import { ApiRateLimitCategoryEnum } from 'libs/shared';
 import type { ExternalSubscriberId, TopicKey, UserSessionData } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
-import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
+import { ExternalApiAccessible } from 'libs/application-generic';
 import { ThrottlerCategory } from '../rate-limiting/guards';
 import {
   ApiCommonResponses,
@@ -11,7 +10,6 @@ import {
   ApiOkResponse,
   ApiResponse,
 } from '../shared/framework/response.decorator';
-import { SdkGroupName, SdkMethodName } from '../shared/framework/swagger/sdk.decorators';
 import { UserSession } from '../shared/framework/user.decorator';
 import {
   AddSubscribersRequestDto,
@@ -48,7 +46,6 @@ import {
 @ThrottlerCategory(ApiRateLimitCategoryEnum.CONFIGURATION)
 @ApiCommonResponses()
 @Controller('/topics')
-@RequireAuthentication()
 @ApiTags('Topics')
 export class TopicsV1Controller {
   constructor(
@@ -94,8 +91,6 @@ export class TopicsV1Controller {
   @ApiOkResponse({ type: AssignSubscriberToTopicDto })
   @ApiOperation({ summary: 'Subscribers addition', description: 'Add subscribers to a topic by key' })
   @ApiParam({ name: 'topicKey', description: 'The topic key', type: String, required: true })
-  @SdkGroupName('Topics.Subscribers')
-  @SdkMethodName('assign')
   async assign(
     @UserSession() user: UserSessionData,
     @Param('topicKey') topicKey: TopicKey,
@@ -127,7 +122,6 @@ export class TopicsV1Controller {
   @ApiOperation({ summary: 'Check topic subscriber', description: 'Check if a subscriber belongs to a certain topic' })
   @ApiParam({ name: 'topicKey', description: 'The topic key', type: String, required: true })
   @ApiParam({ name: 'externalSubscriberId', description: 'The external subscriber id', type: String, required: true })
-  @SdkGroupName('Topics.Subscribers')
   @ApiOkResponse({ type: TopicSubscriberDto })
   async getTopicSubscriber(
     @UserSession() user: UserSessionData,
@@ -151,8 +145,6 @@ export class TopicsV1Controller {
   @HttpCode(HttpStatus.NO_CONTENT)
   @ApiOperation({ summary: 'Subscribers removal', description: 'Remove subscribers from a topic' })
   @ApiParam({ name: 'topicKey', description: 'The topic key', type: String, required: true })
-  @SdkGroupName('Topics.Subscribers')
-  @SdkMethodName('remove')
   async removeSubscribers(
     @UserSession() user: UserSessionData,
     @Param('topicKey') topicKey: TopicKey,
@@ -240,7 +232,6 @@ export class TopicsV1Controller {
   @ApiResponse(RenameTopicResponseDto)
   @ApiOperation({ summary: 'Rename a topic', description: 'Rename a topic by providing a new name' })
   @ApiParam({ name: 'topicKey', description: 'The topic key', type: String, required: true })
-  @SdkMethodName('rename')
   async renameTopic(
     @UserSession() user: UserSessionData,
     @Param('topicKey') topicKey: TopicKey,

@@ -13,7 +13,7 @@ import {
   UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
-import { ApiExcludeController } from '@nestjs/swagger';
+import { ApiExcludeController, ApiTags } from '@nestjs/swagger';
 import {
   AnalyticsService,
   ExternalApiAccessible,
@@ -25,7 +25,6 @@ import { ControlValuesRepository, EnvironmentRepository, NotificationTemplateRep
 import { HttpHeaderKeysEnum } from 'libs/framework/internal';
 import { ControlValuesLevelEnum, PermissionsEnum, ResourceOriginEnum, ResourceTypeEnum } from 'libs/shared';
 import type { UserSessionData } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { CreateBridgeRequestDto } from './dtos/create-bridge-request.dto';
 import { CreateBridgeResponseDto } from './dtos/create-bridge-response.dto';
 import { ValidateBridgeUrlRequestDto } from './dtos/validate-bridge-url-request.dto';
@@ -39,7 +38,7 @@ import { Sync } from './usecases/sync/sync.usecase';
 
 @Controller('/bridge')
 @UseInterceptors(ClassSerializerInterceptor)
-@RequireAuthentication()
+@ApiTags('Bridge')
 @ApiExcludeController()
 export class BridgeController {
   constructor(

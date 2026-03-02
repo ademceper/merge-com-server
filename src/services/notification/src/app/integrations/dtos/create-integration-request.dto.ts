@@ -46,7 +46,7 @@ export class CreateIntegrationRequestDto implements ICreateIntegrationBodyDto {
   channel: ChannelTypeEnum;
 
   @ApiPropertyOptional({
-    type: CredentialsDto,
+    type: () => CredentialsDto,
     description: 'The credentials for the integration',
   })
   @IsOptional()
@@ -68,7 +68,7 @@ export class CreateIntegrationRequestDto implements ICreateIntegrationBodyDto {
   check?: boolean;
 
   @ApiPropertyOptional({
-    type: [StepFilterDto],
+    type: () => [StepFilterDto],
     description: 'Conditions for the integration',
   })
   @IsArray()

@@ -118,7 +118,7 @@ export class WorkflowListResponseDto {
 
   @ApiProperty({
     description: 'Steps of the workflow',
-    type: StepListResponseDto,
+    type: () => StepListResponseDto,
     isArray: true,
   })
   @IsArray()

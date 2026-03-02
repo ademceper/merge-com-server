@@ -39,13 +39,14 @@ import { ApiServiceLevelEnum, ChannelTypeEnum, ControlValuesLevelEnum, FeatureFl
 import type { ContextPayload, CustomDataType, Schedule } from 'libs/shared';
 import { createHash } from 'crypto';
 import { differenceInHours } from 'date-fns';
-import { AuthService } from '../../../auth/services/auth.service';
+// TODO: Keycloak entegrasyonunda yeniden eklenecek
+// import { AuthService } from '../../../auth/services/auth.service';
 import { EnvironmentResponseDto } from '../../../environments-v1/dtos/environment-response.dto';
 import { GenerateUniqueApiKey } from '../../../environments-v1/usecases/generate-unique-api-key/generate-unique-api-key.usecase';
 import { CreateNovuIntegrationsCommand } from '../../../integrations/usecases/create-novu-integrations/create-novu-integrations.command';
 import { CreateNovuIntegrations } from '../../../integrations/usecases/create-novu-integrations/create-novu-integrations.usecase';
-import { GetOrganizationSettingsCommand } from '../../../organization/usecases/get-organization-settings/get-organization-settings.command';
-import { GetOrganizationSettings } from '../../../organization/usecases/get-organization-settings/get-organization-settings.usecase';
+import { GetOrganizationSettingsCommand } from '../../../shared/usecases/get-organization-settings/get-organization-settings.command';
+import { GetOrganizationSettings } from '../../../shared/usecases/get-organization-settings/get-organization-settings.usecase';
 import { ScheduleDto } from '../../../shared/dtos/schedule';
 import { isHmacValid } from '../../../shared/helpers/is-valid-hmac';
 import { SubscriberDto, SubscriberSessionRequestDto } from '../../dtos/subscriber-session-request.dto';
@@ -69,7 +70,7 @@ export class Session {
   constructor(
     private environmentRepository: EnvironmentRepository,
     private createSubscriber: CreateOrUpdateSubscriberUseCase,
-    private authService: AuthService,
+    // private authService: AuthService,
     private selectIntegration: SelectIntegration,
     private analyticsService: AnalyticsService,
     private notificationsCount: NotificationsCount,
@@ -213,8 +214,9 @@ export class Session {
       }
     }
 
+    // TODO: Keycloak entegrasyonunda token üretimi yeniden eklenecek
     const [token, organization] = await Promise.all([
-      this.authService.getSubscriberWidgetToken(subscriberEntity, contextKeys),
+      Promise.resolve(''),
       this.organizationRepository.findById(environment._organizationId),
     ]);
 

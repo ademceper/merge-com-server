@@ -8,7 +8,7 @@ import {
   Query,
   UseInterceptors,
 } from '@nestjs/common';
-import { ApiExcludeController } from '@nestjs/swagger';
+import { ApiExcludeController, ApiTags } from '@nestjs/swagger';
 import {
   DeletePreferencesCommand,
   DeletePreferencesUseCase,
@@ -20,7 +20,6 @@ import {
 } from 'libs/application-generic';
 import { PreferencesTypeEnum } from 'libs/shared';
 import type { UserSessionData } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { UpsertPreferencesDto } from './dtos/upsert-preferences.dto';
 
 /**
@@ -28,7 +27,7 @@ import { UpsertPreferencesDto } from './dtos/upsert-preferences.dto';
  */
 @Controller('/preferences')
 @UseInterceptors(ClassSerializerInterceptor)
-@RequireAuthentication()
+@ApiTags('Preferences')
 @ApiExcludeController()
 export class PreferencesController {
   constructor(

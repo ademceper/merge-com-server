@@ -6,7 +6,7 @@ import { SubscriberChannelDto } from './create-subscriber-request.dto';
 export class UpdateSubscriberRequestDto extends BaseSubscriberFieldsDto {
   @ApiProperty({
     description: 'An array of communication channels for the subscriber.',
-    type: SubscriberChannelDto,
+    type: () => SubscriberChannelDto,
     isArray: true,
     required: false,
   })

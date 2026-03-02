@@ -1,6 +1,6 @@
 import { Controller, Get, NotFoundException } from '@nestjs/common';
 import { Body, Post } from '@nestjs/common/decorators';
-import { ApiExcludeController } from '@nestjs/swagger';
+import { ApiExcludeController, ApiTags } from '@nestjs/swagger';
 import { HealthCheckService, HealthCheck } from '@nestjs/terminus';
 import type { HealthCheckResult, HealthIndicatorFunction } from '@nestjs/terminus';
 import {
@@ -11,9 +11,7 @@ import {
   WorkflowQueueServiceHealthIndicator,
 } from 'libs/application-generic';
 import { version } from '../../../package.json';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ApiCommonResponses, ApiCreatedResponse } from '../shared/framework/response.decorator';
-import { DocumentationIgnore, SdkMethodName } from '../shared/framework/swagger/sdk.decorators';
 import {
   IdempotenceTestingResponse,
   IdempotencyBehaviorEnum,
@@ -21,6 +19,7 @@ import {
 } from '../testing/dtos/idempotency.dto';
 
 @Controller('health-check')
+@ApiTags('Health')
 @ApiExcludeController()
 export class HealthController {
   constructor(
@@ -52,11 +51,8 @@ export class HealthController {
   }
 
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @ApiCommonResponses()
   @ApiCreatedResponse({ type: IdempotenceTestingResponse })
-  @DocumentationIgnore()
-  @SdkMethodName('testIdempotency')
   @Post('/test-idempotency')
   @SkipPermissionsCheck()
   async testIdempotency(@Body() body: IdempotencyTestingDto): Promise<IdempotenceTestingResponse> {
@@ -78,12 +74,9 @@ export class HealthController {
 
     return { number: randomNumber };
   }
-  @DocumentationIgnore()
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @ApiCommonResponses()
   @ApiCreatedResponse({ type: IdempotenceTestingResponse })
-  @SdkMethodName('generateRandomNumber')
   @Get('/test-idempotency')
   @SkipPermissionsCheck()
   async generateRandomNumber(): Promise<IdempotenceTestingResponse> {

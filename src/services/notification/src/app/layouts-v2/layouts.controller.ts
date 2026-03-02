@@ -21,10 +21,8 @@ import {
 } from 'libs/application-generic';
 import { ApiRateLimitCategoryEnum, DirectionEnum, PermissionsEnum } from 'libs/shared';
 import type { UserSessionData } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ThrottlerCategory } from '../rate-limiting/guards/throttler.decorator';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';
-import { SdkMethodName } from '../shared/framework/swagger/sdk.decorators';
 import { GetLayoutListQueryParamsDto, GetLayoutUsageResponseDto, ListLayoutResponseDto, CreateLayoutDto, DuplicateLayoutDto, LayoutResponseDto, UpdateLayoutDto } from './dtos';
 import { GenerateLayoutPreviewResponseDto } from './dtos/generate-layout-preview-response.dto';
 import { LayoutPreviewRequestDto } from './dtos/layout-preview-request.dto';
@@ -41,7 +39,6 @@ import { EMPTY_LAYOUT } from './utils/layout-templates';
 @ApiCommonResponses()
 @Controller({ path: `/layouts`, version: '2' })
 @UseInterceptors(ClassSerializerInterceptor)
-@RequireAuthentication()
 @ApiTags('Layouts')
 export class LayoutsController {
   constructor(
@@ -167,7 +164,6 @@ export class LayoutsController {
   @ApiBody({ type: DuplicateLayoutDto })
   @ApiResponse(LayoutResponseDto, 201)
   @RequirePermissions(PermissionsEnum.WORKFLOW_WRITE)
-  @SdkMethodName('duplicate')
   async duplicate(
     @UserSession(ParseSlugEnvironmentIdPipe) user: UserSessionData,
     @Param('layoutId', ParseSlugIdPipe) layoutIdOrInternalId: string,
@@ -217,7 +213,6 @@ export class LayoutsController {
   @ApiBody({ type: LayoutPreviewRequestDto, description: 'Layout preview generation details' })
   @ApiResponse(GenerateLayoutPreviewResponseDto, 201)
   @RequirePermissions(PermissionsEnum.WORKFLOW_READ)
-  @SdkMethodName('generatePreview')
   async generatePreview(
     @UserSession(ParseSlugEnvironmentIdPipe) user: UserSessionData,
     @Param('layoutId', ParseSlugIdPipe) layoutIdOrInternalId: string,
@@ -241,7 +236,6 @@ export class LayoutsController {
   })
   @ApiResponse(GetLayoutUsageResponseDto)
   @RequirePermissions(PermissionsEnum.WORKFLOW_READ)
-  @SdkMethodName('usage')
   async getUsage(
     @UserSession(ParseSlugEnvironmentIdPipe) user: UserSessionData,
     @Param('layoutId', ParseSlugIdPipe) layoutIdOrInternalId: string

@@ -34,7 +34,7 @@ export class EmailBlock {
   url?: string;
 
   @ApiPropertyOptional({
-    type: EmailBlockStyles,
+    type: () => EmailBlockStyles,
     description: 'Styles applied to the email block',
   })
   styles?: EmailBlockStyles;
@@ -86,14 +86,14 @@ class MessageAction implements IMessageAction {
   status?: MessageActionStatusEnum;
 
   @ApiPropertyOptional({
-    type: MessageButton,
+    type: () => MessageButton,
     isArray: true,
     description: 'List of buttons associated with the message action',
   })
   buttons?: MessageButton[];
 
   @ApiPropertyOptional({
-    type: MessageActionResult,
+    type: () => MessageActionResult,
     description: 'Result of the message action',
   })
   result: MessageActionResult;
@@ -117,13 +117,13 @@ export class MessageCTA implements IMessageCTA {
 
   @ApiPropertyOptional({
     description: 'Data associated with the call to action',
-    type: MessageCTAData,
+    type: () => MessageCTAData,
   })
   data: MessageCTAData;
 
   @ApiPropertyOptional({
     description: 'Action associated with the call to action',
-    type: MessageAction,
+    type: () => MessageAction,
   })
   action?: MessageAction;
 }
@@ -175,13 +175,13 @@ export class MessageResponseDto implements IMessage {
   _subscriberId: string;
 
   @ApiPropertyOptional({
-    type: SubscriberResponseDto,
+    type: () => SubscriberResponseDto,
     description: 'Subscriber details, if available',
   })
   subscriber?: SubscriberResponseDto;
 
   @ApiPropertyOptional({
-    type: WorkflowResponse,
+    type: () => WorkflowResponse,
     description: 'Workflow template associated with the message',
   })
   template?: WorkflowResponse;
@@ -309,7 +309,7 @@ export class MessageResponseDto implements IMessage {
   title?: string;
 
   @ApiProperty({
-    type: MessageCTA,
+    type: () => MessageCTA,
     description: 'Call to action associated with the message',
   })
   cta: MessageCTA;
@@ -375,7 +375,7 @@ export class MessagesResponseDto {
   hasMore: boolean;
 
   @ApiProperty({
-    type: [MessageResponseDto],
+    type: () => [MessageResponseDto],
     description: 'List of messages',
   })
   data: MessageResponseDto[];

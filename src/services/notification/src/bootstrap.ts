@@ -47,13 +47,7 @@ const extendedBodySizeRoutes = [
 
 // Validate the ENV variables after launching SENTRY, so missing variables will report to sentry.
 validateEnv();
-class BootstrapOptions {
-  internalSdkGeneration?: boolean;
-}
-
-export async function bootstrap(
-  bootstrapOptions?: BootstrapOptions
-): Promise<{ app: INestApplication; document: any }> {
+export async function bootstrap(): Promise<{ app: INestApplication; document: any }> {
   BullMqService.haveProInstalled();
 
   let rawBodyBuffer: undefined | ((...args) => void);
@@ -167,7 +161,7 @@ export async function bootstrap(
     })
   );
 
-  const document = await setupSwagger(app, bootstrapOptions?.internalSdkGeneration);
+  const document = await setupSwagger(app);
 
   app.useGlobalFilters(new AllExceptionsFilter(app.get(Logger), app.get(RequestLogRepository)));
 
@@ -193,9 +187,9 @@ export async function bootstrap(
   });
 
   // Start listening first so the app is reachable (health checks, Swagger, etc.)
-  await app.listen(process.env.PORT || 3000, '0.0.0.0');
+  await app.listen(process.env.PORT || 3010, '0.0.0.0');
 
-  logger.info(`HTTP server listening on port ${process.env.PORT || 3000}`);
+  logger.info(`HTTP server listening on port ${process.env.PORT || 3010}`);
 
   // Pause and then enable workers after app is already listening
   try {

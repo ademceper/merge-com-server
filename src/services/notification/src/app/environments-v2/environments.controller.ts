@@ -9,13 +9,10 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { ApiExcludeEndpoint, ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
-import { RequirePermissions, SkipPermissionsCheck } from 'libs/application-generic';
+import { ExternalApiAccessible, RequirePermissions, SkipPermissionsCheck } from 'libs/application-generic';
 import { PermissionsEnum } from 'libs/shared';
 import type { UserSessionData } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
-import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';
-import { SdkGroupName, SdkMethodName } from '../shared/framework/swagger/sdk.decorators';
 import { UserSession } from '../shared/framework/user.decorator';
 import {
   DiffEnvironmentRequestDto,
@@ -33,9 +30,7 @@ import { PublishEnvironmentUseCase } from './usecases/publish-environment/publis
 @ApiCommonResponses()
 @Controller({ path: `/environments`, version: '2' })
 @UseInterceptors(ClassSerializerInterceptor)
-@RequireAuthentication()
 @ApiTags('Environments')
-@SdkGroupName('Environments')
 export class EnvironmentsController {
   constructor(
     private getEnvironmentTagsUsecase: GetEnvironmentTags,
@@ -56,7 +51,6 @@ export class EnvironmentsController {
     example: '6615943e7ace93b0540ae377',
   })
   @ApiResponse(GetEnvironmentTagsDto, 200, true)
-  @SdkMethodName('getTags')
   @ExternalApiAccessible()
   @SkipPermissionsCheck()
   async getEnvironmentTags(

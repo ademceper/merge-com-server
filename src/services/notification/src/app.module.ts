@@ -7,13 +7,10 @@ import { ApiExcludeController } from '@nestjs/swagger';
 import { cacheService, TracingModule } from 'libs/application-generic';
 import { Client, NovuModule } from 'libs/framework/servers/nest';
 import { usageLimitsWorkflow, usageReportWorkflow } from 'libs/notifications';
-import { isClerkEnabled } from 'libs/shared';
 import { SentryModule } from '@sentry/nestjs/setup';
 import packageJson from '../package.json';
 import { ActivityModule } from './app/activity/activity.module';
-import { AiModule } from './app/ai/ai.module';
 import { AnalyticsModule } from './app/analytics/analytics.module';
-import { AuthModule } from './app/auth/auth.module';
 import { BlueprintModule } from './app/blueprint/blueprint.module';
 import { BridgeModule } from './app/bridge/bridge.module';
 import { ChangeModule } from './app/change/change.module';
@@ -30,14 +27,11 @@ import { HealthModule } from './app/health/health.module';
 import { InboundParseModule } from './app/inbound-parse/inbound-parse.module';
 import { InboxModule } from './app/inbox/inbox.module';
 import { IntegrationModule } from './app/integrations/integrations.module';
-import { InternalModule } from './app/internal/internal.module';
-import { InvitesModule } from './app/invites/invites.module';
 import { LayoutsV1Module } from './app/layouts-v1/layouts-v1.module';
 import { LayoutsV2Module } from './app/layouts-v2/layouts.module';
 import { MessagesModule } from './app/messages/messages.module';
 import { NotificationGroupsModule } from './app/notification-groups/notification-groups.module';
 import { NotificationModule } from './app/notifications/notification.module';
-import { OrganizationModule } from './app/organization/organization.module';
 import { OutboundWebhooksModule } from './app/outbound-webhooks/outbound-webhooks.module';
 import { PartnerIntegrationsModule } from './app/partner-integrations/partner-integrations.module';
 import { PreferencesModule } from './app/preferences';
@@ -53,11 +47,9 @@ import { StorageModule } from './app/storage/storage.module';
 import { SubscribersV1Module } from './app/subscribers/subscribersV1.module';
 import { SubscribersModule } from './app/subscribers-v2/subscribers.module';
 import { SupportModule } from './app/support/support.module';
-import { TenantModule } from './app/tenant/tenant.module';
 import { TestingModule } from './app/testing/testing.module';
 import { TopicsV1Module } from './app/topics-v1/topics-v1.module';
 import { TopicsV2Module } from './app/topics-v2/topics-v2.module';
-import { UserModule } from './app/user/user.module';
 import { WidgetsModule } from './app/widgets/widgets.module';
 import { WorkflowOverridesModule } from './app/workflow-overrides/workflow-overrides.module';
 import { WorkflowModuleV1 } from './app/workflows-v1/workflow-v1.module';
@@ -103,8 +95,6 @@ const enterpriseQuotaThrottlerInterceptor =
     : [];
 
 const baseModules: Array<Type | DynamicModule | Promise<DynamicModule> | ForwardReference> = [
-  AiModule,
-  AuthModule,
   InboundParseModule,
   SharedModule,
   HealthModule,
@@ -117,11 +107,8 @@ const baseModules: Array<Type | DynamicModule | Promise<DynamicModule> | Forward
   NotificationModule,
   NotificationGroupsModule,
   ContentTemplatesModule,
-  OrganizationModule,
   ActivityModule,
-  UserModule,
   IntegrationModule,
-  InternalModule,
   ChangeModule,
   ContextsModule,
   SubscribersV1Module,
@@ -134,7 +121,6 @@ const baseModules: Array<Type | DynamicModule | Promise<DynamicModule> | Forward
   TopicsV1Module,
   TopicsV2Module,
   BlueprintModule,
-  TenantModule,
   StorageModule,
   WorkflowOverridesModule,
   RateLimitingModule,
@@ -155,11 +141,6 @@ const baseModules: Array<Type | DynamicModule | Promise<DynamicModule> | Forward
 ];
 
 const enterpriseModules = enterpriseImports();
-
-if (!isClerkEnabled()) {
-  const communityModules = [InvitesModule];
-  baseModules.push(...communityModules);
-}
 
 const modules = baseModules.concat(enterpriseModules);
 

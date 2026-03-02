@@ -1,6 +1,6 @@
 import { BadRequestException, Body, Controller, Post } from '@nestjs/common';
 import { ModuleRef } from '@nestjs/core';
-import { ApiExcludeController } from '@nestjs/swagger';
+import { ApiExcludeController, ApiTags } from '@nestjs/swagger';
 import {
   CompileEmailTemplate,
   CompileEmailTemplateCommand,
@@ -14,11 +14,10 @@ import type { MessageTemplateContentType } from 'libs/shared';
 import type { IEmailBlock, IMessageCTA, UserSessionData } from 'libs/shared';
 import { format } from 'date-fns';
 import i18next from 'i18next';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { UserSession } from '../shared/framework/user.decorator';
 
 @Controller('/content-templates')
-@RequireAuthentication()
+@ApiTags('Content Templates')
 @ApiExcludeController()
 export class ContentTemplatesController {
   constructor(

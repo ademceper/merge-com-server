@@ -1,6 +1,5 @@
-import { forwardRef, Module } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import type { DynamicModule, ForwardReference, MiddlewareConsumer, NestModule, Type } from '@nestjs/common';
-import { AuthModule } from '../auth/auth.module';
 import { SharedModule } from '../shared/shared.module';
 import { ChangesController } from './changes.controller';
 import { USE_CASES } from './usecases';
@@ -18,7 +17,7 @@ const enterpriseImports = (): Array<Type | DynamicModule | Promise<DynamicModule
 };
 
 @Module({
-  imports: [SharedModule, forwardRef(() => AuthModule), ...enterpriseImports()],
+  imports: [SharedModule, ...enterpriseImports()],
   providers: [
     ...USE_CASES,
     {

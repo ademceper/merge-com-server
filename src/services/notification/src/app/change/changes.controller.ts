@@ -3,12 +3,10 @@ import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { ApiExcludeController } from '@nestjs/swagger/dist/decorators/api-exclude-controller.decorator';
 import { ApiRateLimitCostEnum } from 'libs/shared';
 import type { UserSessionData } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
-import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
+import { ExternalApiAccessible } from 'libs/application-generic';
 import { ThrottlerCost } from '../rate-limiting/guards';
 import { DataNumberDto } from '../shared/dtos/data-wrapper-dto';
 import { ApiCommonResponses, ApiOkResponse, ApiResponse } from '../shared/framework/response.decorator';
-import { SdkMethodName } from '../shared/framework/swagger/sdk.decorators';
 import { UserSession } from '../shared/framework/user.decorator';
 import { BulkApplyChangeDto } from './dtos/bulk-apply-change.dto';
 import { ChangesRequestDto } from './dtos/change-request.dto';
@@ -24,7 +22,6 @@ import { GetChanges } from './usecases/get-changes/get-changes.usecase';
 @ApiCommonResponses()
 @Controller('/changes')
 @UseInterceptors(ClassSerializerInterceptor)
-@RequireAuthentication()
 @ApiTags('Changes')
 @ApiExcludeController()
 export class ChangesController {
@@ -67,7 +64,6 @@ export class ChangesController {
     summary: 'Get changes count',
   })
   @ExternalApiAccessible()
-  @SdkMethodName('count')
   async getChangesCount(@UserSession() user: UserSessionData): Promise<number> {
     return await this.countChanges.execute(
       CountChangesCommand.create({
@@ -85,7 +81,6 @@ export class ChangesController {
     summary: 'Apply changes',
   })
   @ExternalApiAccessible()
-  @SdkMethodName('applyBulk')
   async bulkApplyDiff(
     @UserSession() user: UserSessionData,
     @Body() body: BulkApplyChangeDto
@@ -106,7 +101,6 @@ export class ChangesController {
     summary: 'Apply change',
   })
   @ExternalApiAccessible()
-  @SdkMethodName('apply')
   async applyDiff(
     @UserSession() user: UserSessionData,
     @Param('changeId') changeId: string

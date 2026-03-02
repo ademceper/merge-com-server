@@ -36,7 +36,7 @@ export class CreateTopicSubscriptionRequestDto {
 
   @ApiPropertyOptional({
     description: 'The topic details',
-    type: TopicIdentifierDto,
+    type: () => TopicIdentifierDto,
   })
   @ValidateNested()
   @Type(() => TopicIdentifierDto)

@@ -28,7 +28,7 @@ export class SubscriptionDetailsResponseDto {
 
   @ApiPropertyOptional({
     description: 'The preferences/rules for the subscription',
-    type: [SubscriptionPreferenceDto],
+    type: () => [SubscriptionPreferenceDto],
   })
   @IsArray()
   @ValidateNested({ each: true })

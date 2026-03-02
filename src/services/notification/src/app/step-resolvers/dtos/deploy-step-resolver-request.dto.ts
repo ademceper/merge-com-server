@@ -25,7 +25,7 @@ export class DeployStepResolverManifestStepDto {
 export class DeployStepResolverManifestDto {
   @ApiProperty({
     description: 'Selected steps included in this publish',
-    type: [DeployStepResolverManifestStepDto],
+    type: () => [DeployStepResolverManifestStepDto],
   })
   @IsArray()
   @ArrayMinSize(1)

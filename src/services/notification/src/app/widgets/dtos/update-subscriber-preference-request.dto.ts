@@ -6,7 +6,7 @@ import { ChannelPreference } from '../../shared/dtos/channel-preference';
 @ApiExtraModels(ChannelPreference)
 export class UpdateSubscriberPreferenceRequestDto {
   @ApiPropertyOptional({
-    type: ChannelPreference,
+    type: () => ChannelPreference,
     description: 'Optional preferences for each channel type in the assigned workflow.',
   })
   @ValidateNested()

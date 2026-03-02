@@ -23,7 +23,7 @@ import {
 import { NovuClient, NovuHandler } from 'libs/framework/servers/nest';
 import { GetLayoutUseCase } from '../layouts-v2/usecases/get-layout';
 import { LayoutVariablesSchemaUseCase } from '../layouts-v2/usecases/layout-variables-schema';
-import { GetOrganizationSettings } from '../organization/usecases/get-organization-settings/get-organization-settings.usecase';
+import { GetOrganizationSettings } from '../shared/usecases/get-organization-settings/get-organization-settings.usecase';
 import { CreateVariablesObject } from '../shared/usecases/create-variables-object';
 import { NovuBridgeController } from './novu-bridge.controller';
 import { NovuBridgeClient } from './novu-bridge-client';

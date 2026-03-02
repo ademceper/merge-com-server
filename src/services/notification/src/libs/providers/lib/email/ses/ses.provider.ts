@@ -91,10 +91,10 @@ export class SESEmailProvider extends BaseProvider implements IEmailProvider {
     const parsedBody = this.jsonParseBody(body);
 
     if (Array.isArray(parsedBody)) {
-      return parsedBody.map((item) => this.buildMessageId(item)).filter((item) => item !== undefined);
+      return parsedBody.map((item) => this.buildMessageId(item)).filter((item): item is string => item !== undefined);
     }
 
-    return [this.buildMessageId(parsedBody)].filter((item) => item !== undefined);
+    return [this.buildMessageId(parsedBody)].filter((item): item is string => item !== undefined);
   }
 
   private jsonParseBody(body: unknown) {

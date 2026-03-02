@@ -16,10 +16,8 @@ import { ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
 import { ExternalApiAccessible, FeatureFlagsService, RequirePermissions } from 'libs/application-generic';
 import { ApiRateLimitCategoryEnum, FeatureFlagsKeysEnum, PermissionsEnum } from 'libs/shared';
 import type { UserSessionData } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ThrottlerCategory } from '../rate-limiting/guards/throttler.decorator';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';
-import { SdkGroupName, SdkMethodName } from '../shared/framework/swagger/sdk.decorators';
 import { UserSession } from '../shared/framework/user.decorator';
 import { CreateChannelConnectionRequestDto } from './dtos/create-channel-connection-request.dto';
 import { mapChannelConnectionEntityToDto } from './dtos/dto.mapper';
@@ -42,8 +40,6 @@ import { UpdateChannelConnection } from './usecases/update-channel-connection/up
 @Controller({ path: '/channel-connections', version: '1' })
 @UseInterceptors(ClassSerializerInterceptor)
 @ApiTags('Channel Connections')
-@SdkGroupName('ChannelConnections')
-@RequireAuthentication()
 @ApiCommonResponses()
 export class ChannelConnectionsController {
   constructor(
@@ -73,7 +69,6 @@ export class ChannelConnectionsController {
     description: `List all channel connections for a resource.`,
   })
   @ApiResponse(ListChannelConnectionsResponseDto, 200)
-  @SdkMethodName('list')
   @RequirePermissions(PermissionsEnum.INTEGRATION_READ)
   @ExternalApiAccessible()
   async listChannelConnections(
@@ -114,7 +109,6 @@ export class ChannelConnectionsController {
     description: `Create a new channel connection for a resource for given integration. Only one channel connection is allowed per resource and integration.`,
   })
   @ApiResponse(GetChannelConnectionResponseDto, 201)
-  @SdkMethodName('create')
   @RequirePermissions(PermissionsEnum.INTEGRATION_WRITE)
   @ExternalApiAccessible()
   async createChannelConnection(
@@ -146,7 +140,6 @@ export class ChannelConnectionsController {
   })
   @ApiParam({ name: 'identifier', description: 'The unique identifier of the channel connection', type: String })
   @ApiResponse(GetChannelConnectionResponseDto, 200)
-  @SdkMethodName('retrieve')
   @RequirePermissions(PermissionsEnum.INTEGRATION_READ)
   @ExternalApiAccessible()
   async getChannelConnectionByIdentifier(
@@ -173,7 +166,6 @@ export class ChannelConnectionsController {
   })
   @ApiParam({ name: 'identifier', description: 'The unique identifier of the channel connection', type: String })
   @ApiResponse(GetChannelConnectionResponseDto, 200)
-  @SdkMethodName('update')
   @RequirePermissions(PermissionsEnum.INTEGRATION_WRITE)
   @ExternalApiAccessible()
   async updateChannelConnection(
@@ -203,7 +195,6 @@ export class ChannelConnectionsController {
     description: `Delete a specific channel connection by its unique identifier.`,
   })
   @ApiParam({ name: 'identifier', description: 'The unique identifier of the channel connection', type: String })
-  @SdkMethodName('delete')
   @RequirePermissions(PermissionsEnum.INTEGRATION_WRITE)
   @ExternalApiAccessible()
   async deleteChannelConnection(

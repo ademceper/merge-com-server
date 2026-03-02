@@ -13,12 +13,10 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
-import { RequirePermissions } from 'libs/application-generic';
+import { ExternalApiAccessible, RequirePermissions } from 'libs/application-generic';
 import { ApiRateLimitCategoryEnum, PermissionsEnum } from 'libs/shared';
 import type { ContextType } from 'libs/shared';
 import type { UserSessionData } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
-import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import { ThrottlerCategory } from '../rate-limiting/guards';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';
 import { UserSession } from '../shared/framework/user.decorator';
@@ -41,7 +39,6 @@ import { UpdateContext } from './usecases/update-context/update-context.usecase'
 @Controller({ path: '/contexts', version: '2' })
 @UseInterceptors(ClassSerializerInterceptor)
 @ThrottlerCategory(ApiRateLimitCategoryEnum.GLOBAL)
-@RequireAuthentication()
 @ApiTags('Contexts')
 @ApiCommonResponses()
 export class ContextsController {

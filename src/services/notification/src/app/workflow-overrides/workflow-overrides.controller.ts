@@ -13,9 +13,9 @@ import {
 } from '@nestjs/common';
 import { ApiExcludeController, ApiOperation, ApiTags } from '@nestjs/swagger';
 import type { UserSessionData } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
-import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
-import { RootEnvironmentGuard } from '../auth/framework/root-environment-guard.service';
+import { ExternalApiAccessible } from 'libs/application-generic';
+// TODO: Keycloak entegrasyonunda yeniden eklenecek
+// import { RootEnvironmentGuard } from '../auth/framework/root-environment-guard.service';
 import { DataBooleanDto } from '../shared/dtos/data-wrapper-dto';
 import { ApiCommonResponses, ApiOkResponse, ApiResponse } from '../shared/framework/response.decorator';
 import { UserSession } from '../shared/framework/user.decorator';
@@ -46,7 +46,6 @@ import { UpdateWorkflowOverrideById } from './usecases/update-workflow-override-
 @ApiCommonResponses()
 @Controller('/workflow-overrides')
 @UseInterceptors(ClassSerializerInterceptor)
-@RequireAuthentication()
 @ApiTags('Workflows-Overrides')
 @ApiExcludeController()
 export class WorkflowOverridesController {
@@ -61,7 +60,7 @@ export class WorkflowOverridesController {
   ) {}
 
   @Post('/')
-  @UseGuards(RootEnvironmentGuard)
+  // @UseGuards(RootEnvironmentGuard)
   @ApiResponse(CreateWorkflowOverrideResponseDto)
   @ApiOperation({
     summary: 'Create workflow override',
@@ -85,7 +84,7 @@ export class WorkflowOverridesController {
   }
 
   @Put('/:overrideId')
-  @UseGuards(RootEnvironmentGuard)
+  // @UseGuards(RootEnvironmentGuard)
   @ApiResponse(UpdateWorkflowOverrideResponseDto)
   @ApiOperation({
     summary: 'Update workflow override by id',
@@ -109,7 +108,7 @@ export class WorkflowOverridesController {
   }
 
   @Put('/workflows/:workflowId/tenants/:tenantId')
-  @UseGuards(RootEnvironmentGuard)
+  // @UseGuards(RootEnvironmentGuard)
   @ApiResponse(UpdateWorkflowOverrideResponseDto)
   @ApiOperation({
     summary: 'Update workflow override',
@@ -135,7 +134,7 @@ export class WorkflowOverridesController {
   }
 
   @Get('/:overrideId')
-  @UseGuards(RootEnvironmentGuard)
+  // @UseGuards(RootEnvironmentGuard)
   @ApiResponse(GetWorkflowOverrideResponseDto)
   @ApiOperation({
     summary: 'Get workflow override by id',
@@ -156,7 +155,7 @@ export class WorkflowOverridesController {
   }
 
   @Get('/workflows/:workflowId/tenants/:tenantId')
-  @UseGuards(RootEnvironmentGuard)
+  // @UseGuards(RootEnvironmentGuard)
   @ApiResponse(GetWorkflowOverrideResponseDto)
   @ApiOperation({
     summary: 'Get workflow override',
@@ -179,7 +178,7 @@ export class WorkflowOverridesController {
   }
 
   @Delete('/:overrideId')
-  @UseGuards(RootEnvironmentGuard)
+  // @UseGuards(RootEnvironmentGuard)
   @ApiOkResponse({
     type: DataBooleanDto,
   })
@@ -202,7 +201,7 @@ export class WorkflowOverridesController {
   }
 
   @Get('/')
-  @UseGuards(RootEnvironmentGuard)
+  // @UseGuards(RootEnvironmentGuard)
   @ApiResponse(GetWorkflowOverridesResponseDto)
   @ApiOperation({
     summary: 'Get workflow overrides',

@@ -1,6 +1,5 @@
 import { Module } from '@nestjs/common';
 import type { MiddlewareConsumer, NestModule } from '@nestjs/common';
-import { AuthModule } from '../auth/auth.module';
 import { ChangeModule } from '../change/change.module';
 import { IntegrationModule } from '../integrations/integrations.module';
 import { MessageTemplateModule } from '../message-template/message-template.module';
@@ -15,7 +14,6 @@ const MODULES = [
   SharedModule,
   MessageTemplateModule,
   ChangeModule,
-  AuthModule,
   IntegrationModule,
   PreferencesModule,
   OutboundWebhooksModule.forRoot(),

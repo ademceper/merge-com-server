@@ -109,13 +109,13 @@ export class NotificationFeedItemDto implements INotificationDto {
 
   @ApiPropertyOptional({
     description: 'Actor details related to the notification, if applicable.',
-    type: ActorFeedItemDto,
+    type: () => ActorFeedItemDto,
   })
   actor?: ActorFeedItemDto;
 
   @ApiPropertyOptional({
     description: 'Subscriber details associated with this notification.',
-    type: SubscriberFeedResponseDto,
+    type: () => SubscriberFeedResponseDto,
   })
   subscriber?: SubscriberFeedResponseDto;
 
@@ -196,7 +196,7 @@ export class NotificationFeedItemDto implements INotificationDto {
 
   @ApiProperty({
     description: 'Call-to-action information associated with the notification.',
-    type: MessageCTA,
+    type: () => MessageCTA,
   })
   cta: MessageCTA;
 
@@ -261,7 +261,7 @@ export class FeedResponseDto {
 
   @ApiProperty({
     description: 'Array of notifications returned in the response.',
-    type: [NotificationFeedItemDto],
+    type: () => [NotificationFeedItemDto],
   })
   data: NotificationFeedItemDto[];
 

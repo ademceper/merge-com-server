@@ -407,24 +407,23 @@ export class SendMessagePush extends SendMessageBase {
       }
     }
 
-    if (overrides.steps?.[stepId]?.providers) {
-      for (const providerId of Object.keys(overrides.steps[stepId].providers)) {
+    const stepProviders = overrides.steps?.[stepId]?.providers;
+    if (stepProviders) {
+      for (const providerId of Object.keys(stepProviders)) {
         if (this.pushProviderIds.includes(providerId as PushProviderIdEnum)) {
           const existingIndex = result.findIndex((item) => item.providerId === providerId);
 
           if (existingIndex >= 0) {
-            // Merge with existing overrides, with step overrides taking precedence
             result[existingIndex].overrides = merge(
               {},
               result[existingIndex].overrides,
-              overrides.steps[stepId].providers[providerId as ProvidersIdEnum]
+              stepProviders[providerId as ProvidersIdEnum]
             );
           } else {
-            // Add new provider overrides
             result.push({
               providerId: providerId as PushProviderIdEnum,
               overrides: {
-                ...overrides.steps[stepId].providers[providerId as ProvidersIdEnum],
+                ...stepProviders[providerId as ProvidersIdEnum],
               },
             });
           }

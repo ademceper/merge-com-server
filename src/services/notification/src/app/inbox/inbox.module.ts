@@ -7,9 +7,8 @@ import {
   TopicRepository,
   TopicSubscribersRepository,
 } from 'libs/dal';
-import { AuthModule } from '../auth/auth.module';
 import { IntegrationModule } from '../integrations/integrations.module';
-import { OrganizationModule } from '../organization/organization.module';
+import { GetOrganizationSettings } from '../shared/usecases/get-organization-settings/get-organization-settings.usecase';
 import { OutboundWebhooksModule } from '../outbound-webhooks/outbound-webhooks.module';
 import { PreferencesModule } from '../preferences';
 import { SharedModule } from '../shared/shared.module';
@@ -27,16 +26,15 @@ import { USE_CASES } from './usecases';
   imports: [
     SharedModule,
     SubscribersV1Module,
-    AuthModule,
     IntegrationModule,
     PreferencesModule,
-    OrganizationModule,
     OutboundWebhooksModule.forRoot(),
     TopicsV2Module,
     SubscriptionsModule,
   ],
   providers: [
     ...USE_CASES,
+    GetOrganizationSettings,
     CommunityOrganizationRepository,
     ContextRepository,
     TopicRepository,

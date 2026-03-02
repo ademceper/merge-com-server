@@ -45,7 +45,7 @@ export class UpdateWorkflowRequestDto implements IUpdateWorkflowDto {
   critical?: boolean;
 
   @ApiPropertyOptional({
-    type: SubscriberPreferenceChannels,
+    type: () => SubscriberPreferenceChannels,
   })
   preferenceSettings?: IPreferenceChannels;
 

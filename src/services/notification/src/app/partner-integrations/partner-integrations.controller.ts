@@ -14,7 +14,6 @@ import { ApiExcludeController, ApiTags } from '@nestjs/swagger';
 import { RequirePermissions } from 'libs/application-generic';
 import { PermissionsEnum } from 'libs/shared';
 import type { UserSessionData } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { UserSession } from '../shared/framework/user.decorator';
 import { CreateVercelIntegrationRequestDto } from './dtos/create-vercel-integration-request.dto';
 import { CreateVercelIntegrationResponseDto } from './dtos/create-vercel-integration-response.dto';
@@ -44,7 +43,6 @@ export class PartnerIntegrationsController {
   ) {}
 
   @Post('/vercel')
-  @RequireAuthentication()
   @RequirePermissions(PermissionsEnum.PARTNER_INTEGRATION_WRITE)
   async createVercelIntegration(
     @UserSession() user: UserSessionData,
@@ -62,7 +60,6 @@ export class PartnerIntegrationsController {
   }
 
   @Put('/vercel')
-  @RequireAuthentication()
   @RequirePermissions(PermissionsEnum.PARTNER_INTEGRATION_WRITE)
   async updateVercelIntegration(@UserSession() user: UserSessionData, @Body() body: UpdateVercelIntegrationRequestDto) {
     return await this.updateVercelIntegrationUsecase.execute(
@@ -77,7 +74,6 @@ export class PartnerIntegrationsController {
   }
 
   @Get('/vercel/:configurationId')
-  @RequireAuthentication()
   @RequirePermissions(PermissionsEnum.PARTNER_INTEGRATION_READ)
   async getVercelIntegration(@UserSession() user: UserSessionData, @Param('configurationId') configurationId: string) {
     return await this.getVercelIntegrationUsecase.execute(
@@ -91,7 +87,6 @@ export class PartnerIntegrationsController {
   }
 
   @Get('/vercel/:configurationId/projects')
-  @RequireAuthentication()
   @RequirePermissions(PermissionsEnum.PARTNER_INTEGRATION_READ)
   async getVercelProjects(
     @UserSession() user: UserSessionData,

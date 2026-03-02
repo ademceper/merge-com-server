@@ -1,38 +1,25 @@
 {
   "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "module": "commonjs",
-    "declaration": true,
-    "noImplicitAny": false,
-    "removeComments": true,
-    "allowSyntheticDefaultImports": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "strictNullChecks": true,
-    "target": "es2021",
-    "esModuleInterop": true,
-    "sourceMap": true,
-    "skipLibCheck": true,
-    "outDir": "./dist",
-    "baseUrl": "./src"
-  },
-  "include": ["src/**/*", "src/**/*.d.ts"],
   "exclude": [
     "node_modules",
+    "dist",
     "e2e",
     "migrations",
+    "scripts",
     "src/**/*.spec.ts",
     "src/**/*.e2e.ts",
     "src/**/*.e2e-ee.ts",
     "src/**/*.test.ts",
     "src/**/*.test-d.ts",
+    "src/**/e2e/**",
     "src/libs/framework/servers/h3.ts",
     "src/libs/framework/servers/next.ts",
     "src/libs/framework/servers/nuxt.ts",
     "src/libs/framework/servers/sveltekit.ts",
     "src/libs/internal-sdk/react-query",
-    "src/**/e2e/**",
     "src/libs/providers/utils/test",
-    "scripts"
+    "src/libs/framework/jsonSchemaFaker.js",
+    "swc-register.js",
+    "webpack.config.js"
   ]
 }

@@ -5,7 +5,6 @@ export * from './integration';
 export * from './layout';
 export * from './message-template';
 export * from './notification-templates';
-export * from './organization';
 export * from './pagination';
 export * from './session';
 export * from './shared';

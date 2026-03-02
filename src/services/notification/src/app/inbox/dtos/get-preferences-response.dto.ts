@@ -37,7 +37,7 @@ export class GetPreferencesResponseDto {
   enabled: boolean;
 
   @ApiProperty({
-    type: SubscriberPreferenceChannels,
+    type: () => SubscriberPreferenceChannels,
     description: 'Channel-specific preference settings',
   })
   @IsDefined()

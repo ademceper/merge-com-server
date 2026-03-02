@@ -9,7 +9,7 @@ import { SubscriberResponseDtoOptional } from '../../subscribers/dtos';
 export class PreviewPayloadDto {
   @ApiPropertyOptional({
     description: 'Partial subscriber information',
-    type: SubscriberResponseDtoOptional,
+    type: () => SubscriberResponseDtoOptional,
   })
   @IsOptional()
   @ValidateNested()

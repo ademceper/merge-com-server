@@ -37,7 +37,7 @@ export class CreateWorkflowRequestDto implements ICreateWorkflowDto {
   description: string;
 
   @ApiProperty({
-    type: [NotificationStepDto],
+    type: () => [NotificationStepDto],
   })
   @IsDefined()
   @IsArray()
@@ -60,7 +60,7 @@ export class CreateWorkflowRequestDto implements ICreateWorkflowDto {
   critical?: boolean;
 
   @ApiPropertyOptional({
-    type: SubscriberPreferenceChannels,
+    type: () => SubscriberPreferenceChannels,
   })
   @IsOptional()
   preferenceSettings?: IPreferenceChannels;

@@ -1,10 +1,8 @@
 import { ClassSerializerInterceptor, Controller, Get, Param, Query, UseInterceptors } from '@nestjs/common';
-import { ApiOperation } from '@nestjs/swagger';
+import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { RequirePermissions, UserSession } from 'libs/application-generic';
 import { PermissionsEnum } from 'libs/shared';
 import type { UserSessionData } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
-import { SdkGroupName, SdkMethodName } from '../shared/framework/swagger/sdk.decorators';
 import { GetChartsRequestDto } from './dtos/get-charts.request.dto';
 import { GetChartsResponseDto } from './dtos/get-charts.response.dto';
 import { GetRequestResponseDto } from './dtos/get-request.response.dto';
@@ -26,8 +24,7 @@ import { GetWorkflowRuns } from './usecases/get-workflow-runs/get-workflow-runs.
 
 @Controller('/activity')
 @UseInterceptors(ClassSerializerInterceptor)
-@RequireAuthentication()
-@SdkGroupName('Activity')
+@ApiTags('Activity')
 export class ActivityController {
   constructor(
     private getRequestsUsecase: GetRequests,
@@ -39,8 +36,6 @@ export class ActivityController {
 
   @Get('requests')
   @RequirePermissions(PermissionsEnum.NOTIFICATION_READ)
-  @SdkGroupName('Activity.Requests')
-  @SdkMethodName('list')
   @ApiOperation({
     summary: 'List activity requests',
     description: 'Retrieve a list of activity requests with optional filtering and pagination.',
@@ -58,8 +53,6 @@ export class ActivityController {
 
   @Get('requests/:requestId')
   @RequirePermissions(PermissionsEnum.NOTIFICATION_READ)
-  @SdkGroupName('Activity.Requests')
-  @SdkMethodName('retrieve')
   @ApiOperation({
     summary: 'Retrieve activity request',
     description: 'Retrieve detailed traces and information for a specific activity request by ID.',
@@ -76,8 +69,6 @@ export class ActivityController {
 
   @Get('workflow-runs')
   @RequirePermissions(PermissionsEnum.NOTIFICATION_READ)
-  @SdkGroupName('Activity.WorkflowRuns')
-  @SdkMethodName('list')
   @ApiOperation({
     summary: 'List workflow runs',
     description: 'Retrieve a list of workflow runs with optional filtering and pagination.',
@@ -99,8 +90,6 @@ export class ActivityController {
 
   @Get('workflow-runs/:workflowRunId')
   @RequirePermissions(PermissionsEnum.NOTIFICATION_READ)
-  @SdkGroupName('Activity.WorkflowRuns')
-  @SdkMethodName('retrieve')
   @ApiOperation({
     summary: 'Retrieve workflow run',
     description: 'Retrieve detailed information for a specific workflow run by ID.',
@@ -121,8 +110,6 @@ export class ActivityController {
 
   @Get('charts')
   @RequirePermissions(PermissionsEnum.NOTIFICATION_READ)
-  @SdkGroupName('Activity.Charts')
-  @SdkMethodName('retrieve')
   @ApiOperation({
     summary: 'Retrieve activity charts',
     description: 'Retrieve chart data for activity analytics and metrics visualization.',

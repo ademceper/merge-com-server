@@ -70,7 +70,7 @@ export class CreateSlackChannelEndpointDto extends CreateChannelEndpointBaseDto 
 
   @ApiProperty({
     description: 'Slack channel endpoint data',
-    type: SlackChannelEndpointDto,
+    type: () => SlackChannelEndpointDto,
   })
   @IsDefined()
   @ValidateNested()
@@ -90,7 +90,7 @@ export class CreateSlackUserEndpointDto extends CreateChannelEndpointBaseDto {
 
   @ApiProperty({
     description: 'Slack user endpoint data',
-    type: SlackUserEndpointDto,
+    type: () => SlackUserEndpointDto,
   })
   @IsDefined()
   @ValidateNested()
@@ -110,7 +110,7 @@ export class CreateWebhookEndpointDto extends CreateChannelEndpointBaseDto {
 
   @ApiProperty({
     description: 'Webhook endpoint data',
-    type: WebhookEndpointDto,
+    type: () => WebhookEndpointDto,
   })
   @IsDefined()
   @ValidateNested()
@@ -130,7 +130,7 @@ export class CreatePhoneEndpointDto extends CreateChannelEndpointBaseDto {
 
   @ApiProperty({
     description: 'Phone endpoint data',
-    type: PhoneEndpointDto,
+    type: () => PhoneEndpointDto,
   })
   @IsDefined()
   @ValidateNested()
@@ -150,7 +150,7 @@ export class CreateMsTeamsChannelEndpointDto extends CreateChannelEndpointBaseDt
 
   @ApiProperty({
     description: 'MS Teams channel endpoint data',
-    type: MsTeamsChannelEndpointDto,
+    type: () => MsTeamsChannelEndpointDto,
   })
   @IsDefined()
   @ValidateNested()
@@ -170,7 +170,7 @@ export class CreateMsTeamsUserEndpointDto extends CreateChannelEndpointBaseDto {
 
   @ApiProperty({
     description: 'MS Teams user endpoint data',
-    type: MsTeamsUserEndpointDto,
+    type: () => MsTeamsUserEndpointDto,
   })
   @IsDefined()
   @ValidateNested()

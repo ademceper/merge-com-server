@@ -23,7 +23,7 @@ export class BulkUpdateSubscriberPreferenceItemDto {
 export class BulkUpdateSubscriberPreferencesDto {
   @ApiProperty({
     description: 'Array of workflow preferences to update (maximum 100 items)',
-    type: [BulkUpdateSubscriberPreferenceItemDto],
+    type: () => [BulkUpdateSubscriberPreferenceItemDto],
     maxItems: 100,
   })
   @IsDefined()

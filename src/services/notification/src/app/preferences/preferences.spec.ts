@@ -12,7 +12,6 @@ import { FeatureFlagsKeysEnum, PreferencesTypeEnum } from 'libs/shared';
 import { UserSession } from '@novu/testing';
 import { expect } from 'chai';
 
-import { AuthModule } from '../auth/auth.module';
 import { PreferencesModule } from './preferences.module';
 
 describe('Preferences', () => {
@@ -24,7 +23,7 @@ describe('Preferences', () => {
 
   beforeEach(async () => {
     const moduleRef = await Test.createTestingModule({
-      imports: [PreferencesModule, AuthModule],
+      imports: [PreferencesModule],
       providers: [],
     }).compile();
 

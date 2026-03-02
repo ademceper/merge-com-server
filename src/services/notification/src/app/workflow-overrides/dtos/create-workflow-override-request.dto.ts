@@ -22,7 +22,7 @@ export class CreateWorkflowOverrideRequestDto implements ICreateWorkflowOverride
   active?: boolean;
 
   @ApiPropertyOptional({
-    type: SubscriberPreferenceChannels,
+    type: () => SubscriberPreferenceChannels,
   })
   @IsOptional()
   @ValidateNested()

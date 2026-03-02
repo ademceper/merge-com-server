@@ -15,9 +15,9 @@ import { ApiExcludeController, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { RequirePermissions } from 'libs/application-generic';
 import { buildWorkflowPreferencesFromPreferenceChannels, DEFAULT_WORKFLOW_PREFERENCES, PermissionsEnum, ResourceOriginEnum, ResourceTypeEnum } from 'libs/shared';
 import type { UserSessionData } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
-import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
-import { RootEnvironmentGuard } from '../auth/framework/root-environment-guard.service';
+import { ExternalApiAccessible } from 'libs/application-generic';
+// TODO: Keycloak entegrasyonunda yeniden eklenecek
+// import { RootEnvironmentGuard } from '../auth/framework/root-environment-guard.service';
 import { DataBooleanDto } from '../shared/dtos/data-wrapper-dto';
 import { ApiCommonResponses, ApiOkResponse, ApiResponse } from '../shared/framework/response.decorator';
 import { UserSession } from '../shared/framework/user.decorator';
@@ -47,7 +47,6 @@ import { UpdateWorkflow } from './usecases/update-workflow/update-workflow.useca
 @ApiExcludeController()
 @Controller('/notification-templates')
 @UseInterceptors(ClassSerializerInterceptor)
-@RequireAuthentication()
 @ApiTags('Notification Templates')
 export class NotificationTemplateController {
   constructor(
@@ -122,7 +121,7 @@ export class NotificationTemplateController {
   }
 
   @Delete('/:templateId')
-  @UseGuards(RootEnvironmentGuard)
+  // @UseGuards(RootEnvironmentGuard)
   @ApiOkResponse({
     type: DataBooleanDto,
   })
@@ -176,7 +175,7 @@ export class NotificationTemplateController {
     deprecated: true,
   })
   @ExternalApiAccessible()
-  @UseGuards(RootEnvironmentGuard)
+  // @UseGuards(RootEnvironmentGuard)
   @RequirePermissions(PermissionsEnum.WORKFLOW_WRITE)
   create(
     @UserSession() user: UserSessionData,
@@ -211,7 +210,7 @@ export class NotificationTemplateController {
   }
 
   @Put('/:templateId/status')
-  @UseGuards(RootEnvironmentGuard)
+  // @UseGuards(RootEnvironmentGuard)
   @ApiResponse(WorkflowResponse)
   @ApiOperation({
     summary: 'Update Notification template status',

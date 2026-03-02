@@ -53,7 +53,7 @@ export class SubscriberResponseDtoOptional {
   locale?: string | null;
 
   @ApiPropertyOptional({
-    type: [ChannelSettingsDto],
+    type: () => [ChannelSettingsDto],
     description: 'An array of channel settings associated with the subscriber.',
   })
   channels?: ChannelSettingsDto[];

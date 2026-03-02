@@ -8,11 +8,13 @@ import {
   VERSION_NEUTRAL,
 } from '@nestjs/common';
 
+import { ApiTags } from '@nestjs/swagger';
 import type { IWebhookResult } from './dtos/webhooks-response.dto';
 import { WebhookCommand } from './usecases/webhook/webhook.command';
 import { Webhook } from './usecases/webhook/webhook.usecase';
 
 @Controller({ path: '/webhooks', version: VERSION_NEUTRAL })
+@ApiTags('Provider Webhooks')
 @UseInterceptors(ClassSerializerInterceptor)
 export class WebhooksController {
   constructor(private webhookUsecase: Webhook) {}

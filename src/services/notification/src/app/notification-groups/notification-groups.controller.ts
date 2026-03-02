@@ -10,11 +10,9 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { ApiExcludeController, ApiOperation, ApiTags } from '@nestjs/swagger';
-import { RequirePermissions } from 'libs/application-generic';
+import { ExternalApiAccessible, RequirePermissions } from 'libs/application-generic';
 import { PermissionsEnum } from 'libs/shared';
 import type { UserSessionData } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
-import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';
 import { UserSession } from '../shared/framework/user.decorator';
 import { CreateNotificationGroupRequestDto } from './dtos/create-notification-group-request.dto';
@@ -34,7 +32,6 @@ import { UpdateNotificationGroup } from './usecases/update-notification-group/up
 @ApiCommonResponses()
 @Controller('/notification-groups')
 @UseInterceptors(ClassSerializerInterceptor)
-@RequireAuthentication()
 @ApiTags('Workflow groups')
 @ApiExcludeController()
 export class NotificationGroupsController {

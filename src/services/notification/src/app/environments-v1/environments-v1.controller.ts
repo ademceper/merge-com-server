@@ -11,6 +11,7 @@ import {
 } from '@nestjs/common';
 import { ApiExcludeEndpoint, ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
 import {
+  ExternalApiAccessible,
   FeatureFlagsService,
   ProductFeature,
   RequirePermissions,
@@ -20,11 +21,8 @@ import { CommunityOrganizationRepository } from 'libs/dal';
 import { ApiServiceLevelEnum, FeatureFlagsKeysEnum, FeatureNameEnum, getFeatureForTierAsBoolean, PermissionsEnum, ProductFeatureKeyEnum } from 'libs/shared';
 import type { UserSessionData } from 'libs/shared';
 import { ErrorDto } from '../../error-dto';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
-import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import { ApiKey } from '../shared/dtos/api-key';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';
-import { SdkGroupName, SdkMethodName } from '../shared/framework/swagger/sdk.decorators';
 import { UserSession } from '../shared/framework/user.decorator';
 import { CreateEnvironmentRequestDto } from './dtos/create-environment-request.dto';
 import { EnvironmentResponseDto } from './dtos/environment-response.dto';
@@ -48,7 +46,6 @@ import { UpdateEnvironment } from './usecases/update-environment/update-environm
 @ApiCommonResponses()
 @Controller('/environments')
 @UseInterceptors(ClassSerializerInterceptor)
-@RequireAuthentication()
 @ApiTags('Environments')
 export class EnvironmentsControllerV1 {
   constructor(
@@ -91,8 +88,6 @@ export class EnvironmentsControllerV1 {
   @ApiResponse(EnvironmentResponseDto, 201)
   @ApiResponse(ErrorDto, 402, false, false)
   @ProductFeature(ProductFeatureKeyEnum.MANAGE_ENVIRONMENTS)
-  @SdkGroupName('Environments')
-  @SdkMethodName('create')
   @ExternalApiAccessible()
   @RequirePermissions(PermissionsEnum.ENVIRONMENT_WRITE)
   async createEnvironment(
@@ -120,8 +115,6 @@ export class EnvironmentsControllerV1 {
     Each environment contains its configuration, API keys (if user has access), and metadata.`,
   })
   @ApiResponse(EnvironmentResponseDto, 200, true)
-  @SdkGroupName('Environments')
-  @SdkMethodName('list')
   @ExternalApiAccessible()
   @SkipPermissionsCheck()
   async listMyEnvironments(@UserSession() user: UserSessionData): Promise<EnvironmentResponseDto[]> {
@@ -145,8 +138,6 @@ export class EnvironmentsControllerV1 {
   })
   @ApiParam({ name: 'environmentId', description: 'The unique identifier of the environment', type: String })
   @ApiResponse(EnvironmentResponseDto)
-  @SdkGroupName('Environments')
-  @SdkMethodName('update')
   @ExternalApiAccessible()
   @RequirePermissions(PermissionsEnum.ENVIRONMENT_WRITE)
   async updateMyEnvironment(
@@ -175,7 +166,6 @@ export class EnvironmentsControllerV1 {
   })
   @ApiResponse(ApiKey, 200, true)
   @ExternalApiAccessible()
-  @SdkGroupName('Environments.ApiKeys')
   @ApiExcludeEndpoint()
   @RequirePermissions(PermissionsEnum.API_KEY_READ)
   async listOrganizationApiKeys(@UserSession() user: UserSessionData): Promise<ApiKey[]> {
@@ -210,8 +200,6 @@ export class EnvironmentsControllerV1 {
   })
   @ApiParam({ name: 'environmentId', description: 'The unique identifier of the environment', type: String })
   @ProductFeature(ProductFeatureKeyEnum.MANAGE_ENVIRONMENTS)
-  @SdkGroupName('Environments')
-  @SdkMethodName('delete')
   @ExternalApiAccessible()
   @RequirePermissions(PermissionsEnum.ENVIRONMENT_WRITE)
   async deleteEnvironment(@UserSession() user: UserSessionData, @Param('environmentId') environmentId: string) {

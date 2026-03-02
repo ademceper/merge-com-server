@@ -16,12 +16,11 @@ import { ApiExcludeController } from '@nestjs/swagger/dist/decorators/api-exclud
 import { RequirePermissions } from 'libs/application-generic';
 import { buildWorkflowPreferencesFromPreferenceChannels, DEFAULT_WORKFLOW_PREFERENCES, PermissionsEnum, ResourceOriginEnum, ResourceTypeEnum } from 'libs/shared';
 import type { UserSessionData } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
-import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
-import { RootEnvironmentGuard } from '../auth/framework/root-environment-guard.service';
+import { ExternalApiAccessible } from 'libs/application-generic';
+// TODO: Keycloak entegrasyonunda yeniden eklenecek
+// import { RootEnvironmentGuard } from '../auth/framework/root-environment-guard.service';
 import { DataBooleanDto } from '../shared/dtos/data-wrapper-dto';
 import { ApiOkResponse, ApiResponse } from '../shared/framework/response.decorator';
-import { SdkGroupName } from '../shared/framework/swagger/sdk.decorators';
 import { UserSession } from '../shared/framework/user.decorator';
 import {
   ChangeWorkflowStatusRequestDto,
@@ -54,7 +53,6 @@ import { UpdateWorkflow } from './usecases/update-workflow/update-workflow.useca
 @ApiExcludeController()
 @Controller('/workflows')
 @UseInterceptors(ClassSerializerInterceptor)
-@RequireAuthentication()
 @ApiTags('Workflows')
 export class WorkflowControllerV1 {
   constructor(
@@ -128,7 +126,7 @@ export class WorkflowControllerV1 {
   }
 
   @Delete('/:workflowId')
-  @UseGuards(RootEnvironmentGuard)
+  // @UseGuards(RootEnvironmentGuard)
   @ApiOkResponse({
     type: DataBooleanDto,
   })
@@ -158,7 +156,6 @@ export class WorkflowControllerV1 {
   })
   @ExternalApiAccessible()
   @RequirePermissions(PermissionsEnum.WORKFLOW_READ)
-  @SdkGroupName('Workflows.Variables')
   getWorkflowVariables(@UserSession() user: UserSessionData): Promise<VariablesResponseDto> {
     return this.getWorkflowVariablesUsecase.execute(
       GetWorkflowVariablesCommand.create({
@@ -198,7 +195,7 @@ export class WorkflowControllerV1 {
     description: `Workflow was previously named notification template`,
   })
   @ExternalApiAccessible()
-  @UseGuards(RootEnvironmentGuard)
+  // @UseGuards(RootEnvironmentGuard)
   @RequirePermissions(PermissionsEnum.WORKFLOW_WRITE)
   create(
     @UserSession() user: UserSessionData,
@@ -233,7 +230,7 @@ export class WorkflowControllerV1 {
   }
 
   @Put('/:workflowId/status')
-  @UseGuards(RootEnvironmentGuard)
+  // @UseGuards(RootEnvironmentGuard)
   @ApiResponse(WorkflowResponse)
   @ApiOperation({
     summary: 'Update workflow status',
@@ -241,7 +238,6 @@ export class WorkflowControllerV1 {
   })
   @ExternalApiAccessible()
   @RequirePermissions(PermissionsEnum.WORKFLOW_WRITE)
-  @SdkGroupName('Workflows.Status')
   updateActiveStatus(
     @UserSession() user: UserSessionData,
     @Body() body: ChangeWorkflowStatusRequestDto,

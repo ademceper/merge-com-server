@@ -1,17 +1,14 @@
 import { Controller, Delete, Get, HttpCode, HttpStatus, Param, Query } from '@nestjs/common';
 import { ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
-import { RequirePermissions } from 'libs/application-generic';
+import { ExternalApiAccessible, RequirePermissions } from 'libs/application-generic';
 import { PermissionsEnum } from 'libs/shared';
 import type { UserSessionData } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
-import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import {
   ApiCommonResponses,
   ApiNoContentResponse,
   ApiOkResponse,
   ApiResponse,
 } from '../shared/framework/response.decorator';
-import { SdkMethodName } from '../shared/framework/swagger/sdk.decorators';
 import { UserSession } from '../shared/framework/user.decorator';
 import { MessagesResponseDto } from '../widgets/dtos/message-response.dto';
 import { DeleteMessageResponseDto } from './dtos/delete-message-response.dto';
@@ -24,7 +21,6 @@ import { RemoveMessagesByTransactionIdCommand } from './usecases/remove-messages
 import { RemoveMessagesByTransactionId } from './usecases/remove-messages-by-transactionId/remove-messages-by-transactionId.usecase';
 
 @ApiCommonResponses()
-@RequireAuthentication()
 @Controller('/messages')
 @ApiTags('Messages')
 export class MessagesController {
@@ -102,7 +98,6 @@ export class MessagesController {
     This API supports filtering by **channel** and delete all messages associated with the **transactionId**.`,
   })
   @ApiParam({ name: 'transactionId', type: String, required: true, example: '507f1f77bcf86cd799439011' })
-  @SdkMethodName('deleteByTransactionId')
   @RequirePermissions(PermissionsEnum.MESSAGE_WRITE)
   async deleteMessagesByTransactionId(
     @UserSession() user: UserSessionData,

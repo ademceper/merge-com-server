@@ -176,13 +176,13 @@ export class DeleteTopicSubscriptionsResponseDto {
 
   @ApiProperty({
     description: 'Metadata about the operation',
-    type: MetaDto,
+    type: () => MetaDto,
   })
   meta: MetaDto;
 
   @ApiProperty({
     description: 'The list of errors for failed deletion attempts',
-    type: [SubscriptionsDeleteErrorDto],
+    type: () => [SubscriptionsDeleteErrorDto],
     required: false,
   })
   errors?: SubscriptionsDeleteErrorDto[];

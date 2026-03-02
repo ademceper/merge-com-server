@@ -9,7 +9,6 @@ const layoutSchema = new Schema<LayoutDBModel>(
     _environmentId: {
       type: Schema.Types.ObjectId,
       ref: 'Environment',
-      index: true,
     },
     _organizationId: {
       type: Schema.Types.ObjectId,

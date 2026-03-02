@@ -18,6 +18,7 @@ import { ApiExcludeEndpoint, ApiOperation, ApiQuery, ApiTags } from '@nestjs/swa
 import {
   CreateOrUpdateSubscriberCommand,
   CreateOrUpdateSubscriberUseCase,
+  ExternalApiAccessible,
   OAuthHandlerEnum,
   UpdateSubscriber,
   UpdateSubscriberChannel,
@@ -27,8 +28,6 @@ import {
 import { MessageEntity } from 'libs/dal';
 import { ApiRateLimitCategoryEnum, ApiRateLimitCostEnum, ButtonTypeEnum, ChatProviderIdEnum, PreferenceLevelEnum, TriggerTypeEnum } from 'libs/shared';
 import type { IPreferenceChannels, UserSessionData } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
-import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import { UpdatePreferencesCommand } from '../inbox/usecases/update-preferences/update-preferences.command';
 import { UpdatePreferences } from '../inbox/usecases/update-preferences/update-preferences.usecase';
 import { ThrottlerCategory, ThrottlerCost } from '../rate-limiting/guards';
@@ -41,7 +40,6 @@ import {
   ApiNoContentResponse,
   ApiResponse,
 } from '../shared/framework/response.decorator';
-import { SdkGroupName, SdkMethodName, SdkUsePagination } from '../shared/framework/swagger/sdk.decorators';
 import { UserSession } from '../shared/framework/user.decorator';
 import { FeedResponseDto } from '../widgets/dtos/feeds-response.dto';
 import { MessageMarkAsRequestDto } from '../widgets/dtos/mark-as-request.dto';
@@ -135,7 +133,6 @@ export class SubscribersV1Controller {
   @Get('')
   @ExternalApiAccessible()
   @ApiExcludeEndpoint()
-  @RequireAuthentication()
   @ApiOkPaginatedResponse(SubscriberResponseDto)
   @ApiOperation({
     summary: 'List all subscribers',
@@ -143,7 +140,6 @@ export class SubscribersV1Controller {
     This API is deprecated, use v2 API instead.`,
     deprecated: true,
   })
-  @SdkUsePagination()
   async listSubscribers(
     @UserSession() user: UserSessionData,
     @Query() query: GetSubscribersDto
@@ -160,7 +156,6 @@ export class SubscribersV1Controller {
 
   @Get('/:subscriberId')
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @ApiExcludeEndpoint()
   @ApiResponse(SubscriberResponseDto)
   @ApiOperation({
@@ -199,7 +194,6 @@ export class SubscribersV1Controller {
     This API is deprecated, use v2 API instead.`,
     deprecated: true,
   })
-  @RequireAuthentication()
   async createSubscriber(
     @UserSession() user: UserSessionData,
     @Body() body: CreateSubscriberRequestDto
@@ -224,7 +218,6 @@ export class SubscribersV1Controller {
   @ThrottlerCost(ApiRateLimitCostEnum.BULK)
   @Post('/bulk')
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @ApiOperation({
     summary: 'Bulk create subscribers',
     description: `
@@ -232,7 +225,6 @@ export class SubscribersV1Controller {
     `,
   })
   @ApiResponse(BulkCreateSubscriberResponseDto, 201)
-  @SdkMethodName('createBulk')
   async bulkCreateSubscribers(
     @UserSession() user: UserSessionData,
     @Body() body: BulkSubscriberCreateDto
@@ -249,7 +241,6 @@ export class SubscribersV1Controller {
   @Put('/:subscriberId')
   @ExternalApiAccessible()
   @ApiExcludeEndpoint()
-  @RequireAuthentication()
   @ApiResponse(SubscriberResponseDto)
   @ApiOperation({
     summary: 'Update a subscriber',
@@ -258,7 +249,6 @@ export class SubscribersV1Controller {
     This API is deprecated, use v2 API instead.`,
     deprecated: true,
   })
-  @SdkMethodName('upsert')
   async updateSubscriber(
     @UserSession() user: UserSessionData,
     @Param('subscriberId') subscriberId: string,
@@ -283,14 +273,12 @@ export class SubscribersV1Controller {
 
   @Put('/:subscriberId/credentials')
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @ApiResponse(SubscriberResponseDto)
   @ApiOperation({
     summary: 'Update provider credentials',
     description: `Update credentials for a provider such as **slack** and **FCM**. 
       **providerId** is required field. This API creates the **deviceTokens** or replaces the existing ones.`,
   })
-  @SdkGroupName('Subscribers.Credentials')
   async updateSubscriberChannel(
     @UserSession() user: UserSessionData,
     @Param('subscriberId') subscriberId: string,
@@ -312,15 +300,12 @@ export class SubscribersV1Controller {
 
   @Patch('/:subscriberId/credentials')
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @ApiResponse(SubscriberResponseDto)
   @ApiOperation({
     summary: 'Upsert provider credentials',
     description: `Upsert credentials for a provider such as **slack** and **FCM**. 
       **providerId** is required field. This API creates **deviceTokens** or appends to the existing ones.`,
   })
-  @SdkGroupName('Subscribers.Credentials')
-  @SdkMethodName('append')
   async modifySubscriberChannel(
     @UserSession() user: UserSessionData,
     @Param('subscriberId') subscriberId: string,
@@ -342,7 +327,6 @@ export class SubscribersV1Controller {
 
   @Delete('/:subscriberId/credentials/:providerId')
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @ApiNoContentResponse()
   @HttpCode(HttpStatus.NO_CONTENT)
   @ApiOperation({
@@ -350,7 +334,6 @@ export class SubscribersV1Controller {
     description: `Delete subscriber credentials for a provider such as **slack** and **FCM** by **providerId**. 
     This action is irreversible and will remove the credentials for the provider for particular **subscriberId**.`,
   })
-  @SdkGroupName('Subscribers.Credentials')
   async deleteSubscriberCredentials(
     @UserSession() user: UserSessionData,
     @Param('subscriberId') subscriberId: string,
@@ -368,14 +351,11 @@ export class SubscribersV1Controller {
 
   @Patch('/:subscriberId/online-status')
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @ApiResponse(SubscriberResponseDto)
   @ApiOperation({
     summary: 'Update subscriber online status',
     description: 'Update the subscriber online status by its unique key identifier **subscriberId**',
   })
-  @SdkGroupName('Subscribers.properties')
-  @SdkMethodName('updateOnlineFlag')
   async updateSubscriberOnlineFlag(
     @UserSession() user: UserSessionData,
     @Param('subscriberId') subscriberId: string,
@@ -393,7 +373,6 @@ export class SubscribersV1Controller {
 
   @Delete('/:subscriberId')
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @ApiResponse(DeleteSubscriberResponseDto)
   @ApiOperation({
     summary: 'Delete a subscriber',
@@ -418,7 +397,6 @@ export class SubscribersV1Controller {
 
   @Get('/:subscriberId/preferences')
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @ApiResponse(UpdateSubscriberPreferenceResponseDto, 200, true)
   @ApiOperation({
     summary: 'Retrieve subscriber preferences',
@@ -433,7 +411,6 @@ export class SubscribersV1Controller {
     description:
       'A flag which specifies if the inactive workflow channels should be included in the retrieved preferences. Default is false',
   })
-  @SdkGroupName('Subscribers.Preferences')
   @ApiExcludeEndpoint()
   async listSubscriberPreferences(
     @UserSession() user: UserSessionData,
@@ -453,7 +430,6 @@ export class SubscribersV1Controller {
 
   @Get('/:subscriberId/preferences/:parameter')
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @ApiExcludeEndpoint()
   @ApiOperation({
     summary: 'Retrieve subscriber preferences',
@@ -480,7 +456,6 @@ export class SubscribersV1Controller {
 
   @Patch('/:subscriberId/preferences/:parameter')
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @ApiExcludeEndpoint()
   @ApiOperation({
     summary: 'Update subscriber preferences',
@@ -533,7 +508,6 @@ export class SubscribersV1Controller {
 
   @Patch('/:subscriberId/preferences')
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @ApiExcludeEndpoint()
   @ApiOperation({
     summary: 'Update subscriber global preferences',
@@ -572,15 +546,12 @@ export class SubscribersV1Controller {
   }
 
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @Get('/:subscriberId/notifications/feed')
   @ApiOperation({
     summary: 'Retrieve subscriber notifications',
     description: `Retrieve subscriber in-app (inbox) notifications by its unique key identifier **subscriberId**.`,
   })
   @ApiResponse(FeedResponseDto)
-  @SdkGroupName('Subscribers.Notifications')
-  @SdkMethodName('feed')
   async getNotificationsFeed(
     @UserSession() user: UserSessionData,
     @Param('subscriberId') subscriberId: string,
@@ -606,15 +577,12 @@ export class SubscribersV1Controller {
   }
 
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @Get('/:subscriberId/notifications/unseen')
   @ApiResponse(UnseenCountResponse)
   @ApiOperation({
     summary: 'Retrieve unseen notifications count',
     description: `Retrieve unseen in-app (inbox) notifications count for a subscriber by its unique key identifier **subscriberId**.`,
   })
-  @SdkGroupName('Subscribers.Notifications')
-  @SdkMethodName('unseenCount')
   async getUnseenCount(
     @UserSession() user: UserSessionData,
     @Param('subscriberId') subscriberId: string,
@@ -644,7 +612,6 @@ export class SubscribersV1Controller {
 
   @ApiExcludeEndpoint()
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @Post('/:subscriberId/messages/markAs')
   @ApiOperation({
     summary: 'Mark a subscriber feed messages as seen or as read',
@@ -652,8 +619,6 @@ export class SubscribersV1Controller {
      deprecating old legacy endpoint.`,
     deprecated: true,
   })
-  @SdkGroupName('Subscribers.Messages')
-  @SdkMethodName('markAs')
   @ApiResponse(MessageResponseDto, 201, true)
   async markMessageAs(
     @UserSession() user: UserSessionData,
@@ -682,10 +647,7 @@ export class SubscribersV1Controller {
       **messageId** is of type mongodbId of notifications`,
   })
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @Post('/:subscriberId/messages/mark-as')
-  @SdkGroupName('Subscribers.Messages')
-  @SdkMethodName('markAllAs')
   @ApiResponse(MessageResponseDto, 201, true)
   async markMessagesAs(
     @UserSession() user: UserSessionData,
@@ -708,7 +670,6 @@ export class SubscribersV1Controller {
   }
 
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @Post('/:subscriberId/messages/mark-all')
   @ApiOperation({
     summary: 'Update all notifications state',
@@ -717,8 +678,6 @@ export class SubscribersV1Controller {
   @ApiCreatedResponse({
     type: Number,
   })
-  @SdkGroupName('Subscribers.Messages')
-  @SdkMethodName('markAll')
   async markAllUnreadAsRead(
     @UserSession() user: UserSessionData,
     @Param('subscriberId') subscriberId: string,
@@ -738,7 +697,6 @@ export class SubscribersV1Controller {
   }
 
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @Post('/:subscriberId/messages/:messageId/actions/:type')
   @ApiOperation({
     summary: 'Update notification action status',
@@ -746,8 +704,6 @@ export class SubscribersV1Controller {
       **type** field can be **primary** or **secondary**`,
   })
   @ApiResponse(MessageResponseDto, 201)
-  @SdkGroupName('Subscribers.Messages')
-  @SdkMethodName('updateAsSeen')
   async markActionAsSeen(
     @UserSession() user: UserSessionData,
     @Param('messageId') messageId: string,
@@ -800,8 +756,6 @@ export class SubscribersV1Controller {
       Location: { description: 'The URL to redirect to.', schema: { type: 'string', example: 'https://www.novu.co' } },
     },
   }) // Link to the interface
-  @SdkGroupName('Subscribers.Authentication')
-  @SdkMethodName('chatAccessOauthCallBack')
   async chatOauthCallback(
     @Param('subscriberId') subscriberId: string,
     @Param('providerId') providerId: ChatProviderIdEnum,
@@ -839,8 +793,6 @@ export class SubscribersV1Controller {
     summary: 'Handle chat oauth',
     deprecated: true,
   })
-  @SdkGroupName('Subscribers.Authentication')
-  @SdkMethodName('chatAccessOauth')
   async chatAccessOauth(
     @Param('subscriberId') subscriberId: string,
     @Param('providerId') providerId: ChatProviderIdEnum,

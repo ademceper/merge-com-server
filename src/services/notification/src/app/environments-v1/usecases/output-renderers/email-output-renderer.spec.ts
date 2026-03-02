@@ -13,7 +13,7 @@ import {
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { GetLayoutUseCase } from '../../../layouts-v2/usecases/get-layout';
-import { GetOrganizationSettings } from '../../../organization/usecases/get-organization-settings/get-organization-settings.usecase';
+import { GetOrganizationSettings } from '../../../shared/usecases/get-organization-settings/get-organization-settings.usecase';
 import { EmailOutputRendererCommand, EmailOutputRendererUsecase } from './email-output-renderer.usecase';
 import { FullPayloadForRender } from './render-command';
 

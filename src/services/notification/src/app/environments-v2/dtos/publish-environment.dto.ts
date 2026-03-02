@@ -40,7 +40,7 @@ export class PublishEnvironmentRequestDto {
 
   @ApiPropertyOptional({
     description: 'Array of specific resources to publish. If not provided, all resources will be published.',
-    type: [ResourceToPublishDto],
+    type: () => [ResourceToPublishDto],
     example: [
       { resourceType: 'workflow', resourceId: 'workflow-id-1' },
       { resourceType: 'layout', resourceId: 'layout-id-1' },

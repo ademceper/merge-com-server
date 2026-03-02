@@ -30,7 +30,7 @@ export class UpdateIntegrationRequestDto implements IUpdateIntegrationBodyDto {
   active?: boolean;
 
   @ApiPropertyOptional({
-    type: CredentialsDto,
+    type: () => CredentialsDto,
   })
   @IsOptional()
   @Type(() => CredentialsDto)
@@ -43,7 +43,7 @@ export class UpdateIntegrationRequestDto implements IUpdateIntegrationBodyDto {
   check?: boolean;
 
   @ApiPropertyOptional({
-    type: [StepFilterDto],
+    type: () => [StepFilterDto],
   })
   @IsArray()
   @IsOptional()

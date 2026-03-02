@@ -6,7 +6,7 @@ import { WorkflowListResponseDto } from './workflow-list-response.dto';
 export class ListWorkflowResponse {
   @ApiProperty({
     description: 'List of workflows',
-    type: WorkflowListResponseDto,
+    type: () => WorkflowListResponseDto,
     isArray: true,
   })
   @IsArray()

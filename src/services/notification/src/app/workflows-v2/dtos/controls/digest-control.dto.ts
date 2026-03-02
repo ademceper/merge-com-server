@@ -36,7 +36,7 @@ export class DigestControlDto extends SkipControlDto {
 
   @ApiPropertyOptional({
     description: 'Configuration for look-back window (for REGULAR type).',
-    type: LookBackWindowDto,
+    type: () => LookBackWindowDto,
   })
   @ValidateIf((obj) => obj.type === DigestTypeEnum.REGULAR)
   @ValidateNested()

@@ -17,7 +17,7 @@ export class WorkflowInfoDto {
 export class GetLayoutUsageResponseDto {
   @ApiProperty({
     description: 'Array of workflows that use this layout',
-    type: [WorkflowInfoDto],
+    type: () => [WorkflowInfoDto],
   })
   workflows: WorkflowInfoDto[];
 }

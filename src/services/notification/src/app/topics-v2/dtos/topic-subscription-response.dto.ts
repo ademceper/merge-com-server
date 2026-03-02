@@ -64,13 +64,13 @@ export class TopicSubscriptionResponseDto {
 
   @ApiProperty({
     description: 'Topic information',
-    type: TopicResponseDto,
+    type: () => TopicResponseDto,
   })
   topic: TopicResponseDto;
 
   @ApiProperty({
     description: 'Subscriber information',
-    type: SubscriberDto,
+    type: () => SubscriberDto,
   })
   subscriber: SubscriberDto;
 

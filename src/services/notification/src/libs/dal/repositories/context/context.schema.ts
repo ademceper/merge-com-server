@@ -7,12 +7,10 @@ const contextSchema = new Schema<ContextDBModel>(
     _organizationId: {
       type: Schema.Types.ObjectId,
       ref: 'Organization',
-      index: true,
     },
     _environmentId: {
       type: Schema.Types.ObjectId,
       ref: 'Environment',
-      index: true,
     },
     id: {
       type: Schema.Types.String,

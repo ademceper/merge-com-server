@@ -13,7 +13,7 @@ export class UpdateSubscriberGlobalPreferencesRequestDto {
   enabled?: boolean;
 
   @ApiPropertyOptional({
-    type: [ChannelPreference],
+    type: () => [ChannelPreference],
     description: 'The subscriber global preferences for every ChannelTypeEnum.',
   })
   @IsOptional()

@@ -11,8 +11,7 @@ import {
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import { ApiExcludeController } from '@nestjs/swagger/dist/decorators/api-exclude-controller.decorator';
 import type { UserSessionData } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
-import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
+import { ExternalApiAccessible } from 'libs/application-generic';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';
 import { UserSession } from '../shared/framework/user.decorator';
 import { CreateFeedRequestDto } from './dtos/create-feed-request.dto';
@@ -27,7 +26,6 @@ import { GetFeeds } from './usecases/get-feeds/get-feeds.usecase';
 @ApiCommonResponses()
 @Controller('/feeds')
 @UseInterceptors(ClassSerializerInterceptor)
-@RequireAuthentication()
 @ApiTags('Feeds')
 @ApiExcludeController()
 export class FeedsController {

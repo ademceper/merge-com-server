@@ -22,10 +22,11 @@ import {
 import { ApiServiceLevelEnum, ChannelTypeEnum, InAppProviderIdEnum, SeverityLevelEnum } from 'libs/shared';
 import { expect } from 'chai';
 import sinon from 'sinon';
-import { AuthService } from '../../../auth/services/auth.service';
+// TODO: Keycloak entegrasyonunda yeniden eklenecek
+// import { AuthService } from '../../../auth/services/auth.service';
 import { GenerateUniqueApiKey } from '../../../environments-v1/usecases/generate-unique-api-key/generate-unique-api-key.usecase';
 import { CreateNovuIntegrations } from '../../../integrations/usecases/create-novu-integrations/create-novu-integrations.usecase';
-import { GetOrganizationSettings } from '../../../organization/usecases/get-organization-settings/get-organization-settings.usecase';
+import { GetOrganizationSettings } from '../../../shared/usecases/get-organization-settings/get-organization-settings.usecase';
 import { SubscriberSessionResponseDto } from '../../dtos/subscriber-session-response.dto';
 import { AnalyticsEventsEnum } from '../../utils';
 import * as encryption from '../../utils/encryption';
@@ -60,7 +61,7 @@ describe('Session', () => {
   let session: Session;
   let environmentRepository: sinon.SinonStubbedInstance<EnvironmentRepository>;
   let createSubscriber: sinon.SinonStubbedInstance<CreateOrUpdateSubscriberUseCase>;
-  let authService: sinon.SinonStubbedInstance<AuthService>;
+  // let authService: sinon.SinonStubbedInstance<AuthService>;
   let selectIntegration: sinon.SinonStubbedInstance<SelectIntegration>;
   let analyticsService: sinon.SinonStubbedInstance<AnalyticsService>;
   let notificationsCount: sinon.SinonStubbedInstance<NotificationsCount>;
@@ -85,7 +86,7 @@ describe('Session', () => {
   beforeEach(() => {
     environmentRepository = sinon.createStubInstance(EnvironmentRepository);
     createSubscriber = sinon.createStubInstance(CreateOrUpdateSubscriberUseCase);
-    authService = sinon.createStubInstance(AuthService);
+    // authService = sinon.createStubInstance(AuthService);
     selectIntegration = sinon.createStubInstance(SelectIntegration);
     analyticsService = sinon.createStubInstance(AnalyticsService);
     notificationsCount = sinon.createStubInstance(NotificationsCount);
@@ -110,7 +111,7 @@ describe('Session', () => {
     session = new Session(
       environmentRepository as any,
       createSubscriber as any,
-      authService as any,
+      // authService as any,
       selectIntegration as any,
       analyticsService as any,
       notificationsCount as any,
@@ -206,7 +207,7 @@ describe('Session', () => {
     selectIntegration.execute.resolves(mockIntegration);
     createSubscriber.execute.resolves(subscriber as any);
     notificationsCount.execute.resolves(notificationCount);
-    authService.getSubscriberWidgetToken.resolves(token);
+    // authService.getSubscriberWidgetToken.resolves(token);
     getOrganizationSettingsUsecase.execute.resolves({
       removeNovuBranding: false,
       defaultLocale: 'en_US',
@@ -241,7 +242,7 @@ describe('Session', () => {
     selectIntegration.execute.resolves({ ...mockIntegration, credentials: { hmac: false } });
     createSubscriber.execute.resolves(subscriber as any);
     notificationsCount.execute.resolves(notificationCount);
-    authService.getSubscriberWidgetToken.resolves(token);
+    // authService.getSubscriberWidgetToken.resolves(token);
 
     getOrganizationSettingsUsecase.execute.resolves({
       removeNovuBranding: false,
@@ -282,7 +283,7 @@ describe('Session', () => {
     organizationRepository.findById.resolves(organization as any);
     createSubscriber.execute.resolves(subscriber as any);
     notificationsCount.execute.resolves(notificationCount);
-    authService.getSubscriberWidgetToken.resolves(token);
+    // authService.getSubscriberWidgetToken.resolves(token);
     getOrganizationSettingsUsecase.execute.resolves({
       removeNovuBranding: false,
       defaultLocale: 'en_US',
@@ -328,7 +329,7 @@ describe('Session', () => {
     selectIntegration.execute.resolves(integration);
     createSubscriber.execute.resolves(subscriber as any);
     notificationsCount.execute.resolves(notificationCount);
-    authService.getSubscriberWidgetToken.resolves(token);
+    // authService.getSubscriberWidgetToken.resolves(token);
     getOrganizationSettingsUsecase.execute.resolves({
       removeNovuBranding: false,
       defaultLocale: 'en_US',
@@ -381,7 +382,7 @@ describe('Session', () => {
     selectIntegration.execute.resolves({ ...mockIntegration, credentials: { hmac: false } });
     createSubscriber.execute.resolves(subscriber as any);
     notificationsCount.execute.resolves(notificationCount);
-    authService.getSubscriberWidgetToken.resolves(token);
+    // authService.getSubscriberWidgetToken.resolves(token);
     getOrganizationSettingsUsecase.execute.resolves({
       removeNovuBranding: false,
       defaultLocale: 'en_US',
@@ -431,7 +432,7 @@ describe('Session', () => {
     selectIntegration.execute.resolves(mockIntegration);
     createSubscriber.execute.resolves(subscriber as any);
     notificationsCount.execute.resolves(notificationCount);
-    authService.getSubscriberWidgetToken.resolves(token);
+    // authService.getSubscriberWidgetToken.resolves(token);
     getOrganizationSettingsUsecase.execute.resolves({
       removeNovuBranding: false,
       defaultLocale: 'en_US',
@@ -483,7 +484,7 @@ describe('Session', () => {
     selectIntegration.execute.resolves({ ...mockIntegration, credentials: { hmac: false } });
     createSubscriber.execute.resolves(subscriber as any);
     notificationsCount.execute.resolves(notificationCount);
-    authService.getSubscriberWidgetToken.resolves(token);
+    // authService.getSubscriberWidgetToken.resolves(token);
     getOrganizationSettingsUsecase.execute.resolves({
       removeNovuBranding: false,
       defaultLocale: 'en_US',

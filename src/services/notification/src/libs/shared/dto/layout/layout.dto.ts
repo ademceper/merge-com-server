@@ -20,6 +20,7 @@ export class LayoutDto {
   isDeleted: boolean;
   createdAt?: string;
   updatedAt?: string;
+  updatedBy?: any;
 }
 
 export enum LayoutCreationSourceEnum {

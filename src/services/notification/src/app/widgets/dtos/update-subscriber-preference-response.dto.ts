@@ -11,7 +11,7 @@ class Preference {
   enabled: boolean;
 
   @ApiProperty({
-    type: SubscriberPreferenceChannels,
+    type: () => SubscriberPreferenceChannels,
     description: 'Subscriber preferences for the different channels regarding this workflow',
   })
   channels: SubscriberPreferenceChannels;
@@ -46,7 +46,7 @@ export class TriggerReservedVariableResponse implements ITriggerReservedVariable
   type: TriggerContextTypeEnum;
 
   @ApiProperty({
-    type: Array<NotificationTriggerVariableResponse>,
+    type: () => [NotificationTriggerVariableResponse],
     description: 'The reserved variables of the trigger',
   })
   variables: NotificationTriggerVariableResponse[];
@@ -67,21 +67,21 @@ export class NotificationTriggerResponse implements INotificationTrigger {
   identifier: string;
 
   @ApiProperty({
-    type: [NotificationTriggerVariableResponse],
+    type: () => [NotificationTriggerVariableResponse],
     description: 'The variables of the trigger',
   })
   variables: NotificationTriggerVariableResponse[];
 
   @ApiPropertyOptional()
   @ApiProperty({
-    type: [NotificationTriggerVariableResponse],
+    type: () => [NotificationTriggerVariableResponse],
     description: 'The subscriber variables of the trigger',
   })
   subscriberVariables?: NotificationTriggerVariableResponse[];
 
   @ApiPropertyOptional()
   @ApiProperty({
-    type: [TriggerReservedVariableResponse],
+    type: () => [TriggerReservedVariableResponse],
     description: 'The reserved variables of the trigger',
   })
   reservedVariables?: TriggerReservedVariableResponse[];
@@ -109,7 +109,7 @@ class TemplateResponse implements ITemplateConfiguration {
 
   @ApiProperty({
     description: 'Triggers are the events that will trigger the workflow.',
-    type: [NotificationTriggerResponse], // Use an array syntax
+    type: () => [NotificationTriggerResponse], // Use an array syntax
   })
   triggers: NotificationTriggerResponse[];
 
@@ -133,20 +133,20 @@ class TemplateResponse implements ITemplateConfiguration {
 }
 export class UpdateSubscriberPreferenceResponseDto {
   @ApiProperty({
-    type: TemplateResponse,
+    type: () => TemplateResponse,
     description: 'The workflow information and if it is critical or not',
   })
   template: TemplateResponse;
 
   @ApiProperty({
-    type: Preference,
+    type: () => Preference,
     description: 'The preferences of the subscriber regarding the related workflow',
   })
   preference: Preference;
 }
 export class UpdateSubscriberPreferenceGlobalResponseDto {
   @ApiProperty({
-    type: Preference,
+    type: () => Preference,
     description: 'The preferences of the subscriber regarding the related workflow',
   })
   preference: Preference;

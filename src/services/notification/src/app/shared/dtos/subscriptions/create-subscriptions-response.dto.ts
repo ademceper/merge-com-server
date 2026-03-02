@@ -244,13 +244,13 @@ export class CreateSubscriptionsResponseDto {
 
   @ApiProperty({
     description: 'Metadata about the operation',
-    type: MetaDto,
+    type: () => MetaDto,
   })
   meta: MetaDto;
 
   @ApiPropertyOptional({
     description: 'The list of errors for failed subscription attempts',
-    type: [SubscriptionErrorDto],
+    type: () => [SubscriptionErrorDto],
   })
   errors?: SubscriptionErrorDto[];
 }

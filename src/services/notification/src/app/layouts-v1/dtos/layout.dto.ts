@@ -1,5 +1,4 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { UserEntity } from 'libs/dal';
 import { ResourceOriginEnum, ResourceTypeEnum } from 'libs/shared';
 import { Type } from 'class-transformer';
 import { ControlsMetadataDto } from '../../workflows-v2/dtos/controls-metadata.dto';
@@ -39,7 +38,7 @@ export class LayoutDto {
   @ApiProperty()
   contentType?: string;
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({ type: 'array', items: { type: 'object' } })
   variables?: ITemplateVariable[];
 
   @ApiProperty()
@@ -55,15 +54,15 @@ export class LayoutDto {
   updatedAt?: string;
 
   @ApiPropertyOptional()
-  updatedBy?: UserEntity;
+  updatedBy?: any;
 
   @ApiPropertyOptional()
   _parentId?: string;
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({ enum: ResourceTypeEnum })
   type?: ResourceTypeEnum;
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({ enum: ResourceOriginEnum })
   origin?: ResourceOriginEnum;
 
   @ApiProperty({

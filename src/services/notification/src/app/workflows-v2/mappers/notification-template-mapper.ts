@@ -71,7 +71,7 @@ function toMinifiedWorkflowDto(template: NotificationTemplateEntity): WorkflowLi
     updatedAt: template.updatedAt || '',
     lastPublishedAt: template.lastPublishedAt || '',
     lastPublishedBy: template.lastPublishedBy,
-    stepTypeOverviews: template.steps.map(buildStepTypeOverview).filter((stepTypeEnum) => !!stepTypeEnum),
+    stepTypeOverviews: template.steps.map(buildStepTypeOverview).filter((stepTypeEnum): stepTypeEnum is StepTypeEnum => !!stepTypeEnum),
     createdAt: template.createdAt || '',
     updatedBy: template.updatedBy
       ? {

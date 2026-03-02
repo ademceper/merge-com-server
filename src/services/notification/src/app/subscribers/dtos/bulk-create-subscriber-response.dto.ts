@@ -30,19 +30,19 @@ export class CreatedSubscriberDto {
 export class BulkCreateSubscriberResponseDto {
   @ApiProperty({
     description: 'An array of subscribers that were successfully updated.',
-    type: [UpdatedSubscriberDto],
+    type: () => [UpdatedSubscriberDto],
   })
   updated: UpdatedSubscriberDto[];
 
   @ApiProperty({
     description: 'An array of subscribers that were successfully created.',
-    type: [CreatedSubscriberDto],
+    type: () => [CreatedSubscriberDto],
   })
   created: CreatedSubscriberDto[];
 
   @ApiProperty({
     description: 'An array of failed operations with error messages and optional subscriber IDs.',
-    type: [FailedOperationDto],
+    type: () => [FailedOperationDto],
   })
   failed: FailedOperationDto[];
 }

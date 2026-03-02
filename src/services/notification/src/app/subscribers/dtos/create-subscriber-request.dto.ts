@@ -39,7 +39,7 @@ export class SubscriberChannelDto {
 
   @ApiProperty({
     description: 'Credentials for the channel.',
-    type: ChannelCredentialsDto,
+    type: () => ChannelCredentialsDto,
   })
   @ValidateNested()
   @Type(() => ChannelCredentialsDto)
@@ -59,7 +59,7 @@ export class CreateSubscriberRequestDto extends BaseSubscriberFieldsDto {
   subscriberId: string;
 
   @ApiPropertyOptional({
-    type: [SubscriberChannelDto],
+    type: () => [SubscriberChannelDto],
     description: 'An optional array of subscriber channels.',
   })
   @IsOptional()
@@ -72,7 +72,7 @@ export class CreateSubscriberRequestDto extends BaseSubscriberFieldsDto {
 export class BulkSubscriberCreateDto {
   @ApiProperty({
     description: 'An array of subscribers to be created in bulk.',
-    type: [CreateSubscriberRequestDto], // Specify the type of the array elements
+    type: () => [CreateSubscriberRequestDto], // Specify the type of the array elements
   })
   @IsArray()
   @ArrayNotEmpty()

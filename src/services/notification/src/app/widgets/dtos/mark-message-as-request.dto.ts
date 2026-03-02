@@ -36,7 +36,7 @@ export class MarkMessageAsRequestDto {
   messageId: string | string[];
 
   @ApiProperty({
-    type: MarkMessageFields,
+    type: () => MarkMessageFields,
   })
   @IsDefined()
   @IsObject()

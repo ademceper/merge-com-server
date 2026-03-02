@@ -13,11 +13,9 @@ import {
 } from '@nestjs/common';
 import { ApiOperation, ApiParam, ApiTags } from '@nestjs/swagger';
 import { ApiExcludeController } from '@nestjs/swagger/dist/decorators/api-exclude-controller.decorator';
-import { GetLayoutCommand, GetLayoutUseCase, OtelSpan, PinoLogger } from 'libs/application-generic';
+import { ExternalApiAccessible, GetLayoutCommand, GetLayoutUseCase, OtelSpan, PinoLogger } from 'libs/application-generic';
 import { OrderByEnum, OrderDirectionEnum } from 'libs/shared';
 import type { UserSessionData } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
-import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import {
   ApiBadRequestResponse,
   ApiCommonResponses,
@@ -27,7 +25,6 @@ import {
   ApiOkResponse,
   ApiResponse,
 } from '../shared/framework/response.decorator';
-import { SdkMethodName } from '../shared/framework/swagger/sdk.decorators';
 import { UserSession } from '../shared/framework/user.decorator';
 import {
   CreateLayoutRequestDto,
@@ -55,7 +52,6 @@ import {
 @ApiCommonResponses()
 @Controller('/layouts')
 @ApiTags('Layouts')
-@RequireAuthentication()
 @ApiExcludeController()
 export class LayoutsControllerV1 {
   constructor(
@@ -75,7 +71,6 @@ export class LayoutsControllerV1 {
   @ApiResponse(CreateLayoutResponseDto, 201)
   @ApiOperation({ summary: 'Layout creation', description: 'Create a layout' })
   @OtelSpan()
-  @SdkMethodName('create')
   async createLayout(
     @UserSession() user: UserSessionData,
     @Body() body: CreateLayoutRequestDto
@@ -260,7 +255,6 @@ export class LayoutsControllerV1 {
     description:
       'Sets the default layout for the environment and updates to non default to the existing default layout (if any).',
   })
-  @SdkMethodName('setAsDefault')
   async setDefaultLayout(@UserSession() user: UserSessionData, @Param('layoutId') layoutId: LayoutId): Promise<void> {
     await this.setDefaultLayoutUseCase.execute(
       SetDefaultLayoutCommand.create({

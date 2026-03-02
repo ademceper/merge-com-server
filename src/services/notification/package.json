@@ -6,13 +6,11 @@
   "private": "true",
   "license": "MIT",
   "scripts": {
-    "prebuild": "rimraf dist",
-    "build": "pnpm build:metadata && nest build",
-    "build:generate": "pnpm build:metadata && nest build && pnpm generate:swagger && pnpm generate:sdk",
-    "build:watch": "pnpm build:metadata && nest build --watch",
+    "build": "bun run build:metadata && nest build",
+    "build:watch": "bun run build:metadata && nest build --watch",
     "docker:build": "docker buildx build --load -t novu-notification --secret id=BULL_MQ_PRO_NPM_TOKEN -f Dockerfile . $DOCKER_BUILD_ARGUMENTS",
     "docker:build:depot": "depot build -f Dockerfile . -t novu-notification --load",
-    "start": "pnpm start:dev",
+    "start": "bun run start:dev",
     "start:dev": "nest start --watch",
     "start:test": "cross-env NODE_ENV=test nest start",
     "start:debug": "nest start --debug --watch --inspect",
@@ -24,26 +22,16 @@
     "check:fix": "biome check --write .",
     "format": "biome format .",
     "format:fix": "biome format --write .",
-    "lint:openapi": "spectral lint http://127.0.0.1:${PORT:-3000}/openapi.yaml",
-    "pretest": "pnpm build:metadata",
-    "generate:swagger": "ts-node exportOpenAPIJSON.ts",
-    "generate:sdk": " (cd ./src/libs/internal-sdk && speakeasy run --skip-compile --minimal --skip-versioning) ",
+    "pretest": "bun run build:metadata",
     "test": "cross-env TS_NODE_PROJECT=tsconfig.spec.json TS_NODE_TRANSPILE_ONLY=true NODE_ENV=test NOVU_ENTERPRISE=true CLERK_ENABLED=true mocha --timeout 15000 --require ts-node/register --exit 'src/**/*.spec.ts'",
     "test:e2e:novu-v0": "cross-env TS_NODE_PROJECT=tsconfig.spec.json NODE_ENV=test mocha --timeout 15000 --retries 3 --grep '#novu-v0' --require ts-node/register --exit --file e2e/setup.ts src/**/*.e2e{,-ee}.ts",
     "test:e2e:novu-v2": "cross-env TS_NODE_PROJECT=tsconfig.spec.json NODE_ENV=test CI_EE_TEST=true CLERK_ENABLED=true NODE_OPTIONS=--max_old_space_size=8192 mocha --timeout 30000  --retries 3 --grep '#novu-v2' --require ./swc-register.js --exit --file e2e/setup.ts 'src/**/*.e2e{,-ee}.ts' 'e2e/enterprise/**/*.e2e.ts'",
     "migration": "cross-env NODE_ENV=local MIGRATION=true ts-node --transpileOnly",
-    "seed:clickhouse": "cross-env NODE_ENV=local ts-node --transpileOnly scripts/seed-clickhouse.ts",
-    "seed:triggers": "cross-env NODE_ENV=local ts-node --transpileOnly scripts/seed-triggers.ts",
     "clickhouse:migrate:local": "clickhouse-migrations migrate --host=http://localhost:8123 --user=default --password= --db=novu-local --migrations-home=./migrations/clickhouse-migrations",
     "clickhouse:migrate:prod": "clickhouse-migrations migrate --migrations-home=./migrations/clickhouse-migrations",
-    "link:submodules": "pnpm link ../enterprise/packages/auth && pnpm link ../enterprise/packages/translation && pnpm link ../enterprise/packages/billing",
-    "admin:remove-user-account": "cross-env NODE_ENV=local MIGRATION=true ts-node --transpileOnly ./admin/remove-user-account.ts",
-    "admin:remove-organization": "cross-env NODE_ENV=local MIGRATION=true ts-node --transpileOnly ./admin/remove-organization.ts"
+    "link:submodules": "bun link ../enterprise/packages/auth && bun link ../enterprise/packages/translation && bun link ../enterprise/packages/billing"
   },
   "dependencies": {
-    "@ai-sdk/anthropic": "^3.0.10",
-    "@ai-sdk/langchain": "^2.0.73",
-    "@ai-sdk/openai": "^3.0.10",
     "@antfu/utils": "^9.3.0",
     "@aws-sdk/client-s3": "^3.971.0",
     "@aws-sdk/client-secrets-manager": "^3.971.0",
@@ -58,12 +46,6 @@
     "@godaddy/terminus": "^4.12.1",
     "@google-cloud/storage": "^6.2.3",
     "@infobip-api/sdk": "^0.3.2",
-    "@langchain/anthropic": "^1.3.13",
-    "@langchain/core": "^1.1.18",
-    "@langchain/langgraph": "^1.1.4",
-    "@langchain/langgraph-checkpoint": "^1.0.0",
-    "@langchain/langgraph-checkpoint-mongodb": "^1.1.6",
-    "@langchain/openai": "^1.2.4",
     "@launchdarkly/node-server-sdk": "^9.7.3",
     "@mailchimp/mailchimp_transactional": "^1.0.59",
     "@nestjs/axios": "3.0.3",
@@ -123,7 +105,6 @@
     "@vonage/auth": "^1.7.0",
     "@vonage/server-sdk": "^3.10.0",
     "africastalking": "^0.6.2",
-    "ai": "6.0.50",
     "ajv": "^8.12.0",
     "ajv-formats": "^2.1.1",
     "aws-sdk": "^2.665.0",
@@ -173,7 +154,6 @@
     "jsonrepair": "^3.13.1",
     "jsonwebtoken": "9.0.3",
     "juice": "^11.0.1",
-    "langchain": "^1.2.16",
     "languagedetect": "^1.1.1",
     "liquidjs": "^10.20.0",
     "lodash": "^4.17.15",
@@ -194,7 +174,6 @@
     "nestjs-otel": "6.1.1",
     "nestjs-pino": "4.2.0",
     "newrelic": "^13.12.0",
-    "nimma": "^0.6.0",
     "node-fetch": "^3.2.10",
     "node-html-parser": "^7.0.1",
     "node-mailjet": "^6.0.8",
@@ -248,7 +227,6 @@
     "@nestjs/cli": "10.4.5",
     "@nestjs/schematics": "10.1.4",
     "@nestjs/testing": "10.4.18",
-    "@stoplight/spectral-cli": "^6.15.0",
     "@swc-node/register": "1.10.10",
     "@swc/cli": "^0.8.0",
     "@types/async": "^3.2.1",
@@ -275,21 +253,5 @@
     "ts-node": "~10.9.1",
     "tsconfig-paths": "~4.1.0",
     "typescript": "5.6.2"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "bcrypt",
-      "@swc/core",
-      "protobufjs",
-      "msgpackr-extract",
-      "@sentry/profiling-node",
-      "@newrelic/native-metrics",
-      "@newrelic/fn-inspect"
-    ]
-  },
-  "nx": {
-    "tags": [
-      "type:app"
-    ]
   }
 }

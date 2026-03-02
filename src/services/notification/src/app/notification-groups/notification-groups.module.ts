@@ -1,12 +1,11 @@
-import { forwardRef, Module } from '@nestjs/common';
-import { AuthModule } from '../auth/auth.module';
+import { Module } from '@nestjs/common';
 import { ChangeModule } from '../change/change.module';
 import { SharedModule } from '../shared/shared.module';
 import { NotificationGroupsController } from './notification-groups.controller';
 import { USE_CASES } from './usecases';
 
 @Module({
-  imports: [SharedModule, forwardRef(() => AuthModule), ChangeModule],
+  imports: [SharedModule, ChangeModule],
   providers: [...USE_CASES],
   controllers: [NotificationGroupsController],
   exports: [...USE_CASES],

@@ -18,10 +18,8 @@ import { ExternalApiAccessible, FeatureFlagsService, RequirePermissions } from '
 import { ApiRateLimitCategoryEnum, ENDPOINT_TYPES, FeatureFlagsKeysEnum, PermissionsEnum } from 'libs/shared';
 import type { UserSessionData } from 'libs/shared';
 
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ThrottlerCategory } from '../rate-limiting/guards/throttler.decorator';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';
-import { SdkGroupName, SdkMethodName } from '../shared/framework/swagger/sdk.decorators';
 import { UserSession } from '../shared/framework/user.decorator';
 import type { CreateChannelEndpointRequest } from './dtos/create-channel-endpoint-request.dto';
 import {
@@ -74,9 +72,7 @@ import { UpdateChannelEndpoint } from './usecases/update-channel-endpoint/update
   MsTeamsUserEndpointDto
 )
 @ExternalApiAccessible()
-@RequireAuthentication()
 @ApiTags('Channel Endpoints')
-@SdkGroupName('ChannelEndpoints')
 @ApiCommonResponses()
 export class ChannelEndpointsController {
   constructor(
@@ -107,7 +103,6 @@ export class ChannelEndpointsController {
   })
   @ApiResponse(ListChannelEndpointsResponseDto, 200)
   @ExternalApiAccessible()
-  @SdkMethodName('list')
   @RequirePermissions(PermissionsEnum.INTEGRATION_READ)
   async listChannelEndpoints(
     @UserSession() user: UserSessionData,
@@ -150,7 +145,6 @@ export class ChannelEndpointsController {
   @ApiParam({ name: 'identifier', description: 'The unique identifier of the channel endpoint', type: String })
   @ApiResponse(GetChannelEndpointResponseDto, 200)
   @ExternalApiAccessible()
-  @SdkMethodName('retrieve')
   @RequirePermissions(PermissionsEnum.INTEGRATION_READ)
   async getChannelEndpoint(
     @UserSession() user: UserSessionData,
@@ -199,7 +193,6 @@ export class ChannelEndpointsController {
     },
   })
   @ApiResponse(GetChannelEndpointResponseDto, 201)
-  @SdkMethodName('create')
   @ExternalApiAccessible()
   @RequirePermissions(PermissionsEnum.INTEGRATION_WRITE)
   async createChannelEndpoint(
@@ -232,7 +225,6 @@ export class ChannelEndpointsController {
   })
   @ApiParam({ name: 'identifier', description: 'The unique identifier of the channel endpoint', type: String })
   @ApiResponse(GetChannelEndpointResponseDto, 200)
-  @SdkMethodName('update')
   @RequirePermissions(PermissionsEnum.INTEGRATION_WRITE)
   @ExternalApiAccessible()
   async updateChannelEndpoint(
@@ -261,7 +253,6 @@ export class ChannelEndpointsController {
     description: `Delete a specific channel endpoint by its unique identifier.`,
   })
   @ApiParam({ name: 'identifier', description: 'The unique identifier of the channel endpoint', type: String })
-  @SdkMethodName('delete')
   @ExternalApiAccessible()
   @RequirePermissions(PermissionsEnum.INTEGRATION_WRITE)
   async deleteChannelEndpoint(

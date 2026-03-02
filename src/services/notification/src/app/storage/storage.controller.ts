@@ -2,8 +2,7 @@ import { ClassSerializerInterceptor, Controller, Get, Query, UseInterceptors } f
 import { ApiExcludeController, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { UploadTypesEnum } from 'libs/shared';
 import type { UserSessionData } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
-import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
+import { ExternalApiAccessible } from 'libs/application-generic';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';
 import { UserSession } from '../shared/framework/user.decorator';
 import { UploadUrlResponse } from './dtos/upload-url-response.dto';
@@ -14,7 +13,6 @@ import { GetSignedUrl } from './usecases/get-signed-url/get-signed-url.usecase';
 @Controller('/storage')
 @ApiTags('Storage')
 @UseInterceptors(ClassSerializerInterceptor)
-@RequireAuthentication()
 @ApiExcludeController()
 export class StorageController {
   constructor(private getSignedUrlUsecase: GetSignedUrl) {}

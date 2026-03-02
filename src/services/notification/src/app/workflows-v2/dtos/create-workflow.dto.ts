@@ -142,7 +142,7 @@ export class CreateWorkflowDto extends WorkflowCommonsFields {
 
   @ApiPropertyOptional({
     description: 'Workflow preferences',
-    type: PreferencesRequestDto,
+    type: () => PreferencesRequestDto,
     required: false,
   })
   @IsOptional()

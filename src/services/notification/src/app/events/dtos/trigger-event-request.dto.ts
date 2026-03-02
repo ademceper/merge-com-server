@@ -1,7 +1,7 @@
 import { ApiExtraModels, ApiHideProperty, ApiProperty, ApiPropertyOptional, getSchemaPath } from '@nestjs/swagger';
 import { IsValidContextPayload } from 'libs/application-generic';
 import { SeverityLevelEnum, TriggerRecipientsTypeEnum } from 'libs/shared';
-import type { ContextPayload, ProvidersIdEnum, TriggerRecipientSubscriber, TriggerRecipientsPayload, TriggerTenantContext } from 'libs/shared';
+import type { ContextPayload, CustomDataType, IUpdateTenantDto, ProvidersIdEnum, TriggerRecipientSubscriber, TriggerRecipientsPayload, TriggerTenantContext } from 'libs/shared';
 import { Type } from 'class-transformer';
 import {
   ArrayMaxSize,
@@ -14,9 +14,7 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { ApiContextPayload } from '../../shared/framework/swagger';
-import { SdkApiProperty } from '../../shared/framework/swagger/sdk.decorators';
 import { CreateSubscriberRequestDto } from '../../subscribers/dtos';
-import { UpdateTenantRequestDto } from '../../tenant/dtos';
 
 export class WorkflowToStepControlValuesDto {
   /**
@@ -39,7 +37,21 @@ export class WorkflowToStepControlValuesDto {
 }
 
 export class SubscriberPayloadDto extends CreateSubscriberRequestDto {}
-export class TenantPayloadDto extends UpdateTenantRequestDto {}
+export class TenantPayloadDto implements IUpdateTenantDto {
+  @IsOptional()
+  @IsString()
+  @ApiPropertyOptional({ type: String })
+  identifier?: string;
+
+  @IsOptional()
+  @IsString()
+  @ApiPropertyOptional({ type: String })
+  name?: string;
+
+  @IsOptional()
+  @ApiPropertyOptional()
+  data?: CustomDataType;
+}
 
 export class TopicPayloadDto {
   @ApiProperty()
@@ -211,14 +223,11 @@ export class TriggerOverrides {
   ChannelOverrides
 )
 export class TriggerEventRequestDto {
-  @SdkApiProperty(
-    {
-      description:
-        'The trigger identifier of the workflow you wish to send. This identifier can be found on the workflow page.',
-      example: 'workflow_identifier',
-    },
-    { nameOverride: 'workflowId' }
-  )
+  @ApiProperty({
+    description:
+      'The trigger identifier of the workflow you wish to send. This identifier can be found on the workflow page.',
+    example: 'workflow_identifier',
+  })
   @IsString()
   @IsDefined()
   name: string;
@@ -255,7 +264,7 @@ export class TriggerEventRequestDto {
         },
       },
     },
-    type: TriggerOverrides,
+    type: () => TriggerOverrides,
     required: false,
   })
   @IsObject()
@@ -350,7 +359,7 @@ export class TriggerEventRequestDto {
 export class BulkTriggerEventDto {
   @ApiProperty({
     isArray: true,
-    type: TriggerEventRequestDto,
+    type: () => TriggerEventRequestDto,
   })
   events: TriggerEventRequestDto[];
 }

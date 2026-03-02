@@ -8,14 +8,13 @@ import {
   UseInterceptors,
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { ApiExcludeController } from '@nestjs/swagger';
+import { ApiExcludeController, ApiTags } from '@nestjs/swagger';
 import { ExternalApiAccessible, RequirePermissions } from 'libs/application-generic';
 import { ApiRateLimitCategoryEnum, PermissionsEnum } from 'libs/shared';
 import type { UserSessionData } from 'libs/shared';
 import { plainToInstance } from 'class-transformer';
 import { validateSync } from 'class-validator';
 import type { ValidationError } from 'class-validator';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ThrottlerCategory } from '../rate-limiting/guards/throttler.decorator';
 import { UserSession } from '../shared/framework/user.decorator';
 import { DeployStepResolverManifestDto, DeployStepResolverRequestDto, DeployStepResolverResponseDto } from './dtos';
@@ -29,10 +28,10 @@ interface UploadedBundleFile {
 }
 
 @Controller({ path: '/step-resolvers', version: '2' })
+@ApiTags('Step Resolvers')
 @ApiExcludeController()
 @UseInterceptors(ClassSerializerInterceptor)
 @ThrottlerCategory(ApiRateLimitCategoryEnum.CONFIGURATION)
-@RequireAuthentication()
 export class StepResolversController {
   constructor(private deployStepResolverUsecase: DeployStepResolverUsecase) {}
 

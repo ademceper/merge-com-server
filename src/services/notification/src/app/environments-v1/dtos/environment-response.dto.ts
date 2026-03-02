@@ -40,7 +40,7 @@ export class EnvironmentResponseDto {
   type: EnvironmentTypeEnum;
 
   @ApiPropertyOptional({
-    type: ApiKeyDto,
+    type: () => ApiKeyDto,
     isArray: true,
     description: 'List of API keys associated with the environment',
   })

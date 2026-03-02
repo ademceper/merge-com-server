@@ -1,9 +1,8 @@
 import { ClassSerializerInterceptor, Controller, Get, Post, UseInterceptors } from '@nestjs/common';
-import { ApiExcludeController, ApiOperation } from '@nestjs/swagger';
+import { ApiExcludeController, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { ProductFeature, RequirePermissions, UserSession } from 'libs/application-generic';
 import { PermissionsEnum, ProductFeatureKeyEnum } from 'libs/shared';
 import type { UserSessionData } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { CreateWebhookPortalResponseDto } from './dtos/create-webhook-portal-response.dto';
 import { GetWebhookPortalTokenResponseDto } from './dtos/get-webhook-portal-token-response.dto';
 import { CreateWebhookPortalCommand } from './usecases/create-webhook-portal-token/create-webhook-portal.command';
@@ -13,7 +12,7 @@ import { GetWebhookPortalTokenUsecase } from './usecases/get-webhook-portal-toke
 
 @Controller({ path: `/outbound-webhooks`, version: '2' })
 @UseInterceptors(ClassSerializerInterceptor)
-@RequireAuthentication()
+@ApiTags('Outbound Webhooks')
 @ApiExcludeController()
 export class OutboundWebhooksController {
   constructor(

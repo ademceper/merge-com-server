@@ -8,13 +8,11 @@ const topicSchema = new Schema<TopicDBModel>(
     _environmentId: {
       type: Schema.Types.ObjectId,
       ref: 'Environment',
-      index: true,
       required: true,
     },
     _organizationId: {
       type: Schema.Types.ObjectId,
       ref: 'Organization',
-      index: true,
       required: true,
     },
     key: {

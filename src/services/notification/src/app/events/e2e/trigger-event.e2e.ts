@@ -25,7 +25,8 @@ import { SubscribersService, UserSession, WorkflowOverrideService } from '@novu/
 import { expect } from 'chai';
 import { v4 as uuid } from 'uuid';
 import { initNovuClassSdk } from '../../shared/helpers/e2e/sdk/e2e-sdk.helper';
-import { createTenant } from '../../tenant/e2e/create-tenant.e2e';
+// TODO: Keycloak entegrasyonunda tenant yönetimi yeniden eklenecek
+// import { createTenant } from '../../tenant/e2e/create-tenant.e2e';
 import { pollForJobStatusChange } from './utils/poll-for-job-status-change.util';
 
 describe('Trigger event - /v1/events/trigger (POST) #novu-v2', () => {

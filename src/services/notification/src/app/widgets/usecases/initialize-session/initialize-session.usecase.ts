@@ -12,7 +12,8 @@ import {
 } from 'libs/application-generic';
 import { EnvironmentRepository } from 'libs/dal';
 import { ChannelTypeEnum, InAppProviderIdEnum } from 'libs/shared';
-import { AuthService } from '../../../auth/services/auth.service';
+// TODO: Keycloak entegrasyonunda yeniden eklenecek
+// import { AuthService } from '../../../auth/services/auth.service';
 import { isHmacValid } from '../../../shared/helpers/is-valid-hmac';
 
 import { SessionInitializeResponseDto } from '../../dtos/session-initialize-response.dto';
@@ -23,7 +24,7 @@ export class InitializeSession {
   constructor(
     private environmentRepository: EnvironmentRepository,
     private createOrUpdateSubscriberUsecase: CreateOrUpdateSubscriberUseCase,
-    private authService: AuthService,
+    // private authService: AuthService,
     private selectIntegration: SelectIntegration,
     private analyticsService: AnalyticsService
   ) {}
@@ -79,7 +80,8 @@ export class InitializeSession {
     });
 
     return {
-      token: await this.authService.getSubscriberWidgetToken(subscriber, []),
+      // TODO: Keycloak entegrasyonunda token üretimi yeniden eklenecek
+      token: '',
       profile: {
         _id: subscriber._id,
         firstName: subscriber.firstName,

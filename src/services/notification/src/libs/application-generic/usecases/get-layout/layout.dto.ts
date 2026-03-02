@@ -385,7 +385,7 @@ export class ControlsMetadataDto {
 
   @ApiPropertyOptional({
     description: 'UI Schema for rendering',
-    type: UiSchema,
+    type: () => UiSchema,
   })
   @IsOptional()
   @ValidateNested()
@@ -416,7 +416,7 @@ export class LayoutDto {
   @ApiProperty()
   description?: string;
 
-  @ApiProperty()
+  @ApiProperty({ enum: ChannelTypeEnum })
   channel: ChannelTypeEnum;
 
   @ApiProperty()
@@ -443,10 +443,10 @@ export class LayoutDto {
   @ApiPropertyOptional()
   _parentId?: string;
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({ enum: ResourceTypeEnum })
   type?: ResourceTypeEnum;
 
-  @ApiPropertyOptional()
+  @ApiPropertyOptional({ enum: ResourceOriginEnum })
   origin?: ResourceOriginEnum;
 
   @ApiProperty({

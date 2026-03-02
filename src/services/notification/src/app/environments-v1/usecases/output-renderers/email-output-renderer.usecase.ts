@@ -24,8 +24,8 @@ import {
 import { decodeHTML } from 'entities';
 import { Liquid } from 'liquidjs';
 import { GetLayoutCommand, GetLayoutUseCase } from '../../../layouts-v2/usecases/get-layout';
-import { GetOrganizationSettingsCommand } from '../../../organization/usecases/get-organization-settings/get-organization-settings.command';
-import { GetOrganizationSettings } from '../../../organization/usecases/get-organization-settings/get-organization-settings.usecase';
+import { GetOrganizationSettingsCommand } from '../../../shared/usecases/get-organization-settings/get-organization-settings.command';
+import { GetOrganizationSettings } from '../../../shared/usecases/get-organization-settings/get-organization-settings.usecase';
 import { MailyAttrsEnum } from '../../../shared/helpers/maily.types';
 import {
   hasShow,

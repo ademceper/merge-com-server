@@ -9,7 +9,6 @@ const environmentSchema = new Schema<EnvironmentDBModel>(
     name: Schema.Types.String,
     identifier: {
       type: Schema.Types.String,
-      unique: true,
     },
     _organizationId: {
       type: Schema.Types.ObjectId,
@@ -19,7 +18,6 @@ const environmentSchema = new Schema<EnvironmentDBModel>(
       {
         key: {
           type: Schema.Types.String,
-          unique: true,
         },
         hash: Schema.Types.String,
         _userId: {

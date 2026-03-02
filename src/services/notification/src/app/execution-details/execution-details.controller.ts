@@ -1,9 +1,7 @@
 import { ClassSerializerInterceptor, Controller, Get, Query, UseInterceptors } from '@nestjs/common';
 import { ApiExcludeController, ApiOperation, ApiTags } from '@nestjs/swagger';
-import { ExecutionDetailsResponseDto } from 'libs/application-generic';
+import { ExecutionDetailsResponseDto, ExternalApiAccessible } from 'libs/application-generic';
 import type { UserSessionData } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
-import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';
 import { UserSession } from '../shared/framework/user.decorator';
 import { ExecutionDetailsRequestDto } from './dtos/execution-details-request.dto';
@@ -12,7 +10,6 @@ import { GetExecutionDetails, GetExecutionDetailsCommand } from './usecases/get-
 @ApiCommonResponses()
 @Controller('/execution-details')
 @UseInterceptors(ClassSerializerInterceptor)
-@RequireAuthentication()
 @ApiTags('Execution Details')
 @ApiExcludeController()
 export class ExecutionDetailsController {

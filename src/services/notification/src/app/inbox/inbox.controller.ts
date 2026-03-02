@@ -13,71 +13,80 @@ import {
   Req,
   UseGuards,
   UseInterceptors,
-} from '@nestjs/common';
-import { AuthGuard } from '@nestjs/passport';
-import { ApiExcludeController } from '@nestjs/swagger';
-import { AddressingTypeEnum, MessageActionStatusEnum, PreferenceLevelEnum, TriggerRequestCategoryEnum } from 'libs/shared';
-import type { UserSessionData } from 'libs/shared';
-import { TriggerEventRequestDto } from '../events/dtos';
-import { TriggerEventResponseDto } from '../events/dtos/trigger-event-response.dto';
-import { ParseEventRequestMulticastCommand } from '../events/usecases/parse-event-request';
-import { ParseEventRequest } from '../events/usecases/parse-event-request/parse-event-request.usecase';
-import { ExcludeFromIdempotency } from '../shared/framework/exclude-from-idempotency';
-import { ApiCommonResponses } from '../shared/framework/response.decorator';
-import { KeylessAccessible } from '../shared/framework/swagger/keyless.security';
-import { SubscriberSession, UserSession } from '../shared/framework/user.decorator';
-import type { RequestWithReqId } from '../shared/middleware/request-id.middleware';
+} from "@nestjs/common";
+import { AuthGuard } from "@nestjs/passport";
+import { ApiExcludeController, ApiTags } from "@nestjs/swagger";
+import {
+  AddressingTypeEnum,
+  MessageActionStatusEnum,
+  PreferenceLevelEnum,
+  TriggerRequestCategoryEnum,
+} from "libs/shared";
+import type { UserSessionData } from "libs/shared";
+import { TriggerEventRequestDto } from "../events/dtos";
+import { TriggerEventResponseDto } from "../events/dtos/trigger-event-response.dto";
+import { ParseEventRequestMulticastCommand } from "../events/usecases/parse-event-request";
+import { ParseEventRequest } from "../events/usecases/parse-event-request/parse-event-request.usecase";
+import { ExcludeFromIdempotency } from "../shared/framework/exclude-from-idempotency";
+import { ApiCommonResponses } from "../shared/framework/response.decorator";
+import { KeylessAccessible } from "../shared/framework/swagger/keyless.security";
+import {
+  SubscriberSession,
+  UserSession,
+} from "../shared/framework/user.decorator";
+import type { RequestWithReqId } from "../shared/middleware/request-id.middleware";
 import {
   GetSubscriberGlobalPreference,
   GetSubscriberGlobalPreferenceCommand,
-} from '../subscribers/usecases/get-subscriber-global-preference';
-import { ActionTypeRequestDto } from './dtos/action-type-request.dto';
-import { BulkUpdatePreferencesRequestDto } from './dtos/bulk-update-preferences-request.dto';
-import { GetNotificationsCountRequestDto } from './dtos/get-notifications-count-request.dto';
-import { GetNotificationsCountResponseDto } from './dtos/get-notifications-count-response.dto';
-import { GetNotificationsRequestDto } from './dtos/get-notifications-request.dto';
-import { GetNotificationsResponseDto } from './dtos/get-notifications-response.dto';
-import { GetPreferencesRequestDto } from './dtos/get-preferences-request.dto';
-import { GetPreferencesResponseDto } from './dtos/get-preferences-response.dto';
-import { MarkNotificationsAsSeenRequestDto } from './dtos/mark-notifications-as-seen-request.dto';
-import { SnoozeNotificationRequestDto } from './dtos/snooze-notification-request.dto';
-import { SubscriberSessionRequestDto } from './dtos/subscriber-session-request.dto';
-import { SubscriberSessionResponseDto } from './dtos/subscriber-session-response.dto';
-import { UpdateAllNotificationsRequestDto } from './dtos/update-all-notifications-request.dto';
-import { UpdatePreferencesRequestDto } from './dtos/update-preferences-request.dto';
-import { ContextCompatibilityInterceptor } from './interceptors/context-compatibility.interceptor';
-import { BulkUpdatePreferencesCommand } from './usecases/bulk-update-preferences/bulk-update-preferences.command';
-import { BulkUpdatePreferences } from './usecases/bulk-update-preferences/bulk-update-preferences.usecase';
-import { DeleteAllNotificationsCommand } from './usecases/delete-all-notifications/delete-all-notifications.command';
-import { DeleteAllNotifications } from './usecases/delete-all-notifications/delete-all-notifications.usecase';
-import { DeleteNotificationCommand } from './usecases/delete-notification/delete-notification.command';
-import { DeleteNotification } from './usecases/delete-notification/delete-notification.usecase';
-import { GetInboxPreferencesCommand } from './usecases/get-inbox-preferences/get-inbox-preferences.command';
-import { GetInboxPreferences } from './usecases/get-inbox-preferences/get-inbox-preferences.usecase';
-import { GetNotificationsCommand } from './usecases/get-notifications/get-notifications.command';
-import { GetNotifications } from './usecases/get-notifications/get-notifications.usecase';
-import { MarkNotificationAsCommand } from './usecases/mark-notification-as/mark-notification-as.command';
-import { MarkNotificationAs } from './usecases/mark-notification-as/mark-notification-as.usecase';
-import { MarkNotificationsAsSeenCommand } from './usecases/mark-notifications-as-seen/mark-notifications-as-seen.command';
-import { MarkNotificationsAsSeen } from './usecases/mark-notifications-as-seen/mark-notifications-as-seen.usecase';
-import { NotificationsCountCommand } from './usecases/notifications-count/notifications-count.command';
-import { NotificationsCount } from './usecases/notifications-count/notifications-count.usecase';
-import { SessionCommand } from './usecases/session/session.command';
-import { Session } from './usecases/session/session.usecase';
-import { SnoozeNotificationCommand } from './usecases/snooze-notification/snooze-notification.command';
-import { SnoozeNotification } from './usecases/snooze-notification/snooze-notification.usecase';
-import { UnsnoozeNotificationCommand } from './usecases/unsnooze-notification/unsnooze-notification.command';
-import { UnsnoozeNotification } from './usecases/unsnooze-notification/unsnooze-notification.usecase';
-import { UpdateAllNotificationsCommand } from './usecases/update-all-notifications/update-all-notifications.command';
-import { UpdateAllNotifications } from './usecases/update-all-notifications/update-all-notifications.usecase';
-import { UpdateNotificationActionCommand } from './usecases/update-notification-action/update-notification-action.command';
-import { UpdateNotificationAction } from './usecases/update-notification-action/update-notification-action.usecase';
-import { UpdatePreferencesCommand } from './usecases/update-preferences/update-preferences.command';
-import { UpdatePreferences } from './usecases/update-preferences/update-preferences.usecase';
-import type { InboxNotification, InboxPreference } from './utils/types';
+} from "../subscribers/usecases/get-subscriber-global-preference";
+import { ActionTypeRequestDto } from "./dtos/action-type-request.dto";
+import { BulkUpdatePreferencesRequestDto } from "./dtos/bulk-update-preferences-request.dto";
+import { GetNotificationsCountRequestDto } from "./dtos/get-notifications-count-request.dto";
+import { GetNotificationsCountResponseDto } from "./dtos/get-notifications-count-response.dto";
+import { GetNotificationsRequestDto } from "./dtos/get-notifications-request.dto";
+import { GetNotificationsResponseDto } from "./dtos/get-notifications-response.dto";
+import { GetPreferencesRequestDto } from "./dtos/get-preferences-request.dto";
+import { GetPreferencesResponseDto } from "./dtos/get-preferences-response.dto";
+import { MarkNotificationsAsSeenRequestDto } from "./dtos/mark-notifications-as-seen-request.dto";
+import { SnoozeNotificationRequestDto } from "./dtos/snooze-notification-request.dto";
+import { SubscriberSessionRequestDto } from "./dtos/subscriber-session-request.dto";
+import { SubscriberSessionResponseDto } from "./dtos/subscriber-session-response.dto";
+import { UpdateAllNotificationsRequestDto } from "./dtos/update-all-notifications-request.dto";
+import { UpdatePreferencesRequestDto } from "./dtos/update-preferences-request.dto";
+import { ContextCompatibilityInterceptor } from "./interceptors/context-compatibility.interceptor";
+import { BulkUpdatePreferencesCommand } from "./usecases/bulk-update-preferences/bulk-update-preferences.command";
+import { BulkUpdatePreferences } from "./usecases/bulk-update-preferences/bulk-update-preferences.usecase";
+import { DeleteAllNotificationsCommand } from "./usecases/delete-all-notifications/delete-all-notifications.command";
+import { DeleteAllNotifications } from "./usecases/delete-all-notifications/delete-all-notifications.usecase";
+import { DeleteNotificationCommand } from "./usecases/delete-notification/delete-notification.command";
+import { DeleteNotification } from "./usecases/delete-notification/delete-notification.usecase";
+import { GetInboxPreferencesCommand } from "./usecases/get-inbox-preferences/get-inbox-preferences.command";
+import { GetInboxPreferences } from "./usecases/get-inbox-preferences/get-inbox-preferences.usecase";
+import { GetNotificationsCommand } from "./usecases/get-notifications/get-notifications.command";
+import { GetNotifications } from "./usecases/get-notifications/get-notifications.usecase";
+import { MarkNotificationAsCommand } from "./usecases/mark-notification-as/mark-notification-as.command";
+import { MarkNotificationAs } from "./usecases/mark-notification-as/mark-notification-as.usecase";
+import { MarkNotificationsAsSeenCommand } from "./usecases/mark-notifications-as-seen/mark-notifications-as-seen.command";
+import { MarkNotificationsAsSeen } from "./usecases/mark-notifications-as-seen/mark-notifications-as-seen.usecase";
+import { NotificationsCountCommand } from "./usecases/notifications-count/notifications-count.command";
+import { NotificationsCount } from "./usecases/notifications-count/notifications-count.usecase";
+import { SessionCommand } from "./usecases/session/session.command";
+import { Session } from "./usecases/session/session.usecase";
+import { SnoozeNotificationCommand } from "./usecases/snooze-notification/snooze-notification.command";
+import { SnoozeNotification } from "./usecases/snooze-notification/snooze-notification.usecase";
+import { UnsnoozeNotificationCommand } from "./usecases/unsnooze-notification/unsnooze-notification.command";
+import { UnsnoozeNotification } from "./usecases/unsnooze-notification/unsnooze-notification.usecase";
+import { UpdateAllNotificationsCommand } from "./usecases/update-all-notifications/update-all-notifications.command";
+import { UpdateAllNotifications } from "./usecases/update-all-notifications/update-all-notifications.usecase";
+import { UpdateNotificationActionCommand } from "./usecases/update-notification-action/update-notification-action.command";
+import { UpdateNotificationAction } from "./usecases/update-notification-action/update-notification-action.usecase";
+import { UpdatePreferencesCommand } from "./usecases/update-preferences/update-preferences.command";
+import { UpdatePreferences } from "./usecases/update-preferences/update-preferences.usecase";
+import type { InboxNotification, InboxPreference } from "./utils/types";
 
 @ApiCommonResponses()
-@Controller('/inbox')
+@Controller("/inbox")
+@ApiTags("Inbox")
 @ApiExcludeController()
 @ExcludeFromIdempotency()
 export class InboxController {
@@ -97,28 +106,28 @@ export class InboxController {
     private parseEventRequest: ParseEventRequest,
     private getSubscriberGlobalPreference: GetSubscriberGlobalPreference,
     private deleteNotificationUsecase: DeleteNotification,
-    private deleteAllNotificationsUsecase: DeleteAllNotifications
+    private deleteAllNotificationsUsecase: DeleteAllNotifications,
   ) {}
 
   @KeylessAccessible()
-  @Post('/session')
+  @Post("/session")
   async sessionInitialize(
     @Body() body: SubscriberSessionRequestDto,
-    @Headers('origin') origin: string
+    @Headers("origin") origin: string,
   ): Promise<SubscriberSessionResponseDto> {
     return await this.initializeSessionUsecase.execute(
       SessionCommand.create({
         requestData: body,
         origin,
-      })
+      }),
     );
   }
 
-  @UseGuards(AuthGuard('subscriberJwt'))
-  @Get('/notifications')
+  @UseGuards(AuthGuard("subscriberJwt"))
+  @Get("/notifications")
   async getNotifications(
     @SubscriberSession() subscriberSession: SubscriberSession,
-    @Query() query: GetNotificationsRequestDto
+    @Query() query: GetNotificationsRequestDto,
   ): Promise<GetNotificationsResponseDto> {
     return await this.getNotificationsUsecase.execute(
       GetNotificationsCommand.create({
@@ -138,15 +147,15 @@ export class InboxController {
         severity: query.severity,
         createdGte: query.createdGte,
         createdLte: query.createdLte,
-      })
+      }),
     );
   }
 
-  @UseGuards(AuthGuard('subscriberJwt'))
-  @Get('/notifications/count')
+  @UseGuards(AuthGuard("subscriberJwt"))
+  @Get("/notifications/count")
   async getNotificationsCount(
     @SubscriberSession() subscriberSession: SubscriberSession,
-    @Query() query: GetNotificationsCountRequestDto
+    @Query() query: GetNotificationsCountRequestDto,
   ): Promise<GetNotificationsCountResponseDto> {
     const res = await this.notificationsCountUsecase.execute(
       NotificationsCountCommand.create({
@@ -155,17 +164,17 @@ export class InboxController {
         environmentId: subscriberSession._environmentId,
         contextKeys: subscriberSession.contextKeys,
         filters: query.filters,
-      })
+      }),
     );
 
     return res;
   }
 
-  @UseGuards(AuthGuard('subscriberJwt'))
-  @Get('/preferences')
+  @UseGuards(AuthGuard("subscriberJwt"))
+  @Get("/preferences")
   async getAllPreferences(
     @SubscriberSession() subscriberSession: SubscriberSession,
-    @Query() query: GetPreferencesRequestDto
+    @Query() query: GetPreferencesRequestDto,
   ): Promise<GetPreferencesResponseDto[]> {
     return await this.getInboxPreferencesUsecase.execute(
       GetInboxPreferencesCommand.create({
@@ -176,13 +185,15 @@ export class InboxController {
         tags: query.tags,
         severity: query.severity,
         criticality: query.criticality,
-      })
+      }),
     );
   }
 
-  @UseGuards(AuthGuard('subscriberJwt'))
-  @Get('/preferences/global')
-  async getSchedule(@SubscriberSession() subscriberSession: SubscriberSession): Promise<InboxPreference> {
+  @UseGuards(AuthGuard("subscriberJwt"))
+  @Get("/preferences/global")
+  async getSchedule(
+    @SubscriberSession() subscriberSession: SubscriberSession,
+  ): Promise<InboxPreference> {
     const globalPreference = await this.getSubscriberGlobalPreference.execute(
       GetSubscriberGlobalPreferenceCommand.create({
         organizationId: subscriberSession._organizationId,
@@ -191,7 +202,7 @@ export class InboxController {
         contextKeys: subscriberSession.contextKeys,
         includeInactiveChannels: false,
         subscriber: subscriberSession,
-      })
+      }),
     );
 
     return {
@@ -200,11 +211,11 @@ export class InboxController {
     };
   }
 
-  @UseGuards(AuthGuard('subscriberJwt'))
-  @Patch('/notifications/:id/read')
+  @UseGuards(AuthGuard("subscriberJwt"))
+  @Patch("/notifications/:id/read")
   async markNotificationAsRead(
     @SubscriberSession() subscriberSession: SubscriberSession,
-    @Param('id') notificationId: string
+    @Param("id") notificationId: string,
   ): Promise<InboxNotification> {
     return await this.markNotificationAsUsecase.execute(
       MarkNotificationAsCommand.create({
@@ -214,15 +225,15 @@ export class InboxController {
         contextKeys: subscriberSession.contextKeys,
         notificationId,
         read: true,
-      })
+      }),
     );
   }
 
-  @UseGuards(AuthGuard('subscriberJwt'))
-  @Patch('/notifications/:id/unread')
+  @UseGuards(AuthGuard("subscriberJwt"))
+  @Patch("/notifications/:id/unread")
   async markNotificationAsUnread(
     @SubscriberSession() subscriberSession: SubscriberSession,
-    @Param('id') notificationId: string
+    @Param("id") notificationId: string,
   ): Promise<InboxNotification> {
     return await this.markNotificationAsUsecase.execute(
       MarkNotificationAsCommand.create({
@@ -232,15 +243,15 @@ export class InboxController {
         contextKeys: subscriberSession.contextKeys,
         notificationId,
         read: false,
-      })
+      }),
     );
   }
 
-  @UseGuards(AuthGuard('subscriberJwt'))
-  @Patch('/notifications/:id/archive')
+  @UseGuards(AuthGuard("subscriberJwt"))
+  @Patch("/notifications/:id/archive")
   async markNotificationAsArchived(
     @SubscriberSession() subscriberSession: SubscriberSession,
-    @Param('id') notificationId: string
+    @Param("id") notificationId: string,
   ): Promise<InboxNotification> {
     return await this.markNotificationAsUsecase.execute(
       MarkNotificationAsCommand.create({
@@ -250,15 +261,15 @@ export class InboxController {
         contextKeys: subscriberSession.contextKeys,
         notificationId,
         archived: true,
-      })
+      }),
     );
   }
 
-  @UseGuards(AuthGuard('subscriberJwt'))
-  @Patch('/notifications/:id/unarchive')
+  @UseGuards(AuthGuard("subscriberJwt"))
+  @Patch("/notifications/:id/unarchive")
   async markNotificationAsUnarchived(
     @SubscriberSession() subscriberSession: SubscriberSession,
-    @Param('id') notificationId: string
+    @Param("id") notificationId: string,
   ): Promise<InboxNotification> {
     return await this.markNotificationAsUsecase.execute(
       MarkNotificationAsCommand.create({
@@ -268,16 +279,16 @@ export class InboxController {
         contextKeys: subscriberSession.contextKeys,
         notificationId,
         archived: false,
-      })
+      }),
     );
   }
 
-  @UseGuards(AuthGuard('subscriberJwt'))
-  @Patch('/notifications/:id/snooze')
+  @UseGuards(AuthGuard("subscriberJwt"))
+  @Patch("/notifications/:id/snooze")
   async snoozeNotification(
     @SubscriberSession() subscriberSession: SubscriberSession,
-    @Param('id') notificationId: string,
-    @Body() body: SnoozeNotificationRequestDto
+    @Param("id") notificationId: string,
+    @Body() body: SnoozeNotificationRequestDto,
   ): Promise<InboxNotification> {
     return await this.snoozeNotificationUsecase.execute(
       SnoozeNotificationCommand.create({
@@ -287,15 +298,15 @@ export class InboxController {
         contextKeys: subscriberSession.contextKeys,
         notificationId,
         snoozeUntil: body.snoozeUntil,
-      })
+      }),
     );
   }
 
-  @UseGuards(AuthGuard('subscriberJwt'))
-  @Patch('/notifications/:id/unsnooze')
+  @UseGuards(AuthGuard("subscriberJwt"))
+  @Patch("/notifications/:id/unsnooze")
   async unsnoozeNotification(
     @SubscriberSession() subscriberSession: SubscriberSession,
-    @Param('id') notificationId: string
+    @Param("id") notificationId: string,
   ): Promise<InboxNotification> {
     return await this.unsnoozeNotificationUsecase.execute(
       UnsnoozeNotificationCommand.create({
@@ -304,16 +315,16 @@ export class InboxController {
         environmentId: subscriberSession._environmentId,
         contextKeys: subscriberSession.contextKeys,
         notificationId,
-      })
+      }),
     );
   }
 
-  @UseGuards(AuthGuard('subscriberJwt'))
-  @Delete('/notifications/:id/delete')
+  @UseGuards(AuthGuard("subscriberJwt"))
+  @Delete("/notifications/:id/delete")
   @HttpCode(HttpStatus.NO_CONTENT)
   async deleteNotification(
     @SubscriberSession() subscriberSession: SubscriberSession,
-    @Param('id') notificationId: string
+    @Param("id") notificationId: string,
   ): Promise<void> {
     await this.deleteNotificationUsecase.execute(
       DeleteNotificationCommand.create({
@@ -322,16 +333,16 @@ export class InboxController {
         environmentId: subscriberSession._environmentId,
         contextKeys: subscriberSession.contextKeys,
         notificationId,
-      })
+      }),
     );
   }
 
-  @UseGuards(AuthGuard('subscriberJwt'))
-  @Patch('/notifications/:id/complete')
+  @UseGuards(AuthGuard("subscriberJwt"))
+  @Patch("/notifications/:id/complete")
   async completeAction(
     @SubscriberSession() subscriberSession: SubscriberSession,
-    @Param('id') notificationId: string,
-    @Body() body: ActionTypeRequestDto
+    @Param("id") notificationId: string,
+    @Body() body: ActionTypeRequestDto,
   ): Promise<InboxNotification> {
     return await this.updateNotificationActionUsecase.execute(
       UpdateNotificationActionCommand.create({
@@ -342,16 +353,16 @@ export class InboxController {
         notificationId,
         actionType: body.actionType,
         actionStatus: MessageActionStatusEnum.DONE,
-      })
+      }),
     );
   }
 
-  @UseGuards(AuthGuard('subscriberJwt'))
-  @Patch('/notifications/:id/revert')
+  @UseGuards(AuthGuard("subscriberJwt"))
+  @Patch("/notifications/:id/revert")
   async revertAction(
     @SubscriberSession() subscriberSession: SubscriberSession,
-    @Param('id') notificationId: string,
-    @Body() body: ActionTypeRequestDto
+    @Param("id") notificationId: string,
+    @Body() body: ActionTypeRequestDto,
   ): Promise<InboxNotification> {
     return await this.updateNotificationActionUsecase.execute(
       UpdateNotificationActionCommand.create({
@@ -362,15 +373,15 @@ export class InboxController {
         notificationId,
         actionType: body.actionType,
         actionStatus: MessageActionStatusEnum.PENDING,
-      })
+      }),
     );
   }
 
-  @UseGuards(AuthGuard('subscriberJwt'))
-  @Patch('/preferences')
+  @UseGuards(AuthGuard("subscriberJwt"))
+  @Patch("/preferences")
   async updateGlobalPreference(
     @SubscriberSession() subscriberSession: SubscriberSession,
-    @Body() body: UpdatePreferencesRequestDto
+    @Body() body: UpdatePreferencesRequestDto,
   ): Promise<InboxPreference> {
     return await this.updatePreferencesUsecase.execute(
       UpdatePreferencesCommand.create({
@@ -386,7 +397,7 @@ export class InboxController {
         sms: body.sms,
         schedule: body.schedule,
         includeInactiveChannels: false,
-      })
+      }),
     );
   }
 
@@ -394,11 +405,11 @@ export class InboxController {
    * IMPORTANT: Make sure this endpoint route is defined before the single workflow preference update endpoint
    * "PATCH /preferences/:workflowIdOrIdentifier", otherwise, the single workflow preference update endpoint will be triggered instead
    */
-  @UseGuards(AuthGuard('subscriberJwt'))
-  @Patch('/preferences/bulk')
+  @UseGuards(AuthGuard("subscriberJwt"))
+  @Patch("/preferences/bulk")
   async bulkUpdateWorkflowPreferences(
     @SubscriberSession() subscriberSession: SubscriberSession,
-    @Body() body: BulkUpdatePreferencesRequestDto
+    @Body() body: BulkUpdatePreferencesRequestDto,
   ): Promise<InboxPreference[]> {
     return await this.bulkUpdatePreferencesUsecase.execute(
       BulkUpdatePreferencesCommand.create({
@@ -407,16 +418,16 @@ export class InboxController {
         environmentId: subscriberSession._environmentId,
         contextKeys: subscriberSession.contextKeys,
         preferences: body.preferences,
-      })
+      }),
     );
   }
 
-  @UseGuards(AuthGuard('subscriberJwt'))
-  @Patch('/preferences/:workflowIdOrIdentifier')
+  @UseGuards(AuthGuard("subscriberJwt"))
+  @Patch("/preferences/:workflowIdOrIdentifier")
   async updateWorkflowPreference(
     @SubscriberSession() subscriberSession: SubscriberSession,
-    @Param('workflowIdOrIdentifier') workflowIdOrIdentifier: string,
-    @Body() body: UpdatePreferencesRequestDto
+    @Param("workflowIdOrIdentifier") workflowIdOrIdentifier: string,
+    @Body() body: UpdatePreferencesRequestDto,
   ): Promise<InboxPreference> {
     return await this.updatePreferencesUsecase.execute(
       UpdatePreferencesCommand.create({
@@ -437,18 +448,20 @@ export class InboxController {
         schedule: body.schedule,
         workflowIdOrIdentifier,
         includeInactiveChannels: false,
-      })
+      }),
     );
   }
 
-  @UseGuards(AuthGuard('subscriberJwt'))
+  @UseGuards(AuthGuard("subscriberJwt"))
   @UseInterceptors(ContextCompatibilityInterceptor)
-  @Patch('/subscriptions/:subscriptionIdentifier/preferences/:workflowIdOrIdentifier')
+  @Patch(
+    "/subscriptions/:subscriptionIdentifier/preferences/:workflowIdOrIdentifier",
+  )
   async updateSubscriptionWorkflowPreference(
     @SubscriberSession() subscriberSession: SubscriberSession,
-    @Param('subscriptionIdentifier') subscriptionIdentifier: string,
-    @Param('workflowIdOrIdentifier') workflowIdOrIdentifier: string,
-    @Body() body: UpdatePreferencesRequestDto
+    @Param("subscriptionIdentifier") subscriptionIdentifier: string,
+    @Param("workflowIdOrIdentifier") workflowIdOrIdentifier: string,
+    @Body() body: UpdatePreferencesRequestDto,
   ): Promise<InboxPreference> {
     return await this.updatePreferencesUsecase.execute(
       UpdatePreferencesCommand.create({
@@ -470,16 +483,16 @@ export class InboxController {
         schedule: body.schedule,
         workflowIdOrIdentifier,
         includeInactiveChannels: false,
-      })
+      }),
     );
   }
 
-  @UseGuards(AuthGuard('subscriberJwt'))
-  @Post('/notifications/seen')
+  @UseGuards(AuthGuard("subscriberJwt"))
+  @Post("/notifications/seen")
   @HttpCode(HttpStatus.NO_CONTENT)
   async markNotificationsAsSeen(
     @SubscriberSession() subscriberSession: SubscriberSession,
-    @Body() body: MarkNotificationsAsSeenRequestDto
+    @Body() body: MarkNotificationsAsSeenRequestDto,
   ): Promise<void> {
     await this.markNotificationsAsSeenUsecase.execute(
       MarkNotificationsAsSeenCommand.create({
@@ -490,16 +503,16 @@ export class InboxController {
         notificationIds: body.notificationIds,
         tags: body.tags,
         data: body.data,
-      })
+      }),
     );
   }
 
-  @UseGuards(AuthGuard('subscriberJwt'))
-  @Post('/notifications/read')
+  @UseGuards(AuthGuard("subscriberJwt"))
+  @Post("/notifications/read")
   @HttpCode(HttpStatus.NO_CONTENT)
   async markAllAsRead(
     @SubscriberSession() subscriberSession: SubscriberSession,
-    @Body() body: UpdateAllNotificationsRequestDto
+    @Body() body: UpdateAllNotificationsRequestDto,
   ): Promise<void> {
     await this.updateAllNotifications.execute(
       UpdateAllNotificationsCommand.create({
@@ -514,16 +527,16 @@ export class InboxController {
         to: {
           read: true,
         },
-      })
+      }),
     );
   }
 
-  @UseGuards(AuthGuard('subscriberJwt'))
-  @Post('/notifications/archive')
+  @UseGuards(AuthGuard("subscriberJwt"))
+  @Post("/notifications/archive")
   @HttpCode(HttpStatus.NO_CONTENT)
   async markAllAsArchived(
     @SubscriberSession() subscriberSession: SubscriberSession,
-    @Body() body: UpdateAllNotificationsRequestDto
+    @Body() body: UpdateAllNotificationsRequestDto,
   ): Promise<void> {
     await this.updateAllNotifications.execute(
       UpdateAllNotificationsCommand.create({
@@ -538,16 +551,16 @@ export class InboxController {
         to: {
           archived: true,
         },
-      })
+      }),
     );
   }
 
-  @UseGuards(AuthGuard('subscriberJwt'))
-  @Post('/notifications/read-archive')
+  @UseGuards(AuthGuard("subscriberJwt"))
+  @Post("/notifications/read-archive")
   @HttpCode(HttpStatus.NO_CONTENT)
   async markAllAsReadArchived(
     @SubscriberSession() subscriberSession: SubscriberSession,
-    @Body() body: UpdateAllNotificationsRequestDto
+    @Body() body: UpdateAllNotificationsRequestDto,
   ): Promise<void> {
     await this.updateAllNotifications.execute(
       UpdateAllNotificationsCommand.create({
@@ -563,16 +576,16 @@ export class InboxController {
         to: {
           archived: true,
         },
-      })
+      }),
     );
   }
 
-  @UseGuards(AuthGuard('subscriberJwt'))
-  @Post('/notifications/delete')
+  @UseGuards(AuthGuard("subscriberJwt"))
+  @Post("/notifications/delete")
   @HttpCode(HttpStatus.NO_CONTENT)
   async deleteAllNotifications(
     @SubscriberSession() subscriberSession: SubscriberSession,
-    @Body() body: UpdateAllNotificationsRequestDto
+    @Body() body: UpdateAllNotificationsRequestDto,
   ): Promise<void> {
     await this.deleteAllNotificationsUsecase.execute(
       DeleteAllNotificationsCommand.create({
@@ -584,17 +597,17 @@ export class InboxController {
           tags: body.tags,
           data: body.data,
         },
-      })
+      }),
     );
   }
 
   @KeylessAccessible()
-  @UseGuards(AuthGuard('subscriberJwt'))
-  @Post('/events')
+  @UseGuards(AuthGuard("subscriberJwt"))
+  @Post("/events")
   async keylessEvents(
     @UserSession() user: UserSessionData,
     @Body() body: TriggerEventRequestDto,
-    @Req() req: RequestWithReqId
+    @Req() req: RequestWithReqId,
   ): Promise<TriggerEventResponseDto> {
     const result = await this.parseEventRequest.execute(
       ParseEventRequestMulticastCommand.create({
@@ -614,7 +627,7 @@ export class InboxController {
         bridgeUrl: body.bridgeUrl,
         controls: body.controls,
         requestId: req._nvRequestId,
-      })
+      }),
     );
 
     return result as unknown as TriggerEventResponseDto;

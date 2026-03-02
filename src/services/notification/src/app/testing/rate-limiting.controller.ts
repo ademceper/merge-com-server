@@ -1,12 +1,10 @@
 import { Controller, Get } from '@nestjs/common';
 import { ApiExcludeController } from '@nestjs/swagger';
 import { ApiRateLimitCategoryEnum, ApiRateLimitCostEnum } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
-import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
+import { ExternalApiAccessible } from 'libs/application-generic';
 import { ThrottlerCategory, ThrottlerCost } from '../rate-limiting/guards';
 
 @Controller('/rate-limiting')
-@RequireAuthentication()
 @ApiExcludeController()
 export class TestApiRateLimitController {
   @ExternalApiAccessible()
@@ -70,7 +68,6 @@ export class TestApiRateLimitController {
 }
 @ApiExcludeController()
 @Controller('/rate-limiting-trigger-bulk')
-@RequireAuthentication()
 @ThrottlerCategory(ApiRateLimitCategoryEnum.TRIGGER)
 @ThrottlerCost(ApiRateLimitCostEnum.BULK)
 export class TestApiRateLimitBulkController {

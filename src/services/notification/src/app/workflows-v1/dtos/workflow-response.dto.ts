@@ -41,12 +41,12 @@ export class NotificationTrigger {
   identifier: string;
 
   @ApiProperty({
-    type: [NotificationTriggerVariable],
+    type: () => [NotificationTriggerVariable],
   })
   variables: NotificationTriggerVariable[];
 
   @ApiProperty({
-    type: [NotificationTriggerVariable],
+    type: () => [NotificationTriggerVariable],
   })
   subscriberVariables?: NotificationTriggerVariable[];
 }
@@ -69,7 +69,7 @@ export class WorkflowResponse implements INotificationTemplate {
   draft: boolean;
 
   @ApiProperty({
-    type: SubscriberPreferenceChannels,
+    type: () => SubscriberPreferenceChannels,
   })
   preferenceSettings: SubscriberPreferenceChannels;
 
@@ -80,7 +80,7 @@ export class WorkflowResponse implements INotificationTemplate {
   tags: string[];
 
   @ApiProperty({
-    type: [NotificationStepDto],
+    type: () => [NotificationStepDto],
   })
   steps: NotificationStepDto[];
 
@@ -94,7 +94,7 @@ export class WorkflowResponse implements INotificationTemplate {
   _environmentId: string;
 
   @ApiProperty({
-    type: [NotificationTrigger],
+    type: () => [NotificationTrigger],
   })
   triggers: NotificationTrigger[];
 
@@ -114,7 +114,7 @@ export class WorkflowResponse implements INotificationTemplate {
   deletedBy: string;
 
   @ApiPropertyOptional({
-    type: NotificationGroup,
+    type: () => NotificationGroup,
   })
   readonly notificationGroup?: NotificationGroup;
 

@@ -54,7 +54,7 @@ export class MergePreferences {
       (preference) => preference !== undefined
     );
 
-    const isWorkflowPreferenceReadonly = workflowPreferences.some((preference) => preference.preferences.all?.readOnly);
+    const isWorkflowPreferenceReadonly = workflowPreferences.some((preference) => preference?.preferences.all?.readOnly);
     const shouldExcludeSubscriberPreferences = command.excludeSubscriberPreferences || isWorkflowPreferenceReadonly;
 
     const preferencesList = [

@@ -164,7 +164,7 @@ export abstract class LogRepository<TSchema extends ClickhouseSchema<any>, TEnha
         organization: context?.organizationId ? { _id: context.organizationId } : undefined,
         environment: context?.environmentId ? { _id: context.environmentId } : undefined,
         user: context?.userId ? { _id: context.userId } : undefined,
-      } as Parameters<typeof this.featureFlagsService.getFlag>[0]);
+      } as Parameters<FeatureFlagsService['getFlag']>[0]);
 
       return addDays(new Date(), expirationDays as number);
     } catch (error) {
@@ -327,7 +327,7 @@ export abstract class LogRepository<TSchema extends ClickhouseSchema<any>, TEnha
         organization: context.organizationId ? { _id: context.organizationId } : undefined,
         environment: context.environmentId ? { _id: context.environmentId } : undefined,
         user: context.userId ? { _id: context.userId } : undefined,
-      } as Parameters<typeof this.featureFlagsService.getFlag>[0]);
+      } as Parameters<FeatureFlagsService['getFlag']>[0]);
 
       return isBatchingEnabled as boolean;
     } catch (error) {

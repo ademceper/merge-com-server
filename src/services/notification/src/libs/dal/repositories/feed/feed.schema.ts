@@ -10,17 +10,14 @@ const feedSchema = new Schema<FeedDBModel>(
     name: Schema.Types.String,
     identifier: {
       type: Schema.Types.String,
-      index: true,
     },
     _organizationId: {
       type: Schema.Types.ObjectId,
       ref: 'Organization',
-      index: true,
     },
     _environmentId: {
       type: Schema.Types.ObjectId,
       ref: 'Environment',
-      index: true,
     },
   },
   schemaOptions

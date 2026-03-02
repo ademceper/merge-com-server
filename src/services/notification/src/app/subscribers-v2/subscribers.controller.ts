@@ -20,13 +20,11 @@ import {
 } from 'libs/application-generic';
 import { ApiRateLimitCategoryEnum, DirectionEnum, PermissionsEnum } from 'libs/shared';
 import type { SubscriberCustomData, UserSessionData } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { GetPreferencesResponseDto } from '../inbox/dtos/get-preferences-response.dto';
 import { BulkUpdatePreferencesCommand } from '../inbox/usecases/bulk-update-preferences/bulk-update-preferences.command';
 import { BulkUpdatePreferences } from '../inbox/usecases/bulk-update-preferences/bulk-update-preferences.usecase';
 import { ThrottlerCategory } from '../rate-limiting/guards/throttler.decorator';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';
-import { SdkGroupName, SdkMethodName } from '../shared/framework/swagger/sdk.decorators';
 import { SubscriberResponseDto } from '../subscribers/dtos';
 import {
   GetSubscriberGlobalPreference,
@@ -64,8 +62,6 @@ import { UpdateSubscriberPreferences } from './usecases/update-subscriber-prefer
 @Controller({ path: '/subscribers', version: '2' })
 @UseInterceptors(ClassSerializerInterceptor)
 @ApiTags('Subscribers')
-@SdkGroupName('Subscribers')
-@RequireAuthentication()
 @ApiCommonResponses()
 export class SubscribersController {
   constructor(
@@ -83,7 +79,6 @@ export class SubscribersController {
 
   @Get('')
   @ExternalApiAccessible()
-  @SdkMethodName('search')
   @ApiOperation({
     summary: 'Search subscribers',
     description: `Search subscribers by their **email**, **phone**, **subscriberId** and **name**. 
@@ -120,7 +115,6 @@ export class SubscribersController {
     **subscriberId** field is required.`,
   })
   @ApiResponse(SubscriberResponseDto)
-  @SdkMethodName('retrieve')
   @RequirePermissions(PermissionsEnum.SUBSCRIBER_READ)
   async getSubscriber(
     @UserSession() user: UserSessionData,
@@ -152,7 +146,6 @@ export class SubscribersController {
   @ApiResponse(SubscriberResponseDto, 409, false, false, {
     description: 'Subscriber already exists (when query param failIfExists=true)',
   })
-  @SdkMethodName('create')
   @RequirePermissions(PermissionsEnum.SUBSCRIBER_WRITE)
   async createSubscriber(
     @UserSession() user: UserSessionData,
@@ -192,7 +185,6 @@ export class SubscribersController {
     **subscriberId** is a required field, rest other fields are optional`,
   })
   @ApiResponse(SubscriberResponseDto)
-  @SdkMethodName('patch')
   @RequirePermissions(PermissionsEnum.SUBSCRIBER_WRITE)
   async patchSubscriber(
     @UserSession() user: UserSessionData,
@@ -218,7 +210,6 @@ export class SubscribersController {
     description: `Deletes a subscriber entity from the Novu platform along with associated messages, preferences, and topic subscriptions. 
       **subscriberId** is a required field.`,
   })
-  @SdkMethodName('delete')
   @RequirePermissions(PermissionsEnum.SUBSCRIBER_WRITE)
   async removeSubscriber(
     @UserSession() user: UserSessionData,
@@ -241,8 +232,6 @@ export class SubscribersController {
     This API returns all five channels preferences for all workflows and global preferences.`,
   })
   @ApiResponse(GetSubscriberPreferencesDto)
-  @SdkGroupName('Subscribers.Preferences')
-  @SdkMethodName('list')
   @RequirePermissions(PermissionsEnum.SUBSCRIBER_READ)
   async getSubscriberPreferences(
     @UserSession() user: UserSessionData,
@@ -267,9 +256,7 @@ export class SubscribersController {
     description: `Retrieve subscriber global preference. This API returns all five global channels preferences and subscriber schedule.`,
   })
   @ApiResponse(SubscriberGlobalPreferenceDto)
-  @SdkGroupName('Subscribers.Preferences')
   @RequirePermissions(PermissionsEnum.SUBSCRIBER_READ)
-  @SdkMethodName('globalPreference')
   @ApiExcludeEndpoint()
   async getGlobalPreference(
     @UserSession() user: UserSessionData,
@@ -295,8 +282,6 @@ export class SubscribersController {
     This API allows updating multiple workflow preferences in a single request.`,
   })
   @ApiResponse(GetPreferencesResponseDto, 200, true)
-  @SdkGroupName('Subscribers.Preferences')
-  @SdkMethodName('bulkUpdate')
   @RequirePermissions(PermissionsEnum.SUBSCRIBER_WRITE)
   async bulkUpdateSubscriberPreferences(
     @UserSession() user: UserSessionData,
@@ -332,8 +317,6 @@ export class SubscribersController {
     otherwise it will update global preferences`,
   })
   @ApiResponse(GetSubscriberPreferencesDto)
-  @SdkGroupName('Subscribers.Preferences')
-  @SdkMethodName('update')
   @RequirePermissions(PermissionsEnum.SUBSCRIBER_WRITE)
   async updateSubscriberPreferences(
     @UserSession() user: UserSessionData,
@@ -362,8 +345,6 @@ export class SubscribersController {
   })
   @ApiParam({ name: 'subscriberId', description: 'The identifier of the subscriber', type: String })
   @ApiResponse(ListTopicSubscriptionsResponseDto)
-  @SdkGroupName('Subscribers.Topics')
-  @SdkMethodName('list')
   @RequirePermissions(PermissionsEnum.SUBSCRIBER_READ)
   async listSubscriberTopics(
     @UserSession() user: UserSessionData,

@@ -42,7 +42,7 @@ export class FilterLayoutsRequestDto {
 
 export class FilterLayoutsResponseDto {
   @ApiProperty({
-    type: LayoutDto,
+    type: () => LayoutDto,
     isArray: true,
   })
   data: LayoutDto[];

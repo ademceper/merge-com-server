@@ -9,12 +9,10 @@ const NotificationGroupSchema = new Schema<NotificationGroupDBModel>(
     _organizationId: {
       type: Schema.Types.ObjectId,
       ref: 'Organization',
-      index: true,
     },
     _environmentId: {
       type: Schema.Types.ObjectId,
       ref: 'Environment',
-      index: true,
     },
     _parentId: {
       type: Schema.Types.ObjectId,

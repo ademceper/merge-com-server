@@ -17,6 +17,7 @@ import { ApiExcludeEndpoint, ApiOperation, ApiTags } from '@nestjs/swagger';
 import {
   CalculateLimitNovuIntegration,
   CalculateLimitNovuIntegrationCommand,
+  ExternalApiAccessible,
   FeatureFlagsService,
   GetDecryptedIntegrations,
   OtelSpan,
@@ -26,15 +27,12 @@ import { CommunityOrganizationRepository } from 'libs/dal';
 import { ApiServiceLevelEnum, ChannelTypeEnum, FeatureFlagsKeysEnum, FeatureNameEnum, getFeatureForTierAsBoolean, PermissionsEnum } from 'libs/shared';
 import type { UserSessionData } from 'libs/shared';
 import type { Response } from 'express';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
-import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import {
   ApiCommonResponses,
   ApiNotFoundResponse,
   ApiOkResponse,
   ApiResponse,
 } from '../shared/framework/response.decorator';
-import { SdkGroupName, SdkMethodName } from '../shared/framework/swagger/sdk.decorators';
 import { UserSession } from '../shared/framework/user.decorator';
 import { AutoConfigureIntegrationResponseDto } from './dtos/auto-configure-integration-response.dto';
 import { CreateIntegrationRequestDto } from './dtos/create-integration-request.dto';
@@ -99,7 +97,6 @@ export class IntegrationsController {
     description: 'List all the channels integrations created in the organization',
   })
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @RequirePermissions(PermissionsEnum.INTEGRATION_READ)
   async listIntegrations(@UserSession() user: UserSessionData): Promise<IntegrationResponseDto[]> {
     const canAccessCredentials = await this.canUserAccessCredentials(user);
@@ -124,8 +121,6 @@ export class IntegrationsController {
     description: 'List all the active integrations created in the organization',
   })
   @ExternalApiAccessible()
-  @SdkMethodName('listActive')
-  @RequireAuthentication()
   @RequirePermissions(PermissionsEnum.INTEGRATION_READ)
   async getActiveIntegrations(@UserSession() user: UserSessionData): Promise<IntegrationResponseDto[]> {
     const canAccessCredentials = await this.canUserAccessCredentials(user);
@@ -151,9 +146,7 @@ export class IntegrationsController {
     description: `Retrieve the status of the webhook for integration specified in query param **providerOrIntegrationId**. 
     This API returns a boolean value.`,
   })
-  @SdkGroupName('Integrations.Webhooks')
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @RequirePermissions(PermissionsEnum.INTEGRATION_READ)
   async getWebhookSupportStatus(
     @UserSession() user: UserSessionData,
@@ -177,7 +170,6 @@ export class IntegrationsController {
     Each provider supports different credentials, check the provider documentation for more details.`,
   })
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @RequirePermissions(PermissionsEnum.INTEGRATION_WRITE)
   async createIntegration(
     @UserSession() user: UserSessionData,
@@ -229,7 +221,6 @@ export class IntegrationsController {
     Each provider supports different credentials, check the provider documentation for more details.`,
   })
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @RequirePermissions(PermissionsEnum.INTEGRATION_WRITE)
   async updateIntegrationById(
     @UserSession() user: UserSessionData,
@@ -282,7 +273,6 @@ export class IntegrationsController {
     This will automatically generate required webhook signing keys and configure webhook endpoints.`,
   })
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @RequirePermissions(PermissionsEnum.INTEGRATION_WRITE)
   async autoConfigureIntegration(
     @UserSession() user: UserSessionData,
@@ -311,9 +301,7 @@ export class IntegrationsController {
     Primary integration is used to deliver notification for sms and email channels in the workflow.`,
   })
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @RequirePermissions(PermissionsEnum.INTEGRATION_WRITE)
-  @SdkMethodName('setAsPrimary')
   async setIntegrationAsPrimary(
     @UserSession() user: UserSessionData,
     @Param('integrationId') integrationId: string
@@ -345,7 +333,6 @@ export class IntegrationsController {
     This action is irreversible.`,
   })
   @ExternalApiAccessible()
-  @RequireAuthentication()
   @RequirePermissions(PermissionsEnum.INTEGRATION_WRITE)
   async removeIntegration(
     @UserSession() user: UserSessionData,
@@ -364,7 +351,6 @@ export class IntegrationsController {
   @Get('/:channelType/limit')
   @ApiExcludeEndpoint()
   @OtelSpan()
-  @RequireAuthentication()
   @RequirePermissions(PermissionsEnum.INTEGRATION_READ)
   async getProviderLimit(
     @UserSession() user: UserSessionData,
@@ -387,7 +373,6 @@ export class IntegrationsController {
 
   @Get('/in-app/status')
   @ApiExcludeEndpoint()
-  @RequireAuthentication()
   @RequirePermissions(PermissionsEnum.INTEGRATION_READ)
   async getInAppActivated(@UserSession() user: UserSessionData) {
     return await this.getInAppActivatedUsecase.execute(
@@ -406,10 +391,8 @@ export class IntegrationsController {
     This URL allows subscribers to authorize the integration, enabling the system to send messages 
     through their chat workspace. The generated URL expires after 5 minutes.`,
   })
-  @SdkMethodName('generateChatOAuthUrl')
   @RequirePermissions(PermissionsEnum.INTEGRATION_WRITE)
   @ExternalApiAccessible()
-  @RequireAuthentication()
   async getChatOAuthUrl(
     @UserSession() user: UserSessionData,
     @Body() body: GenerateChatOauthUrlRequestDto

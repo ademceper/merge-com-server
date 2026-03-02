@@ -1,7 +1,6 @@
-import { forwardRef, Module } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 
 import { ResourceValidatorService } from 'libs/application-generic';
-import { AuthModule } from '../auth/auth.module';
 import { ChangeModule } from '../change/change.module';
 import { MessageTemplateModule } from '../message-template/message-template.module';
 import { SharedModule } from '../shared/shared.module';
@@ -9,7 +8,7 @@ import { LayoutsControllerV1 } from './layouts-v1.controller';
 import { USE_CASES } from './usecases';
 
 @Module({
-  imports: [SharedModule, ChangeModule, MessageTemplateModule, forwardRef(() => AuthModule)],
+  imports: [SharedModule, ChangeModule, MessageTemplateModule],
   providers: [...USE_CASES, ResourceValidatorService],
   exports: [...USE_CASES],
   controllers: [LayoutsControllerV1],

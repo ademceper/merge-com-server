@@ -15,7 +15,7 @@ export class ControlsMetadataDto {
 
   @ApiPropertyOptional({
     description: 'UI Schema for rendering',
-    type: UiSchema,
+    type: () => UiSchema,
   })
   @IsOptional()
   @ValidateNested()

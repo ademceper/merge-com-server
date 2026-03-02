@@ -21,10 +21,8 @@ import {
 } from 'libs/application-generic';
 import { ApiRateLimitCategoryEnum, DirectionEnum, PermissionsEnum, ResourceOriginEnum } from 'libs/shared';
 import type { UserSessionData } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
 import { ThrottlerCategory } from '../rate-limiting/guards/throttler.decorator';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';
-import { SdkGroupName, SdkMethodName } from '../shared/framework/swagger/sdk.decorators';
 import { DeleteWorkflowCommand } from '../workflows-v1/usecases/delete-workflow/delete-workflow.command';
 import { DeleteWorkflowUseCase } from '../workflows-v1/usecases/delete-workflow/delete-workflow.usecase';
 import { GeneratePreviewRequestDto, GeneratePreviewResponseDto, GetListQueryParamsDto, CreateWorkflowDto, DuplicateWorkflowDto, ListWorkflowResponse, PatchWorkflowDto, StepResponseDto, SyncWorkflowDto, UpdateWorkflowDto, WorkflowResponseDto, WorkflowTestDataResponseDto } from './dtos';
@@ -54,7 +52,6 @@ import { PatchWorkflowCommand, PatchWorkflowUsecase } from './usecases/patch-wor
 @ApiCommonResponses()
 @Controller({ path: `/workflows`, version: '2' })
 @UseInterceptors(ClassSerializerInterceptor)
-@RequireAuthentication()
 @ApiTags('Workflows')
 export class WorkflowController {
   constructor(
@@ -106,7 +103,6 @@ export class WorkflowController {
   })
   @ApiBody({ type: SyncWorkflowDto, description: 'Sync workflow details' })
   @ApiResponse(WorkflowResponseDto)
-  @SdkMethodName('sync')
   @RequirePermissions(PermissionsEnum.WORKFLOW_WRITE)
   async sync(
     @UserSession() user: UserSessionData,
@@ -169,7 +165,6 @@ export class WorkflowController {
     type: String,
     required: false,
   })
-  @SdkMethodName('get')
   @RequirePermissions(PermissionsEnum.WORKFLOW_READ)
   async getWorkflow(
     @UserSession(ParseSlugEnvironmentIdPipe) user: UserSessionData,
@@ -192,7 +187,6 @@ export class WorkflowController {
     summary: 'Delete a workflow',
     description: 'Removes a specific workflow by its unique identifier **workflowId**',
   })
-  @SdkMethodName('delete')
   @RequirePermissions(PermissionsEnum.WORKFLOW_WRITE)
   async removeWorkflow(
     @UserSession(ParseSlugEnvironmentIdPipe) user: UserSessionData,
@@ -215,7 +209,6 @@ export class WorkflowController {
     description: 'Retrieves a list of workflows with optional filtering and pagination',
   })
   @ApiResponse(ListWorkflowResponse)
-  @SdkMethodName('list')
   @RequirePermissions(PermissionsEnum.WORKFLOW_READ)
   async searchWorkflows(
     @UserSession(ParseSlugEnvironmentIdPipe) user: UserSessionData,
@@ -243,7 +236,6 @@ export class WorkflowController {
   })
   @ApiBody({ type: DuplicateWorkflowDto })
   @ApiResponse(WorkflowResponseDto, 201)
-  @SdkMethodName('duplicate')
   @RequirePermissions(PermissionsEnum.WORKFLOW_WRITE)
   async duplicateWorkflow(
     @UserSession(ParseSlugEnvironmentIdPipe) user: UserSessionData,
@@ -266,8 +258,6 @@ export class WorkflowController {
   })
   @ApiBody({ type: GeneratePreviewRequestDto, description: 'Preview generation details' })
   @ApiResponse(GeneratePreviewResponseDto, 201)
-  @SdkGroupName('Workflows.Steps')
-  @SdkMethodName('generatePreview')
   @RequirePermissions(PermissionsEnum.WORKFLOW_READ)
   async generatePreview(
     @UserSession(ParseSlugEnvironmentIdPipe) user: UserSessionData,
@@ -292,8 +282,6 @@ export class WorkflowController {
   })
   @ApiResponse(StepResponseDto)
   @ExternalApiAccessible()
-  @SdkGroupName('Workflows.Steps')
-  @SdkMethodName('retrieve')
   @RequirePermissions(PermissionsEnum.WORKFLOW_READ)
   async getWorkflowStepData(
     @UserSession(ParseSlugEnvironmentIdPipe) user: UserSessionData,
@@ -313,7 +301,6 @@ export class WorkflowController {
   })
   @ApiBody({ type: PatchWorkflowDto, description: 'Workflow patch details' })
   @ApiResponse(WorkflowResponseDto)
-  @SdkMethodName('patch')
   @RequirePermissions(PermissionsEnum.WORKFLOW_WRITE)
   async patchWorkflow(
     @UserSession(ParseSlugEnvironmentIdPipe) user: UserSessionData,
@@ -331,7 +318,6 @@ export class WorkflowController {
     description: 'Retrieves test data for a specific workflow by its unique identifier **workflowId**',
   })
   @ApiResponse(WorkflowTestDataResponseDto)
-  @SdkMethodName('getTestData')
   @RequirePermissions(PermissionsEnum.WORKFLOW_READ)
   @ApiExcludeEndpoint()
   async getWorkflowTestData(

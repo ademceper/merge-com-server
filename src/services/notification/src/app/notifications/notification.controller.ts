@@ -1,12 +1,9 @@
 import { Controller, Get, Param, Query } from '@nestjs/common';
 import { ApiExcludeEndpoint, ApiOperation, ApiQuery, ApiTags } from '@nestjs/swagger';
-import { RequirePermissions } from 'libs/application-generic';
+import { ExternalApiAccessible, RequirePermissions } from 'libs/application-generic';
 import { ChannelTypeEnum, PermissionsEnum, SeverityLevelEnum } from 'libs/shared';
 import type { UserSessionData } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
-import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import { ApiCommonResponses, ApiOkResponse, ApiResponse } from '../shared/framework/response.decorator';
-import { SdkGroupName, SdkMethodName } from '../shared/framework/swagger/sdk.decorators';
 import { UserSession } from '../shared/framework/user.decorator';
 import { ActivitiesRequestDto } from './dtos/activities-request.dto';
 import { ActivitiesResponseDto, ActivityNotificationResponseDto } from './dtos/activities-response.dto';
@@ -21,7 +18,6 @@ import { GetActivityGraphStats } from './usecases/get-activity-graph-states/get-
 import { GetActivityStats, GetActivityStatsCommand } from './usecases/get-activity-stats';
 
 @ApiCommonResponses()
-@RequireAuthentication()
 @Controller('/notifications')
 @ApiTags('Notifications')
 export class NotificationsController {
@@ -112,7 +108,6 @@ export class NotificationsController {
   })
   @Get('/stats')
   @ExternalApiAccessible()
-  @SdkGroupName('Notifications.Stats')
   @RequirePermissions(PermissionsEnum.NOTIFICATION_READ)
   getActivityStats(@UserSession() user: UserSessionData): Promise<ActivityStatsResponseDto> {
     return this.getActivityStatsUsecase.execute(
@@ -138,8 +133,6 @@ export class NotificationsController {
     type: Number,
     required: false,
   })
-  @SdkGroupName('Notifications.Stats')
-  @SdkMethodName('graph')
   @RequirePermissions(PermissionsEnum.NOTIFICATION_READ)
   getActivityGraphStats(
     @UserSession() user: UserSessionData,

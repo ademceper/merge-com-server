@@ -212,9 +212,7 @@ const IMPORTS = [
   }),
 ];
 
-if (process.env.NODE_ENV === 'test') {
-  PROVIDERS.push(...getDynamicAuthProviders());
-}
+PROVIDERS.push(...getDynamicAuthProviders());
 
 @Module({
   imports: [...IMPORTS],

@@ -15,7 +15,7 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
-import { ApiExcludeController, ApiOperation, ApiQuery } from '@nestjs/swagger';
+import { ApiExcludeController, ApiOperation, ApiQuery, ApiTags } from '@nestjs/swagger';
 import { AnalyticsService } from 'libs/application-generic';
 import { MessageEntity } from 'libs/dal';
 import { ButtonTypeEnum, MessageActionStatusEnum, MessagesStatusEnum, PreferenceLevelEnum, TriggerTypeEnum, WorkflowCriticalityEnum } from 'libs/shared';
@@ -72,6 +72,7 @@ import { RemoveMessagesBulk } from './usecases/remove-messages-bulk/remove-messa
 
 @ApiCommonResponses()
 @Controller('/widgets')
+@ApiTags('Widgets')
 @ApiExcludeController()
 export class WidgetsController {
   constructor(

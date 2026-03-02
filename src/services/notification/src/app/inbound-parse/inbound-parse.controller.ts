@@ -1,9 +1,7 @@
 import { ClassSerializerInterceptor, Controller, Get, UseInterceptors } from '@nestjs/common';
 import { ApiExcludeController, ApiOperation, ApiTags } from '@nestjs/swagger';
-import { PinoLogger } from 'libs/application-generic';
+import { ExternalApiAccessible, PinoLogger } from 'libs/application-generic';
 import type { UserSessionData } from 'libs/shared';
-import { RequireAuthentication } from '../auth/framework/auth.decorator';
-import { ExternalApiAccessible } from '../auth/framework/external-api.decorator';
 import { ApiCommonResponses, ApiResponse } from '../shared/framework/response.decorator';
 import { UserSession } from '../shared/framework/user.decorator';
 import { GetMxRecordResponseDto } from './dtos/get-mx-record.dto';
@@ -13,7 +11,6 @@ import { GetMxRecord } from './usecases/get-mx-record/get-mx-record.usecase';
 @ApiCommonResponses()
 @Controller('/inbound-parse')
 @UseInterceptors(ClassSerializerInterceptor)
-@RequireAuthentication()
 @ApiTags('Inbound Parse')
 @ApiExcludeController()
 export class InboundParseController {

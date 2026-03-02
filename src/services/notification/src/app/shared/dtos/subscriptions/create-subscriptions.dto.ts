@@ -95,7 +95,7 @@ export class GroupPreferenceFilterDetailsDto {
 export class GroupPreferenceFilterDto extends BasePreferenceDto {
   @ApiProperty({
     description: 'Filter criteria for workflow IDs and tags',
-    type: GroupPreferenceFilterDetailsDto,
+    type: () => GroupPreferenceFilterDetailsDto,
   })
   @ValidateNested()
   @Type(() => GroupPreferenceFilterDetailsDto)

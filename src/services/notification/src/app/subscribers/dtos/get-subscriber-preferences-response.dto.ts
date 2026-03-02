@@ -4,13 +4,13 @@ import { SubscriberPreferenceTemplateResponseDto } from './subscriber-preference
 
 export class GetSubscriberPreferencesResponseDto {
   @ApiPropertyOptional({
-    type: SubscriberPreferenceTemplateResponseDto,
+    type: () => SubscriberPreferenceTemplateResponseDto,
     description: 'The workflow information and if it is critical or not',
   })
   template?: SubscriberPreferenceTemplateResponseDto;
 
   @ApiProperty({
-    type: SubscriberPreferenceDto,
+    type: () => SubscriberPreferenceDto,
     description: 'The preferences of the subscriber regarding the related workflow',
   })
   preference: SubscriberPreferenceDto;

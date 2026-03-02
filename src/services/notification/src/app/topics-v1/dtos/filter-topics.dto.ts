@@ -48,7 +48,7 @@ export class FilterTopicsRequestDto {
 export class FilterTopicsResponseDto {
   @ApiProperty({
     example: [],
-    type: [TopicDto],
+    type: () => [TopicDto],
     description: 'The list of topics',
   })
   data: TopicDto[];

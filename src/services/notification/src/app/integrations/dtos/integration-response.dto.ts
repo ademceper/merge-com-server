@@ -99,7 +99,7 @@ export class IntegrationResponseDto {
   @ApiPropertyOptional({
     description:
       'An array of conditions associated with the integration that may influence its behavior or processing logic.',
-    type: [StepFilterDto],
+    type: () => [StepFilterDto],
   })
   conditions?: StepFilterDto[];
 }

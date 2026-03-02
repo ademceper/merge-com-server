@@ -11,7 +11,6 @@ import {
 } from 'libs/application-generic';
 
 import { CommunityOrganizationRepository } from 'libs/dal';
-import { AuthModule } from '../auth/auth.module';
 import { BridgeModule } from '../bridge';
 import { ChangeModule } from '../change/change.module';
 import { IntegrationModule } from '../integrations/integrations.module';
@@ -50,7 +49,6 @@ const MODULES = [
   SharedModule,
   MessageTemplateModule,
   ChangeModule,
-  AuthModule,
   BridgeModule,
   IntegrationModule,
   LayoutsV2Module,

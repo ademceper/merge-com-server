@@ -96,7 +96,7 @@ export class GetWorkflowRunResponseBaseDto {
 
   @ApiPropertyOptional({
     description: 'Topics',
-    type: [TopicResponseDto],
+    type: () => [TopicResponseDto],
   })
   @IsOptional()
   @IsArray()

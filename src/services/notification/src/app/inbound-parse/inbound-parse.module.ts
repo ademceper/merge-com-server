@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import type { MiddlewareConsumer, NestModule, OnApplicationShutdown } from '@nestjs/common';
 import { CompileTemplate, WorkflowInMemoryProviderService } from 'libs/application-generic';
-import { AuthModule } from '../auth/auth.module';
 import { SharedModule } from '../shared/shared.module';
 import { InboundParseController } from './inbound-parse.controller';
 import { USE_CASES } from './usecases';
@@ -19,7 +18,7 @@ const memoryQueueService = {
   },
 };
 @Module({
-  imports: [SharedModule, AuthModule],
+  imports: [SharedModule],
   controllers: [InboundParseController],
   providers: [...PROVIDERS, ...USE_CASES, memoryQueueService],
   exports: [...USE_CASES],

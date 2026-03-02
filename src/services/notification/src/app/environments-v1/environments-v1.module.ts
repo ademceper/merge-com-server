@@ -1,6 +1,5 @@
 import { forwardRef, Module } from '@nestjs/common';
 
-import { AuthModule } from '../auth/auth.module';
 import { IntegrationModule } from '../integrations/integrations.module';
 import { LayoutsV1Module } from '../layouts-v1/layouts-v1.module';
 import { NotificationGroupsModule } from '../notification-groups/notification-groups.module';
@@ -13,7 +12,6 @@ import { USE_CASES } from './usecases';
   imports: [
     SharedModule,
     NotificationGroupsModule,
-    forwardRef(() => AuthModule),
     forwardRef(() => LayoutsV1Module),
     forwardRef(() => IntegrationModule),
     NovuBridgeModule,

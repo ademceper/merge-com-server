@@ -1,7 +1,6 @@
 import { forwardRef, Module } from '@nestjs/common';
 
 import { CommunityOrganizationRepository } from 'libs/dal';
-import { AuthModule } from '../auth/auth.module';
 import { IntegrationModule } from '../integrations/integrations.module';
 import { OutboundWebhooksModule } from '../outbound-webhooks/outbound-webhooks.module';
 import { SharedModule } from '../shared/shared.module';
@@ -13,7 +12,6 @@ import { WidgetsController } from './widgets.controller';
   imports: [
     SharedModule,
     forwardRef(() => SubscribersV1Module),
-    AuthModule,
     IntegrationModule,
     OutboundWebhooksModule.forRoot(),
   ],

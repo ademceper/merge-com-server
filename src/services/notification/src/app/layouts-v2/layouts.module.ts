@@ -4,7 +4,6 @@ import {
   GetWorkflowByIdsUseCase,
   UpsertControlValuesUseCase,
 } from 'libs/application-generic';
-import { AuthModule } from '../auth/auth.module';
 import { PreviewStep } from '../bridge/usecases/preview-step';
 import { LayoutsV1Module } from '../layouts-v1/layouts-v1.module';
 import { ControlValueSanitizerService } from '../shared/services/control-value-sanitizer.service';
@@ -17,7 +16,7 @@ import { PreviewPayloadProcessorService } from '../workflows-v2/usecases/preview
 import { LayoutsController } from './layouts.controller';
 import { USE_CASES } from './usecases';
 
-const MODULES = [SharedModule, AuthModule, LayoutsV1Module];
+const MODULES = [SharedModule, LayoutsV1Module];
 
 @Module({
   imports: MODULES,
