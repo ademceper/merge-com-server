@@ -15,6 +15,12 @@ builder.AddBunApp("nestjs-api", "../src/services/nestjs-api", "src/main.ts")
     .WithHttpEndpoint(port: 3000, env: "PORT")
     .WithUrl("/swagger", "Swagger" );
 
+var keycloak = builder.AddContainer("keycloak", "quay.io/keycloak/keycloak", "latest")
+    .WithHttpEndpoint(port: 8180, targetPort: 8080)
+    .WithEnvironment("KC_BOOTSTRAP_ADMIN_USERNAME", "admin")
+    .WithEnvironment("KC_BOOTSTRAP_ADMIN_PASSWORD", "admin")
+    .WithArgs("start-dev");
+
 var redis = builder.AddRedis("redis")
     .WithEndpoint("tcp", e => e.Port = 6379);
 
@@ -22,8 +28,13 @@ var mongo = builder.AddMongoDB("mongodb")
     .WithEndpoint("tcp", e => e.Port = 27017);
 
 builder.AddBunApp("notification", "../src/services/notification", "src/main.ts")
-    .WithHttpEndpoint(port: 3001, env: "PORT")
+    .WithHttpEndpoint(port: 3010, env: "PORT")
+    .WithEnvironment("NODE_ENV", "dev")
+    .WithEnvironment("KEYCLOAK_URL", "http://localhost:8180")
+    .WithEnvironment("KEYCLOAK_REALM", "notification")
+    .WithEnvironment("KEYCLOAK_CLIENT_ID", "notification-api")
     .WithUrl("/openapi", "Swagger")
+    .WaitFor(keycloak)
     .WaitFor(redis)
     .WaitFor(mongo);
 

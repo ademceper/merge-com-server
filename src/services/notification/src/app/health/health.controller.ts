@@ -1,6 +1,7 @@
 import { Controller, Get, NotFoundException } from '@nestjs/common';
 import { Body, Post } from '@nestjs/common/decorators';
 import { ApiExcludeController, ApiTags } from '@nestjs/swagger';
+import { Public } from '../keycloak/public.decorator';
 import { HealthCheckService, HealthCheck } from '@nestjs/terminus';
 import type { HealthCheckResult, HealthIndicatorFunction } from '@nestjs/terminus';
 import {
@@ -21,6 +22,7 @@ import {
 @Controller('health-check')
 @ApiTags('Health')
 @ApiExcludeController()
+@Public()
 export class HealthController {
   constructor(
     private healthCheckService: HealthCheckService,

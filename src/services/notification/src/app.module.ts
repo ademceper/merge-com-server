@@ -5,6 +5,7 @@ import type { Type } from '@nestjs/common/interfaces/type.interface';
 import { APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core';
 import { ApiExcludeController } from '@nestjs/swagger';
 import { cacheService, TracingModule } from 'libs/application-generic';
+import { KeycloakModule, KeycloakAuthGuard, PermissionsGuard } from './app/keycloak';
 import { Client, NovuModule } from 'libs/framework/servers/nest';
 import { usageLimitsWorkflow, usageReportWorkflow } from 'libs/notifications';
 import { SentryModule } from '@sentry/nestjs/setup';
@@ -95,6 +96,7 @@ const enterpriseQuotaThrottlerInterceptor =
     : [];
 
 const baseModules: Array<Type | DynamicModule | Promise<DynamicModule> | ForwardReference> = [
+  KeycloakModule,
   InboundParseModule,
   SharedModule,
   HealthModule,
@@ -145,6 +147,14 @@ const enterpriseModules = enterpriseImports();
 const modules = baseModules.concat(enterpriseModules);
 
 const providers: Provider[] = [
+  {
+    provide: APP_GUARD,
+    useClass: KeycloakAuthGuard,
+  },
+  {
+    provide: APP_GUARD,
+    useClass: PermissionsGuard,
+  },
   {
     provide: APP_GUARD,
     useClass: AnalyticsLogsGuard,

@@ -16,14 +16,31 @@ export const API_KEY_SECURITY_DEFINITIONS: SecuritySchemeObject = {
 } as unknown as SecuritySchemeObject;
 
 function buildBaseOptions() {
+  const keycloakUrl = process.env.KEYCLOAK_URL || 'http://localhost:8180';
+  const realm = process.env.KEYCLOAK_REALM || 'notification';
+
   const options = new DocumentBuilder()
     .setTitle('Notification API')
     .setDescription('Notification Service REST API.')
     .setVersion(packageJson.version)
     .setLicense('MIT', 'https://opensource.org/license/mit')
-    .addServer('http://localhost:3010', 'Local development')
+    .addServer(`http://localhost:${process.env.PORT || 3010}`, 'Local development')
+    .addOAuth2(
+      {
+        type: 'oauth2',
+        description: 'Keycloak OAuth2 Authorization Code flow',
+        flows: {
+          authorizationCode: {
+            authorizationUrl: `${keycloakUrl}/realms/${realm}/protocol/openid-connect/auth`,
+            tokenUrl: `${keycloakUrl}/realms/${realm}/protocol/openid-connect/token`,
+            scopes: { openid: 'OpenID Connect', profile: 'User profile', email: 'User email' },
+          },
+        },
+      },
+      'keycloak',
+    )
+    .addSecurityRequirements('keycloak')
     .addSecurity(API_KEY_SWAGGER_SECURITY_NAME, API_KEY_SECURITY_DEFINITIONS)
-    .addSecurityRequirements(API_KEY_SWAGGER_SECURITY_NAME)
     .addTag('Events', 'Events represent a change in state of a subscriber. They are used to trigger workflows and send notifications.')
     .addTag('Subscribers', 'A subscriber represents someone who should receive a message.')
     .addTag('Topics', 'Topics are a way to group subscribers together so that they can be notified of events at once.')
@@ -135,20 +152,43 @@ function buildFullDocumentWithPath(app: INestApplication<any>, baseDocument: Omi
 }
 
 function publishDeprecatedDocument(app: INestApplication<any>, document: OpenAPIObject) {
+  const baseUrl = `http://localhost:${process.env.PORT || 3010}`;
+
   SwaggerModule.setup('api', app, {
     ...document,
     info: {
       ...document.info,
       title: `DEPRECATED: ${document.info.title}. Use /openapi.{json,yaml} instead.`,
     },
+  }, {
+    swaggerOptions: {
+      persistAuthorization: true,
+      oauth2RedirectUrl: `${baseUrl}/api/oauth2-redirect.html`,
+      initOAuth: getSwaggerOAuthInitConfig(),
+    },
   });
 }
 
+function getSwaggerOAuthInitConfig() {
+  return {
+    clientId: process.env.KEYCLOAK_CLIENT_ID || 'notification-api',
+    scopes: ['openid', 'profile', 'email'],
+    usePkceWithAuthorizationCodeGrant: true,
+  };
+}
+
 function publishOpenApiDoc(app: INestApplication<any>, document: OpenAPIObject) {
+  const baseUrl = `http://localhost:${process.env.PORT || 3010}`;
+
   SwaggerModule.setup('openapi', app, document, {
     jsonDocumentUrl: 'openapi.json',
     yamlDocumentUrl: 'openapi.yaml',
     explorer: process.env.NODE_ENV !== 'production',
+    swaggerOptions: {
+      persistAuthorization: true,
+      oauth2RedirectUrl: `${baseUrl}/openapi/oauth2-redirect.html`,
+      initOAuth: getSwaggerOAuthInitConfig(),
+    },
   });
 }
 
