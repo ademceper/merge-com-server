@@ -24,7 +24,7 @@ function buildBaseOptions() {
     .setDescription('Notification Service REST API.')
     .setVersion(packageJson.version)
     .setLicense('MIT', 'https://opensource.org/license/mit')
-    .addServer(`http://localhost:${process.env.PORT || 3010}`, 'Local development')
+    .addServer('http://localhost:3010', 'Local development')
     .addOAuth2(
       {
         type: 'oauth2',
@@ -152,8 +152,6 @@ function buildFullDocumentWithPath(app: INestApplication<any>, baseDocument: Omi
 }
 
 function publishDeprecatedDocument(app: INestApplication<any>, document: OpenAPIObject) {
-  const baseUrl = `http://localhost:${process.env.PORT || 3010}`;
-
   SwaggerModule.setup('api', app, {
     ...document,
     info: {
@@ -163,7 +161,7 @@ function publishDeprecatedDocument(app: INestApplication<any>, document: OpenAPI
   }, {
     swaggerOptions: {
       persistAuthorization: true,
-      oauth2RedirectUrl: `${baseUrl}/api/oauth2-redirect.html`,
+      oauth2RedirectUrl: 'http://localhost:3010/api/oauth2-redirect.html',
       initOAuth: getSwaggerOAuthInitConfig(),
     },
   });
@@ -178,15 +176,13 @@ function getSwaggerOAuthInitConfig() {
 }
 
 function publishOpenApiDoc(app: INestApplication<any>, document: OpenAPIObject) {
-  const baseUrl = `http://localhost:${process.env.PORT || 3010}`;
-
   SwaggerModule.setup('openapi', app, document, {
     jsonDocumentUrl: 'openapi.json',
     yamlDocumentUrl: 'openapi.yaml',
     explorer: process.env.NODE_ENV !== 'production',
     swaggerOptions: {
       persistAuthorization: true,
-      oauth2RedirectUrl: `${baseUrl}/openapi/oauth2-redirect.html`,
+      oauth2RedirectUrl: 'http://localhost:3010/openapi/oauth2-redirect.html',
       initOAuth: getSwaggerOAuthInitConfig(),
     },
   });

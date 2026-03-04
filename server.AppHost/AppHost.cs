@@ -15,11 +15,14 @@ builder.AddBunApp("nestjs-api", "../src/services/nestjs-api", "src/main.ts")
     .WithHttpEndpoint(port: 3000, env: "PORT")
     .WithUrl("/swagger", "Swagger" );
 
+var realmImportPath = Path.GetFullPath(Path.Combine(builder.AppHostDirectory, "..", "src", "services", "notification", "keycloak"));
+
 var keycloak = builder.AddContainer("keycloak", "quay.io/keycloak/keycloak", "latest")
     .WithHttpEndpoint(port: 8180, targetPort: 8080)
     .WithEnvironment("KC_BOOTSTRAP_ADMIN_USERNAME", "admin")
     .WithEnvironment("KC_BOOTSTRAP_ADMIN_PASSWORD", "admin")
-    .WithArgs("start-dev");
+    .WithBindMount(realmImportPath, "/opt/keycloak/data/import", isReadOnly: true)
+    .WithArgs("start-dev", "--import-realm");
 
 var redis = builder.AddRedis("redis")
     .WithEndpoint("tcp", e => e.Port = 6379);
@@ -33,7 +36,7 @@ builder.AddBunApp("notification", "../src/services/notification", "src/main.ts")
     .WithEnvironment("KEYCLOAK_URL", "http://localhost:8180")
     .WithEnvironment("KEYCLOAK_REALM", "notification")
     .WithEnvironment("KEYCLOAK_CLIENT_ID", "notification-api")
-    .WithUrl("/openapi", "Swagger")
+    .WithUrl("http://localhost:3010/openapi", "Swagger")
     .WaitFor(keycloak)
     .WaitFor(redis)
     .WaitFor(mongo);
