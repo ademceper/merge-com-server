@@ -14,7 +14,7 @@
  *
  */
 
-export interface IResponseError {
+interface IResponseError {
   error: string;
   message: string;
   statusCode: number;
@@ -75,7 +75,7 @@ export interface ISubscriberChannel {
   credentials: IChannelCredentials;
 }
 
-export interface IChannelCredentials {
+interface IChannelCredentials {
   webhookUrl?: string;
   deviceTokens?: string[];
 }
@@ -197,7 +197,7 @@ export enum InAppProviderIdEnum {
  *
  * This provides a shortcut to setting all channels to the same preference.
  */
-export type WorkflowPreference = {
+type WorkflowPreference = {
   /**
    * A flag specifying if notification delivery is enabled for the workflow.
    *
@@ -219,7 +219,7 @@ export type WorkflowPreference = {
 };
 
 /** A preference for a notification delivery channel. */
-export type ChannelPreference = {
+type ChannelPreference = {
   /**
    * A flag specifying if notification delivery is enabled for the channel.
    *

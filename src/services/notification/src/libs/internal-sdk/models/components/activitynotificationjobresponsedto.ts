@@ -93,18 +93,18 @@ export type ActivityNotificationJobResponseDto = {
 };
 
 /** @internal */
-export const ActivityNotificationJobResponseDtoType$inboundSchema: z.ZodNativeEnum<
+const ActivityNotificationJobResponseDtoType$inboundSchema: z.ZodNativeEnum<
   typeof ActivityNotificationJobResponseDtoType
 > = z.nativeEnum(ActivityNotificationJobResponseDtoType);
 
 /** @internal */
-export const ActivityNotificationJobResponseDtoPayload$inboundSchema: z.ZodType<
+const ActivityNotificationJobResponseDtoPayload$inboundSchema: z.ZodType<
   ActivityNotificationJobResponseDtoPayload,
   z.ZodTypeDef,
   unknown
 > = z.object({});
 
-export function activityNotificationJobResponseDtoPayloadFromJSON(
+function activityNotificationJobResponseDtoPayloadFromJSON(
   jsonString: string
 ): SafeParseResult<ActivityNotificationJobResponseDtoPayload, SDKValidationError> {
   return safeParse(
@@ -139,7 +139,7 @@ export const ActivityNotificationJobResponseDto$inboundSchema: z.ZodType<
     });
   });
 
-export function activityNotificationJobResponseDtoFromJSON(
+function activityNotificationJobResponseDtoFromJSON(
   jsonString: string
 ): SafeParseResult<ActivityNotificationJobResponseDto, SDKValidationError> {
   return safeParse(

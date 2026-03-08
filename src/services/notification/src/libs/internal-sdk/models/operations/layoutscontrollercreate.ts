@@ -26,7 +26,7 @@ export type LayoutsControllerCreateResponse = {
 };
 
 /** @internal */
-export type LayoutsControllerCreateRequest$Outbound = {
+type LayoutsControllerCreateRequest$Outbound = {
   "idempotency-key"?: string | undefined;
   CreateLayoutDto: components.CreateLayoutDto$Outbound;
 };
@@ -46,7 +46,7 @@ export const LayoutsControllerCreateRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function layoutsControllerCreateRequestToJSON(
+function layoutsControllerCreateRequestToJSON(
   layoutsControllerCreateRequest: LayoutsControllerCreateRequest,
 ): string {
   return JSON.stringify(
@@ -71,7 +71,7 @@ export const LayoutsControllerCreateResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function layoutsControllerCreateResponseFromJSON(
+function layoutsControllerCreateResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<LayoutsControllerCreateResponse, SDKValidationError> {
   return safeParse(

@@ -97,7 +97,7 @@ export type NotificationTemplateDBModel = ChangePropsValueType<
   _parentId?: Types.ObjectId;
 };
 
-export class NotificationTriggerEntity implements INotificationTrigger {
+class NotificationTriggerEntity implements INotificationTrigger {
   type: TriggerTypeEnum;
 
   identifier: string;

@@ -28,7 +28,7 @@ export type TopicsControllerCreateTopicSubscriptionsResponse = {
 };
 
 /** @internal */
-export type TopicsControllerCreateTopicSubscriptionsRequest$Outbound = {
+type TopicsControllerCreateTopicSubscriptionsRequest$Outbound = {
   topicKey: string;
   "idempotency-key"?: string | undefined;
   CreateTopicSubscriptionsRequestDto:
@@ -53,7 +53,7 @@ export const TopicsControllerCreateTopicSubscriptionsRequest$outboundSchema:
     });
   });
 
-export function topicsControllerCreateTopicSubscriptionsRequestToJSON(
+function topicsControllerCreateTopicSubscriptionsRequestToJSON(
   topicsControllerCreateTopicSubscriptionsRequest:
     TopicsControllerCreateTopicSubscriptionsRequest,
 ): string {
@@ -80,7 +80,7 @@ export const TopicsControllerCreateTopicSubscriptionsResponse$inboundSchema:
     });
   });
 
-export function topicsControllerCreateTopicSubscriptionsResponseFromJSON(
+function topicsControllerCreateTopicSubscriptionsResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   TopicsControllerCreateTopicSubscriptionsResponse,

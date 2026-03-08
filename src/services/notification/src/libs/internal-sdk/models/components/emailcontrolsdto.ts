@@ -32,9 +32,9 @@ export type EmailControlsDto = {
 };
 
 /** @internal */
-export const EditorType$inboundSchema: z.ZodNativeEnum<typeof EditorType> = z.nativeEnum(EditorType);
+const EditorType$inboundSchema: z.ZodNativeEnum<typeof EditorType> = z.nativeEnum(EditorType);
 /** @internal */
-export const EditorType$outboundSchema: z.ZodNativeEnum<typeof EditorType> = EditorType$inboundSchema;
+const EditorType$outboundSchema: z.ZodNativeEnum<typeof EditorType> = EditorType$inboundSchema;
 
 /** @internal */
 export const EmailControlsDto$inboundSchema: z.ZodType<EmailControlsDto, z.ZodTypeDef, unknown> = z.object({
@@ -54,10 +54,10 @@ export const EmailControlsDto$outboundSchema: z.ZodType<EmailControlsDto$Outboun
     editorType: EditorType$outboundSchema,
   });
 
-export function emailControlsDtoToJSON(emailControlsDto: EmailControlsDto): string {
+function emailControlsDtoToJSON(emailControlsDto: EmailControlsDto): string {
   return JSON.stringify(EmailControlsDto$outboundSchema.parse(emailControlsDto));
 }
-export function emailControlsDtoFromJSON(jsonString: string): SafeParseResult<EmailControlsDto, SDKValidationError> {
+function emailControlsDtoFromJSON(jsonString: string): SafeParseResult<EmailControlsDto, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) => EmailControlsDto$inboundSchema.parse(JSON.parse(x)),

@@ -42,7 +42,7 @@ export const GroupPreferenceFilterDto$outboundSchema: z.ZodType<
   filter: GroupPreferenceFilterDetailsDto$outboundSchema,
 });
 
-export function groupPreferenceFilterDtoToJSON(
+function groupPreferenceFilterDtoToJSON(
   groupPreferenceFilterDto: GroupPreferenceFilterDto,
 ): string {
   return JSON.stringify(

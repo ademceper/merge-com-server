@@ -20,7 +20,7 @@ export type CreateMsTeamsUserEndpointDtoContext2 = {
   data?: { [k: string]: any } | undefined;
 };
 
-export type CreateMsTeamsUserEndpointDtoContext =
+type CreateMsTeamsUserEndpointDtoContext =
   | CreateMsTeamsUserEndpointDtoContext2
   | string;
 
@@ -61,7 +61,7 @@ export type CreateMsTeamsUserEndpointDtoContext2$Outbound = {
 };
 
 /** @internal */
-export const CreateMsTeamsUserEndpointDtoContext2$outboundSchema: z.ZodType<
+const CreateMsTeamsUserEndpointDtoContext2$outboundSchema: z.ZodType<
   CreateMsTeamsUserEndpointDtoContext2$Outbound,
   z.ZodTypeDef,
   CreateMsTeamsUserEndpointDtoContext2
@@ -70,7 +70,7 @@ export const CreateMsTeamsUserEndpointDtoContext2$outboundSchema: z.ZodType<
   data: z.record(z.any()).optional(),
 });
 
-export function createMsTeamsUserEndpointDtoContext2ToJSON(
+function createMsTeamsUserEndpointDtoContext2ToJSON(
   createMsTeamsUserEndpointDtoContext2: CreateMsTeamsUserEndpointDtoContext2,
 ): string {
   return JSON.stringify(
@@ -81,12 +81,12 @@ export function createMsTeamsUserEndpointDtoContext2ToJSON(
 }
 
 /** @internal */
-export type CreateMsTeamsUserEndpointDtoContext$Outbound =
+type CreateMsTeamsUserEndpointDtoContext$Outbound =
   | CreateMsTeamsUserEndpointDtoContext2$Outbound
   | string;
 
 /** @internal */
-export const CreateMsTeamsUserEndpointDtoContext$outboundSchema: z.ZodType<
+const CreateMsTeamsUserEndpointDtoContext$outboundSchema: z.ZodType<
   CreateMsTeamsUserEndpointDtoContext$Outbound,
   z.ZodTypeDef,
   CreateMsTeamsUserEndpointDtoContext
@@ -95,7 +95,7 @@ export const CreateMsTeamsUserEndpointDtoContext$outboundSchema: z.ZodType<
   z.string(),
 ]);
 
-export function createMsTeamsUserEndpointDtoContextToJSON(
+function createMsTeamsUserEndpointDtoContextToJSON(
   createMsTeamsUserEndpointDtoContext: CreateMsTeamsUserEndpointDtoContext,
 ): string {
   return JSON.stringify(
@@ -138,7 +138,7 @@ export const CreateMsTeamsUserEndpointDto$outboundSchema: z.ZodType<
   endpoint: MsTeamsUserEndpointDto$outboundSchema,
 });
 
-export function createMsTeamsUserEndpointDtoToJSON(
+function createMsTeamsUserEndpointDtoToJSON(
   createMsTeamsUserEndpointDto: CreateMsTeamsUserEndpointDto,
 ): string {
   return JSON.stringify(

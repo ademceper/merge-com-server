@@ -42,7 +42,7 @@ export const GetRequestsResponseDto$inboundSchema: z.ZodType<
   page: z.number().optional(),
 });
 
-export function getRequestsResponseDtoFromJSON(
+function getRequestsResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<GetRequestsResponseDto, SDKValidationError> {
   return safeParse(

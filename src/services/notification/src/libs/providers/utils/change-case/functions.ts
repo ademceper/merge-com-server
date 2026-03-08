@@ -40,7 +40,7 @@ export interface IPascalCaseOptions extends IOptions {
 /**
  * Split any cased input strings into an array of words.
  */
-export function split(value: string): string[] {
+function split(value: string): string[] {
   let result = value.trim();
 
   result = result
@@ -110,7 +110,7 @@ export function pascalCaseTransformer(input: string, options?: IPascalCaseOption
 /**
  * Convert a string to pascal snake case (`Foo_Bar`).
  */
-export function pascalSnakeCaseTransformer(input: string, options?: IOptions): string {
+function pascalSnakeCaseTransformer(input: string, options?: IOptions): string {
   return capitalCaseTransformer(input, { delimiter: '_', ...options });
 }
 

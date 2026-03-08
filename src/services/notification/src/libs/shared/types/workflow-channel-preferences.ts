@@ -99,7 +99,7 @@ export type TimeRange = {
   end: string;
 };
 
-export type DaySchedule = {
+type DaySchedule = {
   isEnabled: boolean;
   hours?: Array<TimeRange>;
 };

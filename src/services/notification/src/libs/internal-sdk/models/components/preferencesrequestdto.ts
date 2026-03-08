@@ -17,7 +17,7 @@ import {
 /**
  * A preference for the workflow. The values specified here will be used if no preference is specified for a channel.
  */
-export type UserAll = WorkflowPreferenceDto;
+type UserAll = WorkflowPreferenceDto;
 
 export type UserWorkflowPreferencesDto = {
   /**
@@ -33,12 +33,12 @@ export type UserWorkflowPreferencesDto = {
 /**
  * User workflow preferences
  */
-export type User = UserWorkflowPreferencesDto;
+type User = UserWorkflowPreferencesDto;
 
 /**
  * A preference for the workflow. The values specified here will be used if no preference is specified for a channel.
  */
-export type PreferencesRequestDtoAll = WorkflowPreferenceDto;
+type PreferencesRequestDtoAll = WorkflowPreferenceDto;
 
 /**
  * Workflow-specific preferences
@@ -66,16 +66,16 @@ export type PreferencesRequestDto = {
 };
 
 /** @internal */
-export type UserAll$Outbound = WorkflowPreferenceDto$Outbound;
+type UserAll$Outbound = WorkflowPreferenceDto$Outbound;
 
 /** @internal */
-export const UserAll$outboundSchema: z.ZodType<
+const UserAll$outboundSchema: z.ZodType<
   UserAll$Outbound,
   z.ZodTypeDef,
   UserAll
 > = WorkflowPreferenceDto$outboundSchema;
 
-export function userAllToJSON(userAll: UserAll): string {
+function userAllToJSON(userAll: UserAll): string {
   return JSON.stringify(UserAll$outboundSchema.parse(userAll));
 }
 
@@ -86,7 +86,7 @@ export type UserWorkflowPreferencesDto$Outbound = {
 };
 
 /** @internal */
-export const UserWorkflowPreferencesDto$outboundSchema: z.ZodType<
+const UserWorkflowPreferencesDto$outboundSchema: z.ZodType<
   UserWorkflowPreferencesDto$Outbound,
   z.ZodTypeDef,
   UserWorkflowPreferencesDto
@@ -95,7 +95,7 @@ export const UserWorkflowPreferencesDto$outboundSchema: z.ZodType<
   channels: z.record(ChannelPreferenceDto$outboundSchema),
 });
 
-export function userWorkflowPreferencesDtoToJSON(
+function userWorkflowPreferencesDtoToJSON(
   userWorkflowPreferencesDto: UserWorkflowPreferencesDto,
 ): string {
   return JSON.stringify(
@@ -104,27 +104,27 @@ export function userWorkflowPreferencesDtoToJSON(
 }
 
 /** @internal */
-export type User$Outbound = UserWorkflowPreferencesDto$Outbound;
+type User$Outbound = UserWorkflowPreferencesDto$Outbound;
 
 /** @internal */
-export const User$outboundSchema: z.ZodType<User$Outbound, z.ZodTypeDef, User> =
+const User$outboundSchema: z.ZodType<User$Outbound, z.ZodTypeDef, User> =
   z.lazy(() => UserWorkflowPreferencesDto$outboundSchema);
 
-export function userToJSON(user: User): string {
+function userToJSON(user: User): string {
   return JSON.stringify(User$outboundSchema.parse(user));
 }
 
 /** @internal */
-export type PreferencesRequestDtoAll$Outbound = WorkflowPreferenceDto$Outbound;
+type PreferencesRequestDtoAll$Outbound = WorkflowPreferenceDto$Outbound;
 
 /** @internal */
-export const PreferencesRequestDtoAll$outboundSchema: z.ZodType<
+const PreferencesRequestDtoAll$outboundSchema: z.ZodType<
   PreferencesRequestDtoAll$Outbound,
   z.ZodTypeDef,
   PreferencesRequestDtoAll
 > = WorkflowPreferenceDto$outboundSchema;
 
-export function preferencesRequestDtoAllToJSON(
+function preferencesRequestDtoAllToJSON(
   preferencesRequestDtoAll: PreferencesRequestDtoAll,
 ): string {
   return JSON.stringify(
@@ -139,7 +139,7 @@ export type PreferencesRequestDtoWorkflow$Outbound = {
 };
 
 /** @internal */
-export const PreferencesRequestDtoWorkflow$outboundSchema: z.ZodType<
+const PreferencesRequestDtoWorkflow$outboundSchema: z.ZodType<
   PreferencesRequestDtoWorkflow$Outbound,
   z.ZodTypeDef,
   PreferencesRequestDtoWorkflow
@@ -148,7 +148,7 @@ export const PreferencesRequestDtoWorkflow$outboundSchema: z.ZodType<
   channels: z.record(ChannelPreferenceDto$outboundSchema),
 });
 
-export function preferencesRequestDtoWorkflowToJSON(
+function preferencesRequestDtoWorkflowToJSON(
   preferencesRequestDtoWorkflow: PreferencesRequestDtoWorkflow,
 ): string {
   return JSON.stringify(
@@ -177,7 +177,7 @@ export const PreferencesRequestDto$outboundSchema: z.ZodType<
   ).optional(),
 });
 
-export function preferencesRequestDtoToJSON(
+function preferencesRequestDtoToJSON(
   preferencesRequestDto: PreferencesRequestDto,
 ): string {
   return JSON.stringify(

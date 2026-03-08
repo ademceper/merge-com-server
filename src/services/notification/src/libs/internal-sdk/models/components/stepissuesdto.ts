@@ -36,7 +36,7 @@ export const StepIssuesDto$inboundSchema: z.ZodType<
   integration: z.record(z.array(StepIntegrationIssue$inboundSchema)).optional(),
 });
 
-export function stepIssuesDtoFromJSON(
+function stepIssuesDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<StepIssuesDto, SDKValidationError> {
   return safeParse(

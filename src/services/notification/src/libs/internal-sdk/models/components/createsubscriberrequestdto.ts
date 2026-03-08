@@ -73,7 +73,7 @@ export const CreateSubscriberRequestDto$outboundSchema: z.ZodType<
   subscriberId: z.string(),
 });
 
-export function createSubscriberRequestDtoToJSON(
+function createSubscriberRequestDtoToJSON(
   createSubscriberRequestDto: CreateSubscriberRequestDto,
 ): string {
   return JSON.stringify(

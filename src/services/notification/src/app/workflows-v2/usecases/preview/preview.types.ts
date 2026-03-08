@@ -3,7 +3,7 @@ import { NotificationTemplateEntity } from 'libs/dal';
 import { JSONSchemaDto } from '../../../shared/dtos/json-schema.dto';
 import { StepResponseDto } from '../../dtos';
 
-export type PreviewContext = {
+type PreviewContext = {
   stepData: StepResponseDto;
   controlValues: Record<string, unknown>;
   variableSchema: JSONSchemaDto;

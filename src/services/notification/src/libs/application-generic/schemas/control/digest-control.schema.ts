@@ -49,19 +49,19 @@ export type DigestControlSchemaType = z.infer<typeof digestControlZodSchema>;
 export const digestControlZodSchema = z.union([digestRegularControlZodSchema, digestTimedControlZodSchema]);
 export const digestControlSchema = zodToJsonSchema(digestControlZodSchema, defaultOptions) as JSONSchemaEntity;
 
-export function isDigestRegularControl(data: unknown): data is DigestRegularControlType {
+function isDigestRegularControl(data: unknown): data is DigestRegularControlType {
   const result = digestRegularControlZodSchema.safeParse(data);
 
   return result.success;
 }
 
-export function isDigestTimedControl(data: unknown): data is DigestTimedControlType {
+function isDigestTimedControl(data: unknown): data is DigestTimedControlType {
   const result = digestTimedControlZodSchema.safeParse(data);
 
   return result.success;
 }
 
-export function isDigestControl(data: unknown): data is DigestControlSchemaType {
+function isDigestControl(data: unknown): data is DigestControlSchemaType {
   const result = digestControlZodSchema.safeParse(data);
 
   return result.success;

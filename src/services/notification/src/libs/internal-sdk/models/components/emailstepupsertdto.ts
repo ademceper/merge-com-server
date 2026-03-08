@@ -13,7 +13,7 @@ import {
 /**
  * Control values for the Email step.
  */
-export type EmailStepUpsertDtoControlValues = EmailControlDto | {
+type EmailStepUpsertDtoControlValues = EmailControlDto | {
   [k: string]: any;
 };
 
@@ -41,18 +41,18 @@ export type EmailStepUpsertDto = {
 };
 
 /** @internal */
-export type EmailStepUpsertDtoControlValues$Outbound =
+type EmailStepUpsertDtoControlValues$Outbound =
   | EmailControlDto$Outbound
   | { [k: string]: any };
 
 /** @internal */
-export const EmailStepUpsertDtoControlValues$outboundSchema: z.ZodType<
+const EmailStepUpsertDtoControlValues$outboundSchema: z.ZodType<
   EmailStepUpsertDtoControlValues$Outbound,
   z.ZodTypeDef,
   EmailStepUpsertDtoControlValues
 > = z.union([EmailControlDto$outboundSchema, z.record(z.any())]);
 
-export function emailStepUpsertDtoControlValuesToJSON(
+function emailStepUpsertDtoControlValuesToJSON(
   emailStepUpsertDtoControlValues: EmailStepUpsertDtoControlValues,
 ): string {
   return JSON.stringify(
@@ -89,7 +89,7 @@ export const EmailStepUpsertDto$outboundSchema: z.ZodType<
   });
 });
 
-export function emailStepUpsertDtoToJSON(
+function emailStepUpsertDtoToJSON(
   emailStepUpsertDto: EmailStepUpsertDto,
 ): string {
   return JSON.stringify(

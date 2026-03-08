@@ -31,7 +31,7 @@ export const ChannelCredentialsDto$outboundSchema: z.ZodType<
   deviceTokens: z.array(z.string()).optional(),
 });
 
-export function channelCredentialsDtoToJSON(
+function channelCredentialsDtoToJSON(
   channelCredentialsDto: ChannelCredentialsDto,
 ): string {
   return JSON.stringify(

@@ -48,13 +48,13 @@ export type TriggerEventResponseDto = {
 };
 
 /** @internal */
-export const TriggerEventResponseDtoStatus$inboundSchema: z.ZodNativeEnum<typeof TriggerEventResponseDtoStatus> =
+const TriggerEventResponseDtoStatus$inboundSchema: z.ZodNativeEnum<typeof TriggerEventResponseDtoStatus> =
   z.nativeEnum(TriggerEventResponseDtoStatus);
 
 /** @internal */
-export const JobData$inboundSchema: z.ZodType<JobData, z.ZodTypeDef, unknown> = z.object({});
+const JobData$inboundSchema: z.ZodType<JobData, z.ZodTypeDef, unknown> = z.object({});
 
-export function jobDataFromJSON(jsonString: string): SafeParseResult<JobData, SDKValidationError> {
+function jobDataFromJSON(jsonString: string): SafeParseResult<JobData, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) => JobData$inboundSchema.parse(JSON.parse(x)),
@@ -72,7 +72,7 @@ export const TriggerEventResponseDto$inboundSchema: z.ZodType<TriggerEventRespon
     jobData: z.lazy(() => JobData$inboundSchema).optional(),
   });
 
-export function triggerEventResponseDtoFromJSON(
+function triggerEventResponseDtoFromJSON(
   jsonString: string
 ): SafeParseResult<TriggerEventResponseDto, SDKValidationError> {
   return safeParse(

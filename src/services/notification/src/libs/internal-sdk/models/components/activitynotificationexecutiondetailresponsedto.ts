@@ -79,7 +79,7 @@ export const ActivityNotificationExecutionDetailResponseDto$inboundSchema:
     });
   });
 
-export function activityNotificationExecutionDetailResponseDtoFromJSON(
+function activityNotificationExecutionDetailResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<
   ActivityNotificationExecutionDetailResponseDto,

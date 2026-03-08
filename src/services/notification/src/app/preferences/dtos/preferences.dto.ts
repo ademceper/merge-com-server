@@ -6,7 +6,7 @@ import { IsBoolean, ValidateNested } from 'class-validator';
  * @deprecated Use an updated preference structure.
  * This class will be removed in future versions.
  */
-export class WorkflowPreference {
+class WorkflowPreference {
   /**
    * @deprecated Use alternative enablement mechanism.
    */
@@ -24,7 +24,7 @@ export class WorkflowPreference {
  * @deprecated Use an updated channel preference structure.
  * Will be removed in future versions.
  */
-export class ChannelPreference {
+class ChannelPreference {
   /**
    * @deprecated Use alternative channel enablement method.
    */
@@ -36,7 +36,7 @@ export class ChannelPreference {
  * @deprecated Channels configuration is being restructured.
  * Use the new channel management approach.
  */
-export class Channels {
+class Channels {
   /**
    * @deprecated In-app channel preference is deprecated.
    */

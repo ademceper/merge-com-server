@@ -59,7 +59,7 @@ export interface IWorkflowDefine {
   controls?: IStepControl;
 }
 
-export class WorkflowDefine implements IWorkflowDefine {
+class WorkflowDefine implements IWorkflowDefine {
   @IsString()
   workflowId: string;
 

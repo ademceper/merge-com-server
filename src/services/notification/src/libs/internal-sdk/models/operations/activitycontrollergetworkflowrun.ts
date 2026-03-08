@@ -14,7 +14,7 @@ export type ActivityControllerGetWorkflowRunRequest = {
 };
 
 /** @internal */
-export type ActivityControllerGetWorkflowRunRequest$Outbound = {
+type ActivityControllerGetWorkflowRunRequest$Outbound = {
   workflowRunId: string;
   "idempotency-key"?: string | undefined;
 };
@@ -33,7 +33,7 @@ export const ActivityControllerGetWorkflowRunRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function activityControllerGetWorkflowRunRequestToJSON(
+function activityControllerGetWorkflowRunRequestToJSON(
   activityControllerGetWorkflowRunRequest:
     ActivityControllerGetWorkflowRunRequest,
 ): string {

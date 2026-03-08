@@ -18,7 +18,7 @@ const ThrottleTypeEnum = {
 } as const;
 
 // Base throttle schema with all possible fields
-export const throttleControlZodSchema = z
+const throttleControlZodSchema = z
   .object({
     skip: skipZodSchema,
     type: z.enum([ThrottleTypeEnum.FIXED, ThrottleTypeEnum.DYNAMIC]).default(ThrottleTypeEnum.FIXED),
@@ -49,7 +49,7 @@ export const throttleControlZodSchema = z
     }
   );
 
-export type ThrottleControlType = z.infer<typeof throttleControlZodSchema>;
+type ThrottleControlType = z.infer<typeof throttleControlZodSchema>;
 
 export const throttleControlSchema = zodToJsonSchema(throttleControlZodSchema, defaultOptions) as JSONSchemaEntity;
 

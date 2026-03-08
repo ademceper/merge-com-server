@@ -24,7 +24,7 @@ export type PreviewPayloadDtoContext2 = {
   data?: { [k: string]: any } | undefined;
 };
 
-export type PreviewPayloadDtoContext = PreviewPayloadDtoContext2 | string;
+type PreviewPayloadDtoContext = PreviewPayloadDtoContext2 | string;
 
 export type PreviewPayloadDto = {
   /**
@@ -43,7 +43,7 @@ export type PreviewPayloadDto = {
 };
 
 /** @internal */
-export const PreviewPayloadDtoContext2$inboundSchema: z.ZodType<PreviewPayloadDtoContext2, z.ZodTypeDef, unknown> =
+const PreviewPayloadDtoContext2$inboundSchema: z.ZodType<PreviewPayloadDtoContext2, z.ZodTypeDef, unknown> =
   z.object({
     id: z.string(),
     data: z.record(z.any()).optional(),
@@ -55,7 +55,7 @@ export type PreviewPayloadDtoContext2$Outbound = {
 };
 
 /** @internal */
-export const PreviewPayloadDtoContext2$outboundSchema: z.ZodType<
+const PreviewPayloadDtoContext2$outboundSchema: z.ZodType<
   PreviewPayloadDtoContext2$Outbound,
   z.ZodTypeDef,
   PreviewPayloadDtoContext2
@@ -64,10 +64,10 @@ export const PreviewPayloadDtoContext2$outboundSchema: z.ZodType<
   data: z.record(z.any()).optional(),
 });
 
-export function previewPayloadDtoContext2ToJSON(previewPayloadDtoContext2: PreviewPayloadDtoContext2): string {
+function previewPayloadDtoContext2ToJSON(previewPayloadDtoContext2: PreviewPayloadDtoContext2): string {
   return JSON.stringify(PreviewPayloadDtoContext2$outboundSchema.parse(previewPayloadDtoContext2));
 }
-export function previewPayloadDtoContext2FromJSON(
+function previewPayloadDtoContext2FromJSON(
   jsonString: string
 ): SafeParseResult<PreviewPayloadDtoContext2, SDKValidationError> {
   return safeParse(
@@ -78,22 +78,22 @@ export function previewPayloadDtoContext2FromJSON(
 }
 
 /** @internal */
-export const PreviewPayloadDtoContext$inboundSchema: z.ZodType<PreviewPayloadDtoContext, z.ZodTypeDef, unknown> =
+const PreviewPayloadDtoContext$inboundSchema: z.ZodType<PreviewPayloadDtoContext, z.ZodTypeDef, unknown> =
   z.union([z.lazy(() => PreviewPayloadDtoContext2$inboundSchema), z.string()]);
 /** @internal */
-export type PreviewPayloadDtoContext$Outbound = PreviewPayloadDtoContext2$Outbound | string;
+type PreviewPayloadDtoContext$Outbound = PreviewPayloadDtoContext2$Outbound | string;
 
 /** @internal */
-export const PreviewPayloadDtoContext$outboundSchema: z.ZodType<
+const PreviewPayloadDtoContext$outboundSchema: z.ZodType<
   PreviewPayloadDtoContext$Outbound,
   z.ZodTypeDef,
   PreviewPayloadDtoContext
 > = z.union([z.lazy(() => PreviewPayloadDtoContext2$outboundSchema), z.string()]);
 
-export function previewPayloadDtoContextToJSON(previewPayloadDtoContext: PreviewPayloadDtoContext): string {
+function previewPayloadDtoContextToJSON(previewPayloadDtoContext: PreviewPayloadDtoContext): string {
   return JSON.stringify(PreviewPayloadDtoContext$outboundSchema.parse(previewPayloadDtoContext));
 }
-export function previewPayloadDtoContextFromJSON(
+function previewPayloadDtoContextFromJSON(
   jsonString: string
 ): SafeParseResult<PreviewPayloadDtoContext, SDKValidationError> {
   return safeParse(
@@ -127,10 +127,10 @@ export const PreviewPayloadDto$outboundSchema: z.ZodType<PreviewPayloadDto$Outbo
     context: z.record(z.union([z.lazy(() => PreviewPayloadDtoContext2$outboundSchema), z.string()])).optional(),
   });
 
-export function previewPayloadDtoToJSON(previewPayloadDto: PreviewPayloadDto): string {
+function previewPayloadDtoToJSON(previewPayloadDto: PreviewPayloadDto): string {
   return JSON.stringify(PreviewPayloadDto$outboundSchema.parse(previewPayloadDto));
 }
-export function previewPayloadDtoFromJSON(jsonString: string): SafeParseResult<PreviewPayloadDto, SDKValidationError> {
+function previewPayloadDtoFromJSON(jsonString: string): SafeParseResult<PreviewPayloadDto, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) => PreviewPayloadDto$inboundSchema.parse(JSON.parse(x)),

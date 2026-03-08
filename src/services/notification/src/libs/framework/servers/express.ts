@@ -22,7 +22,7 @@ type VercelResponse = any;
  * import { Client, type Workflow } from 'libs/framework';
  */
 export * from '../index';
-export const frameworkName: SupportedFrameworkName = 'express';
+const frameworkName: SupportedFrameworkName = 'express';
 
 /**
  * Serve and register any declared workflows with Novu, making them available
@@ -46,7 +46,7 @@ export const frameworkName: SupportedFrameworkName = 'express';
  * );
  * ```
  */
-export const serve = (options: ServeHandlerOptions): any => {
+const serve = (options: ServeHandlerOptions): any => {
   const novuHandler = new NovuRequestHandler({
     frameworkName,
     ...options,

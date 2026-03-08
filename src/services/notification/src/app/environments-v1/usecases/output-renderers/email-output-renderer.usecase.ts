@@ -51,7 +51,7 @@ type TranslationContext = {
 
 type MailyJSONMarks = NonNullable<MailyJSONContent['marks']>[number];
 
-export class EmailOutputRendererCommand extends RenderCommand {
+class EmailOutputRendererCommand extends RenderCommand {
   dbWorkflow: NotificationTemplateEntity;
   locale?: string;
   skipLayoutRendering?: boolean;

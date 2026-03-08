@@ -6,7 +6,7 @@ import { ChatRenderOutput } from 'libs/shared';
 import { BaseTranslationRendererUsecase } from './base-translation-renderer.usecase';
 import { RenderCommand } from './render-command';
 
-export class ChatOutputRendererCommand extends RenderCommand {
+class ChatOutputRendererCommand extends RenderCommand {
   dbWorkflow: NotificationTemplateEntity;
   locale?: string;
 }

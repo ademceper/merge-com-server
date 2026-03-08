@@ -131,15 +131,15 @@ export type GetWorkflowRunsDto = {
 };
 
 /** @internal */
-export const GetWorkflowRunsDtoStatus$inboundSchema: z.ZodNativeEnum<typeof GetWorkflowRunsDtoStatus> =
+const GetWorkflowRunsDtoStatus$inboundSchema: z.ZodNativeEnum<typeof GetWorkflowRunsDtoStatus> =
   z.nativeEnum(GetWorkflowRunsDtoStatus);
 
 /** @internal */
-export const DeliveryLifecycleStatus$inboundSchema: z.ZodNativeEnum<typeof DeliveryLifecycleStatus> =
+const DeliveryLifecycleStatus$inboundSchema: z.ZodNativeEnum<typeof DeliveryLifecycleStatus> =
   z.nativeEnum(DeliveryLifecycleStatus);
 
 /** @internal */
-export const Severity$inboundSchema: z.ZodNativeEnum<typeof Severity> = z.nativeEnum(Severity);
+const Severity$inboundSchema: z.ZodNativeEnum<typeof Severity> = z.nativeEnum(Severity);
 
 /** @internal */
 export const GetWorkflowRunsDto$inboundSchema: z.ZodType<GetWorkflowRunsDto, z.ZodTypeDef, unknown> = z.object({
@@ -163,7 +163,7 @@ export const GetWorkflowRunsDto$inboundSchema: z.ZodType<GetWorkflowRunsDto, z.Z
   steps: z.array(WorkflowRunStepsDetailsDto$inboundSchema),
 });
 
-export function getWorkflowRunsDtoFromJSON(
+function getWorkflowRunsDtoFromJSON(
   jsonString: string
 ): SafeParseResult<GetWorkflowRunsDto, SDKValidationError> {
   return safeParse(

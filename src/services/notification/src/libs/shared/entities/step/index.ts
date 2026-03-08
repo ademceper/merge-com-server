@@ -79,12 +79,12 @@ export enum OrdinalValueEnum {
   SATURDAY = 'saturday',
 }
 
-export interface IAmountAndUnit {
+interface IAmountAndUnit {
   amount: number;
   unit: DigestUnitEnum;
 }
 
-export interface IAmountAndUnitDigest {
+interface IAmountAndUnitDigest {
   amount?: number;
   unit?: DigestUnitEnum;
 }

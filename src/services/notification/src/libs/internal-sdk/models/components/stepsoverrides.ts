@@ -31,6 +31,6 @@ export const StepsOverrides$outboundSchema: z.ZodType<
   layoutId: z.nullable(z.string()).optional(),
 });
 
-export function stepsOverridesToJSON(stepsOverrides: StepsOverrides): string {
+function stepsOverridesToJSON(stepsOverrides: StepsOverrides): string {
   return JSON.stringify(StepsOverrides$outboundSchema.parse(stepsOverrides));
 }

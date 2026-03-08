@@ -24,7 +24,7 @@ export type LayoutsControllerDuplicateResponse = {
 };
 
 /** @internal */
-export type LayoutsControllerDuplicateRequest$Outbound = {
+type LayoutsControllerDuplicateRequest$Outbound = {
   layoutId: string;
   "idempotency-key"?: string | undefined;
   DuplicateLayoutDto: components.DuplicateLayoutDto$Outbound;
@@ -46,7 +46,7 @@ export const LayoutsControllerDuplicateRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function layoutsControllerDuplicateRequestToJSON(
+function layoutsControllerDuplicateRequestToJSON(
   layoutsControllerDuplicateRequest: LayoutsControllerDuplicateRequest,
 ): string {
   return JSON.stringify(
@@ -71,7 +71,7 @@ export const LayoutsControllerDuplicateResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function layoutsControllerDuplicateResponseFromJSON(
+function layoutsControllerDuplicateResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<LayoutsControllerDuplicateResponse, SDKValidationError> {
   return safeParse(

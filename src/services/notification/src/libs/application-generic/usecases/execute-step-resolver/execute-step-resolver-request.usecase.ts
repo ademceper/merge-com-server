@@ -9,9 +9,9 @@ import { BridgeError, ExecuteBridgeRequestCommand } from '../execute-bridge-requ
 import type { ProcessError } from '../execute-bridge-request/execute-bridge-request.command';
 import { RETRYABLE_ERROR_CODES } from '../execute-bridge-request/execute-framework-request.usecase';
 
-export const DEFAULT_TIMEOUT = 30_000; // 30 seconds
-export const DEFAULT_RETRIES_LIMIT = 2;
-export const RETRYABLE_HTTP_CODES: number[] = [
+const DEFAULT_TIMEOUT = 30_000; // 30 seconds
+const DEFAULT_RETRIES_LIMIT = 2;
+const RETRYABLE_HTTP_CODES: number[] = [
   408, // Request Timeout
   429, // Too Many Requests
   500, // Internal Server Error

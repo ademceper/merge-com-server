@@ -15,7 +15,7 @@ export type GenerateChatOauthUrlRequestDtoContext2 = {
   data?: { [k: string]: any } | undefined;
 };
 
-export type GenerateChatOauthUrlRequestDtoContext =
+type GenerateChatOauthUrlRequestDtoContext =
   | GenerateChatOauthUrlRequestDtoContext2
   | string;
 
@@ -48,7 +48,7 @@ export type GenerateChatOauthUrlRequestDtoContext2$Outbound = {
 };
 
 /** @internal */
-export const GenerateChatOauthUrlRequestDtoContext2$outboundSchema: z.ZodType<
+const GenerateChatOauthUrlRequestDtoContext2$outboundSchema: z.ZodType<
   GenerateChatOauthUrlRequestDtoContext2$Outbound,
   z.ZodTypeDef,
   GenerateChatOauthUrlRequestDtoContext2
@@ -57,7 +57,7 @@ export const GenerateChatOauthUrlRequestDtoContext2$outboundSchema: z.ZodType<
   data: z.record(z.any()).optional(),
 });
 
-export function generateChatOauthUrlRequestDtoContext2ToJSON(
+function generateChatOauthUrlRequestDtoContext2ToJSON(
   generateChatOauthUrlRequestDtoContext2:
     GenerateChatOauthUrlRequestDtoContext2,
 ): string {
@@ -69,12 +69,12 @@ export function generateChatOauthUrlRequestDtoContext2ToJSON(
 }
 
 /** @internal */
-export type GenerateChatOauthUrlRequestDtoContext$Outbound =
+type GenerateChatOauthUrlRequestDtoContext$Outbound =
   | GenerateChatOauthUrlRequestDtoContext2$Outbound
   | string;
 
 /** @internal */
-export const GenerateChatOauthUrlRequestDtoContext$outboundSchema: z.ZodType<
+const GenerateChatOauthUrlRequestDtoContext$outboundSchema: z.ZodType<
   GenerateChatOauthUrlRequestDtoContext$Outbound,
   z.ZodTypeDef,
   GenerateChatOauthUrlRequestDtoContext
@@ -83,7 +83,7 @@ export const GenerateChatOauthUrlRequestDtoContext$outboundSchema: z.ZodType<
   z.string(),
 ]);
 
-export function generateChatOauthUrlRequestDtoContextToJSON(
+function generateChatOauthUrlRequestDtoContextToJSON(
   generateChatOauthUrlRequestDtoContext: GenerateChatOauthUrlRequestDtoContext,
 ): string {
   return JSON.stringify(
@@ -122,7 +122,7 @@ export const GenerateChatOauthUrlRequestDto$outboundSchema: z.ZodType<
   scope: z.array(z.string()).optional(),
 });
 
-export function generateChatOauthUrlRequestDtoToJSON(
+function generateChatOauthUrlRequestDtoToJSON(
   generateChatOauthUrlRequestDto: GenerateChatOauthUrlRequestDto,
 ): string {
   return JSON.stringify(

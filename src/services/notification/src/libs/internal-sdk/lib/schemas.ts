@@ -12,7 +12,7 @@ import { ERR, OK, Result } from "../types/fp.js";
  * intercepts this error and converts it to an SDKValidationError so as to not
  * leak Zod implementation details to user code.
  */
-export function parse<Inp, Out>(
+function parse<Inp, Out>(
   rawValue: Inp,
   fn: (value: Inp) => Out,
   errorMessage: string,

@@ -13,7 +13,7 @@ export class DiffEnvironmentRequestDto {
   sourceEnvironmentId?: string;
 }
 
-export class UserInfoDto {
+class UserInfoDto {
   @ApiProperty({ description: 'User ID' })
   @IsString()
   _id: string;
@@ -33,7 +33,7 @@ export class UserInfoDto {
   externalId?: string;
 }
 
-export class ResourceInfoDto {
+class ResourceInfoDto {
   @ApiPropertyOptional({
     description: 'Resource ID (workflow ID or step ID)',
     nullable: true,
@@ -74,7 +74,7 @@ export class ResourceInfoDto {
   updatedAt?: string | null;
 }
 
-export class ResourceDiffDto {
+class ResourceDiffDto {
   @ApiPropertyOptional({
     description: 'Source resource information',
     type: () => ResourceInfoDto,
@@ -151,7 +151,7 @@ export class ResourceDiffDto {
   newIndex?: number;
 }
 
-export class DiffSummaryDto {
+class DiffSummaryDto {
   @ApiProperty({ description: 'Number of added resources (workflows and steps)' })
   @IsNumber()
   added: number;
@@ -169,7 +169,7 @@ export class DiffSummaryDto {
   unchanged: number;
 }
 
-export class ResourceDependencyDto {
+class ResourceDependencyDto {
   @ApiProperty({
     description: 'Type of dependent resource',
     enum: [...Object.values(ResourceTypeEnum)],
@@ -210,7 +210,7 @@ export class ResourceDependencyDto {
   reason: DependencyReasonEnum;
 }
 
-export class ResourceDiffResultDto {
+class ResourceDiffResultDto {
   @ApiProperty({
     description: 'Type of resource being compared',
     enum: [...Object.values(ResourceTypeEnum)],
@@ -262,7 +262,7 @@ export class ResourceDiffResultDto {
   dependencies?: ResourceDependencyDto[];
 }
 
-export class EnvironmentDiffSummaryDto {
+class EnvironmentDiffSummaryDto {
   @ApiProperty({ description: 'Total number of entities compared' })
   @IsNumber()
   totalEntities: number;

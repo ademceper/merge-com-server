@@ -100,7 +100,7 @@ export type ChannelConnectionsControllerListChannelConnectionsResponse = {
 };
 
 /** @internal */
-export const ChannelConnectionsControllerListChannelConnectionsQueryParamOrderDirection$outboundSchema:
+const ChannelConnectionsControllerListChannelConnectionsQueryParamOrderDirection$outboundSchema:
   z.ZodNativeEnum<
     typeof ChannelConnectionsControllerListChannelConnectionsQueryParamOrderDirection
   > = z.nativeEnum(
@@ -108,11 +108,11 @@ export const ChannelConnectionsControllerListChannelConnectionsQueryParamOrderDi
   );
 
 /** @internal */
-export const Channel$outboundSchema: z.ZodNativeEnum<typeof Channel> = z
+const Channel$outboundSchema: z.ZodNativeEnum<typeof Channel> = z
   .nativeEnum(Channel);
 
 /** @internal */
-export type ChannelConnectionsControllerListChannelConnectionsRequest$Outbound =
+type ChannelConnectionsControllerListChannelConnectionsRequest$Outbound =
   {
     after?: string | undefined;
     before?: string | undefined;
@@ -155,7 +155,7 @@ export const ChannelConnectionsControllerListChannelConnectionsRequest$outboundS
     });
   });
 
-export function channelConnectionsControllerListChannelConnectionsRequestToJSON(
+function channelConnectionsControllerListChannelConnectionsRequestToJSON(
   channelConnectionsControllerListChannelConnectionsRequest:
     ChannelConnectionsControllerListChannelConnectionsRequest,
 ): string {
@@ -181,7 +181,7 @@ export const ChannelConnectionsControllerListChannelConnectionsResponse$inboundS
     });
   });
 
-export function channelConnectionsControllerListChannelConnectionsResponseFromJSON(
+function channelConnectionsControllerListChannelConnectionsResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   ChannelConnectionsControllerListChannelConnectionsResponse,

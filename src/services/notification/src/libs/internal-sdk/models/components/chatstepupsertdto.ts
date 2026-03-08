@@ -13,7 +13,7 @@ import {
 /**
  * Control values for the Chat step.
  */
-export type ChatStepUpsertDtoControlValues = ChatControlDto | {
+type ChatStepUpsertDtoControlValues = ChatControlDto | {
   [k: string]: any;
 };
 
@@ -41,18 +41,18 @@ export type ChatStepUpsertDto = {
 };
 
 /** @internal */
-export type ChatStepUpsertDtoControlValues$Outbound =
+type ChatStepUpsertDtoControlValues$Outbound =
   | ChatControlDto$Outbound
   | { [k: string]: any };
 
 /** @internal */
-export const ChatStepUpsertDtoControlValues$outboundSchema: z.ZodType<
+const ChatStepUpsertDtoControlValues$outboundSchema: z.ZodType<
   ChatStepUpsertDtoControlValues$Outbound,
   z.ZodTypeDef,
   ChatStepUpsertDtoControlValues
 > = z.union([ChatControlDto$outboundSchema, z.record(z.any())]);
 
-export function chatStepUpsertDtoControlValuesToJSON(
+function chatStepUpsertDtoControlValuesToJSON(
   chatStepUpsertDtoControlValues: ChatStepUpsertDtoControlValues,
 ): string {
   return JSON.stringify(
@@ -89,7 +89,7 @@ export const ChatStepUpsertDto$outboundSchema: z.ZodType<
   });
 });
 
-export function chatStepUpsertDtoToJSON(
+function chatStepUpsertDtoToJSON(
   chatStepUpsertDto: ChatStepUpsertDto,
 ): string {
   return JSON.stringify(

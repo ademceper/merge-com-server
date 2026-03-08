@@ -13,7 +13,7 @@ interface WebhookEventConfig {
 
 type WebhookEventRecord = Record<WebhookEventEnum, WebhookEventConfig>;
 
-export class WebhookUpdatedWorkflowDto {
+class WebhookUpdatedWorkflowDto {
   @ApiProperty({ description: 'Current workflow state', type: () => WorkflowResponseDto })
   object: WorkflowResponseDto;
 
@@ -21,17 +21,17 @@ export class WebhookUpdatedWorkflowDto {
   previousObject: WorkflowResponseDto;
 }
 
-export class WebhookCreatedWorkflowDto {
+class WebhookCreatedWorkflowDto {
   @ApiProperty({ description: 'Current workflow state', type: () => WorkflowResponseDto })
   object: WorkflowResponseDto;
 }
 
-export class WebhookDeletedWorkflowDto {
+class WebhookDeletedWorkflowDto {
   @ApiProperty({ description: 'Current workflow state', type: () => WorkflowResponseDto })
   object: WorkflowResponseDto;
 }
 
-export class WebhookMessageDto {
+class WebhookMessageDto {
   @ApiProperty({ description: 'Current message state' })
   object: MessageWebhookResponseDto;
 }
@@ -40,7 +40,7 @@ enum MessageFailedErrorCodeEnum {
   TOKEN_EXPIRED = 'token_expired',
 }
 
-export class MessageFailedWebhookDto {
+class MessageFailedWebhookDto {
   @ApiProperty({ description: 'Current message state' })
   object: MessageWebhookResponseDto;
 
@@ -48,7 +48,7 @@ export class MessageFailedWebhookDto {
   errorCode: MessageFailedErrorCodeEnum;
 }
 
-export class MessageFailedPushDto {
+class MessageFailedPushDto {
   @ApiProperty({ description: 'Is invalid token' })
   isInvalidToken: boolean;
 
@@ -56,7 +56,7 @@ export class MessageFailedPushDto {
   deviceToken: string;
 }
 
-export class MessageFailedErrorDto {
+class MessageFailedErrorDto {
   @ApiProperty({ description: 'Error message' })
   message: string;
 
@@ -64,7 +64,7 @@ export class MessageFailedErrorDto {
   push?: MessageFailedPushDto;
 }
 
-export class WebhookMessageFailedDto {
+class WebhookMessageFailedDto {
   @ApiProperty({ description: 'Current message state' })
   object: MessageWebhookResponseDto;
 
@@ -72,7 +72,7 @@ export class WebhookMessageFailedDto {
   error: MessageFailedErrorDto;
 }
 
-export class WebhookPreferenceDto {
+class WebhookPreferenceDto {
   @ApiProperty({ description: 'Current preference state' })
   object: InboxPreference;
 

@@ -27,7 +27,7 @@ export class EmailRenderOutput extends RenderOutput {
   };
 }
 
-export class DigestOutputProcessor {
+class DigestOutputProcessor {
   static isDigestRegularOutput(output: unknown): output is DigestRegularOutput {
     if (typeof output !== 'object' || output === null) return false;
 
@@ -80,17 +80,14 @@ export type ThrottleRenderOutput = RenderOutput & {
   throttleKey?: string;
 };
 export enum TimeUnitEnum {
-  SECONDS = 'seconds',
   MINUTES = 'minutes',
   HOURS = 'hours',
   DAYS = 'days',
-  WEEKS = 'weeks',
-  MONTHS = 'months',
-}
+  }
 
 type TimeType = 'regular';
 
-export enum RedirectTargetEnum {
+enum RedirectTargetEnum {
   SELF = '_self',
   BLANK = '_blank',
   PARENT = '_parent',
@@ -130,7 +127,7 @@ export class PreviewPayload {
   steps?: Record<string, unknown>; // step.stepId.unknown
 }
 
-export class GeneratePreviewResponseDto {
+class GeneratePreviewResponseDto {
   previewPayloadExample: PreviewPayload;
   schema?: JSONSchemaDto | null;
   result:

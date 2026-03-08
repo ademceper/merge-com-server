@@ -31,7 +31,7 @@ export const DeleteTopicSubscriberIdentifierDto$outboundSchema: z.ZodType<
   subscriberId: z.string().optional(),
 });
 
-export function deleteTopicSubscriberIdentifierDtoToJSON(
+function deleteTopicSubscriberIdentifierDtoToJSON(
   deleteTopicSubscriberIdentifierDto: DeleteTopicSubscriberIdentifierDto,
 ): string {
   return JSON.stringify(

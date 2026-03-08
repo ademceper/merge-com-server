@@ -5,10 +5,10 @@ import type { ConnectionOptions } from 'tls';
 
 import { convertStringValues } from './variable-mappers';
 
-export { Cluster };
-export type { ClusterOptions };
+;
+;
 
-export const CLIENT_READY = 'ready';
+const CLIENT_READY = 'ready';
 const DEFAULT_TTL_SECONDS = 60 * 60 * 2;
 const DEFAULT_CONNECT_TIMEOUT = 50000;
 const DEFAULT_KEEP_ALIVE = 30000;

@@ -29,7 +29,7 @@ export const ActorFeedItemDto$inboundSchema: z.ZodType<
   type: ActorTypeEnum$inboundSchema,
 });
 
-export function actorFeedItemDtoFromJSON(
+function actorFeedItemDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<ActorFeedItemDto, SDKValidationError> {
   return safeParse(

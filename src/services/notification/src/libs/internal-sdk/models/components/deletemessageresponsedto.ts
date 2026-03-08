@@ -33,7 +33,7 @@ export type DeleteMessageResponseDto = {
 };
 
 /** @internal */
-export const DeleteMessageResponseDtoStatus$inboundSchema: z.ZodNativeEnum<
+const DeleteMessageResponseDtoStatus$inboundSchema: z.ZodNativeEnum<
   typeof DeleteMessageResponseDtoStatus
 > = z.nativeEnum(DeleteMessageResponseDtoStatus);
 
@@ -47,7 +47,7 @@ export const DeleteMessageResponseDto$inboundSchema: z.ZodType<
   status: DeleteMessageResponseDtoStatus$inboundSchema,
 });
 
-export function deleteMessageResponseDtoFromJSON(
+function deleteMessageResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<DeleteMessageResponseDto, SDKValidationError> {
   return safeParse(

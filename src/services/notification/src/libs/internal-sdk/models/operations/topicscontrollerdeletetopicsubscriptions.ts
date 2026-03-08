@@ -28,7 +28,7 @@ export type TopicsControllerDeleteTopicSubscriptionsResponse = {
 };
 
 /** @internal */
-export type TopicsControllerDeleteTopicSubscriptionsRequest$Outbound = {
+type TopicsControllerDeleteTopicSubscriptionsRequest$Outbound = {
   topicKey: string;
   "idempotency-key"?: string | undefined;
   DeleteTopicSubscriptionsRequestDto:
@@ -53,7 +53,7 @@ export const TopicsControllerDeleteTopicSubscriptionsRequest$outboundSchema:
     });
   });
 
-export function topicsControllerDeleteTopicSubscriptionsRequestToJSON(
+function topicsControllerDeleteTopicSubscriptionsRequestToJSON(
   topicsControllerDeleteTopicSubscriptionsRequest:
     TopicsControllerDeleteTopicSubscriptionsRequest,
 ): string {
@@ -80,7 +80,7 @@ export const TopicsControllerDeleteTopicSubscriptionsResponse$inboundSchema:
     });
   });
 
-export function topicsControllerDeleteTopicSubscriptionsResponseFromJSON(
+function topicsControllerDeleteTopicSubscriptionsResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   TopicsControllerDeleteTopicSubscriptionsResponse,

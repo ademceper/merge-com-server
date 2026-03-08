@@ -36,7 +36,7 @@ export const SubscriberPreferenceOverrideDto$inboundSchema: z.ZodType<
   source: PreferenceOverrideSourceEnum$inboundSchema,
 });
 
-export function subscriberPreferenceOverrideDtoFromJSON(
+function subscriberPreferenceOverrideDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<SubscriberPreferenceOverrideDto, SDKValidationError> {
   return safeParse(

@@ -36,7 +36,7 @@ export type MarkMessageActionAsSeenDto = {
 };
 
 /** @internal */
-export const MarkMessageActionAsSeenDtoStatus$outboundSchema: z.ZodNativeEnum<
+const MarkMessageActionAsSeenDtoStatus$outboundSchema: z.ZodNativeEnum<
   typeof MarkMessageActionAsSeenDtoStatus
 > = z.nativeEnum(MarkMessageActionAsSeenDtoStatus);
 
@@ -44,13 +44,13 @@ export const MarkMessageActionAsSeenDtoStatus$outboundSchema: z.ZodNativeEnum<
 export type MarkMessageActionAsSeenDtoPayload$Outbound = {};
 
 /** @internal */
-export const MarkMessageActionAsSeenDtoPayload$outboundSchema: z.ZodType<
+const MarkMessageActionAsSeenDtoPayload$outboundSchema: z.ZodType<
   MarkMessageActionAsSeenDtoPayload$Outbound,
   z.ZodTypeDef,
   MarkMessageActionAsSeenDtoPayload
 > = z.object({});
 
-export function markMessageActionAsSeenDtoPayloadToJSON(
+function markMessageActionAsSeenDtoPayloadToJSON(
   markMessageActionAsSeenDtoPayload: MarkMessageActionAsSeenDtoPayload,
 ): string {
   return JSON.stringify(
@@ -77,7 +77,7 @@ export const MarkMessageActionAsSeenDto$outboundSchema: z.ZodType<
     .optional(),
 });
 
-export function markMessageActionAsSeenDtoToJSON(
+function markMessageActionAsSeenDtoToJSON(
   markMessageActionAsSeenDto: MarkMessageActionAsSeenDto,
 ): string {
   return JSON.stringify(

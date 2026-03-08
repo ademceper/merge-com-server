@@ -48,11 +48,11 @@ export const digestTimedOutputSchema = {
   additionalProperties: false,
 } as const satisfies JsonSchema;
 
-export const digestOutputSchema = {
+const digestOutputSchema = {
   oneOf: [digestRegularOutputSchema, digestTimedOutputSchema],
 } as const satisfies JsonSchema;
 
-export const digestResultSchema = {
+const digestResultSchema = {
   type: 'object',
   properties: {
     eventCount: { type: 'number' },

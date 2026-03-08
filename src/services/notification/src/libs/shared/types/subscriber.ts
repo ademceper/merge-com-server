@@ -63,7 +63,7 @@ export type SubscriberId = string;
 
 export type SubscriberCustomData = CustomDataType;
 
-export interface ISubscriberPayload {
+interface ISubscriberPayload {
   firstName?: string | null;
   lastName?: string | null;
   email?: string | null;
@@ -82,7 +82,7 @@ export interface ISubscribersDefine extends ISubscriberPayload {
   subscriberId: string;
 }
 
-export interface ISubscribersSource extends ISubscribersDefine {
+interface ISubscribersSource extends ISubscribersDefine {
   _subscriberSource: SubscriberSourceEnum;
 }
 

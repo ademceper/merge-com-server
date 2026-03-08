@@ -7,12 +7,12 @@ import type { MessageTemplateDBModel } from './message-template.entity';
 import { MessageTemplate } from './message-template.schema';
 
 type MessageTemplateQuery = FilterQuery<MessageTemplateDBModel>;
-export interface DeleteMsgByIdQuery {
+interface DeleteMsgByIdQuery {
   _id: string;
   _environmentId: string;
 }
 
-export interface RepositoryOptions {
+interface RepositoryOptions {
   session?: ClientSession | null;
 }
 export class MessageTemplateRepository extends BaseRepository<

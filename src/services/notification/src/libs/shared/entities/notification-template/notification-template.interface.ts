@@ -46,7 +46,7 @@ export class IGroupedBlueprint {
   blueprints: IBlueprint[];
 }
 
-export interface IBlueprint extends INotificationTemplate {
+interface IBlueprint extends INotificationTemplate {
   notificationGroup: INotificationGroup;
 }
 

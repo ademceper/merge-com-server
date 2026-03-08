@@ -3,7 +3,7 @@ import { Type } from 'class-transformer';
 import { IsArray, IsBoolean, IsEnum, IsNumber, IsOptional, IsString, Max, Min, ValidateNested } from 'class-validator';
 import { ResourceTypeEnum } from '../types/sync.types';
 
-export class ResourceToPublishDto {
+class ResourceToPublishDto {
   @ApiProperty({
     description: 'Type of resource to publish',
     enum: Object.values(ResourceTypeEnum),
@@ -53,7 +53,7 @@ export class PublishEnvironmentRequestDto {
   resources?: ResourceToPublishDto[];
 }
 
-export class SyncedWorkflowDto {
+class SyncedWorkflowDto {
   @ApiProperty({ description: 'Resource type' })
   resourceType: string;
 
@@ -67,7 +67,7 @@ export class SyncedWorkflowDto {
   action: 'created' | 'updated' | 'skipped' | 'deleted';
 }
 
-export class FailedWorkflowDto {
+class FailedWorkflowDto {
   @ApiProperty({ description: 'Resource type' })
   resourceType: string;
 
@@ -84,7 +84,7 @@ export class FailedWorkflowDto {
   stack?: string;
 }
 
-export class SkippedWorkflowDto {
+class SkippedWorkflowDto {
   @ApiProperty({ description: 'Resource type' })
   resourceType: string;
 
@@ -98,7 +98,7 @@ export class SkippedWorkflowDto {
   reason: string;
 }
 
-export class SyncResultDto {
+class SyncResultDto {
   @ApiProperty({ description: 'Resource type that was synced' })
   resourceType: string;
 
@@ -115,7 +115,7 @@ export class SyncResultDto {
   totalProcessed: number;
 }
 
-export class PublishSummaryDto {
+class PublishSummaryDto {
   @ApiProperty({ description: 'Number of resources processed' })
   resources: number;
 

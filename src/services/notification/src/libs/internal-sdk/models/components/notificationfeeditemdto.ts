@@ -146,7 +146,7 @@ export type NotificationFeedItemDto = {
 };
 
 /** @internal */
-export const NotificationFeedItemDtoStatus$inboundSchema: z.ZodNativeEnum<typeof NotificationFeedItemDtoStatus> =
+const NotificationFeedItemDtoStatus$inboundSchema: z.ZodNativeEnum<typeof NotificationFeedItemDtoStatus> =
   z.nativeEnum(NotificationFeedItemDtoStatus);
 
 /** @internal */
@@ -210,7 +210,7 @@ export const NotificationFeedItemDto$inboundSchema: z.ZodType<NotificationFeedIt
     });
   });
 
-export function notificationFeedItemDtoFromJSON(
+function notificationFeedItemDtoFromJSON(
   jsonString: string
 ): SafeParseResult<NotificationFeedItemDto, SDKValidationError> {
   return safeParse(

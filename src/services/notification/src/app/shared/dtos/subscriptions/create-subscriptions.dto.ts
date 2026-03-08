@@ -38,7 +38,7 @@ export class TopicSubscriberIdentifierDto {
   name?: string;
 }
 
-export class BasePreferenceDto {
+class BasePreferenceDto {
   @ApiProperty({
     description: 'Whether the preference is enabled. Used when condition is not provided.',
     required: false,
@@ -70,7 +70,7 @@ export class WorkflowPreferenceRequestDto extends BasePreferenceDto {
   workflowId: string;
 }
 
-export class GroupPreferenceFilterDetailsDto {
+class GroupPreferenceFilterDetailsDto {
   @ApiProperty({
     description: 'List of workflow identifiers',
     type: [String],
@@ -104,7 +104,7 @@ export class GroupPreferenceFilterDto extends BasePreferenceDto {
 }
 
 @ApiExtraModels(WorkflowPreferenceRequestDto, GroupPreferenceFilterDto, TopicSubscriberIdentifierDto)
-export class CreateSubscriptionsRequestDto {
+class CreateSubscriptionsRequestDto {
   @ApiProperty({
     description:
       'List of subscriber IDs to subscribe to the topic (max: 100). @deprecated Use the "subscriptions" property instead.',

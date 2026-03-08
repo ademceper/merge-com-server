@@ -271,7 +271,7 @@ export class TriggerMulticast extends TriggerBase {
   }
 }
 
-export const splitByRecipientType = (
+const splitByRecipientType = (
   mappedRecipients: TriggerRecipient[]
 ): {
   singleSubscribers: Map<string, ISubscribersDefine>;
@@ -310,7 +310,7 @@ export const splitByRecipientType = (
   );
 };
 
-export const buildSubscriberDefine = (recipient: TriggerRecipientSubscriber): ISubscribersDefine => {
+const buildSubscriberDefine = (recipient: TriggerRecipientSubscriber): ISubscribersDefine => {
   if (typeof recipient === 'string') {
     return { subscriberId: recipient };
   } else {
@@ -320,7 +320,7 @@ export const buildSubscriberDefine = (recipient: TriggerRecipientSubscriber): IS
   }
 };
 
-export const validateSubscriberDefine = (recipient: ISubscribersDefine) => {
+const validateSubscriberDefine = (recipient: ISubscribersDefine) => {
   if (!recipient) {
     throw new BadRequestException(
       'subscriberId under property to is not configured, please make sure all subscribers contains subscriberId property'

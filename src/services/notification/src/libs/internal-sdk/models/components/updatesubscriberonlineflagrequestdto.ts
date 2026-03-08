@@ -22,7 +22,7 @@ export const UpdateSubscriberOnlineFlagRequestDto$outboundSchema: z.ZodType<
   isOnline: z.boolean(),
 });
 
-export function updateSubscriberOnlineFlagRequestDtoToJSON(
+function updateSubscriberOnlineFlagRequestDtoToJSON(
   updateSubscriberOnlineFlagRequestDto: UpdateSubscriberOnlineFlagRequestDto,
 ): string {
   return JSON.stringify(

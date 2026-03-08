@@ -9,7 +9,7 @@ import { matchResponse, matchStatusCode } from "./http.js";
 import type { StatusCodePredicate } from "./http.js";
 import { isPlainObject } from "./is-plain-object.js";
 
-export type Encoding =
+type Encoding =
   | "jsonl"
   | "json"
   | "text"
@@ -39,25 +39,25 @@ type MatchOptions = {
   sseSentinel?: string;
 };
 
-export type ValueMatcher<V> = MatchOptions & {
+type ValueMatcher<V> = MatchOptions & {
   enc: Encoding;
   codes: StatusCodePredicate;
   schema: Schema<V>;
 };
 
-export type ErrorMatcher<E> = MatchOptions & {
+type ErrorMatcher<E> = MatchOptions & {
   enc: Encoding;
   codes: StatusCodePredicate;
   schema: Schema<E>;
   err: true;
 };
 
-export type FailMatcher = {
+type FailMatcher = {
   enc: "fail";
   codes: StatusCodePredicate;
 };
 
-export type Matcher<T, E> = ValueMatcher<T> | ErrorMatcher<E> | FailMatcher;
+type Matcher<T, E> = ValueMatcher<T> | ErrorMatcher<E> | FailMatcher;
 
 export function jsonErr<E>(
   codes: StatusCodePredicate,
@@ -74,7 +74,7 @@ export function json<T>(
   return { ...options, enc: "json", codes, schema };
 }
 
-export function jsonl<T>(
+function jsonl<T>(
   codes: StatusCodePredicate,
   schema: Schema<T>,
   options?: MatchOptions,
@@ -82,21 +82,21 @@ export function jsonl<T>(
   return { ...options, enc: "jsonl", codes, schema };
 }
 
-export function jsonlErr<E>(
+function jsonlErr<E>(
   codes: StatusCodePredicate,
   schema: Schema<E>,
   options?: MatchOptions,
 ): ErrorMatcher<E> {
   return { ...options, err: true, enc: "jsonl", codes, schema };
 }
-export function textErr<E>(
+function textErr<E>(
   codes: StatusCodePredicate,
   schema: Schema<E>,
   options?: MatchOptions,
 ): ErrorMatcher<E> {
   return { ...options, err: true, enc: "text", codes, schema };
 }
-export function text<T>(
+function text<T>(
   codes: StatusCodePredicate,
   schema: Schema<T>,
   options?: MatchOptions,
@@ -104,14 +104,14 @@ export function text<T>(
   return { ...options, enc: "text", codes, schema };
 }
 
-export function bytesErr<E>(
+function bytesErr<E>(
   codes: StatusCodePredicate,
   schema: Schema<E>,
   options?: MatchOptions,
 ): ErrorMatcher<E> {
   return { ...options, err: true, enc: "bytes", codes, schema };
 }
-export function bytes<T>(
+function bytes<T>(
   codes: StatusCodePredicate,
   schema: Schema<T>,
   options?: MatchOptions,
@@ -119,14 +119,14 @@ export function bytes<T>(
   return { ...options, enc: "bytes", codes, schema };
 }
 
-export function streamErr<E>(
+function streamErr<E>(
   codes: StatusCodePredicate,
   schema: Schema<E>,
   options?: MatchOptions,
 ): ErrorMatcher<E> {
   return { ...options, err: true, enc: "stream", codes, schema };
 }
-export function stream<T>(
+function stream<T>(
   codes: StatusCodePredicate,
   schema: Schema<T>,
   options?: MatchOptions,
@@ -134,14 +134,14 @@ export function stream<T>(
   return { ...options, enc: "stream", codes, schema };
 }
 
-export function sseErr<E>(
+function sseErr<E>(
   codes: StatusCodePredicate,
   schema: Schema<E>,
   options?: MatchOptions,
 ): ErrorMatcher<E> {
   return { ...options, err: true, enc: "sse", codes, schema };
 }
-export function sse<T>(
+function sse<T>(
   codes: StatusCodePredicate,
   schema: Schema<T>,
   options?: MatchOptions,
@@ -149,7 +149,7 @@ export function sse<T>(
   return { ...options, enc: "sse", codes, schema };
 }
 
-export function nilErr<E>(
+function nilErr<E>(
   codes: StatusCodePredicate,
   schema: Schema<E>,
   options?: MatchOptions,
@@ -168,13 +168,13 @@ export function fail(codes: StatusCodePredicate): FailMatcher {
   return { enc: "fail", codes };
 }
 
-export type MatchedValue<Matchers> = Matchers extends Matcher<infer T, any>[]
+type MatchedValue<Matchers> = Matchers extends Matcher<infer T, any>[]
   ? T
   : never;
-export type MatchedError<Matchers> = Matchers extends Matcher<any, infer E>[]
+type MatchedError<Matchers> = Matchers extends Matcher<any, infer E>[]
   ? E
   : never;
-export type MatchFunc<T, E> = (
+type MatchFunc<T, E> = (
   response: Response,
   request: Request,
   options?: { resultKey?: string; extraFields?: Record<string, unknown> },
@@ -317,7 +317,7 @@ const headerValRE = /, */;
  * Iterates over a Headers object and returns an object with all the header
  * entries. Values are represented as an array to account for repeated headers.
  */
-export function unpackHeaders(headers: Headers): Record<string, string[]> {
+function unpackHeaders(headers: Headers): Record<string, string[]> {
   const out: Record<string, string[]> = {};
 
   for (const [k, v] of Array.from((headers as any).entries()) as [string, string][]) {

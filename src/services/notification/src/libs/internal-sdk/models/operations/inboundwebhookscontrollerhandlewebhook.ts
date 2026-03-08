@@ -25,7 +25,7 @@ export type InboundWebhooksControllerHandleWebhookRequest = {
 };
 
 /** @internal */
-export type InboundWebhooksControllerHandleWebhookRequest$Outbound = {
+type InboundWebhooksControllerHandleWebhookRequest$Outbound = {
   environmentId: string;
   integrationId: string;
   "idempotency-key"?: string | undefined;
@@ -50,7 +50,7 @@ export const InboundWebhooksControllerHandleWebhookRequest$outboundSchema:
     });
   });
 
-export function inboundWebhooksControllerHandleWebhookRequestToJSON(
+function inboundWebhooksControllerHandleWebhookRequestToJSON(
   inboundWebhooksControllerHandleWebhookRequest:
     InboundWebhooksControllerHandleWebhookRequest,
 ): string {

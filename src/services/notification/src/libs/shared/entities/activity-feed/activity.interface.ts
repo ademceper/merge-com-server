@@ -5,11 +5,11 @@ import type { IExecutionDetail } from '../execution-details';
 import type { IJob as IJobBase } from '../job';
 import type { INotificationTemplate } from '../notification-template';
 
-export interface IActivityJob extends IJobBase {
+interface IActivityJob extends IJobBase {
   executionDetails: IExecutionDetail[];
 }
 
-export interface IActivity {
+interface IActivity {
   _id: string;
   _templateId: string;
   _environmentId: string;

@@ -92,10 +92,10 @@ export const InAppControlDto$outboundSchema: z.ZodType<InAppControlDto$Outbound,
     data: z.record(z.any()).optional(),
   });
 
-export function inAppControlDtoToJSON(inAppControlDto: InAppControlDto): string {
+function inAppControlDtoToJSON(inAppControlDto: InAppControlDto): string {
   return JSON.stringify(InAppControlDto$outboundSchema.parse(inAppControlDto));
 }
-export function inAppControlDtoFromJSON(jsonString: string): SafeParseResult<InAppControlDto, SDKValidationError> {
+function inAppControlDtoFromJSON(jsonString: string): SafeParseResult<InAppControlDto, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) => InAppControlDto$inboundSchema.parse(JSON.parse(x)),

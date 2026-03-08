@@ -73,7 +73,7 @@ export type StepRunDto = {
 };
 
 /** @internal */
-export const StepRunDtoStatus$inboundSchema: z.ZodNativeEnum<typeof StepRunDtoStatus> = z.nativeEnum(StepRunDtoStatus);
+const StepRunDtoStatus$inboundSchema: z.ZodNativeEnum<typeof StepRunDtoStatus> = z.nativeEnum(StepRunDtoStatus);
 
 /** @internal */
 export const StepRunDto$inboundSchema: z.ZodType<StepRunDto, z.ZodTypeDef, unknown> = z.object({
@@ -95,7 +95,7 @@ export const StepRunDto$inboundSchema: z.ZodType<StepRunDto, z.ZodTypeDef, unkno
   scheduleExtensionsCount: z.number().optional(),
 });
 
-export function stepRunDtoFromJSON(jsonString: string): SafeParseResult<StepRunDto, SDKValidationError> {
+function stepRunDtoFromJSON(jsonString: string): SafeParseResult<StepRunDto, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) => StepRunDto$inboundSchema.parse(JSON.parse(x)),

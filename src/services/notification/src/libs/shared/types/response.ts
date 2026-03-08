@@ -8,7 +8,7 @@ export interface IResponseError {
   statusCode: number;
 }
 
-export interface IPaginatedResponse<T = unknown> {
+interface IPaginatedResponse<T = unknown> {
   data: T[];
   hasMore: boolean;
   totalCount: number;

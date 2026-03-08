@@ -37,7 +37,7 @@ export type ControlValues$Outbound = {
 };
 
 /** @internal */
-export const ControlValues$outboundSchema: z.ZodType<
+const ControlValues$outboundSchema: z.ZodType<
   ControlValues$Outbound,
   z.ZodTypeDef,
   ControlValues
@@ -45,7 +45,7 @@ export const ControlValues$outboundSchema: z.ZodType<
   email: EmailControlsDto$outboundSchema.optional(),
 });
 
-export function controlValuesToJSON(controlValues: ControlValues): string {
+function controlValuesToJSON(controlValues: ControlValues): string {
   return JSON.stringify(ControlValues$outboundSchema.parse(controlValues));
 }
 
@@ -68,7 +68,7 @@ export const UpdateLayoutDto$outboundSchema: z.ZodType<
     .optional(),
 });
 
-export function updateLayoutDtoToJSON(
+function updateLayoutDtoToJSON(
   updateLayoutDto: UpdateLayoutDto,
 ): string {
   return JSON.stringify(UpdateLayoutDto$outboundSchema.parse(updateLayoutDto));

@@ -36,7 +36,7 @@ export type RegionLimiter = ReturnType<typeof Ratelimit.tokenBucket>;
  * - Allows to set a higher initial burst limit by setting `maxTokens` higher
  * than `refillRate`
  */
-export type CostLimiter = (
+type CostLimiter = (
   /**
    * How many tokens are refilled per `interval`
    *

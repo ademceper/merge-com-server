@@ -28,7 +28,7 @@ export const EmailRenderOutput$inboundSchema: z.ZodType<
   body: z.string(),
 });
 
-export function emailRenderOutputFromJSON(
+function emailRenderOutputFromJSON(
   jsonString: string,
 ): SafeParseResult<EmailRenderOutput, SDKValidationError> {
   return safeParse(

@@ -28,7 +28,7 @@ export const ReplyCallback$inboundSchema: z.ZodType<
   url: z.string().optional(),
 });
 
-export function replyCallbackFromJSON(
+function replyCallbackFromJSON(
   jsonString: string,
 ): SafeParseResult<ReplyCallback, SDKValidationError> {
   return safeParse(

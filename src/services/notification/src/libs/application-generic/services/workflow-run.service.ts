@@ -28,9 +28,9 @@ const DELIVERY_STATUS_TO_EVENT: Record<DeliveryLifecycleStatusEnum, DeliveryLife
   [DeliveryLifecycleStatusEnum.INTERACTED]: 'workflow_run_delivery_interacted',
 };
 
-export type WorkflowRunStatusEventType = Extract<EventType, `workflow_run_status_${string}`>;
+type WorkflowRunStatusEventType = Extract<EventType, `workflow_run_status_${string}`>;
 
-export type NotificationForTrace = {
+type NotificationForTrace = {
   _id: string;
   _templateId: string;
   _organizationId: string;
@@ -49,12 +49,12 @@ export type NotificationForTrace = {
   contextKeys?: string[];
 };
 
-export type WorkflowForTrace = {
+type WorkflowForTrace = {
   name: string;
   triggers?: Array<{ identifier?: string }>;
 };
 
-export interface WorkflowStatusUpdateParams {
+interface WorkflowStatusUpdateParams {
   workflowStatus: WorkflowRunStatusEnum;
   notificationId: string;
   environmentId: string;

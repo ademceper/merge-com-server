@@ -23,7 +23,7 @@ export type IntegrationsControllerCreateIntegrationResponse = {
 };
 
 /** @internal */
-export type IntegrationsControllerCreateIntegrationRequest$Outbound = {
+type IntegrationsControllerCreateIntegrationRequest$Outbound = {
   "idempotency-key"?: string | undefined;
   CreateIntegrationRequestDto: components.CreateIntegrationRequestDto$Outbound;
 };
@@ -45,7 +45,7 @@ export const IntegrationsControllerCreateIntegrationRequest$outboundSchema:
     });
   });
 
-export function integrationsControllerCreateIntegrationRequestToJSON(
+function integrationsControllerCreateIntegrationRequestToJSON(
   integrationsControllerCreateIntegrationRequest:
     IntegrationsControllerCreateIntegrationRequest,
 ): string {
@@ -72,7 +72,7 @@ export const IntegrationsControllerCreateIntegrationResponse$inboundSchema:
     });
   });
 
-export function integrationsControllerCreateIntegrationResponseFromJSON(
+function integrationsControllerCreateIntegrationResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   IntegrationsControllerCreateIntegrationResponse,

@@ -58,7 +58,7 @@ export type SubscriberChannelDto = {
 };
 
 /** @internal */
-export const SubscriberChannelDtoProviderId$outboundSchema: z.ZodNativeEnum<
+const SubscriberChannelDtoProviderId$outboundSchema: z.ZodNativeEnum<
   typeof SubscriberChannelDtoProviderId
 > = z.nativeEnum(SubscriberChannelDtoProviderId);
 
@@ -80,7 +80,7 @@ export const SubscriberChannelDto$outboundSchema: z.ZodType<
   credentials: ChannelCredentialsDto$outboundSchema,
 });
 
-export function subscriberChannelDtoToJSON(
+function subscriberChannelDtoToJSON(
   subscriberChannelDto: SubscriberChannelDto,
 ): string {
   return JSON.stringify(

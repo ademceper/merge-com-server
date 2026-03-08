@@ -60,14 +60,14 @@ export type DelayControlDto = {
 };
 
 /** @internal */
-export const Type$inboundSchema: z.ZodNativeEnum<typeof Type> = z.nativeEnum(Type);
+const Type$inboundSchema: z.ZodNativeEnum<typeof Type> = z.nativeEnum(Type);
 /** @internal */
-export const Type$outboundSchema: z.ZodNativeEnum<typeof Type> = Type$inboundSchema;
+const Type$outboundSchema: z.ZodNativeEnum<typeof Type> = Type$inboundSchema;
 
 /** @internal */
-export const Unit$inboundSchema: z.ZodNativeEnum<typeof Unit> = z.nativeEnum(Unit);
+const Unit$inboundSchema: z.ZodNativeEnum<typeof Unit> = z.nativeEnum(Unit);
 /** @internal */
-export const Unit$outboundSchema: z.ZodNativeEnum<typeof Unit> = Unit$inboundSchema;
+const Unit$outboundSchema: z.ZodNativeEnum<typeof Unit> = Unit$inboundSchema;
 
 /** @internal */
 export const DelayControlDto$inboundSchema: z.ZodType<DelayControlDto, z.ZodTypeDef, unknown> = z.object({
@@ -96,10 +96,10 @@ export const DelayControlDto$outboundSchema: z.ZodType<DelayControlDto$Outbound,
     cron: z.string().optional(),
   });
 
-export function delayControlDtoToJSON(delayControlDto: DelayControlDto): string {
+function delayControlDtoToJSON(delayControlDto: DelayControlDto): string {
   return JSON.stringify(DelayControlDto$outboundSchema.parse(delayControlDto));
 }
-export function delayControlDtoFromJSON(jsonString: string): SafeParseResult<DelayControlDto, SDKValidationError> {
+function delayControlDtoFromJSON(jsonString: string): SafeParseResult<DelayControlDto, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) => DelayControlDto$inboundSchema.parse(JSON.parse(x)),

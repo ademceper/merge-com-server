@@ -8,7 +8,7 @@ import metadata from '../../../../metadata';
 import { webhookEvents } from '../../../outbound-webhooks/webhooks.const';
 import { injectDocumentComponents } from './injection';
 
-export const API_KEY_SECURITY_DEFINITIONS: SecuritySchemeObject = {
+const API_KEY_SECURITY_DEFINITIONS: SecuritySchemeObject = {
   type: 'apiKey',
   name: 'Authorization',
   in: 'header',

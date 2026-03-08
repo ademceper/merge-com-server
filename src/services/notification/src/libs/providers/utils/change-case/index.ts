@@ -35,10 +35,10 @@ function changeKeysFactory<Options extends IOptions = IOptions>(
 
 export const camelCase = changeKeysFactory<IPascalCaseOptions>(camelCaseTransformer);
 export const constantCase = changeKeysFactory(constantCaseTransformer);
-export const dotCase = changeKeysFactory(dotCaseTransformer);
-export const trainCase = changeKeysFactory(trainCaseTransformer);
+const dotCase = changeKeysFactory(dotCaseTransformer);
+const trainCase = changeKeysFactory(trainCaseTransformer);
 export const kebabCase = changeKeysFactory(kebabCaseTransformer);
 export const pascalCase = changeKeysFactory<IPascalCaseOptions>(pascalCaseTransformer);
-export const pathCase = changeKeysFactory(pathCaseTransformer);
-export const sentenceCase = changeKeysFactory(sentenceCaseTransformer);
+const pathCase = changeKeysFactory(pathCaseTransformer);
+const sentenceCase = changeKeysFactory(sentenceCaseTransformer);
 export const snakeCase = changeKeysFactory(snakeCaseTransformer);

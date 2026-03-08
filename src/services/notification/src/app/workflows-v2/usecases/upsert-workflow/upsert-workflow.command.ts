@@ -25,12 +25,12 @@ import {
 } from 'class-validator';
 import { IsValidJsonSchema } from '../../../shared/validators/json-schema.validator';
 
-export class ChannelPreferenceData {
+class ChannelPreferenceData {
   @IsBoolean()
   enabled: boolean;
 }
 
-export class WorkflowPreferenceData {
+class WorkflowPreferenceData {
   @IsBoolean()
   enabled: boolean;
 
@@ -38,7 +38,7 @@ export class WorkflowPreferenceData {
   readOnly: boolean;
 }
 
-export class WorkflowPreferencesUpsertData {
+class WorkflowPreferencesUpsertData {
   @ValidateNested()
   all: WorkflowPreferenceData;
 
@@ -47,7 +47,7 @@ export class WorkflowPreferencesUpsertData {
   channels: Record<ChannelTypeEnum, ChannelPreferenceData>;
 }
 
-export class PreferencesRequestUpsertDataCommand {
+class PreferencesRequestUpsertDataCommand {
   @IsOptional()
   @ValidateNested()
   @Type(() => WorkflowPreferencesUpsertData)

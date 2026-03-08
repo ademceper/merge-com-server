@@ -18,7 +18,7 @@ export function addJitter(time, variance = 0.1): number {
  * @param limit Default 300 seconds. Limit in seconds that this function is allowed to produce.
  */
 
-export function getDelay(numOfRetries, limit = 300): number {
+function getDelay(numOfRetries, limit = 300): number {
   return Math.max(limit, Math.min(1, Math.E ** (2.5 * numOfRetries)));
 }
 
@@ -31,7 +31,7 @@ export function getDelay(numOfRetries, limit = 300): number {
  * @param variance a percentage that sets the size of the range of possibilities based off of the time attribute. Default is 0.1.
  */
 
-export function getDelayWithJitter(numOfRetries, limit = 300, variance = 0.1): number {
+function getDelayWithJitter(numOfRetries, limit = 300, variance = 0.1): number {
   const baseDelay = getDelay(numOfRetries, limit);
 
   return addJitter(baseDelay, variance);

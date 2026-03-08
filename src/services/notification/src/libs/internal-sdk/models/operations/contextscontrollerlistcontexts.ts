@@ -71,12 +71,12 @@ export type ContextsControllerListContextsResponse = {
 };
 
 /** @internal */
-export const OrderDirection$outboundSchema: z.ZodNativeEnum<
+const OrderDirection$outboundSchema: z.ZodNativeEnum<
   typeof OrderDirection
 > = z.nativeEnum(OrderDirection);
 
 /** @internal */
-export type ContextsControllerListContextsRequest$Outbound = {
+type ContextsControllerListContextsRequest$Outbound = {
   after?: string | undefined;
   before?: string | undefined;
   limit?: number | undefined;
@@ -111,7 +111,7 @@ export const ContextsControllerListContextsRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function contextsControllerListContextsRequestToJSON(
+function contextsControllerListContextsRequestToJSON(
   contextsControllerListContextsRequest: ContextsControllerListContextsRequest,
 ): string {
   return JSON.stringify(
@@ -136,7 +136,7 @@ export const ContextsControllerListContextsResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function contextsControllerListContextsResponseFromJSON(
+function contextsControllerListContextsResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<ContextsControllerListContextsResponse, SDKValidationError> {
   return safeParse(

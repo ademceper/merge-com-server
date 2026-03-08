@@ -38,7 +38,7 @@ export const ChatControlsMetadataResponseDto$inboundSchema: z.ZodType<
   values: ChatControlDto$inboundSchema,
 });
 
-export function chatControlsMetadataResponseDtoFromJSON(
+function chatControlsMetadataResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<ChatControlsMetadataResponseDto, SDKValidationError> {
   return safeParse(

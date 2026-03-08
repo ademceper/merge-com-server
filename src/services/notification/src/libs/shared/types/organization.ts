@@ -8,7 +8,7 @@ export enum ApiServiceLevelEnum {
   UNLIMITED = 'unlimited',
 }
 
-export enum StripeBillingIntervalEnum {
+enum StripeBillingIntervalEnum {
   MONTH = 'month',
   YEAR = 'year',
 }
@@ -23,7 +23,7 @@ export enum ProductUseCasesEnum {
 
 export type ProductUseCases = Partial<Record<ProductUseCasesEnum, boolean>>;
 
-export type OrganizationPublicMetadata = {
+type OrganizationPublicMetadata = {
   externalOrgId?: string;
   domain?: string;
   productUseCases?: ProductUseCases;

@@ -9,7 +9,7 @@ import { CreateLayoutDto } from './create-layout.dto';
 import { LayoutControlValuesDto } from './layout-controls.dto';
 import { UpdateLayoutDto } from './update-layout.dto';
 
-export type LayoutCreateAndUpdateKeys = keyof CreateLayoutDto | keyof UpdateLayoutDto;
+type LayoutCreateAndUpdateKeys = keyof CreateLayoutDto | keyof UpdateLayoutDto;
 
 class LayoutControlsDto extends ControlsMetadataDto {
   @ApiProperty({ description: 'Email layout controls' })

@@ -11,7 +11,7 @@ import type { CreateTopicSubscribersEntity, TopicSubscribersDBModel } from './to
 import { TopicSubscribers } from './topic-subscribers.schema';
 import type { EnvironmentId, OrganizationId, TopicId, TopicKey } from './types';
 
-export interface BulkAddTopicSubscribersResult {
+interface BulkAddTopicSubscribersResult {
   created: TopicSubscribersEntity[];
   updated: TopicSubscribersEntity[];
   failed: Array<{

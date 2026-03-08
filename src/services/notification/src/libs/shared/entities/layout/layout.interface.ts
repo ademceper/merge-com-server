@@ -1,7 +1,7 @@
 import { ChannelTypeEnum } from '../../types';
 import type { EnvironmentId, ITemplateVariable, LayoutDescription, LayoutId, LayoutIdentifier, LayoutName, OrganizationId, UserId } from '../../types';
 
-export interface ILayoutEntity {
+interface ILayoutEntity {
   _id?: LayoutId;
   _organizationId: OrganizationId;
   _environmentId: EnvironmentId;

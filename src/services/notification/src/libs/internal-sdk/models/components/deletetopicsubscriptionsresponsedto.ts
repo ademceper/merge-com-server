@@ -42,7 +42,7 @@ export const DeleteTopicSubscriptionsResponseDto$inboundSchema: z.ZodType<
   errors: z.array(SubscriptionsDeleteErrorDto$inboundSchema).optional(),
 });
 
-export function deleteTopicSubscriptionsResponseDtoFromJSON(
+function deleteTopicSubscriptionsResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<DeleteTopicSubscriptionsResponseDto, SDKValidationError> {
   return safeParse(

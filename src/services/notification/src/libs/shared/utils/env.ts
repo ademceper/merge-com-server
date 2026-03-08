@@ -19,7 +19,7 @@ const hasCloudflareContext = (context: any): context is CloudflareEnv => {
  * @param name Pass the name of the environment variable. The param is case-sensitive.
  * @returns string Returns the value of the environment variable if exists.
  */
-export const getEnvVariable = (name: string, context?: unknown): string => {
+const getEnvVariable = (name: string, context?: unknown): string => {
   // Node envs
   if (typeof process !== 'undefined' && process.env && typeof process.env[name] === 'string') {
     return process.env[name] as string;
@@ -53,12 +53,12 @@ export const getEnvVariable = (name: string, context?: unknown): string => {
   return '';
 };
 
-export type EEAuthProvider = 'clerk' | 'better-auth';
+type EEAuthProvider = 'clerk' | 'better-auth';
 
-export const isEEAuthEnabled = () =>
+const isEEAuthEnabled = () =>
   process.env.NOVU_ENTERPRISE === 'true' || process.env.CI_EE_TEST === 'true';
 
-export const getEEAuthProvider = (): EEAuthProvider => {
+const getEEAuthProvider = (): EEAuthProvider => {
   const provider = process.env.EE_AUTH_PROVIDER as EEAuthProvider | undefined;
 
   return provider || 'clerk';
@@ -66,4 +66,4 @@ export const getEEAuthProvider = (): EEAuthProvider => {
 
 export const isClerkEnabled = () => isEEAuthEnabled() && getEEAuthProvider() === 'clerk';
 
-export const isBetterAuthEnabled = () => isEEAuthEnabled() && getEEAuthProvider() === 'better-auth';
+const isBetterAuthEnabled = () => isEEAuthEnabled() && getEEAuthProvider() === 'better-auth';

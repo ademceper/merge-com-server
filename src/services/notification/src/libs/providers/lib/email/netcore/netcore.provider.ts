@@ -7,7 +7,7 @@ import { BaseProvider, CasingEnum } from '../../../base.provider';
 import type { WithPassthrough } from '../../../utils/types';
 import type { IEmailBody, IEmailResponse } from './netcore-types';
 
-export enum NetCoreStatusEnum {
+enum NetCoreStatusEnum {
   OPENED = 'open',
   SENT = 'send',
   BOUNCED = 'bounce',

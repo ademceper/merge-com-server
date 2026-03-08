@@ -1,6 +1,6 @@
 import { v1 as uuidv1 } from 'uuid';
 
-export function createGuid(): string {
+function createGuid(): string {
   return uuidv1();
 }
 
@@ -20,7 +20,7 @@ export function capitalize(text: string) {
  * toSentenceCase('camelCaseText') // 'Camel case text'
  * ```
  */
-export function toSentenceCase(text: string) {
+function toSentenceCase(text: string) {
   if (!text) return '';
 
   // Insert spaces before uppercase letters and convert the entire string to lowercase
@@ -30,7 +30,7 @@ export function toSentenceCase(text: string) {
   return formattedText.charAt(0).toUpperCase() + formattedText.slice(1);
 }
 
-export function getFileExtensionFromPath(filePath: string) {
+function getFileExtensionFromPath(filePath: string) {
   const regexp = /\.([0-9a-z]+)(?:[?#]|$)/i;
   const extension = filePath.match(regexp);
 

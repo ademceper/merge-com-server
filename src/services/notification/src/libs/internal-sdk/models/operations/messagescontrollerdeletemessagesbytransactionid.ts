@@ -47,7 +47,7 @@ export type MessagesControllerDeleteMessagesByTransactionIdResponse = {
 };
 
 /** @internal */
-export const MessagesControllerDeleteMessagesByTransactionIdQueryParamChannel$outboundSchema:
+const MessagesControllerDeleteMessagesByTransactionIdQueryParamChannel$outboundSchema:
   z.ZodNativeEnum<
     typeof MessagesControllerDeleteMessagesByTransactionIdQueryParamChannel
   > = z.nativeEnum(
@@ -55,7 +55,7 @@ export const MessagesControllerDeleteMessagesByTransactionIdQueryParamChannel$ou
   );
 
 /** @internal */
-export type MessagesControllerDeleteMessagesByTransactionIdRequest$Outbound = {
+type MessagesControllerDeleteMessagesByTransactionIdRequest$Outbound = {
   channel?: string | undefined;
   transactionId: string;
   "idempotency-key"?: string | undefined;
@@ -79,7 +79,7 @@ export const MessagesControllerDeleteMessagesByTransactionIdRequest$outboundSche
     });
   });
 
-export function messagesControllerDeleteMessagesByTransactionIdRequestToJSON(
+function messagesControllerDeleteMessagesByTransactionIdRequestToJSON(
   messagesControllerDeleteMessagesByTransactionIdRequest:
     MessagesControllerDeleteMessagesByTransactionIdRequest,
 ): string {
@@ -104,7 +104,7 @@ export const MessagesControllerDeleteMessagesByTransactionIdResponse$inboundSche
     });
   });
 
-export function messagesControllerDeleteMessagesByTransactionIdResponseFromJSON(
+function messagesControllerDeleteMessagesByTransactionIdResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   MessagesControllerDeleteMessagesByTransactionIdResponse,

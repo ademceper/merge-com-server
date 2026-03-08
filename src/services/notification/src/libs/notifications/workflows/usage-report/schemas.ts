@@ -41,5 +41,5 @@ export const payloadSchema = z.object({
   _nvIsDelayEnabled: z.boolean().optional(),
 });
 
-export type PayloadSchemaType = z.infer<typeof payloadSchema>;
-export type ControlValueSchema = z.infer<typeof controlValueSchema>;
+type PayloadSchemaType = z.infer<typeof payloadSchema>;
+type ControlValueSchema = z.infer<typeof controlValueSchema>;

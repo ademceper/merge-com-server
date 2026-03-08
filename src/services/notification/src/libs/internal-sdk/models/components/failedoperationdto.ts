@@ -28,7 +28,7 @@ export const FailedOperationDto$inboundSchema: z.ZodType<
   subscriberId: z.string().optional(),
 });
 
-export function failedOperationDtoFromJSON(
+function failedOperationDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<FailedOperationDto, SDKValidationError> {
   return safeParse(

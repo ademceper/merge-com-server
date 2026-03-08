@@ -55,7 +55,7 @@ const schemaDefinition = {
 
 export const ORDER_BY: (keyof typeof schemaDefinition)[] = ['organization_id', 'step_run_id'];
 
-export const TTL: keyof typeof schemaDefinition = 'expires_at';
+const TTL: keyof typeof schemaDefinition = 'expires_at';
 
 const clickhouseSchemaOptions = {
   table_name: TABLE_NAME,

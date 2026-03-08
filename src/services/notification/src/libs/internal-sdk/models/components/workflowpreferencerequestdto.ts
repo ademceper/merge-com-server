@@ -37,7 +37,7 @@ export const WorkflowPreferenceRequestDto$outboundSchema: z.ZodType<
   workflowId: z.string(),
 });
 
-export function workflowPreferenceRequestDtoToJSON(
+function workflowPreferenceRequestDtoToJSON(
   workflowPreferenceRequestDto: WorkflowPreferenceRequestDto,
 ): string {
   return JSON.stringify(

@@ -20,7 +20,7 @@ import {
 import { NotificationStep } from '../value-objects/notification.step';
 import { FeatureFlagsService } from './feature-flags';
 
-export const DAY_IN_MS = 24 * 60 * 60 * 1000;
+const DAY_IN_MS = 24 * 60 * 60 * 1000;
 const DEMO_WORKFLOWS_IDENTIFIER = [
   'demo-apartment-review',
   'a-new-member-joining-the-team',

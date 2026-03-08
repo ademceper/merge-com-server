@@ -24,7 +24,7 @@ export type ChannelConnectionsControllerCreateChannelConnectionResponse = {
 };
 
 /** @internal */
-export type ChannelConnectionsControllerCreateChannelConnectionRequest$Outbound =
+type ChannelConnectionsControllerCreateChannelConnectionRequest$Outbound =
   {
     "idempotency-key"?: string | undefined;
     CreateChannelConnectionRequestDto:
@@ -48,7 +48,7 @@ export const ChannelConnectionsControllerCreateChannelConnectionRequest$outbound
     });
   });
 
-export function channelConnectionsControllerCreateChannelConnectionRequestToJSON(
+function channelConnectionsControllerCreateChannelConnectionRequestToJSON(
   channelConnectionsControllerCreateChannelConnectionRequest:
     ChannelConnectionsControllerCreateChannelConnectionRequest,
 ): string {
@@ -74,7 +74,7 @@ export const ChannelConnectionsControllerCreateChannelConnectionResponse$inbound
     });
   });
 
-export function channelConnectionsControllerCreateChannelConnectionResponseFromJSON(
+function channelConnectionsControllerCreateChannelConnectionResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   ChannelConnectionsControllerCreateChannelConnectionResponse,

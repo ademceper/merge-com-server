@@ -35,9 +35,9 @@ export type RedirectDto = {
 };
 
 /** @internal */
-export const Target$inboundSchema: z.ZodNativeEnum<typeof Target> = z.nativeEnum(Target);
+const Target$inboundSchema: z.ZodNativeEnum<typeof Target> = z.nativeEnum(Target);
 /** @internal */
-export const Target$outboundSchema: z.ZodNativeEnum<typeof Target> = Target$inboundSchema;
+const Target$outboundSchema: z.ZodNativeEnum<typeof Target> = Target$inboundSchema;
 
 /** @internal */
 export const RedirectDto$inboundSchema: z.ZodType<RedirectDto, z.ZodTypeDef, unknown> = z.object({
@@ -56,10 +56,10 @@ export const RedirectDto$outboundSchema: z.ZodType<RedirectDto$Outbound, z.ZodTy
   target: Target$outboundSchema.default('_self'),
 });
 
-export function redirectDtoToJSON(redirectDto: RedirectDto): string {
+function redirectDtoToJSON(redirectDto: RedirectDto): string {
   return JSON.stringify(RedirectDto$outboundSchema.parse(redirectDto));
 }
-export function redirectDtoFromJSON(jsonString: string): SafeParseResult<RedirectDto, SDKValidationError> {
+function redirectDtoFromJSON(jsonString: string): SafeParseResult<RedirectDto, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) => RedirectDto$inboundSchema.parse(JSON.parse(x)),

@@ -1,15 +1,10 @@
 import { TemplateVariableTypeEnum } from './channel';
 
 export enum EmailBlockTypeEnum {
-  BUTTON = 'button',
-  TEXT = 'text',
-}
+  }
 
 export enum TextAlignEnum {
-  CENTER = 'center',
-  LEFT = 'left',
-  RIGHT = 'right',
-}
+  }
 
 export interface IEmailBlock {
   type: EmailBlockTypeEnum;

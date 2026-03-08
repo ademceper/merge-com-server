@@ -1,6 +1,6 @@
 import { CacheKeyPrefixEnum } from '../key-builders';
 
-export function validateCredentials(keyPrefix: CacheKeyPrefixEnum, credentials: string) {
+function validateCredentials(keyPrefix: CacheKeyPrefixEnum, credentials: string) {
   const entitiesEnvironmentLevel = [CacheKeyPrefixEnum.USER, CacheKeyPrefixEnum.ENVIRONMENT_BY_API_KEY];
   const splitCredentials = credentials?.split(':').filter((possibleKey) => possibleKey?.length > 0);
 
@@ -15,7 +15,7 @@ export function validateCredentials(keyPrefix: CacheKeyPrefixEnum, credentials: 
  * @param key
  * @param keyConfig
  */
-export function getIdentifier(
+function getIdentifier(
   key: string,
   keyConfig: Record<string, unknown>
 ): { key: string | undefined; value: string } {
@@ -38,7 +38,7 @@ export function getIdentifier(
   return entitiesSubscriberPreferred.some((entity) => key.startsWith(entity)) ? subscriberPreferred : idPreferred;
 }
 
-export function getEnvironment(keyConfig: Record<string, unknown>): { key: string; value: string } | undefined {
+function getEnvironment(keyConfig: Record<string, unknown>): { key: string; value: string } | undefined {
   return keyConfig._environmentId
     ? { key: '_environmentId', value: keyConfig._environmentId as string }
     : keyConfig.environmentId
@@ -46,7 +46,7 @@ export function getEnvironment(keyConfig: Record<string, unknown>): { key: strin
       : undefined;
 }
 
-export function buildCredentialsKeyPart(key: string, keyConfig: Record<string, unknown>): string {
+function buildCredentialsKeyPart(key: string, keyConfig: Record<string, unknown>): string {
   let credentialsResult = '';
   const identifier = getIdentifier(key, keyConfig);
 
@@ -63,14 +63,13 @@ export function buildCredentialsKeyPart(key: string, keyConfig: Record<string, u
   return credentialsResult;
 }
 
-export function getCredentialWithContext(credentialKey: string, credentialValue: string): string {
+function getCredentialWithContext(credentialKey: string, credentialValue: string): string {
   const context = credentialKey.replace('_', '')[0] ?? '';
 
   return `${context}=${credentialValue}`;
 }
 
 export enum CacheInterceptorTypeEnum {
-  CACHED = 'cached',
   INVALIDATE = 'invalidate',
 }
 
@@ -88,7 +87,7 @@ export function buildKey(
   return validateCredentials(prefix, credentials) ? cacheKey + credentials : '';
 }
 
-export function getQueryParams(keysConfig: Record<string, unknown>): string {
+function getQueryParams(keysConfig: Record<string, unknown>): string {
   let result = '';
 
   const keysToExclude = [...getCredentialsKeys()];
@@ -114,7 +113,7 @@ export function getQueryParams(keysConfig: Record<string, unknown>): string {
   return result;
 }
 
-export function getCredentialsKeys() {
+function getCredentialsKeys() {
   return ['id', 'subscriberId', 'environmentId', 'organizationId'].flatMap((cred) => [cred, `_${cred}`]);
 }
 
@@ -123,7 +122,7 @@ export function getCredentialsKeys() {
  * that occurs only in method 'findById'
  * @param args
  */
-export function buildCachedQuery(args: unknown[]): Record<string, unknown> {
+function buildCachedQuery(args: unknown[]): Record<string, unknown> {
   const fromStringArray = { id: args[0], environmentId: args[1] };
   const fromObjectArray = args.reduce<Record<string, unknown>>((obj, item) => Object.assign(obj, item), {});
 
@@ -137,7 +136,7 @@ export function buildCachedQuery(args: unknown[]): Record<string, unknown> {
  * @param res
  * @param args
  */
-export function getInvalidateQuery(
+function getInvalidateQuery(
   methodName: string,
   res: Record<string, unknown>,
   args: Record<string, unknown>[]
@@ -145,7 +144,7 @@ export function getInvalidateQuery(
   return methodName.startsWith('Create') ? res : args[0];
 }
 
-export function buildQueryKeyPart(
+function buildQueryKeyPart(
   prefix: CacheKeyPrefixEnum,
   interceptorType: CacheInterceptorTypeEnum,
   keyConfig: Record<string, unknown>

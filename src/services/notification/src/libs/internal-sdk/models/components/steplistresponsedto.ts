@@ -34,7 +34,7 @@ export const StepListResponseDto$inboundSchema: z.ZodType<
   issues: StepIssuesDto$inboundSchema.optional(),
 });
 
-export function stepListResponseDtoFromJSON(
+function stepListResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<StepListResponseDto, SDKValidationError> {
   return safeParse(

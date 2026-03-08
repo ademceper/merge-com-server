@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import type { ExternalSubscriberId } from 'libs/shared';
 
-export class FailedAssignmentsDto {
+class FailedAssignmentsDto {
   @ApiProperty({
     description: 'List of subscriber IDs that were not found',
     type: [String],

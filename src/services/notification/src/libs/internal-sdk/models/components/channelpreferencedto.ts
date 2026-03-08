@@ -36,14 +36,14 @@ export const ChannelPreferenceDto$outboundSchema: z.ZodType<
   enabled: z.boolean().default(true),
 });
 
-export function channelPreferenceDtoToJSON(
+function channelPreferenceDtoToJSON(
   channelPreferenceDto: ChannelPreferenceDto,
 ): string {
   return JSON.stringify(
     ChannelPreferenceDto$outboundSchema.parse(channelPreferenceDto),
   );
 }
-export function channelPreferenceDtoFromJSON(
+function channelPreferenceDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<ChannelPreferenceDto, SDKValidationError> {
   return safeParse(

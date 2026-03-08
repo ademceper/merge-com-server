@@ -6,7 +6,7 @@ import { IsDefined, IsEnum, IsOptional, IsString, ValidateIf, ValidateNested } f
 import { EnvironmentWithUserCommand } from '../../commands';
 import { IsValidContextPayload } from '../../decorators';
 
-export class TriggerEventBaseCommand extends EnvironmentWithUserCommand {
+class TriggerEventBaseCommand extends EnvironmentWithUserCommand {
   @IsDefined()
   @IsString()
   identifier: string;

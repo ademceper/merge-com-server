@@ -42,7 +42,7 @@ export const CreateSubscriptionsResponseDto$inboundSchema: z.ZodType<
   errors: z.array(SubscriptionErrorDto$inboundSchema).optional(),
 });
 
-export function createSubscriptionsResponseDtoFromJSON(
+function createSubscriptionsResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<CreateSubscriptionsResponseDto, SDKValidationError> {
   return safeParse(

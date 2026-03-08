@@ -46,7 +46,7 @@ export const EmailBlock$inboundSchema: z.ZodType<
   styles: EmailBlockStyles$inboundSchema.optional(),
 });
 
-export function emailBlockFromJSON(
+function emailBlockFromJSON(
   jsonString: string,
 ): SafeParseResult<EmailBlock, SDKValidationError> {
   return safeParse(

@@ -1,15 +1,15 @@
 import type { WorkflowPreference, WorkflowPreferences } from '../../types';
 import { ChannelPreference } from '../../types';
 
-export const PREFERENCE_DEFAULT_VALUE: WorkflowPreference['enabled'] = true;
-export const PREFERENCE_DEFAULT_READ_ONLY: WorkflowPreference['readOnly'] = false;
+const PREFERENCE_DEFAULT_VALUE: WorkflowPreference['enabled'] = true;
+const PREFERENCE_DEFAULT_READ_ONLY: WorkflowPreference['readOnly'] = false;
 
-export const WORKFLOW_PREFERENCE_DEFAULT: WorkflowPreference = {
+const WORKFLOW_PREFERENCE_DEFAULT: WorkflowPreference = {
   enabled: PREFERENCE_DEFAULT_VALUE,
   readOnly: PREFERENCE_DEFAULT_READ_ONLY,
 };
 
-export const CHANNEL_PREFERENCE_DEFAULT: ChannelPreference = {
+const CHANNEL_PREFERENCE_DEFAULT: ChannelPreference = {
   enabled: PREFERENCE_DEFAULT_VALUE,
 };
 

@@ -67,7 +67,7 @@ export const PatchSubscriberRequestDto$outboundSchema: z.ZodType<
   data: z.nullable(z.record(z.any())).optional(),
 });
 
-export function patchSubscriberRequestDtoToJSON(
+function patchSubscriberRequestDtoToJSON(
   patchSubscriberRequestDto: PatchSubscriberRequestDto,
 ): string {
   return JSON.stringify(

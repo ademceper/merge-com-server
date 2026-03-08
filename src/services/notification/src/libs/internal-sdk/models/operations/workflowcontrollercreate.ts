@@ -26,7 +26,7 @@ export type WorkflowControllerCreateResponse = {
 };
 
 /** @internal */
-export type WorkflowControllerCreateRequest$Outbound = {
+type WorkflowControllerCreateRequest$Outbound = {
   "idempotency-key"?: string | undefined;
   CreateWorkflowDto: components.CreateWorkflowDto$Outbound;
 };
@@ -46,7 +46,7 @@ export const WorkflowControllerCreateRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function workflowControllerCreateRequestToJSON(
+function workflowControllerCreateRequestToJSON(
   workflowControllerCreateRequest: WorkflowControllerCreateRequest,
 ): string {
   return JSON.stringify(
@@ -71,7 +71,7 @@ export const WorkflowControllerCreateResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function workflowControllerCreateResponseFromJSON(
+function workflowControllerCreateResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<WorkflowControllerCreateResponse, SDKValidationError> {
   return safeParse(

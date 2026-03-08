@@ -13,7 +13,7 @@ import {
 /**
  * Control values for the Throttle step.
  */
-export type ThrottleStepUpsertDtoControlValues = ThrottleControlDto | {
+type ThrottleStepUpsertDtoControlValues = ThrottleControlDto | {
   [k: string]: any;
 };
 
@@ -41,18 +41,18 @@ export type ThrottleStepUpsertDto = {
 };
 
 /** @internal */
-export type ThrottleStepUpsertDtoControlValues$Outbound =
+type ThrottleStepUpsertDtoControlValues$Outbound =
   | ThrottleControlDto$Outbound
   | { [k: string]: any };
 
 /** @internal */
-export const ThrottleStepUpsertDtoControlValues$outboundSchema: z.ZodType<
+const ThrottleStepUpsertDtoControlValues$outboundSchema: z.ZodType<
   ThrottleStepUpsertDtoControlValues$Outbound,
   z.ZodTypeDef,
   ThrottleStepUpsertDtoControlValues
 > = z.union([ThrottleControlDto$outboundSchema, z.record(z.any())]);
 
-export function throttleStepUpsertDtoControlValuesToJSON(
+function throttleStepUpsertDtoControlValuesToJSON(
   throttleStepUpsertDtoControlValues: ThrottleStepUpsertDtoControlValues,
 ): string {
   return JSON.stringify(
@@ -92,7 +92,7 @@ export const ThrottleStepUpsertDto$outboundSchema: z.ZodType<
   });
 });
 
-export function throttleStepUpsertDtoToJSON(
+function throttleStepUpsertDtoToJSON(
   throttleStepUpsertDto: ThrottleStepUpsertDto,
 ): string {
   return JSON.stringify(

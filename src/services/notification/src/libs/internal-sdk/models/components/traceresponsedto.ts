@@ -92,10 +92,10 @@ export type TraceResponseDto = {
 };
 
 /** @internal */
-export const Message$inboundSchema: z.ZodType<Message, z.ZodTypeDef, unknown> =
+const Message$inboundSchema: z.ZodType<Message, z.ZodTypeDef, unknown> =
   z.object({});
 
-export function messageFromJSON(
+function messageFromJSON(
   jsonString: string,
 ): SafeParseResult<Message, SDKValidationError> {
   return safeParse(
@@ -106,10 +106,10 @@ export function messageFromJSON(
 }
 
 /** @internal */
-export const RawData$inboundSchema: z.ZodType<RawData, z.ZodTypeDef, unknown> =
+const RawData$inboundSchema: z.ZodType<RawData, z.ZodTypeDef, unknown> =
   z.object({});
 
-export function rawDataFromJSON(
+function rawDataFromJSON(
   jsonString: string,
 ): SafeParseResult<RawData, SDKValidationError> {
   return safeParse(
@@ -120,10 +120,10 @@ export function rawDataFromJSON(
 }
 
 /** @internal */
-export const UserId$inboundSchema: z.ZodType<UserId, z.ZodTypeDef, unknown> = z
+const UserId$inboundSchema: z.ZodType<UserId, z.ZodTypeDef, unknown> = z
   .object({});
 
-export function userIdFromJSON(
+function userIdFromJSON(
   jsonString: string,
 ): SafeParseResult<UserId, SDKValidationError> {
   return safeParse(
@@ -134,13 +134,13 @@ export function userIdFromJSON(
 }
 
 /** @internal */
-export const ExternalSubscriberId$inboundSchema: z.ZodType<
+const ExternalSubscriberId$inboundSchema: z.ZodType<
   ExternalSubscriberId,
   z.ZodTypeDef,
   unknown
 > = z.object({});
 
-export function externalSubscriberIdFromJSON(
+function externalSubscriberIdFromJSON(
   jsonString: string,
 ): SafeParseResult<ExternalSubscriberId, SDKValidationError> {
   return safeParse(
@@ -151,13 +151,13 @@ export function externalSubscriberIdFromJSON(
 }
 
 /** @internal */
-export const SubscriberId$inboundSchema: z.ZodType<
+const SubscriberId$inboundSchema: z.ZodType<
   SubscriberId,
   z.ZodTypeDef,
   unknown
 > = z.object({});
 
-export function subscriberIdFromJSON(
+function subscriberIdFromJSON(
   jsonString: string,
 ): SafeParseResult<SubscriberId, SDKValidationError> {
   return safeParse(
@@ -191,7 +191,7 @@ export const TraceResponseDto$inboundSchema: z.ZodType<
   subscriberId: z.nullable(z.lazy(() => SubscriberId$inboundSchema)).optional(),
 });
 
-export function traceResponseDtoFromJSON(
+function traceResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<TraceResponseDto, SDKValidationError> {
   return safeParse(

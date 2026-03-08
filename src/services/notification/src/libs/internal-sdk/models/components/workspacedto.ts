@@ -37,10 +37,10 @@ export const WorkspaceDto$outboundSchema: z.ZodType<
   name: z.string().optional(),
 });
 
-export function workspaceDtoToJSON(workspaceDto: WorkspaceDto): string {
+function workspaceDtoToJSON(workspaceDto: WorkspaceDto): string {
   return JSON.stringify(WorkspaceDto$outboundSchema.parse(workspaceDto));
 }
-export function workspaceDtoFromJSON(
+function workspaceDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<WorkspaceDto, SDKValidationError> {
   return safeParse(

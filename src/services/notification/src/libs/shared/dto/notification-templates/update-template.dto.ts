@@ -1,7 +1,7 @@
 import type { CustomDataType } from '../../types';
 import { NotificationStepDto } from '../workflows';
 
-export interface IUpdateNotificationTemplateDto {
+interface IUpdateNotificationTemplateDto {
   name?: string;
 
   tags?: string[];

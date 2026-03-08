@@ -64,7 +64,7 @@ export type DigestTimedConfigDto = {
 };
 
 /** @internal */
-export const WeekDays$inboundSchema: z.ZodNativeEnum<typeof WeekDays> = z
+const WeekDays$inboundSchema: z.ZodNativeEnum<typeof WeekDays> = z
   .nativeEnum(WeekDays);
 
 /** @internal */
@@ -83,7 +83,7 @@ export const DigestTimedConfigDto$inboundSchema: z.ZodType<
   untilDate: z.string().optional(),
 });
 
-export function digestTimedConfigDtoFromJSON(
+function digestTimedConfigDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<DigestTimedConfigDto, SDKValidationError> {
   return safeParse(

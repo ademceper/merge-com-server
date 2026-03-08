@@ -40,7 +40,7 @@ const sanitizeOptions: IOptions = {
  * @deprecated Use sanitizeHTML from sanitizer.service.ts instead
  */
 // cspell:disable-next-line
-export function sanitizeHTMLV0(html: string) {
+function sanitizeHTMLV0(html: string) {
   if (!html) return html;
 
   return sanitizeTypes(html, sanitizeOptions);
@@ -49,7 +49,7 @@ export function sanitizeHTMLV0(html: string) {
 /**
  * @deprecated Use sanitizeHtmlInObject from sanitizer.service.ts instead
  */
-export const sanitizeHtmlInObjectV0 = <T extends Record<string, unknown>>(object: T): T => {
+const sanitizeHtmlInObjectV0 = <T extends Record<string, unknown>>(object: T): T => {
   return Object.keys(object).reduce((acc, key: keyof T) => {
     const value = object[key];
 

@@ -151,7 +151,7 @@ export const ActivityNotificationResponseDto$inboundSchema: z.ZodType<
   });
 });
 
-export function activityNotificationResponseDtoFromJSON(
+function activityNotificationResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<ActivityNotificationResponseDto, SDKValidationError> {
   return safeParse(

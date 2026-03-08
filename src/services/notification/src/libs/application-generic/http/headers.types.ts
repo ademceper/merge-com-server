@@ -3,19 +3,10 @@ import { testHttpHeaderEnumValidity } from './utils.types';
 import type { WithRequired } from './utils.types';
 
 export enum HttpRequestHeaderKeysEnum {
-  AUTHORIZATION = 'Authorization',
   USER_AGENT = 'User-Agent',
   CONTENT_TYPE = 'Content-Type',
-  SENTRY_TRACE = 'Sentry-Trace',
-  BAGGAGE = 'Baggage',
-  NOVU_ENVIRONMENT_ID = 'Novu-Environment-Id',
-  NOVU_API_VERSION = 'Novu-API-Version',
-  NOVU_CLIENT_VERSION = 'Novu-Client-Version',
-  NOVU_USER_AGENT = 'Novu-User-Agent',
   BYPASS_TUNNEL_REMINDER = 'Bypass-Tunnel-Reminder',
-  IDEMPOTENCY_KEY = 'Idempotency-Key',
-  NOVU_APPLICATION_IDENTIFIER = 'Novu-Application-Identifier',
-}
+  }
 testHttpHeaderEnumValidity(HttpRequestHeaderKeysEnum);
 
 export enum HttpResponseHeaderKeysEnum {

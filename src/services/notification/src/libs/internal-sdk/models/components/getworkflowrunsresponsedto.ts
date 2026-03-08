@@ -37,10 +37,10 @@ export type GetWorkflowRunsResponseDto = {
 };
 
 /** @internal */
-export const Next$inboundSchema: z.ZodType<Next, z.ZodTypeDef, unknown> = z
+const Next$inboundSchema: z.ZodType<Next, z.ZodTypeDef, unknown> = z
   .object({});
 
-export function nextFromJSON(
+function nextFromJSON(
   jsonString: string,
 ): SafeParseResult<Next, SDKValidationError> {
   return safeParse(
@@ -51,13 +51,13 @@ export function nextFromJSON(
 }
 
 /** @internal */
-export const Previous$inboundSchema: z.ZodType<
+const Previous$inboundSchema: z.ZodType<
   Previous,
   z.ZodTypeDef,
   unknown
 > = z.object({});
 
-export function previousFromJSON(
+function previousFromJSON(
   jsonString: string,
 ): SafeParseResult<Previous, SDKValidationError> {
   return safeParse(
@@ -78,7 +78,7 @@ export const GetWorkflowRunsResponseDto$inboundSchema: z.ZodType<
   previous: z.nullable(z.lazy(() => Previous$inboundSchema)).optional(),
 });
 
-export function getWorkflowRunsResponseDtoFromJSON(
+function getWorkflowRunsResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<GetWorkflowRunsResponseDto, SDKValidationError> {
   return safeParse(

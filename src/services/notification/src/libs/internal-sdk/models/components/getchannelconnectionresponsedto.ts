@@ -151,10 +151,10 @@ export type GetChannelConnectionResponseDto = {
 };
 
 /** @internal */
-export const Channel$inboundSchema: z.ZodNativeEnum<typeof Channel> = z.nativeEnum(Channel);
+const Channel$inboundSchema: z.ZodNativeEnum<typeof Channel> = z.nativeEnum(Channel);
 
 /** @internal */
-export const ProviderId$inboundSchema: z.ZodNativeEnum<typeof ProviderId> = z.nativeEnum(ProviderId);
+const ProviderId$inboundSchema: z.ZodNativeEnum<typeof ProviderId> = z.nativeEnum(ProviderId);
 
 /** @internal */
 export const GetChannelConnectionResponseDto$inboundSchema: z.ZodType<
@@ -174,7 +174,7 @@ export const GetChannelConnectionResponseDto$inboundSchema: z.ZodType<
   updatedAt: z.string(),
 });
 
-export function getChannelConnectionResponseDtoFromJSON(
+function getChannelConnectionResponseDtoFromJSON(
   jsonString: string
 ): SafeParseResult<GetChannelConnectionResponseDto, SDKValidationError> {
   return safeParse(

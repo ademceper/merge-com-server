@@ -20,7 +20,7 @@ export type CreateSlackChannelEndpointDtoContext2 = {
   data?: { [k: string]: any } | undefined;
 };
 
-export type CreateSlackChannelEndpointDtoContext =
+type CreateSlackChannelEndpointDtoContext =
   | CreateSlackChannelEndpointDtoContext2
   | string;
 
@@ -61,7 +61,7 @@ export type CreateSlackChannelEndpointDtoContext2$Outbound = {
 };
 
 /** @internal */
-export const CreateSlackChannelEndpointDtoContext2$outboundSchema: z.ZodType<
+const CreateSlackChannelEndpointDtoContext2$outboundSchema: z.ZodType<
   CreateSlackChannelEndpointDtoContext2$Outbound,
   z.ZodTypeDef,
   CreateSlackChannelEndpointDtoContext2
@@ -70,7 +70,7 @@ export const CreateSlackChannelEndpointDtoContext2$outboundSchema: z.ZodType<
   data: z.record(z.any()).optional(),
 });
 
-export function createSlackChannelEndpointDtoContext2ToJSON(
+function createSlackChannelEndpointDtoContext2ToJSON(
   createSlackChannelEndpointDtoContext2: CreateSlackChannelEndpointDtoContext2,
 ): string {
   return JSON.stringify(
@@ -81,12 +81,12 @@ export function createSlackChannelEndpointDtoContext2ToJSON(
 }
 
 /** @internal */
-export type CreateSlackChannelEndpointDtoContext$Outbound =
+type CreateSlackChannelEndpointDtoContext$Outbound =
   | CreateSlackChannelEndpointDtoContext2$Outbound
   | string;
 
 /** @internal */
-export const CreateSlackChannelEndpointDtoContext$outboundSchema: z.ZodType<
+const CreateSlackChannelEndpointDtoContext$outboundSchema: z.ZodType<
   CreateSlackChannelEndpointDtoContext$Outbound,
   z.ZodTypeDef,
   CreateSlackChannelEndpointDtoContext
@@ -95,7 +95,7 @@ export const CreateSlackChannelEndpointDtoContext$outboundSchema: z.ZodType<
   z.string(),
 ]);
 
-export function createSlackChannelEndpointDtoContextToJSON(
+function createSlackChannelEndpointDtoContextToJSON(
   createSlackChannelEndpointDtoContext: CreateSlackChannelEndpointDtoContext,
 ): string {
   return JSON.stringify(
@@ -138,7 +138,7 @@ export const CreateSlackChannelEndpointDto$outboundSchema: z.ZodType<
   endpoint: SlackChannelEndpointDto$outboundSchema,
 });
 
-export function createSlackChannelEndpointDtoToJSON(
+function createSlackChannelEndpointDtoToJSON(
   createSlackChannelEndpointDto: CreateSlackChannelEndpointDto,
 ): string {
   return JSON.stringify(

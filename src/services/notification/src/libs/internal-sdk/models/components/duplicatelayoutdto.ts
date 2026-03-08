@@ -31,7 +31,7 @@ export const DuplicateLayoutDto$outboundSchema: z.ZodType<
   isTranslationEnabled: z.boolean().default(false),
 });
 
-export function duplicateLayoutDtoToJSON(
+function duplicateLayoutDtoToJSON(
   duplicateLayoutDto: DuplicateLayoutDto,
 ): string {
   return JSON.stringify(

@@ -38,12 +38,12 @@ export type TranslationControllerGetSingleTranslationRequest = {
 };
 
 /** @internal */
-export const PathParamResourceType$outboundSchema: z.ZodNativeEnum<
+const PathParamResourceType$outboundSchema: z.ZodNativeEnum<
   typeof PathParamResourceType
 > = z.nativeEnum(PathParamResourceType);
 
 /** @internal */
-export type TranslationControllerGetSingleTranslationRequest$Outbound = {
+type TranslationControllerGetSingleTranslationRequest$Outbound = {
   resourceType: string;
   resourceId: string;
   locale: string;
@@ -67,7 +67,7 @@ export const TranslationControllerGetSingleTranslationRequest$outboundSchema:
     });
   });
 
-export function translationControllerGetSingleTranslationRequestToJSON(
+function translationControllerGetSingleTranslationRequestToJSON(
   translationControllerGetSingleTranslationRequest:
     TranslationControllerGetSingleTranslationRequest,
 ): string {

@@ -18,8 +18,8 @@ const LOG_CONTEXT = 'WorkerService';
 
 export type WorkerProcessor = string | Processor<any, unknown, string> | undefined;
 
-export type SqsCompletedHandler = (job: Job<any, unknown, string>) => Promise<void>;
-export type SqsFailedHandler = (job: Job<any, unknown, string>, error: Error) => Promise<boolean>;
+type SqsCompletedHandler = (job: Job<any, unknown, string>) => Promise<void>;
+type SqsFailedHandler = (job: Job<any, unknown, string>, error: Error) => Promise<boolean>;
 
 export type { WorkerOptions };
 

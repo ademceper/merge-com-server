@@ -15,7 +15,7 @@ export interface IUserEntity {
   hasPassword: boolean;
 }
 
-export interface IUpdateUserProfile {
+interface IUpdateUserProfile {
   firstName: string;
   lastName: string;
   profilePicture?: string;

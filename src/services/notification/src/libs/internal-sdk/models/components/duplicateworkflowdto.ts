@@ -49,7 +49,7 @@ export const DuplicateWorkflowDto$outboundSchema: z.ZodType<
   isTranslationEnabled: z.boolean().default(false),
 });
 
-export function duplicateWorkflowDtoToJSON(
+function duplicateWorkflowDtoToJSON(
   duplicateWorkflowDto: DuplicateWorkflowDto,
 ): string {
   return JSON.stringify(

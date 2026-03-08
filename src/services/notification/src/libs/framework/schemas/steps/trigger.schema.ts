@@ -1,6 +1,6 @@
 import type { JsonSchema } from '../../types/schema.types';
 
-export const triggerSchema = {
+const triggerSchema = {
   type: 'object',
   properties: {
     to: { type: 'string', pattern: '/[0-9a-f]+/' },

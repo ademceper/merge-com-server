@@ -31,7 +31,7 @@ export const MsTeamsChannelEndpointDto$outboundSchema: z.ZodType<
   channelId: z.string(),
 });
 
-export function msTeamsChannelEndpointDtoToJSON(
+function msTeamsChannelEndpointDtoToJSON(
   msTeamsChannelEndpointDto: MsTeamsChannelEndpointDto,
 ): string {
   return JSON.stringify(

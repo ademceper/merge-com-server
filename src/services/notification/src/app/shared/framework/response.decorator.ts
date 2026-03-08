@@ -29,7 +29,7 @@ export const {
   ApiUnauthorizedResponse,
 }: { ApiUnauthorizedResponse: (options?: ApiResponseOptions) => MethodDecorator } = customResponseDecorators;
 export const {
-  ApiTooManyRequestsResponse,
+  
 }: { ApiTooManyRequestsResponse: (options?: ApiResponseOptions) => MethodDecorator } = customResponseDecorators;
 export const { ApiNotFoundResponse }: { ApiNotFoundResponse: (options?: ApiResponseOptions) => MethodDecorator } =
   customResponseDecorators;
@@ -74,7 +74,7 @@ export const {
 export const {
   ApiUnsupportedMediaTypeResponse,
 }: { ApiUnsupportedMediaTypeResponse: (options?: ApiResponseOptions) => MethodDecorator } = customResponseDecorators;
-export const { ApiDefaultResponse }: { ApiDefaultResponse: (options?: ApiResponseOptions) => MethodDecorator } =
+export const {  }: { ApiDefaultResponse: (options?: ApiResponseOptions) => MethodDecorator } =
   customResponseDecorators;
 
 function buildEnvelopeProperties<DataDto extends Type<unknown>>(isResponseArray: boolean, dataDto: DataDto) {

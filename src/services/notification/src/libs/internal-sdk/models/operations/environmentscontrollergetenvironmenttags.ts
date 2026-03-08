@@ -26,7 +26,7 @@ export type EnvironmentsControllerGetEnvironmentTagsResponse = {
 };
 
 /** @internal */
-export type EnvironmentsControllerGetEnvironmentTagsRequest$Outbound = {
+type EnvironmentsControllerGetEnvironmentTagsRequest$Outbound = {
   environmentId: string;
   "idempotency-key"?: string | undefined;
 };
@@ -46,7 +46,7 @@ export const EnvironmentsControllerGetEnvironmentTagsRequest$outboundSchema:
     });
   });
 
-export function environmentsControllerGetEnvironmentTagsRequestToJSON(
+function environmentsControllerGetEnvironmentTagsRequestToJSON(
   environmentsControllerGetEnvironmentTagsRequest:
     EnvironmentsControllerGetEnvironmentTagsRequest,
 ): string {
@@ -73,7 +73,7 @@ export const EnvironmentsControllerGetEnvironmentTagsResponse$inboundSchema:
     });
   });
 
-export function environmentsControllerGetEnvironmentTagsResponseFromJSON(
+function environmentsControllerGetEnvironmentTagsResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   EnvironmentsControllerGetEnvironmentTagsResponse,

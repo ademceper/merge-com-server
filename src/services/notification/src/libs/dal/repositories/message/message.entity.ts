@@ -7,7 +7,7 @@ import { NotificationTemplateEntity } from '../notification-template';
 import type { OrganizationId } from '../organization';
 import { SubscriberEntity } from '../subscriber';
 
-export type MessageChannelData<T extends ChannelEndpointType = ChannelEndpointType> = {
+type MessageChannelData<T extends ChannelEndpointType = ChannelEndpointType> = {
   identifier: string;
   type: T;
   endpoint: ChannelEndpointByType[T];

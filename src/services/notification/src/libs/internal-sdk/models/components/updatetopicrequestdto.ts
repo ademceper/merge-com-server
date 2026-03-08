@@ -25,7 +25,7 @@ export const UpdateTopicRequestDto$outboundSchema: z.ZodType<
   name: z.string(),
 });
 
-export function updateTopicRequestDtoToJSON(
+function updateTopicRequestDtoToJSON(
   updateTopicRequestDto: UpdateTopicRequestDto,
 ): string {
   return JSON.stringify(

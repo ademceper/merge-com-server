@@ -5,7 +5,7 @@ import { LocalizationGroupEntity, LocalizationResourceEnum } from './localizatio
 import type { LocalizationGroupDBModel } from './localization-group.entity';
 import { LocalizationGroup } from './localization-group.schema';
 
-export class LocalizationGroupRepository extends BaseRepository<
+class LocalizationGroupRepository extends BaseRepository<
   LocalizationGroupDBModel,
   LocalizationGroupEntity,
   EnforceEnvOrOrgIds

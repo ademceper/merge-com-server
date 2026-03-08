@@ -59,7 +59,7 @@ import {
   WorkflowCreationSourceEnum$outboundSchema,
 } from "./workflowcreationsourceenum.js";
 
-export type Steps =
+type Steps =
   | InAppStepUpsertDto
   | EmailStepUpsertDto
   | SmsStepUpsertDto
@@ -132,7 +132,7 @@ export type CreateWorkflowDto = {
 };
 
 /** @internal */
-export type Steps$Outbound =
+type Steps$Outbound =
   | InAppStepUpsertDto$Outbound
   | EmailStepUpsertDto$Outbound
   | SmsStepUpsertDto$Outbound
@@ -144,7 +144,7 @@ export type Steps$Outbound =
   | CustomStepUpsertDto$Outbound;
 
 /** @internal */
-export const Steps$outboundSchema: z.ZodType<
+const Steps$outboundSchema: z.ZodType<
   Steps$Outbound,
   z.ZodTypeDef,
   Steps
@@ -160,7 +160,7 @@ export const Steps$outboundSchema: z.ZodType<
   CustomStepUpsertDto$outboundSchema,
 ]);
 
-export function stepsToJSON(steps: Steps): string {
+function stepsToJSON(steps: Steps): string {
   return JSON.stringify(Steps$outboundSchema.parse(steps));
 }
 
@@ -226,7 +226,7 @@ export const CreateWorkflowDto$outboundSchema: z.ZodType<
   });
 });
 
-export function createWorkflowDtoToJSON(
+function createWorkflowDtoToJSON(
   createWorkflowDto: CreateWorkflowDto,
 ): string {
   return JSON.stringify(

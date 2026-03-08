@@ -5,14 +5,14 @@
 import { bytesToBase64 } from "./base64.js";
 import { isPlainObject } from "./is-plain-object.js";
 
-export class EncodingError extends Error {
+class EncodingError extends Error {
   constructor(message: string) {
     super(message);
     this.name = "EncodingError";
   }
 }
 
-export function encodeMatrix(
+function encodeMatrix(
   key: string,
   value: unknown,
   options?: { explode?: boolean; charEncoding?: "percent" | "none" },
@@ -70,7 +70,7 @@ export function encodeMatrix(
   return out;
 }
 
-export function encodeLabel(
+function encodeLabel(
   key: string,
   value: unknown,
   options?: { explode?: boolean; charEncoding?: "percent" | "none" },
@@ -178,10 +178,10 @@ function formEncoder(sep: string): FormEncoder {
 }
 
 export const encodeForm = formEncoder(",");
-export const encodeSpaceDelimited = formEncoder(" ");
-export const encodePipeDelimited = formEncoder("|");
+const encodeSpaceDelimited = formEncoder(" ");
+const encodePipeDelimited = formEncoder("|");
 
-export function encodeBodyForm(
+function encodeBodyForm(
   key: string,
   value: unknown,
   options?: { explode?: boolean; charEncoding?: "percent" | "none" },
@@ -224,7 +224,7 @@ export function encodeBodyForm(
   return out.slice(1);
 }
 
-export function encodeDeepObject(
+function encodeDeepObject(
   key: string,
   value: unknown,
   options?: { charEncoding?: "percent" | "none" },
@@ -242,7 +242,7 @@ export function encodeDeepObject(
   return encodeDeepObjectObject(key, value, options);
 }
 
-export function encodeDeepObjectObject(
+function encodeDeepObjectObject(
   key: string,
   value: unknown,
   options?: { charEncoding?: "percent" | "none" },
@@ -420,7 +420,7 @@ function mapDefinedEntries<K, V, R>(
   return acc.length ? acc : null;
 }
 
-export function queryJoin(...args: (string | undefined)[]): string {
+function queryJoin(...args: (string | undefined)[]): string {
   return args.filter(Boolean).join("&");
 }
 
@@ -441,7 +441,7 @@ type BulkQueryEncoder = (
   options?: QueryEncoderOptions,
 ) => string;
 
-export function queryEncoder(f: QueryEncoder): BulkQueryEncoder {
+function queryEncoder(f: QueryEncoder): BulkQueryEncoder {
   const bulkEncode = function(
     values: Record<string, unknown>,
     options?: QueryEncoderOptions,
@@ -473,11 +473,11 @@ export function queryEncoder(f: QueryEncoder): BulkQueryEncoder {
   return bulkEncode;
 }
 
-export const encodeJSONQuery = queryEncoder(encodeJSON);
+const encodeJSONQuery = queryEncoder(encodeJSON);
 export const encodeFormQuery = queryEncoder(encodeForm);
-export const encodeSpaceDelimitedQuery = queryEncoder(encodeSpaceDelimited);
-export const encodePipeDelimitedQuery = queryEncoder(encodePipeDelimited);
-export const encodeDeepObjectQuery = queryEncoder(encodeDeepObject);
+const encodeSpaceDelimitedQuery = queryEncoder(encodeSpaceDelimited);
+const encodePipeDelimitedQuery = queryEncoder(encodePipeDelimited);
+const encodeDeepObjectQuery = queryEncoder(encodeDeepObject);
 
 export function appendForm(
   fd: FormData,

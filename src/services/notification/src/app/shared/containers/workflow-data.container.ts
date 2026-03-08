@@ -13,12 +13,12 @@ import { toResponseWorkflowDto } from '../../workflows-v2/mappers/notification-t
 import { BuildStepDataUsecase } from '../../workflows-v2/usecases/build-step-data/build-step-data.usecase';
 import { emptyJsonSchema } from '../../workflows-v2/util/jsonToSchema';
 
-export interface IWorkflowPreferences {
+interface IWorkflowPreferences {
   workflowResourcePreference?: PreferencesEntity;
   workflowUserPreference?: PreferencesEntity;
 }
 
-export interface IWorkflowWithControlValues {
+interface IWorkflowWithControlValues {
   workflow: NotificationTemplateEntity;
   identifier: string;
   controlValuesByStep: Map<string, ControlValuesEntity>;

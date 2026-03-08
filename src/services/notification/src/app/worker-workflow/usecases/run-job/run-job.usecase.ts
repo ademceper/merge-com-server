@@ -46,13 +46,13 @@ import { calculateNextAvailableTime, isWithinSchedule } from './schedule-validat
 let nr: any = null;
 try { nr = require('newrelic'); } catch {}
 
-export type SelectedWorkflowFields = Pick<NotificationTemplateEntity, 'steps'>;
+type SelectedWorkflowFields = Pick<NotificationTemplateEntity, 'steps'>;
 
 /**
  * MongoDB projection object for SelectedWorkflowFields.
  * This ensures the projection is always aligned with the type definition.
  */
-export const SELECTED_WORKFLOW_FIELDS_PROJECTION: Record<keyof SelectedWorkflowFields, 1> = {
+const SELECTED_WORKFLOW_FIELDS_PROJECTION: Record<keyof SelectedWorkflowFields, 1> = {
   steps: 1,
 } as const;
 

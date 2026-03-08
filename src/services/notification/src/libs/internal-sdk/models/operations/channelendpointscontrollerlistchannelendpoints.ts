@@ -104,7 +104,7 @@ export type ChannelEndpointsControllerListChannelEndpointsResponse = {
 };
 
 /** @internal */
-export const ChannelEndpointsControllerListChannelEndpointsQueryParamOrderDirection$outboundSchema:
+const ChannelEndpointsControllerListChannelEndpointsQueryParamOrderDirection$outboundSchema:
   z.ZodNativeEnum<
     typeof ChannelEndpointsControllerListChannelEndpointsQueryParamOrderDirection
   > = z.nativeEnum(
@@ -112,12 +112,12 @@ export const ChannelEndpointsControllerListChannelEndpointsQueryParamOrderDirect
   );
 
 /** @internal */
-export const QueryParamChannel$outboundSchema: z.ZodNativeEnum<
+const QueryParamChannel$outboundSchema: z.ZodNativeEnum<
   typeof QueryParamChannel
 > = z.nativeEnum(QueryParamChannel);
 
 /** @internal */
-export type ChannelEndpointsControllerListChannelEndpointsRequest$Outbound = {
+type ChannelEndpointsControllerListChannelEndpointsRequest$Outbound = {
   after?: string | undefined;
   before?: string | undefined;
   limit?: number | undefined;
@@ -161,7 +161,7 @@ export const ChannelEndpointsControllerListChannelEndpointsRequest$outboundSchem
     });
   });
 
-export function channelEndpointsControllerListChannelEndpointsRequestToJSON(
+function channelEndpointsControllerListChannelEndpointsRequestToJSON(
   channelEndpointsControllerListChannelEndpointsRequest:
     ChannelEndpointsControllerListChannelEndpointsRequest,
 ): string {
@@ -188,7 +188,7 @@ export const ChannelEndpointsControllerListChannelEndpointsResponse$inboundSchem
     });
   });
 
-export function channelEndpointsControllerListChannelEndpointsResponseFromJSON(
+function channelEndpointsControllerListChannelEndpointsResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   ChannelEndpointsControllerListChannelEndpointsResponse,

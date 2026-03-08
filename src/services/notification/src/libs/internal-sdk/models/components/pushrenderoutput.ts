@@ -28,7 +28,7 @@ export const PushRenderOutput$inboundSchema: z.ZodType<
   body: z.string(),
 });
 
-export function pushRenderOutputFromJSON(
+function pushRenderOutputFromJSON(
   jsonString: string,
 ): SafeParseResult<PushRenderOutput, SDKValidationError> {
   return safeParse(

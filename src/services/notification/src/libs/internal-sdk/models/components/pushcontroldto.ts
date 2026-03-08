@@ -50,10 +50,10 @@ export const PushControlDto$outboundSchema: z.ZodType<
   body: z.string().optional(),
 });
 
-export function pushControlDtoToJSON(pushControlDto: PushControlDto): string {
+function pushControlDtoToJSON(pushControlDto: PushControlDto): string {
   return JSON.stringify(PushControlDto$outboundSchema.parse(pushControlDto));
 }
-export function pushControlDtoFromJSON(
+function pushControlDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<PushControlDto, SDKValidationError> {
   return safeParse(

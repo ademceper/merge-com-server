@@ -3,13 +3,13 @@ import type { EncryptedSecret, ICredentialsDto } from 'libs/shared';
 
 import { decrypt, encrypt } from './cipher';
 
-export function encryptSecret(text: string): EncryptedSecret {
+function encryptSecret(text: string): EncryptedSecret {
   const encrypted = encrypt(text);
 
   return `${NOVU_ENCRYPTION_SUB_MASK}${encrypted}`;
 }
 
-export function decryptSecret(text: string | EncryptedSecret): string {
+function decryptSecret(text: string | EncryptedSecret): string {
   let encryptedSecret = text;
 
   if (isNovuEncrypted(text)) {

@@ -25,13 +25,13 @@ export enum ApiAuthSchemeEnum {
   KEYLESS = 'Keyless',
 }
 
-export enum PassportStrategyEnum {
+enum PassportStrategyEnum {
   JWT = 'jwt',
   HEADER_API_KEY = 'headerapikey',
   KEYLESS = 'keyless',
 }
 
-export const NONE_AUTH_SCHEME = 'None';
+const NONE_AUTH_SCHEME = 'None';
 
 export type AuthenticateContext = {
   invitationToken?: string;
@@ -65,7 +65,7 @@ export enum PermissionsEnum {
   ORG_SETTINGS_READ = 'org:settings:read',
 }
 
-export const ALL_PERMISSIONS = Object.values(PermissionsEnum);
+const ALL_PERMISSIONS = Object.values(PermissionsEnum);
 
 export const ROLE_PERMISSIONS: Record<MemberRoleEnum, PermissionsEnum[]> = {
   [MemberRoleEnum.OWNER]: [

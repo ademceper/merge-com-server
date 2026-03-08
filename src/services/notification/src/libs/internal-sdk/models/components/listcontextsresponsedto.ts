@@ -47,7 +47,7 @@ export const ListContextsResponseDto$inboundSchema: z.ZodType<
   totalCountCapped: z.boolean(),
 });
 
-export function listContextsResponseDtoFromJSON(
+function listContextsResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<ListContextsResponseDto, SDKValidationError> {
   return safeParse(

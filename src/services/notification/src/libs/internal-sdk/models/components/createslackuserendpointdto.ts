@@ -20,7 +20,7 @@ export type CreateSlackUserEndpointDtoContext2 = {
   data?: { [k: string]: any } | undefined;
 };
 
-export type CreateSlackUserEndpointDtoContext =
+type CreateSlackUserEndpointDtoContext =
   | CreateSlackUserEndpointDtoContext2
   | string;
 
@@ -61,7 +61,7 @@ export type CreateSlackUserEndpointDtoContext2$Outbound = {
 };
 
 /** @internal */
-export const CreateSlackUserEndpointDtoContext2$outboundSchema: z.ZodType<
+const CreateSlackUserEndpointDtoContext2$outboundSchema: z.ZodType<
   CreateSlackUserEndpointDtoContext2$Outbound,
   z.ZodTypeDef,
   CreateSlackUserEndpointDtoContext2
@@ -70,7 +70,7 @@ export const CreateSlackUserEndpointDtoContext2$outboundSchema: z.ZodType<
   data: z.record(z.any()).optional(),
 });
 
-export function createSlackUserEndpointDtoContext2ToJSON(
+function createSlackUserEndpointDtoContext2ToJSON(
   createSlackUserEndpointDtoContext2: CreateSlackUserEndpointDtoContext2,
 ): string {
   return JSON.stringify(
@@ -81,12 +81,12 @@ export function createSlackUserEndpointDtoContext2ToJSON(
 }
 
 /** @internal */
-export type CreateSlackUserEndpointDtoContext$Outbound =
+type CreateSlackUserEndpointDtoContext$Outbound =
   | CreateSlackUserEndpointDtoContext2$Outbound
   | string;
 
 /** @internal */
-export const CreateSlackUserEndpointDtoContext$outboundSchema: z.ZodType<
+const CreateSlackUserEndpointDtoContext$outboundSchema: z.ZodType<
   CreateSlackUserEndpointDtoContext$Outbound,
   z.ZodTypeDef,
   CreateSlackUserEndpointDtoContext
@@ -95,7 +95,7 @@ export const CreateSlackUserEndpointDtoContext$outboundSchema: z.ZodType<
   z.string(),
 ]);
 
-export function createSlackUserEndpointDtoContextToJSON(
+function createSlackUserEndpointDtoContextToJSON(
   createSlackUserEndpointDtoContext: CreateSlackUserEndpointDtoContext,
 ): string {
   return JSON.stringify(
@@ -138,7 +138,7 @@ export const CreateSlackUserEndpointDto$outboundSchema: z.ZodType<
   endpoint: SlackUserEndpointDto$outboundSchema,
 });
 
-export function createSlackUserEndpointDtoToJSON(
+function createSlackUserEndpointDtoToJSON(
   createSlackUserEndpointDto: CreateSlackUserEndpointDto,
 ): string {
   return JSON.stringify(

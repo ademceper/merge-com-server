@@ -4,7 +4,7 @@ import { LocalizationEntity } from './localization.entity';
 import type { LocalizationDBModel } from './localization.entity';
 import { Localization } from './localization.schema';
 
-export class LocalizationRepository extends BaseRepository<
+class LocalizationRepository extends BaseRepository<
   LocalizationDBModel,
   LocalizationEntity,
   EnforceEnvOrOrgIds

@@ -29,7 +29,7 @@ export const ListLayoutResponseDto$inboundSchema: z.ZodType<
   totalCount: z.number(),
 });
 
-export function listLayoutResponseDtoFromJSON(
+function listLayoutResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<ListLayoutResponseDto, SDKValidationError> {
   return safeParse(

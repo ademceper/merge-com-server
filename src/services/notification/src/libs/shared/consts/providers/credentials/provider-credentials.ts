@@ -28,7 +28,7 @@ const smsConfigBase: IConfigCredential[] = [
 
 const pushConfigBase: IConfigCredential[] = [];
 
-export const mailJsConfig: IConfigCredential[] = [
+const mailJsConfig: IConfigCredential[] = [
   {
     key: CredentialsKeyEnum.ApiKey,
     displayName: 'API Key',
@@ -527,7 +527,7 @@ export const slackConfigLegacy: IConfigCredential[] = [
   },
 ];
 
-export const slackConfig: IConfigCredential[] = [
+const slackConfig: IConfigCredential[] = [
   {
     key: CredentialsKeyEnum.ApplicationId,
     displayName: 'Application Id',

@@ -73,12 +73,12 @@ export type SubscribersControllerListSubscriberTopicsResponse = {
 };
 
 /** @internal */
-export const SubscribersControllerListSubscriberTopicsQueryParamOrderDirection$outboundSchema: z.ZodNativeEnum<
+const SubscribersControllerListSubscriberTopicsQueryParamOrderDirection$outboundSchema: z.ZodNativeEnum<
   typeof SubscribersControllerListSubscriberTopicsQueryParamOrderDirection
 > = z.nativeEnum(SubscribersControllerListSubscriberTopicsQueryParamOrderDirection);
 
 /** @internal */
-export type SubscribersControllerListSubscriberTopicsRequest$Outbound = {
+type SubscribersControllerListSubscriberTopicsRequest$Outbound = {
   subscriberId: string;
   after?: string | undefined;
   before?: string | undefined;
@@ -115,7 +115,7 @@ export const SubscribersControllerListSubscriberTopicsRequest$outboundSchema: z.
     });
   });
 
-export function subscribersControllerListSubscriberTopicsRequestToJSON(
+function subscribersControllerListSubscriberTopicsRequestToJSON(
   subscribersControllerListSubscriberTopicsRequest: SubscribersControllerListSubscriberTopicsRequest
 ): string {
   return JSON.stringify(
@@ -142,7 +142,7 @@ export const SubscribersControllerListSubscriberTopicsResponse$inboundSchema: z.
     });
   });
 
-export function subscribersControllerListSubscriberTopicsResponseFromJSON(
+function subscribersControllerListSubscriberTopicsResponseFromJSON(
   jsonString: string
 ): SafeParseResult<SubscribersControllerListSubscriberTopicsResponse, SDKValidationError> {
   return safeParse(

@@ -31,7 +31,7 @@ export const GroupPreferenceFilterDetailsDto$outboundSchema: z.ZodType<
   tags: z.array(z.string()).optional(),
 });
 
-export function groupPreferenceFilterDetailsDtoToJSON(
+function groupPreferenceFilterDetailsDtoToJSON(
   groupPreferenceFilterDetailsDto: GroupPreferenceFilterDetailsDto,
 ): string {
   return JSON.stringify(

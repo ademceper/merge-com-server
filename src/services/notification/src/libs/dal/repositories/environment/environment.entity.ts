@@ -16,11 +16,11 @@ export interface IApiKey {
   _userId: string;
 }
 
-export interface IWidgetSettings {
+interface IWidgetSettings {
   notificationCenterEncryption: boolean;
 }
 
-export interface IDnsSettings {
+interface IDnsSettings {
   mxRecordConfigured: boolean;
   inboundParseDomain: string;
 }

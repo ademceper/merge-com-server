@@ -20,7 +20,7 @@ export type CreatePhoneEndpointDtoContext2 = {
   data?: { [k: string]: any } | undefined;
 };
 
-export type CreatePhoneEndpointDtoContext =
+type CreatePhoneEndpointDtoContext =
   | CreatePhoneEndpointDtoContext2
   | string;
 
@@ -61,7 +61,7 @@ export type CreatePhoneEndpointDtoContext2$Outbound = {
 };
 
 /** @internal */
-export const CreatePhoneEndpointDtoContext2$outboundSchema: z.ZodType<
+const CreatePhoneEndpointDtoContext2$outboundSchema: z.ZodType<
   CreatePhoneEndpointDtoContext2$Outbound,
   z.ZodTypeDef,
   CreatePhoneEndpointDtoContext2
@@ -70,7 +70,7 @@ export const CreatePhoneEndpointDtoContext2$outboundSchema: z.ZodType<
   data: z.record(z.any()).optional(),
 });
 
-export function createPhoneEndpointDtoContext2ToJSON(
+function createPhoneEndpointDtoContext2ToJSON(
   createPhoneEndpointDtoContext2: CreatePhoneEndpointDtoContext2,
 ): string {
   return JSON.stringify(
@@ -81,12 +81,12 @@ export function createPhoneEndpointDtoContext2ToJSON(
 }
 
 /** @internal */
-export type CreatePhoneEndpointDtoContext$Outbound =
+type CreatePhoneEndpointDtoContext$Outbound =
   | CreatePhoneEndpointDtoContext2$Outbound
   | string;
 
 /** @internal */
-export const CreatePhoneEndpointDtoContext$outboundSchema: z.ZodType<
+const CreatePhoneEndpointDtoContext$outboundSchema: z.ZodType<
   CreatePhoneEndpointDtoContext$Outbound,
   z.ZodTypeDef,
   CreatePhoneEndpointDtoContext
@@ -95,7 +95,7 @@ export const CreatePhoneEndpointDtoContext$outboundSchema: z.ZodType<
   z.string(),
 ]);
 
-export function createPhoneEndpointDtoContextToJSON(
+function createPhoneEndpointDtoContextToJSON(
   createPhoneEndpointDtoContext: CreatePhoneEndpointDtoContext,
 ): string {
   return JSON.stringify(
@@ -138,7 +138,7 @@ export const CreatePhoneEndpointDto$outboundSchema: z.ZodType<
   endpoint: PhoneEndpointDto$outboundSchema,
 });
 
-export function createPhoneEndpointDtoToJSON(
+function createPhoneEndpointDtoToJSON(
   createPhoneEndpointDto: CreatePhoneEndpointDto,
 ): string {
   return JSON.stringify(

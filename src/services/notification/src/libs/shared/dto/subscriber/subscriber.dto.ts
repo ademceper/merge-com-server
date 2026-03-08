@@ -40,7 +40,7 @@ export interface ISubscriberFeedResponseDto {
   subscriberId: string;
 }
 
-export interface ISubscriberResponseDto {
+interface ISubscriberResponseDto {
   _id?: string;
   firstName?: string;
   lastName?: string;
@@ -62,7 +62,7 @@ export interface ISubscriberResponseDto {
   timezone?: string;
 }
 
-export type SubscribersListResponseDto = {
+type SubscribersListResponseDto = {
   data: Array<ISubscriberResponseDto>;
   next: string | null;
   previous: string | null;

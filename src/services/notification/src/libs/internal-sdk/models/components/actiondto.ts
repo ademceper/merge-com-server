@@ -49,10 +49,10 @@ export const ActionDto$outboundSchema: z.ZodType<
   redirect: RedirectDto$outboundSchema.optional(),
 });
 
-export function actionDtoToJSON(actionDto: ActionDto): string {
+function actionDtoToJSON(actionDto: ActionDto): string {
   return JSON.stringify(ActionDto$outboundSchema.parse(actionDto));
 }
-export function actionDtoFromJSON(
+function actionDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<ActionDto, SDKValidationError> {
   return safeParse(

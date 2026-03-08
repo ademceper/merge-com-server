@@ -46,7 +46,7 @@ type Obj<O extends Record<IndexSignature, unknown> | object = Record<IndexSignat
 /**
  * Any type that is indexable using `string`, `number`, or `symbol`.
  */
-export type Indexable<ValueTypes = unknown> =
+type Indexable<ValueTypes = unknown> =
   | {
       [K: IndexSignature]: ValueTypes;
     }
@@ -56,7 +56,7 @@ export type Indexable<ValueTypes = unknown> =
  * Picks only the optional properties from a type, removing the required ones.
  * Optionally, recurses through nested objects if `DEEP` is true.
  */
-export type PickOptional<T, DEEP extends boolean = true> = {
+type PickOptional<T, DEEP extends boolean = true> = {
   /*
    * `DEEP` must be false b/c `never` interferes with root level objects with both optional/required properties
    * If `undefined` extends the type of the value, it's optional (e.g. `undefined extends string | undefined`)
@@ -88,7 +88,7 @@ export type PickRequiredKeys<T, DEEP extends boolean = true> = keyof PickRequire
  * Picks only the optional keys out of a type, removing the required ones.
  * Optionally, recurses through nested objects if `DEEP` is true.
  */
-export type PickOptionalKeys<T, DEEP extends boolean = true> = keyof PickOptional<T, DEEP>;
+type PickOptionalKeys<T, DEEP extends boolean = true> = keyof PickOptional<T, DEEP>;
 
 /**
  * Recursively make all properties of type `T` optional.
@@ -102,7 +102,7 @@ export type DeepPartial<T> = T extends object
 /**
  * Recursively make all properties of type `T` required.
  */
-export type DeepRequired<T> = T extends object
+type DeepRequired<T> = T extends object
   ? {
       [P in keyof T]-?: DeepRequired<T[P]>;
     }

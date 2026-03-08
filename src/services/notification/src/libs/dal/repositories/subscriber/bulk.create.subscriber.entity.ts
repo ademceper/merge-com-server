@@ -1,8 +1,8 @@
-export class FailedOperationEntity {
+class FailedOperationEntity {
   message: string;
   subscriberId?: string;
 }
-export class ChangedSubscriberEntity {
+class ChangedSubscriberEntity {
   subscriberId: string;
 }
 

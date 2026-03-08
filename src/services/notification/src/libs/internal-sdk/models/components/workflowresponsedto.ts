@@ -110,7 +110,7 @@ export type LastPublishedBy = {
   externalId?: string | null | undefined;
 };
 
-export type WorkflowResponseDtoSteps =
+type WorkflowResponseDtoSteps =
   | InAppStepResponseDto
   | EmailStepResponseDto
   | SmsStepResponseDto
@@ -229,7 +229,7 @@ export type WorkflowResponseDto = {
 };
 
 /** @internal */
-export const WorkflowResponseDtoUpdatedBy$inboundSchema: z.ZodType<
+const WorkflowResponseDtoUpdatedBy$inboundSchema: z.ZodType<
   WorkflowResponseDtoUpdatedBy,
   z.ZodTypeDef,
   unknown
@@ -244,7 +244,7 @@ export const WorkflowResponseDtoUpdatedBy$inboundSchema: z.ZodType<
   });
 });
 
-export function workflowResponseDtoUpdatedByFromJSON(
+function workflowResponseDtoUpdatedByFromJSON(
   jsonString: string,
 ): SafeParseResult<WorkflowResponseDtoUpdatedBy, SDKValidationError> {
   return safeParse(
@@ -255,7 +255,7 @@ export function workflowResponseDtoUpdatedByFromJSON(
 }
 
 /** @internal */
-export const LastPublishedBy$inboundSchema: z.ZodType<
+const LastPublishedBy$inboundSchema: z.ZodType<
   LastPublishedBy,
   z.ZodTypeDef,
   unknown
@@ -270,7 +270,7 @@ export const LastPublishedBy$inboundSchema: z.ZodType<
   });
 });
 
-export function lastPublishedByFromJSON(
+function lastPublishedByFromJSON(
   jsonString: string,
 ): SafeParseResult<LastPublishedBy, SDKValidationError> {
   return safeParse(
@@ -281,7 +281,7 @@ export function lastPublishedByFromJSON(
 }
 
 /** @internal */
-export const WorkflowResponseDtoSteps$inboundSchema: z.ZodType<
+const WorkflowResponseDtoSteps$inboundSchema: z.ZodType<
   WorkflowResponseDtoSteps,
   z.ZodTypeDef,
   unknown
@@ -297,7 +297,7 @@ export const WorkflowResponseDtoSteps$inboundSchema: z.ZodType<
   throttle: ThrottleStepResponseDto$inboundSchema,
 });
 
-export function workflowResponseDtoStepsFromJSON(
+function workflowResponseDtoStepsFromJSON(
   jsonString: string,
 ): SafeParseResult<WorkflowResponseDtoSteps, SDKValidationError> {
   return safeParse(
@@ -355,7 +355,7 @@ export const WorkflowResponseDto$inboundSchema: z.ZodType<
   });
 });
 
-export function workflowResponseDtoFromJSON(
+function workflowResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<WorkflowResponseDto, SDKValidationError> {
   return safeParse(

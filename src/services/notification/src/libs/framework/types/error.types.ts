@@ -1,8 +1,8 @@
 /**
  * The required format for an error code.
  */
-export type IErrorCodeKey = `${Uppercase<string>}_ERROR`;
-export type IErrorCodeVal = `${Capitalize<string>}Error`;
+type IErrorCodeKey = `${Uppercase<string>}_ERROR`;
+type IErrorCodeVal = `${Capitalize<string>}Error`;
 
 /**
  * Helper function to test that enum keys and values match correct format.
@@ -41,6 +41,6 @@ type PascalToConstant<T extends string> = T extends `${infer First}${infer Rest}
  * type Test = PascalToConstant<"FirstName">; // "FIRST_NAME"
  * ```
  */
-export type ToConstantCaseForString<T extends string> = PascalToConstant<T> extends `_${infer WithoutUnderscore}`
+type ToConstantCaseForString<T extends string> = PascalToConstant<T> extends `_${infer WithoutUnderscore}`
   ? WithoutUnderscore
   : PascalToConstant<T>;

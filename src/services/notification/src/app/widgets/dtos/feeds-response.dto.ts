@@ -24,7 +24,7 @@ class ActorFeedItemDto implements IActor {
 }
 
 @ApiExtraModels(EmailBlock, MessageCTA)
-export class NotificationFeedItemDto implements INotificationDto {
+class NotificationFeedItemDto implements INotificationDto {
   @ApiProperty({
     description: 'Unique identifier for the notification.',
     example: '615c1f2f9b0c5b001f8e4e3b',

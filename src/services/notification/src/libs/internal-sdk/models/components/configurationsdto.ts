@@ -22,7 +22,7 @@ export const ConfigurationsDto$inboundSchema: z.ZodType<
   inboundWebhookSigningKey: z.string().optional(),
 });
 
-export function configurationsDtoFromJSON(
+function configurationsDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<ConfigurationsDto, SDKValidationError> {
   return safeParse(

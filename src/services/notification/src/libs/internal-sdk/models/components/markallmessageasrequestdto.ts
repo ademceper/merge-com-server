@@ -8,7 +8,7 @@ import type { ClosedEnum } from "../../types/enums.js";
 /**
  * Optional feed identifier or array of feed identifiers
  */
-export type FeedIdentifier = string | Array<string>;
+type FeedIdentifier = string | Array<string>;
 
 /**
  * Mark all subscriber messages as read, unread, seen or unseen
@@ -36,21 +36,21 @@ export type MarkAllMessageAsRequestDto = {
 };
 
 /** @internal */
-export type FeedIdentifier$Outbound = string | Array<string>;
+type FeedIdentifier$Outbound = string | Array<string>;
 
 /** @internal */
-export const FeedIdentifier$outboundSchema: z.ZodType<
+const FeedIdentifier$outboundSchema: z.ZodType<
   FeedIdentifier$Outbound,
   z.ZodTypeDef,
   FeedIdentifier
 > = z.union([z.string(), z.array(z.string())]);
 
-export function feedIdentifierToJSON(feedIdentifier: FeedIdentifier): string {
+function feedIdentifierToJSON(feedIdentifier: FeedIdentifier): string {
   return JSON.stringify(FeedIdentifier$outboundSchema.parse(feedIdentifier));
 }
 
 /** @internal */
-export const MarkAs$outboundSchema: z.ZodNativeEnum<typeof MarkAs> = z
+const MarkAs$outboundSchema: z.ZodNativeEnum<typeof MarkAs> = z
   .nativeEnum(MarkAs);
 
 /** @internal */
@@ -69,7 +69,7 @@ export const MarkAllMessageAsRequestDto$outboundSchema: z.ZodType<
   markAs: MarkAs$outboundSchema,
 });
 
-export function markAllMessageAsRequestDtoToJSON(
+function markAllMessageAsRequestDtoToJSON(
   markAllMessageAsRequestDto: MarkAllMessageAsRequestDto,
 ): string {
   return JSON.stringify(

@@ -38,7 +38,7 @@ export const InAppControlsMetadataResponseDto$inboundSchema: z.ZodType<
   values: InAppControlDto$inboundSchema,
 });
 
-export function inAppControlsMetadataResponseDtoFromJSON(
+function inAppControlsMetadataResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<InAppControlsMetadataResponseDto, SDKValidationError> {
   return safeParse(

@@ -5,15 +5,15 @@ import type { ValidationOptions } from 'class-validator';
 
 const MAX_SIZE_KB = 64;
 
-export interface ContextPayloadValidationOptions extends ValidationOptions {
+interface ContextPayloadValidationOptions extends ValidationOptions {
   maxCount?: number;
 }
 
-export interface ContextDataValidationOptions extends ValidationOptions {
+interface ContextDataValidationOptions extends ValidationOptions {
   maxSizeKB?: number;
 }
 
-export interface ContextPayloadValidationResult {
+interface ContextPayloadValidationResult {
   isValid: boolean;
   error?: string;
 }
@@ -85,7 +85,7 @@ function validateSingleContextData(contextType: string, contextValue: unknown): 
 }
 
 // Main validation functions
-export function validateContextPayloadWithDetails(value: unknown, maxCount?: number): ContextPayloadValidationResult {
+function validateContextPayloadWithDetails(value: unknown, maxCount?: number): ContextPayloadValidationResult {
   // Handle null/undefined
   if (value == null) return { isValid: true };
 
@@ -108,11 +108,11 @@ export function validateContextPayloadWithDetails(value: unknown, maxCount?: num
   return validateContextDataSizes(contextObj);
 }
 
-export function validateContextPayload(value: unknown, maxCount?: number): boolean {
+function validateContextPayload(value: unknown, maxCount?: number): boolean {
   return validateContextPayloadWithDetails(value, maxCount).isValid;
 }
 
-export function validateContextDataWithDetails(value: unknown, maxSizeKB?: number): ContextPayloadValidationResult {
+function validateContextDataWithDetails(value: unknown, maxSizeKB?: number): ContextPayloadValidationResult {
   if (value == null) return { isValid: true };
 
   // Must be an object

@@ -43,7 +43,7 @@ export type ChannelEndpointsControllerCreateChannelEndpointResponse = {
 };
 
 /** @internal */
-export type ChannelEndpointsControllerCreateChannelEndpointRequestBody$Outbound =
+type ChannelEndpointsControllerCreateChannelEndpointRequestBody$Outbound =
   | components.CreateSlackChannelEndpointDto$Outbound
   | components.CreateSlackUserEndpointDto$Outbound
   | components.CreateWebhookEndpointDto$Outbound
@@ -52,7 +52,7 @@ export type ChannelEndpointsControllerCreateChannelEndpointRequestBody$Outbound 
   | components.CreateMsTeamsUserEndpointDto$Outbound;
 
 /** @internal */
-export const ChannelEndpointsControllerCreateChannelEndpointRequestBody$outboundSchema:
+const ChannelEndpointsControllerCreateChannelEndpointRequestBody$outboundSchema:
   z.ZodType<
     ChannelEndpointsControllerCreateChannelEndpointRequestBody$Outbound,
     z.ZodTypeDef,
@@ -66,7 +66,7 @@ export const ChannelEndpointsControllerCreateChannelEndpointRequestBody$outbound
     components.CreateMsTeamsUserEndpointDto$outboundSchema,
   ]);
 
-export function channelEndpointsControllerCreateChannelEndpointRequestBodyToJSON(
+function channelEndpointsControllerCreateChannelEndpointRequestBodyToJSON(
   channelEndpointsControllerCreateChannelEndpointRequestBody:
     ChannelEndpointsControllerCreateChannelEndpointRequestBody,
 ): string {
@@ -77,7 +77,7 @@ export function channelEndpointsControllerCreateChannelEndpointRequestBodyToJSON
 }
 
 /** @internal */
-export type ChannelEndpointsControllerCreateChannelEndpointRequest$Outbound = {
+type ChannelEndpointsControllerCreateChannelEndpointRequest$Outbound = {
   "idempotency-key"?: string | undefined;
   RequestBody:
     | components.CreateSlackChannelEndpointDto$Outbound
@@ -111,7 +111,7 @@ export const ChannelEndpointsControllerCreateChannelEndpointRequest$outboundSche
     });
   });
 
-export function channelEndpointsControllerCreateChannelEndpointRequestToJSON(
+function channelEndpointsControllerCreateChannelEndpointRequestToJSON(
   channelEndpointsControllerCreateChannelEndpointRequest:
     ChannelEndpointsControllerCreateChannelEndpointRequest,
 ): string {
@@ -138,7 +138,7 @@ export const ChannelEndpointsControllerCreateChannelEndpointResponse$inboundSche
     });
   });
 
-export function channelEndpointsControllerCreateChannelEndpointResponseFromJSON(
+function channelEndpointsControllerCreateChannelEndpointResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   ChannelEndpointsControllerCreateChannelEndpointResponse,

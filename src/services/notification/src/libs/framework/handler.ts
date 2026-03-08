@@ -47,7 +47,7 @@ type HandlerResponse<Output = any> = {
   transformResponse: (res: IActionResponse<string>) => Output;
 };
 
-export type IActionResponse<TBody extends string = string> = {
+type IActionResponse<TBody extends string = string> = {
   status: number;
   headers: Record<string, string>;
   body: TBody;

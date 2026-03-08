@@ -27,7 +27,7 @@ export type EnvironmentsControllerV1UpdateMyEnvironmentResponse = {
 };
 
 /** @internal */
-export type EnvironmentsControllerV1UpdateMyEnvironmentRequest$Outbound = {
+type EnvironmentsControllerV1UpdateMyEnvironmentRequest$Outbound = {
   environmentId: string;
   "idempotency-key"?: string | undefined;
   UpdateEnvironmentRequestDto: components.UpdateEnvironmentRequestDto$Outbound;
@@ -51,7 +51,7 @@ export const EnvironmentsControllerV1UpdateMyEnvironmentRequest$outboundSchema:
     });
   });
 
-export function environmentsControllerV1UpdateMyEnvironmentRequestToJSON(
+function environmentsControllerV1UpdateMyEnvironmentRequestToJSON(
   environmentsControllerV1UpdateMyEnvironmentRequest:
     EnvironmentsControllerV1UpdateMyEnvironmentRequest,
 ): string {
@@ -78,7 +78,7 @@ export const EnvironmentsControllerV1UpdateMyEnvironmentResponse$inboundSchema:
     });
   });
 
-export function environmentsControllerV1UpdateMyEnvironmentResponseFromJSON(
+function environmentsControllerV1UpdateMyEnvironmentResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   EnvironmentsControllerV1UpdateMyEnvironmentResponse,

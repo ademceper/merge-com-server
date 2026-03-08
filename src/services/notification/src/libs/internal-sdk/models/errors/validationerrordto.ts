@@ -9,21 +9,21 @@ import * as components from "../components/index.js";
 import { NovuError } from "./novuerror.js";
 import { SDKValidationError } from "./sdkvalidationerror.js";
 
-export type Message5 = string | number | boolean | { [k: string]: any };
+type Message5 = string | number | boolean | { [k: string]: any };
 
-export type Message4 = {};
+type Message4 = {};
 
 /**
  * Value that failed validation
  */
-export type ValidationErrorDtoMessage =
+type ValidationErrorDtoMessage =
   | string
   | number
   | boolean
   | Message4
   | Array<string | number | boolean | { [k: string]: any } | null>;
 
-export type ValidationErrorDtoData = {
+type ValidationErrorDtoData = {
   /**
    * HTTP status code of the error response.
    */
@@ -112,13 +112,13 @@ export class ValidationErrorDto extends NovuError {
 }
 
 /** @internal */
-export const Message5$inboundSchema: z.ZodType<
+const Message5$inboundSchema: z.ZodType<
   Message5,
   z.ZodTypeDef,
   unknown
 > = z.union([z.string(), z.number(), z.boolean(), z.record(z.any())]);
 
-export function message5FromJSON(
+function message5FromJSON(
   jsonString: string,
 ): SafeParseResult<Message5, SDKValidationError> {
   return safeParse(
@@ -129,13 +129,13 @@ export function message5FromJSON(
 }
 
 /** @internal */
-export const Message4$inboundSchema: z.ZodType<
+const Message4$inboundSchema: z.ZodType<
   Message4,
   z.ZodTypeDef,
   unknown
 > = z.object({});
 
-export function message4FromJSON(
+function message4FromJSON(
   jsonString: string,
 ): SafeParseResult<Message4, SDKValidationError> {
   return safeParse(
@@ -146,7 +146,7 @@ export function message4FromJSON(
 }
 
 /** @internal */
-export const ValidationErrorDtoMessage$inboundSchema: z.ZodType<
+const ValidationErrorDtoMessage$inboundSchema: z.ZodType<
   ValidationErrorDtoMessage,
   z.ZodTypeDef,
   unknown
@@ -162,7 +162,7 @@ export const ValidationErrorDtoMessage$inboundSchema: z.ZodType<
   ),
 ]);
 
-export function validationErrorDtoMessageFromJSON(
+function validationErrorDtoMessageFromJSON(
   jsonString: string,
 ): SafeParseResult<ValidationErrorDtoMessage, SDKValidationError> {
   return safeParse(

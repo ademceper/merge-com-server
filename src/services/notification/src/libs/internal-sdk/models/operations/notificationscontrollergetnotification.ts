@@ -23,7 +23,7 @@ export type NotificationsControllerGetNotificationResponse = {
 };
 
 /** @internal */
-export type NotificationsControllerGetNotificationRequest$Outbound = {
+type NotificationsControllerGetNotificationRequest$Outbound = {
   notificationId: string;
   "idempotency-key"?: string | undefined;
 };
@@ -43,7 +43,7 @@ export const NotificationsControllerGetNotificationRequest$outboundSchema:
     });
   });
 
-export function notificationsControllerGetNotificationRequestToJSON(
+function notificationsControllerGetNotificationRequestToJSON(
   notificationsControllerGetNotificationRequest:
     NotificationsControllerGetNotificationRequest,
 ): string {
@@ -70,7 +70,7 @@ export const NotificationsControllerGetNotificationResponse$inboundSchema:
     });
   });
 
-export function notificationsControllerGetNotificationResponseFromJSON(
+function notificationsControllerGetNotificationResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   NotificationsControllerGetNotificationResponse,

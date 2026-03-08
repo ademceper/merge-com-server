@@ -42,7 +42,7 @@ export const MessageAction$inboundSchema: z.ZodType<
   result: MessageActionResult$inboundSchema.optional(),
 });
 
-export function messageActionFromJSON(
+function messageActionFromJSON(
   jsonString: string,
 ): SafeParseResult<MessageAction, SDKValidationError> {
   return safeParse(

@@ -30,7 +30,7 @@ export interface IMandrillTemplateSendOptions {
   message: IMandrillTemplateSendOptionsMessage;
 }
 
-export interface IMandrillAttachment {
+interface IMandrillAttachment {
   content: string;
   type: string;
   name: string;

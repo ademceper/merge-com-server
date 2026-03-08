@@ -21,7 +21,7 @@ export type DelayScheduledMetadata = {
 };
 
 /** @internal */
-export const DelayScheduledMetadataType$inboundSchema: z.ZodNativeEnum<
+const DelayScheduledMetadataType$inboundSchema: z.ZodNativeEnum<
   typeof DelayScheduledMetadataType
 > = z.nativeEnum(DelayScheduledMetadataType);
 
@@ -35,7 +35,7 @@ export const DelayScheduledMetadata$inboundSchema: z.ZodType<
   delayPath: z.string(),
 });
 
-export function delayScheduledMetadataFromJSON(
+function delayScheduledMetadataFromJSON(
   jsonString: string,
 ): SafeParseResult<DelayScheduledMetadata, SDKValidationError> {
   return safeParse(

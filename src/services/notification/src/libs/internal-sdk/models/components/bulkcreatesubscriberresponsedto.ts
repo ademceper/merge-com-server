@@ -45,7 +45,7 @@ export const BulkCreateSubscriberResponseDto$inboundSchema: z.ZodType<
   failed: z.array(FailedOperationDto$inboundSchema),
 });
 
-export function bulkCreateSubscriberResponseDtoFromJSON(
+function bulkCreateSubscriberResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<BulkCreateSubscriberResponseDto, SDKValidationError> {
   return safeParse(

@@ -24,7 +24,7 @@ export type SubscribersV1ControllerMarkAllUnreadAsReadResponse = {
 };
 
 /** @internal */
-export type SubscribersV1ControllerMarkAllUnreadAsReadRequest$Outbound = {
+type SubscribersV1ControllerMarkAllUnreadAsReadRequest$Outbound = {
   subscriberId: string;
   "idempotency-key"?: string | undefined;
   MarkAllMessageAsRequestDto: components.MarkAllMessageAsRequestDto$Outbound;
@@ -48,7 +48,7 @@ export const SubscribersV1ControllerMarkAllUnreadAsReadRequest$outboundSchema:
     });
   });
 
-export function subscribersV1ControllerMarkAllUnreadAsReadRequestToJSON(
+function subscribersV1ControllerMarkAllUnreadAsReadRequestToJSON(
   subscribersV1ControllerMarkAllUnreadAsReadRequest:
     SubscribersV1ControllerMarkAllUnreadAsReadRequest,
 ): string {
@@ -75,7 +75,7 @@ export const SubscribersV1ControllerMarkAllUnreadAsReadResponse$inboundSchema:
     });
   });
 
-export function subscribersV1ControllerMarkAllUnreadAsReadResponseFromJSON(
+function subscribersV1ControllerMarkAllUnreadAsReadResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   SubscribersV1ControllerMarkAllUnreadAsReadResponse,

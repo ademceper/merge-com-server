@@ -27,7 +27,7 @@ export type WorkflowControllerPatchWorkflowResponse = {
 };
 
 /** @internal */
-export type WorkflowControllerPatchWorkflowRequest$Outbound = {
+type WorkflowControllerPatchWorkflowRequest$Outbound = {
   workflowId: string;
   "idempotency-key"?: string | undefined;
   PatchWorkflowDto: components.PatchWorkflowDto$Outbound;
@@ -49,7 +49,7 @@ export const WorkflowControllerPatchWorkflowRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function workflowControllerPatchWorkflowRequestToJSON(
+function workflowControllerPatchWorkflowRequestToJSON(
   workflowControllerPatchWorkflowRequest:
     WorkflowControllerPatchWorkflowRequest,
 ): string {
@@ -75,7 +75,7 @@ export const WorkflowControllerPatchWorkflowResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function workflowControllerPatchWorkflowResponseFromJSON(
+function workflowControllerPatchWorkflowResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   WorkflowControllerPatchWorkflowResponse,

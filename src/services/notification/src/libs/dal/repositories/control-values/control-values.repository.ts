@@ -7,7 +7,7 @@ import { ControlValuesEntity } from './control-values.entity';
 import { ControlValues } from './control-values.schema';
 import type { ControlValuesModel } from './control-values.schema';
 
-export interface DeleteManyValuesQuery {
+interface DeleteManyValuesQuery {
   _environmentId: string;
   _organizationId: string;
   _workflowId?: string;
@@ -16,7 +16,7 @@ export interface DeleteManyValuesQuery {
   level?: ControlValuesLevelEnum;
 }
 
-export interface FindControlValuesQuery {
+interface FindControlValuesQuery {
   _environmentId: string;
   _organizationId: string;
   _workflowId?: string;

@@ -5,7 +5,7 @@ import { IsEnum, IsNumber, IsObject, IsOptional, IsString, ValidateNested } from
 import { JSONSchemaDto } from '../../shared/dtos/json-schema.dto';
 import { PreviewPayloadDto } from './preview-payload.dto';
 
-export enum TimeUnitEnum {
+enum TimeUnitEnum {
   SECONDS = 'seconds',
   MINUTES = 'minutes',
   HOURS = 'hours',
@@ -14,7 +14,7 @@ export enum TimeUnitEnum {
   MONTHS = 'months',
 }
 
-export enum RedirectTargetEnum {
+enum RedirectTargetEnum {
   SELF = '_self',
   BLANK = '_blank',
   PARENT = '_parent',
@@ -22,9 +22,9 @@ export enum RedirectTargetEnum {
   UNFENCED_TOP = '_unfencedTop',
 }
 
-export class RenderOutput {}
+class RenderOutput {}
 
-export class RedirectDto {
+class RedirectDto {
   @ApiProperty({
     description: 'URL to redirect to',
     type: 'string',
@@ -42,7 +42,7 @@ export class RedirectDto {
   target?: RedirectTargetEnum;
 }
 
-export class ActionDto {
+class ActionDto {
   @ApiProperty({
     description: 'Label for the action',
     type: 'string',
@@ -60,19 +60,19 @@ export class ActionDto {
   redirect?: RedirectDto;
 }
 
-export class ChatRenderOutput extends RenderOutput {
+class ChatRenderOutput extends RenderOutput {
   @ApiProperty({ description: 'Body of the chat message' })
   @IsString()
   body: string;
 }
 
-export class SmsRenderOutput extends RenderOutput {
+class SmsRenderOutput extends RenderOutput {
   @ApiProperty({ description: 'Body of the SMS message' })
   @IsString()
   body: string;
 }
 
-export class PushRenderOutput extends RenderOutput {
+class PushRenderOutput extends RenderOutput {
   @ApiProperty({ description: 'Subject of the push notification' })
   @IsString()
   subject: string;
@@ -92,7 +92,7 @@ export class EmailRenderOutput extends RenderOutput {
   body: string;
 }
 
-export class DigestRegularOutput {
+class DigestRegularOutput {
   @ApiProperty({ description: 'Amount of time units' })
   @IsNumber()
   amount: number;
@@ -122,7 +122,7 @@ export class DigestRegularOutput {
   };
 }
 
-export class DigestTimedOutput {
+class DigestTimedOutput {
   @ApiProperty({ description: 'Cron expression' })
   @IsString()
   cron: string;
@@ -133,7 +133,7 @@ export class DigestTimedOutput {
   digestKey?: string;
 }
 
-export class DelayRenderOutput extends RenderOutput {
+class DelayRenderOutput extends RenderOutput {
   @ApiProperty({ description: 'Type of delay' })
   @IsString()
   type: string;
@@ -151,7 +151,7 @@ export class DelayRenderOutput extends RenderOutput {
   unit: TimeUnitEnum;
 }
 
-export class InAppRenderOutput extends RenderOutput {
+class InAppRenderOutput extends RenderOutput {
   @ApiPropertyOptional({ description: 'Subject of the in-app notification' })
   @IsOptional()
   @IsString()
@@ -331,7 +331,7 @@ export class GeneratePreviewResponseDto {
       };
 }
 
-export class DigestOutputProcessor {
+class DigestOutputProcessor {
   static isDigestRegularOutput(output: unknown): output is DigestRegularOutput {
     if (typeof output !== 'object' || output === null) return false;
 
@@ -349,5 +349,5 @@ export class DigestOutputProcessor {
   }
 }
 
-export type DigestRenderOutput = DigestRegularOutput | DigestTimedOutput;
+type DigestRenderOutput = DigestRegularOutput | DigestTimedOutput;
 type TimeType = 'regular';

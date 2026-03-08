@@ -23,7 +23,7 @@ export type EventsControllerBroadcastEventToAllResponse = {
 };
 
 /** @internal */
-export type EventsControllerBroadcastEventToAllRequest$Outbound = {
+type EventsControllerBroadcastEventToAllRequest$Outbound = {
   "idempotency-key"?: string | undefined;
   TriggerEventToAllRequestDto: components.TriggerEventToAllRequestDto$Outbound;
 };
@@ -45,7 +45,7 @@ export const EventsControllerBroadcastEventToAllRequest$outboundSchema:
     });
   });
 
-export function eventsControllerBroadcastEventToAllRequestToJSON(
+function eventsControllerBroadcastEventToAllRequestToJSON(
   eventsControllerBroadcastEventToAllRequest:
     EventsControllerBroadcastEventToAllRequest,
 ): string {
@@ -72,7 +72,7 @@ export const EventsControllerBroadcastEventToAllResponse$inboundSchema:
     });
   });
 
-export function eventsControllerBroadcastEventToAllResponseFromJSON(
+function eventsControllerBroadcastEventToAllResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   EventsControllerBroadcastEventToAllResponse,

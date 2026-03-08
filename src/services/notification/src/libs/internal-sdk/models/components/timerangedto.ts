@@ -43,10 +43,10 @@ export const TimeRangeDto$outboundSchema: z.ZodType<
   end: z.string(),
 });
 
-export function timeRangeDtoToJSON(timeRangeDto: TimeRangeDto): string {
+function timeRangeDtoToJSON(timeRangeDto: TimeRangeDto): string {
   return JSON.stringify(TimeRangeDto$outboundSchema.parse(timeRangeDto));
 }
-export function timeRangeDtoFromJSON(
+function timeRangeDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<TimeRangeDto, SDKValidationError> {
   return safeParse(

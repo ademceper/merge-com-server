@@ -4,8 +4,6 @@ import type { TopicKey } from './topic';
 export enum TriggerEventStatusEnum {
   ERROR = 'error',
   NOT_ACTIVE = 'trigger_not_active',
-  NO_WORKFLOW_ACTIVE_STEPS = 'no_workflow_active_steps_defined',
-  NO_WORKFLOW_STEPS = 'no_workflow_steps_defined',
   PROCESSED = 'processed',
   TENANT_MISSING = 'no_tenant_found',
   INVALID_RECIPIENTS = 'invalid_recipients',
@@ -54,7 +52,6 @@ export interface ITriggerPayload {
 }
 
 export enum TriggerRecipientsTypeEnum {
-  SUBSCRIBER = 'Subscriber',
   TOPIC = 'Topic',
 }
 
@@ -64,7 +61,7 @@ export interface ITopic {
   exclude?: string[];
 }
 
-export type TriggerRecipientTopics = ITopic[];
+type TriggerRecipientTopics = ITopic[];
 
 export enum AddressingTypeEnum {
   BROADCAST = 'broadcast',

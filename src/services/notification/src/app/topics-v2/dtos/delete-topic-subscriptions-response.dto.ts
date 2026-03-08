@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsOptional, IsString } from 'class-validator';
 
-export class TopicDto {
+class TopicDto {
   @ApiProperty({
     description: 'The unique identifier of the topic',
     example: '64f5e95d3d7946d80d0cb677',
@@ -22,7 +22,7 @@ export class TopicDto {
   name?: string;
 }
 
-export class SubscriberDto {
+class SubscriberDto {
   @ApiProperty({
     description: 'The unique identifier of the subscriber',
     example: '64f5e95d3d7946d80d0cb678',
@@ -147,7 +147,7 @@ export class SubscriptionsDeleteErrorDto {
   message: string;
 }
 
-export class MetaDto {
+class MetaDto {
   @ApiProperty({
     description: 'The total count of subscriber IDs provided',
     example: 3,

@@ -17,7 +17,7 @@ class Preference {
   channels: SubscriberPreferenceChannels;
 }
 
-export class NotificationTriggerVariableResponse implements INotificationTriggerVariable {
+class NotificationTriggerVariableResponse implements INotificationTriggerVariable {
   @ApiProperty({
     type: String,
     description: 'The name of the variable',
@@ -38,7 +38,7 @@ export class NotificationTriggerVariableResponse implements INotificationTrigger
   type?: TemplateVariableTypeEnum;
 }
 
-export class TriggerReservedVariableResponse implements ITriggerReservedVariable {
+class TriggerReservedVariableResponse implements ITriggerReservedVariable {
   @ApiProperty({
     enum: TriggerContextTypeEnum,
     description: 'The type of the reserved variable',
@@ -52,7 +52,7 @@ export class TriggerReservedVariableResponse implements ITriggerReservedVariable
   variables: NotificationTriggerVariableResponse[];
 }
 
-export class NotificationTriggerResponse implements INotificationTrigger {
+class NotificationTriggerResponse implements INotificationTrigger {
   @ApiProperty({
     enum: [...Object.values(TriggerTypeEnum)],
     enumName: 'TriggerTypeEnum',

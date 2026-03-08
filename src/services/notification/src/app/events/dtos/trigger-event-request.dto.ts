@@ -16,7 +16,7 @@ import {
 import { ApiContextPayload } from '../../shared/framework/swagger';
 import { CreateSubscriberRequestDto } from '../../subscribers/dtos';
 
-export class WorkflowToStepControlValuesDto {
+class WorkflowToStepControlValuesDto {
   /**
    * A mapping of step IDs to their corresponding data.
    * Built for stateless triggering by the local studio, those values will not be persisted outside of the job scope
@@ -53,7 +53,7 @@ export class TenantPayloadDto implements IUpdateTenantDto {
   data?: CustomDataType;
 }
 
-export class TopicPayloadDto {
+class TopicPayloadDto {
   @ApiProperty()
   topicKey: string;
 
@@ -74,7 +74,7 @@ export class TopicPayloadDto {
   exclude?: string[];
 }
 
-export class StepsOverrides {
+class StepsOverrides {
   @ApiPropertyOptional({
     description: 'Passing the provider id and the provider specific configurations',
     example: {
@@ -101,7 +101,7 @@ export class StepsOverrides {
   layoutId?: string | null;
 }
 
-export class EmailChannelOverrides {
+class EmailChannelOverrides {
   @ApiPropertyOptional({
     description: 'Override or remove the layout for all email steps in the workflow',
     example: 'promotional-layout-2024',
@@ -113,7 +113,7 @@ export class EmailChannelOverrides {
   layoutId?: string | null;
 }
 
-export class ChannelOverrides {
+class ChannelOverrides {
   @ApiPropertyOptional({
     description: 'Email channel specific overrides',
     type: () => EmailChannelOverrides,

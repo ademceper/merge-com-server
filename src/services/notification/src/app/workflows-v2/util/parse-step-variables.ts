@@ -1,12 +1,12 @@
 import { JsonSchemaTypeEnum } from 'libs/dal';
 import { JSONSchemaDto } from '../../shared/dtos/json-schema.dto';
 
-export type LiquidVariable = {
+type LiquidVariable = {
   name: string;
   aliasFor?: string;
 };
 
-export type ParsedVariables = {
+type ParsedVariables = {
   primitives: LiquidVariable[];
   arrays: LiquidVariable[];
   namespaces: LiquidVariable[];

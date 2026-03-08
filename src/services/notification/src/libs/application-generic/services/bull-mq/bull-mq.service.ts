@@ -32,14 +32,14 @@ const LOG_CONTEXT = 'BullMqService';
 export {
   Job,
   Queue,
-  Worker,
+  
 };
 export type {
   JobsOptions,
   Processor,
-  QueueBaseOptions,
+  
   QueueOptions,
-  RedisConnectionOptions as BullMqConnectionOptions,
+  
   WorkerOptions,
   BulkJobOptions,
 };

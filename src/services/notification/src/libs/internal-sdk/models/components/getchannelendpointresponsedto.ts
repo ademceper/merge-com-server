@@ -134,7 +134,7 @@ export type GetChannelEndpointResponseDtoType = ClosedEnum<typeof GetChannelEndp
 /**
  * Endpoint data specific to the channel type
  */
-export type Endpoint = SlackChannelEndpointDto | SlackUserEndpointDto | WebhookEndpointDto | PhoneEndpointDto;
+type Endpoint = SlackChannelEndpointDto | SlackUserEndpointDto | WebhookEndpointDto | PhoneEndpointDto;
 
 export type GetChannelEndpointResponseDto = {
   /**
@@ -184,29 +184,29 @@ export type GetChannelEndpointResponseDto = {
 };
 
 /** @internal */
-export const GetChannelEndpointResponseDtoChannel$inboundSchema: z.ZodNativeEnum<
+const GetChannelEndpointResponseDtoChannel$inboundSchema: z.ZodNativeEnum<
   typeof GetChannelEndpointResponseDtoChannel
 > = z.nativeEnum(GetChannelEndpointResponseDtoChannel);
 
 /** @internal */
-export const GetChannelEndpointResponseDtoProviderId$inboundSchema: z.ZodNativeEnum<
+const GetChannelEndpointResponseDtoProviderId$inboundSchema: z.ZodNativeEnum<
   typeof GetChannelEndpointResponseDtoProviderId
 > = z.nativeEnum(GetChannelEndpointResponseDtoProviderId);
 
 /** @internal */
-export const GetChannelEndpointResponseDtoType$inboundSchema: z.ZodNativeEnum<
+const GetChannelEndpointResponseDtoType$inboundSchema: z.ZodNativeEnum<
   typeof GetChannelEndpointResponseDtoType
 > = z.nativeEnum(GetChannelEndpointResponseDtoType);
 
 /** @internal */
-export const Endpoint$inboundSchema: z.ZodType<Endpoint, z.ZodTypeDef, unknown> = z.union([
+const Endpoint$inboundSchema: z.ZodType<Endpoint, z.ZodTypeDef, unknown> = z.union([
   SlackChannelEndpointDto$inboundSchema,
   SlackUserEndpointDto$inboundSchema,
   WebhookEndpointDto$inboundSchema,
   PhoneEndpointDto$inboundSchema,
 ]);
 
-export function endpointFromJSON(jsonString: string): SafeParseResult<Endpoint, SDKValidationError> {
+function endpointFromJSON(jsonString: string): SafeParseResult<Endpoint, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) => Endpoint$inboundSchema.parse(JSON.parse(x)),
@@ -238,7 +238,7 @@ export const GetChannelEndpointResponseDto$inboundSchema: z.ZodType<
   updatedAt: z.string(),
 });
 
-export function getChannelEndpointResponseDtoFromJSON(
+function getChannelEndpointResponseDtoFromJSON(
   jsonString: string
 ): SafeParseResult<GetChannelEndpointResponseDto, SDKValidationError> {
   return safeParse(

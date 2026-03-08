@@ -9,7 +9,7 @@ import type { TranslationModel } from './translation.schema';
 
 type TranslationQuery = FilterQuery<TranslationModel> & EnforceEnvOrOrgIds;
 
-export class TranslationRepository extends BaseRepository<TranslationModel, TranslationEntity, EnforceEnvOrOrgIds> {
+class TranslationRepository extends BaseRepository<TranslationModel, TranslationEntity, EnforceEnvOrOrgIds> {
   private translation: SoftDeleteModel;
 
   constructor() {

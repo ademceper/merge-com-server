@@ -28,13 +28,13 @@ export type AutoConfigureIntegrationResponseDto = {
 };
 
 /** @internal */
-export const Integration$inboundSchema: z.ZodType<
+const Integration$inboundSchema: z.ZodType<
   Integration,
   z.ZodTypeDef,
   unknown
 > = z.object({});
 
-export function integrationFromJSON(
+function integrationFromJSON(
   jsonString: string,
 ): SafeParseResult<Integration, SDKValidationError> {
   return safeParse(
@@ -55,7 +55,7 @@ export const AutoConfigureIntegrationResponseDto$inboundSchema: z.ZodType<
   integration: z.lazy(() => Integration$inboundSchema).optional(),
 });
 
-export function autoConfigureIntegrationResponseDtoFromJSON(
+function autoConfigureIntegrationResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<AutoConfigureIntegrationResponseDto, SDKValidationError> {
   return safeParse(

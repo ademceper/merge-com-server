@@ -20,7 +20,7 @@ export const GetEnvironmentTagsDto$inboundSchema: z.ZodType<
   name: z.string(),
 });
 
-export function getEnvironmentTagsDtoFromJSON(
+function getEnvironmentTagsDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<GetEnvironmentTagsDto, SDKValidationError> {
   return safeParse(

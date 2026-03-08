@@ -92,7 +92,7 @@ export const StepResponseDto$inboundSchema: z.ZodType<
   });
 });
 
-export function stepResponseDtoFromJSON(
+function stepResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<StepResponseDto, SDKValidationError> {
   return safeParse(

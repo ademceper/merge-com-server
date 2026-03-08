@@ -9,7 +9,7 @@ class InvariantError extends Error {
   }
 }
 
-export function invariant(
+function invariant(
   condition: unknown,
   message: string,
 ): asserts condition {
@@ -18,11 +18,11 @@ export function invariant(
   }
 }
 
-export type ExactPartial<T> = {
+type ExactPartial<T> = {
   [P in keyof T]?: T[P] | undefined;
 };
 
-export type Remap<Inp, Mapping extends { [k in keyof Inp]?: string | null }> = {
+type Remap<Inp, Mapping extends { [k in keyof Inp]?: string | null }> = {
   [k in keyof Inp as Mapping[k] extends string /* if we have a string mapping for this key then use it */
     ? Mapping[k]
     : Mapping[k] extends null /* if the mapping is to `null` then drop the key */
@@ -59,7 +59,7 @@ export function remap<
   return out;
 }
 
-export function combineSignals(
+function combineSignals(
   ...signals: Array<AbortSignal | null | undefined>
 ): AbortSignal | null {
   const filtered: AbortSignal[] = [];
@@ -81,7 +81,7 @@ export function combineSignals(
   }
 }
 
-export function abortSignalAny(signals: AbortSignal[]): AbortSignal {
+function abortSignalAny(signals: AbortSignal[]): AbortSignal {
   const controller = new AbortController();
   const result = controller.signal;
   if (!signals.length) {
@@ -135,7 +135,7 @@ export function compactMap<T>(
   return out;
 }
 
-export function allRequired<V extends Record<string, unknown>>(
+function allRequired<V extends Record<string, unknown>>(
   v: V,
 ):
   | {

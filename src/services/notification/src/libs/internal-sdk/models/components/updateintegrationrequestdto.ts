@@ -41,14 +41,14 @@ export type UpdateIntegrationRequestDto = {
 export type UpdateIntegrationRequestDtoConfigurations$Outbound = {};
 
 /** @internal */
-export const UpdateIntegrationRequestDtoConfigurations$outboundSchema:
+const UpdateIntegrationRequestDtoConfigurations$outboundSchema:
   z.ZodType<
     UpdateIntegrationRequestDtoConfigurations$Outbound,
     z.ZodTypeDef,
     UpdateIntegrationRequestDtoConfigurations
   > = z.object({});
 
-export function updateIntegrationRequestDtoConfigurationsToJSON(
+function updateIntegrationRequestDtoConfigurationsToJSON(
   updateIntegrationRequestDtoConfigurations:
     UpdateIntegrationRequestDtoConfigurations,
 ): string {
@@ -95,7 +95,7 @@ export const UpdateIntegrationRequestDto$outboundSchema: z.ZodType<
   });
 });
 
-export function updateIntegrationRequestDtoToJSON(
+function updateIntegrationRequestDtoToJSON(
   updateIntegrationRequestDto: UpdateIntegrationRequestDto,
 ): string {
   return JSON.stringify(

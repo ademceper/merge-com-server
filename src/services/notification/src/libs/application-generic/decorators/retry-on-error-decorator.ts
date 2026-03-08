@@ -1,6 +1,6 @@
 import { parseErrorInformation } from '../logging/error-util';
 
-export class RetryOptions {
+class RetryOptions {
   maxRetries?: number;
   delay?: number;
   exponentialBackoff?: boolean;

@@ -67,7 +67,7 @@ export const ORDER_BY: (keyof typeof schemaDefinition)[] = [
   'entity_id',
 ];
 
-export const TTL: keyof typeof schemaDefinition = 'expires_at';
+const TTL: keyof typeof schemaDefinition = 'expires_at';
 
 const clickhouseSchemaOptions = {
   table_name: TABLE_NAME,
@@ -203,7 +203,7 @@ export type EventType =
   | WorkflowRunStatusType
   | DeliveryLifecycleEventType;
 
-export type EntityType = 'request' | 'step_run' | 'workflow_run';
+type EntityType = 'request' | 'step_run' | 'workflow_run';
 
 export type TraceStatus = 'success' | 'error' | 'warning' | 'pending' | '';
 

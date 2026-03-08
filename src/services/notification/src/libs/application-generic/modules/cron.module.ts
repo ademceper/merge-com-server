@@ -23,7 +23,7 @@ const cronJobsFromWorkers: Partial<Record<JobTopicNameEnum, Array<JobCronNameEnu
   ],
 };
 
-export const cronService = {
+const cronService = {
   provide: CronService,
   useFactory: async (metricsService: MetricsService, activeCronJobs: JobCronNameEnum[], dalService: DalService) => {
     const pulse = new Pulse({
@@ -46,7 +46,7 @@ export const cronService = {
 const PROVIDERS: Provider[] = [cronService, MetricsService, customDalService];
 
 @Module({})
-export class CronModule {
+class CronModule {
   static forRoot(activeWorkers?: JobTopicNameEnum[]): DynamicModule {
     return {
       imports: [MetricsModule],

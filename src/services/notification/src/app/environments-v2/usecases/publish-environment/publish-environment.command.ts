@@ -3,7 +3,7 @@ import { Type } from 'class-transformer';
 import { IsArray, IsBoolean, IsEnum, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { ResourceTypeEnum } from '../../types/sync.types';
 
-export interface IResourceToPublish {
+interface IResourceToPublish {
   resourceType: ResourceTypeEnum;
   resourceId: string;
 }

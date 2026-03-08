@@ -3,7 +3,7 @@ import { ExecutionDetailsEntity } from 'libs/dal';
 
 import { CreateExecutionDetailsCommand } from '../create-execution-details.command';
 
-export class CreateExecutionDetailsResponseDto {
+class CreateExecutionDetailsResponseDto {
   @ApiProperty()
   id: string;
 

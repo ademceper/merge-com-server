@@ -27,7 +27,7 @@ export const BulkTriggerEventDto$outboundSchema: z.ZodType<
   events: z.array(TriggerEventRequestDto$outboundSchema),
 });
 
-export function bulkTriggerEventDtoToJSON(
+function bulkTriggerEventDtoToJSON(
   bulkTriggerEventDto: BulkTriggerEventDto,
 ): string {
   return JSON.stringify(

@@ -10,13 +10,13 @@ export type Security = {
 };
 
 /** @internal */
-export type Security$Outbound = {
+type Security$Outbound = {
   secretKey?: string | undefined;
   bearerAuth?: string | undefined;
 };
 
 /** @internal */
-export const Security$outboundSchema: z.ZodType<
+const Security$outboundSchema: z.ZodType<
   Security$Outbound,
   z.ZodTypeDef,
   Security
@@ -25,6 +25,6 @@ export const Security$outboundSchema: z.ZodType<
   bearerAuth: z.string().optional(),
 });
 
-export function securityToJSON(security: Security): string {
+function securityToJSON(security: Security): string {
   return JSON.stringify(Security$outboundSchema.parse(security));
 }

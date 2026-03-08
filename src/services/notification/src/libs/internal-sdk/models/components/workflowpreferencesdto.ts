@@ -18,7 +18,7 @@ import {
 /**
  * A preference for the workflow. The values specified here will be used if no preference is specified for a channel.
  */
-export type All = WorkflowPreferenceDto;
+type All = WorkflowPreferenceDto;
 
 export type WorkflowPreferencesDto = {
   /**
@@ -32,10 +32,10 @@ export type WorkflowPreferencesDto = {
 };
 
 /** @internal */
-export const All$inboundSchema: z.ZodType<All, z.ZodTypeDef, unknown> =
+const All$inboundSchema: z.ZodType<All, z.ZodTypeDef, unknown> =
   WorkflowPreferenceDto$inboundSchema;
 
-export function allFromJSON(
+function allFromJSON(
   jsonString: string,
 ): SafeParseResult<All, SDKValidationError> {
   return safeParse(
@@ -55,7 +55,7 @@ export const WorkflowPreferencesDto$inboundSchema: z.ZodType<
   channels: z.record(ChannelPreferenceDto$inboundSchema),
 });
 
-export function workflowPreferencesDtoFromJSON(
+function workflowPreferencesDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<WorkflowPreferencesDto, SDKValidationError> {
   return safeParse(

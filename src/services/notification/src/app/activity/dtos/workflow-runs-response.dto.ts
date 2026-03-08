@@ -4,7 +4,7 @@ import { Type } from 'class-transformer';
 import { IsIn, IsObject, IsOptional, IsString } from 'class-validator';
 import { GetWorkflowRunResponseBaseDto } from './shared.dto';
 
-export class WorkflowRunStepsDetailsDto {
+class WorkflowRunStepsDetailsDto {
   @ApiProperty({ description: 'Step run identifier' })
   @IsString()
   id: string;

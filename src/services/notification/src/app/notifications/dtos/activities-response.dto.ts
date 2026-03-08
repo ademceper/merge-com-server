@@ -4,7 +4,7 @@ import type { ProvidersIdEnum } from 'libs/shared';
 import { IsArray, IsEnum, IsNumber, IsOptional, IsString } from 'class-validator';
 import { StepFilterDto } from '../../shared/dtos/step-filter-dto';
 
-export class DigestTimedConfigDto {
+class DigestTimedConfigDto {
   @ApiPropertyOptional({ description: 'Time at which the digest is triggered' })
   @IsOptional()
   @IsString()
@@ -295,12 +295,12 @@ export class ActivityNotificationSubscriberResponseDto {
 }
 
 // Notification Trigger Variable DTO
-export class NotificationTriggerVariable {
+class NotificationTriggerVariable {
   @ApiProperty({ description: 'Name of the variable', type: String })
   name: string;
 }
 
-export class NotificationTriggerDto {
+class NotificationTriggerDto {
   @ApiProperty({
     enum: TriggerTypeEnum,
     description: 'Type of the trigger',
@@ -349,7 +349,7 @@ export class ActivityNotificationTemplateResponseDto {
   triggers: NotificationTriggerDto[];
 }
 
-export class ActivityTopicDto {
+class ActivityTopicDto {
   @ApiProperty({ description: 'Internal Topic ID of the notification', type: String })
   _topicId: string;
 

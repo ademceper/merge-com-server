@@ -31,7 +31,7 @@ export type ContextsControllerUpdateContextResponse = {
 };
 
 /** @internal */
-export type ContextsControllerUpdateContextRequest$Outbound = {
+type ContextsControllerUpdateContextRequest$Outbound = {
   type: string;
   id: string;
   "idempotency-key"?: string | undefined;
@@ -55,7 +55,7 @@ export const ContextsControllerUpdateContextRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function contextsControllerUpdateContextRequestToJSON(
+function contextsControllerUpdateContextRequestToJSON(
   contextsControllerUpdateContextRequest:
     ContextsControllerUpdateContextRequest,
 ): string {
@@ -81,7 +81,7 @@ export const ContextsControllerUpdateContextResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function contextsControllerUpdateContextResponseFromJSON(
+function contextsControllerUpdateContextResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   ContextsControllerUpdateContextResponse,

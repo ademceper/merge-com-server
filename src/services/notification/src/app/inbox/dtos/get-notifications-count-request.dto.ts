@@ -14,7 +14,7 @@ import {
 import { IsEnumOrArray } from '../../shared/validators/is-enum-or-array';
 import type { NotificationFilter } from '../utils/types';
 
-export class NotificationsFilter implements NotificationFilter {
+class NotificationsFilter implements NotificationFilter {
   @IsOptional()
   @IsArray()
   @IsString({ each: true })

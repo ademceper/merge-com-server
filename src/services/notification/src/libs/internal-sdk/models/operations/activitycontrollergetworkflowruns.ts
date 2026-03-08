@@ -42,14 +42,14 @@ export type ActivityControllerGetWorkflowRunsRequest = {
 };
 
 /** @internal */
-export const QueryParamStatuses$outboundSchema: z.ZodNativeEnum<typeof QueryParamStatuses> =
+const QueryParamStatuses$outboundSchema: z.ZodNativeEnum<typeof QueryParamStatuses> =
   z.nativeEnum(QueryParamStatuses);
 
 /** @internal */
-export const Severity$outboundSchema: z.ZodNativeEnum<typeof Severity> = z.nativeEnum(Severity);
+const Severity$outboundSchema: z.ZodNativeEnum<typeof Severity> = z.nativeEnum(Severity);
 
 /** @internal */
-export type ActivityControllerGetWorkflowRunsRequest$Outbound = {
+type ActivityControllerGetWorkflowRunsRequest$Outbound = {
   limit: number;
   cursor?: string | undefined;
   workflowIds?: Array<string> | undefined;
@@ -94,7 +94,7 @@ export const ActivityControllerGetWorkflowRunsRequest$outboundSchema: z.ZodType<
     });
   });
 
-export function activityControllerGetWorkflowRunsRequestToJSON(
+function activityControllerGetWorkflowRunsRequestToJSON(
   activityControllerGetWorkflowRunsRequest: ActivityControllerGetWorkflowRunsRequest
 ): string {
   return JSON.stringify(

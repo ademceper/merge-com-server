@@ -1,1 +1,1 @@
-export interface ITagsResponse extends Array<{ name: string }> {}
+interface ITagsResponse extends Array<{ name: string }> {}

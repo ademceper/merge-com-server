@@ -24,7 +24,7 @@ export type WorkflowControllerDuplicateWorkflowResponse = {
 };
 
 /** @internal */
-export type WorkflowControllerDuplicateWorkflowRequest$Outbound = {
+type WorkflowControllerDuplicateWorkflowRequest$Outbound = {
   workflowId: string;
   "idempotency-key"?: string | undefined;
   DuplicateWorkflowDto: components.DuplicateWorkflowDto$Outbound;
@@ -47,7 +47,7 @@ export const WorkflowControllerDuplicateWorkflowRequest$outboundSchema:
     });
   });
 
-export function workflowControllerDuplicateWorkflowRequestToJSON(
+function workflowControllerDuplicateWorkflowRequestToJSON(
   workflowControllerDuplicateWorkflowRequest:
     WorkflowControllerDuplicateWorkflowRequest,
 ): string {
@@ -74,7 +74,7 @@ export const WorkflowControllerDuplicateWorkflowResponse$inboundSchema:
     });
   });
 
-export function workflowControllerDuplicateWorkflowResponseFromJSON(
+function workflowControllerDuplicateWorkflowResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   WorkflowControllerDuplicateWorkflowResponse,

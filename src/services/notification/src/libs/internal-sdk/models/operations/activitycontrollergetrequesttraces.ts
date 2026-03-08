@@ -14,7 +14,7 @@ export type ActivityControllerGetRequestTracesRequest = {
 };
 
 /** @internal */
-export type ActivityControllerGetRequestTracesRequest$Outbound = {
+type ActivityControllerGetRequestTracesRequest$Outbound = {
   requestId: string;
   "idempotency-key"?: string | undefined;
 };
@@ -34,7 +34,7 @@ export const ActivityControllerGetRequestTracesRequest$outboundSchema:
     });
   });
 
-export function activityControllerGetRequestTracesRequestToJSON(
+function activityControllerGetRequestTracesRequestToJSON(
   activityControllerGetRequestTracesRequest:
     ActivityControllerGetRequestTracesRequest,
 ): string {

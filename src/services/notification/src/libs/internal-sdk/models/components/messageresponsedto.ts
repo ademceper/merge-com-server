@@ -17,7 +17,7 @@ import { WorkflowResponse, WorkflowResponse$inboundSchema } from './workflowresp
 /**
  * Content of the message, can be an email block or a string
  */
-export type Content = Array<EmailBlock> | string;
+type Content = Array<EmailBlock> | string;
 
 export type MessageResponseDto = {
   /**
@@ -163,12 +163,12 @@ export type MessageResponseDto = {
 };
 
 /** @internal */
-export const Content$inboundSchema: z.ZodType<Content, z.ZodTypeDef, unknown> = z.union([
+const Content$inboundSchema: z.ZodType<Content, z.ZodTypeDef, unknown> = z.union([
   z.array(EmailBlock$inboundSchema),
   z.string(),
 ]);
 
-export function contentFromJSON(jsonString: string): SafeParseResult<Content, SDKValidationError> {
+function contentFromJSON(jsonString: string): SafeParseResult<Content, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) => Content$inboundSchema.parse(JSON.parse(x)),
@@ -228,7 +228,7 @@ export const MessageResponseDto$inboundSchema: z.ZodType<MessageResponseDto, z.Z
     });
   });
 
-export function messageResponseDtoFromJSON(
+function messageResponseDtoFromJSON(
   jsonString: string
 ): SafeParseResult<MessageResponseDto, SDKValidationError> {
   return safeParse(

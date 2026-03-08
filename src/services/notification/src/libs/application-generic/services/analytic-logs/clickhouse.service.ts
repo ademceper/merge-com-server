@@ -3,7 +3,7 @@ import type { ClickHouseSettings, PingResult } from '@clickhouse/client';
 import { Injectable } from '@nestjs/common';
 import type { BeforeApplicationShutdown } from '@nestjs/common';
 
-export { ClickHouseClient };
+;
 
 export type InsertOptions = {
   asyncInsert?: boolean;

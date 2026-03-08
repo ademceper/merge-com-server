@@ -42,7 +42,7 @@ export const ActivitiesResponseDto$inboundSchema: z.ZodType<
   page: z.number(),
 });
 
-export function activitiesResponseDtoFromJSON(
+function activitiesResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<ActivitiesResponseDto, SDKValidationError> {
   return safeParse(

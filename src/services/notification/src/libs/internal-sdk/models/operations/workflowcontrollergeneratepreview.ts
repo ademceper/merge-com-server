@@ -28,7 +28,7 @@ export type WorkflowControllerGeneratePreviewResponse = {
 };
 
 /** @internal */
-export type WorkflowControllerGeneratePreviewRequest$Outbound = {
+type WorkflowControllerGeneratePreviewRequest$Outbound = {
   workflowId: string;
   stepId: string;
   "idempotency-key"?: string | undefined;
@@ -53,7 +53,7 @@ export const WorkflowControllerGeneratePreviewRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function workflowControllerGeneratePreviewRequestToJSON(
+function workflowControllerGeneratePreviewRequestToJSON(
   workflowControllerGeneratePreviewRequest:
     WorkflowControllerGeneratePreviewRequest,
 ): string {
@@ -79,7 +79,7 @@ export const WorkflowControllerGeneratePreviewResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function workflowControllerGeneratePreviewResponseFromJSON(
+function workflowControllerGeneratePreviewResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   WorkflowControllerGeneratePreviewResponse,

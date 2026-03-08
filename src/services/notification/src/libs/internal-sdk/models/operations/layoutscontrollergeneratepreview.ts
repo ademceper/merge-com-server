@@ -27,7 +27,7 @@ export type LayoutsControllerGeneratePreviewResponse = {
 };
 
 /** @internal */
-export type LayoutsControllerGeneratePreviewRequest$Outbound = {
+type LayoutsControllerGeneratePreviewRequest$Outbound = {
   layoutId: string;
   "idempotency-key"?: string | undefined;
   LayoutPreviewRequestDto: components.LayoutPreviewRequestDto$Outbound;
@@ -49,7 +49,7 @@ export const LayoutsControllerGeneratePreviewRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function layoutsControllerGeneratePreviewRequestToJSON(
+function layoutsControllerGeneratePreviewRequestToJSON(
   layoutsControllerGeneratePreviewRequest:
     LayoutsControllerGeneratePreviewRequest,
 ): string {
@@ -75,7 +75,7 @@ export const LayoutsControllerGeneratePreviewResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function layoutsControllerGeneratePreviewResponseFromJSON(
+function layoutsControllerGeneratePreviewResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   LayoutsControllerGeneratePreviewResponse,

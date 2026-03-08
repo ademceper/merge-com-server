@@ -15,7 +15,7 @@ export const ENDPOINT_TYPES = {
   MS_TEAMS_USER: 'ms_teams_user',
 } as const;
 
-export type ChannelEndpointType = (typeof ENDPOINT_TYPES)[keyof typeof ENDPOINT_TYPES];
+type ChannelEndpointType = (typeof ENDPOINT_TYPES)[keyof typeof ENDPOINT_TYPES];
 
 export type ChannelEndpointByType = {
   [ENDPOINT_TYPES.SLACK_CHANNEL]: { channelId: string };

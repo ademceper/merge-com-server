@@ -61,7 +61,7 @@ export const PatchWorkflowDto$outboundSchema: z.ZodType<
   isTranslationEnabled: z.boolean().optional(),
 });
 
-export function patchWorkflowDtoToJSON(
+function patchWorkflowDtoToJSON(
   patchWorkflowDto: PatchWorkflowDto,
 ): string {
   return JSON.stringify(

@@ -5,7 +5,7 @@ import axios from 'axios';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
 import type { WithPassthrough } from '../../../utils/types';
 
-export interface ISmsmodeApiResponse {
+interface ISmsmodeApiResponse {
   [key: string]: unknown;
 
   messageId: string;

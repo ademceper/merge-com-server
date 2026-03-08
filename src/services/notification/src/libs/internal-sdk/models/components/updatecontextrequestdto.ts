@@ -25,7 +25,7 @@ export const UpdateContextRequestDto$outboundSchema: z.ZodType<
   data: z.record(z.any()),
 });
 
-export function updateContextRequestDtoToJSON(
+function updateContextRequestDtoToJSON(
   updateContextRequestDto: UpdateContextRequestDto,
 ): string {
   return JSON.stringify(

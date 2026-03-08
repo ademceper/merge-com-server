@@ -23,7 +23,7 @@ export type IntegrationsControllerRemoveIntegrationResponse = {
 };
 
 /** @internal */
-export type IntegrationsControllerRemoveIntegrationRequest$Outbound = {
+type IntegrationsControllerRemoveIntegrationRequest$Outbound = {
   integrationId: string;
   "idempotency-key"?: string | undefined;
 };
@@ -43,7 +43,7 @@ export const IntegrationsControllerRemoveIntegrationRequest$outboundSchema:
     });
   });
 
-export function integrationsControllerRemoveIntegrationRequestToJSON(
+function integrationsControllerRemoveIntegrationRequestToJSON(
   integrationsControllerRemoveIntegrationRequest:
     IntegrationsControllerRemoveIntegrationRequest,
 ): string {
@@ -70,7 +70,7 @@ export const IntegrationsControllerRemoveIntegrationResponse$inboundSchema:
     });
   });
 
-export function integrationsControllerRemoveIntegrationResponseFromJSON(
+function integrationsControllerRemoveIntegrationResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   IntegrationsControllerRemoveIntegrationResponse,

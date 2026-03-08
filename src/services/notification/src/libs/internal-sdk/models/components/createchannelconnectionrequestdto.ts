@@ -17,7 +17,7 @@ export type CreateChannelConnectionRequestDtoContext2 = {
   data?: { [k: string]: any } | undefined;
 };
 
-export type CreateChannelConnectionRequestDtoContext = CreateChannelConnectionRequestDtoContext2 | string;
+type CreateChannelConnectionRequestDtoContext = CreateChannelConnectionRequestDtoContext2 | string;
 
 export type CreateChannelConnectionRequestDto = {
   /**
@@ -44,7 +44,7 @@ export type CreateChannelConnectionRequestDtoContext2$Outbound = {
 };
 
 /** @internal */
-export const CreateChannelConnectionRequestDtoContext2$outboundSchema: z.ZodType<
+const CreateChannelConnectionRequestDtoContext2$outboundSchema: z.ZodType<
   CreateChannelConnectionRequestDtoContext2$Outbound,
   z.ZodTypeDef,
   CreateChannelConnectionRequestDtoContext2
@@ -53,7 +53,7 @@ export const CreateChannelConnectionRequestDtoContext2$outboundSchema: z.ZodType
   data: z.record(z.any()).optional(),
 });
 
-export function createChannelConnectionRequestDtoContext2ToJSON(
+function createChannelConnectionRequestDtoContext2ToJSON(
   createChannelConnectionRequestDtoContext2: CreateChannelConnectionRequestDtoContext2
 ): string {
   return JSON.stringify(
@@ -62,18 +62,18 @@ export function createChannelConnectionRequestDtoContext2ToJSON(
 }
 
 /** @internal */
-export type CreateChannelConnectionRequestDtoContext$Outbound =
+type CreateChannelConnectionRequestDtoContext$Outbound =
   | CreateChannelConnectionRequestDtoContext2$Outbound
   | string;
 
 /** @internal */
-export const CreateChannelConnectionRequestDtoContext$outboundSchema: z.ZodType<
+const CreateChannelConnectionRequestDtoContext$outboundSchema: z.ZodType<
   CreateChannelConnectionRequestDtoContext$Outbound,
   z.ZodTypeDef,
   CreateChannelConnectionRequestDtoContext
 > = z.union([z.lazy(() => CreateChannelConnectionRequestDtoContext2$outboundSchema), z.string()]);
 
-export function createChannelConnectionRequestDtoContextToJSON(
+function createChannelConnectionRequestDtoContextToJSON(
   createChannelConnectionRequestDtoContext: CreateChannelConnectionRequestDtoContext
 ): string {
   return JSON.stringify(
@@ -111,7 +111,7 @@ export const CreateChannelConnectionRequestDto$outboundSchema: z.ZodType<
   auth: AuthDto$outboundSchema,
 });
 
-export function createChannelConnectionRequestDtoToJSON(
+function createChannelConnectionRequestDtoToJSON(
   createChannelConnectionRequestDto: CreateChannelConnectionRequestDto
 ): string {
   return JSON.stringify(CreateChannelConnectionRequestDto$outboundSchema.parse(createChannelConnectionRequestDto));

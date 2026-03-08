@@ -38,7 +38,7 @@ export const DigestControlsMetadataResponseDto$inboundSchema: z.ZodType<
   values: DigestControlDto$inboundSchema,
 });
 
-export function digestControlsMetadataResponseDtoFromJSON(
+function digestControlsMetadataResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<DigestControlsMetadataResponseDto, SDKValidationError> {
   return safeParse(

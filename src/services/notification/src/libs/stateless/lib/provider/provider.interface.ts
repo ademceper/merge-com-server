@@ -3,7 +3,7 @@ import type { IAttachmentOptions } from '../template/template.interface';
 import type { ChannelData } from './channel-data.type';
 import { CheckIntegrationResponseEnum } from './provider.enum';
 
-export interface IProvider {
+interface IProvider {
   id: string;
   channelType: ChannelTypeEnum;
   verifySignature?: (params: {

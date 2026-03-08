@@ -23,7 +23,7 @@ export type SubscribersV1ControllerBulkCreateSubscribersResponse = {
 };
 
 /** @internal */
-export type SubscribersV1ControllerBulkCreateSubscribersRequest$Outbound = {
+type SubscribersV1ControllerBulkCreateSubscribersRequest$Outbound = {
   "idempotency-key"?: string | undefined;
   BulkSubscriberCreateDto: components.BulkSubscriberCreateDto$Outbound;
 };
@@ -44,7 +44,7 @@ export const SubscribersV1ControllerBulkCreateSubscribersRequest$outboundSchema:
     });
   });
 
-export function subscribersV1ControllerBulkCreateSubscribersRequestToJSON(
+function subscribersV1ControllerBulkCreateSubscribersRequestToJSON(
   subscribersV1ControllerBulkCreateSubscribersRequest:
     SubscribersV1ControllerBulkCreateSubscribersRequest,
 ): string {
@@ -71,7 +71,7 @@ export const SubscribersV1ControllerBulkCreateSubscribersResponse$inboundSchema:
     });
   });
 
-export function subscribersV1ControllerBulkCreateSubscribersResponseFromJSON(
+function subscribersV1ControllerBulkCreateSubscribersResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   SubscribersV1ControllerBulkCreateSubscribersResponse,

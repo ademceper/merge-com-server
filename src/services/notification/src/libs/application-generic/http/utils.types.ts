@@ -1,7 +1,7 @@
 import * as nestSwagger from '@nestjs/swagger';
 import type { ApiHeaderOptions } from '@nestjs/swagger';
 
-export enum HttpResponseHeaderKeysEnum {
+enum HttpResponseHeaderKeysEnum {
   CONTENT_TYPE = 'Content-Type',
   RATELIMIT_REMAINING = 'RateLimit-Remaining',
   RATELIMIT_LIMIT = 'RateLimit-Limit',
@@ -14,14 +14,14 @@ export enum HttpResponseHeaderKeysEnum {
 }
 testHttpHeaderEnumValidity(HttpResponseHeaderKeysEnum);
 
-export type HeaderObject = WithRequired<
+type HeaderObject = WithRequired<
   Omit<ApiHeaderOptions, 'name'>,
   'required' | 'description' | 'schema' | 'example'
 >;
-export type HeaderObjects = Record<HttpResponseHeaderKeysEnum, HeaderObject>;
+type HeaderObjects = Record<HttpResponseHeaderKeysEnum, HeaderObject>;
 
 type NestJsExport = keyof typeof nestSwagger;
-export type ApiResponseDecoratorName = NestJsExport & `Api${string}Response`;
+type ApiResponseDecoratorName = NestJsExport & `Api${string}Response`;
 
 /* cSpell:enableCompoundWords */
 /**
@@ -32,7 +32,7 @@ export type WithRequired<T, K extends keyof T> = T & { [P in K]-?: T[P] };
 /**
  * Recursively make all properties of type `T` required.
  */
-export type DeepRequired<T> = T extends object
+type DeepRequired<T> = T extends object
   ? {
       [P in keyof T]-?: DeepRequired<T[P]>;
     }
@@ -41,14 +41,14 @@ export type DeepRequired<T> = T extends object
 /**
  * Transform S to CONSTANT_CASE.
  */
-export type ConvertToConstantCase<S extends string> = S extends `${infer T}-${infer U}`
+type ConvertToConstantCase<S extends string> = S extends `${infer T}-${infer U}`
   ? `${Uppercase<T>}_${ConvertToConstantCase<U>}`
   : Uppercase<S>;
 
 /**
  * Validate that S is in Http-Header-Case, and return S if valid, otherwise never.
  */
-export type ValidateHttpHeaderCase<S extends string> = S extends `${infer U}-${infer V}`
+type ValidateHttpHeaderCase<S extends string> = S extends `${infer U}-${infer V}`
   ? U extends Capitalize<U>
     ? `${U}-${ValidateHttpHeaderCase<V>}`
     : never

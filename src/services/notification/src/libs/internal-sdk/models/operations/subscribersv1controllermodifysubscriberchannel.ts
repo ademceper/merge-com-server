@@ -25,7 +25,7 @@ export type SubscribersV1ControllerModifySubscriberChannelResponse = {
 };
 
 /** @internal */
-export type SubscribersV1ControllerModifySubscriberChannelRequest$Outbound = {
+type SubscribersV1ControllerModifySubscriberChannelRequest$Outbound = {
   subscriberId: string;
   "idempotency-key"?: string | undefined;
   UpdateSubscriberChannelRequestDto:
@@ -50,7 +50,7 @@ export const SubscribersV1ControllerModifySubscriberChannelRequest$outboundSchem
     });
   });
 
-export function subscribersV1ControllerModifySubscriberChannelRequestToJSON(
+function subscribersV1ControllerModifySubscriberChannelRequestToJSON(
   subscribersV1ControllerModifySubscriberChannelRequest:
     SubscribersV1ControllerModifySubscriberChannelRequest,
 ): string {
@@ -77,7 +77,7 @@ export const SubscribersV1ControllerModifySubscriberChannelResponse$inboundSchem
     });
   });
 
-export function subscribersV1ControllerModifySubscriberChannelResponseFromJSON(
+function subscribersV1ControllerModifySubscriberChannelResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   SubscribersV1ControllerModifySubscriberChannelResponse,

@@ -38,7 +38,7 @@ export const EmailControlsMetadataResponseDto$inboundSchema: z.ZodType<
   values: EmailControlDto$inboundSchema,
 });
 
-export function emailControlsMetadataResponseDtoFromJSON(
+function emailControlsMetadataResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<EmailControlsMetadataResponseDto, SDKValidationError> {
   return safeParse(

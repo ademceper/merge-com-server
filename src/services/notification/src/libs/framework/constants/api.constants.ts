@@ -1,4 +1,4 @@
-export enum NovuApiEndpointsEnum {
+enum NovuApiEndpointsEnum {
   SYNC = '/v1/bridge/sync',
   DIFF = '/v1/bridge/diff',
 }

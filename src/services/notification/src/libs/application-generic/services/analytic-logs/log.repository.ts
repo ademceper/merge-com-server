@@ -44,16 +44,16 @@ type NullOperators = 'IS NULL' | 'IS NOT NULL';
 export type ClickhouseOperator = (typeof CLICKHOUSE_OPERATORS)[number];
 
 // Export the array for runtime validation
-export const ALLOWED_OPERATORS: readonly ClickhouseOperator[] = CLICKHOUSE_OPERATORS;
+const ALLOWED_OPERATORS: readonly ClickhouseOperator[] = CLICKHOUSE_OPERATORS;
 
 const LIMIT_MAX_THRESHOLD = 1000;
-export const ORDER_DIRECTION = ['ASC', 'DESC'];
+const ORDER_DIRECTION = ['ASC', 'DESC'];
 
-export type OrCondition<T> = {
+type OrCondition<T> = {
   $or: WhereCondition<T>[];
 };
 
-export type EnforcedContext = {
+type EnforcedContext = {
   environmentId: string;
 };
 

@@ -132,7 +132,7 @@ export const SubscriberResponseDto$inboundSchema: z.ZodType<
   });
 });
 
-export function subscriberResponseDtoFromJSON(
+function subscriberResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<SubscriberResponseDto, SDKValidationError> {
   return safeParse(

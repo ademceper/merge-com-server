@@ -5,7 +5,7 @@ import { IsOptional, IsString, ValidateNested } from 'class-validator';
 
 import { LayoutPreviewPayloadDto } from './layout-preview-payload.dto';
 
-export class EmailLayoutRenderOutput {
+class EmailLayoutRenderOutput {
   @ApiProperty({ description: 'Content of the email' })
   @IsString()
   body: string;

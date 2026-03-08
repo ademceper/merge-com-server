@@ -43,7 +43,7 @@ export type TranslationControllerDeleteTranslationEndpointRequest = {
 };
 
 /** @internal */
-export const TranslationControllerDeleteTranslationEndpointPathParamResourceType$outboundSchema:
+const TranslationControllerDeleteTranslationEndpointPathParamResourceType$outboundSchema:
   z.ZodNativeEnum<
     typeof TranslationControllerDeleteTranslationEndpointPathParamResourceType
   > = z.nativeEnum(
@@ -51,7 +51,7 @@ export const TranslationControllerDeleteTranslationEndpointPathParamResourceType
   );
 
 /** @internal */
-export type TranslationControllerDeleteTranslationEndpointRequest$Outbound = {
+type TranslationControllerDeleteTranslationEndpointRequest$Outbound = {
   resourceType: string;
   resourceId: string;
   locale: string;
@@ -76,7 +76,7 @@ export const TranslationControllerDeleteTranslationEndpointRequest$outboundSchem
     });
   });
 
-export function translationControllerDeleteTranslationEndpointRequestToJSON(
+function translationControllerDeleteTranslationEndpointRequestToJSON(
   translationControllerDeleteTranslationEndpointRequest:
     TranslationControllerDeleteTranslationEndpointRequest,
 ): string {

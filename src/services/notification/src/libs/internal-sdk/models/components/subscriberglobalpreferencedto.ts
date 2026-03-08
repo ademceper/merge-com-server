@@ -38,7 +38,7 @@ export const SubscriberGlobalPreferenceDto$inboundSchema: z.ZodType<
   schedule: ScheduleDto$inboundSchema.optional(),
 });
 
-export function subscriberGlobalPreferenceDtoFromJSON(
+function subscriberGlobalPreferenceDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<SubscriberGlobalPreferenceDto, SDKValidationError> {
   return safeParse(

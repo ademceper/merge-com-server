@@ -8,21 +8,21 @@ import { Result as SafeParseResult } from "../../types/fp.js";
 import { NovuError } from "./novuerror.js";
 import { SDKValidationError } from "./sdkvalidationerror.js";
 
-export type Five = string | number | boolean | { [k: string]: any };
+type Five = string | number | boolean | { [k: string]: any };
 
-export type Four = {};
+type Four = {};
 
 /**
  * Value that failed validation
  */
-export type Message =
+type Message =
   | string
   | number
   | boolean
   | Four
   | Array<string | number | boolean | { [k: string]: any } | null>;
 
-export type ErrorDtoData = {
+type ErrorDtoData = {
   /**
    * HTTP status code of the error response.
    */
@@ -102,10 +102,10 @@ export class ErrorDto extends NovuError {
 }
 
 /** @internal */
-export const Five$inboundSchema: z.ZodType<Five, z.ZodTypeDef, unknown> = z
+const Five$inboundSchema: z.ZodType<Five, z.ZodTypeDef, unknown> = z
   .union([z.string(), z.number(), z.boolean(), z.record(z.any())]);
 
-export function fiveFromJSON(
+function fiveFromJSON(
   jsonString: string,
 ): SafeParseResult<Five, SDKValidationError> {
   return safeParse(
@@ -116,10 +116,10 @@ export function fiveFromJSON(
 }
 
 /** @internal */
-export const Four$inboundSchema: z.ZodType<Four, z.ZodTypeDef, unknown> = z
+const Four$inboundSchema: z.ZodType<Four, z.ZodTypeDef, unknown> = z
   .object({});
 
-export function fourFromJSON(
+function fourFromJSON(
   jsonString: string,
 ): SafeParseResult<Four, SDKValidationError> {
   return safeParse(
@@ -130,7 +130,7 @@ export function fourFromJSON(
 }
 
 /** @internal */
-export const Message$inboundSchema: z.ZodType<Message, z.ZodTypeDef, unknown> =
+const Message$inboundSchema: z.ZodType<Message, z.ZodTypeDef, unknown> =
   z.union([
     z.string(),
     z.number(),
@@ -143,7 +143,7 @@ export const Message$inboundSchema: z.ZodType<Message, z.ZodTypeDef, unknown> =
     ),
   ]);
 
-export function messageFromJSON(
+function messageFromJSON(
   jsonString: string,
 ): SafeParseResult<Message, SDKValidationError> {
   return safeParse(

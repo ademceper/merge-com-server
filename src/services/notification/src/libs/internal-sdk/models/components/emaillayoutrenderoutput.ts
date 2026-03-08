@@ -23,7 +23,7 @@ export const EmailLayoutRenderOutput$inboundSchema: z.ZodType<
   body: z.string(),
 });
 
-export function emailLayoutRenderOutputFromJSON(
+function emailLayoutRenderOutputFromJSON(
   jsonString: string,
 ): SafeParseResult<EmailLayoutRenderOutput, SDKValidationError> {
   return safeParse(

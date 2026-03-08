@@ -37,7 +37,7 @@ export const StepContentIssueDto$inboundSchema: z.ZodType<
   message: z.string(),
 });
 
-export function stepContentIssueDtoFromJSON(
+function stepContentIssueDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<StepContentIssueDto, SDKValidationError> {
   return safeParse(

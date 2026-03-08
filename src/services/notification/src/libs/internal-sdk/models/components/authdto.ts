@@ -30,10 +30,10 @@ export const AuthDto$outboundSchema: z.ZodType<
   accessToken: z.string(),
 });
 
-export function authDtoToJSON(authDto: AuthDto): string {
+function authDtoToJSON(authDto: AuthDto): string {
   return JSON.stringify(AuthDto$outboundSchema.parse(authDto));
 }
-export function authDtoFromJSON(
+function authDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<AuthDto, SDKValidationError> {
   return safeParse(

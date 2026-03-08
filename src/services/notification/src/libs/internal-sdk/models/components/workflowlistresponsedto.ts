@@ -129,7 +129,7 @@ export type WorkflowListResponseDto = {
 };
 
 /** @internal */
-export const WorkflowListResponseDtoUpdatedBy$inboundSchema: z.ZodType<
+const WorkflowListResponseDtoUpdatedBy$inboundSchema: z.ZodType<
   WorkflowListResponseDtoUpdatedBy,
   z.ZodTypeDef,
   unknown
@@ -144,7 +144,7 @@ export const WorkflowListResponseDtoUpdatedBy$inboundSchema: z.ZodType<
   });
 });
 
-export function workflowListResponseDtoUpdatedByFromJSON(
+function workflowListResponseDtoUpdatedByFromJSON(
   jsonString: string,
 ): SafeParseResult<WorkflowListResponseDtoUpdatedBy, SDKValidationError> {
   return safeParse(
@@ -155,7 +155,7 @@ export function workflowListResponseDtoUpdatedByFromJSON(
 }
 
 /** @internal */
-export const WorkflowListResponseDtoLastPublishedBy$inboundSchema: z.ZodType<
+const WorkflowListResponseDtoLastPublishedBy$inboundSchema: z.ZodType<
   WorkflowListResponseDtoLastPublishedBy,
   z.ZodTypeDef,
   unknown
@@ -170,7 +170,7 @@ export const WorkflowListResponseDtoLastPublishedBy$inboundSchema: z.ZodType<
   });
 });
 
-export function workflowListResponseDtoLastPublishedByFromJSON(
+function workflowListResponseDtoLastPublishedByFromJSON(
   jsonString: string,
 ): SafeParseResult<WorkflowListResponseDtoLastPublishedBy, SDKValidationError> {
   return safeParse(
@@ -213,7 +213,7 @@ export const WorkflowListResponseDto$inboundSchema: z.ZodType<
   });
 });
 
-export function workflowListResponseDtoFromJSON(
+function workflowListResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<WorkflowListResponseDto, SDKValidationError> {
   return safeParse(

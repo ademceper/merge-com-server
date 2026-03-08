@@ -24,7 +24,7 @@ export type RuntimeIssueDto = {
 };
 
 /** @internal */
-export const IssueType$inboundSchema: z.ZodNativeEnum<typeof IssueType> = z.nativeEnum(IssueType);
+const IssueType$inboundSchema: z.ZodNativeEnum<typeof IssueType> = z.nativeEnum(IssueType);
 
 /** @internal */
 export const RuntimeIssueDto$inboundSchema: z.ZodType<RuntimeIssueDto, z.ZodTypeDef, unknown> = z.object({
@@ -33,7 +33,7 @@ export const RuntimeIssueDto$inboundSchema: z.ZodType<RuntimeIssueDto, z.ZodType
   message: z.string(),
 });
 
-export function runtimeIssueDtoFromJSON(jsonString: string): SafeParseResult<RuntimeIssueDto, SDKValidationError> {
+function runtimeIssueDtoFromJSON(jsonString: string): SafeParseResult<RuntimeIssueDto, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) => RuntimeIssueDto$inboundSchema.parse(JSON.parse(x)),

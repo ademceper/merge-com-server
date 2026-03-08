@@ -25,7 +25,7 @@ export const SyncWorkflowDto$outboundSchema: z.ZodType<
   targetEnvironmentId: z.string(),
 });
 
-export function syncWorkflowDtoToJSON(
+function syncWorkflowDtoToJSON(
   syncWorkflowDto: SyncWorkflowDto,
 ): string {
   return JSON.stringify(SyncWorkflowDto$outboundSchema.parse(syncWorkflowDto));

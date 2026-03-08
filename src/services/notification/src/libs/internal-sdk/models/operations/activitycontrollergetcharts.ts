@@ -46,15 +46,15 @@ export type ActivityControllerGetChartsRequest = {
 };
 
 /** @internal */
-export const ReportType$outboundSchema: z.ZodNativeEnum<typeof ReportType> = z
+const ReportType$outboundSchema: z.ZodNativeEnum<typeof ReportType> = z
   .nativeEnum(ReportType);
 
 /** @internal */
-export const Statuses$outboundSchema: z.ZodNativeEnum<typeof Statuses> = z
+const Statuses$outboundSchema: z.ZodNativeEnum<typeof Statuses> = z
   .nativeEnum(Statuses);
 
 /** @internal */
-export type ActivityControllerGetChartsRequest$Outbound = {
+type ActivityControllerGetChartsRequest$Outbound = {
   createdAtGte?: string | undefined;
   createdAtLte?: string | undefined;
   reportType: Array<string>;
@@ -89,7 +89,7 @@ export const ActivityControllerGetChartsRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function activityControllerGetChartsRequestToJSON(
+function activityControllerGetChartsRequestToJSON(
   activityControllerGetChartsRequest: ActivityControllerGetChartsRequest,
 ): string {
   return JSON.stringify(

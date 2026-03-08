@@ -3,7 +3,7 @@ import { parseSlugId } from 'libs/application-generic';
 import { Type, Transform } from 'class-transformer';
 import { ArrayMinSize, IsArray, IsNotEmpty, IsString, ValidateNested } from 'class-validator';
 
-export class DeployStepResolverManifestStepDto {
+class DeployStepResolverManifestStepDto {
   @ApiProperty({
     description: 'Workflow identifier (trigger identifier or internal workflow id)',
     example: 'welcome-email',

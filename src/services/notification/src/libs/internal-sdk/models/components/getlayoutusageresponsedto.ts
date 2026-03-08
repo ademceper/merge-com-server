@@ -27,7 +27,7 @@ export const GetLayoutUsageResponseDto$inboundSchema: z.ZodType<
   workflows: z.array(WorkflowInfoDto$inboundSchema),
 });
 
-export function getLayoutUsageResponseDtoFromJSON(
+function getLayoutUsageResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<GetLayoutUsageResponseDto, SDKValidationError> {
   return safeParse(

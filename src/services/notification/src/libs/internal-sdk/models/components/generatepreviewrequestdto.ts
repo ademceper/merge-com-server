@@ -36,7 +36,7 @@ export const GeneratePreviewRequestDto$outboundSchema: z.ZodType<
   previewPayload: PreviewPayloadDto$outboundSchema.optional(),
 });
 
-export function generatePreviewRequestDtoToJSON(
+function generatePreviewRequestDtoToJSON(
   generatePreviewRequestDto: GeneratePreviewRequestDto,
 ): string {
   return JSON.stringify(

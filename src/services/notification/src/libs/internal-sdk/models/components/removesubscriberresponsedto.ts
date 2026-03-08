@@ -28,7 +28,7 @@ export const RemoveSubscriberResponseDto$inboundSchema: z.ZodType<
   status: z.string(),
 });
 
-export function removeSubscriberResponseDtoFromJSON(
+function removeSubscriberResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<RemoveSubscriberResponseDto, SDKValidationError> {
   return safeParse(

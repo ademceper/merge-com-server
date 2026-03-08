@@ -22,7 +22,7 @@ import {
 /**
  * Custom data associated with the workflow
  */
-export type GetPreferencesResponseDtoData = {};
+type GetPreferencesResponseDtoData = {};
 
 /**
  * Workflow information if this is a template-level preference
@@ -87,13 +87,13 @@ export type GetPreferencesResponseDto = {
 };
 
 /** @internal */
-export const GetPreferencesResponseDtoData$inboundSchema: z.ZodType<
+const GetPreferencesResponseDtoData$inboundSchema: z.ZodType<
   GetPreferencesResponseDtoData,
   z.ZodTypeDef,
   unknown
 > = z.object({});
 
-export function getPreferencesResponseDtoDataFromJSON(
+function getPreferencesResponseDtoDataFromJSON(
   jsonString: string,
 ): SafeParseResult<GetPreferencesResponseDtoData, SDKValidationError> {
   return safeParse(
@@ -104,7 +104,7 @@ export function getPreferencesResponseDtoDataFromJSON(
 }
 
 /** @internal */
-export const Workflow$inboundSchema: z.ZodType<
+const Workflow$inboundSchema: z.ZodType<
   Workflow,
   z.ZodTypeDef,
   unknown
@@ -118,7 +118,7 @@ export const Workflow$inboundSchema: z.ZodType<
   severity: SeverityLevelEnum$inboundSchema,
 });
 
-export function workflowFromJSON(
+function workflowFromJSON(
   jsonString: string,
 ): SafeParseResult<Workflow, SDKValidationError> {
   return safeParse(
@@ -129,13 +129,13 @@ export function workflowFromJSON(
 }
 
 /** @internal */
-export const Condition$inboundSchema: z.ZodType<
+const Condition$inboundSchema: z.ZodType<
   Condition,
   z.ZodTypeDef,
   unknown
 > = z.object({});
 
-export function conditionFromJSON(
+function conditionFromJSON(
   jsonString: string,
 ): SafeParseResult<Condition, SDKValidationError> {
   return safeParse(
@@ -158,7 +158,7 @@ export const GetPreferencesResponseDto$inboundSchema: z.ZodType<
   condition: z.nullable(z.lazy(() => Condition$inboundSchema)).optional(),
 });
 
-export function getPreferencesResponseDtoFromJSON(
+function getPreferencesResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<GetPreferencesResponseDto, SDKValidationError> {
   return safeParse(

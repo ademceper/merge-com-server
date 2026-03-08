@@ -1,4 +1,4 @@
-export interface IFeedEntity {
+interface IFeedEntity {
   _id: string;
   name: string;
   identifier: string;

@@ -28,7 +28,7 @@ export abstract class OrganizationLevelCommand extends BaseCommand {
   readonly organizationId: string;
 }
 
-export abstract class OrganizationLevelWithUserCommand extends BaseCommand {
+abstract class OrganizationLevelWithUserCommand extends BaseCommand {
   readonly environmentId?: string;
 
   @IsNotEmpty()

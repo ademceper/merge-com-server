@@ -39,7 +39,7 @@ export function isMatchingJsonSchema(schema: JSONSchemaDto, obj?: Record<string,
   return true;
 }
 
-export function extractMinValuesFromSchema(schema: JSONSchemaDto): Record<string, number> {
+function extractMinValuesFromSchema(schema: JSONSchemaDto): Record<string, number> {
   const result = {};
 
   if (typeof schema === 'object' && schema.type === 'object') {

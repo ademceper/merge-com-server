@@ -7,7 +7,7 @@ import { Store, storage } from 'nestjs-pino/storage';
 import { sensitiveFields } from './masking';
 
 export * from './LogDecorator';
-export { getLoggerToken, Logger, LoggerModule, PinoLogger, storage, Store };
+export {  Logger, LoggerModule, PinoLogger, storage, Store };
 
 export function getErrorInterceptor(): NestInterceptor {
   return new LoggerErrorInterceptor();
@@ -24,7 +24,7 @@ const loggingLevelSet = {
 };
 const loggingLevelArr = Object.keys(loggingLevelSet);
 
-export function getLogLevel(): string {
+function getLogLevel(): string {
   let logLevel: string;
 
   if (process.env.LOGGING_LEVEL || process.env.LOG_LEVEL) {

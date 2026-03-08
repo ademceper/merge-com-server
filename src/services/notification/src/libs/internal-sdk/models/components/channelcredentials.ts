@@ -85,14 +85,14 @@ export const ChannelCredentials$outboundSchema: z.ZodType<
   externalUrl: z.string().optional(),
 });
 
-export function channelCredentialsToJSON(
+function channelCredentialsToJSON(
   channelCredentials: ChannelCredentials,
 ): string {
   return JSON.stringify(
     ChannelCredentials$outboundSchema.parse(channelCredentials),
   );
 }
-export function channelCredentialsFromJSON(
+function channelCredentialsFromJSON(
   jsonString: string,
 ): SafeParseResult<ChannelCredentials, SDKValidationError> {
   return safeParse(

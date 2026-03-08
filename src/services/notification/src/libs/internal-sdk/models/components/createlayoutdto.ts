@@ -52,7 +52,7 @@ export const CreateLayoutDto$outboundSchema: z.ZodType<
   });
 });
 
-export function createLayoutDtoToJSON(
+function createLayoutDtoToJSON(
   createLayoutDto: CreateLayoutDto,
 ): string {
   return JSON.stringify(CreateLayoutDto$outboundSchema.parse(createLayoutDto));

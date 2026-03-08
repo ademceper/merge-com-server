@@ -47,7 +47,7 @@ export const MessagesResponseDto$inboundSchema: z.ZodType<
   page: z.number(),
 });
 
-export function messagesResponseDtoFromJSON(
+function messagesResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<MessagesResponseDto, SDKValidationError> {
   return safeParse(

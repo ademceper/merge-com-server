@@ -1,4 +1,4 @@
-export const prepareBooleanStringFeatureFlag = (value: string | undefined, defaultValue: boolean) => {
+const prepareBooleanStringFeatureFlag = (value: string | undefined, defaultValue: boolean) => {
   if (!value) {
     return defaultValue;
   }
@@ -6,7 +6,7 @@ export const prepareBooleanStringFeatureFlag = (value: string | undefined, defau
   return value === 'true';
 };
 
-export const prepareNumberStringFeatureFlag = (
+const prepareNumberStringFeatureFlag = (
   value: string | undefined,
   defaultValue: number | undefined
 ): number | undefined => {

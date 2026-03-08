@@ -4,15 +4,15 @@ export * from './auth';
 export {
   BullMqService,
   Job,
-  Queue,
-  Worker,
+  
+  
 } from './bull-mq';
 export type {
-  BullMqConnectionOptions,
+  
   JobsOptions,
-  Processor,
-  QueueBaseOptions,
-  QueueOptions,
+  
+  
+  
   WorkerOptions,
 } from './bull-mq';
 export * from './cache';
@@ -24,7 +24,7 @@ export * from './feature-flags';
 export * from './in-memory-lru-cache';
 export * from './in-memory-provider';
 export { MessageInteractionService } from './message-interaction.service';
-export type { MessageInteractionResult, MessageInteractionTrace } from './message-interaction.service';
+export type {  MessageInteractionTrace } from './message-interaction.service';
 export * from './metrics';
 export * from './queues';
 export { ReadinessService } from './readiness';

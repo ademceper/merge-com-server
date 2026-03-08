@@ -89,7 +89,7 @@ class DelayScheduledMetadata implements IDelayScheduledMetadata {
 }
 
 // Define the ReplyCallback type with OpenAPI annotations
-export class ReplyCallback {
+class ReplyCallback {
   @ApiPropertyOptional({
     description: 'Indicates whether the reply callback is active.',
     type: Boolean,
@@ -106,7 +106,7 @@ export class ReplyCallback {
 }
 
 @ApiExtraModels(DigestRegularMetadata, DigestTimedMetadata, DelayRegularMetadata, DelayScheduledMetadata)
-export class NotificationStepData implements StepVariantDto {
+class NotificationStepData implements StepVariantDto {
   @ApiPropertyOptional({
     description: 'Unique identifier for the notification step.',
     type: String,

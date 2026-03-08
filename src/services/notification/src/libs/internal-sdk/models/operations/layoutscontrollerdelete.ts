@@ -24,7 +24,7 @@ export type LayoutsControllerDeleteResponse = {
 };
 
 /** @internal */
-export type LayoutsControllerDeleteRequest$Outbound = {
+type LayoutsControllerDeleteRequest$Outbound = {
   layoutId: string;
   "idempotency-key"?: string | undefined;
 };
@@ -43,7 +43,7 @@ export const LayoutsControllerDeleteRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function layoutsControllerDeleteRequestToJSON(
+function layoutsControllerDeleteRequestToJSON(
   layoutsControllerDeleteRequest: LayoutsControllerDeleteRequest,
 ): string {
   return JSON.stringify(
@@ -66,7 +66,7 @@ export const LayoutsControllerDeleteResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function layoutsControllerDeleteResponseFromJSON(
+function layoutsControllerDeleteResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<LayoutsControllerDeleteResponse, SDKValidationError> {
   return safeParse(

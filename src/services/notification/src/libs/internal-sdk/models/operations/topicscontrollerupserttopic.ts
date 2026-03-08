@@ -27,7 +27,7 @@ export type TopicsControllerUpsertTopicResponse = {
 };
 
 /** @internal */
-export type TopicsControllerUpsertTopicRequest$Outbound = {
+type TopicsControllerUpsertTopicRequest$Outbound = {
   failIfExists?: boolean | undefined;
   "idempotency-key"?: string | undefined;
   CreateUpdateTopicRequestDto: components.CreateUpdateTopicRequestDto$Outbound;
@@ -50,7 +50,7 @@ export const TopicsControllerUpsertTopicRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function topicsControllerUpsertTopicRequestToJSON(
+function topicsControllerUpsertTopicRequestToJSON(
   topicsControllerUpsertTopicRequest: TopicsControllerUpsertTopicRequest,
 ): string {
   return JSON.stringify(
@@ -75,7 +75,7 @@ export const TopicsControllerUpsertTopicResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function topicsControllerUpsertTopicResponseFromJSON(
+function topicsControllerUpsertTopicResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<TopicsControllerUpsertTopicResponse, SDKValidationError> {
   return safeParse(

@@ -98,7 +98,7 @@ export type LayoutResponseDto = {
 };
 
 /** @internal */
-export const UpdatedBy$inboundSchema: z.ZodType<
+const UpdatedBy$inboundSchema: z.ZodType<
   UpdatedBy,
   z.ZodTypeDef,
   unknown
@@ -113,7 +113,7 @@ export const UpdatedBy$inboundSchema: z.ZodType<
   });
 });
 
-export function updatedByFromJSON(
+function updatedByFromJSON(
   jsonString: string,
 ): SafeParseResult<UpdatedBy, SDKValidationError> {
   return safeParse(
@@ -148,7 +148,7 @@ export const LayoutResponseDto$inboundSchema: z.ZodType<
   });
 });
 
-export function layoutResponseDtoFromJSON(
+function layoutResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<LayoutResponseDto, SDKValidationError> {
   return safeParse(

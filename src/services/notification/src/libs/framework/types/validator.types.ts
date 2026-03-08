@@ -4,7 +4,7 @@ import type { ImportRequirement } from './import.types';
 import type { FromSchema, FromSchemaUnvalidated, Schema } from './schema.types';
 import type { JsonSchema } from './schema.types/json.schema.types';
 
-export type ValidateFunction<T = unknown> = AjvValidateFunction<T> | ((data: T) => ParseReturnType<T>);
+type ValidateFunction<T = unknown> = AjvValidateFunction<T> | ((data: T) => ParseReturnType<T>);
 
 export type ValidationError = {
   path: string;

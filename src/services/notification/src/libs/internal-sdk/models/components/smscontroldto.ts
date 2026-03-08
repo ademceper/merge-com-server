@@ -43,10 +43,10 @@ export const SmsControlDto$outboundSchema: z.ZodType<
   body: z.string().optional(),
 });
 
-export function smsControlDtoToJSON(smsControlDto: SmsControlDto): string {
+function smsControlDtoToJSON(smsControlDto: SmsControlDto): string {
   return JSON.stringify(SmsControlDto$outboundSchema.parse(smsControlDto));
 }
-export function smsControlDtoFromJSON(
+function smsControlDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<SmsControlDto, SDKValidationError> {
   return safeParse(

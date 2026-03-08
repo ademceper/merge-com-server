@@ -13,7 +13,7 @@ export type ArrayVariable = {
   iterations: number;
 };
 
-export const DEFAULT_ARRAY_ELEMENTS = 3;
+const DEFAULT_ARRAY_ELEMENTS = 3;
 /**
  * Creates the object representation of variables from the values.
  */

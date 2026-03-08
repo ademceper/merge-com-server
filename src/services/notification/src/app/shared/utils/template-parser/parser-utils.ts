@@ -14,7 +14,7 @@ export function isValidTemplate(template: unknown): template is string {
  * "{{ username | append: 'hi' }}" => ["{{ username | append: 'hi' }}"]
  * "<input value='{{username}}'>" => ["{{username}}"]
  */
-export function extractLiquidExpressions(str: string): string[] {
+function extractLiquidExpressions(str: string): string[] {
   if (!str) return [];
 
   const LIQUID_EXPRESSION_PATTERN = /{{\s*[^{}]*}}/g;
@@ -23,8 +23,8 @@ export function extractLiquidExpressions(str: string): string[] {
 }
 
 export const DIGEST_EVENTS_VARIABLE_PATTERN = /^steps\.[^.]+\.events$/;
-export const DIGEST_EVENTS_PAYLOAD_VARIABLE_PATTERN = /^steps\.[^.]+\.events\.payload\./;
-export const VALID_DYNAMIC_PATHS = [
+const DIGEST_EVENTS_PAYLOAD_VARIABLE_PATTERN = /^steps\.[^.]+\.events\.payload\./;
+const VALID_DYNAMIC_PATHS = [
   'subscriber.data.',
   'payload.',
   'context.',

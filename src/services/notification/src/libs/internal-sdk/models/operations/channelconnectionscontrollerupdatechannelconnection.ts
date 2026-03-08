@@ -28,7 +28,7 @@ export type ChannelConnectionsControllerUpdateChannelConnectionResponse = {
 };
 
 /** @internal */
-export type ChannelConnectionsControllerUpdateChannelConnectionRequest$Outbound =
+type ChannelConnectionsControllerUpdateChannelConnectionRequest$Outbound =
   {
     identifier: string;
     "idempotency-key"?: string | undefined;
@@ -54,7 +54,7 @@ export const ChannelConnectionsControllerUpdateChannelConnectionRequest$outbound
     });
   });
 
-export function channelConnectionsControllerUpdateChannelConnectionRequestToJSON(
+function channelConnectionsControllerUpdateChannelConnectionRequestToJSON(
   channelConnectionsControllerUpdateChannelConnectionRequest:
     ChannelConnectionsControllerUpdateChannelConnectionRequest,
 ): string {
@@ -80,7 +80,7 @@ export const ChannelConnectionsControllerUpdateChannelConnectionResponse$inbound
     });
   });
 
-export function channelConnectionsControllerUpdateChannelConnectionResponseFromJSON(
+function channelConnectionsControllerUpdateChannelConnectionResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   ChannelConnectionsControllerUpdateChannelConnectionResponse,

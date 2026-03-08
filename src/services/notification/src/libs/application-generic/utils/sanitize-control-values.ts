@@ -9,7 +9,7 @@ function sanitizeEmptyInput<T_Type>(input: T_Type, defaultValue: T_Type = undefi
   return isEmpty(input) ? defaultValue : input;
 }
 
-export function sanitizeRedirect(redirect: InAppRedirectType | undefined) {
+function sanitizeRedirect(redirect: InAppRedirectType | undefined) {
   // Only remove redirect if URL is empty - let validation catch missing target errors
   if (!redirect?.url || redirect.url.length === 0) {
     return undefined;

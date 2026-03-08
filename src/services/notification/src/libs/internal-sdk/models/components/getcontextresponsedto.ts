@@ -43,7 +43,7 @@ export const GetContextResponseDto$inboundSchema: z.ZodType<
   updatedAt: z.string(),
 });
 
-export function getContextResponseDtoFromJSON(
+function getContextResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<GetContextResponseDto, SDKValidationError> {
   return safeParse(

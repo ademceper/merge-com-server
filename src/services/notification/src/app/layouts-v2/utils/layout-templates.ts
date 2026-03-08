@@ -30,7 +30,7 @@ export const EMPTY_LAYOUT = {
   ],
 };
 
-export const createDefaultLayout = (organizationName: string) => ({
+const createDefaultLayout = (organizationName: string) => ({
   type: 'doc',
   content: [
     {

@@ -36,7 +36,7 @@ export const GetSubscriberPreferencesDto$inboundSchema: z.ZodType<
   workflows: z.array(SubscriberWorkflowPreferenceDto$inboundSchema),
 });
 
-export function getSubscriberPreferencesDtoFromJSON(
+function getSubscriberPreferencesDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<GetSubscriberPreferencesDto, SDKValidationError> {
   return safeParse(

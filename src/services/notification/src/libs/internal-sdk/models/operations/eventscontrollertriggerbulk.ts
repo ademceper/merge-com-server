@@ -23,7 +23,7 @@ export type EventsControllerTriggerBulkResponse = {
 };
 
 /** @internal */
-export type EventsControllerTriggerBulkRequest$Outbound = {
+type EventsControllerTriggerBulkRequest$Outbound = {
   "idempotency-key"?: string | undefined;
   BulkTriggerEventDto: components.BulkTriggerEventDto$Outbound;
 };
@@ -43,7 +43,7 @@ export const EventsControllerTriggerBulkRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function eventsControllerTriggerBulkRequestToJSON(
+function eventsControllerTriggerBulkRequestToJSON(
   eventsControllerTriggerBulkRequest: EventsControllerTriggerBulkRequest,
 ): string {
   return JSON.stringify(
@@ -68,7 +68,7 @@ export const EventsControllerTriggerBulkResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function eventsControllerTriggerBulkResponseFromJSON(
+function eventsControllerTriggerBulkResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<EventsControllerTriggerBulkResponse, SDKValidationError> {
   return safeParse(

@@ -58,7 +58,7 @@ export type EnvironmentResponseDto = {
 };
 
 /** @internal */
-export const EnvironmentResponseDtoType$inboundSchema: z.ZodNativeEnum<typeof EnvironmentResponseDtoType> =
+const EnvironmentResponseDtoType$inboundSchema: z.ZodNativeEnum<typeof EnvironmentResponseDtoType> =
   z.nativeEnum(EnvironmentResponseDtoType);
 
 /** @internal */
@@ -81,7 +81,7 @@ export const EnvironmentResponseDto$inboundSchema: z.ZodType<EnvironmentResponse
     });
   });
 
-export function environmentResponseDtoFromJSON(
+function environmentResponseDtoFromJSON(
   jsonString: string
 ): SafeParseResult<EnvironmentResponseDto, SDKValidationError> {
   return safeParse(

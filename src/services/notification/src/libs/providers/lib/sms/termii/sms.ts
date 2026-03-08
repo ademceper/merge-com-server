@@ -1,6 +1,4 @@
 export enum MessageChannel {
-  DND = 'dnd',
-  WHATSAPP = 'whatsapp',
   GENERIC = 'generic',
 }
 
@@ -26,4 +24,4 @@ export type SmsJsonResponse = {
   user: string;
 };
 
-export type AnyObject = { [key: string]: any };
+type AnyObject = { [key: string]: any };

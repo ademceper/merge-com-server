@@ -12,7 +12,7 @@ import type { Params } from './url.js';
 /**
  * Contains the list of servers available to the SDK
  */
-export const ServerList = ['https://api.novu.co', 'https://eu.api.novu.co'] as const;
+const ServerList = ['https://api.novu.co', 'https://eu.api.novu.co'] as const;
 
 export type SDKOptions = {
   /**

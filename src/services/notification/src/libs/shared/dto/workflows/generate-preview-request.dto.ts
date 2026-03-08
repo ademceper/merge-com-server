@@ -1,6 +1,6 @@
 import { PreviewPayload } from './preview-step-response.dto';
 
-export enum ValidationStrategyEnum {
+enum ValidationStrategyEnum {
   VALIDATE_MISSING_PAYLOAD_VALUES_FOR_HYDRATION = 'VALIDATE_MISSING_PAYLOAD_VALUES_FOR_HYDRATION',
   VALIDATE_MISSING_CONTROL_VALUES = 'VALIDATE_MISSING_CONTROL_VALUES',
 }
@@ -12,4 +12,4 @@ interface GeneratePreviewRequestDto {
 }
 
 // Export the GeneratePreviewRequestDto type
-export type { GeneratePreviewRequestDto };
+;

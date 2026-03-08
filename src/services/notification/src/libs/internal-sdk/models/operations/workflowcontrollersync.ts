@@ -27,7 +27,7 @@ export type WorkflowControllerSyncResponse = {
 };
 
 /** @internal */
-export type WorkflowControllerSyncRequest$Outbound = {
+type WorkflowControllerSyncRequest$Outbound = {
   workflowId: string;
   "idempotency-key"?: string | undefined;
   SyncWorkflowDto: components.SyncWorkflowDto$Outbound;
@@ -49,7 +49,7 @@ export const WorkflowControllerSyncRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function workflowControllerSyncRequestToJSON(
+function workflowControllerSyncRequestToJSON(
   workflowControllerSyncRequest: WorkflowControllerSyncRequest,
 ): string {
   return JSON.stringify(
@@ -74,7 +74,7 @@ export const WorkflowControllerSyncResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function workflowControllerSyncResponseFromJSON(
+function workflowControllerSyncResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<WorkflowControllerSyncResponse, SDKValidationError> {
   return safeParse(

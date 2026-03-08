@@ -1,0 +1,33 @@
+{
+  "$schema": "https://unpkg.com/knip@latest/schema.json",
+  "entry": [
+    "src/main.ts",
+    "src/app.module.ts",
+    "src/instrument.ts"
+  ],
+  "project": ["src/**/*.ts"],
+  "ignore": [
+    "src/**/*.spec.ts",
+    "src/**/*.e2e.ts",
+    "src/**/*.e2e-ee.ts",
+    "src/**/*.test.ts",
+    "src/**/*.test-d.ts",
+    "src/**/e2e/**",
+    "src/libs/framework/servers/h3.ts",
+    "src/libs/framework/servers/next.ts",
+    "src/libs/framework/servers/nuxt.ts",
+    "src/libs/framework/servers/sveltekit.ts",
+    "src/libs/internal-sdk/react-query/**",
+    "src/app/shared/framework/swagger/swagger.controller.ts"
+  ],
+  "ignoreDependencies": [
+    "tsconfig-paths",
+    "@swc/core",
+    "@taskforcesh/bullmq-pro",
+    "@novu/ee-*"
+  ],
+  "ignoreBinaries": ["depot", "biome"],
+  "rules": {
+    "duplicates": "off"
+  }
+}

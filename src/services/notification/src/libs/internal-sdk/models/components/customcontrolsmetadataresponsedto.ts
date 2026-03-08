@@ -38,7 +38,7 @@ export const CustomControlsMetadataResponseDto$inboundSchema: z.ZodType<
   values: CustomControlDto$inboundSchema,
 });
 
-export function customControlsMetadataResponseDtoFromJSON(
+function customControlsMetadataResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<CustomControlsMetadataResponseDto, SDKValidationError> {
   return safeParse(

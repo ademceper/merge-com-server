@@ -36,7 +36,7 @@ export const LayoutPreviewRequestDto$outboundSchema: z.ZodType<
   previewPayload: LayoutPreviewPayloadDto$outboundSchema.optional(),
 });
 
-export function layoutPreviewRequestDtoToJSON(
+function layoutPreviewRequestDtoToJSON(
   layoutPreviewRequestDto: LayoutPreviewRequestDto,
 ): string {
   return JSON.stringify(

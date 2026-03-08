@@ -47,7 +47,7 @@ export class SigningKeyNotFoundError extends UnauthorizedError {
   }
 }
 
-export class SignatureVersionInvalidError extends UnauthorizedError {
+class SignatureVersionInvalidError extends UnauthorizedError {
   code = ErrorCodeEnum.SIGNATURE_VERSION_INVALID_ERROR;
 
   constructor() {

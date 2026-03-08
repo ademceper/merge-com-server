@@ -33,7 +33,7 @@ export const ActivityTopicDto$inboundSchema: z.ZodType<
   });
 });
 
-export function activityTopicDtoFromJSON(
+function activityTopicDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<ActivityTopicDto, SDKValidationError> {
   return safeParse(

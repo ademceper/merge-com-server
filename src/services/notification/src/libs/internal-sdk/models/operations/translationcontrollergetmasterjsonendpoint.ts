@@ -17,7 +17,7 @@ export type TranslationControllerGetMasterJsonEndpointRequest = {
 };
 
 /** @internal */
-export type TranslationControllerGetMasterJsonEndpointRequest$Outbound = {
+type TranslationControllerGetMasterJsonEndpointRequest$Outbound = {
   locale?: string | undefined;
   "idempotency-key"?: string | undefined;
 };
@@ -37,7 +37,7 @@ export const TranslationControllerGetMasterJsonEndpointRequest$outboundSchema:
     });
   });
 
-export function translationControllerGetMasterJsonEndpointRequestToJSON(
+function translationControllerGetMasterJsonEndpointRequestToJSON(
   translationControllerGetMasterJsonEndpointRequest:
     TranslationControllerGetMasterJsonEndpointRequest,
 ): string {

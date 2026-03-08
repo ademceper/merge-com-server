@@ -13,7 +13,7 @@ import { buildLog } from './app/shared/utils/mappers';
 import { ErrorDto, ValidationErrorDto } from './error-dto';
 import { retryWithBackoff } from './utils/payload-sanitizer';
 
-export const ERROR_MSG_500 = `Internal server error, contact support and provide them with the errorId`;
+const ERROR_MSG_500 = `Internal server error, contact support and provide them with the errorId`;
 
 class ValidationPipeError {
   response: { message: string[] | string };

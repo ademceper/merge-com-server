@@ -19,7 +19,7 @@ import {
   WorkflowPreferenceRequestDto$outboundSchema,
 } from './workflowpreferencerequestdto.js';
 
-export type Subscriptions = TopicSubscriberIdentifierDto | string;
+type Subscriptions = TopicSubscriberIdentifierDto | string;
 
 /**
  * Rich context object with id and optional data
@@ -32,9 +32,9 @@ export type CreateTopicSubscriptionsRequestDtoContext2 = {
   data?: { [k: string]: any } | undefined;
 };
 
-export type CreateTopicSubscriptionsRequestDtoContext = CreateTopicSubscriptionsRequestDtoContext2 | string;
+type CreateTopicSubscriptionsRequestDtoContext = CreateTopicSubscriptionsRequestDtoContext2 | string;
 
-export type Preferences = WorkflowPreferenceRequestDto | GroupPreferenceFilterDto | string;
+type Preferences = WorkflowPreferenceRequestDto | GroupPreferenceFilterDto | string;
 
 export type CreateTopicSubscriptionsRequestDto = {
   /**
@@ -59,15 +59,15 @@ export type CreateTopicSubscriptionsRequestDto = {
 };
 
 /** @internal */
-export type Subscriptions$Outbound = TopicSubscriberIdentifierDto$Outbound | string;
+type Subscriptions$Outbound = TopicSubscriberIdentifierDto$Outbound | string;
 
 /** @internal */
-export const Subscriptions$outboundSchema: z.ZodType<Subscriptions$Outbound, z.ZodTypeDef, Subscriptions> = z.union([
+const Subscriptions$outboundSchema: z.ZodType<Subscriptions$Outbound, z.ZodTypeDef, Subscriptions> = z.union([
   TopicSubscriberIdentifierDto$outboundSchema,
   z.string(),
 ]);
 
-export function subscriptionsToJSON(subscriptions: Subscriptions): string {
+function subscriptionsToJSON(subscriptions: Subscriptions): string {
   return JSON.stringify(Subscriptions$outboundSchema.parse(subscriptions));
 }
 
@@ -78,7 +78,7 @@ export type CreateTopicSubscriptionsRequestDtoContext2$Outbound = {
 };
 
 /** @internal */
-export const CreateTopicSubscriptionsRequestDtoContext2$outboundSchema: z.ZodType<
+const CreateTopicSubscriptionsRequestDtoContext2$outboundSchema: z.ZodType<
   CreateTopicSubscriptionsRequestDtoContext2$Outbound,
   z.ZodTypeDef,
   CreateTopicSubscriptionsRequestDtoContext2
@@ -87,7 +87,7 @@ export const CreateTopicSubscriptionsRequestDtoContext2$outboundSchema: z.ZodTyp
   data: z.record(z.any()).optional(),
 });
 
-export function createTopicSubscriptionsRequestDtoContext2ToJSON(
+function createTopicSubscriptionsRequestDtoContext2ToJSON(
   createTopicSubscriptionsRequestDtoContext2: CreateTopicSubscriptionsRequestDtoContext2
 ): string {
   return JSON.stringify(
@@ -96,18 +96,18 @@ export function createTopicSubscriptionsRequestDtoContext2ToJSON(
 }
 
 /** @internal */
-export type CreateTopicSubscriptionsRequestDtoContext$Outbound =
+type CreateTopicSubscriptionsRequestDtoContext$Outbound =
   | CreateTopicSubscriptionsRequestDtoContext2$Outbound
   | string;
 
 /** @internal */
-export const CreateTopicSubscriptionsRequestDtoContext$outboundSchema: z.ZodType<
+const CreateTopicSubscriptionsRequestDtoContext$outboundSchema: z.ZodType<
   CreateTopicSubscriptionsRequestDtoContext$Outbound,
   z.ZodTypeDef,
   CreateTopicSubscriptionsRequestDtoContext
 > = z.union([z.lazy(() => CreateTopicSubscriptionsRequestDtoContext2$outboundSchema), z.string()]);
 
-export function createTopicSubscriptionsRequestDtoContextToJSON(
+function createTopicSubscriptionsRequestDtoContextToJSON(
   createTopicSubscriptionsRequestDtoContext: CreateTopicSubscriptionsRequestDtoContext
 ): string {
   return JSON.stringify(
@@ -116,16 +116,16 @@ export function createTopicSubscriptionsRequestDtoContextToJSON(
 }
 
 /** @internal */
-export type Preferences$Outbound = WorkflowPreferenceRequestDto$Outbound | GroupPreferenceFilterDto$Outbound | string;
+type Preferences$Outbound = WorkflowPreferenceRequestDto$Outbound | GroupPreferenceFilterDto$Outbound | string;
 
 /** @internal */
-export const Preferences$outboundSchema: z.ZodType<Preferences$Outbound, z.ZodTypeDef, Preferences> = z.union([
+const Preferences$outboundSchema: z.ZodType<Preferences$Outbound, z.ZodTypeDef, Preferences> = z.union([
   WorkflowPreferenceRequestDto$outboundSchema,
   GroupPreferenceFilterDto$outboundSchema,
   z.string(),
 ]);
 
-export function preferencesToJSON(preferences: Preferences): string {
+function preferencesToJSON(preferences: Preferences): string {
   return JSON.stringify(Preferences$outboundSchema.parse(preferences));
 }
 
@@ -159,7 +159,7 @@ export const CreateTopicSubscriptionsRequestDto$outboundSchema: z.ZodType<
     .optional(),
 });
 
-export function createTopicSubscriptionsRequestDtoToJSON(
+function createTopicSubscriptionsRequestDtoToJSON(
   createTopicSubscriptionsRequestDto: CreateTopicSubscriptionsRequestDto
 ): string {
   return JSON.stringify(CreateTopicSubscriptionsRequestDto$outboundSchema.parse(createTopicSubscriptionsRequestDto));

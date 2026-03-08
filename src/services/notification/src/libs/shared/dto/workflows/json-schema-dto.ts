@@ -6,19 +6,19 @@ export type JSONSchemaTypeName = 'string' | 'number' | 'integer' | 'boolean' | '
 /**
  * All possible types for JSON Schema.
  */
-export type JSONSchemaType = string | number | boolean | JSONSchemaObject | JSONSchemaArray | null;
+type JSONSchemaType = string | number | boolean | JSONSchemaObject | JSONSchemaArray | null;
 
 /**
  * The object type for JSON Schema.
  */
-export type JSONSchemaObject = {
+type JSONSchemaObject = {
   [key: string]: JSONSchemaType;
 };
 
 /**
  * The array type for JSON Schema.
  */
-export type JSONSchemaArray = Array<JSONSchemaType>;
+type JSONSchemaArray = Array<JSONSchemaType>;
 
 /**
  * The definition type for JSON Schema.

@@ -5,7 +5,7 @@ import { isArray, isObject } from 'lodash';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-export interface Response<T> {
+interface Response<T> {
   data: T;
 }
 

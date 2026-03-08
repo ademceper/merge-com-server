@@ -16,10 +16,10 @@ import {
   LayoutPreviewPayloadDto$inboundSchema,
 } from "./layoutpreviewpayloaddto.js";
 
-export const ResultType = {
+const ResultType = {
   Email: "email",
 } as const;
-export type ResultType = ClosedEnum<typeof ResultType>;
+type ResultType = ClosedEnum<typeof ResultType>;
 
 export type One = {
   type?: ResultType | undefined;
@@ -29,7 +29,7 @@ export type One = {
 /**
  * Preview result
  */
-export type Result = One;
+type Result = One;
 
 export type GenerateLayoutPreviewResponseDto = {
   /**
@@ -47,17 +47,17 @@ export type GenerateLayoutPreviewResponseDto = {
 };
 
 /** @internal */
-export const ResultType$inboundSchema: z.ZodNativeEnum<typeof ResultType> = z
+const ResultType$inboundSchema: z.ZodNativeEnum<typeof ResultType> = z
   .nativeEnum(ResultType);
 
 /** @internal */
-export const One$inboundSchema: z.ZodType<One, z.ZodTypeDef, unknown> = z
+const One$inboundSchema: z.ZodType<One, z.ZodTypeDef, unknown> = z
   .object({
     type: ResultType$inboundSchema.optional(),
     preview: EmailLayoutRenderOutput$inboundSchema.optional(),
   });
 
-export function oneFromJSON(
+function oneFromJSON(
   jsonString: string,
 ): SafeParseResult<One, SDKValidationError> {
   return safeParse(
@@ -68,10 +68,10 @@ export function oneFromJSON(
 }
 
 /** @internal */
-export const Result$inboundSchema: z.ZodType<Result, z.ZodTypeDef, unknown> = z
+const Result$inboundSchema: z.ZodType<Result, z.ZodTypeDef, unknown> = z
   .lazy(() => One$inboundSchema);
 
-export function resultFromJSON(
+function resultFromJSON(
   jsonString: string,
 ): SafeParseResult<Result, SDKValidationError> {
   return safeParse(
@@ -92,7 +92,7 @@ export const GenerateLayoutPreviewResponseDto$inboundSchema: z.ZodType<
   result: z.lazy(() => One$inboundSchema),
 });
 
-export function generateLayoutPreviewResponseDtoFromJSON(
+function generateLayoutPreviewResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<GenerateLayoutPreviewResponseDto, SDKValidationError> {
   return safeParse(

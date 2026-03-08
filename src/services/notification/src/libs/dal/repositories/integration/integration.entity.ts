@@ -7,7 +7,7 @@ import type { OrganizationId } from '../organization';
 
 export type ICredentialsEntity = ICredentials;
 
-export type ConfigConfigurationEntity = IConfigurations;
+type ConfigConfigurationEntity = IConfigurations;
 
 export class IntegrationEntity {
   _id: string;

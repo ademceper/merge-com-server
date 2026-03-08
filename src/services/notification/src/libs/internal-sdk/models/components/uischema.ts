@@ -36,7 +36,7 @@ export const UiSchema$inboundSchema: z.ZodType<
   properties: z.record(UiSchemaProperty$inboundSchema).optional(),
 });
 
-export function uiSchemaFromJSON(
+function uiSchemaFromJSON(
   jsonString: string,
 ): SafeParseResult<UiSchema, SDKValidationError> {
   return safeParse(

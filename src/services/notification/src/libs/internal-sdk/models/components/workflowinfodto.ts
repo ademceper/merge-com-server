@@ -28,7 +28,7 @@ export const WorkflowInfoDto$inboundSchema: z.ZodType<
   workflowId: z.string(),
 });
 
-export function workflowInfoDtoFromJSON(
+function workflowInfoDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<WorkflowInfoDto, SDKValidationError> {
   return safeParse(

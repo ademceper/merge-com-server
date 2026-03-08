@@ -25,7 +25,7 @@ export const LayoutControlValuesDto$inboundSchema: z.ZodType<
   email: EmailControlsDto$inboundSchema.optional(),
 });
 
-export function layoutControlValuesDtoFromJSON(
+function layoutControlValuesDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<LayoutControlValuesDto, SDKValidationError> {
   return safeParse(

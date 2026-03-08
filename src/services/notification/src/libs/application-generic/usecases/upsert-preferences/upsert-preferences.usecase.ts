@@ -12,7 +12,7 @@ import { UpsertSubscriberWorkflowPreferencesCommand } from './upsert-subscriber-
 import { UpsertUserWorkflowPreferencesCommand } from './upsert-user-workflow-preferences.command';
 import { UpsertWorkflowPreferencesCommand } from './upsert-workflow-preferences.command';
 
-export type WorkflowPreferencesFull = Omit<PreferencesEntity, 'preferences'> & {
+type WorkflowPreferencesFull = Omit<PreferencesEntity, 'preferences'> & {
   preferences: WorkflowPreferences;
 };
 

@@ -1,6 +1,6 @@
 import { ApiServiceLevelEnum } from '../../types';
 
-export type GetSubscriptionDto = {
+type GetSubscriptionDto = {
   /**
    * The API service level of the subscription.
    */

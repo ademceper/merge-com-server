@@ -1,3 +1,3 @@
-export interface INotification {
+interface INotification {
   _id: string;
 }

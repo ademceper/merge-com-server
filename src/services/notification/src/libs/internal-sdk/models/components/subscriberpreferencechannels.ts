@@ -48,7 +48,7 @@ export const SubscriberPreferenceChannels$inboundSchema: z.ZodType<
   });
 });
 
-export function subscriberPreferenceChannelsFromJSON(
+function subscriberPreferenceChannelsFromJSON(
   jsonString: string,
 ): SafeParseResult<SubscriberPreferenceChannels, SDKValidationError> {
   return safeParse(

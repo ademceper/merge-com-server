@@ -43,14 +43,14 @@ export const WorkflowPreferenceDto$outboundSchema: z.ZodType<
   readOnly: z.boolean().default(false),
 });
 
-export function workflowPreferenceDtoToJSON(
+function workflowPreferenceDtoToJSON(
   workflowPreferenceDto: WorkflowPreferenceDto,
 ): string {
   return JSON.stringify(
     WorkflowPreferenceDto$outboundSchema.parse(workflowPreferenceDto),
   );
 }
-export function workflowPreferenceDtoFromJSON(
+function workflowPreferenceDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<WorkflowPreferenceDto, SDKValidationError> {
   return safeParse(

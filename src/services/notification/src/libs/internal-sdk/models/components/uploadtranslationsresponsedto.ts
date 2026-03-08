@@ -38,7 +38,7 @@ export const UploadTranslationsResponseDto$inboundSchema: z.ZodType<
   errors: z.array(z.string()),
 });
 
-export function uploadTranslationsResponseDtoFromJSON(
+function uploadTranslationsResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<UploadTranslationsResponseDto, SDKValidationError> {
   return safeParse(

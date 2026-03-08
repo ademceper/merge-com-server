@@ -28,7 +28,7 @@ export const GetMasterJsonResponseDto$inboundSchema: z.ZodType<
   layouts: z.record(z.any()),
 });
 
-export function getMasterJsonResponseDtoFromJSON(
+function getMasterJsonResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<GetMasterJsonResponseDto, SDKValidationError> {
   return safeParse(

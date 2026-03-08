@@ -8,7 +8,7 @@ import { JSONSchemaDto } from '../../shared/dtos/json-schema.dto';
 import type { ArrayVariable } from '../../shared/usecases/create-variables-object/create-variables-object.usecase';
 import { DIGEST_EVENTS_VARIABLE_PATTERN } from '../../shared/utils/template-parser/parser-utils';
 
-export function findMissingKeys(requiredRecord: object, actualRecord: object) {
+function findMissingKeys(requiredRecord: object, actualRecord: object) {
   const requiredKeys = collectKeys(requiredRecord);
   const actualKeys = collectKeys(actualRecord);
 

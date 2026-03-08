@@ -30,7 +30,7 @@ export type ContextsControllerGetContextResponse = {
 };
 
 /** @internal */
-export type ContextsControllerGetContextRequest$Outbound = {
+type ContextsControllerGetContextRequest$Outbound = {
   type: string;
   id: string;
   "idempotency-key"?: string | undefined;
@@ -51,7 +51,7 @@ export const ContextsControllerGetContextRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function contextsControllerGetContextRequestToJSON(
+function contextsControllerGetContextRequestToJSON(
   contextsControllerGetContextRequest: ContextsControllerGetContextRequest,
 ): string {
   return JSON.stringify(
@@ -76,7 +76,7 @@ export const ContextsControllerGetContextResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function contextsControllerGetContextResponseFromJSON(
+function contextsControllerGetContextResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<ContextsControllerGetContextResponse, SDKValidationError> {
   return safeParse(

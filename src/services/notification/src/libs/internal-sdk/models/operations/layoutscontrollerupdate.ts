@@ -27,7 +27,7 @@ export type LayoutsControllerUpdateResponse = {
 };
 
 /** @internal */
-export type LayoutsControllerUpdateRequest$Outbound = {
+type LayoutsControllerUpdateRequest$Outbound = {
   layoutId: string;
   "idempotency-key"?: string | undefined;
   UpdateLayoutDto: components.UpdateLayoutDto$Outbound;
@@ -49,7 +49,7 @@ export const LayoutsControllerUpdateRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function layoutsControllerUpdateRequestToJSON(
+function layoutsControllerUpdateRequestToJSON(
   layoutsControllerUpdateRequest: LayoutsControllerUpdateRequest,
 ): string {
   return JSON.stringify(
@@ -74,7 +74,7 @@ export const LayoutsControllerUpdateResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function layoutsControllerUpdateResponseFromJSON(
+function layoutsControllerUpdateResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<LayoutsControllerUpdateResponse, SDKValidationError> {
   return safeParse(

@@ -1,3 +1,3 @@
-export type SyncWorkflowDto = {
+type SyncWorkflowDto = {
   targetEnvironmentId: string;
 };

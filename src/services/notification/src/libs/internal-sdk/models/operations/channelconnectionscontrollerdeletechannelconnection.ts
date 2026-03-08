@@ -24,7 +24,7 @@ export type ChannelConnectionsControllerDeleteChannelConnectionResponse = {
 };
 
 /** @internal */
-export type ChannelConnectionsControllerDeleteChannelConnectionRequest$Outbound =
+type ChannelConnectionsControllerDeleteChannelConnectionRequest$Outbound =
   {
     identifier: string;
     "idempotency-key"?: string | undefined;
@@ -45,7 +45,7 @@ export const ChannelConnectionsControllerDeleteChannelConnectionRequest$outbound
     });
   });
 
-export function channelConnectionsControllerDeleteChannelConnectionRequestToJSON(
+function channelConnectionsControllerDeleteChannelConnectionRequestToJSON(
   channelConnectionsControllerDeleteChannelConnectionRequest:
     ChannelConnectionsControllerDeleteChannelConnectionRequest,
 ): string {
@@ -69,7 +69,7 @@ export const ChannelConnectionsControllerDeleteChannelConnectionResponse$inbound
     });
   });
 
-export function channelConnectionsControllerDeleteChannelConnectionResponseFromJSON(
+function channelConnectionsControllerDeleteChannelConnectionResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   ChannelConnectionsControllerDeleteChannelConnectionResponse,

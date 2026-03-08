@@ -36,10 +36,10 @@ export type SubscribersControllerGetSubscriberPreferencesResponse = {
 };
 
 /** @internal */
-export const Criticality$outboundSchema: z.ZodNativeEnum<typeof Criticality> = z.nativeEnum(Criticality);
+const Criticality$outboundSchema: z.ZodNativeEnum<typeof Criticality> = z.nativeEnum(Criticality);
 
 /** @internal */
-export type SubscribersControllerGetSubscriberPreferencesRequest$Outbound = {
+type SubscribersControllerGetSubscriberPreferencesRequest$Outbound = {
   subscriberId: string;
   criticality: string;
   contextKeys?: Array<string> | undefined;
@@ -64,7 +64,7 @@ export const SubscribersControllerGetSubscriberPreferencesRequest$outboundSchema
     });
   });
 
-export function subscribersControllerGetSubscriberPreferencesRequestToJSON(
+function subscribersControllerGetSubscriberPreferencesRequestToJSON(
   subscribersControllerGetSubscriberPreferencesRequest: SubscribersControllerGetSubscriberPreferencesRequest
 ): string {
   return JSON.stringify(
@@ -91,7 +91,7 @@ export const SubscribersControllerGetSubscriberPreferencesResponse$inboundSchema
     });
   });
 
-export function subscribersControllerGetSubscriberPreferencesResponseFromJSON(
+function subscribersControllerGetSubscriberPreferencesResponseFromJSON(
   jsonString: string
 ): SafeParseResult<SubscribersControllerGetSubscriberPreferencesResponse, SDKValidationError> {
   return safeParse(

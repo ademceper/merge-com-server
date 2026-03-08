@@ -1,4 +1,4 @@
-export interface IApiKey {
+interface IApiKey {
   key: string;
   _userId: string;
   hash?: string;

@@ -27,7 +27,7 @@ export type ChannelEndpointsControllerUpdateChannelEndpointResponse = {
 };
 
 /** @internal */
-export type ChannelEndpointsControllerUpdateChannelEndpointRequest$Outbound = {
+type ChannelEndpointsControllerUpdateChannelEndpointRequest$Outbound = {
   identifier: string;
   "idempotency-key"?: string | undefined;
   UpdateChannelEndpointRequestDto:
@@ -52,7 +52,7 @@ export const ChannelEndpointsControllerUpdateChannelEndpointRequest$outboundSche
     });
   });
 
-export function channelEndpointsControllerUpdateChannelEndpointRequestToJSON(
+function channelEndpointsControllerUpdateChannelEndpointRequestToJSON(
   channelEndpointsControllerUpdateChannelEndpointRequest:
     ChannelEndpointsControllerUpdateChannelEndpointRequest,
 ): string {
@@ -79,7 +79,7 @@ export const ChannelEndpointsControllerUpdateChannelEndpointResponse$inboundSche
     });
   });
 
-export function channelEndpointsControllerUpdateChannelEndpointResponseFromJSON(
+function channelEndpointsControllerUpdateChannelEndpointResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   ChannelEndpointsControllerUpdateChannelEndpointResponse,

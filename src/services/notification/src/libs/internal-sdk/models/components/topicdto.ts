@@ -38,7 +38,7 @@ export const TopicDto$inboundSchema: z.ZodType<
   });
 });
 
-export function topicDtoFromJSON(
+function topicDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<TopicDto, SDKValidationError> {
   return safeParse(

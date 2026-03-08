@@ -2,10 +2,8 @@ import type { IUserEntity } from '../user';
 import { MemberRoleEnum } from './member.enum';
 
 export enum MemberStatusEnum {
-  NEW = 'new',
   ACTIVE = 'active',
-  INVITED = 'invited',
-}
+  }
 
 export interface IMemberInvite {
   email: string;
@@ -15,7 +13,7 @@ export interface IMemberInvite {
   _inviterId: string;
 }
 
-export interface IMemberEntity {
+interface IMemberEntity {
   _id: string;
   id: string;
   user?: IUserEntity | null;

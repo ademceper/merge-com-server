@@ -19,7 +19,7 @@ const normalizableProviders = {
   },
 };
 
-export function normalizeEmail(email: string): string {
+function normalizeEmail(email: string): string {
   if (typeof email !== 'string') {
     throw new TypeError('normalize-email expects a string');
   }

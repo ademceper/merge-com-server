@@ -1,7 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import got from 'got';
 
-export interface ScheduleJobRequest {
+interface ScheduleJobRequest {
   jobId: string;
   scheduledFor: number;
   mode: string;

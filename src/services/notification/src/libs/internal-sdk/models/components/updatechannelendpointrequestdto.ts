@@ -27,7 +27,7 @@ import {
 /**
  * Updated endpoint data. The structure must match the existing channel endpoint type.
  */
-export type UpdateChannelEndpointRequestDtoEndpoint =
+type UpdateChannelEndpointRequestDtoEndpoint =
   | SlackChannelEndpointDto
   | SlackUserEndpointDto
   | WebhookEndpointDto
@@ -45,14 +45,14 @@ export type UpdateChannelEndpointRequestDto = {
 };
 
 /** @internal */
-export type UpdateChannelEndpointRequestDtoEndpoint$Outbound =
+type UpdateChannelEndpointRequestDtoEndpoint$Outbound =
   | SlackChannelEndpointDto$Outbound
   | SlackUserEndpointDto$Outbound
   | WebhookEndpointDto$Outbound
   | PhoneEndpointDto$Outbound;
 
 /** @internal */
-export const UpdateChannelEndpointRequestDtoEndpoint$outboundSchema: z.ZodType<
+const UpdateChannelEndpointRequestDtoEndpoint$outboundSchema: z.ZodType<
   UpdateChannelEndpointRequestDtoEndpoint$Outbound,
   z.ZodTypeDef,
   UpdateChannelEndpointRequestDtoEndpoint
@@ -63,7 +63,7 @@ export const UpdateChannelEndpointRequestDtoEndpoint$outboundSchema: z.ZodType<
   PhoneEndpointDto$outboundSchema,
 ]);
 
-export function updateChannelEndpointRequestDtoEndpointToJSON(
+function updateChannelEndpointRequestDtoEndpointToJSON(
   updateChannelEndpointRequestDtoEndpoint:
     UpdateChannelEndpointRequestDtoEndpoint,
 ): string {
@@ -97,7 +97,7 @@ export const UpdateChannelEndpointRequestDto$outboundSchema: z.ZodType<
   ]),
 });
 
-export function updateChannelEndpointRequestDtoToJSON(
+function updateChannelEndpointRequestDtoToJSON(
   updateChannelEndpointRequestDto: UpdateChannelEndpointRequestDto,
 ): string {
   return JSON.stringify(

@@ -25,15 +25,7 @@ export type BuilderGroupValues = FieldLogicalOperatorEnum.AND | FieldLogicalOper
 
 export type BuilderFieldType = 'BOOLEAN' | 'TEXT' | 'DATE' | 'NUMBER' | 'STATEMENT' | 'LIST' | 'MULTI_LIST' | 'GROUP';
 export enum BuilderFieldTypeEnum {
-  BOOLEAN = 'BOOLEAN',
-  TEXT = 'TEXT',
-  DATE = 'DATE',
-  NUMBER = 'NUMBER',
-  STATEMENT = 'STATEMENT',
-  LIST = 'LIST',
-  MULTI_LIST = 'MULTI_LIST',
-  GROUP = 'GROUP',
-}
+  }
 export type BuilderFieldOperator =
   | FieldOperatorEnum.LARGER
   | FieldOperatorEnum.SMALLER
@@ -52,7 +44,6 @@ export type BuilderFieldOperator =
   | FieldOperatorEnum.IS_DEFINED;
 
 export enum TimeOperatorEnum {
-  DAYS = 'days',
   HOURS = 'hours',
   MINUTES = 'minutes',
 }
@@ -74,7 +65,7 @@ export enum PreviousStepTypeEnum {
   UNSEEN = 'unseen',
 }
 
-export interface IBaseFilterPart {
+interface IBaseFilterPart {
   on: FilterPartTypeEnum;
 }
 

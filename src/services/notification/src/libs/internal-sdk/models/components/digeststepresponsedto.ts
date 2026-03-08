@@ -19,19 +19,19 @@ import { StepIssuesDto, StepIssuesDto$inboundSchema } from './stepissuesdto.js';
 /**
  * The type of digest strategy. Determines which fields are applicable.
  */
-export const DigestStepResponseDtoType = {
+const DigestStepResponseDtoType = {
   Regular: 'regular',
   Timed: 'timed',
 } as const;
 /**
  * The type of digest strategy. Determines which fields are applicable.
  */
-export type DigestStepResponseDtoType = ClosedEnum<typeof DigestStepResponseDtoType>;
+type DigestStepResponseDtoType = ClosedEnum<typeof DigestStepResponseDtoType>;
 
 /**
  * The unit of time for the digest interval (for REGULAR type).
  */
-export const DigestStepResponseDtoUnit = {
+const DigestStepResponseDtoUnit = {
   Seconds: 'seconds',
   Minutes: 'minutes',
   Hours: 'hours',
@@ -42,7 +42,7 @@ export const DigestStepResponseDtoUnit = {
 /**
  * The unit of time for the digest interval (for REGULAR type).
  */
-export type DigestStepResponseDtoUnit = ClosedEnum<typeof DigestStepResponseDtoUnit>;
+type DigestStepResponseDtoUnit = ClosedEnum<typeof DigestStepResponseDtoUnit>;
 
 /**
  * Control values for the digest step
@@ -131,15 +131,15 @@ export type DigestStepResponseDto = {
 };
 
 /** @internal */
-export const DigestStepResponseDtoType$inboundSchema: z.ZodNativeEnum<typeof DigestStepResponseDtoType> =
+const DigestStepResponseDtoType$inboundSchema: z.ZodNativeEnum<typeof DigestStepResponseDtoType> =
   z.nativeEnum(DigestStepResponseDtoType);
 
 /** @internal */
-export const DigestStepResponseDtoUnit$inboundSchema: z.ZodNativeEnum<typeof DigestStepResponseDtoUnit> =
+const DigestStepResponseDtoUnit$inboundSchema: z.ZodNativeEnum<typeof DigestStepResponseDtoUnit> =
   z.nativeEnum(DigestStepResponseDtoUnit);
 
 /** @internal */
-export const DigestStepResponseDtoControlValues$inboundSchema: z.ZodType<
+const DigestStepResponseDtoControlValues$inboundSchema: z.ZodType<
   DigestStepResponseDtoControlValues,
   z.ZodTypeDef,
   unknown
@@ -159,7 +159,7 @@ export const DigestStepResponseDtoControlValues$inboundSchema: z.ZodType<
   true
 );
 
-export function digestStepResponseDtoControlValuesFromJSON(
+function digestStepResponseDtoControlValuesFromJSON(
   jsonString: string
 ): SafeParseResult<DigestStepResponseDtoControlValues, SDKValidationError> {
   return safeParse(
@@ -191,7 +191,7 @@ export const DigestStepResponseDto$inboundSchema: z.ZodType<DigestStepResponseDt
     });
   });
 
-export function digestStepResponseDtoFromJSON(
+function digestStepResponseDtoFromJSON(
   jsonString: string
 ): SafeParseResult<DigestStepResponseDto, SDKValidationError> {
   return safeParse(

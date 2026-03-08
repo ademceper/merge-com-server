@@ -37,7 +37,7 @@ export const MessageButton$inboundSchema: z.ZodType<
   resultContent: z.string().optional(),
 });
 
-export function messageButtonFromJSON(
+function messageButtonFromJSON(
   jsonString: string,
 ): SafeParseResult<MessageButton, SDKValidationError> {
   return safeParse(

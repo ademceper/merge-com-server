@@ -3,7 +3,7 @@ import { ENDPOINT_TYPES } from 'libs/shared';
 import type { ChannelEndpointType } from 'libs/shared';
 
 // Centralized schema definition
-export const CHANNEL_ENDPOINT_SCHEMAS = {
+const CHANNEL_ENDPOINT_SCHEMAS = {
   [ENDPOINT_TYPES.SLACK_CHANNEL]: {
     description: 'Slack Channel Endpoint',
     properties: { channelId: { type: 'string' as const } },
@@ -57,7 +57,7 @@ export const CHANNEL_ENDPOINT_SCHEMAS = {
 } as const;
 
 // Generate API property examples automatically
-export function getApiPropertyExamples() {
+function getApiPropertyExamples() {
   return Object.entries(CHANNEL_ENDPOINT_SCHEMAS).map(([, schema]) => ({
     properties: schema.properties,
     description: schema.description,

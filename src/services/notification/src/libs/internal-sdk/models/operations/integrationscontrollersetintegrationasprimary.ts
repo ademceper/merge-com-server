@@ -23,7 +23,7 @@ export type IntegrationsControllerSetIntegrationAsPrimaryResponse = {
 };
 
 /** @internal */
-export type IntegrationsControllerSetIntegrationAsPrimaryRequest$Outbound = {
+type IntegrationsControllerSetIntegrationAsPrimaryRequest$Outbound = {
   integrationId: string;
   "idempotency-key"?: string | undefined;
 };
@@ -43,7 +43,7 @@ export const IntegrationsControllerSetIntegrationAsPrimaryRequest$outboundSchema
     });
   });
 
-export function integrationsControllerSetIntegrationAsPrimaryRequestToJSON(
+function integrationsControllerSetIntegrationAsPrimaryRequestToJSON(
   integrationsControllerSetIntegrationAsPrimaryRequest:
     IntegrationsControllerSetIntegrationAsPrimaryRequest,
 ): string {
@@ -70,7 +70,7 @@ export const IntegrationsControllerSetIntegrationAsPrimaryResponse$inboundSchema
     });
   });
 
-export function integrationsControllerSetIntegrationAsPrimaryResponseFromJSON(
+function integrationsControllerSetIntegrationAsPrimaryResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   IntegrationsControllerSetIntegrationAsPrimaryResponse,

@@ -7,7 +7,7 @@ export const isRegularDigest = (type: DigestTypeEnum | DelayTypeEnum) => {
   return type === DigestTypeEnum.REGULAR || type === DigestTypeEnum.BACKOFF;
 };
 
-export const isRegularDelay = (type: DelayTypeEnum) => {
+const isRegularDelay = (type: DelayTypeEnum) => {
   return type === DelayTypeEnum.REGULAR;
 };
 
@@ -21,7 +21,7 @@ export function isActionStepType(type: StepTypeEnum) {
   return channels.find((channel) => channel === type);
 }
 
-export function isChannelStepType(type: StepTypeEnum) {
+function isChannelStepType(type: StepTypeEnum) {
   const channels = [StepTypeEnum.IN_APP, StepTypeEnum.EMAIL, StepTypeEnum.SMS, StepTypeEnum.PUSH, StepTypeEnum.CHAT];
 
   return channels.find((channel) => channel === type);

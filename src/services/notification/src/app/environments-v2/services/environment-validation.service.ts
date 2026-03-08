@@ -3,7 +3,7 @@ import { BaseRepository, EnvironmentRepository } from 'libs/dal';
 import { EnvironmentEnum } from 'libs/shared';
 import type { UserSessionData } from 'libs/shared';
 
-export interface IEnvironmentValidationParams {
+interface IEnvironmentValidationParams {
   sourceEnvironmentId: string;
   targetEnvironmentId: string;
   user: UserSessionData;

@@ -25,7 +25,7 @@ export type SubscribersControllerBulkUpdateSubscriberPreferencesResponse = {
 };
 
 /** @internal */
-export type SubscribersControllerBulkUpdateSubscriberPreferencesRequest$Outbound =
+type SubscribersControllerBulkUpdateSubscriberPreferencesRequest$Outbound =
   {
     subscriberId: string;
     "idempotency-key"?: string | undefined;
@@ -51,7 +51,7 @@ export const SubscribersControllerBulkUpdateSubscriberPreferencesRequest$outboun
     });
   });
 
-export function subscribersControllerBulkUpdateSubscriberPreferencesRequestToJSON(
+function subscribersControllerBulkUpdateSubscriberPreferencesRequestToJSON(
   subscribersControllerBulkUpdateSubscriberPreferencesRequest:
     SubscribersControllerBulkUpdateSubscriberPreferencesRequest,
 ): string {
@@ -77,7 +77,7 @@ export const SubscribersControllerBulkUpdateSubscriberPreferencesResponse$inboun
     });
   });
 
-export function subscribersControllerBulkUpdateSubscriberPreferencesResponseFromJSON(
+function subscribersControllerBulkUpdateSubscriberPreferencesResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   SubscribersControllerBulkUpdateSubscriberPreferencesResponse,

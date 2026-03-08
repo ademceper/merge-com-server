@@ -66,7 +66,7 @@ const sanitizeOptions: IOptions = {
   },
 };
 
-export const sanitizeHTML = (html: string): string => {
+const sanitizeHTML = (html: string): string => {
   if (!html) {
     return html;
   }

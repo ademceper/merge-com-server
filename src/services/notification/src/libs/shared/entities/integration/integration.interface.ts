@@ -3,7 +3,7 @@ import type { EnvironmentId, IPreviousStepFilterPart, OrganizationId } from '../
 import type { IConfigurations } from './configuration.interface';
 import type { ICredentials } from './credential.interface';
 
-export interface IIntegration {
+interface IIntegration {
   _id: string;
 
   _environmentId: EnvironmentId;

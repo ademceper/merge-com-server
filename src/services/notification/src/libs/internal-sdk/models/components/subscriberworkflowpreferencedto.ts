@@ -55,7 +55,7 @@ export const SubscriberWorkflowPreferenceDto$inboundSchema: z.ZodType<
   updatedAt: z.string().optional(),
 });
 
-export function subscriberWorkflowPreferenceDtoFromJSON(
+function subscriberWorkflowPreferenceDtoFromJSON(
   jsonString: string
 ): SafeParseResult<SubscriberWorkflowPreferenceDto, SDKValidationError> {
   return safeParse(

@@ -6,7 +6,7 @@ import type { TriggerOverrides } from 'libs/shared';
 import { IsDefined, IsEnum, IsOptional, IsString, ValidateIf, ValidateNested } from 'class-validator';
 import { EnvironmentWithUserCommand } from '../../../shared/commands/project.command';
 
-export class ParseEventRequestBaseCommand extends EnvironmentWithUserCommand {
+class ParseEventRequestBaseCommand extends EnvironmentWithUserCommand {
   @IsDefined()
   @IsString()
   identifier: string;

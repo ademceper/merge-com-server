@@ -4,7 +4,7 @@ import { Exclude } from 'class-transformer';
 
 import type { UserId } from './types';
 
-export interface IUserToken {
+interface IUserToken {
   providerId: string;
   provider: AuthProviderEnum;
   accessToken: string;

@@ -36,7 +36,7 @@ export const BulkUpdateSubscriberPreferenceItemDto$outboundSchema: z.ZodType<
   workflowId: z.string(),
 });
 
-export function bulkUpdateSubscriberPreferenceItemDtoToJSON(
+function bulkUpdateSubscriberPreferenceItemDtoToJSON(
   bulkUpdateSubscriberPreferenceItemDto: BulkUpdateSubscriberPreferenceItemDto,
 ): string {
   return JSON.stringify(

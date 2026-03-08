@@ -66,7 +66,7 @@ export type EventBody = {
 };
 
 /** @internal */
-export const Status$inboundSchema: z.ZodNativeEnum<typeof Status> = z.nativeEnum(Status);
+const Status$inboundSchema: z.ZodNativeEnum<typeof Status> = z.nativeEnum(Status);
 
 /** @internal */
 export const EventBody$inboundSchema: z.ZodType<EventBody, z.ZodTypeDef, unknown> = z.object({
@@ -78,7 +78,7 @@ export const EventBody$inboundSchema: z.ZodType<EventBody, z.ZodTypeDef, unknown
   row: z.string().optional(),
 });
 
-export function eventBodyFromJSON(jsonString: string): SafeParseResult<EventBody, SDKValidationError> {
+function eventBodyFromJSON(jsonString: string): SafeParseResult<EventBody, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) => EventBody$inboundSchema.parse(JSON.parse(x)),

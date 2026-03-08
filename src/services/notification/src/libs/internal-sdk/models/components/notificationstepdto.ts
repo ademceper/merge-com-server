@@ -37,7 +37,7 @@ import { StepFilterDto, StepFilterDto$inboundSchema } from "./stepfilterdto.js";
 /**
  * Metadata associated with the workflow step. Can vary based on the type of step.
  */
-export type Metadata =
+type Metadata =
   | DelayScheduledMetadata
   | DigestRegularMetadata
   | DigestTimedMetadata
@@ -97,7 +97,7 @@ export type NotificationStepDto = {
 };
 
 /** @internal */
-export const Metadata$inboundSchema: z.ZodType<
+const Metadata$inboundSchema: z.ZodType<
   Metadata,
   z.ZodTypeDef,
   unknown
@@ -108,7 +108,7 @@ export const Metadata$inboundSchema: z.ZodType<
   DelayRegularMetadata$inboundSchema,
 ]);
 
-export function metadataFromJSON(
+function metadataFromJSON(
   jsonString: string,
 ): SafeParseResult<Metadata, SDKValidationError> {
   return safeParse(
@@ -149,7 +149,7 @@ export const NotificationStepDto$inboundSchema: z.ZodType<
   });
 });
 
-export function notificationStepDtoFromJSON(
+function notificationStepDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<NotificationStepDto, SDKValidationError> {
   return safeParse(

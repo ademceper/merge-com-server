@@ -13,7 +13,7 @@ import {
 /**
  * Control values for the Delay step.
  */
-export type DelayStepUpsertDtoControlValues = DelayControlDto | {
+type DelayStepUpsertDtoControlValues = DelayControlDto | {
   [k: string]: any;
 };
 
@@ -41,18 +41,18 @@ export type DelayStepUpsertDto = {
 };
 
 /** @internal */
-export type DelayStepUpsertDtoControlValues$Outbound =
+type DelayStepUpsertDtoControlValues$Outbound =
   | DelayControlDto$Outbound
   | { [k: string]: any };
 
 /** @internal */
-export const DelayStepUpsertDtoControlValues$outboundSchema: z.ZodType<
+const DelayStepUpsertDtoControlValues$outboundSchema: z.ZodType<
   DelayStepUpsertDtoControlValues$Outbound,
   z.ZodTypeDef,
   DelayStepUpsertDtoControlValues
 > = z.union([DelayControlDto$outboundSchema, z.record(z.any())]);
 
-export function delayStepUpsertDtoControlValuesToJSON(
+function delayStepUpsertDtoControlValuesToJSON(
   delayStepUpsertDtoControlValues: DelayStepUpsertDtoControlValues,
 ): string {
   return JSON.stringify(
@@ -89,7 +89,7 @@ export const DelayStepUpsertDto$outboundSchema: z.ZodType<
   });
 });
 
-export function delayStepUpsertDtoToJSON(
+function delayStepUpsertDtoToJSON(
   delayStepUpsertDto: DelayStepUpsertDto,
 ): string {
   return JSON.stringify(

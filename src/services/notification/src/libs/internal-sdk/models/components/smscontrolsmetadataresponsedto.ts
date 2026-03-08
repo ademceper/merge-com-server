@@ -35,7 +35,7 @@ export const SmsControlsMetadataResponseDto$inboundSchema: z.ZodType<
   values: SmsControlDto$inboundSchema,
 });
 
-export function smsControlsMetadataResponseDtoFromJSON(
+function smsControlsMetadataResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<SmsControlsMetadataResponseDto, SDKValidationError> {
   return safeParse(

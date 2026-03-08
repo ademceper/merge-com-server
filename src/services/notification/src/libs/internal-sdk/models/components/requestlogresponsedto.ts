@@ -88,13 +88,13 @@ export type RequestLogResponseDto = {
 };
 
 /** @internal */
-export const TransactionId$inboundSchema: z.ZodType<
+const TransactionId$inboundSchema: z.ZodType<
   TransactionId,
   z.ZodTypeDef,
   unknown
 > = z.object({});
 
-export function transactionIdFromJSON(
+function transactionIdFromJSON(
   jsonString: string,
 ): SafeParseResult<TransactionId, SDKValidationError> {
   return safeParse(
@@ -131,7 +131,7 @@ export const RequestLogResponseDto$inboundSchema: z.ZodType<
   durationMs: z.number(),
 });
 
-export function requestLogResponseDtoFromJSON(
+function requestLogResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<RequestLogResponseDto, SDKValidationError> {
   return safeParse(

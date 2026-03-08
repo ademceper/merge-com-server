@@ -21,7 +21,7 @@ export type WorkflowControllerRemoveWorkflowResponse = {
 };
 
 /** @internal */
-export type WorkflowControllerRemoveWorkflowRequest$Outbound = {
+type WorkflowControllerRemoveWorkflowRequest$Outbound = {
   workflowId: string;
   "idempotency-key"?: string | undefined;
 };
@@ -40,7 +40,7 @@ export const WorkflowControllerRemoveWorkflowRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function workflowControllerRemoveWorkflowRequestToJSON(
+function workflowControllerRemoveWorkflowRequestToJSON(
   workflowControllerRemoveWorkflowRequest:
     WorkflowControllerRemoveWorkflowRequest,
 ): string {
@@ -64,7 +64,7 @@ export const WorkflowControllerRemoveWorkflowResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function workflowControllerRemoveWorkflowResponseFromJSON(
+function workflowControllerRemoveWorkflowResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   WorkflowControllerRemoveWorkflowResponse,

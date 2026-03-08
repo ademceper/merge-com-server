@@ -31,7 +31,7 @@ export type SubscribersV1ControllerGetNotificationsFeedResponse = {
 };
 
 /** @internal */
-export type SubscribersV1ControllerGetNotificationsFeedRequest$Outbound = {
+type SubscribersV1ControllerGetNotificationsFeedRequest$Outbound = {
   subscriberId: string;
   page?: number | undefined;
   limit: number;
@@ -61,7 +61,7 @@ export const SubscribersV1ControllerGetNotificationsFeedRequest$outboundSchema:
     });
   });
 
-export function subscribersV1ControllerGetNotificationsFeedRequestToJSON(
+function subscribersV1ControllerGetNotificationsFeedRequestToJSON(
   subscribersV1ControllerGetNotificationsFeedRequest:
     SubscribersV1ControllerGetNotificationsFeedRequest,
 ): string {
@@ -88,7 +88,7 @@ export const SubscribersV1ControllerGetNotificationsFeedResponse$inboundSchema:
     });
   });
 
-export function subscribersV1ControllerGetNotificationsFeedResponseFromJSON(
+function subscribersV1ControllerGetNotificationsFeedResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   SubscribersV1ControllerGetNotificationsFeedResponse,

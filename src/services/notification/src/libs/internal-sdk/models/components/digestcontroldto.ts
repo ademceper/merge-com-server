@@ -74,17 +74,17 @@ export type DigestControlDto = {
 };
 
 /** @internal */
-export const DigestControlDtoType$inboundSchema: z.ZodNativeEnum<typeof DigestControlDtoType> =
+const DigestControlDtoType$inboundSchema: z.ZodNativeEnum<typeof DigestControlDtoType> =
   z.nativeEnum(DigestControlDtoType);
 /** @internal */
-export const DigestControlDtoType$outboundSchema: z.ZodNativeEnum<typeof DigestControlDtoType> =
+const DigestControlDtoType$outboundSchema: z.ZodNativeEnum<typeof DigestControlDtoType> =
   DigestControlDtoType$inboundSchema;
 
 /** @internal */
-export const DigestControlDtoUnit$inboundSchema: z.ZodNativeEnum<typeof DigestControlDtoUnit> =
+const DigestControlDtoUnit$inboundSchema: z.ZodNativeEnum<typeof DigestControlDtoUnit> =
   z.nativeEnum(DigestControlDtoUnit);
 /** @internal */
-export const DigestControlDtoUnit$outboundSchema: z.ZodNativeEnum<typeof DigestControlDtoUnit> =
+const DigestControlDtoUnit$outboundSchema: z.ZodNativeEnum<typeof DigestControlDtoUnit> =
   DigestControlDtoUnit$inboundSchema;
 
 /** @internal */
@@ -120,10 +120,10 @@ export const DigestControlDto$outboundSchema: z.ZodType<DigestControlDto$Outboun
     digestKey: z.string().optional(),
   });
 
-export function digestControlDtoToJSON(digestControlDto: DigestControlDto): string {
+function digestControlDtoToJSON(digestControlDto: DigestControlDto): string {
   return JSON.stringify(DigestControlDto$outboundSchema.parse(digestControlDto));
 }
-export function digestControlDtoFromJSON(jsonString: string): SafeParseResult<DigestControlDto, SDKValidationError> {
+function digestControlDtoFromJSON(jsonString: string): SafeParseResult<DigestControlDto, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) => DigestControlDto$inboundSchema.parse(JSON.parse(x)),

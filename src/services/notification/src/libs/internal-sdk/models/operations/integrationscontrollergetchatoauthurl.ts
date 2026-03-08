@@ -23,7 +23,7 @@ export type IntegrationsControllerGetChatOAuthUrlResponse = {
 };
 
 /** @internal */
-export type IntegrationsControllerGetChatOAuthUrlRequest$Outbound = {
+type IntegrationsControllerGetChatOAuthUrlRequest$Outbound = {
   "idempotency-key"?: string | undefined;
   GenerateChatOauthUrlRequestDto:
     components.GenerateChatOauthUrlRequestDto$Outbound;
@@ -46,7 +46,7 @@ export const IntegrationsControllerGetChatOAuthUrlRequest$outboundSchema:
     });
   });
 
-export function integrationsControllerGetChatOAuthUrlRequestToJSON(
+function integrationsControllerGetChatOAuthUrlRequestToJSON(
   integrationsControllerGetChatOAuthUrlRequest:
     IntegrationsControllerGetChatOAuthUrlRequest,
 ): string {
@@ -73,7 +73,7 @@ export const IntegrationsControllerGetChatOAuthUrlResponse$inboundSchema:
     });
   });
 
-export function integrationsControllerGetChatOAuthUrlResponseFromJSON(
+function integrationsControllerGetChatOAuthUrlResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   IntegrationsControllerGetChatOAuthUrlResponse,

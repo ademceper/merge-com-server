@@ -5,7 +5,7 @@ import { ArrayMaxSize, ArrayMinSize, IsArray, IsDefined, IsOptional, IsString, V
 import { EnvironmentWithUserCommand } from '../../../shared/commands/project.command';
 import { GroupPreferenceFilterDto } from '../../../shared/dtos/subscriptions/create-subscriptions.dto';
 
-export class TopicSubscriberIdentifier {
+class TopicSubscriberIdentifier {
   @IsString()
   @IsOptional()
   identifier?: string;

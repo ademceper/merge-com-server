@@ -16,7 +16,7 @@ export const MessageTemplate$inboundSchema: z.ZodType<
   unknown
 > = z.object({});
 
-export function messageTemplateFromJSON(
+function messageTemplateFromJSON(
   jsonString: string,
 ): SafeParseResult<MessageTemplate, SDKValidationError> {
   return safeParse(

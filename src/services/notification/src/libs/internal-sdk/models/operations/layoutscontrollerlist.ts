@@ -42,7 +42,7 @@ export type LayoutsControllerListResponse = {
 };
 
 /** @internal */
-export type LayoutsControllerListRequest$Outbound = {
+type LayoutsControllerListRequest$Outbound = {
   limit?: number | undefined;
   offset?: number | undefined;
   orderDirection?: string | undefined;
@@ -69,7 +69,7 @@ export const LayoutsControllerListRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function layoutsControllerListRequestToJSON(
+function layoutsControllerListRequestToJSON(
   layoutsControllerListRequest: LayoutsControllerListRequest,
 ): string {
   return JSON.stringify(
@@ -94,7 +94,7 @@ export const LayoutsControllerListResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function layoutsControllerListResponseFromJSON(
+function layoutsControllerListResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<LayoutsControllerListResponse, SDKValidationError> {
   return safeParse(

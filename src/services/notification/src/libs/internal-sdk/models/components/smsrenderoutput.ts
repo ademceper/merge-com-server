@@ -23,7 +23,7 @@ export const SmsRenderOutput$inboundSchema: z.ZodType<
   body: z.string(),
 });
 
-export function smsRenderOutputFromJSON(
+function smsRenderOutputFromJSON(
   jsonString: string,
 ): SafeParseResult<SmsRenderOutput, SDKValidationError> {
   return safeParse(

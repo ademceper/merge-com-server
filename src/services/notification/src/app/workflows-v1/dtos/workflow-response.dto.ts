@@ -10,7 +10,7 @@ import { SubscriberPreferenceChannels } from '../../shared/dtos/preference-chann
  * @deprecated use dto's in /workflows directory
  */
 
-export class NotificationGroup {
+class NotificationGroup {
   @ApiPropertyOptional()
   _id?: string;
 
@@ -27,11 +27,11 @@ export class NotificationGroup {
   _parentId?: string;
 }
 
-export class NotificationTriggerVariable {
+class NotificationTriggerVariable {
   name: string;
 }
 
-export class NotificationTrigger {
+class NotificationTrigger {
   @ApiProperty({
     enum: TriggerTypeEnum,
   })

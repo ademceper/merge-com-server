@@ -14,42 +14,42 @@ import {
   TraceService as setTraceService,
 } from 'nestjs-otel';
 
-export type OtelDataOrPipe = string | PipeTransform<any, any> | Type<PipeTransform<any, any>>;
+type OtelDataOrPipe = string | PipeTransform<any, any> | Type<PipeTransform<any, any>>;
 
 export function OtelSpan(name?: string, options?: SpanOptions) {
   return Span(name, options);
 }
 
-export function OtelInstanceCounter(options?: MetricOptions) {
+function OtelInstanceCounter(options?: MetricOptions) {
   return setOtelInstanceCounter(options);
 }
 
-export function OtelUpDownCounter(name: string, options?: MetricOptions) {
+function OtelUpDownCounter(name: string, options?: MetricOptions) {
   return setOtelUpDownCounter(name, options);
 }
 
-export function OtelHistogram(name: string, options?: MetricOptions) {
+function OtelHistogram(name: string, options?: MetricOptions) {
   return setOtelHistogram(name, options);
 }
 
-export function OtelObservableGauge(name: string, options?: MetricOptions) {
+function OtelObservableGauge(name: string, options?: MetricOptions) {
   return setOtelObservableGauge(name, options);
 }
 
-export function OtelObservableCounter(name: string, options?: MetricOptions) {
+function OtelObservableCounter(name: string, options?: MetricOptions) {
   return setOtelObservableCounter(name, options);
 }
 
-export function OtelObservableUpDownCounter(name: string, options?: MetricOptions) {
+function OtelObservableUpDownCounter(name: string, options?: MetricOptions) {
   return setOtelObservableUpDownCounter(name, options);
 }
 
-export function OtelCounter(name: string, options?: MetricOptions) {
+function OtelCounter(name: string, options?: MetricOptions) {
   return setOtelCounter(name, options);
 }
 
 @Injectable()
-export class TraceService extends setTraceService {
+class TraceService extends setTraceService {
   getTracer() {
     return super.getTracer();
   }
@@ -64,7 +64,7 @@ export class TraceService extends setTraceService {
 }
 
 @Injectable()
-export class MetricService extends setMetricService {
+class MetricService extends setMetricService {
   getCounter(name, options) {
     return super.getCounter(name, options);
   }

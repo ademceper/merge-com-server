@@ -55,7 +55,7 @@ export const InAppRenderOutput$inboundSchema: z.ZodType<
   redirect: RedirectDto$inboundSchema.optional(),
 });
 
-export function inAppRenderOutputFromJSON(
+function inAppRenderOutputFromJSON(
   jsonString: string,
 ): SafeParseResult<InAppRenderOutput, SDKValidationError> {
   return safeParse(

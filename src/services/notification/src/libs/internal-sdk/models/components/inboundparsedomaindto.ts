@@ -22,7 +22,7 @@ export const InBoundParseDomainDto$outboundSchema: z.ZodType<
   inboundParseDomain: z.string().optional(),
 });
 
-export function inBoundParseDomainDtoToJSON(
+function inBoundParseDomainDtoToJSON(
   inBoundParseDomainDto: InBoundParseDomainDto,
 ): string {
   return JSON.stringify(

@@ -20,7 +20,7 @@ export const featureFlagsService = {
   },
 };
 
-export const cacheInMemoryProviderService = {
+const cacheInMemoryProviderService = {
   provide: CacheInMemoryProviderService,
   useFactory: (): CacheInMemoryProviderService => {
     return new CacheInMemoryProviderService();

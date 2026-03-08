@@ -64,16 +64,16 @@ export type EmailControlDto = {
 };
 
 /** @internal */
-export const EmailControlDtoEditorType$inboundSchema: z.ZodNativeEnum<typeof EmailControlDtoEditorType> =
+const EmailControlDtoEditorType$inboundSchema: z.ZodNativeEnum<typeof EmailControlDtoEditorType> =
   z.nativeEnum(EmailControlDtoEditorType);
 /** @internal */
-export const EmailControlDtoEditorType$outboundSchema: z.ZodNativeEnum<typeof EmailControlDtoEditorType> =
+const EmailControlDtoEditorType$outboundSchema: z.ZodNativeEnum<typeof EmailControlDtoEditorType> =
   EmailControlDtoEditorType$inboundSchema;
 
 /** @internal */
-export const RendererType$inboundSchema: z.ZodNativeEnum<typeof RendererType> = z.nativeEnum(RendererType);
+const RendererType$inboundSchema: z.ZodNativeEnum<typeof RendererType> = z.nativeEnum(RendererType);
 /** @internal */
-export const RendererType$outboundSchema: z.ZodNativeEnum<typeof RendererType> = RendererType$inboundSchema;
+const RendererType$outboundSchema: z.ZodNativeEnum<typeof RendererType> = RendererType$inboundSchema;
 
 /** @internal */
 export const EmailControlDto$inboundSchema: z.ZodType<EmailControlDto, z.ZodTypeDef, unknown> = z.object({
@@ -108,10 +108,10 @@ export const EmailControlDto$outboundSchema: z.ZodType<EmailControlDto$Outbound,
     layoutId: z.nullable(z.string()).optional(),
   });
 
-export function emailControlDtoToJSON(emailControlDto: EmailControlDto): string {
+function emailControlDtoToJSON(emailControlDto: EmailControlDto): string {
   return JSON.stringify(EmailControlDto$outboundSchema.parse(emailControlDto));
 }
-export function emailControlDtoFromJSON(jsonString: string): SafeParseResult<EmailControlDto, SDKValidationError> {
+function emailControlDtoFromJSON(jsonString: string): SafeParseResult<EmailControlDto, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) => EmailControlDto$inboundSchema.parse(JSON.parse(x)),

@@ -55,7 +55,7 @@ export interface IMemberRepository extends IMemberRepositoryMongo {
  * MongoDB specific methods from base-repository.ts to achieve
  * common interface for EE and Community repositories
  */
-export interface IMemberRepositoryMongo {
+interface IMemberRepositoryMongo {
   create(data: any, options?: any): Promise<MemberEntity>;
   update(query: any, body: any): Promise<{ matched: number; modified: number }>;
   delete(query: any): Promise<{ acknowledged: boolean; deletedCount: number }>;

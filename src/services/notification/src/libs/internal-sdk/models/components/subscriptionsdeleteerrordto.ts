@@ -33,7 +33,7 @@ export const SubscriptionsDeleteErrorDto$inboundSchema: z.ZodType<
   message: z.string(),
 });
 
-export function subscriptionsDeleteErrorDtoFromJSON(
+function subscriptionsDeleteErrorDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<SubscriptionsDeleteErrorDto, SDKValidationError> {
   return safeParse(

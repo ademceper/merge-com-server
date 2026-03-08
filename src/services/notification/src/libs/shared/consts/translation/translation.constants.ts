@@ -24,29 +24,29 @@ export const TRANSLATION_KEY_SINGLE_REGEX = /\{\{\s*t\.([^}]+?)\s*\}\}/i;
 /**
  * Translation trigger character (without spaces)
  */
-export const TRANSLATION_TRIGGER_CHARACTER = '{{t.';
+const TRANSLATION_TRIGGER_CHARACTER = '{{t.';
 
 /**
  * Opening delimiter for translation format
  */
-export const TRANSLATION_DELIMITER_OPEN = '{{';
+const TRANSLATION_DELIMITER_OPEN = '{{';
 
 /**
  * Closing delimiter for translation format
  */
-export const TRANSLATION_DELIMITER_CLOSE = '}}';
+const TRANSLATION_DELIMITER_CLOSE = '}}';
 
 /**
  * Length of the translation prefix ({{t.)
  */
-export const TRANSLATION_PREFIX_LENGTH = 4;
+const TRANSLATION_PREFIX_LENGTH = 4;
 
 /**
  * Template for missing translation placeholder
  */
-export const MISSING_TRANSLATION_TEMPLATE = (key: string) => `[Translation missing: ${key}]`;
+const MISSING_TRANSLATION_TEMPLATE = (key: string) => `[Translation missing: ${key}]`;
 
 /**
  * Default template for translation key patterns
  */
-export const TRANSLATION_DEFAULT_TEMPLATE = (key: string) => `{{t.${key}}}`;
+const TRANSLATION_DEFAULT_TEMPLATE = (key: string) => `{{t.${key}}}`;

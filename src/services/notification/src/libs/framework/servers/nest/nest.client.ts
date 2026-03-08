@@ -6,7 +6,7 @@ import type { SupportedFrameworkName } from '../../types';
 import { NOVU_OPTIONS } from './nest.constants';
 import { NovuHandler } from './nest.handler';
 
-export const frameworkName: SupportedFrameworkName = 'nest';
+const frameworkName: SupportedFrameworkName = 'nest';
 
 @Injectable()
 export class NovuClient {

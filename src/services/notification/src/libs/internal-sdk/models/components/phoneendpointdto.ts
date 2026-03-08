@@ -36,14 +36,14 @@ export const PhoneEndpointDto$outboundSchema: z.ZodType<
   phoneNumber: z.string(),
 });
 
-export function phoneEndpointDtoToJSON(
+function phoneEndpointDtoToJSON(
   phoneEndpointDto: PhoneEndpointDto,
 ): string {
   return JSON.stringify(
     PhoneEndpointDto$outboundSchema.parse(phoneEndpointDto),
   );
 }
-export function phoneEndpointDtoFromJSON(
+function phoneEndpointDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<PhoneEndpointDto, SDKValidationError> {
   return safeParse(

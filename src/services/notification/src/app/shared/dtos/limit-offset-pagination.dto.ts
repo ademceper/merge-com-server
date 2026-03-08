@@ -3,7 +3,7 @@ import { Transform } from 'class-transformer';
 import { IsEnum, IsInt, IsNumber, IsOptional, IsString, Min } from 'class-validator';
 
 // Enum for sorting direction
-export enum DirectionEnum {
+enum DirectionEnum {
   ASC = 'ASC',
   DESC = 'DESC',
 }

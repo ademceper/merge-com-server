@@ -68,36 +68,16 @@ export type MessageTemplateDBModel = ChangePropsValueType<
 export enum JsonSchemaTypeEnum {
   STRING = 'string',
   NUMBER = 'number',
-  INTEGER = 'integer',
   BOOLEAN = 'boolean',
   ARRAY = 'array',
   OBJECT = 'object',
   NULL = 'null',
 }
 export enum JsonSchemaFormatEnum {
-  DATE = 'date',
-  TIME = 'time',
   DATETIME = 'date-time',
-  DURATION = 'duration',
   EMAIL = 'email',
-  HOSTNAME = 'hostname',
-  IDN_HOSTNAME = 'idn-hostname',
-  IPV4 = 'ipv4',
-  IPV6 = 'ipv6',
-  JSON_POINTER = 'json-pointer',
-  RELATIVE_JSON_POINTER = 'relative-json-pointer',
-  REGEX = 'regex',
-  URI = 'uri',
-  URI_REFERENCE = 'uri-reference',
-  URI_TEMPLATE = 'uri-template',
-  URL = 'url',
-  UUID = 'uuid',
-  GUID = 'guid',
-  PHONE = 'phone',
-  PASSWORD = 'password',
-  COLOR = 'color',
-}
-export class UiSchemaEntity {
+  }
+class UiSchemaEntity {
   group?: UiSchemaGroupEnum;
   properties?: Record<string, UiSchemaProperty>;
 }

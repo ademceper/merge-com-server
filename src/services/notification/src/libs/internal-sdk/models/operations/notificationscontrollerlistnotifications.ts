@@ -80,7 +80,7 @@ export type NotificationsControllerListNotificationsResponse = {
 };
 
 /** @internal */
-export type NotificationsControllerListNotificationsRequest$Outbound = {
+type NotificationsControllerListNotificationsRequest$Outbound = {
   channels?: Array<string> | undefined;
   templates?: Array<string> | undefined;
   emails?: Array<string> | undefined;
@@ -127,7 +127,7 @@ export const NotificationsControllerListNotificationsRequest$outboundSchema: z.Z
     });
   });
 
-export function notificationsControllerListNotificationsRequestToJSON(
+function notificationsControllerListNotificationsRequestToJSON(
   notificationsControllerListNotificationsRequest: NotificationsControllerListNotificationsRequest
 ): string {
   return JSON.stringify(
@@ -154,7 +154,7 @@ export const NotificationsControllerListNotificationsResponse$inboundSchema: z.Z
     });
   });
 
-export function notificationsControllerListNotificationsResponseFromJSON(
+function notificationsControllerListNotificationsResponseFromJSON(
   jsonString: string
 ): SafeParseResult<NotificationsControllerListNotificationsResponse, SDKValidationError> {
   return safeParse(

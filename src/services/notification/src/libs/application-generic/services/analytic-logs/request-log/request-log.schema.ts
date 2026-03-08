@@ -33,7 +33,7 @@ export const ORDER_BY: (keyof typeof schemaDefinition)[] = [
   'created_at',
 ];
 
-export const TTL: keyof typeof schemaDefinition = 'expires_at';
+const TTL: keyof typeof schemaDefinition = 'expires_at';
 
 const clickhouseSchemaOptions = {
   table_name: TABLE_NAME,

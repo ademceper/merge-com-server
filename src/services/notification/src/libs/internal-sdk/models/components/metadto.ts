@@ -30,7 +30,7 @@ export const MetaDto$inboundSchema: z.ZodType<MetaDto, z.ZodTypeDef, unknown> =
     failed: z.number(),
   });
 
-export function metaDtoFromJSON(
+function metaDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<MetaDto, SDKValidationError> {
   return safeParse(

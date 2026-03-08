@@ -4,7 +4,7 @@ import { createHash } from 'crypto';
  * Creates a bridge endpoint url to be used for request from novu cloud to the local
  * workflow definition
  */
-export const buildBridgeEndpointUrl = (apiKey: string, baseAddress: string): string => {
+const buildBridgeEndpointUrl = (apiKey: string, baseAddress: string): string => {
   return `${buildBridgeSubdomain(apiKey)}.${baseAddress}`;
 };
 
@@ -14,6 +14,6 @@ export const buildBridgeEndpointUrl = (apiKey: string, baseAddress: string): str
  * subdomain in the bridge application. Developers should take care to keep changes
  * in sync.
  */
-export const buildBridgeSubdomain = (apiKey: string): string => {
+const buildBridgeSubdomain = (apiKey: string): string => {
   return createHash('md5').update(apiKey).digest('hex');
 };

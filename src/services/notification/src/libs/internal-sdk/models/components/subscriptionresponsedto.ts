@@ -80,7 +80,7 @@ export type SubscriptionResponseDto = {
 };
 
 /** @internal */
-export const Subscriber$inboundSchema: z.ZodType<Subscriber, z.ZodTypeDef, unknown> = z
+const Subscriber$inboundSchema: z.ZodType<Subscriber, z.ZodTypeDef, unknown> = z
   .object({
     _id: z.string(),
     subscriberId: z.string(),
@@ -95,7 +95,7 @@ export const Subscriber$inboundSchema: z.ZodType<Subscriber, z.ZodTypeDef, unkno
     });
   });
 
-export function subscriberFromJSON(jsonString: string): SafeParseResult<Subscriber, SDKValidationError> {
+function subscriberFromJSON(jsonString: string): SafeParseResult<Subscriber, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) => Subscriber$inboundSchema.parse(JSON.parse(x)),
@@ -122,7 +122,7 @@ export const SubscriptionResponseDto$inboundSchema: z.ZodType<SubscriptionRespon
     });
   });
 
-export function subscriptionResponseDtoFromJSON(
+function subscriptionResponseDtoFromJSON(
   jsonString: string
 ): SafeParseResult<SubscriptionResponseDto, SDKValidationError> {
   return safeParse(

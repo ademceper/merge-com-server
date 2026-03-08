@@ -111,7 +111,7 @@ export type InAppStepResponseDto = {
 };
 
 /** @internal */
-export const InAppStepResponseDtoControlValues$inboundSchema: z.ZodType<
+const InAppStepResponseDtoControlValues$inboundSchema: z.ZodType<
   InAppStepResponseDtoControlValues,
   z.ZodTypeDef,
   unknown
@@ -133,7 +133,7 @@ export const InAppStepResponseDtoControlValues$inboundSchema: z.ZodType<
   true
 );
 
-export function inAppStepResponseDtoControlValuesFromJSON(
+function inAppStepResponseDtoControlValuesFromJSON(
   jsonString: string
 ): SafeParseResult<InAppStepResponseDtoControlValues, SDKValidationError> {
   return safeParse(
@@ -165,7 +165,7 @@ export const InAppStepResponseDto$inboundSchema: z.ZodType<InAppStepResponseDto,
     });
   });
 
-export function inAppStepResponseDtoFromJSON(
+function inAppStepResponseDtoFromJSON(
   jsonString: string
 ): SafeParseResult<InAppStepResponseDto, SDKValidationError> {
   return safeParse(

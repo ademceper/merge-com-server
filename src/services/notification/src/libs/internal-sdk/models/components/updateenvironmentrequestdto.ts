@@ -47,7 +47,7 @@ export const UpdateEnvironmentRequestDto$outboundSchema: z.ZodType<
   bridge: BridgeConfigurationDto$outboundSchema.optional(),
 });
 
-export function updateEnvironmentRequestDtoToJSON(
+function updateEnvironmentRequestDtoToJSON(
   updateEnvironmentRequestDto: UpdateEnvironmentRequestDto,
 ): string {
   return JSON.stringify(

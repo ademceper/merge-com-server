@@ -23,7 +23,7 @@ export type MessagesControllerDeleteMessageResponse = {
 };
 
 /** @internal */
-export type MessagesControllerDeleteMessageRequest$Outbound = {
+type MessagesControllerDeleteMessageRequest$Outbound = {
   messageId: string;
   "idempotency-key"?: string | undefined;
 };
@@ -42,7 +42,7 @@ export const MessagesControllerDeleteMessageRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function messagesControllerDeleteMessageRequestToJSON(
+function messagesControllerDeleteMessageRequestToJSON(
   messagesControllerDeleteMessageRequest:
     MessagesControllerDeleteMessageRequest,
 ): string {
@@ -68,7 +68,7 @@ export const MessagesControllerDeleteMessageResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function messagesControllerDeleteMessageResponseFromJSON(
+function messagesControllerDeleteMessageResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   MessagesControllerDeleteMessageResponse,

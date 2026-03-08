@@ -33,11 +33,11 @@ export type DigestTimedMetadata = {
 };
 
 /** @internal */
-export const DigestTimedMetadataUnit$inboundSchema: z.ZodNativeEnum<typeof DigestTimedMetadataUnit> =
+const DigestTimedMetadataUnit$inboundSchema: z.ZodNativeEnum<typeof DigestTimedMetadataUnit> =
   z.nativeEnum(DigestTimedMetadataUnit);
 
 /** @internal */
-export const DigestTimedMetadataType$inboundSchema: z.ZodNativeEnum<typeof DigestTimedMetadataType> =
+const DigestTimedMetadataType$inboundSchema: z.ZodNativeEnum<typeof DigestTimedMetadataType> =
   z.nativeEnum(DigestTimedMetadataType);
 
 /** @internal */
@@ -49,7 +49,7 @@ export const DigestTimedMetadata$inboundSchema: z.ZodType<DigestTimedMetadata, z
   timed: TimedConfig$inboundSchema.optional(),
 });
 
-export function digestTimedMetadataFromJSON(
+function digestTimedMetadataFromJSON(
   jsonString: string
 ): SafeParseResult<DigestTimedMetadata, SDKValidationError> {
   return safeParse(

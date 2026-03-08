@@ -16,7 +16,7 @@ import {
 /**
  * Monday schedule
  */
-export type Monday = {
+type Monday = {
   /**
    * Day schedule enabled
    */
@@ -30,7 +30,7 @@ export type Monday = {
 /**
  * Tuesday schedule
  */
-export type Tuesday = {
+type Tuesday = {
   /**
    * Day schedule enabled
    */
@@ -44,7 +44,7 @@ export type Tuesday = {
 /**
  * Wednesday schedule
  */
-export type Wednesday = {
+type Wednesday = {
   /**
    * Day schedule enabled
    */
@@ -58,7 +58,7 @@ export type Wednesday = {
 /**
  * Thursday schedule
  */
-export type Thursday = {
+type Thursday = {
   /**
    * Day schedule enabled
    */
@@ -72,7 +72,7 @@ export type Thursday = {
 /**
  * Friday schedule
  */
-export type Friday = {
+type Friday = {
   /**
    * Day schedule enabled
    */
@@ -86,7 +86,7 @@ export type Friday = {
 /**
  * Saturday schedule
  */
-export type Saturday = {
+type Saturday = {
   /**
    * Day schedule enabled
    */
@@ -100,7 +100,7 @@ export type Saturday = {
 /**
  * Sunday schedule
  */
-export type Sunday = {
+type Sunday = {
   /**
    * Day schedule enabled
    */
@@ -157,19 +157,19 @@ export type ScheduleDto = {
 };
 
 /** @internal */
-export const Monday$inboundSchema: z.ZodType<Monday, z.ZodTypeDef, unknown> = z
+const Monday$inboundSchema: z.ZodType<Monday, z.ZodTypeDef, unknown> = z
   .object({
     isEnabled: z.boolean(),
     hours: z.array(TimeRangeDto$inboundSchema).optional(),
   });
 /** @internal */
-export type Monday$Outbound = {
+type Monday$Outbound = {
   isEnabled: boolean;
   hours?: Array<TimeRangeDto$Outbound> | undefined;
 };
 
 /** @internal */
-export const Monday$outboundSchema: z.ZodType<
+const Monday$outboundSchema: z.ZodType<
   Monday$Outbound,
   z.ZodTypeDef,
   Monday
@@ -178,10 +178,10 @@ export const Monday$outboundSchema: z.ZodType<
   hours: z.array(TimeRangeDto$outboundSchema).optional(),
 });
 
-export function mondayToJSON(monday: Monday): string {
+function mondayToJSON(monday: Monday): string {
   return JSON.stringify(Monday$outboundSchema.parse(monday));
 }
-export function mondayFromJSON(
+function mondayFromJSON(
   jsonString: string,
 ): SafeParseResult<Monday, SDKValidationError> {
   return safeParse(
@@ -192,19 +192,19 @@ export function mondayFromJSON(
 }
 
 /** @internal */
-export const Tuesday$inboundSchema: z.ZodType<Tuesday, z.ZodTypeDef, unknown> =
+const Tuesday$inboundSchema: z.ZodType<Tuesday, z.ZodTypeDef, unknown> =
   z.object({
     isEnabled: z.boolean(),
     hours: z.array(TimeRangeDto$inboundSchema).optional(),
   });
 /** @internal */
-export type Tuesday$Outbound = {
+type Tuesday$Outbound = {
   isEnabled: boolean;
   hours?: Array<TimeRangeDto$Outbound> | undefined;
 };
 
 /** @internal */
-export const Tuesday$outboundSchema: z.ZodType<
+const Tuesday$outboundSchema: z.ZodType<
   Tuesday$Outbound,
   z.ZodTypeDef,
   Tuesday
@@ -213,10 +213,10 @@ export const Tuesday$outboundSchema: z.ZodType<
   hours: z.array(TimeRangeDto$outboundSchema).optional(),
 });
 
-export function tuesdayToJSON(tuesday: Tuesday): string {
+function tuesdayToJSON(tuesday: Tuesday): string {
   return JSON.stringify(Tuesday$outboundSchema.parse(tuesday));
 }
-export function tuesdayFromJSON(
+function tuesdayFromJSON(
   jsonString: string,
 ): SafeParseResult<Tuesday, SDKValidationError> {
   return safeParse(
@@ -227,7 +227,7 @@ export function tuesdayFromJSON(
 }
 
 /** @internal */
-export const Wednesday$inboundSchema: z.ZodType<
+const Wednesday$inboundSchema: z.ZodType<
   Wednesday,
   z.ZodTypeDef,
   unknown
@@ -236,13 +236,13 @@ export const Wednesday$inboundSchema: z.ZodType<
   hours: z.array(TimeRangeDto$inboundSchema).optional(),
 });
 /** @internal */
-export type Wednesday$Outbound = {
+type Wednesday$Outbound = {
   isEnabled: boolean;
   hours?: Array<TimeRangeDto$Outbound> | undefined;
 };
 
 /** @internal */
-export const Wednesday$outboundSchema: z.ZodType<
+const Wednesday$outboundSchema: z.ZodType<
   Wednesday$Outbound,
   z.ZodTypeDef,
   Wednesday
@@ -251,10 +251,10 @@ export const Wednesday$outboundSchema: z.ZodType<
   hours: z.array(TimeRangeDto$outboundSchema).optional(),
 });
 
-export function wednesdayToJSON(wednesday: Wednesday): string {
+function wednesdayToJSON(wednesday: Wednesday): string {
   return JSON.stringify(Wednesday$outboundSchema.parse(wednesday));
 }
-export function wednesdayFromJSON(
+function wednesdayFromJSON(
   jsonString: string,
 ): SafeParseResult<Wednesday, SDKValidationError> {
   return safeParse(
@@ -265,7 +265,7 @@ export function wednesdayFromJSON(
 }
 
 /** @internal */
-export const Thursday$inboundSchema: z.ZodType<
+const Thursday$inboundSchema: z.ZodType<
   Thursday,
   z.ZodTypeDef,
   unknown
@@ -274,13 +274,13 @@ export const Thursday$inboundSchema: z.ZodType<
   hours: z.array(TimeRangeDto$inboundSchema).optional(),
 });
 /** @internal */
-export type Thursday$Outbound = {
+type Thursday$Outbound = {
   isEnabled: boolean;
   hours?: Array<TimeRangeDto$Outbound> | undefined;
 };
 
 /** @internal */
-export const Thursday$outboundSchema: z.ZodType<
+const Thursday$outboundSchema: z.ZodType<
   Thursday$Outbound,
   z.ZodTypeDef,
   Thursday
@@ -289,10 +289,10 @@ export const Thursday$outboundSchema: z.ZodType<
   hours: z.array(TimeRangeDto$outboundSchema).optional(),
 });
 
-export function thursdayToJSON(thursday: Thursday): string {
+function thursdayToJSON(thursday: Thursday): string {
   return JSON.stringify(Thursday$outboundSchema.parse(thursday));
 }
-export function thursdayFromJSON(
+function thursdayFromJSON(
   jsonString: string,
 ): SafeParseResult<Thursday, SDKValidationError> {
   return safeParse(
@@ -303,19 +303,19 @@ export function thursdayFromJSON(
 }
 
 /** @internal */
-export const Friday$inboundSchema: z.ZodType<Friday, z.ZodTypeDef, unknown> = z
+const Friday$inboundSchema: z.ZodType<Friday, z.ZodTypeDef, unknown> = z
   .object({
     isEnabled: z.boolean(),
     hours: z.array(TimeRangeDto$inboundSchema).optional(),
   });
 /** @internal */
-export type Friday$Outbound = {
+type Friday$Outbound = {
   isEnabled: boolean;
   hours?: Array<TimeRangeDto$Outbound> | undefined;
 };
 
 /** @internal */
-export const Friday$outboundSchema: z.ZodType<
+const Friday$outboundSchema: z.ZodType<
   Friday$Outbound,
   z.ZodTypeDef,
   Friday
@@ -324,10 +324,10 @@ export const Friday$outboundSchema: z.ZodType<
   hours: z.array(TimeRangeDto$outboundSchema).optional(),
 });
 
-export function fridayToJSON(friday: Friday): string {
+function fridayToJSON(friday: Friday): string {
   return JSON.stringify(Friday$outboundSchema.parse(friday));
 }
-export function fridayFromJSON(
+function fridayFromJSON(
   jsonString: string,
 ): SafeParseResult<Friday, SDKValidationError> {
   return safeParse(
@@ -338,7 +338,7 @@ export function fridayFromJSON(
 }
 
 /** @internal */
-export const Saturday$inboundSchema: z.ZodType<
+const Saturday$inboundSchema: z.ZodType<
   Saturday,
   z.ZodTypeDef,
   unknown
@@ -347,13 +347,13 @@ export const Saturday$inboundSchema: z.ZodType<
   hours: z.array(TimeRangeDto$inboundSchema).optional(),
 });
 /** @internal */
-export type Saturday$Outbound = {
+type Saturday$Outbound = {
   isEnabled: boolean;
   hours?: Array<TimeRangeDto$Outbound> | undefined;
 };
 
 /** @internal */
-export const Saturday$outboundSchema: z.ZodType<
+const Saturday$outboundSchema: z.ZodType<
   Saturday$Outbound,
   z.ZodTypeDef,
   Saturday
@@ -362,10 +362,10 @@ export const Saturday$outboundSchema: z.ZodType<
   hours: z.array(TimeRangeDto$outboundSchema).optional(),
 });
 
-export function saturdayToJSON(saturday: Saturday): string {
+function saturdayToJSON(saturday: Saturday): string {
   return JSON.stringify(Saturday$outboundSchema.parse(saturday));
 }
-export function saturdayFromJSON(
+function saturdayFromJSON(
   jsonString: string,
 ): SafeParseResult<Saturday, SDKValidationError> {
   return safeParse(
@@ -376,19 +376,19 @@ export function saturdayFromJSON(
 }
 
 /** @internal */
-export const Sunday$inboundSchema: z.ZodType<Sunday, z.ZodTypeDef, unknown> = z
+const Sunday$inboundSchema: z.ZodType<Sunday, z.ZodTypeDef, unknown> = z
   .object({
     isEnabled: z.boolean(),
     hours: z.array(TimeRangeDto$inboundSchema).optional(),
   });
 /** @internal */
-export type Sunday$Outbound = {
+type Sunday$Outbound = {
   isEnabled: boolean;
   hours?: Array<TimeRangeDto$Outbound> | undefined;
 };
 
 /** @internal */
-export const Sunday$outboundSchema: z.ZodType<
+const Sunday$outboundSchema: z.ZodType<
   Sunday$Outbound,
   z.ZodTypeDef,
   Sunday
@@ -397,10 +397,10 @@ export const Sunday$outboundSchema: z.ZodType<
   hours: z.array(TimeRangeDto$outboundSchema).optional(),
 });
 
-export function sundayToJSON(sunday: Sunday): string {
+function sundayToJSON(sunday: Sunday): string {
   return JSON.stringify(Sunday$outboundSchema.parse(sunday));
 }
-export function sundayFromJSON(
+function sundayFromJSON(
   jsonString: string,
 ): SafeParseResult<Sunday, SDKValidationError> {
   return safeParse(
@@ -411,7 +411,7 @@ export function sundayFromJSON(
 }
 
 /** @internal */
-export const WeeklySchedule$inboundSchema: z.ZodType<
+const WeeklySchedule$inboundSchema: z.ZodType<
   WeeklySchedule,
   z.ZodTypeDef,
   unknown
@@ -436,7 +436,7 @@ export type WeeklySchedule$Outbound = {
 };
 
 /** @internal */
-export const WeeklySchedule$outboundSchema: z.ZodType<
+const WeeklySchedule$outboundSchema: z.ZodType<
   WeeklySchedule$Outbound,
   z.ZodTypeDef,
   WeeklySchedule
@@ -450,10 +450,10 @@ export const WeeklySchedule$outboundSchema: z.ZodType<
   sunday: z.lazy(() => Sunday$outboundSchema).optional(),
 });
 
-export function weeklyScheduleToJSON(weeklySchedule: WeeklySchedule): string {
+function weeklyScheduleToJSON(weeklySchedule: WeeklySchedule): string {
   return JSON.stringify(WeeklySchedule$outboundSchema.parse(weeklySchedule));
 }
-export function weeklyScheduleFromJSON(
+function weeklyScheduleFromJSON(
   jsonString: string,
 ): SafeParseResult<WeeklySchedule, SDKValidationError> {
   return safeParse(
@@ -488,10 +488,10 @@ export const ScheduleDto$outboundSchema: z.ZodType<
   weeklySchedule: z.lazy(() => WeeklySchedule$outboundSchema).optional(),
 });
 
-export function scheduleDtoToJSON(scheduleDto: ScheduleDto): string {
+function scheduleDtoToJSON(scheduleDto: ScheduleDto): string {
   return JSON.stringify(ScheduleDto$outboundSchema.parse(scheduleDto));
 }
-export function scheduleDtoFromJSON(
+function scheduleDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<ScheduleDto, SDKValidationError> {
   return safeParse(

@@ -38,7 +38,7 @@ export const ApiKeyDto$inboundSchema: z.ZodType<
   });
 });
 
-export function apiKeyDtoFromJSON(
+function apiKeyDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<ApiKeyDto, SDKValidationError> {
   return safeParse(

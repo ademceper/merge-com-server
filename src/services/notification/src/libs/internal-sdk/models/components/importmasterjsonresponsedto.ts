@@ -38,7 +38,7 @@ export const ImportMasterJsonResponseDto$inboundSchema: z.ZodType<
   failed: z.array(z.string()).optional(),
 });
 
-export function importMasterJsonResponseDtoFromJSON(
+function importMasterJsonResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<ImportMasterJsonResponseDto, SDKValidationError> {
   return safeParse(

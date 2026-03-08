@@ -1,6 +1,6 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
-export class FailedOperationDto {
+class FailedOperationDto {
   @ApiPropertyOptional({
     description: 'The error message associated with the failed operation.',
   })
@@ -13,14 +13,14 @@ export class FailedOperationDto {
   subscriberId?: string;
 }
 
-export class UpdatedSubscriberDto {
+class UpdatedSubscriberDto {
   @ApiProperty({
     description: 'The ID of the subscriber that was updated.',
   })
   subscriberId: string;
 }
 
-export class CreatedSubscriberDto {
+class CreatedSubscriberDto {
   @ApiProperty({
     description: 'The ID of the subscriber that was created.',
   })

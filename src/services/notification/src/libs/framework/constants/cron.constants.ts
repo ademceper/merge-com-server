@@ -1,7 +1,7 @@
 /**
  * Cron expression helper.
  */
-export enum CronExpression {
+enum CronExpression {
   EVERY_SECOND = '* * * * * *',
   EVERY_5_SECONDS = '*/5 * * * * *',
   EVERY_10_SECONDS = '*/10 * * * * *',

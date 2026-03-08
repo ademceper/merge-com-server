@@ -33,9 +33,9 @@ const inTestEnv = process.env.NODE_ENV === 'test';
 
 const RETRY_BASE_INTERVAL_IN_MS = inTestEnv ? 50 : 500;
 
-export const DEFAULT_TIMEOUT = 5_000; // 5 seconds
-export const DEFAULT_RETRIES_LIMIT = 3;
-export const RETRYABLE_HTTP_CODES: number[] = [
+const DEFAULT_TIMEOUT = 5_000; // 5 seconds
+const DEFAULT_RETRIES_LIMIT = 3;
+const RETRYABLE_HTTP_CODES: number[] = [
   408, // Request Timeout
   429, // Too Many Requests
   500, // Internal Server Error

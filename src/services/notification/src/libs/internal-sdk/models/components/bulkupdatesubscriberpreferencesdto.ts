@@ -20,7 +20,7 @@ export type Context2 = {
   data?: { [k: string]: any } | undefined;
 };
 
-export type BulkUpdateSubscriberPreferencesDtoContext = Context2 | string;
+type BulkUpdateSubscriberPreferencesDtoContext = Context2 | string;
 
 export type BulkUpdateSubscriberPreferencesDto = {
   /**
@@ -37,26 +37,26 @@ export type Context2$Outbound = {
 };
 
 /** @internal */
-export const Context2$outboundSchema: z.ZodType<Context2$Outbound, z.ZodTypeDef, Context2> = z.object({
+const Context2$outboundSchema: z.ZodType<Context2$Outbound, z.ZodTypeDef, Context2> = z.object({
   id: z.string(),
   data: z.record(z.any()).optional(),
 });
 
-export function context2ToJSON(context2: Context2): string {
+function context2ToJSON(context2: Context2): string {
   return JSON.stringify(Context2$outboundSchema.parse(context2));
 }
 
 /** @internal */
-export type BulkUpdateSubscriberPreferencesDtoContext$Outbound = Context2$Outbound | string;
+type BulkUpdateSubscriberPreferencesDtoContext$Outbound = Context2$Outbound | string;
 
 /** @internal */
-export const BulkUpdateSubscriberPreferencesDtoContext$outboundSchema: z.ZodType<
+const BulkUpdateSubscriberPreferencesDtoContext$outboundSchema: z.ZodType<
   BulkUpdateSubscriberPreferencesDtoContext$Outbound,
   z.ZodTypeDef,
   BulkUpdateSubscriberPreferencesDtoContext
 > = z.union([z.lazy(() => Context2$outboundSchema), z.string()]);
 
-export function bulkUpdateSubscriberPreferencesDtoContextToJSON(
+function bulkUpdateSubscriberPreferencesDtoContextToJSON(
   bulkUpdateSubscriberPreferencesDtoContext: BulkUpdateSubscriberPreferencesDtoContext
 ): string {
   return JSON.stringify(
@@ -80,7 +80,7 @@ export const BulkUpdateSubscriberPreferencesDto$outboundSchema: z.ZodType<
   context: z.record(z.union([z.lazy(() => Context2$outboundSchema), z.string()])).optional(),
 });
 
-export function bulkUpdateSubscriberPreferencesDtoToJSON(
+function bulkUpdateSubscriberPreferencesDtoToJSON(
   bulkUpdateSubscriberPreferencesDto: BulkUpdateSubscriberPreferencesDto
 ): string {
   return JSON.stringify(BulkUpdateSubscriberPreferencesDto$outboundSchema.parse(bulkUpdateSubscriberPreferencesDto));

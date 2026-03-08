@@ -68,7 +68,7 @@ export class ErrorDto {
   errorId?: string;
 }
 
-export class PayloadValidationErrorDto {
+class PayloadValidationErrorDto {
   @ApiProperty({
     description: 'Field path that failed validation',
     example: 'user.name',

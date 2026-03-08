@@ -22,7 +22,7 @@ export type SubscribersV1ControllerDeleteSubscriberCredentialsResponse = {
 };
 
 /** @internal */
-export type SubscribersV1ControllerDeleteSubscriberCredentialsRequest$Outbound =
+type SubscribersV1ControllerDeleteSubscriberCredentialsRequest$Outbound =
   {
     subscriberId: string;
     providerId: string;
@@ -45,7 +45,7 @@ export const SubscribersV1ControllerDeleteSubscriberCredentialsRequest$outboundS
     });
   });
 
-export function subscribersV1ControllerDeleteSubscriberCredentialsRequestToJSON(
+function subscribersV1ControllerDeleteSubscriberCredentialsRequestToJSON(
   subscribersV1ControllerDeleteSubscriberCredentialsRequest:
     SubscribersV1ControllerDeleteSubscriberCredentialsRequest,
 ): string {
@@ -69,7 +69,7 @@ export const SubscribersV1ControllerDeleteSubscriberCredentialsResponse$inboundS
     });
   });
 
-export function subscribersV1ControllerDeleteSubscriberCredentialsResponseFromJSON(
+function subscribersV1ControllerDeleteSubscriberCredentialsResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   SubscribersV1ControllerDeleteSubscriberCredentialsResponse,

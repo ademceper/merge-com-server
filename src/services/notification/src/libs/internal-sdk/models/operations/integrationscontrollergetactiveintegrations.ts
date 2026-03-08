@@ -22,7 +22,7 @@ export type IntegrationsControllerGetActiveIntegrationsResponse = {
 };
 
 /** @internal */
-export type IntegrationsControllerGetActiveIntegrationsRequest$Outbound = {
+type IntegrationsControllerGetActiveIntegrationsRequest$Outbound = {
   "idempotency-key"?: string | undefined;
 };
 
@@ -40,7 +40,7 @@ export const IntegrationsControllerGetActiveIntegrationsRequest$outboundSchema:
     });
   });
 
-export function integrationsControllerGetActiveIntegrationsRequestToJSON(
+function integrationsControllerGetActiveIntegrationsRequestToJSON(
   integrationsControllerGetActiveIntegrationsRequest:
     IntegrationsControllerGetActiveIntegrationsRequest,
 ): string {
@@ -67,7 +67,7 @@ export const IntegrationsControllerGetActiveIntegrationsResponse$inboundSchema:
     });
   });
 
-export function integrationsControllerGetActiveIntegrationsResponseFromJSON(
+function integrationsControllerGetActiveIntegrationsResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   IntegrationsControllerGetActiveIntegrationsResponse,

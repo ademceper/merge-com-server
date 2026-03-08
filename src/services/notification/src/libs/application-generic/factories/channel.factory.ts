@@ -9,13 +9,13 @@ import { PushFactory } from './push/push.factory';
 import type { ISmsHandler } from './sms/interfaces';
 import { SmsFactory } from './sms/sms.factory';
 
-export type ChannelHandler = IMailHandler | ISmsHandler | IChatHandler | IPushHandler;
+type ChannelHandler = IMailHandler | ISmsHandler | IChatHandler | IPushHandler;
 
-export interface IChannelHandlerOptions {
+interface IChannelHandlerOptions {
   from?: string;
 }
 
-export interface IChannelFactory {
+interface IChannelFactory {
   getHandler(
     integration: Pick<IntegrationEntity, 'credentials' | 'channel' | 'providerId' | 'configurations'>,
     channelType: 'email' | 'sms' | 'chat' | 'push',

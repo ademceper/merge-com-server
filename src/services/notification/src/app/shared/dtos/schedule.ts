@@ -4,7 +4,7 @@ import { IsBoolean, IsOptional, IsString, ValidateNested } from 'class-validator
 import { IsTime12HourFormat } from '../validators/is-time-12-hour-format.validator';
 import { WeeklyScheduleValidation } from '../validators/weekly-schedule-disabled.validator';
 
-export class TimeRangeDto {
+class TimeRangeDto {
   @ApiProperty({
     type: String,
     description: 'Start time',
@@ -23,7 +23,7 @@ export class TimeRangeDto {
   @IsTime12HourFormat()
   readonly end: string;
 }
-export class DayScheduleDto {
+class DayScheduleDto {
   @ApiProperty({
     type: Boolean,
     description: 'Day schedule enabled',
@@ -43,7 +43,7 @@ export class DayScheduleDto {
   readonly hours?: TimeRangeDto[];
 }
 
-export class WeeklyScheduleDto {
+class WeeklyScheduleDto {
   @ApiPropertyOptional({
     type: DayScheduleDto,
     description: 'Monday schedule',

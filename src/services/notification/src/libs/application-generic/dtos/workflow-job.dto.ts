@@ -4,11 +4,11 @@ import type { ContextPayload, TriggerRecipientSubscriber, TriggerRecipientsPaylo
 import type { TriggerOverrides } from 'libs/shared';
 import type { IBulkJobParams, IJobParams } from '../services/queues/queue-base.service';
 
-export type AddressingBroadcast = {
+type AddressingBroadcast = {
   addressingType: AddressingTypeEnum.BROADCAST;
 };
 
-export type AddressingMulticast = {
+type AddressingMulticast = {
   to: TriggerRecipientsPayload;
   addressingType: AddressingTypeEnum.MULTICAST;
 };

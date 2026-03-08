@@ -23,7 +23,7 @@ export const ChatRenderOutput$inboundSchema: z.ZodType<
   body: z.string(),
 });
 
-export function chatRenderOutputFromJSON(
+function chatRenderOutputFromJSON(
   jsonString: string,
 ): SafeParseResult<ChatRenderOutput, SDKValidationError> {
   return safeParse(

@@ -30,11 +30,11 @@ export type DelayRegularMetadata = {
 };
 
 /** @internal */
-export const DelayRegularMetadataUnit$inboundSchema: z.ZodNativeEnum<typeof DelayRegularMetadataUnit> =
+const DelayRegularMetadataUnit$inboundSchema: z.ZodNativeEnum<typeof DelayRegularMetadataUnit> =
   z.nativeEnum(DelayRegularMetadataUnit);
 
 /** @internal */
-export const DelayRegularMetadataType$inboundSchema: z.ZodNativeEnum<typeof DelayRegularMetadataType> =
+const DelayRegularMetadataType$inboundSchema: z.ZodNativeEnum<typeof DelayRegularMetadataType> =
   z.nativeEnum(DelayRegularMetadataType);
 
 /** @internal */
@@ -44,7 +44,7 @@ export const DelayRegularMetadata$inboundSchema: z.ZodType<DelayRegularMetadata,
   type: DelayRegularMetadataType$inboundSchema,
 });
 
-export function delayRegularMetadataFromJSON(
+function delayRegularMetadataFromJSON(
   jsonString: string
 ): SafeParseResult<DelayRegularMetadata, SDKValidationError> {
   return safeParse(

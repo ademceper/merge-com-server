@@ -28,6 +28,6 @@ export function getPopularTemplateIds({ production }: { production: boolean }) {
   return production ? popularProductionIds : popularDevelopmentIds;
 }
 
-export function getGetStartedTemplateIds({ production }: { production: boolean }) {
+function getGetStartedTemplateIds({ production }: { production: boolean }) {
   return production ? [] : getStartedDevelopmentIds;
 }

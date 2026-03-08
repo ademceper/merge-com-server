@@ -28,7 +28,7 @@ export const COMPARISON_OPERATORS = [
   JsonComparisonOperatorEnum.ENDS_WITH,
 ] as const;
 
-export const LOGICAL_OPERATORS = [
+const LOGICAL_OPERATORS = [
   JsonLogicOperatorEnum.AND,
   JsonLogicOperatorEnum.OR,
   JsonLogicOperatorEnum.NOT,

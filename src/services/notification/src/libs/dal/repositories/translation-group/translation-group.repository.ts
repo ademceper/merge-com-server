@@ -8,7 +8,7 @@ import type { TranslationGroupModel } from './translation-group.schema';
 
 type TranslationGroupQuery = FilterQuery<TranslationGroupModel> & EnforceEnvOrOrgIds;
 
-export class TranslationGroupRepository extends BaseRepository<
+class TranslationGroupRepository extends BaseRepository<
   TranslationGroupModel,
   TranslationGroupEntity,
   EnforceEnvOrOrgIds

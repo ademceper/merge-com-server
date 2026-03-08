@@ -33,10 +33,10 @@ export type StepFilterDto = {
 };
 
 /** @internal */
-export const StepFilterDtoValue$inboundSchema: z.ZodNativeEnum<typeof StepFilterDtoValue> =
+const StepFilterDtoValue$inboundSchema: z.ZodNativeEnum<typeof StepFilterDtoValue> =
   z.nativeEnum(StepFilterDtoValue);
 /** @internal */
-export const StepFilterDtoValue$outboundSchema: z.ZodNativeEnum<typeof StepFilterDtoValue> =
+const StepFilterDtoValue$outboundSchema: z.ZodNativeEnum<typeof StepFilterDtoValue> =
   StepFilterDtoValue$inboundSchema;
 
 /** @internal */
@@ -62,10 +62,10 @@ export const StepFilterDto$outboundSchema: z.ZodType<StepFilterDto$Outbound, z.Z
   children: z.array(FieldFilterPartDto$outboundSchema),
 });
 
-export function stepFilterDtoToJSON(stepFilterDto: StepFilterDto): string {
+function stepFilterDtoToJSON(stepFilterDto: StepFilterDto): string {
   return JSON.stringify(StepFilterDto$outboundSchema.parse(stepFilterDto));
 }
-export function stepFilterDtoFromJSON(jsonString: string): SafeParseResult<StepFilterDto, SDKValidationError> {
+function stepFilterDtoFromJSON(jsonString: string): SafeParseResult<StepFilterDto, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) => StepFilterDto$inboundSchema.parse(JSON.parse(x)),

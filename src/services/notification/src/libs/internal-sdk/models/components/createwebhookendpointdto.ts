@@ -20,7 +20,7 @@ export type CreateWebhookEndpointDtoContext2 = {
   data?: { [k: string]: any } | undefined;
 };
 
-export type CreateWebhookEndpointDtoContext =
+type CreateWebhookEndpointDtoContext =
   | CreateWebhookEndpointDtoContext2
   | string;
 
@@ -61,7 +61,7 @@ export type CreateWebhookEndpointDtoContext2$Outbound = {
 };
 
 /** @internal */
-export const CreateWebhookEndpointDtoContext2$outboundSchema: z.ZodType<
+const CreateWebhookEndpointDtoContext2$outboundSchema: z.ZodType<
   CreateWebhookEndpointDtoContext2$Outbound,
   z.ZodTypeDef,
   CreateWebhookEndpointDtoContext2
@@ -70,7 +70,7 @@ export const CreateWebhookEndpointDtoContext2$outboundSchema: z.ZodType<
   data: z.record(z.any()).optional(),
 });
 
-export function createWebhookEndpointDtoContext2ToJSON(
+function createWebhookEndpointDtoContext2ToJSON(
   createWebhookEndpointDtoContext2: CreateWebhookEndpointDtoContext2,
 ): string {
   return JSON.stringify(
@@ -81,12 +81,12 @@ export function createWebhookEndpointDtoContext2ToJSON(
 }
 
 /** @internal */
-export type CreateWebhookEndpointDtoContext$Outbound =
+type CreateWebhookEndpointDtoContext$Outbound =
   | CreateWebhookEndpointDtoContext2$Outbound
   | string;
 
 /** @internal */
-export const CreateWebhookEndpointDtoContext$outboundSchema: z.ZodType<
+const CreateWebhookEndpointDtoContext$outboundSchema: z.ZodType<
   CreateWebhookEndpointDtoContext$Outbound,
   z.ZodTypeDef,
   CreateWebhookEndpointDtoContext
@@ -95,7 +95,7 @@ export const CreateWebhookEndpointDtoContext$outboundSchema: z.ZodType<
   z.string(),
 ]);
 
-export function createWebhookEndpointDtoContextToJSON(
+function createWebhookEndpointDtoContextToJSON(
   createWebhookEndpointDtoContext: CreateWebhookEndpointDtoContext,
 ): string {
   return JSON.stringify(
@@ -138,7 +138,7 @@ export const CreateWebhookEndpointDto$outboundSchema: z.ZodType<
   endpoint: WebhookEndpointDto$outboundSchema,
 });
 
-export function createWebhookEndpointDtoToJSON(
+function createWebhookEndpointDtoToJSON(
   createWebhookEndpointDto: CreateWebhookEndpointDto,
 ): string {
   return JSON.stringify(

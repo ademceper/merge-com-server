@@ -77,14 +77,14 @@ export const ChannelSettingsDto$outboundSchema: z.ZodType<
   });
 });
 
-export function channelSettingsDtoToJSON(
+function channelSettingsDtoToJSON(
   channelSettingsDto: ChannelSettingsDto,
 ): string {
   return JSON.stringify(
     ChannelSettingsDto$outboundSchema.parse(channelSettingsDto),
   );
 }
-export function channelSettingsDtoFromJSON(
+function channelSettingsDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<ChannelSettingsDto, SDKValidationError> {
   return safeParse(

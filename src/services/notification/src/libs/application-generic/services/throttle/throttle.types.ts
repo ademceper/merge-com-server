@@ -18,7 +18,7 @@ export interface IThrottleReservationResult {
   windowStartMs: number;
 }
 
-export interface IThrottleReleaseParams {
+interface IThrottleReleaseParams {
   environmentId: string;
   subscriberId: string;
   workflowId: string;
@@ -30,7 +30,7 @@ export interface IThrottleReleaseParams {
   throttleValue?: string;
 }
 
-export interface IThrottleReleaseResult {
+interface IThrottleReleaseResult {
   released: boolean;
   count: number;
   ttlMs: number;

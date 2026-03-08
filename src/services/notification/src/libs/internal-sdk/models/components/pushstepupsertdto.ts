@@ -13,7 +13,7 @@ import {
 /**
  * Control values for the Push step.
  */
-export type PushStepUpsertDtoControlValues = PushControlDto | {
+type PushStepUpsertDtoControlValues = PushControlDto | {
   [k: string]: any;
 };
 
@@ -41,18 +41,18 @@ export type PushStepUpsertDto = {
 };
 
 /** @internal */
-export type PushStepUpsertDtoControlValues$Outbound =
+type PushStepUpsertDtoControlValues$Outbound =
   | PushControlDto$Outbound
   | { [k: string]: any };
 
 /** @internal */
-export const PushStepUpsertDtoControlValues$outboundSchema: z.ZodType<
+const PushStepUpsertDtoControlValues$outboundSchema: z.ZodType<
   PushStepUpsertDtoControlValues$Outbound,
   z.ZodTypeDef,
   PushStepUpsertDtoControlValues
 > = z.union([PushControlDto$outboundSchema, z.record(z.any())]);
 
-export function pushStepUpsertDtoControlValuesToJSON(
+function pushStepUpsertDtoControlValuesToJSON(
   pushStepUpsertDtoControlValues: PushStepUpsertDtoControlValues,
 ): string {
   return JSON.stringify(
@@ -89,7 +89,7 @@ export const PushStepUpsertDto$outboundSchema: z.ZodType<
   });
 });
 
-export function pushStepUpsertDtoToJSON(
+function pushStepUpsertDtoToJSON(
   pushStepUpsertDto: PushStepUpsertDto,
 ): string {
   return JSON.stringify(

@@ -53,13 +53,13 @@ export type WorkflowResponse = {
 };
 
 /** @internal */
-export const WorkflowResponseData$inboundSchema: z.ZodType<
+const WorkflowResponseData$inboundSchema: z.ZodType<
   WorkflowResponseData,
   z.ZodTypeDef,
   unknown
 > = z.object({});
 
-export function workflowResponseDataFromJSON(
+function workflowResponseDataFromJSON(
   jsonString: string,
 ): SafeParseResult<WorkflowResponseData, SDKValidationError> {
   return safeParse(
@@ -70,13 +70,13 @@ export function workflowResponseDataFromJSON(
 }
 
 /** @internal */
-export const WorkflowIntegrationStatus$inboundSchema: z.ZodType<
+const WorkflowIntegrationStatus$inboundSchema: z.ZodType<
   WorkflowIntegrationStatus,
   z.ZodTypeDef,
   unknown
 > = z.object({});
 
-export function workflowIntegrationStatusFromJSON(
+function workflowIntegrationStatusFromJSON(
   jsonString: string,
 ): SafeParseResult<WorkflowIntegrationStatus, SDKValidationError> {
   return safeParse(
@@ -126,7 +126,7 @@ export const WorkflowResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function workflowResponseFromJSON(
+function workflowResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<WorkflowResponse, SDKValidationError> {
   return safeParse(

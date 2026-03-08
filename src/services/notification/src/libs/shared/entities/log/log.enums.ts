@@ -1,10 +1,10 @@
-export enum LogStatusEnum {
+enum LogStatusEnum {
   ERROR = 'error',
   SUCCESS = 'success',
   INFO = 'info',
 }
 
-export enum LogCodeEnum {
+enum LogCodeEnum {
   TRIGGER_RECEIVED = 1000,
   TEMPLATE_NOT_ACTIVE = 1001,
   TEMPLATE_NOT_FOUND = 1002,

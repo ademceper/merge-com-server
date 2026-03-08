@@ -31,7 +31,7 @@ export const ImportMasterJsonRequestDto$outboundSchema: z.ZodType<
   masterJson: z.record(z.any()),
 });
 
-export function importMasterJsonRequestDtoToJSON(
+function importMasterJsonRequestDtoToJSON(
   importMasterJsonRequestDto: ImportMasterJsonRequestDto,
 ): string {
   return JSON.stringify(

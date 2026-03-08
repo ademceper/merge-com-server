@@ -10,7 +10,7 @@ import { ErrorCodeEnum } from '../constants/error.constants';
  * @param object - The object to check.
  * @returns `true` if the object is a native error, `false` otherwise.
  */
-export const isNativeError = (object: unknown): object is Error => {
+const isNativeError = (object: unknown): object is Error => {
   if (typeof object !== 'object' || object === null) {
     return false;
   }
@@ -79,6 +79,6 @@ export abstract class ConflictError extends FrameworkError {
   statusCode = HttpStatusEnum.CONFLICT;
 }
 
-export abstract class ForbiddenError extends FrameworkError {
+abstract class ForbiddenError extends FrameworkError {
   statusCode = HttpStatusEnum.FORBIDDEN;
 }

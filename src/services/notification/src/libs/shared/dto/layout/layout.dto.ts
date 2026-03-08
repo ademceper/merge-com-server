@@ -3,7 +3,7 @@ import type { IEmailBlock, ITemplateVariable } from '../../types';
 import { RuntimeIssue } from '../../utils/issues';
 import { Controls, JSONSchemaDto } from '../workflows';
 
-export class LayoutDto {
+class LayoutDto {
   _id?: string;
   _organizationId: string;
   _environmentId: string;
@@ -23,11 +23,11 @@ export class LayoutDto {
   updatedBy?: any;
 }
 
-export enum LayoutCreationSourceEnum {
+enum LayoutCreationSourceEnum {
   DASHBOARD = 'dashboard',
 }
 
-export type CreateLayoutDto = {
+type CreateLayoutDto = {
   layoutId: string;
   name: string;
   isTranslationEnabled?: boolean;
@@ -43,20 +43,20 @@ export type LayoutControlValuesDto = {
   email?: EmailControlsDto;
 };
 
-export type UpdateLayoutDto = {
+type UpdateLayoutDto = {
   name: string;
   isTranslationEnabled?: boolean;
   controlValues: LayoutControlValuesDto;
 };
 
-export type DuplicateLayoutDto = {
+type DuplicateLayoutDto = {
   name: string;
   isTranslationEnabled?: boolean;
 };
 
-export type LayoutCreateAndUpdateKeys = keyof CreateLayoutDto | keyof UpdateLayoutDto;
+type LayoutCreateAndUpdateKeys = keyof CreateLayoutDto | keyof UpdateLayoutDto;
 
-export type LayoutResponseDto = {
+type LayoutResponseDto = {
   _id: string;
   slug: string;
   layoutId: string;
@@ -71,7 +71,7 @@ export type LayoutResponseDto = {
   isTranslationEnabled: boolean;
 };
 
-export type ListLayoutsResponse = {
+type ListLayoutsResponse = {
   layouts: LayoutResponseDto[];
   totalCount: number;
 };

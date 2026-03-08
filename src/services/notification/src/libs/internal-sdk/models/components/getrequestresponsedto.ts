@@ -36,7 +36,7 @@ export const GetRequestResponseDto$inboundSchema: z.ZodType<
   traces: z.array(TraceResponseDto$inboundSchema),
 });
 
-export function getRequestResponseDtoFromJSON(
+function getRequestResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<GetRequestResponseDto, SDKValidationError> {
   return safeParse(

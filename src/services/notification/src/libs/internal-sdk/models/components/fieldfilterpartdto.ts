@@ -40,14 +40,14 @@ export type FieldFilterPartDto = {
 };
 
 /** @internal */
-export const Operator$inboundSchema: z.ZodNativeEnum<typeof Operator> = z.nativeEnum(Operator);
+const Operator$inboundSchema: z.ZodNativeEnum<typeof Operator> = z.nativeEnum(Operator);
 /** @internal */
-export const Operator$outboundSchema: z.ZodNativeEnum<typeof Operator> = Operator$inboundSchema;
+const Operator$outboundSchema: z.ZodNativeEnum<typeof Operator> = Operator$inboundSchema;
 
 /** @internal */
-export const On$inboundSchema: z.ZodNativeEnum<typeof On> = z.nativeEnum(On);
+const On$inboundSchema: z.ZodNativeEnum<typeof On> = z.nativeEnum(On);
 /** @internal */
-export const On$outboundSchema: z.ZodNativeEnum<typeof On> = On$inboundSchema;
+const On$outboundSchema: z.ZodNativeEnum<typeof On> = On$inboundSchema;
 
 /** @internal */
 export const FieldFilterPartDto$inboundSchema: z.ZodType<FieldFilterPartDto, z.ZodTypeDef, unknown> = z.object({
@@ -76,10 +76,10 @@ export const FieldFilterPartDto$outboundSchema: z.ZodType<
   on: On$outboundSchema,
 });
 
-export function fieldFilterPartDtoToJSON(fieldFilterPartDto: FieldFilterPartDto): string {
+function fieldFilterPartDtoToJSON(fieldFilterPartDto: FieldFilterPartDto): string {
   return JSON.stringify(FieldFilterPartDto$outboundSchema.parse(fieldFilterPartDto));
 }
-export function fieldFilterPartDtoFromJSON(
+function fieldFilterPartDtoFromJSON(
   jsonString: string
 ): SafeParseResult<FieldFilterPartDto, SDKValidationError> {
   return safeParse(

@@ -1,7 +1,7 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { SeverityLevelEnum } from 'libs/shared';
 
-export class NotificationFilterDto {
+class NotificationFilterDto {
   @ApiPropertyOptional({ type: [String] })
   tags?: string[];
 
@@ -30,7 +30,7 @@ export class NotificationFilterDto {
   createdLte?: number;
 }
 
-export class NotificationCountItemDto {
+class NotificationCountItemDto {
   @ApiProperty({ type: Number })
   count: number;
 

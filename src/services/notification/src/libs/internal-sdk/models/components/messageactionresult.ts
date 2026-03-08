@@ -25,7 +25,7 @@ export const MessageActionResult$inboundSchema: z.ZodType<MessageActionResult, z
   type: ButtonTypeEnum$inboundSchema.optional(),
 });
 
-export function messageActionResultFromJSON(
+function messageActionResultFromJSON(
   jsonString: string
 ): SafeParseResult<MessageActionResult, SDKValidationError> {
   return safeParse(

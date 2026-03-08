@@ -9,18 +9,18 @@ import * as components from "../components/index.js";
 import { NovuError } from "./novuerror.js";
 import { SDKValidationError } from "./sdkvalidationerror.js";
 
-export type MessagePayloadValidationExceptionDto5 =
+type MessagePayloadValidationExceptionDto5 =
   | string
   | number
   | boolean
   | { [k: string]: any };
 
-export type MessagePayloadValidationExceptionDto4 = {};
+type MessagePayloadValidationExceptionDto4 = {};
 
 /**
  * Value that failed validation
  */
-export type PayloadValidationExceptionDtoMessage =
+type PayloadValidationExceptionDtoMessage =
   | string
   | number
   | boolean
@@ -30,9 +30,9 @@ export type PayloadValidationExceptionDtoMessage =
 /**
  * The JSON schema that was used for validation
  */
-export type Schema = {};
+type Schema = {};
 
-export type PayloadValidationExceptionDtoData = {
+type PayloadValidationExceptionDtoData = {
   /**
    * HTTP status code of the error response.
    */
@@ -139,13 +139,13 @@ export class PayloadValidationExceptionDto extends NovuError {
 }
 
 /** @internal */
-export const MessagePayloadValidationExceptionDto5$inboundSchema: z.ZodType<
+const MessagePayloadValidationExceptionDto5$inboundSchema: z.ZodType<
   MessagePayloadValidationExceptionDto5,
   z.ZodTypeDef,
   unknown
 > = z.union([z.string(), z.number(), z.boolean(), z.record(z.any())]);
 
-export function messagePayloadValidationExceptionDto5FromJSON(
+function messagePayloadValidationExceptionDto5FromJSON(
   jsonString: string,
 ): SafeParseResult<MessagePayloadValidationExceptionDto5, SDKValidationError> {
   return safeParse(
@@ -157,13 +157,13 @@ export function messagePayloadValidationExceptionDto5FromJSON(
 }
 
 /** @internal */
-export const MessagePayloadValidationExceptionDto4$inboundSchema: z.ZodType<
+const MessagePayloadValidationExceptionDto4$inboundSchema: z.ZodType<
   MessagePayloadValidationExceptionDto4,
   z.ZodTypeDef,
   unknown
 > = z.object({});
 
-export function messagePayloadValidationExceptionDto4FromJSON(
+function messagePayloadValidationExceptionDto4FromJSON(
   jsonString: string,
 ): SafeParseResult<MessagePayloadValidationExceptionDto4, SDKValidationError> {
   return safeParse(
@@ -175,7 +175,7 @@ export function messagePayloadValidationExceptionDto4FromJSON(
 }
 
 /** @internal */
-export const PayloadValidationExceptionDtoMessage$inboundSchema: z.ZodType<
+const PayloadValidationExceptionDtoMessage$inboundSchema: z.ZodType<
   PayloadValidationExceptionDtoMessage,
   z.ZodTypeDef,
   unknown
@@ -191,7 +191,7 @@ export const PayloadValidationExceptionDtoMessage$inboundSchema: z.ZodType<
   ),
 ]);
 
-export function payloadValidationExceptionDtoMessageFromJSON(
+function payloadValidationExceptionDtoMessageFromJSON(
   jsonString: string,
 ): SafeParseResult<PayloadValidationExceptionDtoMessage, SDKValidationError> {
   return safeParse(
@@ -203,10 +203,10 @@ export function payloadValidationExceptionDtoMessageFromJSON(
 }
 
 /** @internal */
-export const Schema$inboundSchema: z.ZodType<Schema, z.ZodTypeDef, unknown> = z
+const Schema$inboundSchema: z.ZodType<Schema, z.ZodTypeDef, unknown> = z
   .object({});
 
-export function schemaFromJSON(
+function schemaFromJSON(
   jsonString: string,
 ): SafeParseResult<Schema, SDKValidationError> {
   return safeParse(

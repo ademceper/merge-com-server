@@ -69,7 +69,7 @@ export function isWithinSchedule(schedule?: Schedule, currentTime: Date = new Da
 /**
  * Gets the day of the week as a string key for the weekly schedule
  */
-export function getDayOfWeek(date: Date): keyof NonNullable<Schedule['weeklySchedule']> {
+function getDayOfWeek(date: Date): keyof NonNullable<Schedule['weeklySchedule']> {
   return DAYS_OF_WEEK[date.getUTCDay()];
 }
 

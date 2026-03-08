@@ -154,7 +154,7 @@ export interface ISyncStrategy {
   getAvailableResourceIds(sourceEnvironmentId: string, organizationId: string): Promise<string[]>;
 }
 
-export interface ISyncProgress {
+interface ISyncProgress {
   resourceType: ResourceTypeEnum;
   total: number;
   processed: number;

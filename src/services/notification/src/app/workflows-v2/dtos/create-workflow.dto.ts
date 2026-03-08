@@ -28,7 +28,7 @@ import {
 import { PreferencesRequestDto } from './preferences.request.dto';
 import { WorkflowCommonsFields } from './workflow-commons.dto';
 
-export type StepCreateDto =
+type StepCreateDto =
   | InAppStepUpsertDto
   | EmailStepUpsertDto
   | SmsStepUpsertDto

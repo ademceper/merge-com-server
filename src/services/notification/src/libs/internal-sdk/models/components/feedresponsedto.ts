@@ -47,7 +47,7 @@ export const FeedResponseDto$inboundSchema: z.ZodType<
   page: z.number(),
 });
 
-export function feedResponseDtoFromJSON(
+function feedResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<FeedResponseDto, SDKValidationError> {
   return safeParse(

@@ -29,7 +29,7 @@ export const WebhookResultDto$inboundSchema: z.ZodType<
   event: EventBody$inboundSchema,
 });
 
-export function webhookResultDtoFromJSON(
+function webhookResultDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<WebhookResultDto, SDKValidationError> {
   return safeParse(

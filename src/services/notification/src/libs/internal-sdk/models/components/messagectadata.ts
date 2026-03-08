@@ -23,7 +23,7 @@ export const MessageCTAData$inboundSchema: z.ZodType<
   url: z.string().optional(),
 });
 
-export function messageCTADataFromJSON(
+function messageCTADataFromJSON(
   jsonString: string,
 ): SafeParseResult<MessageCTAData, SDKValidationError> {
   return safeParse(

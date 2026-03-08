@@ -28,7 +28,7 @@ export type StepOptions<
   controlSchema?: T_ControlSchema;
 };
 
-export enum JobStatusEnum {
+enum JobStatusEnum {
   PENDING = 'pending',
   QUEUED = 'queued',
   RUNNING = 'running',
@@ -207,26 +207,26 @@ export type InAppOutputUnvalidated = FromSchemaUnvalidated<(typeof channelStepSc
 export type InAppResult = FromSchema<(typeof channelStepSchemas)['in_app']['result']>;
 
 export type DelayRegularOutput = FromSchema<typeof delayRegularOutputSchema>;
-export type DelayRegularOutputUnvalidated = FromSchemaUnvalidated<typeof delayRegularOutputSchema>;
+type DelayRegularOutputUnvalidated = FromSchemaUnvalidated<typeof delayRegularOutputSchema>;
 export type DelayTimedOutput = FromSchema<typeof delayTimedOutputSchema>;
-export type DelayTimedOutputUnvalidated = FromSchemaUnvalidated<typeof delayTimedOutputSchema>;
-export type DelayDynamicOutput = FromSchema<typeof delayDynamicOutputSchema>;
-export type DelayDynamicOutputUnvalidated = FromSchemaUnvalidated<typeof delayDynamicOutputSchema>;
+type DelayTimedOutputUnvalidated = FromSchemaUnvalidated<typeof delayTimedOutputSchema>;
+type DelayDynamicOutput = FromSchema<typeof delayDynamicOutputSchema>;
+type DelayDynamicOutputUnvalidated = FromSchemaUnvalidated<typeof delayDynamicOutputSchema>;
 
 export type DelayOutput = FromSchema<(typeof actionStepSchemas)['delay']['output']>;
 export type DelayOutputUnvalidated = FromSchemaUnvalidated<(typeof actionStepSchemas)['delay']['output']>;
 export type DelayResult = FromSchema<(typeof actionStepSchemas)['delay']['result']>;
 
 export type DigestRegularOutput = FromSchema<typeof digestRegularOutputSchema>;
-export type DigestRegularOutputUnvalidated = FromSchemaUnvalidated<typeof digestRegularOutputSchema>;
+type DigestRegularOutputUnvalidated = FromSchemaUnvalidated<typeof digestRegularOutputSchema>;
 export type DigestTimedOutput = FromSchema<typeof digestTimedOutputSchema>;
-export type DigestTimedOutputUnvalidated = FromSchemaUnvalidated<typeof digestTimedOutputSchema>;
+type DigestTimedOutputUnvalidated = FromSchemaUnvalidated<typeof digestTimedOutputSchema>;
 
 export type DigestOutput = FromSchema<(typeof actionStepSchemas)['digest']['output']>;
 export type DigestOutputUnvalidated = FromSchemaUnvalidated<(typeof actionStepSchemas)['digest']['output']>;
 export type DigestResult = FromSchema<(typeof actionStepSchemas)['digest']['result']>;
 
-export type ThrottleOutput = FromSchema<(typeof actionStepSchemas)['throttle']['output']>;
+type ThrottleOutput = FromSchema<(typeof actionStepSchemas)['throttle']['output']>;
 export type ThrottleOutputUnvalidated = FromSchemaUnvalidated<(typeof actionStepSchemas)['throttle']['output']>;
 export type ThrottleResult = FromSchema<(typeof actionStepSchemas)['throttle']['result']>;
 

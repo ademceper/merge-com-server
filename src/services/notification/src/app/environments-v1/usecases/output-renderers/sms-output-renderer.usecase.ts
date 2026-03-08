@@ -6,7 +6,7 @@ import { SmsRenderOutput } from 'libs/shared';
 import { BaseTranslationRendererUsecase } from './base-translation-renderer.usecase';
 import { RenderCommand } from './render-command';
 
-export class SmsOutputRendererCommand extends RenderCommand {
+class SmsOutputRendererCommand extends RenderCommand {
   dbWorkflow: NotificationTemplateEntity;
   locale?: string;
 }

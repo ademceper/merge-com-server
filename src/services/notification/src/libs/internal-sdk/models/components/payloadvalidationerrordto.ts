@@ -7,14 +7,14 @@ import { safeParse } from "../../lib/schemas.js";
 import { Result as SafeParseResult } from "../../types/fp.js";
 import { SDKValidationError } from "../errors/sdkvalidationerror.js";
 
-export type Value5 = string | number | boolean | { [k: string]: any };
+type Value5 = string | number | boolean | { [k: string]: any };
 
 export type Value4 = {};
 
 /**
  * The actual value that failed validation
  */
-export type PayloadValidationErrorDtoValue =
+type PayloadValidationErrorDtoValue =
   | string
   | number
   | boolean
@@ -48,10 +48,10 @@ export type PayloadValidationErrorDto = {
 };
 
 /** @internal */
-export const Value5$inboundSchema: z.ZodType<Value5, z.ZodTypeDef, unknown> = z
+const Value5$inboundSchema: z.ZodType<Value5, z.ZodTypeDef, unknown> = z
   .union([z.string(), z.number(), z.boolean(), z.record(z.any())]);
 
-export function value5FromJSON(
+function value5FromJSON(
   jsonString: string,
 ): SafeParseResult<Value5, SDKValidationError> {
   return safeParse(
@@ -62,10 +62,10 @@ export function value5FromJSON(
 }
 
 /** @internal */
-export const Value4$inboundSchema: z.ZodType<Value4, z.ZodTypeDef, unknown> = z
+const Value4$inboundSchema: z.ZodType<Value4, z.ZodTypeDef, unknown> = z
   .object({});
 
-export function value4FromJSON(
+function value4FromJSON(
   jsonString: string,
 ): SafeParseResult<Value4, SDKValidationError> {
   return safeParse(
@@ -76,7 +76,7 @@ export function value4FromJSON(
 }
 
 /** @internal */
-export const PayloadValidationErrorDtoValue$inboundSchema: z.ZodType<
+const PayloadValidationErrorDtoValue$inboundSchema: z.ZodType<
   PayloadValidationErrorDtoValue,
   z.ZodTypeDef,
   unknown
@@ -92,7 +92,7 @@ export const PayloadValidationErrorDtoValue$inboundSchema: z.ZodType<
   ),
 ]);
 
-export function payloadValidationErrorDtoValueFromJSON(
+function payloadValidationErrorDtoValueFromJSON(
   jsonString: string,
 ): SafeParseResult<PayloadValidationErrorDtoValue, SDKValidationError> {
   return safeParse(
@@ -126,7 +126,7 @@ export const PayloadValidationErrorDto$inboundSchema: z.ZodType<
   schemaPath: z.string().optional(),
 });
 
-export function payloadValidationErrorDtoFromJSON(
+function payloadValidationErrorDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<PayloadValidationErrorDto, SDKValidationError> {
   return safeParse(

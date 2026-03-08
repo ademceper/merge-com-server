@@ -8,7 +8,7 @@ import { Webhook } from 'svix';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
 import type { WithPassthrough } from '../../../utils/types';
 
-export type EmailSentWebhook = {
+type EmailSentWebhook = {
   type:
     | 'email.sent'
     | 'email.failed'

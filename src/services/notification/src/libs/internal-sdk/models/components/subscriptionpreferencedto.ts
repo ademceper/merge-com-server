@@ -14,7 +14,7 @@ import {
 /**
  * Custom data associated with the workflow
  */
-export type SubscriptionPreferenceDtoData = {};
+type SubscriptionPreferenceDtoData = {};
 
 /**
  * Workflow information if this is a template-level preference
@@ -70,13 +70,13 @@ export type SubscriptionPreferenceDto = {
 };
 
 /** @internal */
-export const SubscriptionPreferenceDtoData$inboundSchema: z.ZodType<
+const SubscriptionPreferenceDtoData$inboundSchema: z.ZodType<
   SubscriptionPreferenceDtoData,
   z.ZodTypeDef,
   unknown
 > = z.object({});
 
-export function subscriptionPreferenceDtoDataFromJSON(
+function subscriptionPreferenceDtoDataFromJSON(
   jsonString: string,
 ): SafeParseResult<SubscriptionPreferenceDtoData, SDKValidationError> {
   return safeParse(
@@ -87,7 +87,7 @@ export function subscriptionPreferenceDtoDataFromJSON(
 }
 
 /** @internal */
-export const SubscriptionPreferenceDtoWorkflow$inboundSchema: z.ZodType<
+const SubscriptionPreferenceDtoWorkflow$inboundSchema: z.ZodType<
   SubscriptionPreferenceDtoWorkflow,
   z.ZodTypeDef,
   unknown
@@ -101,7 +101,7 @@ export const SubscriptionPreferenceDtoWorkflow$inboundSchema: z.ZodType<
   severity: SeverityLevelEnum$inboundSchema,
 });
 
-export function subscriptionPreferenceDtoWorkflowFromJSON(
+function subscriptionPreferenceDtoWorkflowFromJSON(
   jsonString: string,
 ): SafeParseResult<SubscriptionPreferenceDtoWorkflow, SDKValidationError> {
   return safeParse(
@@ -125,7 +125,7 @@ export const SubscriptionPreferenceDto$inboundSchema: z.ZodType<
   condition: z.record(z.any()).optional(),
 });
 
-export function subscriptionPreferenceDtoFromJSON(
+function subscriptionPreferenceDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<SubscriptionPreferenceDto, SDKValidationError> {
   return safeParse(

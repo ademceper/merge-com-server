@@ -17,7 +17,7 @@ type UnseenCountPaginationIndication = {
   hasMore: boolean;
 };
 
-export interface SendMessageParams {
+interface SendMessageParams {
   userId: string;
   event: string;
   data: any;

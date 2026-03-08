@@ -6,7 +6,7 @@ import { PushRenderOutput } from 'libs/shared';
 import { BaseTranslationRendererUsecase } from './base-translation-renderer.usecase';
 import { RenderCommand } from './render-command';
 
-export class PushOutputRendererCommand extends RenderCommand {
+class PushOutputRendererCommand extends RenderCommand {
   dbWorkflow: NotificationTemplateEntity;
   locale?: string;
 }

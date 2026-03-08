@@ -59,17 +59,17 @@ export type TimedConfig = {
 };
 
 /** @internal */
-export const TimedConfigWeekDays$inboundSchema: z.ZodNativeEnum<typeof TimedConfigWeekDays> =
+const TimedConfigWeekDays$inboundSchema: z.ZodNativeEnum<typeof TimedConfigWeekDays> =
   z.nativeEnum(TimedConfigWeekDays);
 
 /** @internal */
-export const Ordinal$inboundSchema: z.ZodNativeEnum<typeof Ordinal> = z.nativeEnum(Ordinal);
+const Ordinal$inboundSchema: z.ZodNativeEnum<typeof Ordinal> = z.nativeEnum(Ordinal);
 
 /** @internal */
-export const OrdinalValue$inboundSchema: z.ZodNativeEnum<typeof OrdinalValue> = z.nativeEnum(OrdinalValue);
+const OrdinalValue$inboundSchema: z.ZodNativeEnum<typeof OrdinalValue> = z.nativeEnum(OrdinalValue);
 
 /** @internal */
-export const MonthlyType$inboundSchema: z.ZodNativeEnum<typeof MonthlyType> = z.nativeEnum(MonthlyType);
+const MonthlyType$inboundSchema: z.ZodNativeEnum<typeof MonthlyType> = z.nativeEnum(MonthlyType);
 
 /** @internal */
 export const TimedConfig$inboundSchema: z.ZodType<TimedConfig, z.ZodTypeDef, unknown> = z.object({
@@ -81,7 +81,7 @@ export const TimedConfig$inboundSchema: z.ZodType<TimedConfig, z.ZodTypeDef, unk
   monthlyType: MonthlyType$inboundSchema.optional(),
 });
 
-export function timedConfigFromJSON(jsonString: string): SafeParseResult<TimedConfig, SDKValidationError> {
+function timedConfigFromJSON(jsonString: string): SafeParseResult<TimedConfig, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) => TimedConfig$inboundSchema.parse(JSON.parse(x)),

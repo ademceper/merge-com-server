@@ -6,10 +6,10 @@ import type { ConnectionOptions } from 'tls';
 
 import { convertStringValues } from './variable-mappers';
 
-export { Redis, ScanStream };
-export type { RedisOptions };
+;
+;
 
-export const CLIENT_READY = 'ready';
+const CLIENT_READY = 'ready';
 const DEFAULT_TTL_SECONDS = 60 * 60 * 2;
 const DEFAULT_CONNECT_TIMEOUT = 50000;
 const DEFAULT_HOST = 'localhost';

@@ -71,7 +71,7 @@ export type DigestMetadataDto = {
 };
 
 /** @internal */
-export const DigestMetadataDtoUnit$inboundSchema: z.ZodNativeEnum<typeof DigestMetadataDtoUnit> =
+const DigestMetadataDtoUnit$inboundSchema: z.ZodNativeEnum<typeof DigestMetadataDtoUnit> =
   z.nativeEnum(DigestMetadataDtoUnit);
 
 /** @internal */
@@ -88,7 +88,7 @@ export const DigestMetadataDto$inboundSchema: z.ZodType<DigestMetadataDto, z.Zod
   timed: DigestTimedConfigDto$inboundSchema.optional(),
 });
 
-export function digestMetadataDtoFromJSON(jsonString: string): SafeParseResult<DigestMetadataDto, SDKValidationError> {
+function digestMetadataDtoFromJSON(jsonString: string): SafeParseResult<DigestMetadataDto, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) => DigestMetadataDto$inboundSchema.parse(JSON.parse(x)),

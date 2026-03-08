@@ -1,8 +1,8 @@
-export interface ISuccessResponseDto {
+interface ISuccessResponseDto {
   success: boolean;
 }
 
-export interface IServerResponse<T> {
+interface IServerResponse<T> {
   data: T;
 }
 

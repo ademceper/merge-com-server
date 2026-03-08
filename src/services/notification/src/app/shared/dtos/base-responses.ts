@@ -5,7 +5,7 @@ export enum DirectionEnum {
   DESC = 'DESC',
 }
 
-export class ResponseError {
+class ResponseError {
   @ApiProperty({
     description: 'The error code or identifier.',
     type: String,
@@ -25,7 +25,7 @@ export class ResponseError {
   statusCode: number;
 }
 
-export class PaginatedResponse<T> {
+class PaginatedResponse<T> {
   @ApiProperty({
     description: 'Array of data items of type T.',
     type: 'array', // Use 'array' instead of Array
@@ -58,9 +58,9 @@ export class PaginatedResponse<T> {
   page: number;
 }
 
-export type KeysOfT<T> = keyof T;
+type KeysOfT<T> = keyof T;
 
-export class CursorPaginationQueryDto<T, K extends keyof T> {
+class CursorPaginationQueryDto<T, K extends keyof T> {
   @ApiProperty({
     description: 'Maximum number of items to return.',
     type: Number,
@@ -86,7 +86,7 @@ export class CursorPaginationQueryDto<T, K extends keyof T> {
   orderBy?: K;
 }
 
-export class LimitOffsetPaginationDto<T, K extends KeysOfT<T>> {
+class LimitOffsetPaginationDto<T, K extends KeysOfT<T>> {
   @ApiProperty({
     description: 'Maximum number of items to return.',
     type: String,
@@ -112,7 +112,7 @@ export class LimitOffsetPaginationDto<T, K extends KeysOfT<T>> {
   orderBy?: K;
 }
 
-export class PaginationParams {
+class PaginationParams {
   @ApiProperty({
     description: 'Current page number.',
     type: Number,
@@ -126,7 +126,7 @@ export class PaginationParams {
   limit: number;
 }
 
-export class PaginationWithQueryParams extends PaginationParams {
+class PaginationWithQueryParams extends PaginationParams {
   @ApiProperty({
     description: 'Optional search query string.',
     type: String,
@@ -135,12 +135,12 @@ export class PaginationWithQueryParams extends PaginationParams {
   query?: string;
 }
 
-export enum OrderDirectionEnum {
+enum OrderDirectionEnum {
   ASC = 1,
   DESC = -1,
 }
 
-export enum OrderByEnum {
+enum OrderByEnum {
   ASC = 'ASC',
   DESC = 'DESC',
 }

@@ -6,7 +6,7 @@ import { Type } from 'class-transformer';
 import { IsArray, IsBoolean, IsEnum, IsNumber, IsOptional, IsString, ValidateNested } from 'class-validator';
 
 @ApiExtraModels()
-export class JSONSchemaDto {
+class JSONSchemaDto {
   @ApiPropertyOptional({
     description: 'JSON Schema type',
     enum: [...Object.values(JsonSchemaTypeEnum)],
@@ -352,7 +352,7 @@ export class JSONSchemaDto {
 }
 
 @ApiExtraModels(UiSchemaProperty)
-export class UiSchema {
+class UiSchema {
   @ApiPropertyOptional({
     description: 'Group of the UI Schema',
     enum: [...Object.values(UiSchemaGroupEnum)],

@@ -51,7 +51,7 @@ export const ActivityNotificationTemplateResponseDto$inboundSchema: z.ZodType<
   });
 });
 
-export function activityNotificationTemplateResponseDtoFromJSON(
+function activityNotificationTemplateResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<
   ActivityNotificationTemplateResponseDto,

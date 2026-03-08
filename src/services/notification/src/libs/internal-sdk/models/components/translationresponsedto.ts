@@ -48,7 +48,7 @@ export type TranslationResponseDto = {
 };
 
 /** @internal */
-export const TranslationResponseDtoResourceType$inboundSchema: z.ZodNativeEnum<
+const TranslationResponseDtoResourceType$inboundSchema: z.ZodNativeEnum<
   typeof TranslationResponseDtoResourceType
 > = z.nativeEnum(TranslationResponseDtoResourceType);
 
@@ -62,7 +62,7 @@ export const TranslationResponseDto$inboundSchema: z.ZodType<TranslationResponse
   updatedAt: z.string(),
 });
 
-export function translationResponseDtoFromJSON(
+function translationResponseDtoFromJSON(
   jsonString: string
 ): SafeParseResult<TranslationResponseDto, SDKValidationError> {
   return safeParse(

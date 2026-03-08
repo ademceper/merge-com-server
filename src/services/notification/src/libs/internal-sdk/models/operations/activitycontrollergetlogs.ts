@@ -37,7 +37,7 @@ export type ActivityControllerGetLogsRequest = {
 };
 
 /** @internal */
-export type ActivityControllerGetLogsRequest$Outbound = {
+type ActivityControllerGetLogsRequest$Outbound = {
   page?: number | undefined;
   limit?: number | undefined;
   statusCodes?: Array<number> | undefined;
@@ -66,7 +66,7 @@ export const ActivityControllerGetLogsRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function activityControllerGetLogsRequestToJSON(
+function activityControllerGetLogsRequestToJSON(
   activityControllerGetLogsRequest: ActivityControllerGetLogsRequest,
 ): string {
   return JSON.stringify(

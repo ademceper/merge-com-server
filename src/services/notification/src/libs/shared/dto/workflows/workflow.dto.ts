@@ -8,11 +8,11 @@ import type { StepCreateDto, StepUpdateDto } from './step.dto';
 import { StepListResponseDto, StepResponseDto } from './step.dto';
 import { WorkflowStatusEnum } from './workflow-status-enum';
 
-export class ControlsSchema {
+class ControlsSchema {
   schema: JSONSchemaDto;
 }
 
-export type PatchWorkflowDto = {
+type PatchWorkflowDto = {
   active?: boolean;
   name?: string;
   description?: string;
@@ -22,12 +22,12 @@ export type PatchWorkflowDto = {
   isTranslationEnabled?: boolean;
 };
 
-export type ListWorkflowResponse = {
+type ListWorkflowResponse = {
   workflows: WorkflowListResponseDto[];
   totalCount: number;
 };
 
-export type WorkflowListResponseDto = Pick<
+type WorkflowListResponseDto = Pick<
   WorkflowResponseDto,
   | 'name'
   | 'tags'
@@ -84,12 +84,7 @@ export type WorkflowResponseDto = WorkflowCommonsFields & {
 export type WorkflowCreateAndUpdateKeys = keyof CreateWorkflowDto | keyof UpdateWorkflowDto;
 
 export enum WorkflowIssueTypeEnum {
-  MISSING_VALUE = 'MISSING_VALUE',
-  MAX_LENGTH_ACCESSED = 'MAX_LENGTH_ACCESSED',
-  WORKFLOW_ID_ALREADY_EXISTS = 'WORKFLOW_ID_ALREADY_EXISTS',
-  DUPLICATED_VALUE = 'DUPLICATED_VALUE',
-  LIMIT_REACHED = 'LIMIT_REACHED',
-}
+  }
 
 export type CreateWorkflowDto = WorkflowCommonsFields & {
   workflowId: string;
@@ -118,22 +113,22 @@ export type UpdateWorkflowDto = WorkflowCommonsFields & {
   payloadSchema?: object;
 };
 
-export type UpsertWorkflowBody = Omit<UpdateWorkflowDto, 'steps'> & {
+type UpsertWorkflowBody = Omit<UpdateWorkflowDto, 'steps'> & {
   steps: UpsertStepBody[];
 };
 
-export type UpsertStepBody = StepCreateBody | UpdateStepBody;
-export type StepCreateBody = StepCreateDto;
-export type UpdateStepBody = StepUpdateDto;
+type UpsertStepBody = StepCreateBody | UpdateStepBody;
+type StepCreateBody = StepCreateDto;
+type UpdateStepBody = StepUpdateDto;
 
-export type DuplicateWorkflowDto = Pick<CreateWorkflowDto, 'name' | 'tags' | 'description' | 'isTranslationEnabled'> & {
+type DuplicateWorkflowDto = Pick<CreateWorkflowDto, 'name' | 'tags' | 'description' | 'isTranslationEnabled'> & {
   workflowId?: string;
 };
 
-export function isStepCreateBody(step: UpsertStepBody): step is StepCreateDto {
+function isStepCreateBody(step: UpsertStepBody): step is StepCreateDto {
   return step && typeof step === 'object' && !(step as UpdateStepBody)._id;
 }
 
-export function isStepUpdateBody(step: UpsertStepBody): step is UpdateStepBody {
+function isStepUpdateBody(step: UpsertStepBody): step is UpdateStepBody {
   return step && typeof step === 'object' && !!(step as UpdateStepBody)._id;
 }

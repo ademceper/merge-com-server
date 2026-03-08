@@ -23,7 +23,7 @@ export const DeleteTopicResponseDto$inboundSchema: z.ZodType<
   acknowledged: z.boolean(),
 });
 
-export function deleteTopicResponseDtoFromJSON(
+function deleteTopicResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<DeleteTopicResponseDto, SDKValidationError> {
   return safeParse(

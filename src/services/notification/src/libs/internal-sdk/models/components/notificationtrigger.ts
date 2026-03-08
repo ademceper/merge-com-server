@@ -27,7 +27,7 @@ export type NotificationTrigger = {
 };
 
 /** @internal */
-export const NotificationTriggerType$inboundSchema: z.ZodNativeEnum<
+const NotificationTriggerType$inboundSchema: z.ZodNativeEnum<
   typeof NotificationTriggerType
 > = z.nativeEnum(NotificationTriggerType);
 
@@ -44,7 +44,7 @@ export const NotificationTrigger$inboundSchema: z.ZodType<
     .optional(),
 });
 
-export function notificationTriggerFromJSON(
+function notificationTriggerFromJSON(
   jsonString: string,
 ): SafeParseResult<NotificationTrigger, SDKValidationError> {
   return safeParse(

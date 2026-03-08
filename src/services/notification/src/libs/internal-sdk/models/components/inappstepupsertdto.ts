@@ -13,7 +13,7 @@ import {
 /**
  * Control values for the In-App step.
  */
-export type InAppStepUpsertDtoControlValues = InAppControlDto | {
+type InAppStepUpsertDtoControlValues = InAppControlDto | {
   [k: string]: any;
 };
 
@@ -41,18 +41,18 @@ export type InAppStepUpsertDto = {
 };
 
 /** @internal */
-export type InAppStepUpsertDtoControlValues$Outbound =
+type InAppStepUpsertDtoControlValues$Outbound =
   | InAppControlDto$Outbound
   | { [k: string]: any };
 
 /** @internal */
-export const InAppStepUpsertDtoControlValues$outboundSchema: z.ZodType<
+const InAppStepUpsertDtoControlValues$outboundSchema: z.ZodType<
   InAppStepUpsertDtoControlValues$Outbound,
   z.ZodTypeDef,
   InAppStepUpsertDtoControlValues
 > = z.union([InAppControlDto$outboundSchema, z.record(z.any())]);
 
-export function inAppStepUpsertDtoControlValuesToJSON(
+function inAppStepUpsertDtoControlValuesToJSON(
   inAppStepUpsertDtoControlValues: InAppStepUpsertDtoControlValues,
 ): string {
   return JSON.stringify(
@@ -89,7 +89,7 @@ export const InAppStepUpsertDto$outboundSchema: z.ZodType<
   });
 });
 
-export function inAppStepUpsertDtoToJSON(
+function inAppStepUpsertDtoToJSON(
   inAppStepUpsertDto: InAppStepUpsertDto,
 ): string {
   return JSON.stringify(

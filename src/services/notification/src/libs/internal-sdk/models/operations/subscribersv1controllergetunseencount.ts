@@ -31,7 +31,7 @@ export type SubscribersV1ControllerGetUnseenCountResponse = {
 };
 
 /** @internal */
-export type SubscribersV1ControllerGetUnseenCountRequest$Outbound = {
+type SubscribersV1ControllerGetUnseenCountRequest$Outbound = {
   subscriberId: string;
   seen: boolean;
   limit: number;
@@ -55,7 +55,7 @@ export const SubscribersV1ControllerGetUnseenCountRequest$outboundSchema:
     });
   });
 
-export function subscribersV1ControllerGetUnseenCountRequestToJSON(
+function subscribersV1ControllerGetUnseenCountRequestToJSON(
   subscribersV1ControllerGetUnseenCountRequest:
     SubscribersV1ControllerGetUnseenCountRequest,
 ): string {
@@ -82,7 +82,7 @@ export const SubscribersV1ControllerGetUnseenCountResponse$inboundSchema:
     });
   });
 
-export function subscribersV1ControllerGetUnseenCountResponseFromJSON(
+function subscribersV1ControllerGetUnseenCountResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   SubscribersV1ControllerGetUnseenCountResponse,

@@ -23,7 +23,7 @@ export type ContextsControllerCreateContextResponse = {
 };
 
 /** @internal */
-export type ContextsControllerCreateContextRequest$Outbound = {
+type ContextsControllerCreateContextRequest$Outbound = {
   "idempotency-key"?: string | undefined;
   CreateContextRequestDto: components.CreateContextRequestDto$Outbound;
 };
@@ -43,7 +43,7 @@ export const ContextsControllerCreateContextRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function contextsControllerCreateContextRequestToJSON(
+function contextsControllerCreateContextRequestToJSON(
   contextsControllerCreateContextRequest:
     ContextsControllerCreateContextRequest,
 ): string {
@@ -69,7 +69,7 @@ export const ContextsControllerCreateContextResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function contextsControllerCreateContextResponseFromJSON(
+function contextsControllerCreateContextResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   ContextsControllerCreateContextResponse,

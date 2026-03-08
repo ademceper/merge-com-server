@@ -31,7 +31,7 @@ export const CreateUpdateTopicRequestDto$outboundSchema: z.ZodType<
   name: z.string().optional(),
 });
 
-export function createUpdateTopicRequestDtoToJSON(
+function createUpdateTopicRequestDtoToJSON(
   createUpdateTopicRequestDto: CreateUpdateTopicRequestDto,
 ): string {
   return JSON.stringify(

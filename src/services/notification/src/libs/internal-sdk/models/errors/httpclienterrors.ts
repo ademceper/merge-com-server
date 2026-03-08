@@ -5,7 +5,7 @@
 /**
  * Base class for all HTTP errors.
  */
-export class HTTPClientError extends Error {
+class HTTPClientError extends Error {
   /** The underlying cause of the error. */
   override readonly cause: unknown;
   override name = "HTTPClientError";

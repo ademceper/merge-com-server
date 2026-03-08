@@ -37,7 +37,7 @@ export const CreateEnvironmentRequestDto$outboundSchema: z.ZodType<
   color: z.string(),
 });
 
-export function createEnvironmentRequestDtoToJSON(
+function createEnvironmentRequestDtoToJSON(
   createEnvironmentRequestDto: CreateEnvironmentRequestDto,
 ): string {
   return JSON.stringify(

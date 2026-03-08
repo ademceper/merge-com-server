@@ -27,7 +27,7 @@ export function ERR<E>(error: E): Result<never, E> {
  * unwrap is a convenience function for extracting a value from a result or
  * throwing if there was an error.
  */
-export function unwrap<T>(r: Result<T, unknown>): T {
+function unwrap<T>(r: Result<T, unknown>): T {
   if (!r.ok) {
     throw r.error;
   }

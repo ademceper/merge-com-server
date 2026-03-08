@@ -65,17 +65,17 @@ export type ThrottleControlDto = {
 };
 
 /** @internal */
-export const ThrottleControlDtoType$inboundSchema: z.ZodNativeEnum<typeof ThrottleControlDtoType> =
+const ThrottleControlDtoType$inboundSchema: z.ZodNativeEnum<typeof ThrottleControlDtoType> =
   z.nativeEnum(ThrottleControlDtoType);
 /** @internal */
-export const ThrottleControlDtoType$outboundSchema: z.ZodNativeEnum<typeof ThrottleControlDtoType> =
+const ThrottleControlDtoType$outboundSchema: z.ZodNativeEnum<typeof ThrottleControlDtoType> =
   ThrottleControlDtoType$inboundSchema;
 
 /** @internal */
-export const ThrottleControlDtoUnit$inboundSchema: z.ZodNativeEnum<typeof ThrottleControlDtoUnit> =
+const ThrottleControlDtoUnit$inboundSchema: z.ZodNativeEnum<typeof ThrottleControlDtoUnit> =
   z.nativeEnum(ThrottleControlDtoUnit);
 /** @internal */
-export const ThrottleControlDtoUnit$outboundSchema: z.ZodNativeEnum<typeof ThrottleControlDtoUnit> =
+const ThrottleControlDtoUnit$outboundSchema: z.ZodNativeEnum<typeof ThrottleControlDtoUnit> =
   ThrottleControlDtoUnit$inboundSchema;
 
 /** @internal */
@@ -114,10 +114,10 @@ export const ThrottleControlDto$outboundSchema: z.ZodType<
   throttleKey: z.string().optional(),
 });
 
-export function throttleControlDtoToJSON(throttleControlDto: ThrottleControlDto): string {
+function throttleControlDtoToJSON(throttleControlDto: ThrottleControlDto): string {
   return JSON.stringify(ThrottleControlDto$outboundSchema.parse(throttleControlDto));
 }
-export function throttleControlDtoFromJSON(
+function throttleControlDtoFromJSON(
   jsonString: string
 ): SafeParseResult<ThrottleControlDto, SDKValidationError> {
   return safeParse(

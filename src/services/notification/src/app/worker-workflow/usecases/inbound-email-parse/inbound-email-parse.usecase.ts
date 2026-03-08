@@ -114,7 +114,7 @@ export class InboundEmailParse {
 
 class MailMetadata extends InboundEmailParseCommand {}
 
-export interface IUserWebhookPayload {
+interface IUserWebhookPayload {
   transactionId: string;
   templateIdentifier: string;
   payload: Record<string, unknown>;

@@ -29,7 +29,7 @@ export const ListWorkflowResponse$inboundSchema: z.ZodType<
   totalCount: z.number(),
 });
 
-export function listWorkflowResponseFromJSON(
+function listWorkflowResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<ListWorkflowResponse, SDKValidationError> {
   return safeParse(

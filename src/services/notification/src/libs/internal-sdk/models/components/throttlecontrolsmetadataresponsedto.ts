@@ -38,7 +38,7 @@ export const ThrottleControlsMetadataResponseDto$inboundSchema: z.ZodType<
   values: ThrottleControlDto$inboundSchema,
 });
 
-export function throttleControlsMetadataResponseDtoFromJSON(
+function throttleControlsMetadataResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<ThrottleControlsMetadataResponseDto, SDKValidationError> {
   return safeParse(

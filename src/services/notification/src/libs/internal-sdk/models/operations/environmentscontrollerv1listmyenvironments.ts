@@ -22,7 +22,7 @@ export type EnvironmentsControllerV1ListMyEnvironmentsResponse = {
 };
 
 /** @internal */
-export type EnvironmentsControllerV1ListMyEnvironmentsRequest$Outbound = {
+type EnvironmentsControllerV1ListMyEnvironmentsRequest$Outbound = {
   "idempotency-key"?: string | undefined;
 };
 
@@ -40,7 +40,7 @@ export const EnvironmentsControllerV1ListMyEnvironmentsRequest$outboundSchema:
     });
   });
 
-export function environmentsControllerV1ListMyEnvironmentsRequestToJSON(
+function environmentsControllerV1ListMyEnvironmentsRequestToJSON(
   environmentsControllerV1ListMyEnvironmentsRequest:
     EnvironmentsControllerV1ListMyEnvironmentsRequest,
 ): string {
@@ -67,7 +67,7 @@ export const EnvironmentsControllerV1ListMyEnvironmentsResponse$inboundSchema:
     });
   });
 
-export function environmentsControllerV1ListMyEnvironmentsResponseFromJSON(
+function environmentsControllerV1ListMyEnvironmentsResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   EnvironmentsControllerV1ListMyEnvironmentsResponse,

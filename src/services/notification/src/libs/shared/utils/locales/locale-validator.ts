@@ -1,6 +1,6 @@
 import { getCommonLocales, isLocaleSupported, normalizeLocale } from './locale-registry';
 
-export interface ILocaleValidationResult {
+interface ILocaleValidationResult {
   isValid: boolean;
   normalizedLocale?: string;
   errorMessage?: string;
@@ -43,7 +43,7 @@ export function validateLocale(value: unknown, context: string = 'locale'): ILoc
  * @param filename - The filename to validate
  * @returns ILocaleValidationResult with validation status
  */
-export function validateLocaleFilename(filename: unknown): ILocaleValidationResult {
+function validateLocaleFilename(filename: unknown): ILocaleValidationResult {
   if (!filename || typeof filename !== 'string') {
     return {
       isValid: false,
@@ -82,7 +82,7 @@ export function validateLocaleFilename(filename: unknown): ILocaleValidationResu
  * @returns The normalized locale string
  * @throws Error if locale is invalid
  */
-export function validateLocaleOrThrow(value: unknown, context: string = 'locale'): string {
+function validateLocaleOrThrow(value: unknown, context: string = 'locale'): string {
   const result = validateLocale(value, context);
   if (!result.isValid) {
     throw new Error(result.errorMessage);

@@ -50,7 +50,7 @@ export type WorkflowControllerSearchWorkflowsResponse = {
 };
 
 /** @internal */
-export type WorkflowControllerSearchWorkflowsRequest$Outbound = {
+type WorkflowControllerSearchWorkflowsRequest$Outbound = {
   limit?: number | undefined;
   offset?: number | undefined;
   orderDirection?: string | undefined;
@@ -81,7 +81,7 @@ export const WorkflowControllerSearchWorkflowsRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function workflowControllerSearchWorkflowsRequestToJSON(
+function workflowControllerSearchWorkflowsRequestToJSON(
   workflowControllerSearchWorkflowsRequest:
     WorkflowControllerSearchWorkflowsRequest,
 ): string {
@@ -107,7 +107,7 @@ export const WorkflowControllerSearchWorkflowsResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function workflowControllerSearchWorkflowsResponseFromJSON(
+function workflowControllerSearchWorkflowsResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   WorkflowControllerSearchWorkflowsResponse,

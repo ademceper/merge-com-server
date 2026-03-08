@@ -6,7 +6,7 @@ import { InAppRenderOutput } from 'libs/shared';
 import { BaseTranslationRendererUsecase } from './base-translation-renderer.usecase';
 import { RenderCommand } from './render-command';
 
-export class InAppOutputRendererCommand extends RenderCommand {
+class InAppOutputRendererCommand extends RenderCommand {
   dbWorkflow: NotificationTemplateEntity;
   locale?: string;
 }

@@ -13,7 +13,7 @@ import {
 /**
  * Control values for the Digest step.
  */
-export type DigestStepUpsertDtoControlValues = DigestControlDto | {
+type DigestStepUpsertDtoControlValues = DigestControlDto | {
   [k: string]: any;
 };
 
@@ -41,18 +41,18 @@ export type DigestStepUpsertDto = {
 };
 
 /** @internal */
-export type DigestStepUpsertDtoControlValues$Outbound =
+type DigestStepUpsertDtoControlValues$Outbound =
   | DigestControlDto$Outbound
   | { [k: string]: any };
 
 /** @internal */
-export const DigestStepUpsertDtoControlValues$outboundSchema: z.ZodType<
+const DigestStepUpsertDtoControlValues$outboundSchema: z.ZodType<
   DigestStepUpsertDtoControlValues$Outbound,
   z.ZodTypeDef,
   DigestStepUpsertDtoControlValues
 > = z.union([DigestControlDto$outboundSchema, z.record(z.any())]);
 
-export function digestStepUpsertDtoControlValuesToJSON(
+function digestStepUpsertDtoControlValuesToJSON(
   digestStepUpsertDtoControlValues: DigestStepUpsertDtoControlValues,
 ): string {
   return JSON.stringify(
@@ -89,7 +89,7 @@ export const DigestStepUpsertDto$outboundSchema: z.ZodType<
   });
 });
 
-export function digestStepUpsertDtoToJSON(
+function digestStepUpsertDtoToJSON(
   digestStepUpsertDto: DigestStepUpsertDto,
 ): string {
   return JSON.stringify(

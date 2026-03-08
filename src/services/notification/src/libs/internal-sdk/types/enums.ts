@@ -22,7 +22,7 @@ export function inboundSchema<T extends Record<string, string>>(
   ] as any);
 }
 
-export function inboundSchemaInt<T extends Record<string, number | string>>(
+function inboundSchemaInt<T extends Record<string, number | string>>(
   enumObj: T,
 ): z.ZodType<OpenEnum<T>, z.ZodTypeDef, unknown> {
   // For numeric enums, Object.values returns both numbers and string keys
@@ -33,13 +33,13 @@ export function inboundSchemaInt<T extends Record<string, number | string>>(
   ] as any);
 }
 
-export function outboundSchema<T extends Record<string, string>>(
+function outboundSchema<T extends Record<string, string>>(
   _: T,
 ): z.ZodType<string, z.ZodTypeDef, OpenEnum<T>> {
   return z.string() as any;
 }
 
-export function outboundSchemaInt<T extends Record<string, number | string>>(
+function outboundSchemaInt<T extends Record<string, number | string>>(
   _: T,
 ): z.ZodType<number, z.ZodTypeDef, OpenEnum<T>> {
   return z.number().int() as any;

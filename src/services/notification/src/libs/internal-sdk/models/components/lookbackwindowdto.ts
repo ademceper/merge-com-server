@@ -36,10 +36,10 @@ export type LookBackWindowDto = {
 };
 
 /** @internal */
-export const LookBackWindowDtoUnit$inboundSchema: z.ZodNativeEnum<typeof LookBackWindowDtoUnit> =
+const LookBackWindowDtoUnit$inboundSchema: z.ZodNativeEnum<typeof LookBackWindowDtoUnit> =
   z.nativeEnum(LookBackWindowDtoUnit);
 /** @internal */
-export const LookBackWindowDtoUnit$outboundSchema: z.ZodNativeEnum<typeof LookBackWindowDtoUnit> =
+const LookBackWindowDtoUnit$outboundSchema: z.ZodNativeEnum<typeof LookBackWindowDtoUnit> =
   LookBackWindowDtoUnit$inboundSchema;
 
 /** @internal */
@@ -60,10 +60,10 @@ export const LookBackWindowDto$outboundSchema: z.ZodType<LookBackWindowDto$Outbo
     unit: LookBackWindowDtoUnit$outboundSchema,
   });
 
-export function lookBackWindowDtoToJSON(lookBackWindowDto: LookBackWindowDto): string {
+function lookBackWindowDtoToJSON(lookBackWindowDto: LookBackWindowDto): string {
   return JSON.stringify(LookBackWindowDto$outboundSchema.parse(lookBackWindowDto));
 }
-export function lookBackWindowDtoFromJSON(jsonString: string): SafeParseResult<LookBackWindowDto, SDKValidationError> {
+function lookBackWindowDtoFromJSON(jsonString: string): SafeParseResult<LookBackWindowDto, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) => LookBackWindowDto$inboundSchema.parse(JSON.parse(x)),

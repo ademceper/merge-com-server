@@ -60,7 +60,7 @@ export type CredentialsDto = {
 };
 
 /** @internal */
-export const TlsOptions$inboundSchema: z.ZodType<
+const TlsOptions$inboundSchema: z.ZodType<
   TlsOptions,
   z.ZodTypeDef,
   unknown
@@ -69,16 +69,16 @@ export const TlsOptions$inboundSchema: z.ZodType<
 export type TlsOptions$Outbound = {};
 
 /** @internal */
-export const TlsOptions$outboundSchema: z.ZodType<
+const TlsOptions$outboundSchema: z.ZodType<
   TlsOptions$Outbound,
   z.ZodTypeDef,
   TlsOptions
 > = z.object({});
 
-export function tlsOptionsToJSON(tlsOptions: TlsOptions): string {
+function tlsOptionsToJSON(tlsOptions: TlsOptions): string {
   return JSON.stringify(TlsOptions$outboundSchema.parse(tlsOptions));
 }
-export function tlsOptionsFromJSON(
+function tlsOptionsFromJSON(
   jsonString: string,
 ): SafeParseResult<TlsOptions, SDKValidationError> {
   return safeParse(
@@ -253,10 +253,10 @@ export const CredentialsDto$outboundSchema: z.ZodType<
   });
 });
 
-export function credentialsDtoToJSON(credentialsDto: CredentialsDto): string {
+function credentialsDtoToJSON(credentialsDto: CredentialsDto): string {
   return JSON.stringify(CredentialsDto$outboundSchema.parse(credentialsDto));
 }
-export function credentialsDtoFromJSON(
+function credentialsDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<CredentialsDto, SDKValidationError> {
   return safeParse(

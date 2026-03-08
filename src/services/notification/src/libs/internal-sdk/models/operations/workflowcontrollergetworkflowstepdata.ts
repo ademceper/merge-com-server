@@ -24,7 +24,7 @@ export type WorkflowControllerGetWorkflowStepDataResponse = {
 };
 
 /** @internal */
-export type WorkflowControllerGetWorkflowStepDataRequest$Outbound = {
+type WorkflowControllerGetWorkflowStepDataRequest$Outbound = {
   workflowId: string;
   stepId: string;
   "idempotency-key"?: string | undefined;
@@ -46,7 +46,7 @@ export const WorkflowControllerGetWorkflowStepDataRequest$outboundSchema:
     });
   });
 
-export function workflowControllerGetWorkflowStepDataRequestToJSON(
+function workflowControllerGetWorkflowStepDataRequestToJSON(
   workflowControllerGetWorkflowStepDataRequest:
     WorkflowControllerGetWorkflowStepDataRequest,
 ): string {
@@ -73,7 +73,7 @@ export const WorkflowControllerGetWorkflowStepDataResponse$inboundSchema:
     });
   });
 
-export function workflowControllerGetWorkflowStepDataResponseFromJSON(
+function workflowControllerGetWorkflowStepDataResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   WorkflowControllerGetWorkflowStepDataResponse,

@@ -82,7 +82,7 @@ export type CreateIntegrationRequestDto = {
 };
 
 /** @internal */
-export const CreateIntegrationRequestDtoChannel$outboundSchema: z.ZodNativeEnum<
+const CreateIntegrationRequestDtoChannel$outboundSchema: z.ZodNativeEnum<
   typeof CreateIntegrationRequestDtoChannel
 > = z.nativeEnum(CreateIntegrationRequestDtoChannel);
 
@@ -90,13 +90,13 @@ export const CreateIntegrationRequestDtoChannel$outboundSchema: z.ZodNativeEnum<
 export type Configurations$Outbound = {};
 
 /** @internal */
-export const Configurations$outboundSchema: z.ZodType<
+const Configurations$outboundSchema: z.ZodType<
   Configurations$Outbound,
   z.ZodTypeDef,
   Configurations
 > = z.object({});
 
-export function configurationsToJSON(configurations: Configurations): string {
+function configurationsToJSON(configurations: Configurations): string {
   return JSON.stringify(Configurations$outboundSchema.parse(configurations));
 }
 
@@ -136,7 +136,7 @@ export const CreateIntegrationRequestDto$outboundSchema: z.ZodType<
   });
 });
 
-export function createIntegrationRequestDtoToJSON(
+function createIntegrationRequestDtoToJSON(
   createIntegrationRequestDto: CreateIntegrationRequestDto,
 ): string {
   return JSON.stringify(

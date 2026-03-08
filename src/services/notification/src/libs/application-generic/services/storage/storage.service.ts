@@ -14,7 +14,7 @@ import { URL } from 'url';
 
 import { NonExistingFileError } from './non-existing-file.error';
 
-export interface IFilePath {
+interface IFilePath {
   path: string;
   name: string;
 }

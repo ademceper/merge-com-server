@@ -5,7 +5,7 @@ import { GetActionEnum, HealthCheck } from 'libs/framework/internal';
 import { ResourceOriginEnum } from 'libs/shared';
 import { GetBridgeStatusCommand } from './get-bridge-status.command';
 
-export const LOG_CONTEXT = 'GetBridgeStatusUsecase';
+const LOG_CONTEXT = 'GetBridgeStatusUsecase';
 
 @Injectable()
 export class GetBridgeStatus {

@@ -13,7 +13,7 @@ import {
 /**
  * Control values for the Custom step.
  */
-export type CustomStepUpsertDtoControlValues = CustomControlDto | {
+type CustomStepUpsertDtoControlValues = CustomControlDto | {
   [k: string]: any;
 };
 
@@ -41,18 +41,18 @@ export type CustomStepUpsertDto = {
 };
 
 /** @internal */
-export type CustomStepUpsertDtoControlValues$Outbound =
+type CustomStepUpsertDtoControlValues$Outbound =
   | CustomControlDto$Outbound
   | { [k: string]: any };
 
 /** @internal */
-export const CustomStepUpsertDtoControlValues$outboundSchema: z.ZodType<
+const CustomStepUpsertDtoControlValues$outboundSchema: z.ZodType<
   CustomStepUpsertDtoControlValues$Outbound,
   z.ZodTypeDef,
   CustomStepUpsertDtoControlValues
 > = z.union([CustomControlDto$outboundSchema, z.record(z.any())]);
 
-export function customStepUpsertDtoControlValuesToJSON(
+function customStepUpsertDtoControlValuesToJSON(
   customStepUpsertDtoControlValues: CustomStepUpsertDtoControlValues,
 ): string {
   return JSON.stringify(
@@ -89,7 +89,7 @@ export const CustomStepUpsertDto$outboundSchema: z.ZodType<
   });
 });
 
-export function customStepUpsertDtoToJSON(
+function customStepUpsertDtoToJSON(
   customStepUpsertDto: CustomStepUpsertDto,
 ): string {
   return JSON.stringify(

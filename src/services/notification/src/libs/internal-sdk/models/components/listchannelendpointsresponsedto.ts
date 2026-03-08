@@ -47,7 +47,7 @@ export const ListChannelEndpointsResponseDto$inboundSchema: z.ZodType<
   totalCountCapped: z.boolean(),
 });
 
-export function listChannelEndpointsResponseDtoFromJSON(
+function listChannelEndpointsResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<ListChannelEndpointsResponseDto, SDKValidationError> {
   return safeParse(

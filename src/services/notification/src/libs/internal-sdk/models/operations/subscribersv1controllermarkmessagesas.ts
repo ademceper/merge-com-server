@@ -24,7 +24,7 @@ export type SubscribersV1ControllerMarkMessagesAsResponse = {
 };
 
 /** @internal */
-export type SubscribersV1ControllerMarkMessagesAsRequest$Outbound = {
+type SubscribersV1ControllerMarkMessagesAsRequest$Outbound = {
   subscriberId: string;
   "idempotency-key"?: string | undefined;
   MessageMarkAsRequestDto: components.MessageMarkAsRequestDto$Outbound;
@@ -47,7 +47,7 @@ export const SubscribersV1ControllerMarkMessagesAsRequest$outboundSchema:
     });
   });
 
-export function subscribersV1ControllerMarkMessagesAsRequestToJSON(
+function subscribersV1ControllerMarkMessagesAsRequestToJSON(
   subscribersV1ControllerMarkMessagesAsRequest:
     SubscribersV1ControllerMarkMessagesAsRequest,
 ): string {
@@ -74,7 +74,7 @@ export const SubscribersV1ControllerMarkMessagesAsResponse$inboundSchema:
     });
   });
 
-export function subscribersV1ControllerMarkMessagesAsResponseFromJSON(
+function subscribersV1ControllerMarkMessagesAsResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   SubscribersV1ControllerMarkMessagesAsResponse,

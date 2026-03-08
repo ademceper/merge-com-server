@@ -38,7 +38,7 @@ export const DelayControlsMetadataResponseDto$inboundSchema: z.ZodType<
   values: DelayControlDto$inboundSchema,
 });
 
-export function delayControlsMetadataResponseDtoFromJSON(
+function delayControlsMetadataResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<DelayControlsMetadataResponseDto, SDKValidationError> {
   return safeParse(

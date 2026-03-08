@@ -16,7 +16,7 @@ type WorkerModuleTree = { workerClass: WorkerClass; queueDependencies: JobTopicN
 
 type WorkerDepTree = Partial<Record<JobTopicNameEnum, WorkerModuleTree>>;
 
-export const WORKER_MAPPING: WorkerDepTree = {
+const WORKER_MAPPING: WorkerDepTree = {
   [JobTopicNameEnum.STANDARD]: {
     workerClass: StandardWorker,
     queueDependencies: [JobTopicNameEnum.WEB_SOCKETS, JobTopicNameEnum.STANDARD, JobTopicNameEnum.PROCESS_SUBSCRIBER],
@@ -58,7 +58,7 @@ const WORKER_DEPENDENCIES: JobTopicNameEnum[] = workersToProcess.reduce((history
   return [...history, ...workerDependencies];
 }, []);
 
-export const UNIQUE_WORKER_DEPENDENCIES = [...new Set(WORKER_DEPENDENCIES)];
+const UNIQUE_WORKER_DEPENDENCIES = [...new Set(WORKER_DEPENDENCIES)];
 
 export const ACTIVE_WORKERS: Provider[] | any[] = [];
 

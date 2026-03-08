@@ -18,26 +18,26 @@ import { StepIssuesDto, StepIssuesDto$inboundSchema } from './stepissuesdto.js';
 /**
  * Type of editor to use for the body.
  */
-export const EmailStepResponseDtoEditorType = {
+const EmailStepResponseDtoEditorType = {
   Block: 'block',
   Html: 'html',
 } as const;
 /**
  * Type of editor to use for the body.
  */
-export type EmailStepResponseDtoEditorType = ClosedEnum<typeof EmailStepResponseDtoEditorType>;
+type EmailStepResponseDtoEditorType = ClosedEnum<typeof EmailStepResponseDtoEditorType>;
 
 /**
  * Type of renderer to use (raw HTML or React Email step resolver)
  */
-export const EmailStepResponseDtoRendererType = {
+const EmailStepResponseDtoRendererType = {
   Html: 'html',
   ReactEmail: 'react-email',
 } as const;
 /**
  * Type of renderer to use (raw HTML or React Email step resolver)
  */
-export type EmailStepResponseDtoRendererType = ClosedEnum<typeof EmailStepResponseDtoRendererType>;
+type EmailStepResponseDtoRendererType = ClosedEnum<typeof EmailStepResponseDtoRendererType>;
 
 /**
  * Control values for the email step
@@ -126,15 +126,15 @@ export type EmailStepResponseDto = {
 };
 
 /** @internal */
-export const EmailStepResponseDtoEditorType$inboundSchema: z.ZodNativeEnum<typeof EmailStepResponseDtoEditorType> =
+const EmailStepResponseDtoEditorType$inboundSchema: z.ZodNativeEnum<typeof EmailStepResponseDtoEditorType> =
   z.nativeEnum(EmailStepResponseDtoEditorType);
 
 /** @internal */
-export const EmailStepResponseDtoRendererType$inboundSchema: z.ZodNativeEnum<typeof EmailStepResponseDtoRendererType> =
+const EmailStepResponseDtoRendererType$inboundSchema: z.ZodNativeEnum<typeof EmailStepResponseDtoRendererType> =
   z.nativeEnum(EmailStepResponseDtoRendererType);
 
 /** @internal */
-export const EmailStepResponseDtoControlValues$inboundSchema: z.ZodType<
+const EmailStepResponseDtoControlValues$inboundSchema: z.ZodType<
   EmailStepResponseDtoControlValues,
   z.ZodTypeDef,
   unknown
@@ -154,7 +154,7 @@ export const EmailStepResponseDtoControlValues$inboundSchema: z.ZodType<
   true
 );
 
-export function emailStepResponseDtoControlValuesFromJSON(
+function emailStepResponseDtoControlValuesFromJSON(
   jsonString: string
 ): SafeParseResult<EmailStepResponseDtoControlValues, SDKValidationError> {
   return safeParse(
@@ -186,7 +186,7 @@ export const EmailStepResponseDto$inboundSchema: z.ZodType<EmailStepResponseDto,
     });
   });
 
-export function emailStepResponseDtoFromJSON(
+function emailStepResponseDtoFromJSON(
   jsonString: string
 ): SafeParseResult<EmailStepResponseDto, SDKValidationError> {
   return safeParse(

@@ -23,7 +23,7 @@ export const buildSubscriberKey = ({
     identifierPrefix: IdentifierPrefixEnum.SUBSCRIBER_ID,
     identifier: subscriberId,
   });
-export const buildDedupSubscriberKey = ({
+const buildDedupSubscriberKey = ({
   subscriberId,
   _environmentId,
 }: {
@@ -51,7 +51,7 @@ export const buildVariablesKey = ({
     environmentId: _environmentId,
   });
 
-export const buildUserKey = ({ _id }: { _id: string }): string =>
+const buildUserKey = ({ _id }: { _id: string }): string =>
   buildUnscopedKey({
     type: CacheKeyTypeEnum.ENTITY,
     keyEntity: CacheKeyPrefixEnum.USER,
@@ -68,7 +68,7 @@ export const buildGroupedBlueprintsKey = (environmentId: string): string =>
     identifier: BLUEPRINT_IDENTIFIER,
   });
 
-export const buildAuthServiceKey = ({ apiKey }: { apiKey: string }): string => {
+const buildAuthServiceKey = ({ apiKey }: { apiKey: string }): string => {
   const apiKeyHash = createHash(apiKey);
 
   return buildUnscopedKey({
@@ -125,14 +125,14 @@ export const buildUsageKey = ({
   });
 };
 
-export const buildSubscriptionKey = ({ organizationId }: { organizationId: string }): string =>
+const buildSubscriptionKey = ({ organizationId }: { organizationId: string }): string =>
   buildOrganizationScopedKey({
     type: CacheKeyTypeEnum.ENTITY,
     keyEntity: CacheKeyPrefixEnum.SUBSCRIPTION,
     organizationId,
   });
 
-export const buildSubscriberTopicsKey = ({
+const buildSubscriberTopicsKey = ({
   subscriberId,
   _environmentId,
 }: {

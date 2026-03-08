@@ -37,7 +37,7 @@ import {
 /**
  * Channel-specific overrides that apply to all steps of a particular channel type. Step-level overrides take precedence over channel-level overrides.
  */
-export type Channels = {
+type Channels = {
   /**
    * Email channel specific overrides
    */
@@ -96,12 +96,12 @@ export type Overrides = {
   severity?: SeverityLevelEnum | undefined;
 };
 
-export type To1 = TopicPayloadDto | SubscriberPayloadDto | string;
+type To1 = TopicPayloadDto | SubscriberPayloadDto | string;
 
 /**
  * The recipients list of people who will receive the notification. Maximum number of recipients can be 100.
  */
-export type To =
+type To =
   | TopicPayloadDto
   | SubscriberPayloadDto
   | Array<TopicPayloadDto | SubscriberPayloadDto | string>
@@ -113,7 +113,7 @@ export type To =
  * @remarks
  *     If a new actor object is provided, we will create a new subscriber in our system
  */
-export type Actor = SubscriberPayloadDto | string;
+type Actor = SubscriberPayloadDto | string;
 
 /**
  * It is used to specify a tenant context during trigger event.
@@ -121,7 +121,7 @@ export type Actor = SubscriberPayloadDto | string;
  * @remarks
  *     Existing tenants will be updated with the provided details.
  */
-export type Tenant = string | TenantPayloadDto;
+type Tenant = string | TenantPayloadDto;
 
 /**
  * Rich context object with id and optional data
@@ -134,7 +134,7 @@ export type TriggerEventRequestDtoContext2 = {
   data?: { [k: string]: any } | undefined;
 };
 
-export type TriggerEventRequestDtoContext =
+type TriggerEventRequestDtoContext =
   | TriggerEventRequestDtoContext2
   | string;
 
@@ -190,12 +190,12 @@ export type TriggerEventRequestDto = {
 };
 
 /** @internal */
-export type Channels$Outbound = {
+type Channels$Outbound = {
   email?: EmailChannelOverrides$Outbound | undefined;
 };
 
 /** @internal */
-export const Channels$outboundSchema: z.ZodType<
+const Channels$outboundSchema: z.ZodType<
   Channels$Outbound,
   z.ZodTypeDef,
   Channels
@@ -203,7 +203,7 @@ export const Channels$outboundSchema: z.ZodType<
   email: EmailChannelOverrides$outboundSchema.optional(),
 });
 
-export function channelsToJSON(channels: Channels): string {
+function channelsToJSON(channels: Channels): string {
   return JSON.stringify(Channels$outboundSchema.parse(channels));
 }
 
@@ -221,7 +221,7 @@ export type Overrides$Outbound = {
 };
 
 /** @internal */
-export const Overrides$outboundSchema: z.ZodType<
+const Overrides$outboundSchema: z.ZodType<
   Overrides$Outbound,
   z.ZodTypeDef,
   Overrides
@@ -237,37 +237,37 @@ export const Overrides$outboundSchema: z.ZodType<
   severity: SeverityLevelEnum$outboundSchema.optional(),
 });
 
-export function overridesToJSON(overrides: Overrides): string {
+function overridesToJSON(overrides: Overrides): string {
   return JSON.stringify(Overrides$outboundSchema.parse(overrides));
 }
 
 /** @internal */
-export type To1$Outbound =
+type To1$Outbound =
   | TopicPayloadDto$Outbound
   | SubscriberPayloadDto$Outbound
   | string;
 
 /** @internal */
-export const To1$outboundSchema: z.ZodType<To1$Outbound, z.ZodTypeDef, To1> = z
+const To1$outboundSchema: z.ZodType<To1$Outbound, z.ZodTypeDef, To1> = z
   .union([
     TopicPayloadDto$outboundSchema,
     SubscriberPayloadDto$outboundSchema,
     z.string(),
   ]);
 
-export function to1ToJSON(to1: To1): string {
+function to1ToJSON(to1: To1): string {
   return JSON.stringify(To1$outboundSchema.parse(to1));
 }
 
 /** @internal */
-export type To$Outbound =
+type To$Outbound =
   | TopicPayloadDto$Outbound
   | SubscriberPayloadDto$Outbound
   | Array<TopicPayloadDto$Outbound | SubscriberPayloadDto$Outbound | string>
   | string;
 
 /** @internal */
-export const To$outboundSchema: z.ZodType<To$Outbound, z.ZodTypeDef, To> = z
+const To$outboundSchema: z.ZodType<To$Outbound, z.ZodTypeDef, To> = z
   .union([
     TopicPayloadDto$outboundSchema,
     SubscriberPayloadDto$outboundSchema,
@@ -281,35 +281,35 @@ export const To$outboundSchema: z.ZodType<To$Outbound, z.ZodTypeDef, To> = z
     z.string(),
   ]);
 
-export function toToJSON(to: To): string {
+function toToJSON(to: To): string {
   return JSON.stringify(To$outboundSchema.parse(to));
 }
 
 /** @internal */
-export type Actor$Outbound = SubscriberPayloadDto$Outbound | string;
+type Actor$Outbound = SubscriberPayloadDto$Outbound | string;
 
 /** @internal */
-export const Actor$outboundSchema: z.ZodType<
+const Actor$outboundSchema: z.ZodType<
   Actor$Outbound,
   z.ZodTypeDef,
   Actor
 > = z.union([SubscriberPayloadDto$outboundSchema, z.string()]);
 
-export function actorToJSON(actor: Actor): string {
+function actorToJSON(actor: Actor): string {
   return JSON.stringify(Actor$outboundSchema.parse(actor));
 }
 
 /** @internal */
-export type Tenant$Outbound = string | TenantPayloadDto$Outbound;
+type Tenant$Outbound = string | TenantPayloadDto$Outbound;
 
 /** @internal */
-export const Tenant$outboundSchema: z.ZodType<
+const Tenant$outboundSchema: z.ZodType<
   Tenant$Outbound,
   z.ZodTypeDef,
   Tenant
 > = z.union([z.string(), TenantPayloadDto$outboundSchema]);
 
-export function tenantToJSON(tenant: Tenant): string {
+function tenantToJSON(tenant: Tenant): string {
   return JSON.stringify(Tenant$outboundSchema.parse(tenant));
 }
 
@@ -320,7 +320,7 @@ export type TriggerEventRequestDtoContext2$Outbound = {
 };
 
 /** @internal */
-export const TriggerEventRequestDtoContext2$outboundSchema: z.ZodType<
+const TriggerEventRequestDtoContext2$outboundSchema: z.ZodType<
   TriggerEventRequestDtoContext2$Outbound,
   z.ZodTypeDef,
   TriggerEventRequestDtoContext2
@@ -329,7 +329,7 @@ export const TriggerEventRequestDtoContext2$outboundSchema: z.ZodType<
   data: z.record(z.any()).optional(),
 });
 
-export function triggerEventRequestDtoContext2ToJSON(
+function triggerEventRequestDtoContext2ToJSON(
   triggerEventRequestDtoContext2: TriggerEventRequestDtoContext2,
 ): string {
   return JSON.stringify(
@@ -340,12 +340,12 @@ export function triggerEventRequestDtoContext2ToJSON(
 }
 
 /** @internal */
-export type TriggerEventRequestDtoContext$Outbound =
+type TriggerEventRequestDtoContext$Outbound =
   | TriggerEventRequestDtoContext2$Outbound
   | string;
 
 /** @internal */
-export const TriggerEventRequestDtoContext$outboundSchema: z.ZodType<
+const TriggerEventRequestDtoContext$outboundSchema: z.ZodType<
   TriggerEventRequestDtoContext$Outbound,
   z.ZodTypeDef,
   TriggerEventRequestDtoContext
@@ -354,7 +354,7 @@ export const TriggerEventRequestDtoContext$outboundSchema: z.ZodType<
   z.string(),
 ]);
 
-export function triggerEventRequestDtoContextToJSON(
+function triggerEventRequestDtoContextToJSON(
   triggerEventRequestDtoContext: TriggerEventRequestDtoContext,
 ): string {
   return JSON.stringify(
@@ -418,7 +418,7 @@ export const TriggerEventRequestDto$outboundSchema: z.ZodType<
   });
 });
 
-export function triggerEventRequestDtoToJSON(
+function triggerEventRequestDtoToJSON(
   triggerEventRequestDto: TriggerEventRequestDto,
 ): string {
   return JSON.stringify(

@@ -24,7 +24,7 @@ export type SubscribersControllerUpdateSubscriberPreferencesResponse = {
 };
 
 /** @internal */
-export type SubscribersControllerUpdateSubscriberPreferencesRequest$Outbound = {
+type SubscribersControllerUpdateSubscriberPreferencesRequest$Outbound = {
   subscriberId: string;
   "idempotency-key"?: string | undefined;
   PatchSubscriberPreferencesDto:
@@ -49,7 +49,7 @@ export const SubscribersControllerUpdateSubscriberPreferencesRequest$outboundSch
     });
   });
 
-export function subscribersControllerUpdateSubscriberPreferencesRequestToJSON(
+function subscribersControllerUpdateSubscriberPreferencesRequestToJSON(
   subscribersControllerUpdateSubscriberPreferencesRequest:
     SubscribersControllerUpdateSubscriberPreferencesRequest,
 ): string {
@@ -75,7 +75,7 @@ export const SubscribersControllerUpdateSubscriberPreferencesResponse$inboundSch
     });
   });
 
-export function subscribersControllerUpdateSubscriberPreferencesResponseFromJSON(
+function subscribersControllerUpdateSubscriberPreferencesResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   SubscribersControllerUpdateSubscriberPreferencesResponse,

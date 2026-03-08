@@ -1,6 +1,6 @@
 /// <reference lib="es2021" />
 
-export const toConstantCase = (str: string): string =>
+const toConstantCase = (str: string): string =>
   str
     .replaceAll(/([a-z])([A-Z])/g, '$1_$2')
     .replaceAll(/[\s-]+/g, '_')

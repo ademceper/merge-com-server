@@ -24,7 +24,7 @@ export type IntegrationsControllerUpdateIntegrationByIdResponse = {
 };
 
 /** @internal */
-export type IntegrationsControllerUpdateIntegrationByIdRequest$Outbound = {
+type IntegrationsControllerUpdateIntegrationByIdRequest$Outbound = {
   integrationId: string;
   "idempotency-key"?: string | undefined;
   UpdateIntegrationRequestDto: components.UpdateIntegrationRequestDto$Outbound;
@@ -48,7 +48,7 @@ export const IntegrationsControllerUpdateIntegrationByIdRequest$outboundSchema:
     });
   });
 
-export function integrationsControllerUpdateIntegrationByIdRequestToJSON(
+function integrationsControllerUpdateIntegrationByIdRequestToJSON(
   integrationsControllerUpdateIntegrationByIdRequest:
     IntegrationsControllerUpdateIntegrationByIdRequest,
 ): string {
@@ -75,7 +75,7 @@ export const IntegrationsControllerUpdateIntegrationByIdResponse$inboundSchema:
     });
   });
 
-export function integrationsControllerUpdateIntegrationByIdResponseFromJSON(
+function integrationsControllerUpdateIntegrationByIdResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   IntegrationsControllerUpdateIntegrationByIdResponse,

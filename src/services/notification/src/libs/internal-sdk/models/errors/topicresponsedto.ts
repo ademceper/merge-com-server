@@ -6,7 +6,7 @@ import * as z from "zod/v3";
 import { remap as remap$ } from "../../lib/primitives.js";
 import { NovuError } from "./novuerror.js";
 
-export type TopicResponseDtoData = {
+type TopicResponseDtoData = {
   /**
    * The identifier of the topic
    */

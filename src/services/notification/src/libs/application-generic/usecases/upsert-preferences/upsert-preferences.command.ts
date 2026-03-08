@@ -5,7 +5,7 @@ import { IsBoolean, IsObject, IsOptional, ValidateIf, ValidateNested } from 'cla
 import { EnvironmentCommand } from '../../commands';
 
 // PARTIAL PREFERENCES
-export class WorkflowPreferencePartial implements Partial<WorkflowPreferenceType> {
+class WorkflowPreferencePartial implements Partial<WorkflowPreferenceType> {
   @IsOptional()
   @IsBoolean()
   readonly enabled?: boolean;
@@ -15,13 +15,13 @@ export class WorkflowPreferencePartial implements Partial<WorkflowPreferenceType
   readonly readOnly?: boolean;
 }
 
-export class ChannelPreferencePartial implements Partial<ChannelPreferenceType> {
+class ChannelPreferencePartial implements Partial<ChannelPreferenceType> {
   @IsOptional()
   @IsBoolean()
   readonly enabled?: boolean;
 }
 
-export class ChannelPreferencesPartial implements Partial<Record<ChannelTypeEnum, ChannelPreferencePartial>> {
+class ChannelPreferencesPartial implements Partial<Record<ChannelTypeEnum, ChannelPreferencePartial>> {
   @IsOptional()
   @IsObject()
   @ValidateNested()
@@ -53,7 +53,7 @@ export class ChannelPreferencesPartial implements Partial<Record<ChannelTypeEnum
   readonly chat?: ChannelPreferencePartial;
 }
 
-export class PreferencesPartial implements WorkflowPreferencesPartial {
+class PreferencesPartial implements WorkflowPreferencesPartial {
   @IsOptional()
   @IsObject()
   @ValidateNested()
@@ -74,7 +74,7 @@ export class UpsertPreferencesPartialBaseCommand extends EnvironmentCommand {
 }
 
 // FULL PREFERENCES
-export class WorkflowPreferenceRequired implements WorkflowPreferenceType {
+class WorkflowPreferenceRequired implements WorkflowPreferenceType {
   @IsBoolean()
   readonly enabled: boolean;
 
@@ -82,12 +82,12 @@ export class WorkflowPreferenceRequired implements WorkflowPreferenceType {
   readonly readOnly: boolean;
 }
 
-export class ChannelPreferenceRequired implements ChannelPreferenceType {
+class ChannelPreferenceRequired implements ChannelPreferenceType {
   @IsBoolean()
   readonly enabled: boolean;
 }
 
-export class ChannelPreferencesRequired implements Record<ChannelTypeEnum, ChannelPreferenceRequired> {
+class ChannelPreferencesRequired implements Record<ChannelTypeEnum, ChannelPreferenceRequired> {
   @IsObject()
   @ValidateNested()
   @Type(() => ChannelPreferenceRequired)

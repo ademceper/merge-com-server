@@ -1,7 +1,7 @@
 export const LAYOUT_CONTENT_VARIABLE = 'content';
 export const LAYOUT_PREVIEW_WORKFLOW_ID = 'layout-preview-workflow';
 export const LAYOUT_PREVIEW_EMAIL_STEP = 'layout-preview-email-step';
-export const LAYOUT_PREVIEW_PLACEHOLDER_TEXT = 'Dynamic placeholder content';
+const LAYOUT_PREVIEW_PLACEHOLDER_TEXT = 'Dynamic placeholder content';
 export const LAYOUT_PREVIEW_CONTENT_PLACEHOLDER =
   `<table align="center" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0" data-content-placeholder>` +
   `<tbody style="width: 100%">` +

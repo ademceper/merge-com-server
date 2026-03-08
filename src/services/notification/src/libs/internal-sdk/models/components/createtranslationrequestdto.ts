@@ -37,7 +37,7 @@ export type CreateTranslationRequestDto = {
 };
 
 /** @internal */
-export const ResourceType$outboundSchema: z.ZodNativeEnum<typeof ResourceType> =
+const ResourceType$outboundSchema: z.ZodNativeEnum<typeof ResourceType> =
   z.nativeEnum(ResourceType);
 
 /** @internal */
@@ -60,7 +60,7 @@ export const CreateTranslationRequestDto$outboundSchema: z.ZodType<
   content: z.record(z.any()),
 });
 
-export function createTranslationRequestDtoToJSON(
+function createTranslationRequestDtoToJSON(
   createTranslationRequestDto: CreateTranslationRequestDto,
 ): string {
   return JSON.stringify(

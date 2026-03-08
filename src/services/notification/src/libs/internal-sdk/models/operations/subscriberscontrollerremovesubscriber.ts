@@ -23,7 +23,7 @@ export type SubscribersControllerRemoveSubscriberResponse = {
 };
 
 /** @internal */
-export type SubscribersControllerRemoveSubscriberRequest$Outbound = {
+type SubscribersControllerRemoveSubscriberRequest$Outbound = {
   subscriberId: string;
   "idempotency-key"?: string | undefined;
 };
@@ -43,7 +43,7 @@ export const SubscribersControllerRemoveSubscriberRequest$outboundSchema:
     });
   });
 
-export function subscribersControllerRemoveSubscriberRequestToJSON(
+function subscribersControllerRemoveSubscriberRequestToJSON(
   subscribersControllerRemoveSubscriberRequest:
     SubscribersControllerRemoveSubscriberRequest,
 ): string {
@@ -70,7 +70,7 @@ export const SubscribersControllerRemoveSubscriberResponse$inboundSchema:
     });
   });
 
-export function subscribersControllerRemoveSubscriberResponseFromJSON(
+function subscribersControllerRemoveSubscriberResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   SubscribersControllerRemoveSubscriberResponse,

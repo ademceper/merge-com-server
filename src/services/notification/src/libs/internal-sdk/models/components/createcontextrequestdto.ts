@@ -37,7 +37,7 @@ export const CreateContextRequestDto$outboundSchema: z.ZodType<
   data: z.record(z.any()).optional(),
 });
 
-export function createContextRequestDtoToJSON(
+function createContextRequestDtoToJSON(
   createContextRequestDto: CreateContextRequestDto,
 ): string {
   return JSON.stringify(

@@ -5,7 +5,7 @@ import { Type } from 'class-transformer';
 import { ArrayNotEmpty, IsArray, IsDefined, IsNotEmpty, IsOptional, IsString, ValidateNested } from 'class-validator';
 import { BaseSubscriberFieldsDto } from '../../shared/dtos/base-subscriber-fields.dto';
 
-export class ChannelCredentialsDto implements IChannelCredentials {
+class ChannelCredentialsDto implements IChannelCredentials {
   @ApiPropertyOptional({
     description: 'The URL for the webhook associated with the channel.',
     type: String,

@@ -47,7 +47,7 @@ export const ListTopicsResponseDto$inboundSchema: z.ZodType<
   totalCountCapped: z.boolean(),
 });
 
-export function listTopicsResponseDtoFromJSON(
+function listTopicsResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<ListTopicsResponseDto, SDKValidationError> {
   return safeParse(

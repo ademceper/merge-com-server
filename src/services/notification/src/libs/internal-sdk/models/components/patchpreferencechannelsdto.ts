@@ -54,7 +54,7 @@ export const PatchPreferenceChannelsDto$outboundSchema: z.ZodType<
   });
 });
 
-export function patchPreferenceChannelsDtoToJSON(
+function patchPreferenceChannelsDtoToJSON(
   patchPreferenceChannelsDto: PatchPreferenceChannelsDto,
 ): string {
   return JSON.stringify(

@@ -42,7 +42,7 @@ export interface IOrganizationRepository extends IOrganizationRepositoryMongo {
  * MongoDB specific methods from base-repository.ts to achieve
  * common interface for EE and Community repositories
  */
-export interface IOrganizationRepositoryMongo {
+interface IOrganizationRepositoryMongo {
   create(data: any, options?: any): Promise<OrganizationEntity>;
   update(query: any, body: any): Promise<{ matched: number; modified: number }>;
   delete(query: any): Promise<{ acknowledged: boolean; deletedCount: number }>;

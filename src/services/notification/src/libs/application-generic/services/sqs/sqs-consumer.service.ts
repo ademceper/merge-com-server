@@ -10,7 +10,7 @@ import type { ISqsConsumerOptions, ISqsMessageMeta } from './types';
 
 const LOG_CONTEXT = 'SqsConsumerService';
 
-export type SqsMessageProcessor<T = unknown> = (data: T, meta: ISqsMessageMeta) => Promise<void>;
+type SqsMessageProcessor<T = unknown> = (data: T, meta: ISqsMessageMeta) => Promise<void>;
 
 /**
  * In-memory concurrency pool that mirrors BullMQ's concurrency model.

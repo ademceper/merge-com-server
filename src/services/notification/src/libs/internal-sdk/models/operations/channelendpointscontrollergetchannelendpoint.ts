@@ -26,7 +26,7 @@ export type ChannelEndpointsControllerGetChannelEndpointResponse = {
 };
 
 /** @internal */
-export type ChannelEndpointsControllerGetChannelEndpointRequest$Outbound = {
+type ChannelEndpointsControllerGetChannelEndpointRequest$Outbound = {
   identifier: string;
   "idempotency-key"?: string | undefined;
 };
@@ -46,7 +46,7 @@ export const ChannelEndpointsControllerGetChannelEndpointRequest$outboundSchema:
     });
   });
 
-export function channelEndpointsControllerGetChannelEndpointRequestToJSON(
+function channelEndpointsControllerGetChannelEndpointRequestToJSON(
   channelEndpointsControllerGetChannelEndpointRequest:
     ChannelEndpointsControllerGetChannelEndpointRequest,
 ): string {
@@ -73,7 +73,7 @@ export const ChannelEndpointsControllerGetChannelEndpointResponse$inboundSchema:
     });
   });
 
-export function channelEndpointsControllerGetChannelEndpointResponseFromJSON(
+function channelEndpointsControllerGetChannelEndpointResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   ChannelEndpointsControllerGetChannelEndpointResponse,

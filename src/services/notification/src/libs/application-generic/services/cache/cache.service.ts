@@ -11,7 +11,7 @@ enum CacheServiceActionsEnum {
   SET_QUERY = 'setQuery',
 }
 
-export interface ICacheService {
+interface ICacheService {
   set(key: string, value: string, options?: CachingConfig);
   get(key: string);
   del(key: string);
@@ -212,7 +212,7 @@ export class CacheService implements ICacheService {
   }
 }
 
-export function splitKey(key: string) {
+function splitKey(key: string) {
   const keyDelimiter = `:${QUERY_PREFIX}=`;
   const keyParts = key.split(keyDelimiter);
   const credentials = keyParts[0] ?? '';

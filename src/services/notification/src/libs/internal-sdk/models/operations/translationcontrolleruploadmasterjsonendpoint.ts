@@ -27,13 +27,13 @@ export type TranslationControllerUploadMasterJsonEndpointRequest = {
 };
 
 /** @internal */
-export type FileT$Outbound = {
+type FileT$Outbound = {
   fileName: string;
   content: ReadableStream<Uint8Array> | Blob | ArrayBuffer | Uint8Array;
 };
 
 /** @internal */
-export const FileT$outboundSchema: z.ZodType<
+const FileT$outboundSchema: z.ZodType<
   FileT$Outbound,
   z.ZodTypeDef,
   FileT
@@ -47,18 +47,18 @@ export const FileT$outboundSchema: z.ZodType<
   ]),
 });
 
-export function fileToJSON(fileT: FileT): string {
+function fileToJSON(fileT: FileT): string {
   return JSON.stringify(FileT$outboundSchema.parse(fileT));
 }
 
 /** @internal */
-export type TranslationControllerUploadMasterJsonEndpointRequestBody$Outbound =
+type TranslationControllerUploadMasterJsonEndpointRequestBody$Outbound =
   {
     file: FileT$Outbound | Blob;
   };
 
 /** @internal */
-export const TranslationControllerUploadMasterJsonEndpointRequestBody$outboundSchema:
+const TranslationControllerUploadMasterJsonEndpointRequestBody$outboundSchema:
   z.ZodType<
     TranslationControllerUploadMasterJsonEndpointRequestBody$Outbound,
     z.ZodTypeDef,
@@ -67,7 +67,7 @@ export const TranslationControllerUploadMasterJsonEndpointRequestBody$outboundSc
     file: z.lazy(() => FileT$outboundSchema).or(blobLikeSchema),
   });
 
-export function translationControllerUploadMasterJsonEndpointRequestBodyToJSON(
+function translationControllerUploadMasterJsonEndpointRequestBodyToJSON(
   translationControllerUploadMasterJsonEndpointRequestBody:
     TranslationControllerUploadMasterJsonEndpointRequestBody,
 ): string {
@@ -78,7 +78,7 @@ export function translationControllerUploadMasterJsonEndpointRequestBodyToJSON(
 }
 
 /** @internal */
-export type TranslationControllerUploadMasterJsonEndpointRequest$Outbound = {
+type TranslationControllerUploadMasterJsonEndpointRequest$Outbound = {
   "idempotency-key"?: string | undefined;
   RequestBody:
     TranslationControllerUploadMasterJsonEndpointRequestBody$Outbound;
@@ -102,7 +102,7 @@ export const TranslationControllerUploadMasterJsonEndpointRequest$outboundSchema
     });
   });
 
-export function translationControllerUploadMasterJsonEndpointRequestToJSON(
+function translationControllerUploadMasterJsonEndpointRequestToJSON(
   translationControllerUploadMasterJsonEndpointRequest:
     TranslationControllerUploadMasterJsonEndpointRequest,
 ): string {

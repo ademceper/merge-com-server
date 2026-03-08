@@ -45,10 +45,10 @@ export type StepExecutionDetailDto = {
 };
 
 /** @internal */
-export const Raw$inboundSchema: z.ZodType<Raw, z.ZodTypeDef, unknown> = z
+const Raw$inboundSchema: z.ZodType<Raw, z.ZodTypeDef, unknown> = z
   .object({});
 
-export function rawFromJSON(
+function rawFromJSON(
   jsonString: string,
 ): SafeParseResult<Raw, SDKValidationError> {
   return safeParse(
@@ -76,7 +76,7 @@ export const StepExecutionDetailDto$inboundSchema: z.ZodType<
   });
 });
 
-export function stepExecutionDetailDtoFromJSON(
+function stepExecutionDetailDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<StepExecutionDetailDto, SDKValidationError> {
   return safeParse(

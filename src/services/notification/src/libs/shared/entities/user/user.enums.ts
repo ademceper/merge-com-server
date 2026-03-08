@@ -1,7 +1,6 @@
 export enum AuthProviderEnum {
-  GITHUB = 'github',
-}
+  }
 
-export enum UserRoleEnum {
+enum UserRoleEnum {
   USER = 'user',
 }

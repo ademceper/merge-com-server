@@ -7,7 +7,7 @@ import { BaseProvider, CasingEnum } from '../../../base.provider';
 import type { WithPassthrough } from '../../../utils/types';
 import type { IMandrilInterface, IMandrillSendOptions, IMandrillTemplateSendOptions } from './mandril.interface';
 
-export enum MandrillStatusEnum {
+enum MandrillStatusEnum {
   OPENED = 'open',
   SENT = 'send',
   DEFERRED = 'deferral',
@@ -20,7 +20,7 @@ export enum MandrillStatusEnum {
   DELIVERED = 'delivered',
 }
 
-export const isMandrillTemplateSendOptions = (
+const isMandrillTemplateSendOptions = (
   options: IMandrillSendOptions | IMandrillTemplateSendOptions
 ): options is IMandrillTemplateSendOptions => {
   return 'template_name' in options && 'template_content' in options && Array.isArray(options.template_content);

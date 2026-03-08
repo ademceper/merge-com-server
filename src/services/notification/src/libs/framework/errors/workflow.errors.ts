@@ -9,7 +9,7 @@ export class WorkflowNotFoundError extends ResourceNotFoundError {
   }
 }
 
-export class WorkflowAlreadyExistsError extends ResourceConflictError {
+class WorkflowAlreadyExistsError extends ResourceConflictError {
   code = ErrorCodeEnum.WORKFLOW_ALREADY_EXISTS_ERROR;
 
   constructor(id: string) {

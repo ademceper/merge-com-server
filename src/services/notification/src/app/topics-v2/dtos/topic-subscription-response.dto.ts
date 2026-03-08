@@ -1,7 +1,7 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { TopicResponseDto } from './topic-response.dto';
 
-export class SubscriberDto {
+class SubscriberDto {
   @ApiProperty({
     description: 'The identifier of the subscriber',
     example: '64da692e9a94fb2e6449ad07',

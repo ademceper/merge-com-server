@@ -12,7 +12,7 @@ export interface IWebSocketDataDto {
   contextKeys: string[];
 }
 
-export interface IWebSocketJob extends IJobParams {
+interface IWebSocketJob extends IJobParams {
   name: string;
   data: any;
   groupId?: string;

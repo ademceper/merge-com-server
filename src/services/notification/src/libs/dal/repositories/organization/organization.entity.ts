@@ -39,7 +39,7 @@ export class OrganizationEntity implements IOrganizationEntity {
   createdBy?: string;
 }
 
-export type Branding = {
+type Branding = {
   fontFamily?: string;
   fontColor?: string;
   contentBackground?: string;
@@ -62,7 +62,7 @@ export enum PartnerTypeEnum {
   VERCEL = 'vercel',
 }
 
-export enum DirectionEnum {
+enum DirectionEnum {
   LTR = 'ltr',
   RTL = 'trl',
 }

@@ -24,7 +24,7 @@ export type EnvironmentsControllerV1DeleteEnvironmentResponse = {
 };
 
 /** @internal */
-export type EnvironmentsControllerV1DeleteEnvironmentRequest$Outbound = {
+type EnvironmentsControllerV1DeleteEnvironmentRequest$Outbound = {
   environmentId: string;
   "idempotency-key"?: string | undefined;
 };
@@ -44,7 +44,7 @@ export const EnvironmentsControllerV1DeleteEnvironmentRequest$outboundSchema:
     });
   });
 
-export function environmentsControllerV1DeleteEnvironmentRequestToJSON(
+function environmentsControllerV1DeleteEnvironmentRequestToJSON(
   environmentsControllerV1DeleteEnvironmentRequest:
     EnvironmentsControllerV1DeleteEnvironmentRequest,
 ): string {
@@ -69,7 +69,7 @@ export const EnvironmentsControllerV1DeleteEnvironmentResponse$inboundSchema:
     });
   });
 
-export function environmentsControllerV1DeleteEnvironmentResponseFromJSON(
+function environmentsControllerV1DeleteEnvironmentResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   EnvironmentsControllerV1DeleteEnvironmentResponse,

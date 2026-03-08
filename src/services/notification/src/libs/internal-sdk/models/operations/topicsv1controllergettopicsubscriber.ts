@@ -30,7 +30,7 @@ export type TopicsV1ControllerGetTopicSubscriberResponse = {
 };
 
 /** @internal */
-export type TopicsV1ControllerGetTopicSubscriberRequest$Outbound = {
+type TopicsV1ControllerGetTopicSubscriberRequest$Outbound = {
   topicKey: string;
   externalSubscriberId: string;
   "idempotency-key"?: string | undefined;
@@ -52,7 +52,7 @@ export const TopicsV1ControllerGetTopicSubscriberRequest$outboundSchema:
     });
   });
 
-export function topicsV1ControllerGetTopicSubscriberRequestToJSON(
+function topicsV1ControllerGetTopicSubscriberRequestToJSON(
   topicsV1ControllerGetTopicSubscriberRequest:
     TopicsV1ControllerGetTopicSubscriberRequest,
 ): string {
@@ -79,7 +79,7 @@ export const TopicsV1ControllerGetTopicSubscriberResponse$inboundSchema:
     });
   });
 
-export function topicsV1ControllerGetTopicSubscriberResponseFromJSON(
+function topicsV1ControllerGetTopicSubscriberResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   TopicsV1ControllerGetTopicSubscriberResponse,

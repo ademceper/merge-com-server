@@ -5,7 +5,7 @@ import { IsDefined, IsEnum, IsObject, IsOptional, IsString } from 'class-validat
 
 import { ChannelCredentials } from '../../shared/dtos/subscriber-channel';
 
-export function getEnumValues<T>(enumObj: T): Array<T[keyof T]> {
+function getEnumValues<T>(enumObj: T): Array<T[keyof T]> {
   return Object.values(enumObj || {}) as Array<T[keyof T]>;
 }
 export class UpdateSubscriberChannelRequestDto implements ISubscriberChannel {

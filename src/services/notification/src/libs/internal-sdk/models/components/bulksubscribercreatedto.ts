@@ -30,7 +30,7 @@ export const BulkSubscriberCreateDto$outboundSchema: z.ZodType<
   subscribers: z.array(CreateSubscriberRequestDto$outboundSchema),
 });
 
-export function bulkSubscriberCreateDtoToJSON(
+function bulkSubscriberCreateDtoToJSON(
   bulkSubscriberCreateDto: BulkSubscriberCreateDto,
 ): string {
   return JSON.stringify(

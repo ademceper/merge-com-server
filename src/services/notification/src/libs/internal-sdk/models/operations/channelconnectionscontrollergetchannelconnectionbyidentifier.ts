@@ -28,7 +28,7 @@ export type ChannelConnectionsControllerGetChannelConnectionByIdentifierResponse
   };
 
 /** @internal */
-export type ChannelConnectionsControllerGetChannelConnectionByIdentifierRequest$Outbound =
+type ChannelConnectionsControllerGetChannelConnectionByIdentifierRequest$Outbound =
   {
     identifier: string;
     "idempotency-key"?: string | undefined;
@@ -49,7 +49,7 @@ export const ChannelConnectionsControllerGetChannelConnectionByIdentifierRequest
     });
   });
 
-export function channelConnectionsControllerGetChannelConnectionByIdentifierRequestToJSON(
+function channelConnectionsControllerGetChannelConnectionByIdentifierRequestToJSON(
   channelConnectionsControllerGetChannelConnectionByIdentifierRequest:
     ChannelConnectionsControllerGetChannelConnectionByIdentifierRequest,
 ): string {
@@ -77,7 +77,7 @@ export const ChannelConnectionsControllerGetChannelConnectionByIdentifierRespons
     });
   });
 
-export function channelConnectionsControllerGetChannelConnectionByIdentifierResponseFromJSON(
+function channelConnectionsControllerGetChannelConnectionByIdentifierResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   ChannelConnectionsControllerGetChannelConnectionByIdentifierResponse,

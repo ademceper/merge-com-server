@@ -22,7 +22,7 @@ export const BridgeConfigurationDto$outboundSchema: z.ZodType<
   url: z.string().optional(),
 });
 
-export function bridgeConfigurationDtoToJSON(
+function bridgeConfigurationDtoToJSON(
   bridgeConfigurationDto: BridgeConfigurationDto,
 ): string {
   return JSON.stringify(

@@ -14,6 +14,6 @@ export function computeWorkflowStatus(workflowActive: boolean, steps: Notificati
   return WorkflowStatusEnum.ERROR;
 }
 
-export function hasControlIssues(issue: StepIssues | undefined) {
+function hasControlIssues(issue: StepIssues | undefined) {
   return issue?.controls && Object.keys(issue.controls).length > 0;
 }

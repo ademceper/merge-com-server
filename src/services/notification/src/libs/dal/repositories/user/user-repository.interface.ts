@@ -18,7 +18,7 @@ export interface IUserRepository extends IUserRepositoryMongo {
  * MongoDB specific methods from base-repository.ts to achieve
  * common interface for EE and Community repositories
  */
-export interface IUserRepositoryMongo {
+interface IUserRepositoryMongo {
   create(data: any, options?: any): Promise<UserEntity>;
   update(query: any, body: any): Promise<{ matched: number; modified: number }>;
   delete(query: any): Promise<{ acknowledged: boolean; deletedCount: number }>;

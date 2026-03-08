@@ -43,11 +43,11 @@ export const delayDynamicOutputSchema = {
   additionalProperties: false,
 } as const satisfies JsonSchema;
 
-export const delayOutputSchema = {
+const delayOutputSchema = {
   oneOf: [delayRegularOutputSchema, delayTimedOutputSchema, delayDynamicOutputSchema],
 } as const satisfies JsonSchema;
 
-export const delayResultSchema = {
+const delayResultSchema = {
   type: 'object',
   properties: {
     duration: { type: 'number' },

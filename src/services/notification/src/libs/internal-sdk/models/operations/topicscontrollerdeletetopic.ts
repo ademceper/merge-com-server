@@ -26,7 +26,7 @@ export type TopicsControllerDeleteTopicResponse = {
 };
 
 /** @internal */
-export type TopicsControllerDeleteTopicRequest$Outbound = {
+type TopicsControllerDeleteTopicRequest$Outbound = {
   topicKey: string;
   "idempotency-key"?: string | undefined;
 };
@@ -45,7 +45,7 @@ export const TopicsControllerDeleteTopicRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function topicsControllerDeleteTopicRequestToJSON(
+function topicsControllerDeleteTopicRequestToJSON(
   topicsControllerDeleteTopicRequest: TopicsControllerDeleteTopicRequest,
 ): string {
   return JSON.stringify(
@@ -70,7 +70,7 @@ export const TopicsControllerDeleteTopicResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function topicsControllerDeleteTopicResponseFromJSON(
+function topicsControllerDeleteTopicResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<TopicsControllerDeleteTopicResponse, SDKValidationError> {
   return safeParse(

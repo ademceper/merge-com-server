@@ -26,7 +26,7 @@ export type SubscribersV1ControllerMarkActionAsSeenResponse = {
 };
 
 /** @internal */
-export type SubscribersV1ControllerMarkActionAsSeenRequest$Outbound = {
+type SubscribersV1ControllerMarkActionAsSeenRequest$Outbound = {
   messageId: string;
   type: string;
   subscriberId: string;
@@ -54,7 +54,7 @@ export const SubscribersV1ControllerMarkActionAsSeenRequest$outboundSchema:
     });
   });
 
-export function subscribersV1ControllerMarkActionAsSeenRequestToJSON(
+function subscribersV1ControllerMarkActionAsSeenRequestToJSON(
   subscribersV1ControllerMarkActionAsSeenRequest:
     SubscribersV1ControllerMarkActionAsSeenRequest,
 ): string {
@@ -81,7 +81,7 @@ export const SubscribersV1ControllerMarkActionAsSeenResponse$inboundSchema:
     });
   });
 
-export function subscribersV1ControllerMarkActionAsSeenResponseFromJSON(
+function subscribersV1ControllerMarkActionAsSeenResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   SubscribersV1ControllerMarkActionAsSeenResponse,

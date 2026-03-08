@@ -42,14 +42,14 @@ export const LayoutPreviewPayloadDto$outboundSchema: z.ZodType<
   subscriber: SubscriberResponseDtoOptional$outboundSchema.optional(),
 });
 
-export function layoutPreviewPayloadDtoToJSON(
+function layoutPreviewPayloadDtoToJSON(
   layoutPreviewPayloadDto: LayoutPreviewPayloadDto,
 ): string {
   return JSON.stringify(
     LayoutPreviewPayloadDto$outboundSchema.parse(layoutPreviewPayloadDto),
   );
 }
-export function layoutPreviewPayloadDtoFromJSON(
+function layoutPreviewPayloadDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<LayoutPreviewPayloadDto, SDKValidationError> {
   return safeParse(

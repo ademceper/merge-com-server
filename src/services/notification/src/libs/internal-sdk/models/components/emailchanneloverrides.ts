@@ -25,7 +25,7 @@ export const EmailChannelOverrides$outboundSchema: z.ZodType<
   layoutId: z.nullable(z.string()).optional(),
 });
 
-export function emailChannelOverridesToJSON(
+function emailChannelOverridesToJSON(
   emailChannelOverrides: EmailChannelOverrides,
 ): string {
   return JSON.stringify(

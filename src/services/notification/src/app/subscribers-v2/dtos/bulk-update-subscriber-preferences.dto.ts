@@ -6,7 +6,7 @@ import { ArrayMaxSize, IsArray, IsDefined, IsOptional, IsString, ValidateNested 
 import { ApiContextPayload } from '../../shared/framework/swagger';
 import { PatchPreferenceChannelsDto } from './patch-subscriber-preferences.dto';
 
-export class BulkUpdateSubscriberPreferenceItemDto {
+class BulkUpdateSubscriberPreferenceItemDto {
   @ApiProperty({ description: 'Channel-specific preference settings', type: () => PatchPreferenceChannelsDto })
   @Type(() => PatchPreferenceChannelsDto)
   channels: PatchPreferenceChannelsDto;

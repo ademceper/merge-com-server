@@ -25,7 +25,7 @@ export const MsTeamsUserEndpointDto$outboundSchema: z.ZodType<
   userId: z.string(),
 });
 
-export function msTeamsUserEndpointDtoToJSON(
+function msTeamsUserEndpointDtoToJSON(
   msTeamsUserEndpointDto: MsTeamsUserEndpointDto,
 ): string {
   return JSON.stringify(

@@ -36,14 +36,14 @@ export const SlackUserEndpointDto$outboundSchema: z.ZodType<
   userId: z.string(),
 });
 
-export function slackUserEndpointDtoToJSON(
+function slackUserEndpointDtoToJSON(
   slackUserEndpointDto: SlackUserEndpointDto,
 ): string {
   return JSON.stringify(
     SlackUserEndpointDto$outboundSchema.parse(slackUserEndpointDto),
   );
 }
-export function slackUserEndpointDtoFromJSON(
+function slackUserEndpointDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<SlackUserEndpointDto, SDKValidationError> {
   return safeParse(

@@ -22,7 +22,7 @@ export type EventsControllerCancelResponse = {
 };
 
 /** @internal */
-export type EventsControllerCancelRequest$Outbound = {
+type EventsControllerCancelRequest$Outbound = {
   transactionId: string;
   "idempotency-key"?: string | undefined;
 };
@@ -41,7 +41,7 @@ export const EventsControllerCancelRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function eventsControllerCancelRequestToJSON(
+function eventsControllerCancelRequestToJSON(
   eventsControllerCancelRequest: EventsControllerCancelRequest,
 ): string {
   return JSON.stringify(
@@ -66,7 +66,7 @@ export const EventsControllerCancelResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function eventsControllerCancelResponseFromJSON(
+function eventsControllerCancelResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<EventsControllerCancelResponse, SDKValidationError> {
   return safeParse(

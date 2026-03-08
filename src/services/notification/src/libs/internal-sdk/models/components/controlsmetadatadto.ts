@@ -29,7 +29,7 @@ export const ControlsMetadataDto$inboundSchema: z.ZodType<
   uiSchema: UiSchema$inboundSchema.optional(),
 });
 
-export function controlsMetadataDtoFromJSON(
+function controlsMetadataDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<ControlsMetadataDto, SDKValidationError> {
   return safeParse(

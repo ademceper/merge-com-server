@@ -1,7 +1,7 @@
 import { EnvironmentTypeEnum } from '../../types';
 import type { IApiRateLimitMaximum } from '../../types';
 
-export interface IEnvironment {
+interface IEnvironment {
   _id: string;
   name: string;
   _organizationId: string;
@@ -35,11 +35,11 @@ export interface IEnvironment {
   updatedAt: Date;
 }
 
-export interface IWidgetSettings {
+interface IWidgetSettings {
   notificationCenterEncryption: boolean;
 }
 
-export interface IDnsSettings {
+interface IDnsSettings {
   mxRecordConfigured: boolean;
   inboundParseDomain: string;
 }

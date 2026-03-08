@@ -77,12 +77,12 @@ export type SubscribersControllerSearchSubscribersResponse = {
 };
 
 /** @internal */
-export const QueryParamOrderDirection$outboundSchema: z.ZodNativeEnum<
+const QueryParamOrderDirection$outboundSchema: z.ZodNativeEnum<
   typeof QueryParamOrderDirection
 > = z.nativeEnum(QueryParamOrderDirection);
 
 /** @internal */
-export type SubscribersControllerSearchSubscribersRequest$Outbound = {
+type SubscribersControllerSearchSubscribersRequest$Outbound = {
   after?: string | undefined;
   before?: string | undefined;
   limit?: number | undefined;
@@ -120,7 +120,7 @@ export const SubscribersControllerSearchSubscribersRequest$outboundSchema:
     });
   });
 
-export function subscribersControllerSearchSubscribersRequestToJSON(
+function subscribersControllerSearchSubscribersRequestToJSON(
   subscribersControllerSearchSubscribersRequest:
     SubscribersControllerSearchSubscribersRequest,
 ): string {
@@ -147,7 +147,7 @@ export const SubscribersControllerSearchSubscribersResponse$inboundSchema:
     });
   });
 
-export function subscribersControllerSearchSubscribersResponseFromJSON(
+function subscribersControllerSearchSubscribersResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   SubscribersControllerSearchSubscribersResponse,

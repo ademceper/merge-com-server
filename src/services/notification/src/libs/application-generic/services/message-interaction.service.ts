@@ -6,7 +6,7 @@ import { TraceLogRepository } from './analytic-logs/trace-log';
 import type { StepRunTraceInput } from './analytic-logs/trace-log';
 import { WorkflowRunService } from './workflow-run.service';
 
-export interface MessageInteractionResult {
+interface MessageInteractionResult {
   success: boolean;
   processedTraceCount: number;
   error?: string;

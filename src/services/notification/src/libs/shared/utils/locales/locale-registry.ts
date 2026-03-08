@@ -3,20 +3,20 @@
 import type { Locale } from './locales';
 import { locales } from './locales';
 
-export type ILocale = Locale;
-export const SUPPORTED_LOCALES = locales;
+type ILocale = Locale;
+const SUPPORTED_LOCALES = locales;
 
 /**
  * Get all supported locales
  */
-export function getAllLocales(): ILocale[] {
+function getAllLocales(): ILocale[] {
   return SUPPORTED_LOCALES;
 }
 
 /**
  * Get all supported locale ISO codes
  */
-export function getSupportedLocaleIsoCodes(): string[] {
+function getSupportedLocaleIsoCodes(): string[] {
   return SUPPORTED_LOCALES.map((locale) => locale.langIso);
 }
 
@@ -30,7 +30,7 @@ export function isLocaleSupported(langIso: string): boolean {
 /**
  * Get locale by ISO code
  */
-export function getLocaleByIso(langIso: string): ILocale | undefined {
+function getLocaleByIso(langIso: string): ILocale | undefined {
   return SUPPORTED_LOCALES.find((locale) => locale.langIso === langIso);
 }
 

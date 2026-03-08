@@ -1,9 +1,9 @@
 import { Logger } from '@nestjs/common';
 import type { LoggerService } from '@nestjs/common';
 
-export type Transform = (data: any) => any;
+type Transform = (data: any) => any;
 
-export interface IOptions {
+interface IOptions {
   logger?: LoggerService;
   transform?: Transform;
   timestamp?: boolean;

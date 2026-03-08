@@ -12,12 +12,12 @@ type OAuth2PasswordFlow = {
   tokenURL: string;
 };
 
-export enum SecurityErrorCode {
+enum SecurityErrorCode {
   Incomplete = "incomplete",
   UnrecognisedSecurityType = "unrecognized_security_type",
 }
 
-export class SecurityError extends Error {
+class SecurityError extends Error {
   constructor(
     public code: SecurityErrorCode,
     message: string,
@@ -108,7 +108,7 @@ type SecurityInputCustom = {
   fieldName?: string;
 };
 
-export type SecurityInput =
+type SecurityInput =
   | SecurityInputBasic
   | SecurityInputBearer
   | SecurityInputAPIKey
@@ -118,7 +118,7 @@ export type SecurityInput =
   | SecurityInputOIDC
   | SecurityInputCustom;
 
-export function resolveSecurity(
+function resolveSecurity(
   ...options: SecurityInput[][]
 ): SecurityState | null {
   const state: SecurityState = {

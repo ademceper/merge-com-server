@@ -16,7 +16,7 @@ export type Unknown<Discriminator extends string, UnknownValue = "UNKNOWN"> =
     isUnknown: true;
   };
 
-export function isUnknown<Discriminator extends string>(
+function isUnknown<Discriminator extends string>(
   value: unknown,
 ): value is Unknown<Discriminator> {
   return typeof value === "object" && value !== null && UNKNOWN in value;

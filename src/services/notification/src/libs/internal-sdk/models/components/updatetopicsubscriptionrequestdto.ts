@@ -14,7 +14,7 @@ import {
   WorkflowPreferenceRequestDto$outboundSchema,
 } from "./workflowpreferencerequestdto.js";
 
-export type UpdateTopicSubscriptionRequestDtoPreferences =
+type UpdateTopicSubscriptionRequestDtoPreferences =
   | WorkflowPreferenceRequestDto
   | GroupPreferenceFilterDto
   | string;
@@ -33,13 +33,13 @@ export type UpdateTopicSubscriptionRequestDto = {
 };
 
 /** @internal */
-export type UpdateTopicSubscriptionRequestDtoPreferences$Outbound =
+type UpdateTopicSubscriptionRequestDtoPreferences$Outbound =
   | WorkflowPreferenceRequestDto$Outbound
   | GroupPreferenceFilterDto$Outbound
   | string;
 
 /** @internal */
-export const UpdateTopicSubscriptionRequestDtoPreferences$outboundSchema:
+const UpdateTopicSubscriptionRequestDtoPreferences$outboundSchema:
   z.ZodType<
     UpdateTopicSubscriptionRequestDtoPreferences$Outbound,
     z.ZodTypeDef,
@@ -50,7 +50,7 @@ export const UpdateTopicSubscriptionRequestDtoPreferences$outboundSchema:
     z.string(),
   ]);
 
-export function updateTopicSubscriptionRequestDtoPreferencesToJSON(
+function updateTopicSubscriptionRequestDtoPreferencesToJSON(
   updateTopicSubscriptionRequestDtoPreferences:
     UpdateTopicSubscriptionRequestDtoPreferences,
 ): string {
@@ -89,7 +89,7 @@ export const UpdateTopicSubscriptionRequestDto$outboundSchema: z.ZodType<
   ).optional(),
 });
 
-export function updateTopicSubscriptionRequestDtoToJSON(
+function updateTopicSubscriptionRequestDtoToJSON(
   updateTopicSubscriptionRequestDto: UpdateTopicSubscriptionRequestDto,
 ): string {
   return JSON.stringify(

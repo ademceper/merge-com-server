@@ -63,7 +63,7 @@ export const buildMessageCountKey = () => {
   };
 };
 
-export const buildQueryKey = ({
+const buildQueryKey = ({
   type,
   keyEntity,
   environmentId,
@@ -86,7 +86,7 @@ export const buildQueryKey = ({
     identifier,
   })}:${QUERY_PREFIX}=${JSON.stringify(query)}`;
 
-export const buildQueryByOrganizationKey = ({
+const buildQueryByOrganizationKey = ({
   type,
   keyEntity,
   organizationId,
@@ -103,7 +103,7 @@ export const buildQueryByOrganizationKey = ({
     organizationId,
   })}:${QUERY_PREFIX}=${JSON.stringify(query)}`;
 
-export interface IBuildNotificationTemplateByIdentifier {
+interface IBuildNotificationTemplateByIdentifier {
   _environmentId: string;
   identifiers: ({ id: string } & { triggerIdentifier?: string }) | ({ id?: string } & { triggerIdentifier: string });
 }

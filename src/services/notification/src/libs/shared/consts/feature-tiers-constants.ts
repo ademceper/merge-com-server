@@ -65,7 +65,7 @@ export enum FeatureNameEnum {
   WEBHOOKS = 'webhooks',
 }
 
-export type FeatureValue = string | number | null | boolean | DetailedPriceListItem;
+type FeatureValue = string | number | null | boolean | DetailedPriceListItem;
 
 class DetailedPriceListItem {
   label?: string;
@@ -466,7 +466,7 @@ const novuServiceTiers: Record<FeatureNameEnum, Record<ApiServiceLevelEnum, Feat
   },
 };
 
-export function isDetailedPriceListItem(item: FeatureValue): item is DetailedPriceListItem {
+function isDetailedPriceListItem(item: FeatureValue): item is DetailedPriceListItem {
   return (
     item !== null &&
     typeof item === 'object' &&
@@ -474,7 +474,7 @@ export function isDetailedPriceListItem(item: FeatureValue): item is DetailedPri
   );
 }
 
-export function getFeatureForTier(featureName: FeatureNameEnum, tier: ApiServiceLevelEnum): FeatureValue {
+function getFeatureForTier(featureName: FeatureNameEnum, tier: ApiServiceLevelEnum): FeatureValue {
   const feature = novuServiceTiers[featureName][tier];
 
   // If already matches FeatureValue, return directly
@@ -496,7 +496,7 @@ export function getFeatureForTier(featureName: FeatureNameEnum, tier: ApiService
  * @param dateRange - The date range string to convert (e.g. '1d', '24h', '7d', '1w')
  * @returns The date range in milliseconds.
  */
-export function getDateRangeInMs(dateRange: string): number {
+function getDateRangeInMs(dateRange: string): number {
   if (!dateRange) return 0;
 
   const value = parseInt(dateRange, 10);
@@ -601,7 +601,7 @@ function getTextFromItem(feature: DetailedPriceListItem) {
   return `${String(feature.value)} ${feature.timeSuffix || ''}`;
 }
 
-export function getFeatureForTierAsText(featureName: FeatureNameEnum, tier: ApiServiceLevelEnum): string {
+function getFeatureForTierAsText(featureName: FeatureNameEnum, tier: ApiServiceLevelEnum): string {
   const feature = novuServiceTiers[featureName][tier];
 
   if (feature === UNLIMITED_VALUE) return 'Unlimited';
@@ -616,7 +616,7 @@ export function getFeatureForTierAsText(featureName: FeatureNameEnum, tier: ApiS
   return JSON.stringify(feature);
 }
 
-export function getFeatureForTierAsDateRangeValue(featureName: FeatureNameEnum, tier: ApiServiceLevelEnum): string {
+function getFeatureForTierAsDateRangeValue(featureName: FeatureNameEnum, tier: ApiServiceLevelEnum): string {
   const feature = novuServiceTiers[featureName][tier];
 
   if (isDetailedPriceListItem(feature)) {

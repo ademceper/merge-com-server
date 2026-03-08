@@ -91,7 +91,7 @@ export type IntegrationResponseDto = {
 };
 
 /** @internal */
-export const IntegrationResponseDtoChannel$inboundSchema: z.ZodNativeEnum<typeof IntegrationResponseDtoChannel> =
+const IntegrationResponseDtoChannel$inboundSchema: z.ZodNativeEnum<typeof IntegrationResponseDtoChannel> =
   z.nativeEnum(IntegrationResponseDtoChannel);
 
 /** @internal */
@@ -121,7 +121,7 @@ export const IntegrationResponseDto$inboundSchema: z.ZodType<IntegrationResponse
     });
   });
 
-export function integrationResponseDtoFromJSON(
+function integrationResponseDtoFromJSON(
   jsonString: string
 ): SafeParseResult<IntegrationResponseDto, SDKValidationError> {
   return safeParse(

@@ -39,7 +39,7 @@ import { DelayOutputRendererUsecase } from './usecases/output-renderers/delay-ou
 import { DigestOutputRendererUsecase } from './usecases/output-renderers/digest-output-renderer.usecase';
 import { ThrottleOutputRendererUsecase } from './usecases/output-renderers/throttle-output-renderer.usecase';
 
-export const featureFlagsService = {
+const featureFlagsService = {
   provide: FeatureFlagsService,
   useFactory: async (): Promise<FeatureFlagsService> => {
     const instance = new FeatureFlagsService();

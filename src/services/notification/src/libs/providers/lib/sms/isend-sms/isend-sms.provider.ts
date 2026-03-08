@@ -5,7 +5,7 @@ import axios, { AxiosInstance } from 'axios';
 import { BaseProvider, CasingEnum } from '../../../base.provider';
 import type { WithPassthrough } from '../../../utils/types';
 
-export interface ISendSmsData {
+interface ISendSmsData {
   user_id: number;
   to: string;
   message: string;
@@ -23,7 +23,7 @@ export interface ISendSmsData {
   id: number;
 }
 
-export interface ISendSmsResponse {
+interface ISendSmsResponse {
   status: 'success' | 'error';
   message: string;
   data?: ISendSmsData;

@@ -37,7 +37,7 @@ export const TopicSubscriberIdentifierDto$outboundSchema: z.ZodType<
   name: z.string().optional(),
 });
 
-export function topicSubscriberIdentifierDtoToJSON(
+function topicSubscriberIdentifierDtoToJSON(
   topicSubscriberIdentifierDto: TopicSubscriberIdentifierDto,
 ): string {
   return JSON.stringify(

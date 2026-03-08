@@ -1,4 +1,4 @@
-export const SYNC_CONSTANTS = {
+const SYNC_CONSTANTS = {
   BATCH_SIZE: 100,
 } as const;
 

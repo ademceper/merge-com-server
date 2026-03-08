@@ -4,7 +4,7 @@ import { IsArray, IsDefined, IsOptional, IsString, ValidateIf, ValidateNested } 
 import type { RulesLogic } from 'json-logic-js';
 import { WorkflowDto } from '../../../inbox/dtos/workflow.dto';
 
-export class TopicDto {
+class TopicDto {
   @ApiProperty({
     description: 'The internal unique identifier of the topic',
     example: '64f5e95d3d7946d80d0cb677',
@@ -28,7 +28,7 @@ export class TopicDto {
   name?: string;
 }
 
-export class SubscriberDto {
+class SubscriberDto {
   @ApiProperty({
     description: 'The unique identifier of the subscriber',
     example: '64f5e95d3d7946d80d0cb678',
@@ -215,7 +215,7 @@ export class SubscriptionErrorDto {
   message: string;
 }
 
-export class MetaDto {
+class MetaDto {
   @ApiProperty({
     description: 'The total count of subscriber IDs provided',
     example: 3,

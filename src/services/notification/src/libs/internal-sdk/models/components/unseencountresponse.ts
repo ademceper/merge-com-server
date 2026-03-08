@@ -20,7 +20,7 @@ export const UnseenCountResponse$inboundSchema: z.ZodType<
   count: z.number(),
 });
 
-export function unseenCountResponseFromJSON(
+function unseenCountResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<UnseenCountResponse, SDKValidationError> {
   return safeParse(

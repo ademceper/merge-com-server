@@ -43,14 +43,14 @@ export const WebhookEndpointDto$outboundSchema: z.ZodType<
   channel: z.string().optional(),
 });
 
-export function webhookEndpointDtoToJSON(
+function webhookEndpointDtoToJSON(
   webhookEndpointDto: WebhookEndpointDto,
 ): string {
   return JSON.stringify(
     WebhookEndpointDto$outboundSchema.parse(webhookEndpointDto),
   );
 }
-export function webhookEndpointDtoFromJSON(
+function webhookEndpointDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<WebhookEndpointDto, SDKValidationError> {
   return safeParse(

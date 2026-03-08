@@ -22,7 +22,7 @@ import {
 /**
  * A preference for the workflow. The values specified here will be used if no preference is specified for a channel.
  */
-export type WorkflowPreferencesResponseDtoAll = WorkflowPreferenceDto;
+type WorkflowPreferencesResponseDtoAll = WorkflowPreferenceDto;
 
 /**
  * User-specific workflow preferences
@@ -50,13 +50,13 @@ export type WorkflowPreferencesResponseDto = {
 };
 
 /** @internal */
-export const WorkflowPreferencesResponseDtoAll$inboundSchema: z.ZodType<
+const WorkflowPreferencesResponseDtoAll$inboundSchema: z.ZodType<
   WorkflowPreferencesResponseDtoAll,
   z.ZodTypeDef,
   unknown
 > = WorkflowPreferenceDto$inboundSchema;
 
-export function workflowPreferencesResponseDtoAllFromJSON(
+function workflowPreferencesResponseDtoAllFromJSON(
   jsonString: string,
 ): SafeParseResult<WorkflowPreferencesResponseDtoAll, SDKValidationError> {
   return safeParse(
@@ -67,7 +67,7 @@ export function workflowPreferencesResponseDtoAllFromJSON(
 }
 
 /** @internal */
-export const WorkflowPreferencesResponseDtoUser$inboundSchema: z.ZodType<
+const WorkflowPreferencesResponseDtoUser$inboundSchema: z.ZodType<
   WorkflowPreferencesResponseDtoUser,
   z.ZodTypeDef,
   unknown
@@ -76,7 +76,7 @@ export const WorkflowPreferencesResponseDtoUser$inboundSchema: z.ZodType<
   channels: z.record(ChannelPreferenceDto$inboundSchema),
 });
 
-export function workflowPreferencesResponseDtoUserFromJSON(
+function workflowPreferencesResponseDtoUserFromJSON(
   jsonString: string,
 ): SafeParseResult<WorkflowPreferencesResponseDtoUser, SDKValidationError> {
   return safeParse(
@@ -99,7 +99,7 @@ export const WorkflowPreferencesResponseDto$inboundSchema: z.ZodType<
   default: WorkflowPreferencesDto$inboundSchema,
 });
 
-export function workflowPreferencesResponseDtoFromJSON(
+function workflowPreferencesResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<WorkflowPreferencesResponseDto, SDKValidationError> {
   return safeParse(

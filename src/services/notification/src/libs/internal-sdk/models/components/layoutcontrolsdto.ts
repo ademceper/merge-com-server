@@ -35,7 +35,7 @@ export const LayoutControlsDto$inboundSchema: z.ZodType<
   values: LayoutControlValuesDto$inboundSchema,
 });
 
-export function layoutControlsDtoFromJSON(
+function layoutControlsDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<LayoutControlsDto, SDKValidationError> {
   return safeParse(

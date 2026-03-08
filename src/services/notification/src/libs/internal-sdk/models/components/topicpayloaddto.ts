@@ -35,7 +35,7 @@ export const TopicPayloadDto$outboundSchema: z.ZodType<
   exclude: z.array(z.string()).optional(),
 });
 
-export function topicPayloadDtoToJSON(
+function topicPayloadDtoToJSON(
   topicPayloadDto: TopicPayloadDto,
 ): string {
   return JSON.stringify(TopicPayloadDto$outboundSchema.parse(topicPayloadDto));

@@ -24,7 +24,7 @@ export type SubscribersControllerPatchSubscriberResponse = {
 };
 
 /** @internal */
-export type SubscribersControllerPatchSubscriberRequest$Outbound = {
+type SubscribersControllerPatchSubscriberRequest$Outbound = {
   subscriberId: string;
   "idempotency-key"?: string | undefined;
   PatchSubscriberRequestDto: components.PatchSubscriberRequestDto$Outbound;
@@ -48,7 +48,7 @@ export const SubscribersControllerPatchSubscriberRequest$outboundSchema:
     });
   });
 
-export function subscribersControllerPatchSubscriberRequestToJSON(
+function subscribersControllerPatchSubscriberRequestToJSON(
   subscribersControllerPatchSubscriberRequest:
     SubscribersControllerPatchSubscriberRequest,
 ): string {
@@ -75,7 +75,7 @@ export const SubscribersControllerPatchSubscriberResponse$inboundSchema:
     });
   });
 
-export function subscribersControllerPatchSubscriberResponseFromJSON(
+function subscribersControllerPatchSubscriberResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   SubscribersControllerPatchSubscriberResponse,

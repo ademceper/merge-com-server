@@ -25,7 +25,7 @@ export type SubscribersV1ControllerUpdateSubscriberOnlineFlagResponse = {
 };
 
 /** @internal */
-export type SubscribersV1ControllerUpdateSubscriberOnlineFlagRequest$Outbound =
+type SubscribersV1ControllerUpdateSubscriberOnlineFlagRequest$Outbound =
   {
     subscriberId: string;
     "idempotency-key"?: string | undefined;
@@ -52,7 +52,7 @@ export const SubscribersV1ControllerUpdateSubscriberOnlineFlagRequest$outboundSc
     });
   });
 
-export function subscribersV1ControllerUpdateSubscriberOnlineFlagRequestToJSON(
+function subscribersV1ControllerUpdateSubscriberOnlineFlagRequestToJSON(
   subscribersV1ControllerUpdateSubscriberOnlineFlagRequest:
     SubscribersV1ControllerUpdateSubscriberOnlineFlagRequest,
 ): string {
@@ -78,7 +78,7 @@ export const SubscribersV1ControllerUpdateSubscriberOnlineFlagResponse$inboundSc
     });
   });
 
-export function subscribersV1ControllerUpdateSubscriberOnlineFlagResponseFromJSON(
+function subscribersV1ControllerUpdateSubscriberOnlineFlagResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   SubscribersV1ControllerUpdateSubscriberOnlineFlagResponse,

@@ -35,7 +35,7 @@ export const UpdateChannelConnectionRequestDto$outboundSchema: z.ZodType<
   auth: AuthDto$outboundSchema,
 });
 
-export function updateChannelConnectionRequestDtoToJSON(
+function updateChannelConnectionRequestDtoToJSON(
   updateChannelConnectionRequestDto: UpdateChannelConnectionRequestDto,
 ): string {
   return JSON.stringify(

@@ -28,7 +28,7 @@ export type ContextsControllerDeleteContextResponse = {
 };
 
 /** @internal */
-export type ContextsControllerDeleteContextRequest$Outbound = {
+type ContextsControllerDeleteContextRequest$Outbound = {
   type: string;
   id: string;
   "idempotency-key"?: string | undefined;
@@ -49,7 +49,7 @@ export const ContextsControllerDeleteContextRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function contextsControllerDeleteContextRequestToJSON(
+function contextsControllerDeleteContextRequestToJSON(
   contextsControllerDeleteContextRequest:
     ContextsControllerDeleteContextRequest,
 ): string {
@@ -73,7 +73,7 @@ export const ContextsControllerDeleteContextResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function contextsControllerDeleteContextResponseFromJSON(
+function contextsControllerDeleteContextResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   ContextsControllerDeleteContextResponse,

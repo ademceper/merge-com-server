@@ -86,15 +86,15 @@ export const hasShow = (
   return node.attrs?.[MailyAttrsEnum.SHOW_IF_KEY] !== undefined && node.attrs?.[MailyAttrsEnum.SHOW_IF_KEY] !== null;
 };
 
-export const hasAttrs = (node: MailyJSONContent): node is MailyJSONContent & { attrs: Record<string, any> } => {
+const hasAttrs = (node: MailyJSONContent): node is MailyJSONContent & { attrs: Record<string, any> } => {
   return !!node.attrs;
 };
 
-export const hasMarks = (node: MailyJSONContent): node is MailyJSONContent & { marks: Record<string, any>[] } => {
+const hasMarks = (node: MailyJSONContent): node is MailyJSONContent & { marks: Record<string, any>[] } => {
   return !!node.marks;
 };
 
-export const variableAttributeConfig = (type: MailyContentTypeEnum) => {
+const variableAttributeConfig = (type: MailyContentTypeEnum) => {
   const commonConfig = [
     /*
      * Maily Variable Map

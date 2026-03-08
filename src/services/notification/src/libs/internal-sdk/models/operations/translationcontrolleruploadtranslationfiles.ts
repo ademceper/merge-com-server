@@ -47,17 +47,17 @@ export type TranslationControllerUploadTranslationFilesRequest = {
 };
 
 /** @internal */
-export const ResourceType$outboundSchema: z.ZodNativeEnum<typeof ResourceType> =
+const ResourceType$outboundSchema: z.ZodNativeEnum<typeof ResourceType> =
   z.nativeEnum(ResourceType);
 
 /** @internal */
-export type Files$Outbound = {
+type Files$Outbound = {
   fileName: string;
   content: ReadableStream<Uint8Array> | Blob | ArrayBuffer | Uint8Array;
 };
 
 /** @internal */
-export const Files$outboundSchema: z.ZodType<
+const Files$outboundSchema: z.ZodType<
   Files$Outbound,
   z.ZodTypeDef,
   Files
@@ -71,19 +71,19 @@ export const Files$outboundSchema: z.ZodType<
   ]),
 });
 
-export function filesToJSON(files: Files): string {
+function filesToJSON(files: Files): string {
   return JSON.stringify(Files$outboundSchema.parse(files));
 }
 
 /** @internal */
-export type TranslationControllerUploadTranslationFilesRequestBody$Outbound = {
+type TranslationControllerUploadTranslationFilesRequestBody$Outbound = {
   resourceId: string;
   resourceType: string;
   files: Array<Files$Outbound>;
 };
 
 /** @internal */
-export const TranslationControllerUploadTranslationFilesRequestBody$outboundSchema:
+const TranslationControllerUploadTranslationFilesRequestBody$outboundSchema:
   z.ZodType<
     TranslationControllerUploadTranslationFilesRequestBody$Outbound,
     z.ZodTypeDef,
@@ -94,7 +94,7 @@ export const TranslationControllerUploadTranslationFilesRequestBody$outboundSche
     files: z.array(z.lazy(() => Files$outboundSchema)),
   });
 
-export function translationControllerUploadTranslationFilesRequestBodyToJSON(
+function translationControllerUploadTranslationFilesRequestBodyToJSON(
   translationControllerUploadTranslationFilesRequestBody:
     TranslationControllerUploadTranslationFilesRequestBody,
 ): string {
@@ -106,7 +106,7 @@ export function translationControllerUploadTranslationFilesRequestBodyToJSON(
 }
 
 /** @internal */
-export type TranslationControllerUploadTranslationFilesRequest$Outbound = {
+type TranslationControllerUploadTranslationFilesRequest$Outbound = {
   "idempotency-key"?: string | undefined;
   RequestBody: TranslationControllerUploadTranslationFilesRequestBody$Outbound;
 };
@@ -129,7 +129,7 @@ export const TranslationControllerUploadTranslationFilesRequest$outboundSchema:
     });
   });
 
-export function translationControllerUploadTranslationFilesRequestToJSON(
+function translationControllerUploadTranslationFilesRequestToJSON(
   translationControllerUploadTranslationFilesRequest:
     TranslationControllerUploadTranslationFilesRequest,
 ): string {

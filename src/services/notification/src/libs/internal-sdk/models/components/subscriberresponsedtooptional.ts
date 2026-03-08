@@ -146,7 +146,7 @@ export const SubscriberResponseDtoOptional$outboundSchema: z.ZodType<
   });
 });
 
-export function subscriberResponseDtoOptionalToJSON(
+function subscriberResponseDtoOptionalToJSON(
   subscriberResponseDtoOptional: SubscriberResponseDtoOptional,
 ): string {
   return JSON.stringify(
@@ -155,7 +155,7 @@ export function subscriberResponseDtoOptionalToJSON(
     ),
   );
 }
-export function subscriberResponseDtoOptionalFromJSON(
+function subscriberResponseDtoOptionalFromJSON(
   jsonString: string,
 ): SafeParseResult<SubscriberResponseDtoOptional, SDKValidationError> {
   return safeParse(

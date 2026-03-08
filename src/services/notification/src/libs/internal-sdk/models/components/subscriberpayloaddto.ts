@@ -84,7 +84,7 @@ export const SubscriberPayloadDto$outboundSchema: z.ZodType<
   channels: z.array(SubscriberChannelDto$outboundSchema).optional(),
 });
 
-export function subscriberPayloadDtoToJSON(
+function subscriberPayloadDtoToJSON(
   subscriberPayloadDto: SubscriberPayloadDto,
 ): string {
   return JSON.stringify(

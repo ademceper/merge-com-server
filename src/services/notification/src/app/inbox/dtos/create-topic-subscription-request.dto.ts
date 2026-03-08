@@ -6,7 +6,7 @@ import {
   WorkflowPreferenceRequestDto,
 } from '../../shared/dtos/subscriptions/create-subscriptions.dto';
 
-export class TopicIdentifierDto {
+class TopicIdentifierDto {
   @ApiPropertyOptional({
     description: 'The name of the topic',
     example: 'My Topic',

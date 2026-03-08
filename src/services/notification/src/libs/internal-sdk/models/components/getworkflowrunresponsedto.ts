@@ -142,23 +142,23 @@ export type GetWorkflowRunResponseDto = {
 };
 
 /** @internal */
-export const GetWorkflowRunResponseDtoStatus$inboundSchema: z.ZodNativeEnum<typeof GetWorkflowRunResponseDtoStatus> =
+const GetWorkflowRunResponseDtoStatus$inboundSchema: z.ZodNativeEnum<typeof GetWorkflowRunResponseDtoStatus> =
   z.nativeEnum(GetWorkflowRunResponseDtoStatus);
 
 /** @internal */
-export const GetWorkflowRunResponseDtoDeliveryLifecycleStatus$inboundSchema: z.ZodNativeEnum<
+const GetWorkflowRunResponseDtoDeliveryLifecycleStatus$inboundSchema: z.ZodNativeEnum<
   typeof GetWorkflowRunResponseDtoDeliveryLifecycleStatus
 > = z.nativeEnum(GetWorkflowRunResponseDtoDeliveryLifecycleStatus);
 
 /** @internal */
-export const GetWorkflowRunResponseDtoSeverity$inboundSchema: z.ZodNativeEnum<
+const GetWorkflowRunResponseDtoSeverity$inboundSchema: z.ZodNativeEnum<
   typeof GetWorkflowRunResponseDtoSeverity
 > = z.nativeEnum(GetWorkflowRunResponseDtoSeverity);
 
 /** @internal */
-export const Payload$inboundSchema: z.ZodType<Payload, z.ZodTypeDef, unknown> = z.object({});
+const Payload$inboundSchema: z.ZodType<Payload, z.ZodTypeDef, unknown> = z.object({});
 
-export function payloadFromJSON(jsonString: string): SafeParseResult<Payload, SDKValidationError> {
+function payloadFromJSON(jsonString: string): SafeParseResult<Payload, SDKValidationError> {
   return safeParse(
     jsonString,
     (x) => Payload$inboundSchema.parse(JSON.parse(x)),
@@ -190,7 +190,7 @@ export const GetWorkflowRunResponseDto$inboundSchema: z.ZodType<GetWorkflowRunRe
     payload: z.lazy(() => Payload$inboundSchema),
   });
 
-export function getWorkflowRunResponseDtoFromJSON(
+function getWorkflowRunResponseDtoFromJSON(
   jsonString: string
 ): SafeParseResult<GetWorkflowRunResponseDto, SDKValidationError> {
   return safeParse(

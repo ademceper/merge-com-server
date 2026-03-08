@@ -16,7 +16,7 @@ import { MergeOrCreateDigestCommand } from './merge-or-create-digest.command';
 import { MergeOrCreateDigest } from './merge-or-create-digest.usecase';
 import { validateDigest } from './validation';
 
-export enum BackoffStrategiesEnum {
+enum BackoffStrategiesEnum {
   WEBHOOK_FILTER_BACKOFF = 'webhookFilterBackoff',
 }
 

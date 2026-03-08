@@ -25,7 +25,7 @@ export class GetDecryptedIntegrationsCommand extends EnvironmentWithUserCommand 
   returnCredentials?: boolean;
 }
 
-export class GetEnvironmentDecryptedIntegrationsCommand extends EnvironmentWithUserCommand {
+class GetEnvironmentDecryptedIntegrationsCommand extends EnvironmentWithUserCommand {
   @IsBoolean()
   @IsOptional()
   findOne?: boolean;

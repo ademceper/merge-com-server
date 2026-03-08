@@ -11,12 +11,12 @@ import {
   UiComponentEnum$inboundSchema,
 } from "./uicomponentenum.js";
 
-export type Placeholder5 = string | number | boolean | { [k: string]: any };
+type Placeholder5 = string | number | boolean | { [k: string]: any };
 
 /**
  * Placeholder for the UI Schema Property
  */
-export type Placeholder =
+type Placeholder =
   | string
   | number
   | boolean
@@ -46,13 +46,13 @@ export type UiSchemaProperty = {
 };
 
 /** @internal */
-export const Placeholder5$inboundSchema: z.ZodType<
+const Placeholder5$inboundSchema: z.ZodType<
   Placeholder5,
   z.ZodTypeDef,
   unknown
 > = z.union([z.string(), z.number(), z.boolean(), z.record(z.any())]);
 
-export function placeholder5FromJSON(
+function placeholder5FromJSON(
   jsonString: string,
 ): SafeParseResult<Placeholder5, SDKValidationError> {
   return safeParse(
@@ -63,7 +63,7 @@ export function placeholder5FromJSON(
 }
 
 /** @internal */
-export const Placeholder$inboundSchema: z.ZodType<
+const Placeholder$inboundSchema: z.ZodType<
   Placeholder,
   z.ZodTypeDef,
   unknown
@@ -75,7 +75,7 @@ export const Placeholder$inboundSchema: z.ZodType<
   z.array(z.union([z.string(), z.number(), z.boolean(), z.record(z.any())])),
 ]);
 
-export function placeholderFromJSON(
+function placeholderFromJSON(
   jsonString: string,
 ): SafeParseResult<Placeholder, SDKValidationError> {
   return safeParse(
@@ -106,7 +106,7 @@ export const UiSchemaProperty$inboundSchema: z.ZodType<
   properties: z.record(z.lazy(() => UiSchemaProperty$inboundSchema)).optional(),
 });
 
-export function uiSchemaPropertyFromJSON(
+function uiSchemaPropertyFromJSON(
   jsonString: string,
 ): SafeParseResult<UiSchemaProperty, SDKValidationError> {
   return safeParse(

@@ -23,7 +23,7 @@ export const CreatedSubscriberDto$inboundSchema: z.ZodType<
   subscriberId: z.string(),
 });
 
-export function createdSubscriberDtoFromJSON(
+function createdSubscriberDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<CreatedSubscriberDto, SDKValidationError> {
   return safeParse(

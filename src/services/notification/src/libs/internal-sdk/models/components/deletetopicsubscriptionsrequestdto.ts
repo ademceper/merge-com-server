@@ -9,7 +9,7 @@ import {
   DeleteTopicSubscriberIdentifierDto$outboundSchema,
 } from "./deletetopicsubscriberidentifierdto.js";
 
-export type DeleteTopicSubscriptionsRequestDtoSubscriptions =
+type DeleteTopicSubscriptionsRequestDtoSubscriptions =
   | string
   | DeleteTopicSubscriberIdentifierDto;
 
@@ -29,19 +29,19 @@ export type DeleteTopicSubscriptionsRequestDto = {
 };
 
 /** @internal */
-export type DeleteTopicSubscriptionsRequestDtoSubscriptions$Outbound =
+type DeleteTopicSubscriptionsRequestDtoSubscriptions$Outbound =
   | string
   | DeleteTopicSubscriberIdentifierDto$Outbound;
 
 /** @internal */
-export const DeleteTopicSubscriptionsRequestDtoSubscriptions$outboundSchema:
+const DeleteTopicSubscriptionsRequestDtoSubscriptions$outboundSchema:
   z.ZodType<
     DeleteTopicSubscriptionsRequestDtoSubscriptions$Outbound,
     z.ZodTypeDef,
     DeleteTopicSubscriptionsRequestDtoSubscriptions
   > = z.union([z.string(), DeleteTopicSubscriberIdentifierDto$outboundSchema]);
 
-export function deleteTopicSubscriptionsRequestDtoSubscriptionsToJSON(
+function deleteTopicSubscriptionsRequestDtoSubscriptionsToJSON(
   deleteTopicSubscriptionsRequestDtoSubscriptions:
     DeleteTopicSubscriptionsRequestDtoSubscriptions,
 ): string {
@@ -72,7 +72,7 @@ export const DeleteTopicSubscriptionsRequestDto$outboundSchema: z.ZodType<
   ).optional(),
 });
 
-export function deleteTopicSubscriptionsRequestDtoToJSON(
+function deleteTopicSubscriptionsRequestDtoToJSON(
   deleteTopicSubscriptionsRequestDto: DeleteTopicSubscriptionsRequestDto,
 ): string {
   return JSON.stringify(

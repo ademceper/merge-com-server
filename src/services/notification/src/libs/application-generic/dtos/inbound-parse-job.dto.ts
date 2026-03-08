@@ -47,12 +47,12 @@ export interface ITlsOptions {
   version: string;
 }
 
-export interface IMailFrom {
+interface IMailFrom {
   address: string;
   args: boolean;
 }
 
-export interface IRcptTo {
+interface IRcptTo {
   address: string;
   args: boolean;
 }

@@ -24,7 +24,7 @@ export const EmailBlockStyles$inboundSchema: z.ZodType<
   textAlign: TextAlignEnum$inboundSchema,
 });
 
-export function emailBlockStylesFromJSON(
+function emailBlockStylesFromJSON(
   jsonString: string,
 ): SafeParseResult<EmailBlockStyles, SDKValidationError> {
   return safeParse(

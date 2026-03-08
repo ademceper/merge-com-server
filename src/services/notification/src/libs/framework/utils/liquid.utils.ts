@@ -9,7 +9,7 @@ import { toSentence } from '../filters/to-sentence';
  * @param output - The value to escape
  * @returns The escaped value as a string
  */
-export function defaultOutputEscape(output: unknown): string {
+function defaultOutputEscape(output: unknown): string {
   // For objects and arrays, use the existing function
   if (Array.isArray(output) || (typeof output === 'object' && output !== null)) {
     return stringifyDataStructureWithSingleQuotes(output);
@@ -33,7 +33,7 @@ export function defaultOutputEscape(output: unknown): string {
  * @param value The value to convert
  * @returns A string with single quotes around objects and arrays, and the stringified value itself if it's not an object or array
  */
-export const stringifyDataStructureWithSingleQuotes = (value: unknown, spaces: number = 0): string => {
+const stringifyDataStructureWithSingleQuotes = (value: unknown, spaces: number = 0): string => {
   if (Array.isArray(value) || (typeof value === 'object' && value !== null)) {
     const valueStringified = JSON.stringify(value, null, spaces);
     const valueSingleQuotes = valueStringified.replace(/"/g, "'");

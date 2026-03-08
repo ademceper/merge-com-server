@@ -38,7 +38,7 @@ export const PushControlsMetadataResponseDto$inboundSchema: z.ZodType<
   values: PushControlDto$inboundSchema,
 });
 
-export function pushControlsMetadataResponseDtoFromJSON(
+function pushControlsMetadataResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<PushControlsMetadataResponseDto, SDKValidationError> {
   return safeParse(

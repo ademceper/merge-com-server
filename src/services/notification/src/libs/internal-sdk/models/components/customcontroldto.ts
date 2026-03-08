@@ -36,14 +36,14 @@ export const CustomControlDto$outboundSchema: z.ZodType<
   custom: z.record(z.any()).optional(),
 });
 
-export function customControlDtoToJSON(
+function customControlDtoToJSON(
   customControlDto: CustomControlDto,
 ): string {
   return JSON.stringify(
     CustomControlDto$outboundSchema.parse(customControlDto),
   );
 }
-export function customControlDtoFromJSON(
+function customControlDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<CustomControlDto, SDKValidationError> {
   return safeParse(

@@ -23,7 +23,7 @@ export const NotificationTriggerVariable$inboundSchema: z.ZodType<
   name: z.string(),
 });
 
-export function notificationTriggerVariableFromJSON(
+function notificationTriggerVariableFromJSON(
   jsonString: string,
 ): SafeParseResult<NotificationTriggerVariable, SDKValidationError> {
   return safeParse(

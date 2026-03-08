@@ -23,7 +23,7 @@ export type LayoutsControllerGetUsageResponse = {
 };
 
 /** @internal */
-export type LayoutsControllerGetUsageRequest$Outbound = {
+type LayoutsControllerGetUsageRequest$Outbound = {
   layoutId: string;
   "idempotency-key"?: string | undefined;
 };
@@ -42,7 +42,7 @@ export const LayoutsControllerGetUsageRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function layoutsControllerGetUsageRequestToJSON(
+function layoutsControllerGetUsageRequestToJSON(
   layoutsControllerGetUsageRequest: LayoutsControllerGetUsageRequest,
 ): string {
   return JSON.stringify(
@@ -67,7 +67,7 @@ export const LayoutsControllerGetUsageResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function layoutsControllerGetUsageResponseFromJSON(
+function layoutsControllerGetUsageResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<LayoutsControllerGetUsageResponse, SDKValidationError> {
   return safeParse(

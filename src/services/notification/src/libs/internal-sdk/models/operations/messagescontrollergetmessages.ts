@@ -34,7 +34,7 @@ export type MessagesControllerGetMessagesResponse = {
 };
 
 /** @internal */
-export type MessagesControllerGetMessagesRequest$Outbound = {
+type MessagesControllerGetMessagesRequest$Outbound = {
   channel?: string | undefined;
   subscriberId?: string | undefined;
   transactionId?: Array<string> | undefined;
@@ -63,7 +63,7 @@ export const MessagesControllerGetMessagesRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function messagesControllerGetMessagesRequestToJSON(
+function messagesControllerGetMessagesRequestToJSON(
   messagesControllerGetMessagesRequest: MessagesControllerGetMessagesRequest,
 ): string {
   return JSON.stringify(
@@ -88,7 +88,7 @@ export const MessagesControllerGetMessagesResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function messagesControllerGetMessagesResponseFromJSON(
+function messagesControllerGetMessagesResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<MessagesControllerGetMessagesResponse, SDKValidationError> {
   return safeParse(

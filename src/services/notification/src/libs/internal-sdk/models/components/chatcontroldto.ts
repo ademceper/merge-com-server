@@ -43,10 +43,10 @@ export const ChatControlDto$outboundSchema: z.ZodType<
   body: z.string().optional(),
 });
 
-export function chatControlDtoToJSON(chatControlDto: ChatControlDto): string {
+function chatControlDtoToJSON(chatControlDto: ChatControlDto): string {
   return JSON.stringify(ChatControlDto$outboundSchema.parse(chatControlDto));
 }
-export function chatControlDtoFromJSON(
+function chatControlDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<ChatControlDto, SDKValidationError> {
   return safeParse(

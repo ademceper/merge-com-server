@@ -46,7 +46,7 @@ export const UpdateSubscriberChannelRequestDto$outboundSchema: z.ZodType<
   credentials: ChannelCredentials$outboundSchema,
 });
 
-export function updateSubscriberChannelRequestDtoToJSON(
+function updateSubscriberChannelRequestDtoToJSON(
   updateSubscriberChannelRequestDto: UpdateSubscriberChannelRequestDto,
 ): string {
   return JSON.stringify(

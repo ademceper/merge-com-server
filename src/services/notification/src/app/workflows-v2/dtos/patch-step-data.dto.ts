@@ -1,7 +1,7 @@
 import { ApiPropertyOptional } from '@nestjs/swagger';
 import { IsObject, IsOptional, IsString } from 'class-validator';
 
-export class PatchStepDataDto {
+class PatchStepDataDto {
   @ApiPropertyOptional({
     description: 'New name for the step',
     type: 'string',

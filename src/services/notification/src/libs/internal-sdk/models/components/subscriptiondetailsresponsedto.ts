@@ -44,7 +44,7 @@ export const SubscriptionDetailsResponseDto$inboundSchema: z.ZodType<
   contextKeys: z.array(z.string()).optional(),
 });
 
-export function subscriptionDetailsResponseDtoFromJSON(
+function subscriptionDetailsResponseDtoFromJSON(
   jsonString: string
 ): SafeParseResult<SubscriptionDetailsResponseDto, SDKValidationError> {
   return safeParse(

@@ -39,7 +39,7 @@ export type TranslationControllerGetTranslationGroupEndpointRequest = {
 };
 
 /** @internal */
-export const TranslationControllerGetTranslationGroupEndpointPathParamResourceType$outboundSchema:
+const TranslationControllerGetTranslationGroupEndpointPathParamResourceType$outboundSchema:
   z.ZodNativeEnum<
     typeof TranslationControllerGetTranslationGroupEndpointPathParamResourceType
   > = z.nativeEnum(
@@ -47,7 +47,7 @@ export const TranslationControllerGetTranslationGroupEndpointPathParamResourceTy
   );
 
 /** @internal */
-export type TranslationControllerGetTranslationGroupEndpointRequest$Outbound = {
+type TranslationControllerGetTranslationGroupEndpointRequest$Outbound = {
   resourceType: string;
   resourceId: string;
   "idempotency-key"?: string | undefined;
@@ -70,7 +70,7 @@ export const TranslationControllerGetTranslationGroupEndpointRequest$outboundSch
     });
   });
 
-export function translationControllerGetTranslationGroupEndpointRequestToJSON(
+function translationControllerGetTranslationGroupEndpointRequestToJSON(
   translationControllerGetTranslationGroupEndpointRequest:
     TranslationControllerGetTranslationGroupEndpointRequest,
 ): string {

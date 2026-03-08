@@ -8,15 +8,15 @@ export function bytesToBase64(u8arr: Uint8Array): string {
   return btoa(String.fromCodePoint(...u8arr));
 }
 
-export function bytesFromBase64(encoded: string): Uint8Array {
+function bytesFromBase64(encoded: string): Uint8Array {
   return Uint8Array.from(atob(encoded), (c) => c.charCodeAt(0));
 }
 
-export function stringToBytes(str: string): Uint8Array {
+function stringToBytes(str: string): Uint8Array {
   return new TextEncoder().encode(str);
 }
 
-export function stringFromBytes(u8arr: Uint8Array): string {
+function stringFromBytes(u8arr: Uint8Array): string {
   return new TextDecoder().decode(u8arr);
 }
 
@@ -24,14 +24,14 @@ export function stringToBase64(str: string): string {
   return bytesToBase64(stringToBytes(str));
 }
 
-export function stringFromBase64(b64str: string): string {
+function stringFromBase64(b64str: string): string {
   return stringFromBytes(bytesFromBase64(b64str));
 }
 
-export const zodOutbound = z
+const zodOutbound = z
   .instanceof(Uint8Array)
   .or(z.string().transform(stringToBytes));
 
-export const zodInbound = z
+const zodInbound = z
   .instanceof(Uint8Array)
   .or(z.string().transform(bytesFromBase64));

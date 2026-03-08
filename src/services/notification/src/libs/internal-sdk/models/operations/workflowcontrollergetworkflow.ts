@@ -24,7 +24,7 @@ export type WorkflowControllerGetWorkflowResponse = {
 };
 
 /** @internal */
-export type WorkflowControllerGetWorkflowRequest$Outbound = {
+type WorkflowControllerGetWorkflowRequest$Outbound = {
   workflowId: string;
   environmentId?: string | undefined;
   "idempotency-key"?: string | undefined;
@@ -45,7 +45,7 @@ export const WorkflowControllerGetWorkflowRequest$outboundSchema: z.ZodType<
   });
 });
 
-export function workflowControllerGetWorkflowRequestToJSON(
+function workflowControllerGetWorkflowRequestToJSON(
   workflowControllerGetWorkflowRequest: WorkflowControllerGetWorkflowRequest,
 ): string {
   return JSON.stringify(
@@ -70,7 +70,7 @@ export const WorkflowControllerGetWorkflowResponse$inboundSchema: z.ZodType<
   });
 });
 
-export function workflowControllerGetWorkflowResponseFromJSON(
+function workflowControllerGetWorkflowResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<WorkflowControllerGetWorkflowResponse, SDKValidationError> {
   return safeParse(

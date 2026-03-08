@@ -36,7 +36,7 @@ export const NotificationGroup$inboundSchema: z.ZodType<
   });
 });
 
-export function notificationGroupFromJSON(
+function notificationGroupFromJSON(
   jsonString: string,
 ): SafeParseResult<NotificationGroup, SDKValidationError> {
   return safeParse(

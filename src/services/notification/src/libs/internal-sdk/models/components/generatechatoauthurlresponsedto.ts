@@ -23,7 +23,7 @@ export const GenerateChatOAuthUrlResponseDto$inboundSchema: z.ZodType<
   url: z.string(),
 });
 
-export function generateChatOAuthUrlResponseDtoFromJSON(
+function generateChatOAuthUrlResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<GenerateChatOAuthUrlResponseDto, SDKValidationError> {
   return safeParse(

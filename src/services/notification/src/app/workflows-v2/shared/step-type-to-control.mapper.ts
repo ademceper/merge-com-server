@@ -19,7 +19,7 @@ import {
 import { ControlSchemas, JSONSchemaEntity } from 'libs/dal';
 import { ActionStepEnum, ChannelStepEnum } from 'libs/framework/internal';
 
-export const PERMISSIVE_EMPTY_SCHEMA = {
+const PERMISSIVE_EMPTY_SCHEMA = {
   type: 'object',
   properties: {},
   required: [],

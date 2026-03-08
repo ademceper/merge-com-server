@@ -52,7 +52,7 @@ export type TranslationGroupDto = {
 };
 
 /** @internal */
-export const TranslationGroupDtoResourceType$inboundSchema: z.ZodNativeEnum<typeof TranslationGroupDtoResourceType> =
+const TranslationGroupDtoResourceType$inboundSchema: z.ZodNativeEnum<typeof TranslationGroupDtoResourceType> =
   z.nativeEnum(TranslationGroupDtoResourceType);
 
 /** @internal */
@@ -66,7 +66,7 @@ export const TranslationGroupDto$inboundSchema: z.ZodType<TranslationGroupDto, z
   updatedAt: z.string(),
 });
 
-export function translationGroupDtoFromJSON(
+function translationGroupDtoFromJSON(
   jsonString: string
 ): SafeParseResult<TranslationGroupDto, SDKValidationError> {
   return safeParse(

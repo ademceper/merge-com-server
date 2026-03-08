@@ -16,13 +16,13 @@ export type TenantPayloadDto = {
 export type TenantPayloadDtoData$Outbound = {};
 
 /** @internal */
-export const TenantPayloadDtoData$outboundSchema: z.ZodType<
+const TenantPayloadDtoData$outboundSchema: z.ZodType<
   TenantPayloadDtoData$Outbound,
   z.ZodTypeDef,
   TenantPayloadDtoData
 > = z.object({});
 
-export function tenantPayloadDtoDataToJSON(
+function tenantPayloadDtoDataToJSON(
   tenantPayloadDtoData: TenantPayloadDtoData,
 ): string {
   return JSON.stringify(
@@ -48,7 +48,7 @@ export const TenantPayloadDto$outboundSchema: z.ZodType<
   data: z.lazy(() => TenantPayloadDtoData$outboundSchema).optional(),
 });
 
-export function tenantPayloadDtoToJSON(
+function tenantPayloadDtoToJSON(
   tenantPayloadDto: TenantPayloadDto,
 ): string {
   return JSON.stringify(

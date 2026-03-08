@@ -20,7 +20,7 @@ export type CreateMsTeamsChannelEndpointDtoContext2 = {
   data?: { [k: string]: any } | undefined;
 };
 
-export type CreateMsTeamsChannelEndpointDtoContext =
+type CreateMsTeamsChannelEndpointDtoContext =
   | CreateMsTeamsChannelEndpointDtoContext2
   | string;
 
@@ -61,7 +61,7 @@ export type CreateMsTeamsChannelEndpointDtoContext2$Outbound = {
 };
 
 /** @internal */
-export const CreateMsTeamsChannelEndpointDtoContext2$outboundSchema: z.ZodType<
+const CreateMsTeamsChannelEndpointDtoContext2$outboundSchema: z.ZodType<
   CreateMsTeamsChannelEndpointDtoContext2$Outbound,
   z.ZodTypeDef,
   CreateMsTeamsChannelEndpointDtoContext2
@@ -70,7 +70,7 @@ export const CreateMsTeamsChannelEndpointDtoContext2$outboundSchema: z.ZodType<
   data: z.record(z.any()).optional(),
 });
 
-export function createMsTeamsChannelEndpointDtoContext2ToJSON(
+function createMsTeamsChannelEndpointDtoContext2ToJSON(
   createMsTeamsChannelEndpointDtoContext2:
     CreateMsTeamsChannelEndpointDtoContext2,
 ): string {
@@ -82,12 +82,12 @@ export function createMsTeamsChannelEndpointDtoContext2ToJSON(
 }
 
 /** @internal */
-export type CreateMsTeamsChannelEndpointDtoContext$Outbound =
+type CreateMsTeamsChannelEndpointDtoContext$Outbound =
   | CreateMsTeamsChannelEndpointDtoContext2$Outbound
   | string;
 
 /** @internal */
-export const CreateMsTeamsChannelEndpointDtoContext$outboundSchema: z.ZodType<
+const CreateMsTeamsChannelEndpointDtoContext$outboundSchema: z.ZodType<
   CreateMsTeamsChannelEndpointDtoContext$Outbound,
   z.ZodTypeDef,
   CreateMsTeamsChannelEndpointDtoContext
@@ -96,7 +96,7 @@ export const CreateMsTeamsChannelEndpointDtoContext$outboundSchema: z.ZodType<
   z.string(),
 ]);
 
-export function createMsTeamsChannelEndpointDtoContextToJSON(
+function createMsTeamsChannelEndpointDtoContextToJSON(
   createMsTeamsChannelEndpointDtoContext:
     CreateMsTeamsChannelEndpointDtoContext,
 ): string {
@@ -140,7 +140,7 @@ export const CreateMsTeamsChannelEndpointDto$outboundSchema: z.ZodType<
   endpoint: MsTeamsChannelEndpointDto$outboundSchema,
 });
 
-export function createMsTeamsChannelEndpointDtoToJSON(
+function createMsTeamsChannelEndpointDtoToJSON(
   createMsTeamsChannelEndpointDto: CreateMsTeamsChannelEndpointDto,
 ): string {
   return JSON.stringify(

@@ -53,7 +53,7 @@ import {
   SmsStepUpsertDto$outboundSchema,
 } from "./smsstepupsertdto.js";
 
-export type UpdateWorkflowDtoSteps =
+type UpdateWorkflowDtoSteps =
   | InAppStepUpsertDto
   | EmailStepUpsertDto
   | SmsStepUpsertDto
@@ -124,7 +124,7 @@ export type UpdateWorkflowDto = {
 };
 
 /** @internal */
-export type UpdateWorkflowDtoSteps$Outbound =
+type UpdateWorkflowDtoSteps$Outbound =
   | InAppStepUpsertDto$Outbound
   | EmailStepUpsertDto$Outbound
   | SmsStepUpsertDto$Outbound
@@ -135,7 +135,7 @@ export type UpdateWorkflowDtoSteps$Outbound =
   | CustomStepUpsertDto$Outbound;
 
 /** @internal */
-export const UpdateWorkflowDtoSteps$outboundSchema: z.ZodType<
+const UpdateWorkflowDtoSteps$outboundSchema: z.ZodType<
   UpdateWorkflowDtoSteps$Outbound,
   z.ZodTypeDef,
   UpdateWorkflowDtoSteps
@@ -150,7 +150,7 @@ export const UpdateWorkflowDtoSteps$outboundSchema: z.ZodType<
   CustomStepUpsertDto$outboundSchema,
 ]);
 
-export function updateWorkflowDtoStepsToJSON(
+function updateWorkflowDtoStepsToJSON(
   updateWorkflowDtoSteps: UpdateWorkflowDtoSteps,
 ): string {
   return JSON.stringify(
@@ -214,7 +214,7 @@ export const UpdateWorkflowDto$outboundSchema: z.ZodType<
   severity: SeverityLevelEnum$outboundSchema.optional(),
 });
 
-export function updateWorkflowDtoToJSON(
+function updateWorkflowDtoToJSON(
   updateWorkflowDto: UpdateWorkflowDto,
 ): string {
   return JSON.stringify(

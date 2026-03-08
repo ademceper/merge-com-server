@@ -21,7 +21,7 @@ export type Two = {
   data?: { [k: string]: any } | undefined;
 };
 
-export type Context = Two | string;
+type Context = Two | string;
 
 export type PatchSubscriberPreferencesDto = {
   /**
@@ -46,25 +46,25 @@ export type Two$Outbound = {
 };
 
 /** @internal */
-export const Two$outboundSchema: z.ZodType<Two$Outbound, z.ZodTypeDef, Two> = z.object({
+const Two$outboundSchema: z.ZodType<Two$Outbound, z.ZodTypeDef, Two> = z.object({
   id: z.string(),
   data: z.record(z.any()).optional(),
 });
 
-export function twoToJSON(two: Two): string {
+function twoToJSON(two: Two): string {
   return JSON.stringify(Two$outboundSchema.parse(two));
 }
 
 /** @internal */
-export type Context$Outbound = Two$Outbound | string;
+type Context$Outbound = Two$Outbound | string;
 
 /** @internal */
-export const Context$outboundSchema: z.ZodType<Context$Outbound, z.ZodTypeDef, Context> = z.union([
+const Context$outboundSchema: z.ZodType<Context$Outbound, z.ZodTypeDef, Context> = z.union([
   z.lazy(() => Two$outboundSchema),
   z.string(),
 ]);
 
-export function contextToJSON(context: Context): string {
+function contextToJSON(context: Context): string {
   return JSON.stringify(Context$outboundSchema.parse(context));
 }
 
@@ -88,7 +88,7 @@ export const PatchSubscriberPreferencesDto$outboundSchema: z.ZodType<
   context: z.record(z.union([z.lazy(() => Two$outboundSchema), z.string()])).optional(),
 });
 
-export function patchSubscriberPreferencesDtoToJSON(
+function patchSubscriberPreferencesDtoToJSON(
   patchSubscriberPreferencesDto: PatchSubscriberPreferencesDto
 ): string {
   return JSON.stringify(PatchSubscriberPreferencesDto$outboundSchema.parse(patchSubscriberPreferencesDto));

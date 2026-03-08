@@ -20,10 +20,10 @@ export type GetChartsResponseDto = {
 };
 
 /** @internal */
-export const Data$inboundSchema: z.ZodType<Data, z.ZodTypeDef, unknown> = z
+const Data$inboundSchema: z.ZodType<Data, z.ZodTypeDef, unknown> = z
   .object({});
 
-export function dataFromJSON(
+function dataFromJSON(
   jsonString: string,
 ): SafeParseResult<Data, SDKValidationError> {
   return safeParse(
@@ -42,7 +42,7 @@ export const GetChartsResponseDto$inboundSchema: z.ZodType<
   data: z.lazy(() => Data$inboundSchema),
 });
 
-export function getChartsResponseDtoFromJSON(
+function getChartsResponseDtoFromJSON(
   jsonString: string,
 ): SafeParseResult<GetChartsResponseDto, SDKValidationError> {
   return safeParse(

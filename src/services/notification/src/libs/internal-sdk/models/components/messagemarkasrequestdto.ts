@@ -5,7 +5,7 @@
 import * as z from "zod/v3";
 import type { ClosedEnum } from "../../types/enums.js";
 
-export type MessageId = string | Array<string>;
+type MessageId = string | Array<string>;
 
 export const MessageMarkAsRequestDtoMarkAs = {
   Read: "read",
@@ -23,21 +23,21 @@ export type MessageMarkAsRequestDto = {
 };
 
 /** @internal */
-export type MessageId$Outbound = string | Array<string>;
+type MessageId$Outbound = string | Array<string>;
 
 /** @internal */
-export const MessageId$outboundSchema: z.ZodType<
+const MessageId$outboundSchema: z.ZodType<
   MessageId$Outbound,
   z.ZodTypeDef,
   MessageId
 > = z.union([z.string(), z.array(z.string())]);
 
-export function messageIdToJSON(messageId: MessageId): string {
+function messageIdToJSON(messageId: MessageId): string {
   return JSON.stringify(MessageId$outboundSchema.parse(messageId));
 }
 
 /** @internal */
-export const MessageMarkAsRequestDtoMarkAs$outboundSchema: z.ZodNativeEnum<
+const MessageMarkAsRequestDtoMarkAs$outboundSchema: z.ZodNativeEnum<
   typeof MessageMarkAsRequestDtoMarkAs
 > = z.nativeEnum(MessageMarkAsRequestDtoMarkAs);
 
@@ -57,7 +57,7 @@ export const MessageMarkAsRequestDto$outboundSchema: z.ZodType<
   markAs: MessageMarkAsRequestDtoMarkAs$outboundSchema,
 });
 
-export function messageMarkAsRequestDtoToJSON(
+function messageMarkAsRequestDtoToJSON(
   messageMarkAsRequestDto: MessageMarkAsRequestDto,
 ): string {
   return JSON.stringify(

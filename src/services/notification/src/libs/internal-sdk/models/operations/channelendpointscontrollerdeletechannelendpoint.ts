@@ -24,7 +24,7 @@ export type ChannelEndpointsControllerDeleteChannelEndpointResponse = {
 };
 
 /** @internal */
-export type ChannelEndpointsControllerDeleteChannelEndpointRequest$Outbound = {
+type ChannelEndpointsControllerDeleteChannelEndpointRequest$Outbound = {
   identifier: string;
   "idempotency-key"?: string | undefined;
 };
@@ -44,7 +44,7 @@ export const ChannelEndpointsControllerDeleteChannelEndpointRequest$outboundSche
     });
   });
 
-export function channelEndpointsControllerDeleteChannelEndpointRequestToJSON(
+function channelEndpointsControllerDeleteChannelEndpointRequestToJSON(
   channelEndpointsControllerDeleteChannelEndpointRequest:
     ChannelEndpointsControllerDeleteChannelEndpointRequest,
 ): string {
@@ -69,7 +69,7 @@ export const ChannelEndpointsControllerDeleteChannelEndpointResponse$inboundSche
     });
   });
 
-export function channelEndpointsControllerDeleteChannelEndpointResponseFromJSON(
+function channelEndpointsControllerDeleteChannelEndpointResponseFromJSON(
   jsonString: string,
 ): SafeParseResult<
   ChannelEndpointsControllerDeleteChannelEndpointResponse,
