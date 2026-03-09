@@ -2,6 +2,11 @@
 # .NET
 # ========================
 bin/
+!src/
+!src/infrastructure/
+!src/infrastructure/keycloak/
+!src/infrastructure/keycloak/bin/
+!src/infrastructure/keycloak/bin/**
 obj/
 *.user
 *.suo
